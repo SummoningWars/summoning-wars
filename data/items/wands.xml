@@ -1,0 +1,1136 @@
+<!-- Zauberstaebe -->
+
+<!-- Fichtenzauberstab -->
+<Item type="weapon" subtype="spruce_wnd_fire" name="spruce wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="spruce_wnd" />
+	<Attribute
+			  level_requirement="1"
+			  character_requirement="mage"
+			  min_enchant="20"
+			  max_enchant="60"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.20"
+			  modchance_damage_ice_mod="0.0"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="3"
+					damage_max_fire="5"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="1"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="spruce_wnd_air" name="spruce wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="spruce_wnd" />
+	<Attribute
+			  level_requirement="1"
+			  character_requirement="mage"
+			  min_enchant="20"
+			  max_enchant="60"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="1"
+					damage_max_air="7"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="1"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="spruce_wnd_ice" name="spruce wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="spruce_wnd" />
+	<Attribute
+			  level_requirement="1"
+			  character_requirement="mage"
+			  min_enchant="20"
+			  max_enchant="60"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.0"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="3"
+					damage_max_ice="5"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="1"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Lehrlingszauberstab -->
+<Item type="weapon" subtype="prntc_wnd_fire" name="apprentice wand" size="medium">
+	<Image image="set:aprnt_wnd.png image:full_image" />
+	<Mesh file="aprnt_wnd" />
+	<Attribute
+			  level_requirement="2"
+			  character_requirement="mage"
+			  min_enchant="30"
+			  max_enchant="80"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_ice_mod="0.0"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="5"
+					damage_max_fire="11"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="2"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="prntc_wnd_air" name="apprentice wand" size="medium">
+	<Image image="set:aprnt_wnd.png image:full_image" />
+	<Mesh file="aprnt_wnd" />
+	<Attribute
+			  level_requirement="2"
+			  character_requirement="mage"
+			  min_enchant="30"
+			  max_enchant="80"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="3"
+					damage_max_air="13"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="2"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="prntc_wnd_ice" name="apprentice wand" size="medium">
+	<Image image="set:aprnt_wnd.png image:full_image" />
+	<Mesh file="aprnt_wnd" />
+	<Attribute
+			  level_requirement="2"
+			  character_requirement="mage"
+			  min_enchant="30"
+			  max_enchant="80"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.0"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="7"
+					damage_max_ice="9"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="2"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Novizenzauberstab -->
+<Item type="weapon" subtype="novice_wnd_fire" name="novice wand" size="medium">
+	<Image image="set:novice_wnd.png image:full_image" />
+	<Mesh file="novice_wnd" />
+	<Attribute
+			  level_requirement="4"
+			  character_requirement="mage"
+			  min_enchant="40"
+			  max_enchant="110"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="6"
+					damage_max_fire="13"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="4"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="novice_wnd_air" name="novice wand" size="medium">
+	<Image image="set:novice_wnd.png image:full_image" />
+	<Mesh file="novice_wnd" />
+	<Attribute
+			  level_requirement="4"
+			  character_requirement="mage"
+			  min_enchant="40"
+			  max_enchant="110"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="4"
+					damage_max_air="15"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="4"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="novice_wnd_ice" name="novice wand" size="medium">
+	<Image image="set:novice_wnd.png image:full_image" />
+	<Mesh file="novice_wnd" />
+	<Attribute
+			  level_requirement="4"
+			  character_requirement="mage"
+			  min_enchant="40"
+			  max_enchant="110"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.0"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="8"
+					damage_max_ice="11"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="4"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Eremitenzauberstab -->
+<Item type="weapon" subtype="hermit_wnd_fire" name="hermit wand" size="medium">
+	<Image image="set:novice_wnd.png image:full_image" />
+	<Mesh file="novice_wnd" />
+	<Attribute
+			  level_requirement="6"
+			  character_requirement="mage"
+			  min_enchant="45"
+			  max_enchant="130"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.0"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="8"
+					damage_max_fire="15"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="6"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="hermit_wnd_air" name="hermit wand" size="medium">
+	<Image image="set:novice_wnd.png image:full_image" />
+	<Mesh file="novice_wnd" />
+	<Attribute
+			  level_requirement="6"
+			  character_requirement="mage"
+			  min_enchant="45"
+			  max_enchant="130"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="6"
+					damage_max_air="17"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="6"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="hermit_wnd_ice" name="hermit wand" size="medium">
+	<Image image="set:novice_wnd.png image:full_image" />
+	<Mesh file="novice_wnd" />
+	<Attribute
+			  level_requirement="6"
+			  character_requirement="mage"
+			  min_enchant="45"
+			  max_enchant="130"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="10"
+					damage_max_ice="13"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="6"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Felszauberstab -->
+<Item type="weapon" subtype="rock_wnd" name="rock wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="7"
+			  character_requirement="mage"
+			  min_enchant="50"
+			  max_enchant="170"
+			  modchance_willpower_mod="0.2"
+			  modchance_magic_power_mod="0.2"
+			  modchance_magic_fire_mod="0.10"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_ice_mod="0.1"
+			  modchance_damage_mult_air_mod="0.1"
+			  modchance_damage_mult_fire_mod="0.1"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_physical="16"
+					damage_max_physical="22"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="7"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Erlenzauberstab -->
+<Item type="weapon" subtype="alder_wnd_fire" name="alder wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="12"
+			  character_requirement="mage"
+			  min_enchant="60"
+			  max_enchant="200"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.0"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="10"
+					damage_max_fire="18"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="12"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="alder_wnd_air" name="alder wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="12"
+			  character_requirement="mage"
+			  min_enchant="60"
+			  max_enchant="200"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="8"
+					damage_max_air="20"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="12"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="alder_wnd_ice" name="alder wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="12"
+			  character_requirement="mage"
+			  min_enchant="60"
+			  max_enchant="200"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="12"
+					damage_max_ice="16"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="12"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Bardenzauberstab -->
+<Item type="weapon" subtype="bard_wnd_fire" name="bard's wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="14"
+			  character_requirement="mage"
+			  min_enchant="60"
+			  max_enchant="220"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.0"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="12"
+					damage_max_fire="20"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="14"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="bard_wnd_air" name="bard's wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="14"
+			  character_requirement="mage"
+			  min_enchant="60"
+			  max_enchant="220"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="10"
+					damage_max_air="22"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="14"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="bard_wnd_ice" name="bard's wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="14"
+			  character_requirement="mage"
+			  min_enchant="60"
+			  max_enchant="220"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_fire_mod="0.0"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="14"
+					damage_max_ice="18"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="14"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Magierzauberstab -->
+<Item type="weapon" subtype="magus_wnd_fire" name="magus wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="19"
+			  character_requirement="mage"
+			  min_enchant="70"
+			  max_enchant="250"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="14"
+					damage_max_fire="21"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="19"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="magus_wnd_air" name="magus wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="19"
+			  character_requirement="mage"
+			  min_enchant="70"
+			  max_enchant="250"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="12"
+					damage_max_air="23"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="19"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="magus_wnd_ice" name="magus wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="19"
+			  character_requirement="mage"
+			  min_enchant="70"
+			  max_enchant="250"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="15"
+					damage_max_ice="20"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="19"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Silberzauberstab -->
+<Item type="weapon" subtype="silver_wnd_fire" name="silver wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="22"
+			  character_requirement="mage"
+			  min_enchant="80"
+			  max_enchant="300"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="16"
+					damage_max_fire="25"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="22"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="silver_wnd_air" name="silver wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="22"
+			  character_requirement="mage"
+			  min_enchant="80"
+			  max_enchant="300"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_air_mod="0.30"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="14"
+					damage_max_air="27"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="22"
+			   probability="0.33"
+			   />
+</Item>
+<Item type="weapon" subtype="silver_wnd_ice" name="silver wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="22"
+			  character_requirement="mage"
+			  min_enchant="80"
+			  max_enchant="300"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.30"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="18"
+					damage_max_ice="23"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="22"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Infernozauberstab -->
+<Item type="weapon" subtype="silver_wnd" name="silver wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="25"
+			  character_requirement="mage"
+			  min_enchant="80"
+			  max_enchant="300"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="16"
+					damage_max_fire="25"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="25"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Eichenzauberstab -->
+<Item type="weapon" subtype="oak_wnd" name="oak wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="29"
+			  character_requirement="mage"
+			  min_enchant="90"
+			  max_enchant="350"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_air_mod="0.40"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="21"
+					damage_max_air="27"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="29"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Phoenixzauberstab -->
+<Item type="weapon" subtype="phenix_wnd" name="phenix wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="34"
+			  character_requirement="mage"
+			  min_enchant="100"
+			  max_enchant="400"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="24"
+					damage_max_fire="32"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="34"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Frostzauberstab -->
+<Item type="weapon" subtype="frost_wnd" name="frost wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="39"
+			  character_requirement="mage"
+			  min_enchant="110"
+			  max_enchant="450"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="26"
+					damage_max_ice="33"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="39"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Gewitterzauberstab -->
+<Item type="weapon" subtype="thundr_wnd" name="thunder wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="44"
+			  character_requirement="mage"
+			  min_enchant="120"
+			  max_enchant="500"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_air_mod="0.40"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_mult_air_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="27"
+					damage_max_air="35"
+					damage_attack="54"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="44"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Eschenzauberstab -->
+<Item type="weapon" subtype="ash_wnd" name="ash wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="49"
+			  character_requirement="mage"
+			  min_enchant="130"
+			  max_enchant="550"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="30"
+					damage_max_fire="38"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="49"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Beschwoererzauberstab -->
+<Item type="weapon" subtype="sumonr_wnd" name="summoner wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="54"
+			  character_requirement="mage"
+			  min_enchant="140"
+			  max_enchant="600"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="32"
+					damage_max_ice="42"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="54"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Magisterzauberstab -->
+<Item type="weapon" subtype="master_wnd" name="master wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="59"
+			  character_requirement="mage"
+			  min_enchant="150"
+			  max_enchant="650"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="34"
+					damage_max_fire="45"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="59"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Nekromantenzauberstab -->
+<Item type="weapon" subtype="necro_wnd" name="necromancer wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="64"
+			  character_requirement="mage"
+			  min_enchant="160"
+			  max_enchant="700"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_ice="36"
+					damage_max_ice="48"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="64"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Daemonenzauberstab -->
+<Item type="weapon" subtype="demon_wnd" name="demon wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="69"
+			  character_requirement="mage"
+			  min_enchant="170"
+			  max_enchant="750"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.40"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_fire_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="38"
+					damage_max_fire="51"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="69"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Feenzauberstab -->
+<Item type="weapon" subtype="fairy_wnd" name="fairy wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="74"
+			  character_requirement="mage"
+			  min_enchant="180"
+			  max_enchant="800"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_fire_mod="0.20"
+			  modchance_damage_air_mod="0.20"
+			  modchance_damage_mult_fire_mod="0.15"
+			  modchance_damage_mult_air_mod="0.15"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="20"
+					damage_max_fire="26"
+					damage_min_air="20"
+					damage_max_air="27"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="74"
+			   probability="0.33"
+			   />
+</Item>
+
+<!-- Erzmagierzauberstab -->
+<Item type="weapon" subtype="arcmag_wnd" name="archmage wand" size="medium">
+	<Image image="set:spruce_wnd.png image:full_image" />
+	<Mesh file="basicWand" />
+	<Attribute
+			  level_requirement="80"
+			  character_requirement="mage"
+			  min_enchant="200"
+			  max_enchant="1000"
+			  modchance_willpower_mod="0.2"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.10"
+			  modchance_danage_fire_mod="0.10"
+			  modchance_damage_mult_ice_mod="0.1"
+			  modchance_damage_mult_air_mod="0.1"
+			  modchance_damage_mult_fire_mod="0.1"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_fire="15"
+					damage_max_fire="22"
+					damage_min_air="6"
+					damage_max_air="24"
+					damage_min_ice="18"
+					damage_max_ice="20"
+					attack_range="20"
+					two_handed="no"
+					dattack_speed="0"
+					/>
+	<DropChance
+			   level="80"
+			   probability="0.33"
+			   />
+</Item>
+

@@ -1,0 +1,589 @@
+# Portuguese translations for sumwars package
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-04-07 21:09+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: theFissure.xml
+msgid "The ambush of the undead"
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"The good news: No one will come through that tunnel anymore. The bad news: "
+"The way back has caved in, too. Hopefully there is another exit."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"The undead found a way under the Grey Skyladder enabling them to bypass "
+"Dwarfenwall. Because this threatens the kingdom of Aisen directly it has to "
+"be shut as fast as possible. The passage in the Cursed Caves has to be found "
+"and the destroyed with the explosion spell of Ireana of Northborough."
+msgstr ""
+
+#: theFissure.xml
+msgid "aisMounPath"
+msgstr ""
+
+#: theFissure.xml
+msgid "*urgh*"
+msgstr ""
+
+#: theFissure.xml
+msgid "Wow, she's gorgeous."
+msgstr ""
+
+#: theFissure.xml
+msgid "You can stare at her later, we have to erase some undead."
+msgstr ""
+
+#: theFissure.xml
+msgid "Please help us, the mage is badly injured!"
+msgstr ""
+
+#: theFissure.xml
+msgid "He he. Harvest!"
+msgstr ""
+
+#: theFissure.xml
+msgid "I have never seen someone fight like you before."
+msgstr ""
+
+#: theFissure.xml
+msgid "You don't get out very often, do you."
+msgstr ""
+
+#: theFissure.xml
+msgid "You developed splendid since the last time we met, didn't you? ##solo"
+msgstr ""
+
+#: theFissure.xml
+msgid "You developed splendid since the last time we met, didn't you?"
+msgstr ""
+
+#: theFissure.xml
+msgid "How is the archmage?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Very bad, I'm afraid."
+msgstr ""
+
+#: theFissure.xml
+msgid "Let me see."
+msgstr ""
+
+#: theFissure.xml
+msgid "Thank you. That was a close call for a rescue."
+msgstr ""
+
+#: theFissure.xml
+msgid "How could it even come to this?"
+msgstr ""
+
+#: theFissure.xml
+msgid "It's very dangerous to travel so far from the roads."
+msgstr ""
+
+#: theFissure.xml
+msgid "Come off it!"
+msgstr ""
+
+#: theFissure.xml
+msgid "No, no, it's the truth."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"It was not the best idea, but the streets are not safe these days and thus "
+"we wanted to travel concealed."
+msgstr ""
+
+#: theFissure.xml
+msgid "These undead layed an ambush for us here."
+msgstr ""
+
+#: theFissure.xml
+msgid "Surprise!"
+msgstr ""
+
+#: theFissure.xml
+msgid "No wonder, this is a combat area."
+msgstr ""
+
+#: theFissure.xml
+msgid "No, Dwarfenwall hasn't fallen yet."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"As long as that city stands, the entry to the lands of the undead is blocked."
+msgstr ""
+
+#: theFissure.xml
+msgid "But I fear they must have found a way around the citywalls."
+msgstr ""
+
+#: theFissure.xml
+msgid "We mustn't allow this."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"If those monsters could avoid Dwarfenwall they would advance into Aisen "
+"before one week is gone."
+msgstr ""
+
+#: theFissure.xml
+msgid "It was exceedingly careless of you to leave with so few men."
+msgstr ""
+
+#: theFissure.xml
+msgid "The city needs every man it can get!"
+msgstr ""
+
+#: theFissure.xml
+msgid "I have a feeling what's going to come in a moment..."
+msgstr ""
+
+#: theFissure.xml
+msgid "Listen, Branded One!"
+msgstr ""
+
+#: theFissure.xml
+msgid "What?!?"
+msgstr ""
+
+#: theFissure.xml
+msgid "That's a Branded One?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Let it go."
+msgstr ""
+
+#: theFissure.xml
+msgid "She is on our side."
+msgstr ""
+
+#: theFissure.xml
+msgid "He is on our side."
+msgstr ""
+
+#: theFissure.xml
+msgid "Listen, Branded Ones!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Those are Branded Ones?"
+msgstr ""
+
+#: theFissure.xml
+msgid "They are on our side."
+msgstr ""
+
+#: theFissure.xml
+msgid "Find the way the undead came here and render it useless."
+msgstr ""
+
+#: theFissure.xml
+msgid "Will that be payed extra?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Don't you want to give them some backup?"
+msgstr ""
+
+#: theFissure.xml
+msgid "I can do what I want!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Of course..."
+msgstr ""
+
+#: theFissure.xml
+msgid "Slowly he's getting to me..."
+msgstr ""
+
+#: theFissure.xml
+msgid "Only now?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Mages have to be naturally patient."
+msgstr ""
+
+#: theFissure.xml
+msgid "I'm sure the undead found a hidden cave."
+msgstr ""
+
+#: theFissure.xml
+msgid "Please take this explosion spell."
+msgstr ""
+
+#: theFissure.xml
+msgid "It surely will be useful."
+msgstr ""
+
+#: theFissure.xml
+msgid "I know of a cave system north of here."
+msgstr ""
+
+#: theFissure.xml
+msgid "They say it's cursed."
+msgstr ""
+
+#: theFissure.xml
+msgid "Should that frighten me?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Should that frighten us?"
+msgstr ""
+
+#: theFissure.xml
+msgid "..."
+msgstr ""
+
+#: theFissure.xml
+msgid "probably not."
+msgstr ""
+
+#: theFissure.xml
+msgid "Thanks for your help."
+msgstr ""
+
+#: theFissure.xml
+msgid "Good luck!"
+msgstr ""
+
+#: theFissure.xml
+msgid "I hope we meet again soon."
+msgstr ""
+
+#: theFissure.xml
+msgid "greyCurseCaveFis"
+msgstr ""
+
+#: theFissure.xml
+msgid "Unknown Lich"
+msgstr ""
+
+#: theFissure.xml
+msgid "How is the work proceeding?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Nar'Asoroth, my lord."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"The stone is solid,but if I let the skeletons work any faster they will "
+"break apart!"
+msgstr ""
+
+#: theFissure.xml
+msgid "((Such an opportunity may never occur again.))"
+msgstr ""
+
+#: theFissure.xml
+msgid "Come on, this is our chance!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Attack the lich immediately?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Yes"
+msgstr ""
+
+#: theFissure.xml
+msgid "No"
+msgstr ""
+
+#: theFissure.xml
+msgid "Let's go then!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Wait, we may learn something useful."
+msgstr ""
+
+#: theFissure.xml
+msgid "Let them rest from time to time."
+msgstr ""
+
+#: theFissure.xml
+msgid "They should be able to fight, too."
+msgstr ""
+
+#: theFissure.xml
+msgid "Isn't the tunnel supposed to be ready for the attack?"
+msgstr ""
+
+#: theFissure.xml
+msgid "No, the city is unimportant in the big picture."
+msgstr ""
+
+#: theFissure.xml
+msgid "Let those aisen dogs burn their backup troops there."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"The army passing through this tunnel has nothing to do with Dwarfenwall."
+msgstr ""
+
+#: theFissure.xml
+msgid "Only the crystal counts."
+msgstr ""
+
+#: theFissure.xml
+msgid "I don't understand."
+msgstr ""
+
+#: theFissure.xml
+msgid "And that is for your own good."
+msgstr ""
+
+#: theFissure.xml
+msgid "Now back to work."
+msgstr ""
+
+#: theFissure.xml
+msgid "Your wish is my action."
+msgstr ""
+
+#: theFissure.xml
+msgid "That has to be the lich attacking Dwarfenwall."
+msgstr ""
+
+#: theFissure.xml
+msgid "If I kill him now his army will fall to dust."
+msgstr ""
+
+#: theFissure.xml
+msgid "That's a lich."
+msgstr ""
+
+#: theFissure.xml
+msgid "If we destroy him now his army will fall apart with him!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Harvest!"
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"What do you know. There are rats everywhere. Kill them and bring me their "
+"bones!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Here is a good place for the spell!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Then I shall blow this crevice to smithereens."
+msgstr ""
+
+#: theFissure.xml
+msgid "Alright, go!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Blow this passage to smithereens!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Get out, quick!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Alright, Windclaw, I'm done here."
+msgstr ""
+
+#: theFissure.xml
+msgid "Alright, Windclaw, We are done here."
+msgstr ""
+
+#: theFissure.xml
+msgid "What now?"
+msgstr ""
+
+#: theFissure.xml
+msgid "You fool! Get yourself out of this mountain!"
+msgstr ""
+
+#: theFissure.xml
+msgid "You are needed in Dwarfenwall!"
+msgstr ""
+
+#: theFissure.xml
+msgid "You fools! Get yourselves out of this mountain!"
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"Let's go. If we are lucky the passage is blocked too and we can all take a "
+"break."
+msgstr ""
+
+#: theFissure.xml
+msgid "In that case you can always tear yourselves apart. That would work."
+msgstr ""
+
+#: theFissure.xml
+msgid "Does he have any idea how painful this always is?"
+msgstr ""
+
+#: theFissure.xml
+msgid "That's impossible. Otherwise he wouldn't give such a stupid suggestion."
+msgstr ""
+
+#: theFissure.xml
+msgid "There really are better employers."
+msgstr ""
+
+#: theFissure.xml
+msgid "Stop bickering and get moving!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Hopefully there is an exit in this direction."
+msgstr ""
+
+#: theFissure.xml
+msgid "Who goes there?"
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"Oh by the gods, if some of them have their eyes on this unpleasent piece of "
+"land right now."
+msgstr ""
+
+#: theFissure.xml
+msgid "How nice to see a familiar face."
+msgstr ""
+
+#: theFissure.xml
+msgid "How nice to see familiar faces."
+msgstr ""
+
+#: theFissure.xml
+msgid "Not so fast, peddler!"
+msgstr ""
+
+#: theFissure.xml
+msgid "How by Harad's eyes did you get here?"
+msgstr ""
+
+#: theFissure.xml
+msgid "Oh! Well, you see..."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"I wanted to take a short cut through the mountains when suddenly the ground "
+"was caving in."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"And after I took a careful look around I sadly had to notice the way south "
+"was blocked."
+msgstr ""
+
+#: theFissure.xml
+msgid "That's why I'm here."
+msgstr ""
+
+#: theFissure.xml
+msgid "There is a cave in the east, too, but that was a bit fishy."
+msgstr ""
+
+#: theFissure.xml
+msgid "But since you are here there is still hope."
+msgstr ""
+
+#: theFissure.xml
+msgid "I will just wait until the road is clear."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"Your distress aside, what makes you so sure I'll not simply vanish with a "
+"town portal?"
+msgstr ""
+
+#: theFissure.xml
+msgid "But since you are here, appreciated friends, there is still hope."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"Your distress aside, what makes you so sure we'll not simply vanish with a "
+"town portal?"
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"Well, that would work normally and I would gladly offer you a grand price "
+"for the help."
+msgstr ""
+
+#: theFissure.xml
+msgid "But short ago, there was a notable magical explosion in this place."
+msgstr ""
+
+#: theFissure.xml
+msgid "You will discover that the scrolls take you right here again. ##solo"
+msgstr ""
+
+#: theFissure.xml
+msgid "You will discover that the scrolls take you right here again."
+msgstr ""
+
+#: theFissure.xml
+msgid "Verflucht sei Windclaw!"
+msgstr ""
+
+#: theFissure.xml
+msgid "Fine. Then we do it the hard way."
+msgstr ""
+
+#: theFissure.xml
+msgid ""
+"If you need something let me know. I discovered some potions back there, and "
+"I would part with them for a small amount of gold."
+msgstr ""
+
+#: theFissure.xml
+msgid "You really ask money for it."
+msgstr ""
+
+#: theFissure.xml
+msgid "But business is business."
+msgstr ""
+
+#: theFissure.xml
+msgid "greyCurseCaveDep"
+msgstr ""

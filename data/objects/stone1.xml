@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="stone1" layer="NORMAL">
+	<Mesh file="stone1.mesh" />
+	<Geometry shape="CIRCLE" radius="1.45"/>
+</Object>

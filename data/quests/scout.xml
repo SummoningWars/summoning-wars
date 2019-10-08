@@ -1,0 +1,145 @@
+<Quest name="The wounded scout" table_name="scout" domain="scout">
+	
+	<Description>
+		if (scout.finished==true) then
+			return _("I rescued a scout and hopefully gained some goodwill from the local militia. Whatever good that will do.")
+		else
+			return(_("I really stumbled across a scout in the goblin infested caves west of Dwarfenwall. He is wounded, lost his gear to some spiders and asked me to fix it for him. I really wonder if I should do this... then again it would be an excuse to venture deeper into the caves that are obviously not under control by the undead."))
+		end
+	</Description>
+	
+	<Region name="greyCurseCave">
+		<Event trigger="create_region">
+			<Condition>
+				return(scout.finished ~= true)
+			</Condition>
+			<Effect>
+				scout_tmp.scout = createObject("questScout","soldier:locSoldier")
+				setRefName(scout_tmp.scout,"Wounded Scout")
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Wounded Scout">
+		<Topic name="first_talk" start_option="Are you alive?">
+			<Condition>
+				return(scout.started ~= true)
+			</Condition>
+			<Effect>
+				addSpeaker(getSpeaker("Wounded Scout"),"scout")
+				speak("player",_("Hey, are you alright?"), "thoughtful")
+				speak("scout",_("Does it look... 'alright' to you?"),"injured3")
+				speak("player",_("Pretty much, yes."), "thoughtful")
+				speak("player",_("You can still talk, right?"), "grin")
+				speak("scout",_("Yeah, right... now, when you're done laughing... maybe you could help me?"),"injured3")
+				speak("player",_("I guess I could patch you up, but I can't carry you out of here."), "thoughtful")
+				speak("player",_("Where I'm headed you will most certainly die a quick and meaningless death."), "snear")
+				speak("scout",_("I can... watch my own back..."),"injured3")
+				speak("scout",_("Most of the time... at least."),"injured3")
+				speak("scout",_("But spying on the undead... evading... those blasted goblins..."),"injured3")
+				setSpeakerEmotion("player","normal")
+				speak("scout",_("I got a little... careless."),"injured3")
+				speak("scout",_("West of here... there's a cave... pretty deep inside..."),"injured3")
+				speak("scout",_("Lot's of wolves... but a nest of spiders, too... thought I had... it under control"),"injured3")
+				speak("scout",_("really big one... there. Spider, I mean... got me good... lost my gear... but got away... somehow"),"injured3")
+				speak("scout",_("The venom... can't move at all... anymore... I had an antidote in my pack..."),"injured3")
+				speak("scout",_("So... if you could get... me my gear, I... would be good to go again..."),"injured3")
+				speak("scout",_("If you're... not afraid... that is."),"injured3")
+				speak("player",_("You have a strange manner of asking for favors."), "unhappy")
+				speak("player",_("But since I don't have to carry you to safety, I guess it is allright."), "normal")
+				if(scout.antidot == true)then
+					speak("player",_("This wouldn't happen to be your stuff, would it?"), "thoughtful")
+					speak("scout",_("You already... found it?"), "injured3")
+					changeTopic("antidot")
+				end
+				speak("scout",_("Thanks..."),"injured3")
+				scout.started = true
+			</Effect>
+		</Topic>
+		
+		<Topic name="talk_again" start_option="Still alive?">
+			<Condition>
+				return((scout.started == true) and (scout.antidot ~= true))
+			</Condition>
+			<Effect>
+				addSpeaker(getSpeaker("Wounded Scout"),"scout")
+				speak("scout",_("Do you... have my gear?"),"injured3")
+				speak("player",_("Not yet, no."), "thoughtful")
+				speak("scout",_("Shame. It seems I'm already capable of... being paralyzed... without your help."),"injured3")
+				speak("scout",_("Thanks for... checking back on me though. I'll be here... if you need me."),"injured3")
+				speak("player",_("You are kind of messed up, you know that?"), "thoughtful")
+				speak("scout",_("..."),"injured3")
+			</Effect>
+		</Topic>
+		
+		<Topic name="talk_antidot" start_option="Still alive?">
+			<Condition>
+				return((scout.antidot == true) and (scout.finished ~=true))
+			</Condition>
+			<Effect>
+				addSpeaker(getSpeaker("Wounded Scout"),"scout")
+				speak("scout",_("Do you... have my gear?"),"injured3")
+				speak("player",_("Here it is."), "normal")
+				changeTopic("antidot")
+			</Effect>
+		</Topic>
+		
+		<Topic name="antidot">
+			<Effect>
+				speak("scout",_("good... now, blue potion"),"injured3")
+				speak("player",_("A blue potion?"), "thoughtful")
+				speak("player",_("You do realize there is at least a score of 'blue' potions here?"), "unhappy")
+				speak("scout",_("They just... turn out that... way everytime... it's the one... with the light shade of turquoise."),"injured3")
+				executeInDialog("fadeOut(1000)")
+				speak("scout",_("No... too... light blue"),"injured3")
+				executeInDialog("fadeOut(2000)")
+				speak("scout",_("That's... it"),"injured3")
+				executeInDialog("fadeIn(1000,{0,0,0},{1,1,1},{0,0,0})")
+				speak("player",_("Finally!"), "angry")
+				speak("player",_("Remember me not to kill you after all the trouble I went through."), "unhappy")
+				speak("scout",_("Gladly. Really, thank you for saving my hide."),"happy")
+				speak("player",_("You best stay out of trouble."), "unhappy")
+				speak("player",_("Because I seriously do NOT want to rummage through your happy collection of identical looking special-purpose-potions."), "angry")
+				speak("scout",_("Sorry about that. Normally I'm the only one who has to keep them apart."),"happy")
+				speak("player",_("Allright. Now that this is done, I will be on my way."), "unhappy")
+				speak("scout",_("I will rest a little more and then be on my way too, but in the other direction."),"happy")
+				changeTopic("scout_finish")
+			</Effect>
+		</Topic>
+		
+		<Topic name="scout_finish">
+			<Effect>
+				scout.finished=true
+				addPlayersExperience(2000,"scout_finished");
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="greyWolfcave">
+		<Event trigger="create_region">
+			<Condition>
+				return(scout.antidot ~= true)
+			</Condition>
+			<Effect>
+				scout_tmp.spider = createObject("psychoticSpider","spiders:locSpider1")
+			</Effect>
+		</Event>
+		<Event trigger="create_region">
+			<Effect>
+				for i = 2,8,1 do
+					createMonsterGroup("spiders_cave","spiders:locSpider"..i,4);
+				end
+			</Effect>
+		</Event>
+		<Event trigger = "unit_die">
+			<Condition>
+				return (trigger.unit == scout_tmp.spider)
+			</Condition>
+			<Effect>
+				scout.antidot = true
+				printQuestMessage("After killing the spider you safely pick up a backpack in good shape.");
+			</Effect>
+		</Event>
+	</Region>
+</Quest>
+

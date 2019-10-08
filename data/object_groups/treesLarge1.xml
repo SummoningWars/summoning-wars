@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="treesLarge1" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="8"
+    extent_y="8"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$tree" 
+            center_x="-4.147189733" 
+            center_y="-3.97235158" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$tree" 
+            center_x="-2.647798292" 
+            center_y="4.375681899" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-4.19407718" 
+            center_y="0.5319625558" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="6.587324542" 
+            center_y="2.923454491" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="5.164509677" 
+            center_y="-1.789052679" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-0.598787336" 
+            center_y="-3.720687365" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="2.280463761" 
+            center_y="1.965814218" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="1.819512926" 
+            center_y="6.527865792" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+-
+<!-- Versuch eine Quest und Cutsceen Beschreibung aufzustellen-->
+
+<Questbook version="1.0">
+
+  <Quest id="Wolfes"> <!-- Id muss eindeutig sein-->
+    <type>Sidequest|Mainquest|Classquest</type>
+
+    <triggerCond>
+      <enterArea></enterArea>
+
+      <enterField> <!-- Das Beispiel geht jetzt mal von einem EnterField aus. -->
+        <position>
+          <posX></posX>
+          <posY></posY>
+          <rotation></rotation>
+        </position>
+        <x></x>
+        <y></y>
+      </enterField>
+
+      <time></time>
+      <preQuest></preQuest> <!-- Folgequest erfüllt. Brauchen wir eigentlich nicht. Eventuell nur als Unterscheidung von noch nicht verfügbaren Hauptquests und Sidequests. -->
+      <speakTo person="konkret oder typ" />
+    </triggerCond>
+
+    <preperation> <!-- Was muss alles da sein, damit der Quest losgehen kann? Punkte, Chars und Gegner. Templateaufbau-->
+    </preperation>
+
+    <questBody>
+      <sceen id="$begin"> <!-- Interne Variable $begin steht für die Eingangssequenz-->
+        <seq>
+          <bgMusic src="dramatic2.mp3"/> <!--Hier wird eine hintergrundmusik eingelsen und abgespielt-->
+          <par>
+            <camera mode="fixed">
+              <position></position>
+            </camera>
+            <move person="farmer1" mode="run">
+              <destination>
+                <x></x>
+                <y></y>
+                <rotation></rotation>
+              </destination>
+            </move>
+            <speak person="farmer1">So helft doch! W�lfe!</speak>
+          </par>
+
+          <par>
+          	<sound src="wolfhowl.wav"/> <!-- Hier wird ein Soundeffekt abgespielt-->
+            <move person="farmer2" mode="run"></move>
+            <move person="farmer3" mode="run"></move>
+            <move person="farmer4" mode="run"></move>
+            <seq>
+              <speak person="farmer2" to="farmer1">Wie viele sind es? So rede doch!</speak>
+              <speak person="farmer1" to="farmer2">Ein großes Rudel, mindestens 20!</speak>
+              <speak person="farmer3">Ohne die Rinder sind wir verloren!</speak>
+            </seq>
+
+            <move person="guard1" mode="run"></move>
+			
+			
+            <groupVoting dur="2s" mode="yesNo" default="no">
+              <Question>Gegen die W�lfe helfen?</Question>
+              <yes><goTo id="wolfes_help" /></yes>
+              <no><goTo id="wolfes_chaos_and_terror"/></no>
+            </groupVoting>
+          </par>
+        </seq>
+      </sceen>
+
+      <sceen id="wolfes_help">
+        <if cond="$group.size > 1"><!-- if schleife f�r Verzweigung-->
+            <seq>
+              <camera mode="follow" target="$group"></camera> <!--Camera folgt der Gruppe -->
+              <speak person="$group.leader" action="fistInTheSky" to="$group">Los! Lasst uns helfen!</speak>
+              <par>
+              	<sound src="wolfhowl.wav"/> <!-- Hier wird ein Soundeffekt abgespielt-->
+                <move person="$group" mode="run"></move>
+                <speak person="$group.thief">Hoffentlich sind sie danach auch ordentlich dankbar...</speak>
+              </par>
+              <move person="$group.warrior" mode="run"><!--Vor den Zaun--></move>
+              <speak person="$group.warrior" action="attack2">Tjack!</speak>
+              <objectAction object="fencegate1" action="shatter"/>
+              <speak person="$group.mage" action="stop" to="farmer3">Bleibt zurück ihr Leute! Das erledigen wir!</speak>
+              <par>
+                <move person="$group" mode="run"></move>
+                <speak person="farmer1" action="relive">Es sind mindestens <calc>2 + ($group.)</calc> $redWolfe.name$plural dabei. Die müsst ihr so schnell wie möglich erledigen!</speak> <!-- Name wird aus der Monsters.xml oder woher auch immer dynamisch eingelesen. <calc> gibt an, das es sich um einen aritmetisch zu berechnenden Ausdruck handelt. -->
+              </par>
+              <questStart/> <!-- hier wird die Mission aufgerufen-->
+            </seq>
+        <else/>
+        	<seq>
+        	  <move person="$group" mode="run"></move><!--Vor den Zaun-->
+        	  <speak person="$group.leader" action="stop" to="farmer3">Bleibt zurück ihr Leute! Das erledige besser ich!</speak>
+        	  <speak person="$group.leader" action="attack2">Tjack!</speak>
+              <objectAction object="fencegate1" action="shatter"/>
+              <par>
+              	<move person="$group" mode="run"></move>
+              	<speak person="farmer1" action="relive">Es sind mindestens zwei $redWolfe.name$plural dabei. Die müsst du so schnell wie möglich erledigen!</speak>
+              </par>
+              
+        	</seq>
+        </if>
+      </sceen>
+
+      <sceen id="wolfes_chaos_and_terror">
+        <!-- Beschreibung, wie die Wölfe die Rinder anfallen und töten. Dann ohne Quest raus.-->
+      </sceen>
+
+      <mission>
+        <setUp>
+
+          <questEntry>
+            <heading>Wolfsangriff!</heading>
+            <entry>Ein paar Bauern brauchen Hilfe gegen ein paar Wölfe. Tötet mindestens 2 $redWolfe.name$plural und 20 $wolfes.name$plural, bevor die Bestien die Herde der Landleute gerissen haben.</entry>
+          </questEntry>
+
+          <spawnPoint>
+            <position></position>
+            <intervall>1.3</intervall>
+            <countPerIntervall min="1" max="4"/>
+            <spawns>
+              <monster type="redWolfe" probability="0.1"/>
+              <monster type="greyWolfe" probability="0.6"/>
+              <monster type="smallWolfe" probability="0.3"/>
+            </spawns>
+            <headingTo><position></position></headingTo>
+          </spawnPoint>
+          <spawnPoint>
+            <position></position>
+            <intervall>6</intervall>
+            <countPerIntervall min="0" max="1"/>
+            <spawns>
+              <monster type="redWolfe" probability="1"/>
+            </spawns>
+            <headingTo><position></position></headingTo>
+          </spawnPoint>
+        </setUp>
+
+        <victory>
+          <cond>  <!-- Siegbedingung -->
+            <monsterKill count="20" type="$wolfes"/>
+            <monsterKill count="2" type="redWolfe"/>
+          </cond>
+          <rewardXP count="360"/>
+          <goTo id="wolfes$vicory"/>
+        </victory>
+
+        <defeat>
+          <cond><!-- Niederlage Bedingung-->
+            <friendkill count="5" type="$cows"/>
+          </cond>
+          <goTo id="wolfes_defeat"/>
+        </defeat>
+      </mission>
+
+      <sceen id="wolfes_victory">
+        <seq>
+          <par>
+            <reaction person="farmer2" action="joy"/>
+            <reaction person="farmer3" action="joy"/>
+            <reaction person="farmer4" action="joy"/>
+            <speak person="farmer1" action="joy" to="$group.leader">Danke! Ihr habt unsere Kühe und das Dorf gerettet.</speak>
+          </par>
+          <speak person="farmer2" action="give" to="$group.leader">Nehmt dies zum Dank</speak>
+          <getItem person="$group" type="money" count="150"/>
+          <getItem person="$group" type="potion" count="2"/>
+        </seq>
+      </sceen>
+
+      <sceen id="wolfes_defeat">
+      	<if cond="$group.size > 1">
+            <seq>
+              <speak person="farmer1" action="regret">Oh Weh, das wird ein harter Winter. Trotzdem danke für eure Mühe.</speak>
+              <par>
+                <move person="farmer1" mode="walk"></move>
+                <groupVoting dur="2s" mode="yesNo" default="no">
+                    <Question>Den Bauern Geld geben?</Question>
+                    <yes>
+                      <speak person="$group.leader" action="wave" to="farmer1">Wartet! Nehmt diese paar Münzen von uns. Ihr könnt sie besser gebrauchen.</speak>
+                      <looseItem person="$group" type="money" count="200"/>
+                      <raction person="farmer1" action="$stop"/>
+                      <break dur="0.5s" person="farmer1"/> <!-- Denkpause des Farmers-->
+                      <speak person="farmer1" action="thx" to="$group.leader">Ich danke euch. Das rettet uns.</speak>
+                      <speak person="$group.mage" action="abwinken" to="farmer1">Wir geben es gerne.</speak>
+                      <speak person="farmer1" action="give" to="$group.mage">Geben k�nnen wir euch nichts als Dank, aber im <tag zur Abfrage eines landschaftstypes></> gibt es eine versteckte Ruine. eventuell: Ich habe einmal diesen Schl�ssel gefundne, habe mich aber nie getraut ihn zu verwenden.</speak>
+                      <speak person="$group.thief" action="h�ndereiben" to="$group">Eine versteckte Ruine? Das klingt nach Sch�tzen!</speak>
+                      <speak person="$group.archer" action="abwinken">Sch�tze sind doof.</speak>
+                      <speak person="farmer1" action="take">Lasst es mich kurz auf eurer Karte markieren.</speak>                  
+                      <questActivate template="vorgottenRuines_small"/> <!-- Man beachte, hier wird ein Folgequest frei geschaltet. Es ist zu �berlegen, wie wir das realisieren: ist die Landschaft schon vorhanden vorhanden -> Interpreter muss die struktur durchlaufen und den Quest dann aber auch auf jeden Fall anders zug�nglich machen. wird erst dann generiert -> Landschaft sollte vielleicht in einen noch nicht erkundetetn Teil untergebracht werden, bzw in einer neu generierten Karte platziert werden, die einen eigenen Eingang bekommt.-->
+                    </yes>
+                    <no>
+                      <speak person="$group.leader" action="schulterzucken" to="$group">Wir haben unser Bestes gegeben.</speak>
+                      <speak person="$group.thief" action="händereiben" to="$group">Naja, die Viecher hatten zum Glück auch einiges dabei.</speak>
+                    </no>
+                  </groupVoting>
+              </par>
+            </seq>
+        <else/>
+        	<!-- bla bla Hier darf Steffen dann die Single Variante unterbringen...-->
+        </if>
+      </sceen>
+
+    </questBody>
+  </Quest>
+
+</Questbook>

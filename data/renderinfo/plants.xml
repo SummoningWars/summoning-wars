@@ -1,0 +1,10 @@
+﻿<RenderInfo name="berryBush">
+	<Entity source = "bush.mesh"  highlightable="false"/>
+	<Entity objectname = "berrys" source = "bushBerrys.mesh" />
+	
+	<State name="picked">
+		<Activation time="500">
+			<Detach objectname="berrys"/>
+		</Activation>
+	</State>
+</RenderInfo>

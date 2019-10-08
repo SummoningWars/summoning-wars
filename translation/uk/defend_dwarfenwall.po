@@ -1,0 +1,1095 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-09-08 22:09+0200\n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: Ukrainian\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#: siegeOfDwarfenwall.xml
+msgid "Defend Dwarfenwall"
+msgstr "Захистіть Дорфенваль"
+
+#: siegeOfDwarfenwall.xml
+msgid "Quest finished"
+msgstr "Квест завершено"
+
+#: siegeOfDwarfenwall.xml
+msgid "Quest description"
+msgstr "Опис квесту"
+
+#: siegeOfDwarfenwall.xml
+msgid "dwarfenwall"
+msgstr "укріплення гномів"
+
+#: siegeOfDwarfenwall.xml
+msgid "dwarfenwallCommand"
+msgstr "командний центр"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"... wind-elementals did see it clearly: It's only this one lich leading them."
+msgstr "... елементалі вітру ясно це бачили: Лише цей ліч їх веде."
+
+#: siegeOfDwarfenwall.xml
+msgid "When he's gone the others are no problem."
+msgstr "Коли він помре, інші не проблема."
+
+#: siegeOfDwarfenwall.xml
+msgid "Just great."
+msgstr "Просто чудово."
+
+#: siegeOfDwarfenwall.xml
+msgid "And with what army are you planning to do this break-through?"
+msgstr "І якою армією ви плануєте здійснити цей прорив?"
+
+#: siegeOfDwarfenwall.xml
+msgid "We have to stop the rush, that is assembling out there."
+msgstr "Ми повинні зупинити натиск, який отам збираться."
+
+#: siegeOfDwarfenwall.xml
+msgid "Don't worry."
+msgstr "Не хвилюйтеся."
+
+#: siegeOfDwarfenwall.xml
+msgid "My colleague assured me that the council is sending backup."
+msgstr "Мій колега запевнив мене, що Рада надсилає підкріплення."
+
+#: siegeOfDwarfenwall.xml
+msgid "It should be here shortly."
+msgstr "Воно повинно бути тут найближчим часом."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"First they send away the mage of Northborough and than they send in backup "
+"again?"
+msgstr ""
+"Спочатку вони проганяють мага з Нортборо а потім знову посилають підкріплення?"
+
+#: siegeOfDwarfenwall.xml
+msgid "What kind of game is this?"
+msgstr "Що це за ігри?"
+
+#: siegeOfDwarfenwall.xml
+msgid "The mage is much needed elsewhere."
+msgstr "Маг вкрай потрібен в іншому місці."
+
+#: siegeOfDwarfenwall.xml
+msgid "Of course."
+msgstr "Звичайно."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"I don't like saying this, but until an army makes it's way here, our bodies "
+"are long fighting for the other side, venerated lady."
+msgstr ""
+"Я не хочу цього казати, але поки сюди прибуде армія, наші тіла вже будуть "
+"воювати на тій стороні, шанована леді."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Excuse me for interrupting like that, but small groups travel considerably "
+"faster then armies."
+msgstr ""
+"Вибачте, що перебиваю, але невеликі туристичні групи значно швидші, ніж "
+"армія."
+
+#: siegeOfDwarfenwall.xml
+msgid "And who are you? ##solo"
+msgstr "А ти хто? ##solo"
+
+#: siegeOfDwarfenwall.xml
+msgid "And who are you?"
+msgstr "А ви хто?"
+
+#: siegeOfDwarfenwall.xml
+msgid "The backup."
+msgstr "Підкріплення."
+
+#: siegeOfDwarfenwall.xml
+msgid "Good joke."
+msgstr "Гарний жарт."
+
+#: siegeOfDwarfenwall.xml
+msgid "But we have a war here."
+msgstr "Але у нас тут війна."
+
+#: siegeOfDwarfenwall.xml
+msgid "Get lost, you fool."
+msgstr "Вали звідси, телепень."
+
+#: siegeOfDwarfenwall.xml
+msgid "Get lost, you fools."
+msgstr "Валіть звідси, телепні."
+
+#: siegeOfDwarfenwall.xml
+msgid "This mercenary is telling the truth."
+msgstr "Цей найманець каже правду."
+
+#: siegeOfDwarfenwall.xml
+msgid "What?"
+msgstr "Що?"
+
+#: siegeOfDwarfenwall.xml
+msgid "This is your great backup?"
+msgstr "Це твоє велике підкріплення?"
+
+#: siegeOfDwarfenwall.xml
+msgid "A handful of mercenaries?"
+msgstr "Жменька найманців?"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"You will realize the worth of our assistance, when they fall for you again "
+"and again."
+msgstr ""
+"Ви зрозумієте ціну нашої допомоги, коли вони будуть за вас падати на полі "
+"бою."
+
+#: siegeOfDwarfenwall.xml
+msgid "What do you say?"
+msgstr "Що ви кажете?"
+
+#: siegeOfDwarfenwall.xml
+msgid "... is this a Cursed One?"
+msgstr "... це Проклятий?"
+
+#: siegeOfDwarfenwall.xml
+msgid "... are they Cursed Ones?"
+msgstr "... це Прокляті?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Personally I like the term Branded One somehow better."
+msgstr "Особисто мені більше подобається термін Відмічений."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"If the price is right I let myself be torn apart as often as need be to "
+"protect the town."
+msgstr ""
+"Якщо ціна вірна, я дозволю розірвати себе стільки разів, скільки треба для "
+"захисту міста."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"If the price is right we let ourselves be torn apart as often as need be to "
+"protect the town."
+msgstr ""
+"Якщо ціна вірна, ми дозволимо розірвати себе стільки разів, скільки треба "
+"для захисту міста."
+
+#: siegeOfDwarfenwall.xml
+msgid "You make a deal with the devil to drive out the devil?"
+msgstr "Ви уклали угоду з дияволом, щоб прогнати диявола?"
+
+#: siegeOfDwarfenwall.xml
+msgid "You cannot be prim in times like these."
+msgstr "Не корчте з себе розумника в такі часи."
+
+#: siegeOfDwarfenwall.xml
+msgid "Do you want to live or be backup for the undead?"
+msgstr "Ви хочете жити чи стати матеріалом для нежиті?"
+
+#: siegeOfDwarfenwall.xml
+msgid "You cannot trust these monsters!"
+msgstr "Не можна вірити цим монстрам!"
+
+#: siegeOfDwarfenwall.xml
+msgid "As long as I lead this army I will not tolerate such people."
+msgstr "Поки я керую цією армією, я не потерплю таких людей."
+
+#: siegeOfDwarfenwall.xml
+msgid "I just prevented the undead from passing by your city!"
+msgstr "Я просто перешкодив нежиті пройти повз ваше місто!"
+
+#: siegeOfDwarfenwall.xml
+msgid "We just prevented the undead from passing by your city!"
+msgstr "Ми просто перешкодили нежиті пройти повз ваше місто!"
+
+#: siegeOfDwarfenwall.xml
+msgid "That proves nothing!"
+msgstr "Це нічого не доводить!"
+
+#: siegeOfDwarfenwall.xml
+msgid "All warriors are connected by narrow-mindedness."
+msgstr "Усі воїни зв'язані обмеженнями."
+
+#: siegeOfDwarfenwall.xml
+msgid "I don't kill indiscriminately!"
+msgstr "Я не вбиваю без розбору!"
+
+#: siegeOfDwarfenwall.xml
+msgid "We don't kill indiscriminately!"
+msgstr "Ми не вбиваєм без розбору!"
+
+#: siegeOfDwarfenwall.xml
+msgid "She is under orders of the council, it is not your decision."
+msgstr "Вона тут за наказом Ради, не вам вирішувати."
+
+#: siegeOfDwarfenwall.xml
+msgid "He is under orders of the council, it is not your decision."
+msgstr "Він тут за наказом Ради, не вам вирішувати."
+
+#: siegeOfDwarfenwall.xml
+msgid "They are under orders of the council, it is not your decision."
+msgstr "Вони тут за наказом Ради, не вам вирішувати."
+
+#: siegeOfDwarfenwall.xml
+msgid "They are coming! The attack begins!"
+msgstr "Вони йдуть! Напад починається!"
+
+#: siegeOfDwarfenwall.xml
+msgid "..."
+msgstr "..."
+
+#: siegeOfDwarfenwall.xml
+msgid "Get to the walls!"
+msgstr "Йти до стін!"
+
+#: siegeOfDwarfenwall.xml
+msgid "How fast he changes his mind."
+msgstr "Як швидко він змінює свою думку."
+
+#: siegeOfDwarfenwall.xml
+msgid "I'm already on my way."
+msgstr "Я вже в дорозі."
+
+#: siegeOfDwarfenwall.xml
+msgid "Get going!"
+msgstr "Вперед!"
+
+#: siegeOfDwarfenwall.xml
+msgid "I just hope you have enough money to keep them at it."
+msgstr "Я лише сподіваюся, що у вас достатньо грошей, щоб їх утримати."
+
+#: siegeOfDwarfenwall.xml
+msgid "Don't trouble yourself."
+msgstr "Не турбуйтеся."
+
+#: siegeOfDwarfenwall.xml
+msgid "It will not fail due to this."
+msgstr "Воно не провалиться через це."
+
+#: siegeOfDwarfenwall.xml
+msgid "I pray that you're right..."
+msgstr "Надіюсь ви праві..."
+
+#: siegeOfDwarfenwall.xml
+msgid "I'm sorry, but only members of the aisen army are allowed beyond here."
+msgstr "Мені дуже шкода, але лише членам армії Айзена можна тут бути."
+
+#: siegeOfDwarfenwall.xml
+msgid "I don't want to go there. I only see boring walls."
+msgstr "Я не хочу туди йти. Я бачу лише нудні стіни."
+
+#: siegeOfDwarfenwall.xml
+msgid "dwarfenwallRampart"
+msgstr "стіна замку"
+
+#: siegeOfDwarfenwall.xml
+msgid "Here they come."
+msgstr "А ось і вони."
+
+#: siegeOfDwarfenwall.xml
+msgid "Get ready, soldiers!"
+msgstr "Будьте напоготові, солдати!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Your time has come, pathetic humans!"
+msgstr "Ваш час прийшов, жалюгідні люди!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Dwarfenwall will finally be yours, my lord."
+msgstr "Дорфенваль нарешті буде ваш, мій пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "With the help from the capital it will succeed at last."
+msgstr "Завдяки допомозі зі столиці нарешті нам вдасться."
+
+#: siegeOfDwarfenwall.xml
+msgid "Let us begin with the last rush on this wretched stronghold."
+msgstr "Давайте почнемо останній штурм цієї жалюгідною фортеці."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"I reckon there is so many undead back there that your oh-so mighty backup "
+"will not be able to avert our death."
+msgstr ""
+"Я думаю там так багато нежиті, що вашє ох як могутнє підкріплення не зможе "
+"запобігти нашій смерті."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"This... backup is not the only thing the council can and will do for "
+"Dwarfenwall."
+msgstr ""
+"Це ... підкріплення не єдина річ, яку зробила і зробить Рада для Дорфенваля."
+
+#: siegeOfDwarfenwall.xml
+msgid "I bound an earth-elemental weeks ago."
+msgstr "Я спіймала земляного елементаля кілька тижнів тому."
+
+#: siegeOfDwarfenwall.xml
+msgid "He is waiting for my orders right now."
+msgstr "Він чекає на мої накази просто зараз."
+
+#: siegeOfDwarfenwall.xml
+msgid "Of course I couldn't know, where the undead would attack."
+msgstr "Звичайно я не могла знати, звідки нападе нежить."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"I'm afraid, there will be quite some cleaning up to do by the survivors."
+msgstr "Я боюся, що вижившим доведется багато прибирати."
+
+#: siegeOfDwarfenwall.xml
+msgid "Stop scoffing and do whatever it is you're planing."
+msgstr "Досить глузувати, роби те, що запланувала."
+
+#: siegeOfDwarfenwall.xml
+msgid "Acursed elementalists!"
+msgstr "Прокляті елементалісти!"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"It will be a great pleasure to reanimate the body of that witch only to burn "
+"her!"
+msgstr ""
+"Буде дуже приємно реанімувати тіло тієї відьми для того, щоб її спалити!"
+
+#: siegeOfDwarfenwall.xml
+msgid "It will be done, my lord."
+msgstr "Це буде зроблено, пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "But how will we attack the city now? She blocked the path for our army."
+msgstr ""
+"Але як ми тепер будем атакувати місто? Вона заблокувала шлях для нашої армії."
+
+#: siegeOfDwarfenwall.xml
+msgid "Silence!"
+msgstr "Мовчати!"
+
+#: siegeOfDwarfenwall.xml
+msgid "The catapults?"
+msgstr "Катапульти?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Ready, my lord."
+msgstr "Готовий, мій пан."
+
+#: siegeOfDwarfenwall.xml
+msgid "Our necromancers?"
+msgstr "Наші некроманти?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Await your order."
+msgstr "Чекаю вашого наказу."
+
+#: siegeOfDwarfenwall.xml
+msgid "I'm not fighting with Dwarfenwall for centuries for nothing."
+msgstr "Я не воюю з Дорфенвалем століттями просто так."
+
+#: siegeOfDwarfenwall.xml
+msgid "Send the skeletons through the underdrives."
+msgstr "Пошліть скелетів на прогулянку."
+
+#: siegeOfDwarfenwall.xml
+msgid "Something is going on over there."
+msgstr "Там щось відбувається."
+
+#: siegeOfDwarfenwall.xml
+msgid "They are coming!"
+msgstr "Вони наступають!"
+
+#: siegeOfDwarfenwall.xml
+msgid "It won't hurt if I call some more helpers, too."
+msgstr "Не завадило б ще кілька помічників."
+
+#: siegeOfDwarfenwall.xml
+msgid "To the front with you, butcher. ##solo"
+msgstr "На фронт з тобою, м'ясник. ##solo"
+
+#: siegeOfDwarfenwall.xml
+msgid "To the front with you, butcher."
+msgstr "На фронт з вами, м'ясник."
+
+#: siegeOfDwarfenwall.xml
+msgid "Say 'please'."
+msgstr "Скажи 'будь ласка'."
+
+#: siegeOfDwarfenwall.xml
+msgid "Just do it!"
+msgstr "Просто зроби це!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Watch out!"
+msgstr "Обережно!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Catapults!"
+msgstr "Катапульти!"
+
+#: siegeOfDwarfenwall.xml
+msgid "They are struggling on."
+msgstr "Вони борються далі."
+
+#: siegeOfDwarfenwall.xml
+msgid "Don't worry, my lord, we will have overrun them soon."
+msgstr "Не турбуйтеся, мій пане, ми скоро їх переплюнемо."
+
+#: siegeOfDwarfenwall.xml
+msgid "There's no hurry."
+msgstr "Не треба поспішати."
+
+#: siegeOfDwarfenwall.xml
+msgid "We have time, that is our advantage."
+msgstr "У нас є час, це наша перевага."
+
+#: siegeOfDwarfenwall.xml
+msgid "Show them that we can play with fire, too."
+msgstr "Покажіть їм, що ми теж вміємо грати з вогнем."
+
+#: siegeOfDwarfenwall.xml
+msgid "Those mages are beginning to get on my nerves."
+msgstr "Ті маги починають мене нервувати."
+
+#: siegeOfDwarfenwall.xml
+msgid "Prepare everything."
+msgstr "Підготуйте все."
+
+#: siegeOfDwarfenwall.xml
+msgid "I understand, my lord."
+msgstr "Зрозуміло, пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "Their defense still holds, my lord."
+msgstr "Їх захист ще тримається, мій пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "No one said it had to be easy."
+msgstr "Ніхто не казав, що це буде просто."
+
+#: siegeOfDwarfenwall.xml
+msgid "Did you now there was a wild man here two-hundred years ago?"
+msgstr "Ти знав що тут був дикий чоловік двісті років тому?"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"The humans called him the giant killer and didn't want to have anything to "
+"do with him."
+msgstr ""
+"Люди прозвали його гігантським вбивцею і не хотіли з ним мати жодних справ."
+
+#: siegeOfDwarfenwall.xml
+msgid "I don't see how that has anything to do with the siege, my lord."
+msgstr "Я не розумію, яке це має відношення до облоги, мій пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "Watch and learn."
+msgstr "Дивіться і вчіться."
+
+#: siegeOfDwarfenwall.xml
+msgid "You called, my lord?"
+msgstr "Кликали, мій пане?"
+
+#: siegeOfDwarfenwall.xml
+msgid "I want you to use the brothers."
+msgstr "Я хочу щоб ви використали братів."
+
+#: siegeOfDwarfenwall.xml
+msgid "But they are still not stable!"
+msgstr "Але вони все ще нестабільні!"
+
+#: siegeOfDwarfenwall.xml
+msgid "In the worst case they will do no damage at all."
+msgstr "У гіршому випадку вони не принесуть ніякої шкоди."
+
+#: siegeOfDwarfenwall.xml
+msgid "That doesn't matter."
+msgstr "Це не має значення."
+
+#: siegeOfDwarfenwall.xml
+msgid "He should be here any moment. We are playing for time right now."
+msgstr "Він повинен бути тут з миті на мить. Ми тягнемо час."
+
+#: siegeOfDwarfenwall.xml
+msgid "As you wish, my lord."
+msgstr "Як хочете, пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "My lord."
+msgstr "Мій пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "What is it?"
+msgstr "Що таке?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Neivan the Frostbringer is now here."
+msgstr "Найван що несе мороз вже тут."
+
+#: siegeOfDwarfenwall.xml
+msgid "Finally."
+msgstr "Нарешті."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"The road from the Grey Skyladder into this desolate and sear plain was long, "
+"you know."
+msgstr ""
+"Шлях від Сірого Небесного Трапу до цієї занедбаної і сухої рівнини був "
+"довгим."
+
+#: siegeOfDwarfenwall.xml
+msgid "And your mountain tops are more lively?"
+msgstr "А ваші гірські вершини більш живі?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Are we here to count the bugs on our estates?"
+msgstr "Ми тут для того, щоб рахувати тараканів в наших домівках?"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"You are right. Could you move those really unnerving people over there out "
+"of the way?"
+msgstr "Ви маєте рацію. Не могли б прибрати з дороги тих дратівливих людей?"
+
+#: siegeOfDwarfenwall.xml
+msgid "That's what I'm here for."
+msgstr "Я тут якраз для цього."
+
+#: siegeOfDwarfenwall.xml
+msgid "And don't forget that you owe me land after this."
+msgstr "І не забувайте, що після цього ви мені винні землю."
+
+#: siegeOfDwarfenwall.xml
+msgid "Do you think I'm going to miss two villages after I got Dwarfenwall?"
+msgstr "Ви думаєте я пожалію два села після повернення Дорфенваля?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Me and my frostmages will arrange for that."
+msgstr "Я і мої морозні маги все влаштують."
+
+#: siegeOfDwarfenwall.xml
+msgid "The Frostbringer is dead, my lord."
+msgstr "Той що несе мороз мертвий, мій пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "I felt it, too."
+msgstr "Я також це відчув."
+
+#: siegeOfDwarfenwall.xml
+msgid "We finally learned something about the backup the council sent here."
+msgstr "Ми нарешті дещо дізнались про підкріплення, яке прислала Рада."
+
+#: siegeOfDwarfenwall.xml
+msgid "Now, of all times?"
+msgstr "Нарешті?"
+
+#: siegeOfDwarfenwall.xml
+msgid "And what of it? I thought, there was none."
+msgstr "І що ж? Я думав його небуло."
+
+#: siegeOfDwarfenwall.xml
+msgid "There was, my lord. But it seems they are Branded Ones."
+msgstr "Було, мій пане. Але схоже це Відмічені."
+
+#: siegeOfDwarfenwall.xml
+msgid "Branded Ones!"
+msgstr "Відмічені!"
+
+#: siegeOfDwarfenwall.xml
+msgid "That explaines a lot."
+msgstr "Це багато пояснює."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"But even they will not be able to hold the city once the wretched humans are "
+"gone."
+msgstr ""
+"Але навіть вони не зможуть утримати місто після того, як помруть жалюгідні "
+"люди."
+
+#: siegeOfDwarfenwall.xml
+msgid "Overrun them. Send out your order."
+msgstr "Перевершіть їх. Віддайте ваш наказ."
+
+#: siegeOfDwarfenwall.xml
+msgid "As you command, my lord."
+msgstr "Як накажете, пане."
+
+#: siegeOfDwarfenwall.xml
+msgid "If need be, I, the Black Raven himself, will go to battle."
+msgstr "Якщо знадобиться, я, Чорний Ворон, також включусь в бій."
+
+#: siegeOfDwarfenwall.xml
+msgid "I count on you."
+msgstr "Я розраховую на вас."
+
+#: siegeOfDwarfenwall.xml
+msgid "Tear their defense into pieces."
+msgstr "Розірвіть їх захист на шматки."
+
+#: siegeOfDwarfenwall.xml
+msgid "Curse on them!"
+msgstr "Прокляття!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Cursed council-mages!"
+msgstr "Прокляті маги Ради!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Verdammte Branded Ones!"
+msgstr "Прокляті Відмічені!"
+
+#: siegeOfDwarfenwall.xml
+msgid "So what."
+msgstr "Ну і що."
+
+#: siegeOfDwarfenwall.xml
+msgid "I will triumph in the end."
+msgstr "Я переможу в кінці кінців."
+
+#: siegeOfDwarfenwall.xml
+msgid "Death always wins."
+msgstr "Смерть завжди перемагає."
+
+#: siegeOfDwarfenwall.xml
+msgid "It is over."
+msgstr "Все скінчилося."
+
+#: siegeOfDwarfenwall.xml
+msgid "And thanks to the councils backing the city is still standing."
+msgstr "І завдяки підкрірленню Ради місто все ще стоїть."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"I have to admit, I wouldn't have thought in my wildest dreams that someone "
+"could fight like that."
+msgstr ""
+"Визнаю, я не бачив в своїх найстрашніших снах, щоб хтось так бився, як ви."
+
+#: siegeOfDwarfenwall.xml
+msgid "It is good that he is on our side at the moment."
+msgstr "Це добре, що він на нашій стороні в даний момент."
+
+#: siegeOfDwarfenwall.xml
+msgid "It is good that she is on our side at the moment."
+msgstr "Це добре, що вона знаходиться на нашому боці на даний момент."
+
+#: siegeOfDwarfenwall.xml
+msgid "It is good that they are on our side at the moment."
+msgstr "Це добре, що вони знаходяться на нашому боці на даний момент."
+
+#: siegeOfDwarfenwall.xml
+msgid "If both sides have souls to offer, you take the one paying, of course."
+msgstr "Якщо обидві сторони мають душі, ти вибираєш ту, яка платить."
+
+#: siegeOfDwarfenwall.xml
+msgid "Thank you for reminding me, why I cannot stand your kind."
+msgstr "Спасибі, що нагадали, чому я не можу бути подібним на вас."
+
+#: siegeOfDwarfenwall.xml
+msgid "There is no big difference to normal mercenaries."
+msgstr "Немає великої різниці від звичайних найманців."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Maybe aside from the fact, that Branded Ones don't change sides in the "
+"middle."
+msgstr "Може крім того, що Відмічені не міняють сторону всередині бою."
+
+#: siegeOfDwarfenwall.xml
+msgid "Enough of that. Let's talk in the command center."
+msgstr "Годі про це. Давайте поговоримо в командному центрі."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"It wouldn't be wise to hit the soldiers over the head who their saviours "
+"were."
+msgstr "Було б нерозумно казати солдатам, хто насправді їх рятівники."
+
+#: siegeOfDwarfenwall.xml
+msgid "I've never seen anyone who could fight like this."
+msgstr "Я ніколи не бачив когось, хто б так бився"
+
+#: siegeOfDwarfenwall.xml
+msgid "Indeed."
+msgstr "Дійсно."
+
+#: siegeOfDwarfenwall.xml
+msgid "Without your 'friend' this would look different."
+msgstr "Без вашого 'друга' це б виглядало інакше."
+
+#: siegeOfDwarfenwall.xml
+msgid "Without your 'friends' this would look different."
+msgstr "Без ваших 'друзів', це буде виглядати дещо інакше."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"At least more effective than one could have expected from a band of "
+"mercenaries."
+msgstr ""
+"Принаймні більш ефективно, ніж можна було очікувати від групи найманців."
+
+#: siegeOfDwarfenwall.xml
+msgid "But we have quite some losses."
+msgstr "Але у нас є досить втрат."
+
+#: siegeOfDwarfenwall.xml
+msgid "I hope they will not plan a new raid soon."
+msgstr "Надіюсь, що вони не будуть планувати новий напад найближчим часом."
+
+#: siegeOfDwarfenwall.xml
+msgid "The lich took his time, but until now he also had no backup."
+msgstr "Ліч використав свій час, але до цих пір він не мав підкріплення."
+
+#: siegeOfDwarfenwall.xml
+msgid "What kind of backing?"
+msgstr "Яке підкріплення?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Two third of my men are dead!"
+msgstr "Дві третини моїх людей мертві!"
+
+#: siegeOfDwarfenwall.xml
+msgid "We will never survive a second attack."
+msgstr "Ми не переживемо ще один напад."
+
+#: siegeOfDwarfenwall.xml
+msgid "I want to get away from all the blood."
+msgstr "Я хочу вимитись від цієї крові."
+
+#: siegeOfDwarfenwall.xml
+msgid "hmpf"
+msgstr "пфф"
+
+#: siegeOfDwarfenwall.xml
+msgid "Well fought"
+msgstr "Гарний бій"
+
+#: siegeOfDwarfenwall.xml
+msgid "At least you are worth the trouble. ##solo"
+msgstr "Принаймні ти того вартий. ##solo"
+
+#: siegeOfDwarfenwall.xml
+msgid "As if I ever made one."
+msgstr "Ніби я коли-небудь так робив."
+
+#: siegeOfDwarfenwall.xml
+msgid "At least you are worth the trouble."
+msgstr "Принаймні ви того варті."
+
+#: siegeOfDwarfenwall.xml
+msgid "As if we ever made one."
+msgstr "Ніби ми коли-небудь так робили."
+
+#: siegeOfDwarfenwall.xml
+msgid "The city is safe for the moment."
+msgstr "Місто в безпеці на даний момент."
+
+#: siegeOfDwarfenwall.xml
+msgid "We cannot rest now."
+msgstr "Але не можна розслаблятись."
+
+#: siegeOfDwarfenwall.xml
+msgid "As if we hadn't enough problems with shortage of soldiers."
+msgstr "У нас достатньо проблем з нестачею солдатів."
+
+#: siegeOfDwarfenwall.xml
+msgid "The source of the attacks is the lich!"
+msgstr "Причиною атак є ліч!"
+
+#: siegeOfDwarfenwall.xml
+msgid "He has to be destroyed!"
+msgstr "Він повинен бути знищений!"
+
+#: siegeOfDwarfenwall.xml
+msgid "And who?!"
+msgstr "І хто?!"
+
+#: siegeOfDwarfenwall.xml
+msgid "I don't have enough men to lead a successful excursion."
+msgstr "У мене немає досить людей, щоб провести страту."
+
+#: siegeOfDwarfenwall.xml
+msgid "That would be suicide."
+msgstr "Це було б самогубством."
+
+#: siegeOfDwarfenwall.xml
+msgid "It has nothing to do with you."
+msgstr "Це не має до вас ніякого відношення."
+
+#: siegeOfDwarfenwall.xml
+msgid "This man is under my direct orders."
+msgstr "Цей чоловік підпорядковується безпосередньо мені."
+
+#: siegeOfDwarfenwall.xml
+msgid "This woman is under my direct order."
+msgstr "Ця жінка підпорядковується безпосередньо мені."
+
+#: siegeOfDwarfenwall.xml
+msgid "These people are under my direct order."
+msgstr "Ці люди підпорядковуються безпосередньо мені."
+
+#: siegeOfDwarfenwall.xml
+msgid "In her tense manner she reminds of a certain other council mage."
+msgstr "Своєю збудженістю вона нагадує мені декотру іншу магу Ради."
+
+#: siegeOfDwarfenwall.xml
+msgid "You are sending them into their sure death!"
+msgstr "Ти посилаєш їх на вірну смерть!"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Not that I would cry a tear over them, but we cannot waste a single soul "
+"right now!"
+msgstr ""
+"Не те щоб я плакав за ними, але ми не можемо зараз втрачати жодної душі!"
+
+#: siegeOfDwarfenwall.xml
+msgid "No false sympathy."
+msgstr "Ніякого фальшивого співчуття."
+
+#: siegeOfDwarfenwall.xml
+msgid "No matter how often I die, the lich will be destroyed in the end."
+msgstr ""
+"Незалежно від того, скільки разів я помру, але ліч в кінці кінців буде "
+"вбитий."
+
+#: siegeOfDwarfenwall.xml
+msgid "Apart from yourself you are not taking care of anyone!"
+msgstr "Ви думаєте лише про себе!"
+
+#: siegeOfDwarfenwall.xml
+msgid "It wouldn't be the first time..."
+msgstr "Це не вперше..."
+
+#: siegeOfDwarfenwall.xml
+msgid "Do you want to tell me how to use my people?"
+msgstr "Не хочете мені сказати, як використати моїх людей?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Nobody deserves such a treatment, not even them."
+msgstr "Ніхто не заслуговує такого ставлення, навіть вони."
+
+#: siegeOfDwarfenwall.xml
+msgid "Let that be my concern."
+msgstr "Нехай це буде моя турбота."
+
+#: siegeOfDwarfenwall.xml
+msgid "Let that be our concern."
+msgstr "Нехай це буде наша турбота."
+
+#: siegeOfDwarfenwall.xml
+msgid "You realy are beyond help."
+msgstr "Ви справді не допоможете."
+
+#: siegeOfDwarfenwall.xml
+msgid "Finally he cought on to it."
+msgstr "Зрештою він підхопив це."
+
+#: siegeOfDwarfenwall.xml
+msgid "We don't have time for petty arguments! Go and slay the lich!"
+msgstr "У нас немає часу на дрібні аргументи! Іди й убий ліча!"
+
+#: siegeOfDwarfenwall.xml
+msgid "As you wish..."
+msgstr "Як хочете..."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"One of these arrows could have come from anywhere in the heat of battle..."
+msgstr "Одна з цих стріл могла прилетіти будь-звідки в розпалі битви..."
+
+#: siegeOfDwarfenwall.xml
+msgid "Don't even think about it."
+msgstr "Навіть не думайте про це."
+
+#: siegeOfDwarfenwall.xml
+msgid "necFieldcamp"
+msgstr "Табір нежиті"
+
+#: siegeOfDwarfenwall.xml
+msgid "Well well."
+msgstr "Ну добре."
+
+#: siegeOfDwarfenwall.xml
+msgid "Here comes the root of my little problem."
+msgstr "А ось корінь моєї маленької проблеми."
+
+#: siegeOfDwarfenwall.xml
+msgid "It's hard to believe someone was crazy enough to storm out here."
+msgstr ""
+"Важко повірити, що є хтось настільки божевільний, щоб здійснити тут штурм."
+
+#: siegeOfDwarfenwall.xml
+msgid "Prepare to pass off forever!"
+msgstr "Приготуйся віддати кінці!"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"I can't believe that a single Branded One would be sufficient to cause so "
+"much chaos."
+msgstr ""
+"Я не можу повірити, що досить одного Відміченого, щоб викликати стільки "
+"хаосу."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Of course, if some Branded Ones are in the vicinity everything is a bit "
+"different."
+msgstr ""
+"Звичайно, якщо якісь Відмічені знаходяться в безпосередній близькості, все "
+"трохи інакше."
+
+#: siegeOfDwarfenwall.xml
+msgid "Harvest!"
+msgstr "Жатва!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Not so fast."
+msgstr "Не так швидко."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Sure, you are immortal, or at least they say so, but you do feel pain, don't "
+"you? ##solo"
+msgstr ""
+"Звичайно, ти безсмертний, або, принаймні вони так кажуть, але ти відчуваєш "
+"біль, чи не так? ##solo"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Do you really want to be hacked into pieces by me over and over again? ##solo"
+msgstr "Ти дійсно хочеш бути розрубаним мною на шматки знову і знову? ##solo"
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Sure, you are immortal, or at least they say so, but you do feel pain, don't "
+"you?"
+msgstr ""
+"Звичайно, ви безсмертні, або, принаймні вони так кажуть, але ви відчуваєте "
+"біль, чи не так?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Do you really want to be hacked into pieces by me over and over again?"
+msgstr "Ви дійсно хочете бути розрубаними мною на шматки знову і знову?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Bah! Your skeletons are dust and the one lackey will not save you!"
+msgstr "Ба! Ваші скелети це пил і ні один лакей вас не врятує!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Now that you mention it..."
+msgstr "Тепер коли ви згадали про це..."
+
+#: siegeOfDwarfenwall.xml
+msgid "You really smashed most of them."
+msgstr "Ти дійсно порубав більшість з них."
+
+#: siegeOfDwarfenwall.xml
+msgid "Still, I can handle such a loss."
+msgstr "Тим не менше, я можу впоратися з такими втратами."
+
+#: siegeOfDwarfenwall.xml
+msgid "The people of Dwarfenwall will surely help me raise a new army."
+msgstr "Народ Дорфенваля, безсумнівно, допоможе мені підняти нову армію."
+
+#: siegeOfDwarfenwall.xml
+msgid "What is this crystal your rotting masters want, banddog?"
+msgstr "Що це за кристал, що потрібен вашим гнилим хазяїнам, собако?"
+
+#: siegeOfDwarfenwall.xml
+msgid "You cannot make me angry."
+msgstr "Ви не можете змусити мене злитися."
+
+#: siegeOfDwarfenwall.xml
+msgid "And about the crystal: Why don't you ask your employers?"
+msgstr "І щодо кристалу: Чому ви не запитаєте вашого роботодавця?"
+
+#: siegeOfDwarfenwall.xml
+msgid "I thought so."
+msgstr "Я так і думав."
+
+#: siegeOfDwarfenwall.xml
+msgid "The elementalists are not exactly talkative, am I right?"
+msgstr "Елементалісти точно не балакучі, вірно?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Your talking is as foul as the rest of your body."
+msgstr "Ваші слова такі ж смердючі як і решта вашого тіла."
+
+#: siegeOfDwarfenwall.xml
+msgid "Die!"
+msgstr "Помри!"
+
+#: siegeOfDwarfenwall.xml
+msgid "Did you know there is quite a lot of unbound souls in the air? ##solo"
+msgstr "Чи ти знаєш, що є досить багато неприв'язаних душ в повітрі? ##solo"
+
+#: siegeOfDwarfenwall.xml
+msgid "Did you know there is quite a lot of unbound souls in the air?"
+msgstr "Чи знаєте ви, що є досить багато неприв'язаних душ в повітрі?"
+
+#: siegeOfDwarfenwall.xml
+msgid "And now I will find a way to kill Branded Ones."
+msgstr "А тепер я знайду спосіб убити Відмічених."
+
+#: siegeOfDwarfenwall.xml
+msgid "No! It cannot be! You baleful..."
+msgstr "Ні! Не може бути! Ви зловісний..."
+
+#: siegeOfDwarfenwall.xml
+msgid "It's a wrap."
+msgstr "Це накидка."
+
+#: siegeOfDwarfenwall.xml
+msgid "What? Are you kidding?"
+msgstr "Що? Ти що, жартуєш?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Did you forget the defense of Dwarfenwall was only a warm-up?"
+msgstr "Хіба ти забув, що захист Дорфенваля це лише розминка?"
+
+#: siegeOfDwarfenwall.xml
+msgid "If you want the process to be faster, just help out a bit."
+msgstr "Якщо ви хочете пришвидшити процес, просто трохи допоможіть."
+
+#: siegeOfDwarfenwall.xml
+msgid ""
+"Or visit www.sumwars.org and take a look at the forum. Criticism, hints and "
+"comments are always welcome."
+msgstr ""
+"Або відвідайте www.sumwars.org і загляньте на форум. Критика, поради і "
+"коментарі завжди вітаються."
+
+#: siegeOfDwarfenwall.xml
+msgid "Do I get money for it?"
+msgstr "Чи можу я отримати за це гроші?"
+
+#: siegeOfDwarfenwall.xml
+msgid "Of course not. Did you pay anything for this?"
+msgstr "Звичайно ні. Ти щось за це заплатив?"
+
+#: siegeOfDwarfenwall.xml
+msgid "But the gods will remember you for all eternity."
+msgstr "Але боги запам'ятають тебе на віки вічні."
+
+#: siegeOfDwarfenwall.xml
+msgid "With this, the demo is officially over."
+msgstr "На цьому демо офіційно закінчується."

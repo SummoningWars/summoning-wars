@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="konz_column1" layer="NORMAL">
+        <Mesh file="konz_column1.mesh" />
+        <Geometry shape="CIRCLE" radius="0.6920759184"/>
+</Object>

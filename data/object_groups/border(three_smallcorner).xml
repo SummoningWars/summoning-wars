@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="border(three_smallcorner)" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$border_cIn" 
+            center_x="-3.5" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_cIn" 
+            center_x="3.5" 
+            center_y="-3.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_cIn" 
+            center_x="3.5" 
+            center_y="3.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$flower" 
+            center_x="-2.255287834" 
+            center_y="-2.301115849" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-2.12539067" 
+            center_y="0.08121733586" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="0.9617791591" 
+            center_y="-2.503872285" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="1.740441263" 
+            center_y="-1.153713192" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="2.827283908" 
+            center_y="0.8131524265" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="2.184609002" 
+            center_y="3.176011588" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-0.5672519957" 
+            center_y="-1.499533012" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="3.090422778" 
+            center_y="-0.8099740564" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-3.186999927" 
+            center_y="-3.194022457" 
+           height="1.776356839e-015" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="2.487347528" 
+            center_y="-0.293847227" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-1.674737871" 
+            center_y="2.931233076" 
+           height="8.881784197e-015" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="0.4325513512" 
+            center_y="-1.702506683" 
+           height="8.867906409e-015" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

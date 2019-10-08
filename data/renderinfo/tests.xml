@@ -1,0 +1,60 @@
+<RenderInfo name="example_warrior">
+	<!-- erste Entity wird automatisch mainmesh genannt, alle weiteren muessen Namen haben -->
+	<Entity source="archer_f.mesh"/>
+	<Subobject  objectname="sword" bone="itemRightHand" source="myclub"/> 
+	<Subobject objectname="gloves" source="gloves#f" />
+	<Soundobject objectname="actionsound" />
+	
+	<Action name="walk">
+		<Animation name="walkOneHand" />
+	</Action>
+	
+	<Action name="attack">
+		<!-- <Sound objectname="actionsound" name="sword_attack" start="0.5"/> -->
+		<Animation name="attack" />
+	</Action>
+	
+</RenderInfo>
+
+<RenderInfo name="example_1">
+	<Subobject objectname="obj1" source="example_warrior" position="6 0 0" />
+	<Subobject objectname="obj2" source="example_warrior" position="4 0 0" />
+	<Subobject objectname="obj3" source="example_warrior" position="2 0 0" />
+	<Subobject objectname="obj4" source="example_warrior" position="0 0 0" />
+	<Subobject objectname="obj5" source="example_warrior" position="-2 0 0" />
+	<Subobject objectname="obj6" source="example_warrior" position="-4 0 0" />
+	<Subobject objectname="obj7" source="example_warrior" position="-6 0 0" />
+</RenderInfo>
+
+<RenderInfo name="example_2">
+	<Subobject objectname="obj1" source="example_1" position="0 0 6" />
+	<Subobject objectname="obj2" source="example_1" position="0 0 4" />
+	<Subobject objectname="obj3" source="example_1" position="0 0 2" />
+	<Subobject objectname="obj4" source="example_1" position="0 0 0" />
+	<Subobject objectname="obj5" source="example_1" position="0 0 -2" />
+	<Subobject objectname="obj6" source="example_1" position="0 0 -4" />
+	<Subobject objectname="obj7" source="example_1" position="0 0 -6" />
+</RenderInfo>
+
+
+<RenderInfo name="mysword">
+	<Entity  source="short_sw.mesh"/> 
+	<Soundobject objectname="swordsound" />
+	
+	<Action name="attack">
+		<Sound objectname="swordsound" name="sword_attack" start="0.5"/>
+	</Action>
+</RenderInfo>		
+
+<RenderInfo name="myclub">
+	<Entity  source="hammer_hmr.mesh"/> 
+	<Soundobject objectname="swordsound" />
+	
+	<Action name="attack">
+		<Sound objectname="swordsound" name="club_attack" start="0.5"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="ParticleLine">
+	<ParticleSystem objectname="line" source="Firewave" position="0.0 1.0 0.0" rotation="0.0 0.0 0.0" />
+</RenderInfo>	

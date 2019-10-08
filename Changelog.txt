@@ -1,0 +1,38 @@
+Changes in version 0.5.5:
+
+* Installation:
+	- Provided installers for Linux and Windows
+
+* Gameplay:
+	- improved stability of network gameplay
+	- Changed number of inventory slots (5 big, 12 medium, 30 small, 5 belt slots)
+	- Belt provides separate item slots now
+
+* Story / Scripting:
+	- added new underground part to the tutorial with some more fighting
+	- provided questlog for the herbalist quest
+
+* User Interface:
+	- completely reskinned the GUI
+	- created new layouts for all ingame windows
+	- new main menu and character selection screen
+	- new feature: assign alternative right mouse skill (switch with tab)
+	- replaced most fonts
+
+* Graphics:
+	- added resetting graphics options (can be changed on next start of the game)
+	- fullscreen and windowed fullscreen are supported now
+	- dozens of new meshes for trees and bushes
+	- several new meshes for boxes and barrels
+	- new meshes for armors
+	- new terrain texture 
+	- new icon
+
+* Translation:
+	- updates translations: German, Russian, Italian, Ukrainian, Polish
+	- Changing language works properly under Windows now
+
+
+* Sound and Music:
+	- fixed issues with wrong sound format
+	- added several new sounds of items drops

@@ -1,0 +1,367 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2011
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-12 21:30+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: Ukrainian\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:184
+msgid "Render Info"
+msgstr "Візуалізація інформації"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:187
+msgid "Mesh"
+msgstr "Сітка"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:190
+msgid "Select main mesh:"
+msgstr "Вибір головної сітки:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:193
+msgid "Submeshes"
+msgstr "Підсітки"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:196
+msgid "Add Submesh"
+msgstr "Додати Підсітку"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:199
+msgid "New submesh:"
+msgstr "Нова підсітка:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:202
+msgid "submesh name:"
+msgstr "назва підсітки:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:205
+msgid "Edit submesh:"
+msgstr "Змінити підсітку:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:208
+msgid "Attach to:"
+msgstr "Прикріпити до:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:211
+msgid "at bone:"
+msgstr "на кістки:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:214
+msgid "Rotate(x,y,z):"
+msgstr "Обернути (x,y,z):"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:217
+msgid "Scale:"
+msgstr "Масштаб:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:220
+msgid "Offset (x,y,z):"
+msgstr "Зсув (x,y,z):"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:223
+msgid "Delete Submesh"
+msgstr "Видалити Підсітку"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:226
+msgid "Animations"
+msgstr "Анімація"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:229
+#: ../src/gui/contenteditor/contenteditor.cpp:289
+#: ../src/gui/contenteditor/contenteditor.cpp:475
+msgid "XML"
+msgstr "XML"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:232
+#: ../src/gui/contenteditor/contenteditor.cpp:292
+#: ../src/gui/contenteditor/contenteditor.cpp:478
+msgid "Submit XML"
+msgstr "Затвердити XML"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:235
+msgid "FixedObject"
+msgstr "Фіксований Об'єкт"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:238
+msgid "Properties"
+msgstr "Властивості"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:241
+msgid "Shape:"
+msgstr "Форма:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:244
+msgid "Circle"
+msgstr "Коло"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:247
+msgid "Radius:"
+msgstr "Радіус:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:250
+#: ../src/gui/contenteditor/contenteditor.cpp:262
+msgid "Autodetect"
+msgstr "Автовизнач."
+
+#: ../src/gui/contenteditor/contenteditor.cpp:253
+msgid "Rectangle"
+msgstr "Прямокутник"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:256
+msgid "Width:"
+msgstr "Ширина:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:259
+msgid "Depth:"
+msgstr "Глибина:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:265
+msgid "Collision type"
+msgstr "Тип зіткнення"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:268
+#: ../src/gui/contenteditor/contenteditor.cpp:307
+msgid "Copy data from:"
+msgstr "Копіювати дані з:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:271
+#: ../src/gui/contenteditor/contenteditor.cpp:310
+msgid "Copy"
+msgstr "Копіювати"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:274
+#: ../src/gui/contenteditor/contenteditor.cpp:277
+msgid "Create Object"
+msgstr "Створити Об'єкт"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:280
+msgid "Position:"
+msgstr "Розміщення:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:283
+msgid "Get Player Position"
+msgstr "Позиція гравця"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:286
+msgid "Angle:"
+msgstr "Кут:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:289
+msgid "Delete all objects"
+msgstr "Видалити всі об'єкти"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:298
+msgid "Item"
+msgstr "Предмет"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:301
+msgid "General"
+msgstr "Загальні"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:304
+#: ../src/gui/contenteditor/contenteditor.cpp:376
+msgid "Type:"
+msgstr "Тип:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:307
+msgid "Size:"
+msgstr "Розмір:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:316
+msgid "Name:"
+msgstr "Ім'я:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:319
+msgid "Value:"
+msgstr "Значення:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:322
+msgid "Enchant min:"
+msgstr "Чари мін:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:325
+msgid "max:"
+msgstr "макс:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:328
+msgid "Equip"
+msgstr "Обладнати"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:331
+#: ../src/gui/contenteditor/contenteditor.cpp:436
+msgid "Health:"
+msgstr "Здоров'я:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:334
+msgid "Attribute:"
+msgstr "Атрибут:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:337
+msgid "Strength:"
+msgstr "Сила:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:340
+msgid "Dexterity:"
+msgstr "Спритність:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:343
+msgid "Magic Power:"
+msgstr "Магічна Сила:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:346
+msgid "Willpower:"
+msgstr "Сила волі:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:349
+msgid "Resistances:"
+msgstr "Опори:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:352
+#: ../src/gui/contenteditor/contenteditor.cpp:388
+msgid "Physical:"
+msgstr "Фізичний:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:355
+#: ../src/gui/contenteditor/contenteditor.cpp:394
+msgid "Fire:"
+msgstr "Вогонь:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:358
+#: ../src/gui/contenteditor/contenteditor.cpp:403
+msgid "Ice:"
+msgstr "Лід:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:361
+#: ../src/gui/contenteditor/contenteditor.cpp:412
+msgid "Air:"
+msgstr "Повітря:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:364
+msgid "Other:"
+msgstr "Інші:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:367
+msgid "Armor:"
+msgstr "Збруя:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:370
+msgid "Block:"
+msgstr "Блок:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:373
+#: ../src/gui/contenteditor/contenteditor.cpp:421
+msgid "Precision:"
+msgstr "Точність:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:376
+#: ../src/gui/contenteditor/contenteditor.cpp:424
+msgid "Power:"
+msgstr "Сила:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:379
+msgid "Weapon"
+msgstr "Зброя"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:385
+msgid "Damage:"
+msgstr "Пошкодження:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:391
+#: ../src/gui/contenteditor/contenteditor.cpp:400
+#: ../src/gui/contenteditor/contenteditor.cpp:409
+#: ../src/gui/contenteditor/contenteditor.cpp:418
+msgid "-"
+msgstr "-"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:394
+#: ../src/gui/contenteditor/contenteditor.cpp:403
+#: ../src/gui/contenteditor/contenteditor.cpp:412
+#: ../src/gui/contenteditor/contenteditor.cpp:421
+msgid "x"
+msgstr "x"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:430
+msgid "Range:"
+msgstr "Дальність:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:433
+msgid "Speed:"
+msgstr "Швидкість:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:436
+msgid "Twohanded weapon"
+msgstr "Дворучна зброя:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:439
+msgid "Crit. Hits:"
+msgstr "Крит. Удари:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:442
+msgid "Consume"
+msgstr "Поглинути"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:448
+msgid "Status heal and immunity time:"
+msgstr "Відновлення стану і час імунітету:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:451
+msgid "Blind:"
+msgstr "Сліпий:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:454
+msgid "Poisoned:"
+msgstr "Отруєний:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:457
+msgid "Berserk:"
+msgstr "Скажений:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:460
+msgid "Confused:"
+msgstr "Збитий з толку:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:463
+msgid "Mute:"
+msgstr "Німий:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:466
+msgid "Paralyzed:"
+msgstr "Пралізований:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:469
+msgid "Frozen:"
+msgstr "Заморожений:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:472
+msgid "Burning:"
+msgstr "Палаючий:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:475
+msgid "Create Item"
+msgstr "Створити предмет"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:478
+msgid "Enchant:"
+msgstr "Зачарувати:"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:481
+msgid "Create in inventory"
+msgstr "Створити в інвентарі"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:484
+msgid "Create an drop"
+msgstr "Створити та кинути"
+
+#: ../src/gui/contenteditor/contenteditor.cpp:493
+msgid "Close"
+msgstr "Закрити"

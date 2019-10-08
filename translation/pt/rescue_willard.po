@@ -1,0 +1,342 @@
+# Portuguese translations for sumwars package
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-04-07 21:09+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: rescue_willard.xml
+msgid "A friend in need"
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"Willard is back in Medair and he even forked out some money. Who said it "
+"wouldn't pay to let people live? At least as long there are enough goblins "
+"around."
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"Willard is in hiding somewhere around the Aisen Meadow. Due to his injury he "
+"will show himself only if there are no goblins around."
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"A long search and quite a lot of dead goblins later Willard has finally "
+"shown himself. I should give him the stone and be done with it."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "medMercCamp"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Hey there!"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Fenor Marken"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Willard"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I hope you are making a good time searching for Willard. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I hope you are making a good time searching for Willard."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Have you changed your mind?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Search for Willard?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Yes"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "No"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "If I'm not mistaken you are a Branded One."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "If I'm not mistaken you are Branded Ones."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "What the..."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Do I have a sign somewere saying: Caution, dangerous monster??"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That is the second time today!"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I could always feel if someone was a Branded One."
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"But don't worry, I will give noone away, as long as they are behaving "
+"correctly."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "There is something I'd like to ask of you. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Only someone like you could do it reliably. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "There is something I'd like to ask of you."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Only someone like you could do it reliable."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Who would have thought that?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Does an honorable member of the city guard wants someone's throat cut?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "What? I could have hired a professional assassin for that."
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"I thought you were the kind of Branded Ones that doesn't kill every human "
+"crossing their way."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I'm sorry. Maybe my mouth slipped."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Whatever. What is it you really want?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thanks. My name is Fenor Marken."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I have a friend with the gamekeepers."
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"He was in the meadows with two collegues, when they were attacked by goblins."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "And those cowards left him behind injured!"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Surely you don't want me to bring back his corpse, do you?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Surely you don't want us to bring back his corpse, do you?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "No, Willard isn't someone who would be killed by some lousy goblins."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I'm sure he waits somewhere for help."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I'm sure you are very busy."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That is why I only ask you to bring him this phasestone. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That is why I only ask you to bring him this phasestone."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I wouldn't entrust this to anyone normaly."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Much less someone totally unknown."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Who wouldn't take off with it?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "But you Branded Ones have other ways and means to travel, haven't you."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "And you cannot use a phasestone since it is dedicated to Avaera, right?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That is why I called you when you were passing."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "You know quite a lot."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Your friend is as good as safe."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "And doesn't even ask what the rest of us is thinking."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thank you. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thank you."
+msgstr ""
+
+#: rescue_willard.xml
+msgid ""
+"I'm sorry, but I don't want to waste my time searching for any gamekeepers."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "You are as cold-hearted as they say. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I'm sorry, but we cannot waste our time searching for any gamekeepers."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "You are as cold-hearted as they say."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "If only I could leave here."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I would search for him myself."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Then what do you want of me? ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Leave, before I tell someone about you! ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Then what do you want from me?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Leave, before I tell someone about you!"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Give Willard the stone (Reward)"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thank's for your help."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Can I ask you for another favor?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "My leg is hurt and I won't make it to Medair alone."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "You are Willard, I suppose."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That's me. Why do you know my name?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Your friend Fenor Marken sent us to give you this phasestone."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Holy gods! He still has that thing?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That was one of our youthful follys."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Mine is long used up."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Good old Fenor. Here, a token of my appreciation."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Surely someone of your trade can always use a little money?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thank you very much."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "aisMeadow"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "So here is this Willard."
+msgstr ""

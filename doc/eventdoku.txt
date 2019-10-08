@@ -1,0 +1,465 @@
+--- Automatische Trigger ---
+
+- create_region
+Wird geworfen, direkt nachdem die Region erzeugt wurde.
+Variablen: keine
+
+- enter_region
+Wird geworfen, nachdem ein Spieler eine Region betreten hat
+Variablen:
+trigger.player Spieler der den Trigger ausgeloest hat
+
+- create_template
+Wird geworfen, wenn ein template in die Region eingefuegt wird. Wird bei namenlosen Templates nur erzeugt, wenn mindestens eine Location in dem Template definiert ist.
+Variablen:
+trigger.templname Name des Templates
+trigger.name: Name des der konkreten Ortes (es kann mehrere Ort geben an denen dasselbe Template verwendet wird)
+trigger.position: Koordinaten des Mittelpunktes
+trigger.angle: Drehwinkel des Templates
+Außerdem sind alle Locations unter trigger.locationname enthalten
+
+- create_unit
+Wird geworfen, wenn eine Kreatur (kein Spieler) in die Region eingefuegt wird
+Variablen:
+trigger.unit Kreatur die den Trigger ausgeloest hat
+
+
+-player_moved
+Wird geworfen, nach ein Spieler die Aktion laufen beenden hat.
+Variablen:
+trigger.player Spieler der den Trigger ausgeloest hat
+
+-unit_moved
+Wird geworfen, nachdem eine Kreatur die Aktion laufen beendet hat
+Variablen:
+trigger.unit Kreatur die den Trigger ausgeloest hat
+Hinweis: Fuer Spieler wird zusaetzlich der Trigger player_moved geworfen
+
+- unit_hit
+Wird geworfen, wenn eine Kreatur Schaden nimmt
+Variablen:
+trigger.attacker Verursacher des Schadens - kann 0 sein, wenn kein direkter Verursacher bekannt ist
+trigger.defender Kreatur, die getroffen wurde
+trigger.damage angerichteter Schaden
+
+- object_use
+Wird geworfen, wenn eine Objekt benutzt wird
+Variablen:
+trigger.used_object Benutztes Objekt
+trigger.user Benutzender Spieler
+
+- unit_die
+Wirf geworfen, wenn eine Kreatur gestorben ist
+Variablen:
+trigger.unit Kreatur die den Trigger ausgeloest hat
+
+- unit_dead
+Wirf geworfen, wenn eine Kreatur tot ist (nachdem die sterben Aktion abgeschlossen ist)
+Variablen:
+trigger.unit Kreatur die den Trigger ausgeloest hat
+
+- command_complete
+Wird geworfen, wenn ein per Script gesetztes Kommando abgeschlossen wurde
+Variablen:
+trigger.unit Kreatur die den Trigger ausgeloest hat
+trigger.command Kommando, das abgeschlossen wurde
+trigger.success Gibt an, ob das Kommando erfolgreich abgeschlossen wurde
+
+- camera_move_complete
+Wird geworfen, wenn eine per Script gesetzte Kamerabewegung abgeschlossen wurde
+
+
+--- Befehle ---
+
+string getRegion()
+
+Gibt den Name der aktuellen Region aus
+
+
+addLocation( string name, {float x, float y} )
+
+Fuegt der Region einen neuen Ort mit dem angegebenen Name bei den Koordinaten (x,y) hinzu
+
+Beispiel:
+	addLocation("myhome",{10,20})
+
+
+
+{float x, floaty}  getLocation(string name)
+
+Gibt die Koordinaten des angegebenen Orts aus. Die Ausgabe erfolgt als Liste, die einzelnen Elemente koennen mit den Indizee 1 und 2 ausgelesen werden. 
+Hinweis: Die Funktion wird implizit aufgerufen, wenn an einer Stelle, an der ein Vektor erwartet wird, ein String als Argument angegeben wird. Zum Beispiel ist addLocation("myhome2",getLocation("myhome")) äquivalent zu addLocation("myhome2","myhome").
+
+Beispiel:
+	pos = getLocation("myhome")
+	print(pos[1],pos[2])
+	
+
+
+void addArea(string name,"rect",{float cx, float cy}, {float ex, float ey})
+void addArea(string name,"circle",{float cx, float cy}, float r)
+
+Erzeugt ein neues Gebiet mit dem angegebenen Name. Der Vektor (cx,cy) gibt den Mittelpunkt des Gebietes an. Wenn als Typ "circle" angegebenen ist, gibt der vierte Parameter den Radius an. Wenn als Typ "rect" angegeben ist, gibt der vierte Parameter die Ausdehnung (Vektor vom Mittelpunkt zu einer Ecke) an.
+
+Beispiel:
+	addArea("mycastle","rect",{15,20},{5,5})
+
+
+objectid createObject( string subtype, {float posx, float posy}, [angle])
+
+Erzeugt ein neues Objekt mit dem angegebenen Subtyp, an der angegebenen Position. Die Angabe eines Drehwinkels ist optional, Standardwert ist 0 Grad. Die Funktion gibt die ID des erzeugten Objekts aus.
+Hinweis: Durch die Funktion wird auch ein create_unit Trigger geworfen, falls es sich bei dem erzeugten Objekt um eine Kreatur handelt.
+Hinweis: Es ist auch moeglich generische Typen zu verwenden, z.b. "$tree"
+
+Beispiel:
+lich1 = createObject("lich", {10,15})
+
+
+
+getObjectValue( objectid, string valname)
+get(objectid, string valname);
+
+Gibt den Attributwert des Objekts mit dem Name valname aus. Die zweite Form ist eine Kurzform der ersten. 
+Als Name sind zulaessig:
+Fuer alle Objekte:
+"id" (objectid), "type" (string), "subtype" (string), "position" ({float posx, float posy}), fraction (string)
+
+Fuer Kreaturen zusaetzlich:
+"level", "strength", "dexterity", "willpower", "magic_power", "max_health", "block", "attack", "armor", "resist_fire", "resist_ice", "resist_air", "resist_phys", "max_resist_ice", "max_resist_air", "max_resist_fire", "max_resist_phys", "attack_speed", "walk_speed", "health", "experience", "blind_time", "poisoned_time", "berserk_time", "confused_time", "mute_time", "paralyzed_time", "frozen_time", "burning_time" (alles float)
+
+Fuer Spieler zusaetzlich:
+"name" (string), "attribute_points" (float), "skill_points" (float)
+
+Der Typ des ausgegebenen Wertes steht jeweils in Klammern.
+
+Beispiel:
+	if (getObjectValue(lich1,"health") < 0.5*getObjectValue(lich1,"max_health")) then
+		-- Lich has less than 50% health...
+	end
+
+
+
+setObjectValue( objectid, string valname, value)
+set( objectid, string valname, value)
+
+Setzt den Attributwert des Objekts mit dem Name valname auf den Wert value. Es sind die gleichen Namen erlaubt wie bei getObjectValue mit Ausnahme von:
+"id" , "type" , "subtype", "level"
+Der Typ von value muss dem Typ entsprechen, der bei getObjectValue() ausgegeben wird.
+
+Beispiel:
+	setObjectValue(lich1,"health",100)
+
+
+bool objectIsInRegion(objectid)
+
+Testet ob ein Objekt in der aktuellen Region ist
+
+
+deleteObject(objectid)
+
+Loescht das Objekt mit der angegebenen ID.
+Hinweis: Dabei wird kein Trigger geworfen. Wenn es sich um eine Kreatur handelt und sie getoetet werden soll, kann man die Lebenspunkte auf 0 setzen. In diesem Falle wird ein unit_die Trigger geworfen.
+
+Beispiel:
+	deleteObject(lich1)
+	
+
+createScriptObject( string subtype, string renderinfo, 'circle' | 'rect',{float posx, float posx}, {float extentx, float extentx} | radius, [layer])
+
+Erzeugt ein nur von Scripten gesteuertes Objekt. Der Subtype ist frei waehlbar. Fuer Renderinfo kann entweder der Name eines Meshes oder eine Renderinfo Name angegeben werden. Das Objekt hat die angegebene Grundflaeche und befindet sich in der angegebenen Ebene. Default Ebene ist NoCollision (!).
+
+Beispiel:
+	gobimage = createScriptObject("gobimage","goblin.mesh","circle","entry_north",0.5);
+
+
+setScriptObjectAnimation(int objid, string animation, float time, [bool repeat])
+
+Setzt die Animation eines ScriptObjekts. Falls der Parameter repeat true ist, so wird die Animation solange wiederholt, bis eine neue Animation gesetzt wird.
+
+
+createMonsterGroup( string monstergroup, {float x, float y}])
+
+Erstelle an der angegebenen Stelle die Monstergruppe mit dem angegebenen Namen
+
+
+addUnitCommand(objectid, string command,  [objectid goal | {float goal_x,float goal_y}], [float time])
+
+Gibt der Kreatur mit der angegebenen ID ein Kommando. Je nach Typ des Kommandos kann man ein Objekt oder einen Ort als Ziel angeben.
+Das Kommando wird auf jeden Fall von der Kreatur als naechstes bearbeitet. Wenn das Kommando nach time Millisekunden nicht abgeschlossen ist, wird es abgebrochen. In beiden Faellen (erfolgreiche Beendigung oder Abbruch) wird ein command_complete Trigger geworfen.
+Einer Kreatur koennen mehrere Kommandos zugewiesen werden. Diese werden dann in der Reihenfolge, in der sie erteilt wurden, ausgefuehrt.
+
+Beispiel:
+	addUnitCommand(player1, "attack", lich1)
+
+
+clearUnitCommands()
+
+Entfernt alle per Script gesetzten Kommandos einer Einheit
+
+
+setUnitAction(int unitid, string command,  [goal_unitid | {goal_x,goal_y}], [float time])
+
+Setzt die Aktion der angegebenen Einheit. Die Aktion ueberschreibt die aktuelle Aktion. 
+
+
+setCutsceneMode(bool mode)
+
+Startet oder beenden eine Cutscene. Waehrend der Cutscene werden ausschliesslich per Skript festgelegte Kommandos ausgefuehrt.
+
+
+addCameraPosition(float time, {center_x, center_y}, float phi, float theta, float dist)
+
+Fuegt der Kamerafahrt eine Station hinzu. Der Befehl ist nur im Cutscene Modus gueltig. Die Kamera wird auf den Punkt (center_x, center_x) fokussiert und bewegt sich in time Millisekunden in die angegebene Position. Die Position wird mit sphaerischen Koordinaten phi,theta, dist (Abstand) festgelegt.
+
+Beispiel:
+	setCutsceneMode(true);
+	addCameraPosition(1000,getLocation("myhome") , 270,70, 20);
+
+
+
+bool pointIsInArea( {float x, float y}, string areaname)
+
+Testet, ob der angegebene Punkt in dem Bereich mit dem Name areaname liegt.
+
+Beispiel:
+	if (pointIsInArea( {10,12} , "mycastle") then
+
+
+
+bool objectIsInArea( objectid, string areaname)
+
+Testet, ob sich das Objekt in dem Gebiet mit dem Name areaname befindet.
+Hinweis: Der Mittelpunkt des Objektes muss nicht unbedingt im Gebiet liegen. Es wird immer true zurueckgegeben, wenn sich die Grundflaeche des Objektes mit dem Gebiet ueberschneidet.
+
+Beispiel:
+	if (objectIsInArea(lich1,"mycastle")) then
+	 -- .....
+
+
+objectid getObjectAt({float x, float y})
+
+Gibt das Objekt an der angegebenen Position aus.
+Hinweis: Wenn sich an dieser Position kein Objekt befindet wird nil ausgegeben.
+
+
+
+
+getObjectsInArea(string areaname, [string layer],[string group])
+
+Gibt alle Objekte in dem angegebenen Gebiet aus. Es wird eine Tabelle ausgegeben, bei der die Objekte an den Indizee 1 bis n gespeichert sind.
+layer: Beschraenkt die Ebene der Objekte ("normal", "base","air","dead")
+group: Beschraenkt die Gruppe der Objeke("unit","player","monster","fixed")
+
+Beispiel:
+	objects = getObjectsInArea("mycastle")
+	for number,obj in ipairs(objects) do
+		deleteObject(obj);
+	end
+
+
+
+dropItem(string itemtype,{float x,float y}, [magic_power])
+
+Laesst ein Item von Typ itemtype an der angegebenen Position fallen. Optional kann eine Magiestaerke angegeben werden, mit der das Item verzaubert wird.
+
+Beispiel:
+	dropItem("demon_sw",{12,13},300)
+
+
+
+getDamageValue string valname)
+
+Gibt einen Attributwert des Schadensobjekts  aus. Wenn noch kein Schadensobjekt mit diesem Name existiert, wird es erzeugt. Für valname sind folgende Werte zulaessig:
+"fire_dmg" (float,float), "ice_dmg" (float,float), "air_dmg" (float,float), "phys_dmg" (float,float),"attack", "power",  "crit_chance", "blind", "poisoned", "berserk", "confused", "mute", "paralyzde", "frozen", "burning", "blockable" (bool), "ignore_armor" (bool), "attacker" (objectid)
+
+In Klammern steht der Rueckgabetyp, wenn nichts da steht ist es float. Die ersten vier erwarten ein Feld mit zwei Werten (min, max)
+
+Beispiel:
+	min,max = getDamageValue( "phys_dmg")
+	
+
+
+setDamageValue( string valname, value)
+
+Setzt einen Attributwert des Schadensobjekts. Wenn noch kein Schadensobjekt mit diesem Name existiert, wird es erzeugt. Für valname sind dieselben Werte wie bei getDamageValue() zulaessig.
+
+Beispiel:
+	setDamageValue("phys_dmg", 10,15)
+
+
+
+createProjectile( string type, {startx, starty}, [{goalx, goaly}] , [speed], [dist])
+
+Erstellt ein neues Geschoss mit dem Typ type und dem Schaden, der durch das Schadensobjekt dmgname festgelegt wird. {startx, starty} legt den Punkt fest, an dem das Geschoss erzeugt wird, {goalx, goaly} den Ort zu dem es hinfliegt. speed gibt die Geschwindigkeit an, mit der das Geschoss fliegt, Standardwert ist 10. Wenn fuer dist es Wert angegeben wird, wird der Startpunkt des Geschosses um den Abstand dist in Richtung des Zielpunktes verschoben. Dies ist sinnvoll, wenn am Startpunkt ein Objekt ist, das nicht getroffen werden soll.
+Fuer type sind zulaessig:
+"arrow", "magic_arrow", "fire_bolt", "fire_ball", "fire_wall", "fire_wave", "ice_bolt", "blizzard", "ice_ring", "freeze", "lightning", "thunderstorm", "chain_lightning", "static_shield", "fire_arrow", "ice_arrow", "wind_arrow", "guided_arrow", "explosion", "fire_explosion", "ice_explosion", "wind_explosion", "light_beam", "elem_explosion", "acid", "divine_beam", hypnosis"
+
+Beispiel:
+	createProjectile("magic_arrow", "trap_dmg", {10,10},{10,15},10,1}
+	
+
+
+insertTrigger(string triggername, [string regionname])
+
+Wirft einen Trigger mit dem angegebenen Name. Wenn eine Region angegebenen wird, wird der Trigger in der entsprechenden Region geworfen, Standard ist die aktuelle Region.
+Hinweis: Wenn man einen Trigger wirft, der auch automatisch geworfen werden kann (z.b. unit_die), sollte man die Daten setzen, die auch bei den automatisch geworfenen Triggern angehaengt sind.
+
+Beispiel:
+	insertTrigger("mytrigger")
+	
+
+
+addTriggerVariable(string varname, value)
+
+Fuegt dem zuletzt erzeugten Trigger eine Variable mit dem Name varname und dem Wert value hinzu. In den Events, die durch diesen Trigger ausgeloest werden, kann dann mit trigger.varname darauf zugegriffen werden.
+
+Beispiel:
+	addTriggerVariable("var",5)
+	-- Zugriff im Event dann mit trigger.var
+	
+
+
+startTimer(string triggername, float time)
+
+Wirft einen Trigger mit dem Name triggername nach Ablauf von time Millisekunden.
+Hinweis: Auch diesem Trigger koennen mit addTriggerVariable Variablen hinzugefuegt werden.
+
+{playerids} getRolePlayers(string role)
+
+Gibt alle Spieler aus, die sich fuer eine bestimmte Rolle eignen als Liste aus. Moegliche Rollen sind: "all", "warrior", "mage", "archer","priest","male,"female".
+Achtung: Die Liste kann leer sein, wenn kein Spieler fuer die Rolle geeignet ist.
+
+
+teleportPlayer(int unitid, string regionname, string locationname)
+
+Teleportiert den Spieler in eine andere Region (an die angegebene Location). Hinweis: Der Ort muss bei dieser Funktion zwingend als String angegeben werden.
+
+
+void unitSpeak(int unitid, string text [,float time])
+
+Setzt den zu sprechenden Text der Kreatur mit der angegebenen ID. Diese Funktion sollte nur ausserhalb von Gespraechen verwendet werden (etwa fuer Kommentare in einem Kampf).
+
+
+void speak(string refname, string text, float time)
+
+Fügt einem Sprecher mit dem Referenzname refname einen Text hinzu. Der Text wird time Millisekunden Der Text in dem Dialog wird nacheinander gesprochen. Bei Dialogen die der Spieler eröffnet, wird der Spieler mit dem Referenzname "player" angesprochen.
+Achtung: Der Text wird nur gesprochen, wenn zu dem Referenzname ein Sprecher existiert.
+
+Beispiel:
+	speak('player', _("The other side is dark, very dark."),1000)
+	
+
+
+void addQuestion(string text)
+
+Fuegt dem Dialog eine Frage hinzu, die der Spieler beantworten muss. Nach einer Frage duerfen nur noch Antworten, aber kein normaler Text mehr eingefuegt werden.
+
+
+addAnswer(string text, string topic)
+
+Fuegt fuer eine Frage eine Antwort hinzu. Der text gibt den Wortlaut der Antwort an, topic das Thema zu dem gesprungen wird, wenn der Spieler diese Antwort wählt. Besondere Themen sind "start" (Gespräch neu starten), "end" ("Gespräch beenden") und "trade" (Handel starten).
+Aufruf ist nur zulaessig, wenn zuvor eine Frage eingefuegt wurde. 
+
+Beispiel:
+	addQuestion("Bist du sicher");
+	addAnswer("Jo", "next_topic");
+	addAnswer("Nay","end");
+
+
+changeTopic(string topic)
+
+Ändert sofort das Thema des Gespräches, ohne dass eine Frage beantwortet wurde.
+
+
+createDialogue()
+
+Erstellt einen neuen Dialog. Wird verwendet um Gespräche anzuzeigen, die nicht vom Spieler dadurch ausgelöst wurden, dass er einen NPC anspricht. Alle weiteren Befehle beziehen sich auf diesen Dialog.
+
+
+objectid getRole(string role)
+
+Gibt die ID des Objekts aus, welches zur Sprecherrolle passt.
+Folgende Rollen sind zulaessig:
+"PL", "ANY", "ANYast", "ANYplus", "WAR", "PRI", "ARC", "MAG", "WARast", "PRIast", "ARCast", "MAGast", "MALEast", "FEMALEast"
+
+
+addStandardSpeakers()
+
+Fuegt einem Dialog folgende Standard-Sprecher hinzu:
+"PL", "ANY", "ANYast", "ANYplus", "WAR", "PRI", "ARC", "MAG", "WARast", "PRIast", "ARCast", "MAGast", "MALEast", "FEMALEast"
+
+
+addSpeaker(objectid, string refname)
+
+Fuegt einen Dialog einen Sprecher hinzu. Der Sprecher wird des weiteren um dem Angegebenen refname angesprochen. 
+Es ist moeglich den selben Sprecher unter mehreren Namen einzufuegen. Dieser Sprecher spricht dann mehrere Rollen.
+
+Beispiel:
+	createDialogue()
+	-- die Rollen mage und warrior sind nur belegt wenn entsprechende Spieler existieren!
+	local mage = getRolePlayers("mage")[1];
+	local warrior = getRolePlayers("warrior")[1];
+	addSpeaker(mage,"mage");
+	addSpeaker(warrior,"warrior");
+	
+
+objectid getSpeaker(string refname)
+
+Gibt den Sprecher zu einem Referenzname aus. In Dialogen mit NPC die der Spieler gestartet kann, kann der Spieler mit getSpeaker("player") ermittelt werden.
+
+
+setTopicBase(string)
+
+Die Basis eines Dialogs ist der Name des NPC, falls der Spieler einen NPC angesprochen hat und "global", wenn der Dialog per Script erzeugt wurde. Der Befehl wechselt die Basis eine Dialogs. Damit kann man z.b. aus einem durch Script gestarteten Dialog (der "global" ist) in der Standardrepertoire eines NPC uebergehen.
+
+
+setRefName(string)
+
+Setzt den Name eines NPC. Unter diesem Name wird der NPC in den Gespraechen mit dem Spieler referenziert.
+
+
+gettext(string) _(string)
+
+gettext fuer lua - alle Strings die fuer die Spieler sichtbar sind, sollten in diese Funktion gekapselt werden. Zusammengesetzte Ausdruecke muessen mit einem zusatzlichen Paar Anfuehrungsstriche geklammert werden.
+Hinweis: Die Ausdruecke duerfen keine lokalen Variablen enthalten.
+
+Beispiele:
+	return _("Quest finished");
+	-- nr muss hier global sein
+	return gettext("'Kill '..nr..' more Goblins'");
+
+
+getPlayerPrivateVar(playerid, string varname)
+
+Die Questvariablen der Spieler koennen verschiedenen sein, z.b. wenn ein Spieler einem Spiel beitritt und das Quest das gerade bearbeitet hat schon geloest hat. Normalerweise kann man nur auf die Variablen des Servers zugreifen. Mit diese Funktion erhaelt man den Wert fuer einen konkreten Spieler. Damit kann man z.b. verhindern, dass der Spieler, der das Quest schon geloest hast die Belohnung noch einmal bekommt.
+
+
+setPlayerPrivateVar(playerid, string varname, value)
+
+Normalerweise werden die Questvariablen fuer alle Spieler parallel synchronisiert. In einigen Faellen, z.b. Belohnungen die sich jeder Spieler separat abholen kann, ist das nicht erwuenscht. Mit der Funktion kann man eine Variablen nur fuer einen konkreten Spieler setzen. Der typ von Value muss mit dem Variablentyp uebereinstimmen.
+
+
+createEvent(string triggername [,bool once [,string regionname]])
+
+Erstellt ein neues Event, das auf den angegebenen Trigger reagiert. Wenn once auf true gesetzt ist, dann wird das Event nach der ersten Ausfuehrung geloescht, default ist false. Wenn ein Regionenname angegebenen ist, wird das Event in der angegebenen Region erzeugt, default ist die aktuelle Region. Alle nachfolgenden Aufrufe von addCondition und addEffect beziehen sich auf das zuletzt erzeugte Event.
+
+
+addCondition(string luacode)
+
+Fuegt dem Event eine Bedingung hinzu. Bei dem String muss es sich um luacode handeln, der true oder false zurueckgibt.
+
+
+addEffect(string luacode)
+
+Fuegt dem Event den Effect hinzu.
+
+Beispiel:
+	createEvent('create_unit','true');
+	addCondition('return (get(trigger.unit,"subtype")=="lich")');
+	addEffect('print("first lich created")');
+
+
+timedExecute( string luacode, float time, [string regionname]);
+
+Fuehrt nach der angegebenen Anzahl Millisekunden den luacode aus. Wenn ein Regionenname angegebenen ist, wird der Code in der angegebenen Region aufgerufen, default ist die aktuelle Region.
+

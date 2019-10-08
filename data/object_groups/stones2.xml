@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="stones2" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$flower" 
+            center_x="-2.091249004" 
+            center_y="-0.7886400461" 
+			height="3.552713679e-015" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-1.493633373" 
+            center_y="-0.7497754438" 
+			height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-2.720899085" 
+            center_y="-0.9474211419" 
+			height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="1.8222124" 
+            center_y="0.9355380872" 
+			height="-7.105427358e-015" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-3.104302299" 
+            center_y="0.8881638725" 
+			height="-7.105427358e-015" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-1.930928953" 
+            center_y="-2.284869999" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_deb_l" 
+            center_x="1.812918922" 
+            center_y="0.4864045732" 
+			height="3.552713679e-015" 
+            angle="-0.164821401" 
+            probability="0.8" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-3.13994338" 
+            center_y="3.306178334" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

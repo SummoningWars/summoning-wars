@@ -1,0 +1,18 @@
+Summoning Wars Role-Playing Game
+http://www.sumwars.org/
+
+
+Summoning Wars is an open source role-playing game, featuring both a
+single-player and a multiplayer mode for about 2 to 8 players.  It is available
+and proved to work for Windows, Mac OS X and GNU/Linux operating systems,
+although it might as well work in *BSD and similar operating systems.
+
+Summoning Wars is free software released under GNU General Public License
+version 3 or later (GPLv3+), which means that you can freely use, copy and
+modify the software.  Please see COPYING file for more information about its
+license, and AUTHORS for copyright holders.
+
+INSTALL file contains information in order to build and run the software from
+source.
+
+For more information, please go to the URL mentioned in the beginning.

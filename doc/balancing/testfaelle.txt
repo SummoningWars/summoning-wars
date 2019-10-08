@@ -1,0 +1,58 @@
+1: Startstarke
+
+Testfall 1.1
+Spieler: Charakter Lvl 1
+Ausruestung: Startausruestung
+Monster: 10x(1 Goblin)
+Aufgabe: Gegner besiegen
+gewuenschtes Ergebnis: Gegner lassen sich problemlos besiegen, verlorene HP ~10%
+
+Testfall 1.2
+Spieler: Charakter Lvl 1
+Ausruestung: Startausruestung
+Monster: 10x(3 Goblin)
+Aufgabe: Gegner besiegen
+gewuenschtes Ergebnis: Gegner lassen sich besiegen, allerdings mit merklichem HP Verlust; Levelup im Verlauf das Kampfes
+
+Testfall 1.3
+Spieler: Charakter Lvl 1
+Ausruestung: Startausruestung
+Monster: 10x(10 Goblin)
+Aufgabe: Gegner besiegen
+gewuenschtes Ergebnis: Gegner lassen sich nicht besiegen
+
+2: Bash
+Spieler: Krieger Lvl 2 mit Bash
+Ausruestung: Startausruestung
+Monster: 10x(3 Goblin)
+Aufgabe: Gegner einmal mit, einmal ohne Bash besiegen
+gewuenschtes Ergebnis: merkliche Verbesserung der Kampfstärke, ca 1/3 weniger Zeitaufwand
+
+3: Standfestigkeit
+Spieler: Krieger Lvl 3 mit Standfestigkeit (erste passive Faehigkeit)
+Ausruestung: Startausruestung
+Monster: 10x(5 Goblin)
+Aufgabe: Gegner besiegen, einmal mit, einmal ohne Standfestigkeit
+gewuenschtes Ergebnis: merkliche verlängerte Überlebensdauer
+
+4: Feuerblitz, Eiszapfen, Blitz
+Spieler: Magier Lvl 2 Feuerblitz oder Eiszapfen oder Blitz
+Ausruestung: Startausruestung
+Monster: 10x(3 Goblin)
+Aufgabe: Gegner besiegen, einmal mit jeder der Fähigkeiten
+gewuenschtes Ergebnis: Gegner lassen sich ohne groessere Probleme besiegen, alle drei Faehigkeiten sind etwa gleich stark
+
+5: Dreifachschuss, Elfenwanderer
+Spieler: Bogenschuetze Lvl 2 mit Dreifachschuss oder Elfenwanderer
+Ausruestung: Startausruestung
+Monster: 10x(3 Goblin)
+Aufgabe: Gegner besiegen, einmal mit jeder der Fähigkeiten
+gewuenschtes Ergebnis: merkliche Verbesserung der Kampfstärke bei beiden Fähigkeiten
+
+5: Dreifachschuss, Elfenwanderer
+Spieler: Bogenschuetze Lvl 2 mit Dreifachschuss oder Elfenwanderer
+Ausruestung: Startausruestung
+Monster: 10x(3 Goblin)
+Aufgabe: Gegner besiegen, einmal mit jeder der Fähigkeiten
+gewuenschtes Ergebnis: merkliche Verbesserung der Kampfstärke bei beiden Fähigkeiten
+

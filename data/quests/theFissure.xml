@@ -1,0 +1,943 @@
+<Quest name="The ambush of the undead" table_name="fissure" domain="the_ambush_of_the_undead">
+	
+	<Init>
+	</Init>
+	
+	<Description>
+		if (fissure.finished) then
+			return _("The good news: No one will come through that tunnel anymore. The bad news: The way back has caved in, too. Hopefully there is another exit.")
+		else
+			return _("The undead found a way under the Grey Skyladder enabling them to bypass Dwarfenwall. Because this threatens the kingdom of Aisen directly it has to be shut as fast as possible. The passage in the Cursed Caves has to be found and the destroyed with the explosion spell of Ireana of Northborough.")
+		end;
+	</Description>
+	
+	<Region name="aisMounPath">
+		<Event trigger="create_region" once="true">
+			<Condition>
+				if(fissure.rescuedIreana~=true)then
+					return true;
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				fissure_tmp.guard1 = createObject("ireana_guard", "locGuard1");
+				setRefName(fissure_tmp.guard1, "Elementaristenwaechter1");
+				setObjectValue(fissure_tmp.guard1,"max_health",1000);
+				setObjectValue(fissure_tmp.guard1,"health",100);
+				
+				fissure_tmp.guard2 = createObject("ireana_guard", "locGuard2");
+				setRefName(fissure_tmp.guard2, "Elementaristenwaechter2");
+				
+				
+				fissure_tmp.guard3 = createObject("ireana_guard", "locGuard3");
+				setRefName(fissure_tmp.guard3, "Elementaristenwaechter3");
+				
+				fissure_tmp.guard4 = createObject("ireana_guard", "locGuard4");
+				setRefName(fissure_tmp.guard4, "Elementaristenwaechter4");
+				
+				
+				fissure_tmp.dead_guard1 = createObject("ireana_guard", "locDeadGuard1");
+				setRefName(fissure_tmp.dead_guard1, "Council Guard");
+				setObjectValue(fissure_tmp.dead_guard1,"health",0);
+				
+				fissure_tmp.dead_guard2 = createObject("ireana_guard", "locDeadGuard2");
+				setRefName(fissure_tmp.dead_guard2, "Council Guard");
+				setObjectValue(fissure_tmp.dead_guard2,"health",0);
+				
+				
+				fissure_tmp.ireana = createObject("ireana", "locIreana");
+				setRefName(fissure_tmp.ireana, "Erzmaga Ireana von Nordenburg");
+				setObjectValue(fissure_tmp.ireana,"max_health",10000);
+				setObjectValue(fissure_tmp.ireana,"health",3000);
+				set(fissure_tmp.ireana,"ai_state","inactive");
+				setObjectAnimation(fissure_tmp.ireana,"lie",1000,true);
+				
+				fissure_tmp.captain = createObject("ireana_captain", "locCaptain");
+				setRefName(fissure_tmp.captain, "Guardcaptain");
+				setObjectValue(fissure_tmp.captain,"max_health",10000);
+				setObjectValue(fissure_tmp.captain,"health",9000);
+				addUnitCommand(fissure_tmp.captain,"guard",fissure_tmp.ireana,10,"secondary");
+				
+				fissure_tmp.tolec = createObject("tolec", "locTolec");
+				setRefName(fissure_tmp.tolec, "Tolec");
+				addUnitCommand(fissure_tmp.tolec,"guard",fissure_tmp.ireana,10,"secondary");
+					
+				fissure_tmp.derred = createObject("derred", "locDerred");
+				setRefName(fissure_tmp.derred, "Derred");
+				addUnitCommand(fissure_tmp.derred,"guard",fissure_tmp.ireana,10,"secondary");
+			</Effect>
+		</Event>
+
+		<Event trigger ="unit_dead">
+			<Condition>
+				return (get(trigger.unit,'subtype') == 'guard')
+			</Condition>
+			<Effect>
+				setUnitAction(trigger.unit,"dead",0,600000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				if (ambush.started == true and fissure.rescuedIreana ~= true) then
+					return (unitIsInArea(trigger.player,"areaHelpIreana"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				fissure_tmp.skeletons={};
+				for nr=1,8 do
+					fissure_tmp.skeletons[nr] = createObject("fire_skel","locSkeleton"..nr);
+				end;
+				fissure_tmp.skeletons_nr =9;
+				
+				setCutsceneMode(true);
+				
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[1], "fire_shot", fissure_tmp.guard2,0,"repeat")',400);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[2], "fire_shot", fissure_tmp.guard2,0,"repeat")',350);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[3], "fire_shot", fissure_tmp.guard4,0,"repeat")',100);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[4], "fire_shot", fissure_tmp.captain,0,"repeat")',75);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[5], "fire_shot", fissure_tmp.ireana,0,"repeat")', 800);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[6], "fire_shot", fissure_tmp.guard1,0,"repeat")', 650);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[7], "fire_shot", fissure_tmp.guard1,0,"repeat")',523);
+				timedExecute('addUnitCommand(fissure_tmp.skeletons[8], "fire_shot", fissure_tmp.guard3,0,"repeat")', 250);
+				
+				lookAtObject(fissure_tmp.guard1, fissure_tmp.skeletons[6]);
+				lookAtObject(fissure_tmp.guard2, fissure_tmp.skeletons[2]);
+				lookAtObject(fissure_tmp.guard3, fissure_tmp.skeletons[8]);
+				lookAtObject(fissure_tmp.guard4, fissure_tmp.skeletons[3]);
+				lookAtObject(fissure_tmp.ireana, fissure_tmp.captain);
+				lookAtObject(fissure_tmp.captain, fissure_tmp.ireana);
+				
+				addCameraPosition(0,get(getPartyleader(),"position"),-50,40,20);
+				addCameraPosition(5000,get(fissure_tmp.ireana,"position"),-50,40,20);
+				startTimer('fissure_dialogue1',10000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="insertion_guard_dies">
+			<Effect>
+				unitSpeak("W1",_("*urgh*"));
+				setObjectValue(fissure_tmp.guard1,"health",0);
+			</Effect>
+		</Event>
+		
+		<Event trigger="fissure_dialogue1">
+			<Effect>
+				assembleParty("aisMounPath","locPartyEntry");
+				fissure_tmp.beforeBattle = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger="party_complete">
+			<Condition>
+				return(fissure_tmp.beforeBattle == true);
+			</Condition>
+			<Effect>
+				addCameraPosition(1000,get(getPartyleader(),"position"),-50,40,20);
+				-- Die Party erreicht den Ort des Geschehens. Die Kutsche der Erzmaga
+				-- ist verunglueckt, mehrere Skelettbogenschuetzen beschießen sie mit
+				-- Feuerpfeilen und die Wachen sind allesamt verwundet.
+				
+				playersLookAt(getPosition(fissure_tmp.ireana));
+				lookAtObject(fissure_tmp.guard1, getPartyleader());
+
+				createDialogue();
+				addAllPlayersToDialog();
+				
+				addSpeaker(fissure_tmp.guard1,"W1");
+				addSpeaker(fissure_tmp.soren_windclaw_crystal,"SW");
+				addSpeaker(fissure_tmp.ireana,"IvN");
+				addSpeaker(fissure_tmp.captain,"HW");
+				addSpeaker(fissure_tmp.guard2,"EW");
+				addStandardRoles();
+				
+				speakPause(2000);
+				speak("male",_("Wow, she's gorgeous."),"inlove");
+				--print(getSpeaker("male"));
+				--print(getSpeaker("PL"));
+				if((getSpeaker("male")~=0) and (getSpeaker("male")~=getSpeaker("PL")))then
+					speak("PL",_("You can stare at her later, we have to erase some undead."), "unhappy");
+				end;
+				speak("HW",_("Please help us, the mage is badly injured!"), "panic");
+				
+				-- W1 (Wird toedlich getroffen)
+				executeInDialog('insertTrigger("insertion_guard_dies")');
+				
+				speakPause(1000);
+				speak("waropt",_("He he. Harvest!"),"warcry");
+				
+				-- Sie kaempfen. Die Untoten warten mit einer etwas unschoenen
+				-- ueberraschung auf (starkes Monster) werden aber sicherlich bald
+				-- besiegt ;-)
+				executeInDialog('insertTrigger("end_cutfissure_fight")');
+			</Effect>
+		</Event> 
+		
+		<Event trigger="end_cutfissure_fight">
+			<Effect>
+				setCutsceneMode(false);
+				
+				for nr=1,8 do
+					clearUnitCommands(fissure_tmp.skeletons[nr]);
+				end;
+				startTimer("undeadReinforcements",5000);
+				--set(fissure_tmp.captain,"state","inactive");
+			</Effect>
+		</Event>
+		
+		<Event trigger="undeadReinforcements" once="true">
+			<Effect>
+				local i,skel;
+				for i=1,2 do
+					skel = createObject("sword_skel","entry_north");
+					addUnitCommand(skel,"attack",fissure_tmp.ireana,nil,"secondary");
+					fissure_tmp.skeletons_nr = fissure_tmp.skeletons_nr + 1;
+				end;
+				for i=1,2 do
+					skel = createObject("axe_skel","entry_north");
+					addUnitCommand(skel,"attack",fissure_tmp.ireana,nil,"secondary");
+					fissure_tmp.skeletons_nr = fissure_tmp.skeletons_nr + 1;
+				end;
+				for i=1,2 do
+					skel = createObject("bow_skel","entry_north");
+					addUnitCommand(skel,"attack",fissure_tmp.ireana,nil,"secondary");
+					fissure_tmp.skeletons_nr = fissure_tmp.skeletons_nr + 1;
+				end;
+				startTimer("undeadMonster", 4000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="undeadMonster" once="true">
+			<Effect>
+				local skel = createObject("reaper_skel","entry_north");
+				addUnitCommand(skel,"attack",fissure_tmp.ireana,nil,"secondary");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_die">
+			<Condition>
+				-- caught subtypes: bow_skel, sword_skel, axe_skel, fire_skel, reaper_skel
+				local sub = get(trigger.unit,'subtype')
+				if(( sub == 'bow_skel') or (sub == 'sword_skel') or (sub == 'axe_skel') or (sub == 'fire_skel') or (sub == 'reaper_skel'))then
+					return true;
+				end;
+				return false;
+			</Condition>
+			<Effect>
+				fissure_tmp.skeletons_nr = fissure_tmp.skeletons_nr -1;
+				if (fissure_tmp.skeletons_nr == 0) then
+				
+					if (isCreature(fissure_tmp.guard2)) then
+						addUnitCommand(fissure_tmp.guard2, "walk", "locGuard2")
+					end;
+					if (isCreature(fissure_tmp.guard3)) then
+						addUnitCommand(fissure_tmp.guard3, "walk", "locGuard3")
+					end;
+					if (isCreature(fissure_tmp.guard4)) then
+						addUnitCommand(fissure_tmp.guard4, "walk", "locGuard4")
+					end;
+					
+					addUnitCommand(fissure_tmp.tolec, "walk", "locTolec")
+					addUnitCommand(fissure_tmp.derred, "walk", "locDerred")
+					ambush.afterBattle = true;
+					startTimer("fissure_dialogue2",3000);
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger = "commandComplete" once = "true">
+			<Condition>
+				return(trigger.unit == fissure.tolec and ambush.afterBattle==true);
+			</Condition>
+			<Effect>
+				lookAt(fissure.tolec,getPartyleader());
+			</Effect>
+		</Event>
+		
+		<Event trigger = "commandComplete" once = "true">
+			<Condition>
+				return(trigger.unit == fissure.derred and ambush.afterBattle==true);
+			</Condition>
+			<Effect>
+				lookAt(fissure.derred,getPartyleader());
+			</Effect>
+		</Event>
+		
+		<Event trigger = "fissure_dialogue2">
+			<Effect>
+				assembleParty("aisMounPath","locParty");
+				fissure_tmp.afterBattle = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger="party_complete">
+			<Condition>
+				return (fissure_tmp.afterBattle==true);
+			</Condition>
+			<Effect>
+				--gespraech nach dem Kampf mit den Untoten
+				set(fissure_tmp.captain,"state","active");
+
+				fissure_tmp.soren_windclaw_crystal = createObject("sorenCrystal", "locDeadSkeleton4");
+				setRefName(fissure_tmp.soren_windclaw_crystal, "Soren Windclaw");
+				setObjectValue(fissure_tmp.soren_windclaw_crystal,"max_health",10000);
+				setObjectValue(fissure_tmp.soren_windclaw_crystal,"health",10000);
+				
+				
+				
+				createDialogue();
+				addSpeaker(fissure_tmp.soren_windclaw_crystal,"SW");
+				addSpeaker(fissure_tmp.ireana,"IvN",true);
+				addSpeaker(fissure_tmp.captain,"HW",true);
+				addSpeaker(fissure_tmp.tolec,"TO",true);
+				addSpeaker(fissure_tmp.derred,"DE",true);
+				addAllPlayersToDialog();
+				addStandardRoles();
+				
+				setCutsceneMode(true);
+					
+				addCameraPosition(0,get(getSpeaker("PL"),"position"),-50,40,10);
+				
+				playersLookAt(getPosition(fissure_tmp.ireana));
+				lookAtObject(fissure_tmp.soren_windclaw_crystal, fissure_tmp.ireana);
+				lookAtObject(fissure_tmp.captain, getSpeaker("PL"));
+				
+				speak("HW",_("I have never seen someone fight like you before."), "surprised");
+				speak("mage",_("You don't get out very often, do you."),"sneer");
+				if(solo())then
+					speak("TO",_("You developed splendid since the last time we met, didn't you? ##solo"),"grin");
+				else
+					speak("TO",_("You developed splendid since the last time we met, didn't you?"),"grin");
+				end;
+				setSpeakerEmotion("TO", "normal");
+				speak("PL",_("How is the archmage?"),"thoughtful");
+				
+				speak("HW",_("Very bad, I'm afraid."),"sad");
+				
+				local itempos,currentPlayer;
+				local mage = getSpeaker("mage");
+				local leader = getSpeaker("PL");
+				
+				if(getSpeaker("priest") ~=0)then
+					speak("priest",_("Let me see."),"normal");
+					executeInDialog("addUnitCommand(getSpeaker('priest'),'heal',fissure_tmp.ireana)");
+					setObjectValue(fissure_tmp.ireana,"health",10000);
+				elseif((mage~=0) and (hasItem(mage,"heal_1") or hasItem(mage,"heal_2")))then
+					-- Magier geht zu ireana und heilt sie mit einem Trank
+					speak("mage",_("Let me see."),"normal");
+					fissure_tmp.mPos = get(mage,"position");
+					executeInDialog("addUnitCommand("..mage..",'walk', fissure_tmp.ireana,1)");
+					speak("mage",(""),"normal","1000");
+					if(not findAndRemoveItem(mage,"heal_1"))then
+						findAndRemoveItem(mage,"heal_2");
+					end;
+					--TODO kosmetische Animation: hinknien und Trank verabreichen
+					setObjectValue(fissure_tmp.ireana,"health",10000);
+					executeInDialog("addUnitCommand("..mage..",'walk', fissure_tmp.mPos)");
+					speak("mage",(""),"normal","1500");
+					executeInDialog("lookAtObject("..mage..",fissure_tmp.ireana)");
+				else
+					--Partyleader heilt ireana mit einem Trank, auch wenn er keinen besitzt
+					speak("PL",_("Let me see."),"normal");
+					fissure_tmp.mPos = get(leader,"position");
+					executeInDialog("addUnitCommand("..leader..",'walk', fissure_tmp.ireana,1)");
+					speak("PL",(""),"normal","1000");
+					if(not findAndRemoveItem(leader,"heal_1"))then
+						findAndRemoveItem(leader,"heal_2");
+					end;
+					--TODO kosmetische Animation: hinknien und Trank verabreichen
+					setObjectValue(fissure_tmp.ireana,"health",10000);
+					executeInDialog("addUnitCommand("..leader..",'walk', fissure_tmp.mPos)");
+					speak("PL",(""),"normal","1500");
+					executeInDialog("lookAtObject("..leader..",fissure_tmp.ireana)");
+				end;
+				setSpeakerAnimation("IvN","getUp",1000);
+				executeInDialog('lookAtObject('..fissure_tmp.ireana..', getSpeaker("PL"))');
+				executeInDialog('set('..fissure_tmp.ireana..',"ai_state","inactive")');
+				speak("IvN",_("Thank you. That was a close call for a rescue."),"inlove");
+				speak("PL",_("How could it even come to this?"),"unhappy");
+				speak("PL",_("It's very dangerous to travel so far from the roads."));
+				
+				if((getSpeaker("warrior")~=getSpeaker("PL")) and (getSpeaker("warrior")~=0))then
+					speak("warrior",_("Come off it!"),"unhappy");
+					speak("IvN",_("No, no, it's the truth."),"sad");
+				end;
+
+				speak("IvN",_("It was not the best idea, but the streets are not safe these days and thus we wanted to travel concealed."),"normal");
+				speak("HW",_("These undead layed an ambush for us here."),"angry");
+				speak("arcopt",_("Surprise!"),"sneer");
+				speak("arcopt",_("No wonder, this is a combat area."));
+				setSpeakerEmotion("arcopt","normal");
+				speak("HW",_("No, Dwarfenwall hasn't fallen yet."),"thoughtful");
+				speak("HW",_("As long as that city stands, the entry to the lands of the undead is blocked."));
+				speak("HW",_("But I fear they must have found a way around the citywalls."), "sad");
+				speak("IvN",_("We mustn't allow this."), "unhappy");
+				speak("IvN",_("If those monsters could avoid Dwarfenwall they would advance into Aisen before one week is gone."));
+				speak("SW",_("It was exceedingly careless of you to leave with so few men."), "grin");
+				speak("IvN",_("The city needs every man it can get!"),"angry");
+				speak("PL",_("I have a feeling what's going to come in a moment..."), "bored");
+				if(solo())then
+					speak("SW",_("Listen, Branded One!"),"normal");
+					speak("HW",_("What?!?"),"surprise");
+					speak("HW",_("That's a Branded One?"),"fear");
+					speak("IvN",_("Let it go."),"aloof");
+					if(femaleOnly())then
+						speak("IvN",_("She is on our side."),"happy");
+					else
+						speak("IvN",_("He is on our side."),"happy");
+					end;
+				else
+					speak("SW",_("Listen, Branded Ones!"),"normal");
+					speak("HW",_("What?!?"),"surprise");
+					speak("HW",_("Those are Branded Ones?"),"fear");
+					speak("IvN",_("Let it go."),"aloof");
+					speak("IvN",_("They are on our side."),"happy");
+				end;
+				
+				speak("SW",_("Find the way the undead came here and render it useless."));
+				speak("archer", _("Will that be payed extra?"),"amused")
+				speak("IvN",_("Don't you want to give them some backup?"),"surprise");
+				speak("SW",_("I can do what I want!"),"unhappy");
+				speak("PL",_("Of course..."),"bored");
+				speak("magopt",_("Slowly he's getting to me..."),"angry");
+				if(getSpeaker("magopt") ~= getSpeaker("waropt"))then
+					speak("waropt",_("Only now?"),"surprise");
+					speak("mage",_("Mages have to be naturally patient."),"aloof");
+				end;
+				speak("IvN",_("I'm sure the undead found a hidden cave."),"thoughtful");
+				speak("IvN",_("Please take this explosion spell."),"normal");
+				speak("IvN",_("It surely will be useful."));
+				speak("HW",_("I know of a cave system north of here."),"normal");
+				speak("HW",_("They say it's cursed."),"threaten");
+				if(solo())then
+					speak("arcopt",_("Should that frighten me?"),"sneer");
+				else
+					speak("arcopt",_("Should that frighten us?"),"sneer");
+				end;
+				speak("HW",_("..."),"offended","1500");
+				speak("HW",_("probably not."),"normal");
+				speak("PL",_("Thanks for your help."),"normal");
+				speak("IvN",_("Good luck!"),"sad");
+				speak("IvN",_("I hope we meet again soon."),"happy");
+				
+				-- Hauptquest: Findet den Weg, auf dem die Untoten die Stadt umgehen
+				
+				executeInDialog('insertTrigger("end_cutfissure")');
+			</Effect>
+		</Event>
+		
+		<Event trigger="end_cutfissure">
+			<Effect>
+				ambush.finished=true;
+				fissure.rescuedIreana = true;
+				fissure.started = true;
+				addPlayersExperience(2000,"rescued_ireana");
+				timedExecute("setCutsceneMode(false);",1000);
+				deleteObject(fissure_tmp.soren_windclaw_crystal);
+			</Effect>
+		</Event>
+
+	</Region>
+	
+<!-- Graue Himmelsleiter, verfluchte Hoelen-->
+	<Region name="greyCurseCaveFis">
+		<Event trigger="create_region" once="true">
+			<Effect>
+				if(fissure.finished ~=true)then
+					fissure_tmp.stone1=getObjectByNameRef("fissureBlock1");
+					fissure_tmp.stone2=getObjectByNameRef("fissureBlock2");
+					fissure_tmp.stone3=getObjectByNameRef("fissureBlock3");
+					fissure_tmp.stone4=getObjectByNameRef("fissureBlock4");
+					fissure_tmp.stone5=getObjectByNameRef("fissureBlock5");
+					
+					getObjectOutOfWay(fissure_tmp.stone1);
+					getObjectOutOfWay(fissure_tmp.stone2);
+					getObjectOutOfWay(fissure_tmp.stone3);
+					getObjectOutOfWay(fissure_tmp.stone4);
+					getObjectOutOfWay(fissure_tmp.stone5);
+					
+					fissure_tmp.necromancer = createObject("necromancer","locNecromancer",190);
+					setRefName(fissure_tmp.necromancer, "Overlooker Necromancer");
+					
+					fissure_tmp.worker1 = createObject("worker_skel","locSkeleton1",-90);
+					timedExecute('fissure_tmp.worker2 = createObject("worker_skel","locSkeleton2",-90)',300);
+					timedExecute('fissure_tmp.worker3 = createObject("worker_skel","locSkeleton3",-90)',500);
+					fissure_tmp.worker4 = createObject("worker_skel","locSkeleton4",-90);
+					timedExecute('fissure_tmp.worker5 = createObject("worker_skel","locSkeleton5",-90)',200);
+					timedExecute('fissure_tmp.worker6 = createObject("worker_skel","locSkeleton6",-90)',700);
+				end;
+			</Effect>
+		</Event>
+		<!-- Kamerafahrt ueber die arbeitenden Skelette -->
+		<Event trigger="enter_region" once="true">
+			<Condition>
+				return (fissure.finished ~=true);
+			</Condition>
+			<Effect>
+				assembleParty("greyCurseCaveFis","locParty");
+				setCutsceneMode(true);
+				addCameraPosition(0,"locNecromancer",-90,45,10);
+				addCameraPosition(3000,"locCamera1", -150, 45, 12);
+				addCameraPosition(1000,"locCamera1", -150, 45, 12);
+				addCameraPosition(2000,"locLich",-95,45,12);
+				startTimer("entryLich",2500);
+			</Effect>
+		</Event>
+		<!-- Party sammeln -->
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return (fissure.finished ~=true);
+			</Condition>
+			<Effect>
+				groupObjectsArc(getPlayers(),locParty,locLich);
+			</Effect>
+		</Event>
+		<!-- Lich erzeugen und zum Nec schicken -->
+		<Event trigger="entryLich" once="true">
+			<Effect>
+				fissure_tmp.lich = createObject("asoroth","entry_fissure");
+				setRefName(fissure_tmp.lich, _("Unknown Lich"));
+				addUnitCommand(fissure_tmp.lich,"walk","locLich")
+			</Effect>
+		</Event>
+		<Event trigger="command_complete" once="true">
+			<Effect>
+				lookAtObject(fissure_tmp.necromancer,fissure_tmp.lich);
+				lookAtObject(fissure_tmp.lich,fissure_tmp.necromancer);
+				setObjectAnimation(fissure_tmp.necromancer,"kneelDown",1000);
+				timedExecute('setObjectAnimation('..fissure_tmp.necromancer..',"kneel",2000,true)',990);
+				startTimer("lichTalk",1200);
+			</Effect>
+		</Event>
+		
+		<!-- Gespraech zwischen Necro und Lich, Teil 1-->
+		<Event trigger="lichTalk" once="true">
+			<Effect>
+				playersLookAt("locLich");
+				initDialog();
+				
+				addSpeaker(fissure_tmp.necromancer,"Necro",true);
+				addSpeaker(fissure_tmp.lich,"Lich",true);
+				
+				speak("Lich",_("How is the work proceeding?"),"normal");
+				speak("Necro",_("Nar'Asoroth, my lord."),"fear");
+				setSpeakerAnimation("Necro","kneelUp",1000);
+				changeTopic("lichTalk2");
+			</Effect>
+		</Event>
+		<Event trigger="lichTalk2">
+			<Effect>
+				setRefName(fissure_tmp.lich,"Nar'Asoroth");
+				speak("Necro",_("The stone is solid,but if I let the skeletons work any faster they will break apart!"),"fear");
+				changeTopic("attackChoice");
+			</Effect>
+		</Event>
+		<Event trigger="attackChoice" once="true">
+			<Effect>
+				addCameraPosition(1000,"locParty",-90,25,10)
+				
+				if(solo())then
+					speak("PL",_("((Such an opportunity may never occur again.))"),"thoughtful");
+				elseif(duo())then
+					fissure_tmp.otherPlayer = getPlayers()[2];
+					addSpeaker(fissure_tmp.otherPlayer,"second");
+					speak("second",_("Come on, this is our chance!"),"sneer");
+				else
+					if(getSpeaker("magopt")==getSpeaker("PL"))then
+						addSpeaker(fissure_tmp.otherPlayer,"second");
+						speak("second",_("Come on, this is our chance!"),"sneer")
+					else
+						speak("magopt",_("Come on, this is our chance!"),"sneer");
+					end;
+				end;
+				addQuestion(_("Attack the lich immediately?"),"all");
+				addAnswer(_("Yes"),"chargeLich");
+				addAnswer(_("No"),"keepListening");
+			</Effect>
+		</Event>
+		<Event trigger="chargeLich" once="true">
+			<Effect>
+				speak("PL",_("Let's go then!"),"warcry");
+				changeTopic("attackLich");
+			</Effect>
+		</Event>
+		<Event trigger="keepListening" once="true">
+			<Effect>
+				fissure.listened = true;
+				addCameraPosition(1000,"locNecromancer",-90,45,10)
+				if(solo())then
+				elseif(duo())then
+					speak("PL",_("Wait, we may learn something useful."),"normal");
+				else
+					speak("PL",_("Wait, we may learn something useful."),"normal");
+				end;
+				
+				speak("Lich",_("Let them rest from time to time."),"normal");
+				speak("Lich",_("They should be able to fight, too."),"normal");
+				speak("Necro",_("Isn't the tunnel supposed to be ready for the attack?"),"surprised");
+				--Lich lachen
+				speak("Lich",_("No, the city is unimportant in the big picture."),"sneer");
+				setSpeakerEmotion("Necro","normal");
+				speak("Lich",_("Let those aisen dogs burn their backup troops there."),"sneer");
+				speak("Lich",_("The army passing through this tunnel has nothing to do with Dwarfenwall."),"sneer");
+				speak("Lich",_("Only the crystal counts."),"thoughtful");
+				speak("Necro",_("I don't understand."),"surprised");
+				speak("Lich",_("And that is for your own good."),"normal");
+				speak("Lich",_("Now back to work."),"threaten");
+				setSpeakerAnimation("Necro","kneelDown",1000);
+				executeInDialog('startTimer("necroGetUp",790)');
+				speak("Necro",_("Your wish is my action."),"normal");
+				
+				if(solo())then
+					speak("PL",_("That has to be the lich attacking Dwarfenwall."),"thoughtful");
+					speak("PL",_("If I kill him now his army will fall to dust."),"grin");
+				else
+					if(getSpeaker("priopt")==getSpeaker("PL"))then
+						speak("priopt",_("That's a lich."),"thoughtful");
+						speak("priopt",_("If we destroy him now his army will fall apart with him!"),"normal");
+					elseif(getSpeaker("magopt")==getSpeaker("PL"))then
+						speak("magopt",_("That's a lich."),"thoughtful");
+						speak("magopt",_("If we destroy him now his army will fall apart with him!"),"normal");
+					else
+						speak("second",_("That's a lich."),"thoughtful");
+						speak("second",_("If we destroy him now his army will fall apart with him!"),"normal");
+					end;
+				end;
+				speak("PL",_("Let's go then!"),"angry");
+				changeTopic("attackLich");
+			</Effect>
+		</Event>
+		<Event trigger="necroGetUp" once="true">
+			<Effect>
+				setObjectAnimation(fissure_tmp.necromancer,"kneelUp",1200);
+			</Effect>
+		</Event>
+		<Event trigger="attackLich" once="true">
+			<Effect>
+				fissure_tmp.retreat=true;
+				fissure_tmp.enemies=7;
+				timedExecute('addUnitCommand('..fissure_tmp.lich..',"walk","entry_fissure")',1000);
+				startTimer("battlecrys",200);
+			</Effect>
+		</Event>
+		<Event trigger="battlecrys" once="true">
+			<Effect>
+				setCutsceneMode(false);
+				for i,player in ipairs(getPlayers()) do
+					unitSpeak(player,_("Harvest!"),"warcry",2000);
+				end;
+				unitSpeak(fissure_tmp.lich,_("What do you know. There are rats everywhere. Kill them and bring me their bones!"),"unhappy",6000);
+				
+			</Effect>
+		</Event>
+		
+		<Event trigger = "unit_moved" once="true">
+			<Condition>
+				if((fissure_tmp.retreat == true) and (trigger.unit == fissure_tmp.lich))then
+					return  unitIsInArea(trigger.unit,"areaFissure");
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				deleteObject(fissure_tmp.lich);
+				local skel;
+				for i = 1, 6 do
+					skel = createObject("sword_skel", "entry_fissure");
+					addUnitCommand(skel, "walk", "locNecromancer", 3, "secondary");
+					fissure_tmp.enemies = fissure_tmp.enemies + 1;
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger= "unit_die">
+			<Condition>
+				-- caught subtypes: worker_skel, necromancer, sword_skel
+				local sub = get(trigger.unit,"subtype");
+				if((sub == "worker_skel")or(sub == "necromancer") or (sub=="sword_skel"))then
+					return true;
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				fissure_tmp.enemies = fissure_tmp.enemies - 1;
+				if(fissure_tmp.enemies == 0)then
+					insertTrigger("destroyFissure");
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger = "destroyFissure" once="true">
+			<Effect>
+				setCutsceneMode(true);
+				fissure_tmp.afterbattle = true;
+				addCameraPosition(0,"locSkeleton2",-90,45,14);
+				assembleParty("greyCurseCaveFis","locParty");
+				
+				initDialog();
+
+				changeTopic("blastFissure")
+			</Effect>
+		</Event>
+		
+		<Event trigger = "blastFissure" once="true">
+			<Effect>
+				fissure_tmp.mage = getSpeaker("magopt");
+				moveObject(fissure_tmp.mage,"locLich");
+				addUnitCommand(fissure_tmp.mage, "walk", "locSkeleton2");
+			</Effect>
+		</Event>
+		
+		<Event trigger="command_complete" once="true">
+			<Condition>
+				return (fissure_tmp.afterbattle == true);
+			</Condition>
+			<Effect>
+				initDialog();
+				
+				if(trigger.success == false)then
+					moveObject(fissure_tmp.mage,"locSkeleton2")
+				end;
+				
+				speak("magopt","Here is a good place for the spell!","normal");
+				if (solo())then
+					speak("PL",_("Then I shall blow this crevice to smithereens."),"grin");
+				else
+					speak("magopt","Hier ist eine gute Stelle fuer den Zauber!","normal");
+					if(getSpeaker("magopt")==getSpeaker("PL"))then
+						speak("second",_("Alright, go!"),"normal");
+					else
+						speak("PL",_("Alright, go!"),"normal");
+					end;
+					speak("waropt", _("Blow this passage to smithereens!"));
+				end;
+				
+				changeTopic("setExplosives")
+			</Effect>
+		</Event>
+		
+		<Event trigger="setExplosives" once = "true">
+			<Effect>
+				--TODO: hinknien und Sprengsatz legen
+				fissure_tmp.bomb=createObject("council_bomb","locSkeleton2");
+				getObjectOutOfWay(fissure_tmp.bomb);
+				setObjectAnimation(fissure_tmp.mage,"kneelDown",800);
+				startTimer("takeCover",3000);
+				timedExecute('setObjectAnimation('..fissure_tmp.mage..',"kneel",2000,true);',800);
+				timedExecute('getObjectOnFloor('..fissure_tmp.bomb..')',1000);
+				timedExecute('setObjectAnimation('..fissure_tmp.mage..',"kneelUp",800);',1200);
+				timedExecute('setObjectAnimation('..fissure_tmp.bomb..',"charge",4000);',1200);
+				set(fissure_tmp.mage,"walk_speed",7000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="takeCover" once="true">
+			<Effect>
+				timedExecute('addUnitCommand('..fissure_tmp.mage..',"walk","locParty", 4)',500);
+				unitSpeak(fissure_tmp.mage,_("Get out, quick!"),"warcry");
+				startTimer("theExplosion",2200);
+			</Effect>
+		</Event>
+		
+		<Event trigger="theExplosion" once="true">
+			<Effect>
+				set(fissure_tmp.mage,"walk_speed",3500);
+			
+				setObjectAnimation(fissure_tmp.bomb,"detonate",2000);
+				--TODO: insert quake function to replace the camerapositions
+				timedExecute('deleteObject('..fissure_tmp.bomb..');',2200);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				addCameraPosition(100,"locSkeleton1",-90,45,10);
+				addCameraPosition(100,"locSkeleton2",-90,45,10);
+				
+				local pos = get(fissure_tmp.stone1,"position");
+				fissure_tmp.smoke1 = createObject("smokeEmitter", pos);
+				local pos = get(fissure_tmp.stone2,"position");
+				fissure_tmp.smoke2 = createObject("smokeEmitter", pos);
+				local pos = get(fissure_tmp.stone3,"position");
+				fissure_tmp.smoke3 = createObject("smokeEmitter", pos);
+				local pos = get(fissure_tmp.stone4,"position");
+				fissure_tmp.smoke4 = createObject("smokeEmitter", pos);
+				local pos = get(fissure_tmp.stone5,"position");
+				fissure_tmp.smoke5 = createObject("smokeEmitter", pos);
+				startTimer("blocksEmerge",1500);
+				startTimer("fissureBlocked", 4000);
+				
+				--groupObjectsArc(getParty(),"locParty","locCrystal");
+			</Effect>
+		</Event>
+		
+		<Event trigger="blocksEmerge" once="true">
+			<Effect>
+				getObjectOnFloor(fissure_tmp.stone1);
+				getObjectOnFloor(fissure_tmp.stone2);
+				getObjectOnFloor(fissure_tmp.stone3);
+				getObjectOnFloor(fissure_tmp.stone4);
+				getObjectOnFloor(fissure_tmp.stone5);
+			</Effect>
+		</Event>
+		
+		<Event trigger="fissureBlocked" once="true">
+			<Effect>
+				deleteObject(fissure_tmp.smoke1);	
+				deleteObject(fissure_tmp.smoke2);
+				deleteObject(fissure_tmp.smoke3);
+				deleteObject(fissure_tmp.smoke4);
+				deleteObject(fissure_tmp.smoke5);
+				
+				fissure_tmp.soren=createObject("sorenCrystal","locCrystal");
+				setRefName(fissure_tmp.soren,"Soren Windclaw")
+				
+				addCameraPosition(2000,"locParty", 90,75,15);
+				playersLookAt("locCrystal");
+				
+				initDialog();
+				
+				addSpeaker(fissure_tmp.soren, "Soren");
+				
+				if (solo()) then
+					speak("PL",_("Alright, Windclaw, I'm done here."),"grin",3000);
+				else
+					speak("PL",_("Alright, Windclaw, We are done here."),"grin",3000);
+				end;
+				
+				speak("PL",_("What now?"),"normal");
+				
+				if(solo())then
+					speak("Soren",_("You fool! Get yourself out of this mountain!"),"angry");
+					speak("Soren",_("You are needed in Dwarfenwall!"),"angry");
+				else
+					speak("Soren",_("You fools! Get yourselves out of this mountain!"),"angry");
+					speak("Soren",_("You are needed in Dwarfenwall!"),"angry");
+					speak("arcopt",_("Let's go. If we are lucky the passage is blocked too and we can all take a break."),"grin");
+					speak("Soren", _("In that case you can always tear yourselves apart. That would work."),"sneer");
+					speak("magopt", _("Does he have any idea how painful this always is?"), "disgust");
+					speak("waropt", _("That's impossible. Otherwise he wouldn't give such a stupid suggestion."),"thoughtful");
+					speak("arcopt", _("There really are better employers."),"unhappy");
+					speak("Soren",_("Stop bickering and get moving!"),"threaten");
+				end;
+			
+				changeTopic("theTraderEmerges");
+			</Effect>
+		</Event>
+		
+		<Event trigger="theTraderEmerges" once="true">
+			<Effect>
+				removeSpeaker("Soren");
+				deleteObject(fissure_tmp.soren);
+				
+				theTrader_tmp.traderCave=createObject("theTrader", "exit_south");
+				setRefName(theTrader_tmp.traderCave,"The Trader");
+				addUnitCommand(theTrader_tmp.traderCave,"walk","locCrystal");
+				
+				addCameraPosition(1500,"locParty", 90,45,15);
+				
+				addSpeaker(theTrader_tmp.traderCave,"Trader");
+				speak("Trader",_("Hopefully there is an exit in this direction."),"sad");
+				speak("PL",_("Who goes there?"),"threaten");
+				speak("Trader",_("Oh by the gods, if some of them have their eyes on this unpleasent piece of land right now."),"happy");
+				if (solo())then
+					speak("Trader",_("How nice to see a familiar face."),"excited");
+				else
+					speak("Trader",_("How nice to see familiar faces."),"excited");
+				end;
+				
+				speak("arcopt",_("Not so fast, peddler!"),"unhappy");
+				speak("arcopt",_("How by Harad's eyes did you get here?"),"unhappy");
+				
+				speak("Trader", _("Oh! Well, you see..."),"sad");
+				speak("Trader", _("I wanted to take a short cut through the mountains when suddenly the ground was caving in."),"sad");
+				speak("Trader", _("And after I took a careful look around I sadly had to notice the way south was blocked."),"unhappy");
+				speak("Trader", _("That's why I'm here."),"sad");
+				speak("Trader", _("There is a cave in the east, too, but that was a bit fishy."),"normal");
+				if (solo())then
+					speak("Trader", _("But since you are here there is still hope."),"happy");
+					speak("Trader", _("I will just wait until the road is clear."),"happy");
+					speak("PL",_("Your distress aside, what makes you so sure I'll not simply vanish with a town portal?"),"surprised")
+				else
+					speak("Trader", _("But since you are here, appreciated friends, there is still hope."),"happy");
+					speak("Trader", _("I will just wait until the road is clear."),"happy");
+					speak("PL",_("Your distress aside, what makes you so sure we'll not simply vanish with a town portal?"))
+				end;
+				
+				speak("Trader", _("Well, that would work normally and I would gladly offer you a grand price for the help."),"thoughtful");
+				speak("Trader", _("But short ago, there was a notable magical explosion in this place."),"normal");
+				if (solo())then
+					speak("Trader", _("You will discover that the scrolls take you right here again. ##solo"),"normal");
+				else
+					speak("Trader", _("You will discover that the scrolls take you right here again."),"normal");
+				end;
+				
+				speak("magopt", _("Curse you, Windclaw!"), "angry");
+				speak("PL", _("Fine. Then we do it the hard way."), "unhappy");
+				speak("Trader", _("If you need something let me know. I discovered some potions back there, and I would part with them for a small amount of gold."),"amused");
+				speak("PL", _("You really ask money for it."), "surprised");
+				speak("archer", _("But business is business."),"thoughtful");
+				
+				executeInDialog('insertTrigger("cleanUpFissure")');
+			</Effect>
+		</Event>
+		
+		<Event trigger="cleanUpFissure" once="true">
+			<Effect>
+				fissure.finished=true;
+				setCutsceneMode(false);
+				addPlayersExperience(2000,"destroyed_fissure");
+				addUnitCommand(theTrader_tmp.traderCave,"walk","locNecromancer");
+				setRefName(theTrader_tmp.traderCave,"The Lost Trader");
+			</Effect>
+		</Event>
+	</Region>
+	
+	<Region name="greyCurseCaveDep">
+		<Event trigger="create_region">
+			<Effect>
+				fissure_tmp.blockSouth = createObject("blockExit","entry_south");
+				moveObject(fissure_tmp.blockSouth,"exit_south",false);
+				fissure_tmp.blockEast = createObject("blockExit","entry_east");
+				moveObject(fissure_tmp.blockEast,"exit_east",false);
+			</Effect>
+		</Event>
+		<Event trigger="enter_region">
+			<Effect>
+				if(fissure.finished ~= true)then
+					getObjectOutOfWay(fissure_tmp.blockSouth);
+					getObjectOnFloor(fissure_tmp.blockEast);
+				else
+					getObjectOutOfWay(fissure_tmp.blockEast);
+					getObjectOnFloor(fissure_tmp.blockSouth);
+				end;
+			</Effect>
+		</Event>
+	</Region>
+</Quest>
+

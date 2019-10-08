@@ -1,0 +1,77 @@
+<!--
+<Ability type="string"
+	name="string"
+	description="string"
+	time="float"
+	timer_nr="int"			(default: 0)
+	timer_value="float"		(default: 0)
+	base_ability="string" 	(default:noaction)
+	target_type="self"
+	critical_perc=""		(default: 0)
+	range ="int"
+	>
+	moegliche Flags:
+		mute_affected
+	<Flag name="" />
+	
+	<Effect >
+	moegliche Implementationen:
+		
+		dmg_at_target
+		dmg_at_enemies_in_radius
+		dmg_at_enemies_around_target
+		
+		basemod_at_self
+		basemod_at_allies_in_radius
+		basemod_at_target
+		basemod_at_enemies_in_radius
+		
+		dynmod_at_self
+		dynmod_at_allies_in_radius
+		dynmod_at_target
+		dynmod_at_enemies_in_radius
+		
+		proj_at_target
+		proj_fly_at_target
+		proj_at_self
+		proj_at_enemies_around_target
+		proj_at_enemies_in_radius
+		
+		hammer_bash
+		battlecry
+		berserk
+		regenerate
+		multishot
+		volleyshot
+		
+		<CppImplementation type="string" />
+		<LuaImplementation>
+			Lua Code
+		</LuaImplementation>	
+	</Effect>
+	
+	<Damage>
+		moegliche Implementationen:
+			attack
+			range_attack
+			holy_attack
+			magic_attack
+			weapon_damage
+			
+			charge
+			storm_charge
+			
+			
+		
+		<CppImplementation type="string" />
+		<LuaImplementation>
+			Lua Code
+		</LuaImplementation>	
+	</Damage>
+	
+	<Projectile type="string" counter="int" speed="float">
+		<Flag name="string">
+	</Projectile>
+	
+</Ability>
+-->

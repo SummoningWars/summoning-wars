@@ -1,0 +1,22 @@
+<RenderInfo name="wandBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_wood"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="spruce_wnd" parent= "wandBase">
+	<Entity source="spruce_wnd.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="aprnt_wnd" parent= "wandBase">
+	<Entity source="aprnt_wnd.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="novice_wnd" parent= "wandBase">
+	<Entity source="novice_wnd.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="basicWand" parent= "wandBase">
+	<Entity source="basicWand.mesh"/>
+</RenderInfo>

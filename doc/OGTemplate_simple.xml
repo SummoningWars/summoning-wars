@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroupTemplate name="" version="1.0"> <!-- Zum Beispiel. Goblinlager_klein oder so ;-)-->
+  <Shape
+		type = "CIRCLE | RECT"
+		radius = ""
+		extent_x = ""
+		extent_y = ""
+		angle =""
+		/>
+
+  <WayPoint pos_x="" pos_y=""/>
+
+  <ObjectContent>
+    <object subType="$tree"
+			center_x=""
+			center_y=""
+			angle = "*in Grad*"
+			probability ="0-1"
+			prob_angle = "false"
+			/>
+
+
+
+    <object>    </object>
+    <object>    </object>
+    <object>    </object>
+    etc.
+  </objectContent>
+
+  <Locations>
+	 <Location name ="" pos_x ="" pos_y ="" />
+	 <Location name ="" pos_x ="" pos_y ="" />
+  </Locations>
+
+
+</ObjectGroupTemplate>

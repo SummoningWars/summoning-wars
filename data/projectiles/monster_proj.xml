@@ -1,0 +1,225 @@
+<Projectile  subtype="behemoth_fire_wave"
+			 lifetime="1000"
+			 radius="11"
+			 implementation = "grow_effect_at_each"
+			 >
+	<RenderInfo name="behemoth_fire_wave" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>
+
+<Projectile  subtype="tutorial_behemoth_fire_wave"
+			 lifetime="1000"
+			 radius="10"
+			 implementation = "grow_effect_at_each"
+			 >
+	<RenderInfo name="behemoth_fire_wave" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>
+
+
+<Projectile subtype="throwing_dagger"
+			radius="0.1"
+			lifetime="2000"
+			implementation = "fly"
+			>
+	<RenderInfo name="throwing_dagger" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+</Projectile>
+
+<Projectile subtype="throwing_berry"
+			radius="0.2"
+			lifetime="2000"
+			implementation = "fly"
+			>
+	<RenderInfo name="throwing_berry" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+</Projectile>
+
+<Projectile subtype="throwing_rock"
+			radius="0.2"
+			lifetime="2000"
+			implementation = "fly"
+			>
+	<RenderInfo name="throwing_rock" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+</Projectile>
+
+<Projectile subtype="bomb"
+		   radius="0.2"
+		   lifetime="600"
+		   implementation = "fly"
+		   new_projectile_type="explosion"
+		   >
+	<RenderInfo name="throwing_berry" />
+	<Effect>
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="grenade"
+		   radius="0.2"
+		   lifetime="1000"
+		   implementation = "fly"
+		   new_projectile_type="explosion"
+		   >
+	<RenderInfo name="throwing_berry" />
+	<Effect>
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="ice_bomb"
+		   radius="0.2"
+		   lifetime="600"
+		   implementation = "fly"
+		   new_projectile_type="ice_explosion"
+		   >
+	<RenderInfo name="throwing_berry" />
+	<Effect>
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="catapult_shot"
+			lifetime="1000"
+			radius="2.5"
+			implementation = "stationary"
+			new_projectile_type="smoke_wave"
+		   >
+	<Flag name="explodes"/>
+	<RenderInfo name="catapult_rock" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+</Projectile>
+
+<Projectile subtype="smoke_wave"
+			lifetime="1000"
+			radius="1.5"
+			implementation = "stationary"
+		   >
+	<RenderInfo name="smoke_wave" />
+</Projectile>
+
+<Projectile subtype="catapult_skeleton"
+			lifetime="1000"
+			radius="1.0"
+			implementation = "stationary"
+			new_projectile_type="cata_skel_explosion"
+		   >
+	<Flag name="explodes"/>
+	<RenderInfo name="catapult_skeleton" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+</Projectile>
+<Projectile  subtype="cata_skel_explosion"
+		   lifetime="200"
+		   radius="1.5"
+		   implementation = "stationary"
+		   >
+	<RenderInfo name="explosion" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>	
+</Projectile>
+
+<Projectile  subtype="guided_icicle"
+		   radius="0.2"
+		   lifetime="2000"
+		   implementation = "fly_guided"
+		   >
+	<RenderInfo name="ice_bolt" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="ice_ball"
+			lifetime="1000"
+			radius="1.0"
+			implementation = "fly"
+			new_projectile_type="ice_ball_ring"
+		   >
+	<Flag name="explodes"/>
+	<RenderInfo name="ice_bolt" />
+</Projectile>
+<Projectile subtype="guided_ice_ball"
+			lifetime="3000"
+			radius="0.5"
+			implementation = "fly_guided"
+			new_projectile_type="ice_ball_ring"
+		   >
+	<Flag name="explodes"/>
+	<RenderInfo name="ice_bolt" />
+</Projectile>
+
+<Projectile  subtype="ice_ball_ring"
+		   lifetime="800"
+		   radius="4"
+		   implementation = "grow_effect_at_each"
+		   >
+	<RenderInfo name="ice_ring" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="monster_freeze"
+		   lifetime="300"
+		   radius="0.5"
+		   implementation = "stationary"
+		   critical_percent="0.5"
+		   >
+	<RenderInfo name="freeze" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>
+
+<Projectile  subtype="frost_wave"
+		   lifetime="1000"
+		   radius="7"
+		   implementation = "grow_effect_at_each"
+		   >
+	<RenderInfo name="frost_wave" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="black_cloud"
+		   radius="5"
+		   lifetime="2500"
+		   counter="3"
+		   implementation = "stationary_multi_effect"
+		   >
+	<RenderInfo name="black_cloud" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>	
+</Projectile>
+
+<Projectile subtype="asoroth_ice_meteor"
+			lifetime="1000"
+			radius="1.0"
+			implementation = "stationary"
+			new_projectile_type="ice_ball_ring"
+		   >
+	<Flag name="explodes"/>
+	<RenderInfo name="catapult_rock" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+		<LuaImplementation>
+			setDamageValue("phys_dmg", {0,0});
+			setDamageValue("phys_dmg", {20,30});
+		</LuaImplementation>
+	</Effect>
+</Projectile>

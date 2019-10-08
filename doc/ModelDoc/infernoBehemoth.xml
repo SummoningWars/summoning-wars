@@ -1,0 +1,45 @@
+<creature>
+  <name>infernoBehemoth</name>
+  <meshname>infernoBehemoth.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWars/Maya Stuff/Scenes/Animation/fireBehemothAnimation.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>idle</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>attack1</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>walk</name>
+      <startframe>73</startframe>
+      <endframe>96</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>throwFireball</name>
+      <startframe>97</startframe>
+      <endframe>120</endframe>
+      <description>throw a Fireball with the right tail</description>
+    </clip>
+    <clip>
+      <name>fireWave</name>
+      <startframe>121</startframe>
+      <endframe>144</endframe>
+      <description>make a nasty fire wave</description>
+    </clip>
+  </animations>
+
+</creature>

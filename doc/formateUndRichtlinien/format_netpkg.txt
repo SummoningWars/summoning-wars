@@ -1,0 +1,84 @@
+---------- Server an Client ------------
+//Header
+- Art des Paketes - 4 Byte int
+- Anzahl Objekte - 2 Byte short
+- Anzahl Geschosse - 2 Byte short
+- Anzahl Items - 2 Byte short
+- Anzahl Items am Boden - 2 Byte short
+- Chatmessage - 1 Byte bool
+- Information ob Handel offen ist - 1 Byte bool
+- Ort des detailierten Items - 2 Byte short
+
+// Basisinformationen
+- Level - 1 Byte char
+- max HP - 4 Byte float
+- aktuelle HP - 4 Byte float
+- Staerke - 2 Byte short
+- Geschick - 2 Byte short
+- Magie - 2 Byte short
+- Wissen - 2 Byte short
+- freie Attributpunkte - 2 Byte short
+- Basisresistenzen - 8 Byte short
+- Maximalresistenzen - 8 Byte short
+- max XP - 4 Byte float
+- aktuelle XP - 4 Byte float
+- Ruestung - 2 Byte short
+- Blockwert - 2 Byte short
+- Attackewert - 2 Byte short
+- Angriffsgeschwindigkeit - 2 Byte short
+- Reichweite - 4 Byte float
+- Durchschlagskraft - 4 byte float
+- Schaden Basisangriff - 32 Byte float
+- Schaden Angriff links - 32 Byte float
+- Schaden Angriff rechts- 32 Byte float
+- Faehigkeiten - 24 Byte bitkodiert
+- Timer1 Prozentsatz - 4 Byte float
+- Timer2 Prozentsatz - 4 Byte float
+- Questinformationen - x Byte
+- Informationen zur Party
+
+
+// Informationen fuer feste Objekte
+- Typ - 1 Byte char
+- Subtyp - 2 Byte short
+- ID - 4 Byte int
+- Koordinaten - 8 Byte float
+- Form - 1 byte char
+- Ausdehnung - 8 Byte float
+- Ebene - 1 Byte bitkodiert
+- Drehwinkel - 4 Byte float
+// weitere Informationen fuer Kreaturen
+- Kategorie - 1 Byte char
+- Fraktion - 1 Byte char
+- aktuelle Aktion - 2 Byte short
+- Fortschritt der Aktion - 4 Byte float
+- Verhaeltnis HP / max. HP - 4 Byte float
+- Statusveraenderungen - 1 Byte bitkodiert
+// weitere Informationen Spieler
+- Partyinformation - 1 Byte char
+- Name - 32 Byte char
+
+// Informationen fuer Items
+- Typ  - 1 Byte char
+- Subtyp - 2 Byte short
+- Groesse - 1 Byte char
+- Ort - 2 Byte short
+// weitere Informationen fuer Items am Boden:
+- x-Koordinate 2 Byte short
+- y-Koordinate 2 Byte short
+
+
+// Information fuer Chatmessage
+- Laenge der Nachricht - 1 Byte char
+- Nachricht - x Byte
+
+//// Längen der Datenblöcke
+- Header - 12 Byte
+- festes Objekt - 29 Byte
+- Kreatur - 40 Byte
+- Spieler - 73 Byte
+- Startpaket - 153 Byte
+
+------------ Client an Server ---------------
+
+

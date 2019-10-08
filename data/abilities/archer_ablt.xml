@@ -1,0 +1,471 @@
+<Ability type="aimed_shot"
+		 name="Snipe"
+		 description="The archers deadly precision causes his shots to deal more damage than normal."
+		 time="801.000000"
+		 timer_nr="2.000000"
+		 timer_value="140000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000" 
+		 target_type="self">
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",50000);
+			setBaseModValue("dexterity",0.5*get(self,"dexterity"));
+			setBaseModValue("flag","aimed_shot");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="blind_rage"
+		 name="Blind Rage"
+		 description="The archer attacks the enemies eyes, causing him to go berserk, but be blinded at the same time."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="4000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.660000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("berserk", get(self,"dexterity"));
+			setDamageValue("blind", get(self,"dexterity"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="bow_spirit"
+		 name="Bow Spirit"
+		 description="The archer becomes one with his weapon, dealing more damage over a longer time. Additionally his critical strike chance is increased. This effect stacks with Elfeyes."
+		 time="801.000000"
+		 timer_nr="2.000000"
+		 timer_value="140000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000" 
+		 target_type="self">
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="crit_hits" />
+		<LuaImplementation>
+			setBaseModValue("time",50000);
+			setBaseModValue("dexterity",0.5*get(self,"dexterity"));
+			setBaseModValue("flag","bow_spirit");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="concentration"
+		 name="Concentration"
+		 description="The archers steady mind can no longer be confused."
+		 time="0.000000"
+		 timer_nr="0.000000"
+		 timer_value="0.000000"
+		 base_ability="noaction"
+		 critical_percent="0.000000"
+		 target_type="passive" >
+</Ability>
+
+<Ability type="critical_strike"
+		 name="Elfeyes"
+		 description="The archer shoots with deadly precision, leading to an increased critical hit rate."
+		 time="0.000000"
+		 timer_nr="0.000000"
+		 timer_value="0.000000"
+		 base_ability="noaction"
+		 critical_percent="0.000000"
+		 target_type="passive" />
+
+<Ability type="death_roulette"
+		 name="Deadly Roulette"
+		 description="The projectile has a fifty percent probability to attack another target, if it hits someone. Be careful not to stand in its way, for it distinguishes not between friend and foe."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.660000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" >
+		<Flag name="prob_bouncing" />
+	</Projectile>
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="evade"
+		 name="Catlike Reflexes"
+		 description="The archers nimble mind allows him to avoid damage better."
+		 time="0.000000"
+		 timer_nr="0.000000"
+		 timer_value="0.000000"
+		 base_ability="noaction"
+		 critical_percent="0.000000"
+		 target_type="passive" />
+
+<Ability type="exploding_arrow"
+		 name="Explosion Arrow"
+		 description="The projectile is imbued with the power of a weak firespirit. It will deal damage in a small area, if it hits."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="6000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.660000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" >
+		<Flag name="explodes" />
+	</Projectile>
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			local pdmg = getDamageValue("phys_dmg");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg",{pdmg[1]+fdmg[1],pdmg[2]+fdmg[2]});
+			setDamageValue("blockable",false);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="exploding_cascade"
+		 name="Blast Cascade"
+		 description="The projectile is imbued with the power of a firespirit. It will explode with areadamage on hitting. Additionally four more explosions will go of in every direction."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="6000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.660000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" >
+		<Flag name="explodes" />
+		<Flag name="multi_explodes" />
+	</Projectile>
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			setDamageValue("blockable",false);
+			local pdmg = getDamageValue("phys_dmg");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg",{pdmg[1]+fdmg[1],pdmg[2]+fdmg[2]});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="freezing_arrows"
+		 name="Frost Arrows"
+		 description="The archer summons a spirit of ice into his weapon, causing his shots to deal icedamage over a greater amount of time. There is a chance that his enemies will be frozen solid if they are hit."
+		 time="801.000000"
+		 timer_nr="3.000000"
+		 timer_value="240000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="frost_arrows" />
+		<LuaImplementation>
+			setBaseModValue("time",100000);
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="guided_triple_shot"
+		 name="Deadly Swarm"
+		 description="The archer shoots four consecutive projectiles that are imbued with vengeful spirits. They will pursue the enemy, even if he tries to run."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.300000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="guided_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+	</Damage>
+</Ability>
+
+<Ability type="ice_arrows"
+		 name="Ice Arrows"
+		 description="The archer calls upon the spirits of ice to imbue his projectiles with icedamage."
+		 time="801.000000"
+		 timer_nr="3.000000"
+		 timer_value="240000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000" 
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="ice_arrows" />
+		<LuaImplementation>
+			setBaseModValue("time",80000);
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="mental_wall"
+		 name="Mind Wall"
+		 description="The archer has become immune to anger. He will never go berserk again."
+		 time="0.000000"
+		 timer_nr="0.000000"
+		 timer_value="0.000000"
+		 base_ability="noaction"
+		 critical_percent="0.000000"
+		 target_type="passive" />
+
+<Ability type="multishot"
+		 name="Fanshot"
+		 description="The archer shoots five projectiles at a time, aimed at enemies in front of him. The damage dealt by each projectile suffers a little."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="2500.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.700000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="multishot" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*0.75);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="pierce"
+		 name="Elfwanderer"
+		 description="The archer unleashes a mighty shot that pierces right through an enemy and might hit another enemy behind him."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="2000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.660000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" >
+		<Flag name="piercing" />
+	</Projectile>
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*1.8);
+			setDamageValue("blockable",false);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="resist_air"
+		 name="North Hunter"
+		 description="The archers good longterm relations with the spirits of wind and ice has caused his resistence and his maximum resistance of these elements to rise by 10 percent."
+		 time="0.000000"
+		 timer_nr="0.000000"
+		 timer_value="0.000000"
+		 base_ability="noaction"
+		 critical_percent="0.000000"
+		 target_type="passive" />
+
+<Ability type="resist_ice"
+		 name="North Roamer"
+		 description="The archer has made a pact with the spirits of wind and ice. His resistance against wind- and icedamage is increased by 20 percent."
+		 time="0.000000"
+		 timer_nr="0.000000"
+		 timer_value="0.000000"
+		 base_ability="noaction"
+		 critical_percent="0.000000"
+		 target_type="passive" />
+
+<Ability type="storm_arrows"
+		 name="Storm Arrows"
+		 description="The mighty spirits of wind themselfes help the archer by imbuing his projectiles with their power, causing them to deal more winddamage for a longer time."
+		 time="801.000000"
+		 timer_nr="3.000000"
+		 timer_value="240000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="storm_arrows" />
+		<LuaImplementation>
+			setBaseModValue("time",100000);
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="triple_shot"
+		 name="Tripple Shot"
+		 description="The archers mastery of ranged weapons allows him to shoot three projectiles in a short amount of time." time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.300000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="vacuum"
+		 name="Vacuum"
+		 description="The archer attacks with an arrow imbued with a weaker windspirit, that causes an enemy hit by it to be stunned."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="5000.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="wind_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local dex = get(self,"dexterity")
+			local admg = getDamageValue("air_dmg");
+			setDamageValue("air_dmg", {admg[1] + dex, admg[2] + dex*3});
+			setDamageValue("paralyzed",dex);
+			setDamageValue("blockable",false);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="volley_shot"
+		 name="Iron Hail"
+		 description="The archer handles his weapons with elflike precision, attacking up to seven enemys in front of him. The damage dealt by each projectile suffers a little."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="2500.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.700000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="volley_shot" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="weak_point"
+		 name="Weak Spot"
+		 description="The archer attacks a weak point of his enemy, causing the victim to go berserk."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="4000.000000"
+		 base_ability="range_attack"
+		 critical_percent="0.660000"
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("berserk", get(self,"dexterity"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="wind_arrows"
+		 name="Wind Arrows"
+		 description="The archer has been grantet the power to imbue his projectiles with winddamage by the spirits of wind."
+		 time="801.000000"
+		 timer_nr="3.000000"
+		 timer_value="240000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="wind_arrows" />
+		<LuaImplementation>
+			setBaseModValue("time",80000);
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="wind_walk"
+		 name="Windwalk"
+		 description="The spirits of wind help the archer to move faster than normal and avoid damage."
+		 time="801.000000"
+		 timer_nr="2.000000"
+		 timer_value="120000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="wind_walk" />
+		<LuaImplementation>
+			setBaseModValue("time",80000);
+			setBaseModValue("walk_speed",1500);
+			setBaseModValue("block",0.2*get(self,"dexterity"));
+			setBaseModValue("flag","wind_walk");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+

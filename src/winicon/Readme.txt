@@ -1,0 +1,1 @@
+This folder contains only files that should be added to a Visual Studio project in order to add an icon to the exe.

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="exitBlock" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4.827538938"
+    extent_y="4.827538938"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="stone1" 
+            center_x="-3.210417128" 
+            center_y="-1.749179257" 
+            angle="-266.8431858" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="stone2" 
+            center_x="3.110037791" 
+            center_y="-2.850668029" 
+           height="-1.804112415e-016" 
+            angle="27.53329663" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="stone_l1" 
+            center_x="-1.512840989" 
+            center_y="-0.06512662145" 
+            angle="25.98531106" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="stone_l1" 
+            center_x="1.737326738" 
+            center_y="0.774643795" 
+            angle="-193.9818955" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

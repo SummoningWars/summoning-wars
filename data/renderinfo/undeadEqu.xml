@@ -1,0 +1,7 @@
+﻿<RenderInfo name="necromancerRobeEnemy" parent="necromancerBase">
+	<Entity source="necro_robMT.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="rustArmor" parent="reaperbase">
+	<Entity source="rust_arm.mesh" scale="1.3"/>
+</RenderInfo>

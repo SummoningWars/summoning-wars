@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="trees2" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$single_block" 
+            center_x="-2" 
+            center_y="-2" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="2.667014436" 
+            center_y="0.2618778871" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-3.334221059" 
+            center_y="3.518772552" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="1.585642106" 
+            center_y="-1.816382929" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="0.6527500819" 
+            center_y="2.783539045" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

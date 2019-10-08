@@ -1,0 +1,14 @@
+skeleton.mesh
+attack
+itemRightHand sword.mesh
+itemLeftHand broken_shd.mesh
+# everything after first # character is ignored
+File layout:
+
+main_mesh
+animation (optional)
+bonename object_attached_to_bone (optional)
+bonename2 object_attached_to_bone2 (optional)
+...
+
+Meshes are read directly from the main ressource folder.

@@ -1,0 +1,14 @@
+Hier stehen alle Aenderungen, die noch nicht von der
+"world.xml" in die "region-structure.png" uebertragen wurden:
+
+- aisMounPath verwendet jetzt das Template "meetIreana"
+- das Template für das Söldnerlager heißt korrekt "medairMercenaryCamp"
+- medBackalley verwendet ein Template namens "medBackalley"
+- dwarfenfroward besitzt jetzt die locations exit_command/entry_command, von wo aus man in die Region dwarfenfrowardCommand kommt
+- dwarfenfrowardCommand verwendet das Template commandHouse und besitzt einen Süd-Ausgang
+- nördlich von aisHeath ist jetzt die Region aisStonePlains
+- aisStonePlains hat einen Ostausgang zu aisDarkClearing und einen Nordausgang zu aisWideHeath
+- aisDarkClearing ist eine Sackgasse
+- aisWideHeath hat einen Nordausgang zu joringsbridge
+- aisFairyforest hat jetzt einen Westausgang zu aisDarkFairyforest(eine Sackgasse)
+

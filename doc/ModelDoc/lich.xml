@@ -1,0 +1,57 @@
+<creature>
+  <name>lich</name>
+  <meshname>lich.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Characters/NPC/Untote/lichAnimation1.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>idle</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>waiting for action</description>
+    </clip>
+    <clip>
+      <name>walk</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description>on the way to new conquests</description>
+    </clip>
+    <clip>
+      <name>attack1</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description>swing the scythe</description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>73</startframe>
+      <endframe>96</endframe>
+      <description>return into the void</description>
+    </clip>
+    <clip>
+      <name>castMagicWeak</name>
+      <startframe>97</startframe>
+      <endframe>120</endframe>
+      <description>cast a quick spell</description>
+    </clip>
+    <clip>
+      <name>summon</name>
+      <startframe>121</startframe>
+      <endframe>144</endframe>
+      <description>summon a loyal servant</description>
+    </clip>
+    <clip>
+      <name>appear</name>
+      <startframe>145</startframe>
+      <endframe>168</endframe>
+      <description>appear out of thin air - a pretty old trick, but impressive none the less</description>
+    </clip>
+    <clip>
+      <name>talk</name>
+      <startframe>169</startframe>
+      <endframe>192</endframe>
+      <description>give new orders to your underlings</description>
+    </clip>
+  </animations>
+
+</creature>

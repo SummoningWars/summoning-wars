@@ -1,0 +1,121 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="switch" layer="NORMAL">
+	<RenderInfo name="testswitch"/>
+	<Geometry shape="CIRCLE" radius="0.3"/>
+	
+	<Event trigger="object_use">
+		<Effect>
+			local set = getScriptObjectFlag(trigger.used_object,'on')
+			setScriptObjectFlag(trigger.used_object,'on',not set)
+			
+			insertTrigger("object_use");
+			local doorid = scriptobjectvar[trigger._id]["door"];
+			addTriggerVariable("_id",doorid);
+			addTriggerVariable("used_object",doorid);
+		</Effect>
+	</Event>
+</ScriptObject>
+
+<ScriptObject  subtype="konz_door1" layer="NORMAL">
+	<RenderInfo name="konz_door1"/>
+	<Geometry shape="RECT" extent_x="0.5" extent_y="2"/>
+	<Flags usable="true" exact_picking="true" collision_detect="false" />
+	
+	<Event trigger="object_use">
+		<Effect>
+			if ((scriptobjectvar[trigger.used_object]["locked"] ~= true or trigger.lock_override) and scriptobjectvar[trigger.used_object]["lockdown"] ~= true) then
+				local set = getScriptObjectFlag(trigger.used_object,'open')
+				setScriptObjectFlag(trigger.used_object,'open',not set)
+				
+				local pos = get(trigger.used_object,"position")
+				setObjectValue(trigger.used_object,'layer','normal')
+				if (not set) then
+					setObjectValue(trigger.used_object,'layer','nocollision');
+				end
+				
+				scriptobjectvar[trigger.used_object]["lockdown"] = true;
+				timedExecute('scriptobjectvar['..trigger.used_object..']["lockdown"] = nil',1500);
+			end
+		</Effect>
+	</Event>
+</ScriptObject>
+
+<ScriptObject type="SCRIPTOBJECT" subtype="shelf_door_r1" layer="NORMAL">
+	<RenderInfo name="shelf_door_r1"/>
+	<Geometry shape="RECT" extent_x="0.5" extent_y="2"/>
+	
+	<Event trigger="object_use">
+		<Effect>
+			if ((scriptobjectvar[trigger.used_object]["locked"] ~= true or trigger.lock_override) and scriptobjectvar[trigger.used_object]["lockdown"] ~= true) then
+				local set = getScriptObjectFlag(trigger.used_object,'open')
+				setScriptObjectFlag(trigger.used_object,'open',not set)
+				
+				local pos = get(trigger.used_object,"position")
+				local shift={-0.7,4};
+				if (not set) then
+					shift[1] = 0.7;
+					shift[2] = -4;
+				end
+				
+				vecrotate(shift,get(trigger.used_object,"angle"));
+				vecadd(pos,shift);
+				
+				moveObject(trigger.used_object,pos,false)
+				
+				scriptobjectvar[trigger.used_object]["lockdown"] = true;
+				timedExecute('scriptobjectvar['..trigger.used_object..']["lockdown"] = nil',1000);
+			end;
+		</Effect>
+	</Event>
+</ScriptObject>
+
+<ScriptObject type="SCRIPTOBJECT" subtype="shelf_door_l1" layer="NORMAL">
+	<RenderInfo name="shelf_door_l1"/>
+	<Geometry shape="RECT" extent_x="0.5" extent_y="2"/>
+	<Flags usable="true" exact_picking="true" collision_detect="false" />
+	
+	<Event trigger="object_use">
+		<Effect>
+			if ((scriptobjectvar[trigger.used_object]["locked"] ~= true or trigger.lock_override) and scriptobjectvar[trigger.used_object]["lockdown"] ~= true) then
+				local set = getScriptObjectFlag(trigger.used_object,'open')
+				setScriptObjectFlag(trigger.used_object,'open',not set)
+				
+				local pos = get(trigger.used_object,"position")
+				local shift={-0.7,-4};
+				if (not set) then
+				shift[1] = 0.7;
+				shift[2] = 4;
+				end
+				
+				vecrotate(shift,get(trigger.used_object,"angle"));
+				vecadd(pos,shift);
+				
+				moveObject(trigger.used_object,pos,false)
+				
+				scriptobjectvar[trigger.used_object]["lockdown"] = true;
+				timedExecute('scriptobjectvar['..trigger.used_object..']["lockdown"] = nil',1000);
+			end;
+		</Effect>
+	</Event>
+</ScriptObject>
+
+<ScriptObject type="SCRIPTOBJECT" subtype="prison_door_m1" layer="BASE">
+	<RenderInfo name="prison_door_m1"/>
+	<Geometry shape="RECT" extent_x="0.1" extent_y="1"/>
+	<Flags usable="true" exact_picking="false" collision_detect="false" />
+	
+	<Event trigger="object_use">
+		<Effect>
+			if ((scriptobjectvar[trigger.used_object]["locked"] ~= true or trigger.lock_override) and scriptobjectvar[trigger.used_object]["lockdown"] ~= true) then
+				local stat = getScriptObjectFlag(trigger.used_object,'open')
+				setScriptObjectFlag(trigger.used_object,'open',not stat)
+				setObjectValue(trigger.used_object,'layer','normal')
+				if (not stat) then
+					setObjectValue(trigger.used_object,'layer','nocollision');
+				end;
+
+				scriptobjectvar[trigger.used_object]["lockdown"] = true;
+				timedExecute('scriptobjectvar['..trigger.used_object..']["lockdown"] = nil',500);
+			end
+		</Effect>
+	</Event>
+</ScriptObject>

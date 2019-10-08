@@ -1,0 +1,314 @@
+<Quest name="The Trader" table_name="theTrader" domain="the_trader">
+	<Description>
+		if (fortify_dwall.finished) then
+			return _("Quest finished")
+		else
+			return _("A strange trader offered me to sell Empty Scrolls.")
+		end
+	</Description>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="elemental_end" once="true">
+			<Effect>
+				if(theTrader.intro ~= true) then
+					theTrader.intro = false;
+				end;
+			</Effect>
+		</Event>
+	</Region>
+
+<!-- Medair -->
+	<Region name="medMercCamp">
+		<Event trigger="create_region" once = "true">
+			<Effect>
+				if (theTrader.intro ~= true) then
+					theTrader_tmp.theTrader = createObject("theTrader", "locTheTraderIntro");
+					setRefName(theTrader_tmp.theTrader, "The Trader");
+					set(theTrader_tmp.theTrader,"angle",120);
+				else
+					theTrader_tmp.theTrader = createObject("theTrader", "locTheTrader");
+					setRefName(theTrader_tmp.theTrader, "The Trader");
+					set(theTrader_tmp.theTrader,"angle",180);
+				end;
+				
+				local pos = getLocation("locTheTrader");
+				pos = {pos[1]-1,pos[2] +1}
+				local stash = createObject('stash',  {pos[1]+1,pos[2] +1});
+			</Effect>
+		</Event>
+		
+		<Event trigger="enter_region" once = "true">
+			<Effect>
+				if (theTrader.intro ~= true) then
+					startTimer("start_theTraderIntro",1000);
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger="start_theTraderIntro" once = "true">
+			<Effect>
+				setCutsceneMode(true);
+				addCameraPosition(0,"entry_south",-90,50, 20);
+				assembleParty("medMercCamp","entry_south");
+				theTrader_tmp.startTalk = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return (theTrader_tmp.startTalk == true);
+			</Condition>
+			<Effect>
+				createDialogue();
+				addAllPlayersToDialog();
+				addStandardRoles();
+
+				addSpeaker(theTrader_tmp.theTrader,"theTrader");
+				setTopicBase("The Trader");
+				--greeting by composure of the group
+				if (solo() and femaleOnly()) then
+					speak("theTrader",_("A moment, dear madam."));
+					executeInDialog("addUnitCommand(theTrader_tmp.theTrader,'talk')");
+				elseif(solo() and maleOnly()) then
+					speak("theTrader",_("A moment, dear sir."));
+				elseif(femaleOnly()) then
+					speak("theTrader",_("A moment, dear ladies."));
+				elseif(maleOnly()) then
+					speak("theTrader",_("A moment, dear sirs."));
+				else
+					speak("theTrader",_("A moment, ladies and gentlemen."));
+				end;
+
+				speak("PL", _("What is it now?"),"unhappy");
+				
+				if(solo()) then
+					speak("theTrader", _("It seems, you are stuck in Harad's black claws."),"happy");
+				else
+					speak("theTrader", _("It seems, you are stuck in Harad's black claws."),"happy");
+				end;
+
+				speak("PL", _("What are you trying to say?"),"threaten");
+				speak("theTrader", _("Well, I want to say I'd like to lend you my services."));
+				
+				speak("arcopt", _("You are a trader?"),"thoughtful.");
+				speak("theTrader", _("Indeed."),"amused");
+				speak("theTrader", _("Unfortunatly I bet on the wrong branch and now I'm stuck with a large contingent of Empty Scrolls."),"sad");
+				if(not solo()) then
+					speak("waropt", _("What do we want with empty scrolls?"),"unhappy");
+					if(getSpeaker("waropt") ~= getSpeaker("magopt")) then
+						speak("magopt", _("Didn't you hear the capital letters?"),"sneer");
+					end;
+				end;
+				speak("magopt", _("What kind of scrolls are they?"),"normal");
+				
+				if(isMale(getSpeaker("magopt")))then
+					speak("theTrader", _("I see you are a man of reason!"),"excited");
+				else
+					speak("theTrader", _("I see you are a woman of reason!"),"excited");
+				end;
+				
+				speak("theTrader", _("Much to my regret, an Empty Scroll is only capable of one thing:"),"thoughtful");
+				speak("theTrader", _("To establish a way through Harad's black abyss."),"excited");
+				speak("theTrader", _("To make it worse only to spots of great magical concentration like that big road shrine over there."),"sad");
+				executeInDialog("addCameraPosition(1000,'WaypointLoc', -90,50, 20)");
+				--Kamera bewegen
+				speak("theTrader", _("Furthermore, a scroll's power is depleted quickly and limited only to one person."),"thougtful");
+				addQuestion(_("Explain the waypoint system?"))
+				addAnswer(_("Yes"),"explain_waypoints")
+				addAnswer(_("No"),"talk_on")
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname = "The Trader">
+		<Topic name="explain_waypoints">
+			<Effect>
+				speak("theTrader",_("When you get close to a waypoint, your aura will summon the familiar spirits to ignite the shrine's warning flames."),"normal");
+				speak("theTrader",_("Fear not, they will not harm you in any way, honest."),"amused");
+				speak("theTrader",_("You can be sure that you are able to use the road shrine if you see the flames."),"normal");
+				speak("theTrader",_("If you click on a road shrine, your body will be transported through Harad's domain."),"normal");
+				speak("theTrader",_("In your mind's eye you will see a map with all the waypoints you have already visited."),"normal");
+				speak("theTrader",_("These are shown as small yellow points."),"normal");
+				speak("theTrader",_("If you have an open portal in the world, that will be shown too, with a red dot."),"normal");
+				speak("theTrader",_("Click on one of these symbols, and your body will rematerialize at your destination, as fast as the wind."),"normal");
+				speak("PL", _("Hmm. You seem to know a great deal about this, for a trader."),"thoughtful");
+				speak("theTrader",_("You pick these things up in your travels, except for business acumen, apparently."),"amused");
+				speak("PL", _("Clearly you are in the wrong line of work."),"sneer");
+				changeTopic("talk_on");
+			</Effect>
+		</Topic>
+	
+		<Topic name="talk_on">
+			<Effect>
+				addCameraPosition(1000,'entry_south', -90,50, 20);
+				speak("theTrader", _("Be wary, it is not as safe around Medair as it used to be."),"thoughtful")
+				--speak("theTrader", _("Even travelling the roads may prove to be dangerous. Particularly if you are heading north."),"thoughtful")
+				
+				speak("theTrader", _("Goblins and other beasts have stolen quite a lot recently."),"normal");
+				speak("theTrader", _("You may find it convenient to make a short detour to a well-stocked trader."),"grin");
+				speak("PL", _("Meaning yourself?"),"sneer");
+				speak("theTrader", _("Actually not, regrettably."),"sad");
+				speak("theTrader", _("As reported, I invested badly in the Empty Scrolls and have no available capital."));
+				speak("theTrader", _("I'm afraid I have insufficient gold to buy assorted wares from treasure hunters and scavengers."));
+
+				speak("theTrader", _("But I can supply you with scrolls for a long time. That's a promise."),"happy");
+				speak("theTrader", _("One reason being; customers are rare in these parts."),"normal");
+				speak("priopt", _("Surely they can be found anywhere, especially in a place like this."), "normal");
+
+				speak("theTrader", _("With all due respect, nobody wanting to buy scrolls from poor traders."),"thoughtful");
+				speak("theTrader", _("Regardless, not many Branded Ones would have listened to me as you have."),"normal");
+				speak("theTrader", _("Allow me to give you an Empty Scroll as a gift."),"happy");
+				speak("theTrader", _("Grace me with your presence again soon, if you please."));
+				speak("waropt",_("Wait! Does this thing have to be called Empty Scroll?"),"unhappy");
+				if(getSpeaker("magopt")==getSpeaker("waropt"))then
+					speak("waropt",_("Why not town portal or something like that?"),"thoughtful");
+					speak("theTrader",_("Well, they were sold to me as Empty Scrolls, but what you call them is entirely up to you."),"amused");
+				else
+					speak("waropt",_('Why not "way to the town" or something like that?'),"thoughtful");
+					setSpeakerEmotion("waropt","offended");
+					speak("magopt",_("What kind of name is that supposed to be!?"),"pain");
+					setSpeakerEmotion("waropt","normal");
+					speak("magopt",_('How about: "town portal"?'),"aloof");
+					speak("theTrader",_("Now, now, honorable customers!"),"sad");
+					speak("theTrader",_("They were sold to me as Empty Scrolls, but what you call them is entirely up to you!"),"normal");
+				end;
+
+				speak("waropt",_("And how do we use them?"),"thoughtful");
+				speak("theTrader",_("Like a common potion."));
+				addQuestion(_("Explain the belt?"))
+				addAnswer(_("Yes"),"explain_belt")
+				addAnswer(_("No"),"know_belt")
+			</Effect>
+		</Topic>
+		
+		<Topic name="explain_belt">
+			<Effect>
+				speak("theTrader",_("Well, you know about your inventory, right?"),"amused");
+				setSpeakerEmotion("waropt","offended");
+				speak("theTrader",_("I thought so."),"amused");
+				speak("theTrader",_("At the bottom you have the small items tab, click on it to access the three rows of your small items inventory."),"normal");
+				setSpeakerEmotion("waropt","normal")
+				speak("theTrader",_("The top row represents your belt."),"normal");
+				speak("theTrader",_("If you place a potion there, it appears in the belt row."),"amused");
+				speak("theTrader",_("I'm sure you noticed, right?"),"thougtful");
+				speak("waropt",_("Indeed."),"amused");
+				speak("waropt",_("Long years on the battlefield have honed my ability to change potions for similar potions immediately once I have used one."),"grin");
+				speak("theTrader",_("A useful skill."),"excited");
+				if(getSpeaker("magopt")~=getSpeaker("waropt"))then
+					speak("magopt",_(" A common skill. Any sell-sword that wants to avoid a quick and meaningless death knows of it."),"sneer");
+					setSpeakerEmotion("waropt","angry");
+					speak("theTrader",_("Well, whatever."),"normal");
+				end;
+				setSpeakerEmotion("waropt","normal");
+				speak("theTrader",_("If you want to use a potion you can do so by clicking on it with the right mouse button in the inventory or the belt."));
+				speak("theTrader",_("Alternatively you can select the number of the belt slot it is in."),"normal");
+				speak("theTrader",_("That is, 1 for the potion on the left, 2 for the second from the left and so on."))
+				speak("theTrader",_("This works for all usable items alike, so naturally for the scrolls, too."))
+				
+				changeTopic("finish_intro");
+			</Effect>
+		</Topic>
+		
+		<Topic name="know_belt">
+			<Effect>
+				speak("waropt",_("Oh! It's that simple?"));
+				changeTopic("finish_intro");
+			</Effect>
+		</Topic>
+		
+		<Topic name="finish_intro">
+			<Effect>
+				addUnitCommand(theTrader_tmp.theTrader,'walk','locTheTrader');			
+				speak("arcopt", _("Oddball."));
+				executeInDialog("setCutsceneMode(false)");
+				local players = getPlayers();
+				local i,player;
+				for i,player in ipairs(players) do
+					createItem("town_portal")
+					insertPlayerItem(player,false);
+				end;
+				theTrader_tmp.walkFromIntro = true;
+				theTrader.intro=true;
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="medMercCamp">
+		<Event trigger="command_complete">
+			<Condition>
+				if((trigger.unit==theTrader_tmp.theTrader)and(theTrader_tmp.walkFromIntro==true))then
+					return true;
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+					set(theTrader_tmp.theTrader,"angle",180);
+			</Effect>
+		</Event>
+	</Region>
+
+<!-- Joringsbrueck -->
+	<Region name="joringsbridge">
+		<Event trigger="create_region" once = "true">
+			<Effect>
+				theTrader_tmp.theTraderJB = createObject("theTrader", "locTheTrader");
+				setRefName(theTrader_tmp.theTraderJB, "The Trader");
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname = "The Trader">
+		<Topic name="joringsbridge_theTrader" start_option="What are you doing here?">
+			<Condition>
+				local region = get(getSpeaker("The Trader"), "region")
+				return((theTrader.talkedInJB ~=true)and(region == "joringsbridge"));
+			</Condition>
+			<Effect>
+				speak("The Trader",_("Well, I noticed you were headed north, and I thought it would be convenient for you to know I'm nearby."),"happy");
+				speak("player",_("Well, you are right, I guess."),"thoughtful");
+				theTrader.talkedInJB = true;
+			</Effect>
+		</Topic>
+	</NPC>
+
+	<Region name="greyCurseCaveFis">
+		<Event trigger="create_region" once="true">
+			<Condition>
+				return((fissure.finished == true) and (theTrader.enteredDwarfenwall ~= true));
+			</Condition>
+			<Effect>
+				theTrader_tmp.traderCave=createObject("theTrader", "locNecromancer", 10);
+				setRefName(theTrader_tmp.traderCave,"The Lost Trader");
+			</Effect>
+		</Event>
+	</Region>
+	
+	<Region name="dwarfenwall">
+		<Event trigger="create_region" once = "true">
+			<Effect>
+				if(theTrader.enteredDwarfenwall~=true)then
+					theTrader.enteredDwarfenwall = true;
+				end;
+				theTrader_tmp.theTraderDW = createObject("theTrader", "locTheTrader");
+				setRefName(theTrader_tmp.theTraderDW, "The Trader");
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname = "The Trader">
+		<Topic name="dwarfenwall_theTrader" start_option="I see you have reached dwarfenwall safely." once="true">
+			<Condition>
+				local region = get(getSpeaker("The Trader"), "region")
+				return((theTrader.talkedInDW ~=true)and(region == "dwarfenwall"));
+			</Condition>
+			<Effect>
+				speak("player",_("How nice to see you have escaped from the caves."));
+				speak("The Trader",_("No thanks to you. May I continue to offer you my services?"),"happy");
+				speak("player",_("Surely. Now that I finally have a sound anchor again."),"amused");
+				theTrader.talkedInDW = true;
+			</Effect>
+		</Topic>
+	</NPC>
+	
+</Quest>

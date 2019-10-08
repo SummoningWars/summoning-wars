@@ -1,0 +1,96 @@
+<RenderInfo name="testdoor" >
+	<Entity source="shelf_m1.mesh"/>
+	
+	<State name="open">
+		<Activation time="500">
+			<Movement start="0.0" end="1.0" start_vec="0.0 0.0 4.0" end_vec="0.0 0.0 0.0" />
+		</Activation>
+		
+		<Deactivation time="500">
+			<Movement start="0.0" end="1.0" start_vec="0.0 0.0 -4.0" end_vec="0.0 0.0 0.0" />
+		</Deactivation>
+	</State>
+	
+</RenderInfo>
+
+<RenderInfo name="testswitch">
+	<Entity source="signpost.mesh" rotation="0.0 0.0 30.0"/>
+	
+	<State name="on">
+		<Activation time="200">
+			<Rotation start="0.0" end="1.0" start_vec="0.0 0.0 30.0" end_vec="0.0 0.0 -30.0" />
+		</Activation>
+		
+		<Deactivation time="200">
+			<Rotation start="0.0" end="1.0" start_vec="0.0 0.0 -30.0" end_vec="0.0 0.0 30.0" />
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="konz_door1">
+	<Entity source="konz_door_m1.mesh" highlightable="false"/>
+	<Entity objectname = "rightWing" source="konz_door_wr.mesh" highlightable="false"/>
+	<Entity objectname = "leftWing" source="konz_door_wl.mesh" highlightable="false"/>
+	<Entity objectname = "lock" source="konz_door_l.mesh" position = "0 1.592 0"/>
+	
+	<State name="open">
+		<Activation time="1500">
+			<Rotation objectname = "lock" start="0.0" end="0.5" start_vec="0.0 0.0 0.0" end_vec="180.0 0.0 0.0" />
+			<Movement objectname = "rightWing" start="0.5" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 0.0 2.0" />
+			<Movement objectname = "leftWing" start="0.5" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 0.0 -2.0" />
+			<Movement objectname = "lock" start="0.5" end="1.0" start_vec="0.0 1.592 0.0" end_vec="0.0 1.592 -2.0" />
+		</Activation>
+		
+		<Deactivation time="1500">
+			<Rotation objectname = "lock" start="0.0" end="0.5" start_vec="180.0 0.0 0.0" end_vec="0.0 0.0 0.0"/>
+			<Movement objectname = "rightWing" start="0.5" end="1.0" start_vec="0.0 0.0 2.0" end_vec="0.0 0.0 0.0" />
+			<Movement objectname = "leftWing" start="0.5" end="1.0" start_vec="0.0 0.0 -2.0" end_vec="0.0 0.0 0.0" />
+			<Movement objectname = "lock" start="0.5" end="1.0" start_vec="0.0 1.592 -2.0" end_vec="0.0 1.592 0.0" />
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="shelf_door_r1" >
+	<Entity source="shelf_m1.mesh"/>
+	
+	<State name="open">
+		<Activation time="1000">
+			<Movement start="0.0" end="0.3" start_vec="-0.7 0.0 4.0" end_vec="0.0 0.0 4.0" />
+			<Movement start="0.4" end="1.0" start_vec="0.0 0.0 4.0" end_vec="0.0 0.0 0.0" />
+		</Activation>
+		
+		<Deactivation time="1000">
+			<Movement start="0.0" end="0.6" start_vec="0.7 0.0 -4.0" end_vec="0.7 0.0 0.0" />
+			<Movement start="0.7" end="1.0" start_vec="0.7 0.0 0.0" end_vec="0.0 0.0 0.0" />
+		</Deactivation>
+	</State>
+</RenderInfo>
+<RenderInfo name="shelf_door_l1" >
+	<Entity source="shelf_m1.mesh"/>
+	
+	<State name="open">
+		<Activation time="1000">
+			<Movement start="0.0" end="0.3" start_vec="-0.7 0.0 -4.0" end_vec="0.0 0.0 -4.0" />
+			<Movement start="0.4" end="1.0" start_vec="0.0 0.0 -4.0" end_vec="0.0 0.0 0.0" />
+		</Activation>
+		
+		<Deactivation time="1000">
+			<Movement start="0.0" end="0.6" start_vec="0.7 0.0 4.0" end_vec="0.7 0.0 0.0" />
+			<Movement start="0.7" end="1.0" start_vec="0.7 0.0 0.0" end_vec="0.0 0.0 0.0" />
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="prison_door_m1" >
+	<Entity source="prison_door1.mesh" position = " 0.0 0.0 -1.0" />
+	
+	<State name="open">
+		<Activation time="500">
+			<Rotation start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 130.0 0.0" />
+		</Activation>
+		
+		<Deactivation time="500">
+			<Rotation start="0.0" end="1.0" start_vec="0.0 130.0 0.0" end_vec="0.0 0.0 0.0" />
+		</Deactivation>
+	</State>
+</RenderInfo>

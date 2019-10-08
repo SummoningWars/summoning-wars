@@ -1,0 +1,18 @@
+Hans:
+	- Scrolling von zu langen Texten
+	- weitere Gegner
+	- Leerzeichen in Namen
+
+Steffen:
+	- Spalt
+	- Emotionsets
+	- Votings
+
+Andreas:
+	- Kutsche
+	- Weltkarte
+
+Michael:
+	- Sounds
+	- Übersetzungen fixen
+

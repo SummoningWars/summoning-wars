@@ -1,0 +1,39 @@
+<Sound name="sword_attack">
+	<Soundfile source="battle_sound_effects/swish_5.wav"/>
+	<Soundfile source="battle_sound_effects/swish_6.wav"/>
+	<Soundfile source="battle_sound_effects/swish_7.wav"/>
+	<Soundfile source="battle_sound_effects/swish_8.wav"/>
+</Sound>
+
+<Sound name="heavy_sword_attack">
+	<Soundfile source="battle_sound_effects/swish_11.wav"/>
+	<Soundfile source="battle_sound_effects/swish_12.wav"/>
+	<Soundfile source="battle_sound_effects/swish_13.wav"/>
+</Sound>
+
+<Sound name="light_sword_attack">
+	<Soundfile source="battle_sound_effects/swish_14.wav"/>
+	<Soundfile source="battle_sound_effects/swish_15.wav"/>
+	<Soundfile source="battle_sound_effects/swish_16.wav"/>
+</Sound>
+
+<Sound name="blunt_attack">
+	<Soundfile source="battle_sound_effects/swish_9.wav"/>
+	<Soundfile source="battle_sound_effects/swish_10.wav"/>
+</Sound>
+
+<Sound name="arrow">
+	<Soundfile source="battle_sound_effects/swish_2.wav"/>
+	<Soundfile source="battle_sound_effects/swing_1.wav"/>
+	<Soundfile source="battle_sound_effects/swing_2.wav"/>
+	<Soundfile source="battle_sound_effects/swing_3.wav"/>
+</Sound>
+
+<Sound name="throw_knife">
+	<Soundfile source="battle_sound_effects/swish_3.wav"/>
+</Sound>
+
+<Sound name="throw_blunt">
+	<Soundfile source="battle_sound_effects/swish_4.wav"/>
+</Sound>
+

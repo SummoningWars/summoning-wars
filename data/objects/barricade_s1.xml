@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="barricade_s1" layer="BASE">
+        <Mesh file="barricade_s1.mesh" />
+        <Geometry shape="RECT" extent_x="1.124004179" extent_y="1"/>
+</Object>

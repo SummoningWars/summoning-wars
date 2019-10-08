@@ -1,0 +1,45 @@
+<creature>
+  <name>fire_slug_mutant</name>
+  <meshname>fire_slug_mutant.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Characters/NPC/Konzil/fire_slug_animation4.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>walk</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>well... more like slime along</description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description>yes, they can die</description>
+    </clip>
+    <clip>
+      <name>attack</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description>spit a bit of vile breath</description>
+    </clip>
+    <clip>
+      <name>idle1</name>
+      <startframe>73</startframe>
+      <endframe>115</endframe>
+      <description>nothing to do</description>
+    </clip>
+    <clip>
+      <name>idle2</name>
+      <startframe>116</startframe>
+      <endframe>150</endframe>
+      <description>waiting for prey</description>
+    </clip>
+    <clip>
+      <name>clip6</name>
+      <startframe>0</startframe>
+      <endframe>0</endframe>
+      <description></description>
+    </clip>
+  </animations>
+
+</creature>

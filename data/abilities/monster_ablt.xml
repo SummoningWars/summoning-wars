@@ -1,0 +1,726 @@
+<Ability type="steal"
+		 name="steal"
+		 description="Steals gold"
+		 time="1000.000000"
+		 timer_nr="2.000000"
+		 timer_value="7000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="melee">
+	<Effect>
+		<LuaImplementation>
+			if (get(target,"gold") > 100) then
+			set(target,"gold", get(target,"gold") -(50-math.random(50)));
+			end;
+		</LuaImplementation>
+	</Effect>
+</Ability>
+
+<Ability type="testfireball"
+		 name="Fireball"
+		 description="Alternativer Feuerball."
+		 time="201.000000"
+		 timer_nr="1.000000"
+		 timer_value="200.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Projectile type="FIRE_BALL" speed="20000"/>
+	<Effect>
+		<LuaImplementation>
+			print("test");
+			setDamageValue("current", "phys_dmg", 50,100);
+			setDamageValue("current", "blockable", false);
+			setDamageValue("current", "ignore_armor", true);
+			createProjectile(projectile_type,"current",getPosition(self),goal,projectile_speed/1000,0.5);
+		</LuaImplementation>
+	</Effect>
+	<Damage>
+		<CppImplementation type="fire_ball" />
+	</Damage>
+	
+	
+</Ability>
+
+
+<Ability type="testbooster"
+		 name="Booster"
+		 description="completely overpowered Booster"
+		 time="701.000000"
+		 timer_nr="1.000000"
+		 timer_value="5000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("bow_skel",goal);
+			print(frac)
+			set(obj,"fraction",frac);
+		</LuaImplementation>
+	</Effect>
+	<BaseAttributesMod>
+		
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="teststatushealer"
+				  name="Healer"
+				  description="Heilt alles"
+				  time="701.000000"
+				  timer_nr="1.000000"
+				  timer_value="5000.000000"
+				  base_ability="noaction"
+				  critical_percent="0.660000"
+				  target_type="party">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("bow_skel",goal);
+			print(frac)
+			set(obj,"fraction",frac);
+		</LuaImplementation>
+	</Effect>
+	<DynAttributesMod>
+		
+	</DynAttributesMod>	
+</Ability>
+
+<Ability type="behemoth_fire_storm"
+		 name="Firestorm" 
+		 description="Firestorm with increased range." 
+		 time="1301.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="15000.000000" 
+		 base_ability="magic_attack"
+		 critical_percent="0.800000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_self" />
+	</Effect>
+	<Projectile type="behemoth_fire_wave"/>
+	<Damage>
+		<CppImplementation type="magic_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*2.5, fdmg[2] + magic*3});
+			setDamageValue("ice_dmg",{0,0});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="tutorial_behemoth_fire_storm"
+		 name="Firestorm" 
+		 description="Firestorm with increased range." 
+		 time="1301.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="15000.000000" 
+		 base_ability="magic_attack"
+		 critical_percent="0.2500"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_self" />
+	</Effect>
+	<Projectile type="tutorial_behemoth_fire_wave"/>
+	<Damage>
+		<CppImplementation type="magic_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*2.5, fdmg[2] + magic*3});
+			setDamageValue("ice_dmg",{0,0});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+
+<Ability type="tutorial_fire_ball"
+		 name="Fireball" 
+		 description="The mage casts a bolt of fire, that explodes upon hitting an enemy. Other enemies nearby the victim are also caught in the explosion." 
+		 time="701.000000" 
+		 timer_nr="0.000000"
+		 timer_value="0000.000000" 
+		 base_ability="magic_attack" 
+		 critical_percent="0.800000" 
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="fire_ball" speed="20000" />
+	<Damage>
+		<CppImplementation type="magic_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*2, fdmg[2] + magic*3});
+			setDamageValue("ice_dmg",{0,0});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="tutorial_fire_wall"
+		 name="Firecolumn" 
+		 description=""
+		 time="501.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="12000.000000"
+		 base_ability="magic_attack" 
+		 critical_percent="0.800000" 
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="fire_wall" />
+	<Damage>
+		<CppImplementation type="magic_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*0.33, fdmg[2] + magic*0.5});
+			setDamageValue("ice_dmg",{0,0});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="goblin_magic_shield"
+		 name="Magic Shield"
+		 description=""
+		 time="1001.000000"
+		 timer_nr="2.000000"
+		 timer_value="200000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",30000);
+			setBaseModValue("resist_ice",20);
+			setBaseModValue("resist_fire",20);
+			setBaseModValue("resist_air",20);
+			setBaseModValue("flag","goblin_magic_shield");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="goblin_lightning"
+		 name="Goblin Lightning"
+		 description=""
+		 time="1300.000000"
+		 timer_nr="1.000000"
+		 timer_value="2000.000000"
+		 base_ability="magic_attack"
+		 critical_percent="0.800000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="lightning" />
+	
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local admg = getDamageValue("air_dmg");
+			setDamageValue("air_dmg", {admg[1] + magic*0.5, admg[2] + magic*1.5});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="goblin_icebolt"
+		 name="Icicle"
+		 description="The mage casts a shard of pure ice, that damages his foes."
+		 time="1500.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="magic_attack"
+		 critical_percent="0.800000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="ice_bolt" speed="12000" />
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local idmg = getDamageValue("ice_dmg");
+			setDamageValue("ice_dmg", {idmg[1] + magic*1, idmg[2] + magic*1.2});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="monster_icebolt"
+		 name="Icicle"
+		 description="The mage casts a shard of pure ice, that damages his foes."
+		 time="1500.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="magic_attack"
+		 critical_percent="0.800000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="ice_bolt" speed="12000" />
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local idmg = getDamageValue("ice_dmg");
+			setDamageValue("ice_dmg", {idmg[1] + magic*1, idmg[2] + magic*1.4});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="goblin_chain_lightning"
+		 name="Chainlightning"
+		 description="" 
+		 time="1200.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="7000.000000" 
+		 base_ability="magic_attack" 
+		 critical_percent="0.800000" 
+		 target_type="ranged"
+		 >
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="chain_lightning" speed="12000" counter="5"/>
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local admg = getDamageValue("air_dmg");
+			setDamageValue("air_dmg", {admg[1] + magic*0.5, admg[2] + magic*1.5});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="goblin_curse"
+		 name="goblin curse"
+		 description="" 
+		 time="1200.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="7000.000000" 
+		 base_ability="magic_attack" 
+		 critical_percent="0.800000" 
+		 target_type="ranged"
+		 >
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			setDamageValue("paralyzed", magic*1.5);
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="goblin_heal"
+		 name="Grand Cure"
+		 time="1501.000000"
+		 timer_nr="2.000000"
+		 timer_value="30000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dynmod_at_allies_in_radius" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("health",10*get(self,"magic_power"));
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="goblin_blizzard"
+		 name="Blizzard" 
+		 description="The mage summons a leathal cold blizzard that freezes every enemy caught in it to death."
+		 time="1400.000000" 
+		 timer_nr="2.000000"
+		 timer_value="14000.000000" 
+		 base_ability="magic_attack" 
+		 critical_percent="0.800000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="blizzard"/>
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local idmg = getDamageValue("ice_dmg");
+			setDamageValue("ice_dmg", {idmg[1] + magic*0.3, idmg[2] + magic*0.4});
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="monster_bash" 
+		 name="monster Bash" 
+		 description="Attacks one enemy for serious damage." 
+		 time="1.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="poison_attack" 
+		 name="poison_attack" 
+		time="1.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<LuaImplementation>
+			setDamageValue("poisoned", get(self,"magic_power"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="monster_whirl" 
+		 name="Sweeping blow" 
+		 description="Attacks every enemy in weapon range with slightly reduced damage." 
+		 time="0.600000" 
+		 timer_nr="1.000000" 
+		 timer_value="1000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.600000" 
+		 target_type="melee"
+		 radius = "-1">
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*1.5);
+			setDamageValue("attack", 2*getDamageValue("attack"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="fire_shot" 
+		 name="Fire arrow"
+		 description="Basic ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="fire_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*0.5, fdmg[2] + magic*1.0});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="poison_shot" 
+		 name="Poison arrow"
+		 description="Poisonous ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="poison_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			setDamageValue("poisoned", magic);
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="guided_fire_shot" 
+		 name="Fire arrow"
+		 description="Basic ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="guided_fire_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*0.5, fdmg[2] + magic*1.0});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="throw_dagger" 
+		 name="throw dagger"
+		 description="Throw a dagger" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="throwing_dagger" speed="10000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="throw_berry" 
+		 name="throw berry"
+		 description="Throw a berry" 
+		 time="2.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.40000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="throwing_berry" speed="10000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="throw_rock" 
+		 name="throw rock"
+		 description="Throw a berry" 
+		 time="2.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.40000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="throwing_rock" speed="8000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+
+<Ability type="throw_ice_bomb" 
+		 name="throw bomb"
+		 description="Throw a bomb" 
+		 time="1000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="throw_bomb" 
+		 critical_percent="0.40000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="ice_bomb" speed="10000" >
+		<Flag name="explodes" />
+	</Projectile>
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			setDamageValue("ice_dmg", {magic, magic*1.5});
+			setDamageValue("blockable",false);
+			setDamageValue("power",get(self,"power"));
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="saboteur_move" 
+		 name="saboteur_move"
+		 description="Flee from enemy" 
+		 time="1" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="flee" 
+		 critical_percent="0.1000" 
+		 target_type="ranged" >
+	<Effect>
+		<LuaImplementation>
+			local pos = get(self,"position");
+			local dir = {pos[1], pos[2]};
+			vecsub(dir,goal);
+			local len = math.sqrt(dir[1]*dir[1] + dir[2]*dir[2]);
+			if (len > 6) then
+				dir = {-dir[1], -dir[2]}
+			elseif (len > 3) then
+				local factor = math.random(2)*2-3;
+				dir = {-dir[2]*factor,dir[1]*factor}
+			end;
+			vecnormal(dir);
+			vecmul(dir,2.5);
+			vecadd(pos,dir);
+			addUnitCommand(self,"walk",pos,1,"",500);
+		</LuaImplementation>
+	</Effect>
+</Ability>
+
+<Ability type="flame_shot" 
+		 name="Flame Throw"
+		 description="The basic attack of a flaming skeleton." 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.40000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="magic_arrow_fire" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + magic*0.5, fdmg[2] + magic*1.0});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="dark_shot" 
+		 name="dark arrow"
+		 description="Blind ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="blind_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			setDamageValue("blind", magic);
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="ice_shot" 
+		 name="Ice arrow"
+		 description="Basic ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="ice_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local idmg = getDamageValue("ice_dmg");
+			setDamageValue("ice_dmg", {idmg[1] + magic*0.5, idmg[2] + magic*1.0});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="block_down" 
+		 name="Stats Down"
+		 description="Decrease block-value" 
+		 time="1500" 
+		 timer_nr="1.000000" 
+		 timer_value="500000.000000" 
+		 base_ability="flee" 
+		 critical_percent="0.1000" 
+		 target_type="ranged" >
+	<Effect>
+		<LuaImplementation>
+			set(self,"block", 0);
+		</LuaImplementation>
+	</Effect>
+</Ability>
+
+<Ability type="stun_attack" 
+		 name="stun_attack" 
+		time="1.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<LuaImplementation>
+			setDamageValue("paralyzed", get(self,"magic_power"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>

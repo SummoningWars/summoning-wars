@@ -1,0 +1,10 @@
+axe_skeleton
+walk 
+1000
+# everything after the first # is ignored
+
+File layout:
+Renderinfo_name
+action_name (optional)
+time_to_complete action(optional)
+

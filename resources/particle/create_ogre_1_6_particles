@@ -1,0 +1,24 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import os,sys,re
+
+for filename in os.listdir("."):
+	if re.match(".*?\.particle",filename):
+		print "converting file:",filename
+	
+		braces = 0
+		file = open(filename, "r")
+		text = file.readlines()
+		file.close()
+		outfile = open('./ogre_1_6/'+filename,'w')
+		for line in text:
+			line = line.rstrip('\r\n')
+			braces += line.count("{")
+			
+			if braces == 0 and line != "" and line.find("//")==-1:
+				print "      particle system:",line
+				print >>outfile, "particle_system",line
+			else:
+				print >>outfile,line
+			braces -= line.count("}")
+		

@@ -1,0 +1,14 @@
+<Animations>
+  <AnimationDefinition name="SlotFadeIn" duration="0.3" replayMode="once">
+    <Affector property="Alpha" interpolator="float">
+      <KeyFrame position="0.0" value="0.0" />
+      <KeyFrame position="0.3" value="1.0" />
+    </Affector>
+  </AnimationDefinition>
+  <AnimationDefinition name="SlotFadeOut" duration="0.3" replayMode="once">
+    <Affector property="Alpha" interpolator="float">
+      <KeyFrame position="0.0" value="1.0" />
+      <KeyFrame position="0.3" value="0.0" />
+    </Affector>
+  </AnimationDefinition>
+</Animations>

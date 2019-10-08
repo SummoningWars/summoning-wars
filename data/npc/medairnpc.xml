@@ -1,0 +1,84 @@
+<!-- Waffenhaendler in Medair -->
+<NPC refname="Robert">
+	<Trade refresh_time="600000" price_factor="1.5">
+		<TradeItem subtype="short_sw"  number="1" number_magical="0"/>
+		<TradeItem subtype="bronze_sw"  number="1" number_magical="0"/>
+		<TradeItem subtype="farm2h_sw"  number="1" number_magical="0"/>
+		<TradeItem subtype="merc2h_sw"  number="1" number_magical="0"/>
+		<TradeItem subtype="steel2h_sw"  number="1" number_magical="0"/>
+		<TradeItem subtype="hatch_axe"  number="1" number_magical="0"/>
+		<TradeItem subtype="bronze_axe"  number="1" number_magical="0"/>
+		<TradeItem subtype="ironha_axe"  number="1" number_magical="0"/>
+		<TradeItem subtype="great_axe"  number="1" number_magical="0"/>
+		<TradeItem subtype="riping_axe"  number="1" number_magical="0"/>
+		<TradeItem subtype="cermon_hmr"  number="1" number_magical="0"/>
+		<TradeItem subtype="iron_hmr"  number="1" number_magical="0"/>
+		<TradeItem subtype="sledge_hmr"  number="1" number_magical="0"/>
+		<TradeItem subtype="bronze_hmr"  number="1" number_magical="0"/>
+		<TradeItem subtype="long_hmr"  number="1" number_magical="0"/>
+		<TradeItem subtype="yew_sbw"  number="1" number_magical="0"/>
+		<TradeItem subtype="short_sbw"  number="1" number_magical="0"/>
+		<TradeItem subtype="turney_lbw"  number="1" number_magical="0"/>
+		<TradeItem subtype="orc_lbw"  number="1" number_magical="0"/>
+		<TradeItem subtype="yew_lbw"  number="1" number_magical="0"/>
+		<TradeItem subtype="prntc_wnd_fire"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_wnd_fire"  number="1" number_magical="0"/>
+		<TradeItem subtype="prntc_wnd_air"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_wnd_air"  number="1" number_magical="0"/>
+		<TradeItem subtype="prntc_wnd_ice"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_wnd_ice"  number="1" number_magical="0"/>
+		<TradeItem subtype="spruce_stf_fire"  number="1" number_magical="0"/>
+		<TradeItem subtype="prntc_stf_fire"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_stf_fire"  number="1" number_magical="0"/>
+		<TradeItem subtype="spruce_stf_air"  number="1" number_magical="0"/>
+		<TradeItem subtype="prntc_stf_air"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_stf_air"  number="1" number_magical="0"/>
+		<TradeItem subtype="spruce_stf_ice"  number="1" number_magical="0"/>
+		<TradeItem subtype="prntc_stf_ice"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_stf_ice"  number="1" number_magical="0"/>
+	</Trade>
+	
+	<Topic name="trade" start_option="Trade" />
+</NPC>
+
+<NPC refname="Elgor">
+	<Trade refresh_time="600000" price_factor="1.5">
+		<TradeItem subtype="cloth_arm"  number="1" number_magical="0"/>
+		<TradeItem subtype="leath_arm"  number="1" number_magical="0"/>
+		<TradeItem subtype="rivet_arm"  number="1" number_magical="0"/>
+		<TradeItem subtype="leath_glv"  number="1" number_magical="0"/>
+		<TradeItem subtype="vag_hat"  number="1" number_magical="0"/>
+		<TradeItem subtype="prentc_hat"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_hat"  number="1" number_magical="0"/>
+		<TradeItem subtype="cap_hlm"  number="1" number_magical="0"/>
+		<TradeItem subtype="lthcap_hlm"  number="1" number_magical="0"/>
+		<TradeItem subtype="leath_hlm"  number="1" number_magical="0"/>
+		<TradeItem subtype="rag_rob"  number="1" number_magical="0"/>
+		<TradeItem subtype="prentc_rob"  number="1" number_magical="0"/>
+		<TradeItem subtype="novice_rob"  number="1" number_magical="0"/>
+		<TradeItem subtype="targe_shd"  number="1" number_magical="0"/>
+		<TradeItem subtype="buck_shd"  number="1" number_magical="0"/>
+		<TradeItem subtype="wood_shd"  number="1" number_magical="0"/>
+	</Trade>
+	
+	<Topic name="trade" start_option="Trade" />
+</NPC>
+
+<NPC refname="Cain">
+	<Trade refresh_time="600000" price_factor="1.5">
+		<TradeItem subtype="heal_1"  number="30" number_magical="0"/>
+		<TradeItem subtype="heal_2"  number="30" number_magical="0"/>		
+	</Trade>
+	
+	<Topic name="trade" start_option="Trade" />
+	
+	<Topic name="start_dialogue" >
+		<Effect>
+			local pl = getSpeaker("main_player");
+			set(pl,"health",get(pl,"max_health"));
+		</Effect>
+	</Topic>
+</NPC>
+
+<NPC refname="Fenor Marken">
+</NPC>

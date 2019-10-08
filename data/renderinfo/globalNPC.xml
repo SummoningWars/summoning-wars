@@ -1,0 +1,6 @@
+﻿<RenderInfo name="theTrader" parent="playerbase">
+	<Entity source="mage_m.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="hat" bone="crown" source="peasent_hatM.mesh"/>
+	<Entity objectname="beard" bone="crown" source="mustache.mesh"/>
+</RenderInfo>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="stonesLarge1" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="8"
+    extent_y="8"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$single_block" 
+            center_x="-5.285375593" 
+            center_y="-2.017224565" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="5.832925006" 
+            center_y="-4.378293041" 
+			height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-3.986993846" 
+            center_y="-4.483229888" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="0.6302671945" 
+            center_y="-5.488390386" 
+			height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-5.247689565" 
+            center_y="5.567792087" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="3.266402169" 
+            center_y="-3.794519923" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="0.3526487422" 
+            center_y="1.079211491" 
+			height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="2.04730579" 
+            center_y="4.694639753" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="3.119255209" 
+            center_y="-6.167916224" 
+			height="3.552713679e-015" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_deb_l" 
+            center_x="-3.426215712" 
+            center_y="2.33921831" 
+            angle="-46.23629146" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_block" 
+            center_x="0.1048516552" 
+            center_y="6.09088214" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

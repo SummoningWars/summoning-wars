@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<ObjectGroup name = "string" >
+  <Shape
+		type = "RECT"
+		extent_x = "float"
+		extent_y = "float"
+		angle ="float"
+		/>
+	OR
+  <Shape
+		type = "CIRCLE"
+		radius = "float"
+		angle ="float"
+		/>
+
+  <WayPoint pos_x="float" pos_y="float"/>
+  
+  <ObjectContent>
+	  <Object subtype="string"
+			center_x="float"
+			center_y="float"
+			angle = "float"
+			probability ="float"
+			prob_angle = "true/false"
+			/>
+			...
+  </ObjectContent>
+
+  <Locations>
+	 <Location name = "string" pos_x="float" pos_y="float" />
+	 ...
+  </Locations>
+
+</ObjectGroup>
+-->
+
+<ObjectGroup name = "randomLocation" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "1.0"
+		  extent_y = "1.0"
+		  angle ="0"
+		/>
+		
+	<Locations>
+		<Location name = "locCenter" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+<ObjectGroup name = "randomLoc4_4" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "2.0"
+		  extent_y = "2.0"
+		  angle ="0"
+		/>
+		
+	<Locations>
+		<Location name = "locCenter" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+<ObjectGroup name = "randomLoc8_8" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "4.0"
+		  extent_y = "4.0"
+		  angle ="0"
+		/>
+		
+	<Locations>
+		<Location name = "locCenter" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+
+<ObjectGroup name = "test_region_templ" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "16.0"
+		  extent_y = "16.0"
+		  angle ="0"
+		/>
+	<ObjectContent>
+		
+		<Object subtype="$tree"
+				center_x="4"
+				center_y="-8"
+				angle = "0"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$tree"
+				center_x="-4"
+				center_y="-8"
+				angle = "0"
+				probability ="1"
+				prob_angle = "false"
+			/>
+	</ObjectContent>
+	
+	<Locations>
+		<Location name = "exit_north" pos_x="0" pos_y="-12" />
+		<Location name = "entry_north" pos_x="0" pos_y="-4" />
+		<Location name = "treeloc" pos_x="0" pos_y="8" />
+	</Locations>
+	
+</ObjectGroup>
+
+<ObjectGroup name = "willard" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "4.0"
+		  extent_y = "4.0"
+		  angle ="0"
+		/>
+		
+	<ObjectContent>
+		<Object subtype="$tree"
+			center_x="0"
+			center_y="-2"
+			angle = "0"
+			probability ="1.0"
+			prob_angle = "false"
+			/>
+	</ObjectContent>
+	
+	<Locations>
+		<Location name = "locWillard" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+<ObjectGroup name = "maylonsGraveL2Chamber" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "4.0"
+		  extent_y = "4.0"
+		  angle ="0"
+		/>
+		
+	<ObjectContent>
+		<Object subtype="$tree"
+			center_x="0"
+			center_y="-2"
+			angle = "0"
+			probability ="1.0"
+			prob_angle = "false"
+			/>
+	</ObjectContent>
+	
+	<Locations>
+		<Location name = "cryptGraveChamber" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+<ObjectGroup name = "powerlich" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "4.0"
+		  extent_y = "4.0"
+		  angle ="0"
+		/>
+
+	<ObjectContent>
+		<Object subtype="$tree"
+			center_x="0"
+			center_y="-2"
+			angle = "0"
+			probability ="1.0"
+			prob_angle = "false"
+			/>
+	</ObjectContent>
+
+	<Locations>
+		<Location name = "locPowerLich" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+

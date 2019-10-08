@@ -1,0 +1,16 @@
+<ObjectGroup name = "benchmarkRegion" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "50.0"
+		  extent_y = "50.0"
+		  angle ="0"
+		/>
+		
+	<Locations>
+		<Location name = "locCenter" pos_x="0" pos_y="0" />
+		<Location name = "locCorner1" pos_x="30" pos_y="30" />
+		<Location name = "locCorner2" pos_x="30" pos_y="-30" />
+		<Location name = "locCorner3" pos_x="-30" pos_y="-30" />
+		<Location name = "locCorner4" pos_x="-30" pos_y="30" />
+	</Locations>
+</ObjectGroup>

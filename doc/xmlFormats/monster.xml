@@ -1,0 +1,109 @@
+<!-- "Monster" contains every relevant in-game information about a monster.
+	Monster is used to describe NPC-values as well.
+	type:	a string that may be obsolet TODO
+	subtype: A unique string for this monster. Be aware that no other object may have this name.
+	name:	A string that is translated and will be shown if the player targets the monster.
+	fraction: The in-game group this monster belongs to. See world.xml about fractions.
+	race:	The "biology" of a monster. A human belonging to the undead fraction is still a human and will not be victim of undead destroying abilities.
+	layer: The layer in which a monster will collide. It can be NORMAL, GROUND, AIR, NOCOLLISION. Ground will not collide with projectiles and is not recommended for monsters, since mages and archers will have serious trouble damaging them.
+			Air does not collide with Ground and is recommended for flying monsters. They will be able to move over barricades that are only present in the Ground-layer.
+			Nocollision should only be used in very special cases. A monster present in the nocollision-layer will be virtualy indestructable, since no attack can reach it.
+	
+-->
+<Monster type="MONSTER" subtype="overfiend" name="Overfiend" fraction="monster" race="cyborg" layer="NORMAL">
+	<!-- RenderInfo specifies the RenderInfo(see RenderInfo.xml) used by the monster. -->
+	<RenderInfo name="bloodbeak" />
+	<!-- The emotion set the monster will use if it speaks. It can be defined anywhere in the monster.xml's. See EmotionSet.xml TODO for more information.-->
+	<EmotionSet name="tolec_emotion" />
+	<!-- Dropslots define how many and what kind of items a monster will drop. This is true for monsters and npc's alike.
+		There can be a maximum of 4 Dropslots.
+	-->
+	<Dropslots >
+		<!-- A Dropslot is a collection of some values defining an item that can be dropped.
+			pbig, pmedium, psmall, pgold:	Values between 0 and 1. The probabilities for big, medium or small items and gold. pbig="0.5" leads to a 50% chance of dropping a big item.
+			The 4 values may add up to more than 1.0 and are normalized in this case. But it is not recommended.
+			min_gold, max_gold: The minimum and maximum amount of gold a monster will drop, if it drops gold.
+			min_level, max_level: the minimum and maximum item level. Basically this defines the quality of the dropped items.
+			magic_prob: The probability of a dropped item to be enchanted. 0.2 means, that 20% of the dropped items will be enchanted.
+			magic_power: The amximum amount of points used to enchant an item. To get something useful it has to be at least 40. A good estimation is level*35
+		-->
+		<Dropslot pbig="0.06" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="30" max_gold="80" min_level="5" max_level="13" magic_prob="0.2" magic_power="450" />
+		<Dropslot pbig="0.06" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="20" max_gold="50" min_level="4" max_level="8" magic_prob="0.4" magic_power="300" />
+	</Dropslots>
+	
+	<!-- The basic attributes of a monster. Every monster should have values for these.
+		experience: The amount of experience-points a player will get once he/she kills the monster.
+		level:	The level of the monster. If the monster level and the player level differ to much (+-5 levels) the monster will give less experience to the player.
+		max_health: The maximum health-points of a monster.
+		armor: The armor-value of monster. Armor can reduce physical damage. It is paired against the power-value of the attacker.
+		block: The block-value of a monster defines how many blockable attacks are actually blocked. It is paired against the attack-value of the attacker.
+		attack: The ability of a monster to hit a target. It is used against block and evasion.
+		power: The power of an attack by the monster. It is used against armor.
+		strength: The strength of the monster. It is the main source of physical melee damage for a monster.
+		dexterity: The dexterity of the monster. It improves the attack-value and is the main source of physical distance damage.
+		magic_power: The magic power of a monster. It is the main source of magic damage.
+		willpower: The willpower of a monster. High willpower can reduce the time of a status affliction dramatically.
+		resistance_physical, resistance_air, resistance_fire, resistance_ice: The resistances of the monster against the 4 damagetypes.
+			Resistances of more than 100 lead to absorption of this damagetype. Resistances of less then 0 result in increased damage by that damagetype.
+		resistance_cap_physical,... : The maximum resistance a monster can get against a damagetype. If it is below the actual resistance value, the cap will be adjusted and a warning will be given.
+		walk_speed: The amount of steps per second * 1000. 3000 means 3 steps per second.
+		step_length: How far a step will carry a monster on. Large step-length can lead to reduced manouverability TODO.
+		attack_speed: The number of attacks per second * 1000. 1200 means 1.2 attacks per second.
+		attack_range: The radius of the circle in which a monster can attack. It begins at the outer circle of the monster and only needs to reach the outer circle of the enemy for the monster to be able to hit.
+		
+	-->
+	<BasicAttributes
+		experience="40" 
+		level="11"
+		max_health="180"
+		armor="5"
+		block="0"
+		attack="120"
+		power="150"
+		strength="25"
+		dexterity="30"
+		magic_power="0"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="40"
+		resistances_ice="0"
+		resistances_fire="-30"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="1.0"
+		attack_range="2.5"
+	>
+
+		<!-- Any ability a monster can use has to have defined here.
+			Certain abilities like die or noaction don't have to specified, but will have no animation otherwise.
+			See ability.xml on how to specify an ability.
+		-->
+		<Ability type="walk"/>
+		<!-- A usable ability has to have a rating or else it won't be used by the monster. Rating can be adjusted by lua
+			rating: the basic rating of the ability. The monster will always use the ability with the highest rating, if it is available.
+			all_target_rating_radius: the radius of a circle an ability will put around a target. Enemies in this area will be used for the rating. The default value is 0.
+			all_target_rating: A number added to the total rating for every enemy in the circle.
+			time: An amount of time the ability will use. It is recommended to only adjust this for "cosmetic" abilities (like noaction or die) and leave the calculation of "real" abilities to the game.
+		-->
+		<Ability type="attack" rating="1"/>
+		<Ability type="noaction" />
+		<Ability type="die"/>
+		<!-- Immunities are status modifications a monster can not get under any circumstances.
+			type cam be: berserk, confused, poisoned, mute, blind, burning, paralyzed, frozen
+		-->
+		<Immunity type="berserk"/>
+	</BasicAttributes>
+	<!-- The basic circle of a monster. It defines the area in which a monster will collide. Note that the graphical representation can differ greatly from this, but it is not recommended to do so.-->
+	<Geometry radius="0.5" />
+	
+	<!-- AI defines certain behaviours for a monster.
+		ai_sight_range is the radius in which a monster will react to an enemy
+		ai_shoot_range is the distance a monster can have maximal to shoot at an enemy. If this is bigger than the ai_sight_range the monster will attack the enemy before it sees him and move into range if the used ability has a range smaller than this, even if it doesn't have the walk-ability.
+		ai_chase_range is the distance a player has to have to the monster before it looses interest.
+	-->
+	<AI ai_sight_range="12"  ai_shoot_range="10" ai_chase_range="20"/>
+</Monster>

@@ -1,0 +1,152 @@
+<Quest name="The besieged farm" table_name="farm_siege" domain="the_besieged_farm">
+	
+	<Description>
+		if (farm_siege.finished==true) then
+			return _("The peasants are rescued, the goblins slain, and the service paid. What more can you ask for?")
+		elseif(farm_siege.rescued==true)then
+			return(_("The peasants are rescued and the goblins slain. It's time to collect the reward for the trouble in Joringsbridge."))
+		elseif(farm_siege.goblins_cleared==true)then
+			return(_("The goblins around Bron's farm are not among the living anymore. I should knock at the door and make sure everything is all right. No peasants, no money."))
+		else
+			return _("The farm of a peasant named Michel Bron is besieged by goblins. His family needs help - fast.")
+		end
+	</Description>
+	
+	<NPC refname="Sergeant Lutterer">
+		<Topic name= "get_quest_farm_siege" start_option="The farm">
+			<Condition>
+				return(farm_siege.started~=true);
+			</Condition>
+			<Effect>
+				addStandardRoles();
+				addSpeaker(joringsbridge.sergeant,"sergeant");
+					speak("sergeant",_("Ah! Are you feeling like earning the money after all?"),"aloof");
+					if(solo())then
+						speak("sergeant",_("Don't think I haven't seen you hanging around back there."));
+					elseif(duo())then
+						speak("sergeant",_("Don't think I haven't seen you and your friend hanging around back there."));
+					else
+						speak("sergeant",_("Don't think I haven't seen you and your friends hanging around back there."));
+					end;
+					speak("sergeant",_("But I don't want to complain."),"thoughtful");
+					speak("sergeant",_("You know the drill: Get to the Northern Meadow and drive away the goblins around Bron's farm."),"normal");
+					speak("sergeant",_("I don't care how you do it, even if you gobble them raw."));
+					speak("sergeant",_("Just kidding."),"amused");
+					speak("sergeant",_("When you're done, come back to me."),"normal");
+					speak("PL",_("I'm on my way."));
+					farm_siege.started=true;
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="aisNorthMeadow">
+		<Event trigger="create_region">
+			<Effect>
+				addArea('areaFarmEnemies',{'circle','bronsFarm:locFarm',20});
+				local list = getMonstersInArea('WillardEnemiesArea')
+				
+				farm_siege_tmp.wife = createObject("peasant_f","bronsFarm:locWife");
+				moveObject(farm_siege_tmp.wife,"bronsFarm:locWife",false);
+				set(farm_siege_tmp.wife,"ignored_by_ai",true);
+				
+				if (farm_siege.goblins_cleared ~= true) then
+					createMonsterGroup("farm_goblins_shaman","bronsFarm:locGoblins1")
+					createMonsterGroup("farm_goblins_warchief","bronsFarm:locGoblins2")
+				end;
+			
+				farm_siege_tmp.door = getObjectByNameRef("bronsFarmDoor");
+				scriptobjectvar[farm_siege_tmp.door]["locked"] = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_dead">
+			<Condition>
+				if (farm_siege.started == true and farm_siege.goblins_cleared~= true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				insertTrigger("checkFarmSafety")
+			</Effect>
+		</Event>
+		
+		
+		<Event trigger ="checkFarmSafety">
+			<Condition>
+				local list = getMonstersInArea('areaFarmEnemies')
+				if (list[2] == nil and farm_siege.started == true and farm_siege.goblins_cleared~= true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				farm_siege.goblins_cleared=true;
+				local heroes = filter(getPlayers(),isInRegion);
+				unitSpeak(heroes[1],_("That should have been enough goblins. I better look after Bron's family."),"thoughtful");
+			</Effect>
+		</Event>
+		
+		<Event trigger="object_use" once="true">
+			<Condition>
+				return((trigger.used_object==farm_siege_tmp.door)and(farm_siege.goblins_cleared==true));
+			</Condition>
+			<Effect>
+				createDialog();
+				
+				local players = getPlayersInArea('areaFarmEnemies')
+				players=listToSet(players);
+				
+				addPlayersToDialog(players);
+				addStandardRoles(players);
+				
+				addSpeaker(farm_siege_tmp.wife,"wife");
+				
+				local leader=getSpeaker("PL");
+				local name = get(leader,"name");
+				print(name);
+				
+				speak("PL",_("The goblins are gone. Are you alright?"),"normal");
+				speak("wife",_("Thank you very much."));
+				speak("wife",_("Sadly I cannot ask you in."));
+				speak("wife",_("Our barricade is quite heavy."));
+				speak("wife",_("But I will give word to my husband that we are alive and well."));
+				speak("PL",_("How so?"),"surprised");
+				speak("wife",_("With a crytal of Avearea, of course. It's been handed down in my family for generations."));
+				speak("PL",_("Of course. Silly of me."),"normal");
+				if((getSpeaker("mage")~=nil)and(getSpeaker("PL")~=getSpeaker("mage")))then
+					speak("mage",_("Really now, "..name..". Did you think she'd use carrier pigeons in this day and age?"));
+					if(duo())then
+						speak("PL",_("Let's just go collect the money."),"offended");
+					else
+						speak("PL",_("Let's just go collect the money."),"offended");
+					end;
+				end;
+				--exp verteilen
+				addPlayersExperience(1000, "farm_siege_xp")
+				farm_siege.rescued=true;
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Sergeant Lutterer">
+		<Topic name="farm_siege_reward" start_option="Brons Farm">
+			<Condition>
+				return((farm_siege.rescued==true)and(farm_siege.finished ~=true));
+			</Condition>
+			<Effect>
+				addSpeaker(joringsbridge.sergeant,"sergeant")
+				speak("player",_("It's done."));
+				speak("sergeant",_("I've already heard of it."),"amused");
+				speak("sergeant",_("Michel is in the tavern getting plastered - all in honor of your bravery, of course."),"amused");
+				speak("sergeant",_("But that shall be of no concern to you."),"normal");
+				speak("sergeant",_("Here's the money."),"normal")
+				addPlayersGold(2000, getPlayers());
+				farm_siege.finished=true;
+			</Effect>
+		</Topic>
+	</NPC>
+</Quest>
+

@@ -1,0 +1,179 @@
+<World >
+<!-- Lobby Konzilshalle der Elemtarmagier-->
+	<Region id="2" name="elCnlLobby">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Settings dimx="60" dimy="65" region_template="councilhall" ground="council_ground"/>
+		<WorldPosition world_x="0.62" world_y ="0.69" />
+		
+		<Music>
+			<Track source="treacherous_paths.ogg" />
+		</Music>
+		
+		<ExitDirections north="true" south="false" west="false" east="false" />
+		<Exits>
+			<Exit name="exit_north" destination_region="medBackalley" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+			</Exit>
+			<Exit name="exit_lab" destination_region="elCnlLowerCaves" destination_location="labCon:entry_lab" >
+				<Shape shape="RECT" extent_x="1.0" extent_y ="1.0" />
+			</Exit>
+		</Exits>
+			
+		<Environments>
+			<Environment height="1.0" name="council" />
+		</Environments>
+		
+		<Event trigger="holeClicked">
+			<Effect>
+				teleportPlayer(trigger.user,"elCnlLowerCaves","construction:locFallDown")
+			</Effect>
+		</Event>
+	</Region>
+<!-- Council of Elements, Lower Caves-->
+	<Region id="10" name="elCnlLowerCaves">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="60" dimy="60" area_percent="0.75" complexity="0.4" granularity="6"  ground="cave_ground"/>
+		<WorldPosition world_x="0.65" world_y ="0.41"/>
+		
+		<Music>
+			<Track source="treacherous_paths.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="false" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="labCon:exit_lab" destination_region="elCnlLobby" destination_location="entry_lab" >
+				<Shape shape="RECT" extent_x="1.0" extent_y ="1.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="randomLocation" probability="1"/>
+		</ObjectGroups>
+		<NamedObjectGroups>
+			<NamedObjectGroup name="labCon" object_group="sewerLabConnection" priority="4"/>
+			<NamedObjectGroup name="construction" object_group="lowerCavesConstruction" priority="5"/>
+			<NamedObjectGroup name="storage" object_group="councilStorage" priority="5"/>
+		</NamedObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="caveSlugs" number="10" />
+		</SpawnGroups>
+		<Event trigger="create_region">
+			<Effect>
+				local door = getObjectByNameRef("doorTreasure");
+				scriptobjectvar[door]["locked"] = true;
+				
+				tutorial_tmp.slave4 = createObject("slave_miner","construction:locSlave1",180);
+				tutorial_tmp.slave5 = createObject("slave_worker","construction:locSlave2",180);
+				set(tutorial_tmp.slave5,"layer","nocollision")
+				set(tutorial_tmp.slave5,"height",3)
+				moveObject(tutorial_tmp.slave5,"construction:locSlave2")
+				tutorial_tmp.slave6 = createObject("slave_miner","construction:locSlave3",90);
+				tutorial_tmp.overseer = createObject("slave_overseer","construction:locOverseer", 180);
+			</Effect>
+		</Event>
+	</Region>
+<!-- Medair, Hintergassen zwischen Konzil und Soeldnerlager-->
+	<Region id="17" name="medBackalley">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="the_prophecy.ogg" />
+		</Music>
+		
+		<Settings dimx="17" dimy="17" region_template="medBackalley"  ground="grass1"/>
+		<WorldPosition world_x="0.625" world_y ="0.67" />
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_north" destination_region="medMercCamp" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_south" destination_region="elCnlLobby" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+	</Region>	
+	
+<!-- Medair, Soeldnerlager [Stadt]-->
+	<Region id="3" name="medMercCamp">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="the_prophecy.ogg" />
+		</Music>
+		
+		<Settings dimx="20" dimy="20" region_template="medairMercenaryCamp"  ground="grass1"/>
+		
+		<WorldPosition world_x="0.61" world_y ="0.65" waypoint="true"/>
+		
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="medBackalley" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+
+			<Exit name="exit_north" destination_region="aisMeadow" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>		
+		
+		<ReviveLocation  location="WaypointLoc" />
+		
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				fenor = createObject('guard', 'locFenor');
+				setRefName(fenor, 'Fenor Marken');
+				set(fenor,"angle",90);
+				
+				trader = createObject('peasant', 'locWeaponTrader');
+				setRefName(trader, 'Robert');
+				set(trader,"angle",25);
+				
+				trader = createObject('peasant', 'locArmorTrader');
+				setRefName(trader, 'Elgor');
+				set(trader,"angle",35);
+
+				trader = createObject('peasant', 'locPotionTrader');
+				setRefName(trader, 'Cain');
+				set(trader,"angle",180);
+				
+				guard1 = createObject('guard', 'locSoldier1');
+				setRefName(guard1, 'Guard');
+				set(guard1,"angle",-90);
+				guard2 = createObject('guard', 'locSoldier2');
+				setRefName(guard2, 'Guard');
+				set(guard2,"angle",-90);
+				guard3 = createObject('guard', 'locSoldier3');
+				setRefName(guard3, 'Guard');
+				set(guard3,"angle",90);
+			</Effect>
+		</Event>
+	</Region>
+</World>

@@ -1,0 +1,81 @@
+Für die weitere Programmierung gibt es zwei wesentliche Zielsetzungen: Übersichtlichkeit/Strukturiertheit und Effizienz.
+Der Nutzen von übersichtlichem und strukturiertem Code ist klar. Das Thema Effizienz ist allerdings ebenso aktuell, wenn man betrachtet, dass unser Server trotz aktuell ziemlich geringer Funktionalität schon manchmal zu langsam läuft. Natürlich sind die beiden Ziele manchmal widersprüchlich und somit gegeneinander abzuwägen. In anderen Fällen bringt eine saubere Schreibweise sogar automatisch eine bessere Performance mit sich.
+Zu der Frage, wie wir in Zukunft damit umgehen folgende Vorschläge:
+
+
+1. Strukturierung der Daten:
+Klassen mit hunderten Datenfeldern werden unglaublich unübersichtlich. Daher ist mein der Vorschlag logisch zusammengehörende Daten in einer Struktur zu kapseln. Beispiele: Alle Daten, die (sich sehr selten ändernde) Basisattribute (Stärke, maximale Lebenspunkte ...) sind kommen eine Gruppe. Ebenso alle Attribute, welche stark veränderlich sind (aktuelle HP, Exp, Statusveränderungen etc). Alle Informationen die Schaden betreffen kommen in eine Struktur z.b. Schadensart, eventuelle Zusatzeffekte, ID des Verursachers usw. Wenn das ganze gut aufgebaut ist, dann entstehen dabei auch halbwegs logische Verbindungen: Schaden zu erhalten sollte nur Werte aus der Gruppe der dynamischen Gruppe der Charakterwerte verändern können. Das ganze logisch aufzubauen ist natürlich auch das Problem dabei ;)
+
+2. Setter/Getter-Wahnsinn:
+Etwas was mir beim originalen SWP sehr auf den Senkel ging, war die unglaubliche Menge von Get/Set Methoden, sowie der damit verbundene Dokumentationsoverhead. Das ist vielleicht gut gemeint und im Sinne der der OOP die ganz saubere Lösung - das Problem dabei ist, dass es die Doku letztlich zumüllt und die Beschreibung der eigentlich interessanten Funktionen untergehen lässt. 
+So als Zielsetzung möchte ich mal geben: Keine Klasse sollte mehr als 10 get / set Paare haben, die meisten deutlich weniger. Die Lösung besteht in dem schon genannten: Daten in Strukturen weiter logisch zusammenfassen und die Struktur als ganzes herausgeben. In Strukturen sind die Datenfelder per Definition public und brauchen somit keine get/set Methoden. Die Datenkapselung ist dadurch sicher gestellt, dass die Struktur private Member der betreffenden Klasse ist.
+Außerdem gilt es zu prüfen, welche private Datenfelder tatsächlich get/set Methoden benötigen. In der Regel ist es besser eine Klasse ihre Datenfelder selbst modifizieren zu lassen, anstatt sie auszulesen, extern zu modifizieren und dann wieder zu setzen. 
+Beispiel: Anstatt von einem Spielerobjekt die Lebenspunkte ausgeben zu lassen, diese zu reduzieren und dann den neuen Wert wieder zu setzen, übergibt man dem Spielerobjekt die Struktur mit allen Informationen über den angerichteten Schaden und überlässt die Änderung der internen Daten dem Objekt selbst.
+
+3. Datentyp bei Parametern / Rückgabewerten:
+Hier schlage ich folgende Konvention vor: Alle strukturierten Typen (Arrays, Strukturen, Klassen) werden immer als Pointer übergeben bzw zurückgegeben. Aktuell haben wir da eine bunte Mischung aus Pointern, Referenzen, flachen und tiefen Kopien. Das bedeutet, dass man aus einer get Methode einen Pointer auf das Originaldatenobjekt erhält und somit die Daten direkt ändern kann. Alle einfachen Typen (int, float, char...) werden immer by value übergeben / zurückgegeben. Das Auslesen von einzelnen einfachen Datenfeldern sollte minimiert werden (siehe erster punkt).
+
+4. Strukturierung des Programmcodes
+Enorm lange, sowie extrem kurze (sofern das nicht wirklich logisch ist) Funktionen sollten vermieden werden. Ich habe irgendwo mal gelesen, dass eine optimale Funktion eine Seite lang ist. Das entspricht 50-100 Zeilen - je nach Schriftgröße ;). Da ist unser aktueller code ziemlich schwer verdaulich (mir ist auch klar, dass ich da wesentliche Mitschuld dran habe)
+
+5. Verwendung von private Funktionen
+Aktuell sind fast alle Funktionen public. Es ist für das Verständnis sehr nützlich, wenn sichtbar ist, welche Funktionen wirklich für den Gebrauch von außen gedacht sind, und welche nur Strukturierung der Funktionalität der Klasse existieren und nur von der Klasse selbst aufgerufen werden. Daher bei jeder Funktion genau überlegen ob sie wirklich public sein muss, oder eigentlich auch private reicht. In dem Zusammenhang sei auch mal erwähnt: auf private Funktionen können nichtmal abgeleitete Klassen mehr zugreifen, wenn das beabsichtigt ist, muss das Schlüsselwort protected verwendet werden.
+
+6. Platzierung von Konstanten
+Die Konstanten sollten nicht an einer zentralen Stelle gesammelt werden, das wird irgendwann sehr unübersichtlich. Stattdessen ist es üblich enums und Konstanten dort zu definieren wo auch die Objekte definiert werden, die damit zusammenhängen. Itemkonstanten gehören in item.h, enums für Aktionen in action.h usw. Insbesondere sollen in der von Server und Client benutzen constants.h nur noch Konstanten stehen, die wirklich von beiden Seiten genutzt werden.
+Ausserdem gibt es die Möglichkeit klassengebundene Konstanten einzuführen, der Zugriff erfolgt dann nach dem Schema Klassenname::KONSTANTE . Über die Verwendung von soetwas kann man auch nachdenken. 
+
+7. Verwendung von const
+Mit dem Schlüsselwort const, kann man nicht nur Variablen als konstant definieren. Im Zusammenhang mit Funktionen kann man auch deklarieren, welche ihrer Eingabewerte eine Funktion ändert und ob die Funktion die Datenfelder der zugrunde liegenden Klasse verändert. Im Falle von Pointern kann man immer noch unterscheiden, ob der Pointer selbst, oder der Inhalt des Speicherplatzes auf den er zeigt konstant ist. Damit kann man so nette Zeilen erhalten wie:
+
+const int*const Method3(const int*const&)const;
+Zur Lektüre:
+http://duramecho.com/ComputerInformation/WhyHowCppConst.html
+... oder andere C++ Bücher / Internetseiten.
+
+Das ganze ist, wenn mans richtig macht, nicht nur guter Stil, sondern beschleunigt auch, weil die Optimierung des Compilers solche Hinweise mit verwendet.
+
+... ab hier fliessender Übergang zum Thema Performance ;)
+
+8. Geschwindigkeit von Grundoperationen
+Ich habe mal ein paar Tests gemacht und ungefär folgende Geschwindigkeitsverhältnisse herausbekommen:
+Zuweisung, Addition, Multiplikation = 1
+Division = 20 ( float / double), 10 (int);
+Wurzelziehen = 40
+Funktionsaufruf = 20
+new+delete = 150
+Schlussfolgerungen: Multiplikation geht richtig schnell, da ist kaum ein unterschied zur addition aufgetreten. Vermutlich dominiert dort schon die Zeit für den Speicherzugriff die Gesamtzeit. Division ist langsam. Anstatt durch 10 zu dividieren ist es also sinnvoll mit 0.1 zu multiplizieren. Analog kann man folgendes Programmstück um etwa Faktor 20 beschleunigen
+for (i=0;i<1000;i++)
+	a[i] /= p;
+ändert man in
+pr = 1/p;
+for (i=0;i<1000;i++)
+	a[i] *= pr;
+	
+Zweite Feststellung: Wurzelziehen geht schneller als erwartet und liegt in der selben Größenordnung wie die Division.
+Dritte Feststellung: new / delete Aufrufe brauchen enorm Zeit. Bei dem Test habe ich ein Objekt verwendet, welches ein einzigen int enthielt und keinen Konstruktor / Destruktor. Demzufolge spart es eine Menge Zeit temporäre Objekte auf dem Stack anzulegen. Beispiel:
+anstatt
+CObj* tempobj = new CObj();
+tempobj->somefunc();
+delete tempobj;
+schreibt man
+CObj tempobj();
+tempobj.somefunc();
+Ebenso gilt es zu überlegen, welche Klassenmember wirklich dynamisch angelegt werden müssen.
+
+9. Verwendung von inline
+Eine mit dem  Schlüsselwort inline markierte Funktion wird vom Compiler wenn möglich direkt eingesetzt (analog zu einem Makro), anstatt sie normal aufzurufen. Das spart das Retten von Registern, Aufbau des Stackframes usw.
+Beispiel:
+inline int sqr(int i)
+{	return i*i; }
+....
+a = sqr(x)+sqr(y);
+wird vom Compiler umgewandelt zu
+a = (x*x)+(y*y);
+Der Vorteil ist natürlich, dass es schneller geht, der Nachteil ist, dass bei längeren Funktionen der Code aufgebläht wird. Das ganze sollte also nur für kurze Funktionen angewendet werden. Damit die Ersetzung funktioniert muss dem Compiler der komplette Quellcode der Funktion bekannt sein (normalerweise reicht die Information, dass die Funktion existiert, den Rest macht der Linker). Das heißt, dass die Implementation der Funktion im Header stehen muss und nicht wie normal in der .cpp Datei, denn in der Regel wird ja nur der Header inkludiert. Funktionen, deren Implementation direkt in der Klassendeklaration steht, werden automatisch als inline angesehen.
+
+10. Speichern von Zwischenergebnissen
+Eine Menge Zeit kann man noch sparen, indem man nichts unnötig doppelt berechnet. Typisches Beispiel ist, wenn in einem Algorithmus fünfmal hintereinander der Term (i/2) auftaucht lohnt es sehr, den auf eine extra Variable zu speichern.
+
+
+

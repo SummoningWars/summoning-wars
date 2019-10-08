@@ -1,0 +1,673 @@
+<!-- ONE HANDED AXES -->
+
+<!-- hatchet / Beil -->
+<Item type="weapon" subtype="hatch_axe" name="hatchet" size="medium">
+	<RenderInfo name = "hatchet" />
+	<Image image="set:hatch_axe.png image:full_image" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="3"
+		damage_max_physical="8"
+		damage_attack="25"
+		damage_power="30"
+		attack_range="0.8"
+		two_handed="no"
+		dattack_speed="400"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- bronze_axe-->
+<Item type="weapon" subtype="bronze_axe" name="bronze axe" size="medium">
+	<RenderInfo name = "bronzeAxe" />
+	<Image image="set:bronze_axe.png image:full_image" />
+	<Attribute
+		level_requirement="3"
+		character_requirement="warrior,priest"
+		min_enchant="30"
+		max_enchant="80"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="7"
+		damage_max_physical="17"
+		damage_attack="28"
+		damage_power="36"
+		attack_range="1.0"
+		two_handed="no"
+		dattack_speed="200"
+	/>
+	<DropChance
+		level="3"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eisenbeil -->
+<Item type="weapon" subtype="ironha_axe" name="iron hatchet" size="medium">
+	<RenderInfo name = "ironHatchet" />
+	<Image image="set:ironha_axe.png image:full_image" />
+	<Attribute
+		level_requirement="6"
+		character_requirement="warrior,priest"
+		min_enchant="40"
+		max_enchant="130"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="11"
+		damage_max_physical="21"
+		damage_attack="30"
+		damage_power="60"
+		attack_range="1.0"
+		two_handed="no"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="6"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schlachtebeil -->
+<Item type="weapon" subtype="cleave_axe" name="cleaver" size="medium">
+	<RenderInfo name= "ironHatchet" />
+	<Image image="set:ironha_axe.png image:full_image" />
+	<Attribute
+		level_requirement="9"
+		character_requirement="warrior,priest"
+		min_enchant="50"
+		max_enchant="180"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="15"
+		damage_max_physical="33"
+		damage_attack="30"
+		damage_power="60"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="9"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eisenaxt -->
+<Item type="weapon" subtype="iron_axe" name="iron axe" size="medium">
+	<RenderInfo name= "ironHatchet" />
+	<Image image="set:ironha_axe.png image:full_image" />
+	<Attribute
+		level_requirement="13"
+		character_requirement="warrior,priest"
+		min_enchant="60"
+		max_enchant="200"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="17"
+		damage_max_physical="36"
+		damage_attack="45"
+		damage_power="85"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Soeldneraxt -->
+<Item type="weapon" subtype="merc_axe" name="mercenary axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="17"
+		character_requirement="warrior,priest"
+		min_enchant="70"
+		max_enchant="250"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="20"
+		damage_max_physical="41"
+		damage_attack="64"
+		damage_power="76"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="17"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Stahlaxt -->
+<Item type="weapon" subtype="steel_axe" name="steel axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="25"
+		character_requirement="warrior,priest"
+		min_enchant="80"
+		max_enchant="300"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="25"
+		damage_max_physical="39"
+		damage_attack="72"
+		damage_power="88"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="25"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kampfaxt -->
+<Item type="weapon" subtype="battle_axe" name="battle axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="30"
+		character_requirement="warrior,priest"
+		min_enchant="90"
+		max_enchant="350"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="28"
+		damage_max_physical="41"
+		damage_attack="86"
+		damage_power="95"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="30"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Waechteraxt -->
+<Item type="weapon" subtype="guard_axe" name="guard axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="35"
+		character_requirement="warrior,priest"
+		min_enchant="100"
+		max_enchant="400"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="31"
+		damage_max_physical="46"
+		damage_attack="95"
+		damage_power="105"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-530"
+	/>
+	<DropChance
+		level="35"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Minotaurenaxt -->
+<Item type="weapon" subtype="mino_axe" name="minotaur axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="40"
+		character_requirement="warrior,priest"
+		min_enchant="100"
+		max_enchant="420"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="37"
+		damage_max_physical="51"
+		damage_attack="102"
+		damage_power="145"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="40"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Donneraxt -->
+<Item type="weapon" subtype="wind_axe" name="thunder axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="45"
+		character_requirement="warrior,priest"
+		min_enchant="120"
+		max_enchant="500"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.11"
+		modchance_damage_fire_mod="0.07"
+		modchance_damage_ice_mod="0.07"
+		modchance_damage_air_mod="0.2"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="20"
+		damage_max_physical="30"
+		damage_min_air="18"
+		damage_max_air="26"
+		damage_attack="112"
+		damage_power="128"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="45"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Daemonenaxt -->
+<Item type="weapon" subtype="demon_axe" name="demon axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="50"
+		character_requirement="warrior,priest"
+		min_enchant="130"
+		max_enchant="550"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="42"
+		damage_max_physical="59"
+		damage_attack="120"
+		damage_power="144"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="50"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Obsidianaxt -->
+<Item type="weapon" subtype="obsid_axe" name="obsidian axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="55"
+		character_requirement="warrior,priest"
+		min_enchant="140"
+		max_enchant="600"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="54"
+		damage_max_physical="72"
+		damage_attack="144"
+		damage_power="120"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="55"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Vulkanaxt -->
+<Item type="weapon" subtype="vulcan_axe" name="vulcano axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="60"
+		character_requirement="warrior,priest"
+		min_enchant="150"
+		max_enchant="650"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.20"
+		modchance_damage_ice_mod="0.0"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="18"
+		damage_max_physical="32"
+		damage_min_fire="31"
+		damage_max_fire="37"
+		damage_attack="142"
+		damage_power="158"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="60"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Berserkeraxt -->
+<Item type="weapon" subtype="bersrk_axe" name="berserker axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="65"
+		character_requirement="warrior,priest"
+		min_enchant="150"
+		max_enchant="700"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="60"
+		damage_max_physical="75"
+		damage_attack="140"
+		damage_power="180"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="65"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Diamantaxt -->
+<Item type="weapon" subtype="diamnt_axe" name="diamont axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="70"
+		character_requirement="warrior,priest"
+		min_enchant="170"
+		max_enchant="750"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="55"
+		damage_max_physical="79"
+		damage_attack="166"
+		damage_power="178"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="70"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Zwergenaxt -->
+<Item type="weapon" subtype="dwarf_axe" name="dwarfen axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="75"
+		character_requirement="warrior,priest"
+		min_enchant="170"
+		max_enchant="780"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="59"
+		damage_max_physical="83"
+		damage_attack="170"
+		damage_power="180"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="75"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Hoellenaxt -->
+<Item type="weapon" subtype="hell_axe" name="hell axe" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHatchet" />
+	<Attribute
+		level_requirement="80"
+		character_requirement="warrior,priest"
+		min_enchant="200"
+		max_enchant="1000"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="28"
+		damage_max_physical="40"
+		damage_min_fire="37"
+		damage_max_fire="53"
+		damage_attack="190"
+		damage_power="230"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="80"
+		probability="1.0"
+	/>
+</Item>

@@ -1,0 +1,161 @@
+﻿<Quest name="The Ambush" table_name="ambush" domain="the_ambush">
+	<Description>
+		if (ambush.finished) then
+			return _("Ireana survived and, as a token of her gratitude, provided our next job. I always knew the councilmen only wanted an exterminator.")
+		else
+			return _("A female council-mage by the name of Ireana of Northborough seems to be in trouble west of Dwarfenwall. Nothing a Branded One couldn't solve. If she survives long enough...")
+		end
+	</Description>
+	
+	<Region name="aisWolfstones">
+		
+		<Event trigger="create_region" once="true">
+			<Effect>
+				--area am Nordausgang erstellen
+				addArea('northernExit',{'rect','entry_north',{12,8}});
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved">
+			<Condition>
+				if(fissure.finished ~= true)then
+					return unitIsInArea(trigger.player,"northernExit")
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				unitSpeak(trigger.player,_("Dwarfenwall is in that direction. I shouldn't go this way yet."),"thoughtful");
+				addUnitCommand(trigger.player,"walk","entry_south");
+				startTimer("cancelCommand","1000");
+				addTriggerVariable("player",trigger.player);
+			</Effect>
+		</Event>
+		
+		<Event trigger="cancelCommand">
+			<Effect>
+				clearUnitCommands(trigger.player);
+			</Effect>
+		</Event>
+		
+		<Event trigger="enter_region">
+			<Condition>
+				return((trigger.player == getPartyleader())and (ambush.started ~= true));
+			</Condition>
+			<Effect>
+				ambush.leaderInRegion = true;
+				startTimer("callForHelp",15000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="leave_region">
+			<Condition>
+				return((trigger.player == getPartyleader())and (ambush.finished ~= true))
+			</Condition>
+			<Effect>
+				ambush.leaderInRegion = false;
+			</Effect>
+		</Event>
+		
+		<Event trigger="callForHelp" once="true">
+			<Condition>
+				return ambush.leaderInRegion;
+			</Condition>
+			<Effect>
+				setCutsceneMode(true);
+				ambush_tmp.party = get(getPlayers()[1],"position");
+				getNextTileCenter(ambush_tmp.party)
+				addLocation("locCrystal",ambush_tmp.party);
+				ambush_tmp.partyLoc = {0,3.5};
+				if(solo() or (not solo() and (getPlayers[3]==nil)))then
+					ambush_tmp.partyLoc = {0,2};
+				end;
+				vecadd(ambush_tmp.partyLoc,getLocation("locCrystal"));
+				addLocation("locParty",ambush_tmp.partyLoc);
+				addCameraPosition(0,"locCrystal",-80,60, 17);
+				assembleParty("aisWolfstones","locParty");
+				ambush_tmp.theCall = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return ambush_tmp.theCall == true;
+			</Condition>
+			<Effect>
+				ambush_tmp.theCall = false;
+				
+				if(solo() or (not solo() and getPlayers()[3] == nil))then
+					 groupObjectsArc(getPlayers(),"locParty","locCrystal",nil,90);
+				else
+					groupObjectsArc(getPlayers(),"locParty","locCrystal",nil,360);
+				end;
+
+				playersLookAt("locCrystal");
+				ambush_tmp.soren = createObject("sorenCrystal","locCrystal");
+				addUnitCommand(ambush_tmp.soren,"freezingDeath",ambush_tmp.party);
+				createDialogue();
+				addAllPlayersToDialog();
+				addStandardRoles();
+				addSpeaker(ambush_tmp.soren,"Soren Windclaw");
+				
+				if (solo())then
+					speak("Soren Windclaw",_("Wait!"),"sad",2500);
+					speak("PL",_("I am making haste, alright?"),"unhappy");
+					speak("Soren Windclaw",_("You have to go into the western woods right now."),"unhappy");
+				else
+					speak("PL",_("We are making haste, alright?"),"unhappy");
+					speak("Soren Windclaw",_("You have to go into the western woods right now."),"unhappy");
+				end;
+					speak("Soren Windclaw",_("The prince's fiancé is in danger."));
+					speak("any",_("Who?"),"surprised");
+					speak("Soren Windclaw",_("The archmage Ireana of Northborough"),"sad");
+					speak("archer",_("Will that be payed extra?"),"surprised");
+				if(getSpeaker("archer")~=getSpeaker("magopt"))then
+					speak("magopt",_("What?"),"thoughtful");
+					speak("magopt",_("I thought she was one of your fancy elementalist amazones. Can't she look after herself?"),"bored");
+				end;
+				if(solo())then
+					speak("Soren Windclaw",_("Don't start to argue and help her! She needs your help!"),"pain");
+					setSpeakerEmotion("Soren Windclaw","unhappy");
+				else
+					speak("Soren Windclaw",_("Don't start to argue and help her! She needs your help!"),"pain");
+					setSpeakerEmotion("Soren Windclaw","unhappy");
+					if(duo())then
+						speak("PL",_("What do you think? Shall we bail someone out?"),"amused");
+						if(getSpeaker("magopt")~=getSpeaker("PL"))then
+							speak("magopt", _("I'm not sure..."),"bored");
+						elseif(getSpeaker("PL")~=getSpeaker("waropt"))then
+							speak("waropt", _("Well, it couldn't really hurt..."),"thoughtful");
+						end;
+						if(getSpeaker("PL")~=getSpeaker("archer"))then
+							speak("archer",_("Will that be payed extra??"),"thoughtful");
+						end;
+						speak("Soren Windclaw",_("Argh! Do I have to-"),"angry");
+						speak("PL",_("Alright already, safe your breath!"),"aloof");
+					end;
+					speak("PL",_("What do you think, friends, do we want to bail someone out?"),"amused");
+					if(getSpeaker("magopt")~=getSpeaker("PL"))then
+						speak("magopt", _("I'm not sure..."),"bored");
+					end;
+					if(getSpeaker("magopt")~=getSpeaker("waropt"))then
+						speak("waropt", _("Well, it couldn't really hurt..."),"thoughtful");
+					end;
+					speak("archer",_("Will that be payed extra??"),"thoughtful");
+					speak("Soren Windclaw",_("Argh! Do I have to-"),"angry");
+					speak("PL",_("Alright already, safe your breath!"),"aloof");
+				end;
+					speak("PL",_("The firefighters are on the way."),"sneer");
+					executeInDialog("insertTrigger('speechFinished')");
+			</Effect>
+		</Event>
+			
+		<Event trigger="speechFinished" once="true">
+			<Effect>
+				setCutsceneMode(false);
+				ambush.started=true;
+				deleteObject(ambush_tmp.soren);
+			</Effect>
+		</Event>
+	</Region>
+</Quest>

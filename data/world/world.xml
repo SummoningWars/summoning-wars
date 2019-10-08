@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- TEMPLATE
+	<Fraction type="string">
+		<Relation fraction="string" relation="string" />
+		...
+	</Fraction>
+<World>
+	<Region id="short" name="string">
+		<Settings dimx="short" dimy="short" area_percent="float" complexity="float" granularity="int" />
+		
+		<Music>
+			<Track source="somefile.ogg" />
+			<Track source="anotherfile.ogg" />
+		</Music>
+		<ExitDirections north="bool" south="bool" west="bool" east="bool" />
+		
+		<Exits>
+			<Exit name="string" destination_region="string" destination_location="string" >
+				<Shape shape="RECT" extent_x="float" extent_y="float" />
+				OR
+				<Shape shape="CIRCLE" radius="float" />
+			</Exit>
+			...
+		</Exits>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="string" object_group="string" priority="int" />
+			...
+		</NamedObjectGroups>
+	
+		<ObjectGroups>
+			<ObjectGroup object_group="string" priority="int" number="int" probability="float" />
+			...
+		</ObjectGroups>	
+		
+		<Environments>
+			<Environment height="float" name="string" />
+			...
+		</Environments>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="string" number="int" />
+			...
+		</SpawnGroups>
+		
+		<ReviveLocation  location="string" />
+		
+	</Region>
+</World>
+-->
+<World start_region="elCnlLobby" start_location="locEntryPlayer">
+	<Fraction type="human">
+		<Relation fraction="default" relation="neutral" />
+		<Relation fraction="player" relation="allied" />
+	</Fraction>
+	
+	<Fraction type="monster">
+		<Relation fraction="default" relation="neutral" />
+		<Relation fraction="player" relation="hostile" />
+		<Relation fraction="human" relation="hostile" />
+	</Fraction>
+	
+	<Fraction type="undead">
+		<Relation fraction="default" relation="hostile" />
+		<Relation fraction="player" relation="hostile" />
+		<Relation fraction="monster" relation="hostile" />
+		<Relation fraction="human" relation="hostile" />
+	</Fraction>
+	
+	<Fraction type="summoner">
+		<Relation fraction="default" relation="hostile" />
+		<Relation fraction="player" relation="hostile" />
+		<Relation fraction="human" relation="hostile" />
+		<Relation fraction="monster" relation="hostile" />
+		<Relation fraction="undead" relation="hostile" />
+	</Fraction>
+
+	<TitleMusic source="main_title.ogg" />
+</World>
+
+

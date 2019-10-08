@@ -1,0 +1,684 @@
+
+<!-- Tolec -->
+<Monster type="NPC" subtype="tolec" name="Tolec" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="tolec" />
+	<EmotionSet name="tolec_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="83"
+					max_health="1070"
+					armor="230"
+					block="60"
+					attack="120"
+					strength="120"
+					dexterity="55"
+					magic_power="15"
+					willpower="60"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="100"
+					resistances_cap_physical="50"
+					resistances_cap_air="80"
+					resistances_cap_ice="80"
+					resistances_cap_fire="100"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		<Immunity type="burning"/>
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Derred -->
+<Monster type="NPC" subtype="derred" name="Derred" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="derred" />
+	<EmotionSet name="derred_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="86"
+					max_health="1300"
+					armor="210"
+					block="0"
+					attack="200"
+					strength="150"
+					dexterity="73"
+					magic_power="25"
+					willpower="100"
+					resistances_physical="20"
+					resistances_air="28"
+					resistances_ice="32"
+					resistances_fire="100"
+					resistances_cap_physical="50"
+					resistances_cap_air="80"
+					resistances_cap_ice="80"
+					resistances_cap_fire="100"
+					walk_speed="3500"
+					attack_speed="1300"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		<Immunity type="burning"/>
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Soren Windklaue -->
+<Monster type="NPC" subtype="soren" name="Soren Windclaw" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="soren" />
+	<EmotionSet name="councilMage_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="80"
+					max_health="8000"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="30"
+					resistances_air="55"
+					resistances_ice="50"
+					resistances_fire="60"
+					resistances_cap_physical="90"
+					resistances_cap_air="90"
+					resistances_cap_ice="90"
+					resistances_cap_fire="90"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Sklavenarbeiter -->
+<Monster type="NPC" subtype="slave_worker" name="Worker" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name = "slave_worker" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="1"
+					max_health="75"
+					armor="0"
+					block="0"
+					attack="0"
+					strength="25"
+					dexterity="10"
+					magic_power="0"
+					willpower="5"
+					resistances_physical="-20"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+<!-- slave worker, only suitable for standing on a scaffolding if he can die-->
+<Monster type="NPC" subtype="slave_scaffolding" name="Worker" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name = "slave_scaffolding" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="1"
+					max_health="75"
+					armor="0"
+					block="0"
+					attack="0"
+					strength="25"
+					dexterity="10"
+					magic_power="0"
+					willpower="5"
+					resistances_physical="-20"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+<!-- Sklavenminenarbeiter -->
+<Monster type="NPC" subtype="slave_miner" name="Worker" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name = "slave_miner" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="1"
+					max_health="75"
+					armor="0"
+					block="0"
+					attack="0"
+					strength="25"
+					dexterity="10"
+					magic_power="0"
+					willpower="5"
+					resistances_physical="-20"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+<!-- Sklavenminenarbeiter -->
+<Monster type="NPC" subtype="slave_overseer" name="Overseer" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name = "slave_overseer" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="1"
+					max_health="75"
+					armor="0"
+					block="0"
+					attack="0"
+					strength="25"
+					dexterity="10"
+					magic_power="0"
+					willpower="5"
+					resistances_physical="-20"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Soren Windklaue, Kommunikationskristall -->
+<Monster type="NPC" subtype="sorenCrystal" name="Soren Windclaw" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="sorenCrystal" />
+	<EmotionSet name="councilMageCrystal_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="80"
+					max_health="8000"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="500"
+					willpower="20"
+					resistances_physical="90"
+					resistances_air="90"
+					resistances_ice="90"
+					resistances_fire="90"
+					resistances_cap_physical="90"
+					resistances_cap_air="90"
+					resistances_cap_ice="90"
+					resistances_cap_fire="90"
+					walk_speed="0"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction" time = "3000"/>
+		<Ability type = "blindness" time="1000"/>
+		<Ability type="freezingDeath" />
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Konzilswaechter -->
+<Monster type="NPC" subtype="council_guard" name="Council Guard" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="guardPole_cnl" />
+	<EmotionSet name="derred_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="20"
+					max_health="260"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="30"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Konzilsmagier in Joringsbrueck -->
+<Monster type="NPC" subtype="council_mage" name="Council Mage" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="councilMage" />
+	<EmotionSet name="councilMage_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="80"
+					max_health="8000"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="30"
+					resistances_air="55"
+					resistances_ice="50"
+					resistances_fire="60"
+					resistances_cap_physical="90"
+					resistances_cap_air="90"
+					resistances_cap_ice="90"
+					resistances_cap_fire="90"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Ireana von Nordenburg -->
+<Monster type="NPC" subtype="ireana" name="Ireana von Nordenburg" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="ireana" />
+	<EmotionSet name="ireana_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="80"
+					max_health="8000"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="70"
+					resistances_air="75"
+					resistances_ice="70"
+					resistances_fire="80"
+					resistances_cap_physical="90"
+					resistances_cap_air="90"
+					resistances_cap_ice="90"
+					resistances_cap_fire="90"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Konzilswaechter, Ireana -->
+<Monster type="NPC" subtype="ireana_guard" name="Council Guard" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="guardPole_cnl" />
+	<EmotionSet name="derred_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="20"
+					max_health="260"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="30"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Captain von Ireanas Wache -->
+<Monster type="NPC" subtype="ireana_captain" name="Council Guard Captain" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="tolec" />
+	<EmotionSet name="tolec_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="83"
+					max_health="1070"
+					armor="230"
+					block="60"
+					attack="120"
+					strength="120"
+					dexterity="55"
+					magic_power="15"
+					willpower="60"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Konzilsmagierin in Zwergentrutz -->
+<Monster type="NPC" subtype="council_dwarfenwall" name="Council Mage" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="councilMageF" />
+	<EmotionSet name="ireana_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="38"
+					max_health="1200"
+					armor="80"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="60"
+					willpower="200"
+					resistances_physical="30"
+					resistances_air="60"
+					resistances_ice="60"
+					resistances_fire="60"
+					resistances_cap_physical="90"
+					resistances_cap_air="90"
+					resistances_cap_ice="90"
+					resistances_cap_fire="90"
+					walk_speed="3500"
+					attack_speed="1400"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		<Ability type="avaera_firebolt" rating="2"/>
+		<Ability type="avaera_lightning" rating="2"/>
+		<Ability type="avaera_firecolumn" rating="0" all_target_rating="1.5" all_target_rating_radius="2"/> 
+		<Ability type="avaera_chain_lightning" rating="0" all_target_rating="0.9" all_target_rating_radius="3"/> 
+		<Ability type="resurrection_fire_storm"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="9" />
+</Monster>
+
+<!-- Konzilswaechter, Zwergentrutz -->
+<Monster type="NPC" subtype="dwarfenwall_councilguard" name="Council Guard" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="guardPole_cnl" />
+	<EmotionSet name="derred_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="20"
+					max_health="1130"
+					armor="120"
+					block="0"
+					attack="180"
+					strength="90"
+					dexterity="45"
+					magic_power="25"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="25"
+					resistances_ice="25"
+					resistances_fire="25"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="1500"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		<Ability type="council_pierce" rating="1.5"/>
+		<Ability type="legion_whirl" rating="0" all_target_rating="0.5"/>
+		<Ability type="council_flamearmor" rating="2"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Feuerwachen -->
+<Monster type="MONSTER" subtype="fire_guard" name="Fireguardian" fraction="human" race="elemental" layer="NORMAL">
+	<RenderInfo name="fireElemS" />
+	
+	<BasicAttributes
+		experience="30"
+		level="20"
+		max_health="800"
+		armor="70"
+		block="0"
+		attack="120"
+		power="90"
+		strength="50"
+		dexterity="40"
+		magic_power="30"
+		willpower="30"
+		resistances_physical="25"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="100"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="20"
+		resistances_cap_fire="100"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="0.5"
+	>
+		<Ability type="walk" />
+		<Ability type="fire_attack"  rating="1"/>
+		<Ability type="die" />
+
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000"/>
+		<Ability type="fire_ball"  rating="3" all_target_rating="0.5" all_target_rating_radius="1.5"/>
+
+		<Immunity type="burning"/>
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+
+
+

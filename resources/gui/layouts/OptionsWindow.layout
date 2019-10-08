@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="TaharezLook/StaticImage" Name="OptionsWindow" >
+        <Property Name="Image" Value="set:OptionsWindow image:Background" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.15,0},{0.1,0},{0.85,0},{0.9,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Window Type="TaharezLook/StaticText" Name="OptionsLabel" >
+            <Property Name="Text" Value="Options" />
+            <Property Name="HorzExtent" Value="56" />
+            <Property Name="VertExtent" Value="25.5702" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.376,0},{0.035,0},{0.624,0},{0.06,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="TaharezLook/TabControl" Name="OptionsWindowTab" >
+            <Property Name="Alpha" Value="0" />
+            <Property Name="TabHeight" Value="{0,31.1724}" />
+            <Property Name="TabButtonType" Value="TaharezLook/brownTabButton" />
+            <Property Name="TabPanePosition" Value="Top" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0376348,0},{0.138806,0},{0.970961,0},{0.881281,0}}" />
+            <Window Type="TaharezLook/TabContentPane" Name="OptionsShortkeys" >
+                <Property Name="Text" Value="Shortkeys" />
+                <Property Name="Alpha" Value="0" />
+                <Property Name="Visible" Value="True" />
+                <Property Name="InheritsAlpha" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0346453,0},{0.0752755,0},{0.967971,0},{0.875325,0}}" />
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel0" >
+                    <Property Name="Text" Value="Inventory" />
+                    <Property Name="HorzExtent" Value="77" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0,0},{0.35,0},{0.1,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel0" >
+                    <Property Name="Text" Value="I" />
+                    <Property Name="HorzExtent" Value="7" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0,0},{0.55,0},{0.1,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel1" >
+                    <Property Name="Text" Value="Character screen" />
+                    <Property Name="HorzExtent" Value="138" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.1,0},{0.35,0},{0.2,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel1" >
+                    <Property Name="Text" Value="C" />
+                    <Property Name="HorzExtent" Value="9" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.1,0},{0.55,0},{0.2,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel2" >
+                    <Property Name="Text" Value="Skilltree" />
+                    <Property Name="HorzExtent" Value="68" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.2,0},{0.35,0},{0.3,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel2" >
+                    <Property Name="Text" Value="T" />
+                    <Property Name="HorzExtent" Value="7" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.2,0},{0.55,0},{0.3,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel3" >
+                    <Property Name="Text" Value="Party screen" />
+                    <Property Name="HorzExtent" Value="102" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.3,0},{0.35,0},{0.4,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel3" >
+                    <Property Name="Text" Value="P" />
+                    <Property Name="HorzExtent" Value="9" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.3,0},{0.55,0},{0.4,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel4" >
+                    <Property Name="Text" Value="Chatbox" />
+                    <Property Name="HorzExtent" Value="61" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.4,0},{0.35,0},{0.5,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel4" >
+                    <Property Name="Text" Value="M" />
+                    <Property Name="HorzExtent" Value="12" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.4,0},{0.55,0},{0.5,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel5" >
+                    <Property Name="Text" Value="Quests" />
+                    <Property Name="HorzExtent" Value="52" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.5,0},{0.35,0},{0.6,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel5" >
+                    <Property Name="Text" Value="Q" />
+                    <Property Name="HorzExtent" Value="9" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.5,0},{0.55,0},{0.6,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel6" >
+                    <Property Name="Text" Value="Minimap" />
+                    <Property Name="HorzExtent" Value="61" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.6,0},{0.35,0},{0.7,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel6" >
+                    <Property Name="Text" Value="Tab" />
+                    <Property Name="HorzExtent" Value="25" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.6,0},{0.55,0},{0.7,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel7" >
+                    <Property Name="Text" Value="Swap equipement" />
+                    <Property Name="HorzExtent" Value="134" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.7,0},{0.35,0},{0.8,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel7" >
+                    <Property Name="Text" Value="W" />
+                    <Property Name="HorzExtent" Value="12" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.7,0},{0.55,0},{0.8,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyLabel8" >
+                    <Property Name="Text" Value="Item Labels" />
+                    <Property Name="HorzExtent" Value="93" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.8,0},{0.35,0},{0.9,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ShortkeyValueLabel8" >
+                    <Property Name="Text" Value="Alt" />
+                    <Property Name="HorzExtent" Value="22" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="HorzFormatting" Value="HorzCentred" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.403203,0},{0.8,0},{0.55,0},{0.9,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+            <Window Type="TaharezLook/TabContentPane" Name="OptionsGameplay" >
+                <Property Name="Text" Value="Gameplay" />
+                <Property Name="Alpha" Value="0" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="InheritsAlpha" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0376348,0},{0.0792462,0},{0.970961,0},{0.881281,0}}" />
+                <Window Type="TaharezLook/StaticText" Name="GameplayDifficultyLabel" >
+                    <Property Name="Text" Value="Difficulty" />
+                    <Property Name="HorzExtent" Value="75" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0183985,0},{0.148522,0},{0.348398,0},{0.248522,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="DifficultyBox" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.146047,0},{0.8,0},{0.246047,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.4,0},{0.3,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="TextSpeedLabel" >
+                    <Property Name="Text" Value="Text Speed" />
+                    <Property Name="HorzExtent" Value="82" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.015548,0},{0.475763,0},{0.345548,0},{0.575763,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/HorizontalScrollbar" Name="TextSpeedSlider" >
+                    <Property Name="PageSize" Value="0" />
+                    <Property Name="StepSize" Value="1" />
+                    <Property Name="OverlapSize" Value="0" />
+                    <Property Name="DocumentSize" Value="1" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="ScrollPosition" Value="0" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.390391,0},{0.482696,0},{0.823861,0},{0.582697,0}}" />
+                </Window>
+            </Window>
+            <Window Type="TaharezLook/TabContentPane" Name="OptionsSound" >
+                <Property Name="Text" Value="Sound" />
+                <Property Name="Alpha" Value="0" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="InheritsAlpha" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0376348,0},{0.0812315,0},{0.970961,0},{0.881281,0}}" />
+                <Window Type="TaharezLook/StaticText" Name="MusicVolumeLabel" >
+                    <Property Name="Text" Value="Music" />
+                    <Property Name="HorzExtent" Value="43" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.015548,0},{0.475763,0},{0.345548,0},{0.575763,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/HorizontalScrollbar" Name="MusicVolumeSlider" >
+                    <Property Name="PageSize" Value="0" />
+                    <Property Name="StepSize" Value="1" />
+                    <Property Name="OverlapSize" Value="0" />
+                    <Property Name="DocumentSize" Value="1" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="ScrollPosition" Value="0" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.482696,0},{0.8,0},{0.582696,0}}" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="SoundVolumeLabel" >
+                    <Property Name="Text" Value="Sound" />
+                    <Property Name="HorzExtent" Value="45" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.015548,0},{0.12587,0},{0.345548,0},{0.225869,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/HorizontalScrollbar" Name="SoundVolumeSlider" >
+                    <Property Name="PageSize" Value="0" />
+                    <Property Name="StepSize" Value="1" />
+                    <Property Name="OverlapSize" Value="0" />
+                    <Property Name="DocumentSize" Value="1" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="ScrollPosition" Value="0" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.12536,0},{0.8,0},{0.22536,0}}" />
+                </Window>
+            </Window>
+            <Window Type="TaharezLook/TabContentPane" Name="OptionsGraphic" >
+                <Property Name="Text" Value="Graphic" />
+                <Property Name="Alpha" Value="0" />
+                <Property Name="Visible" Value="False" />
+                <Property Name="InheritsAlpha" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.01,0},{0.08,0},{0.99,0},{0.89,0}}" />
+                <Window Type="TaharezLook/Checkbox" Name="GrabMouseInWindowedModeBox" >
+                    <Property Name="Text" Value="Grab mouse in windowed mode (needs restart)" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.02,0},{0.98,0},{0.125,0}}" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="VideoDriver" >
+                    <Property Name="Text" Value="Video Driver" />
+                    <Property Name="HorzExtent" Value="168" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.15,0},{0.34,0},{0.25,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="VideoDriverBox" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.15,0},{0.98,0},{0.25,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.5,0},{0.25,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="DisplayMode" >
+                    <Property Name="Text" Value="Display Mode" />
+                    <Property Name="HorzExtent" Value="168" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.26,0},{0.34,0},{0.36,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="DisplayModeBox" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.26,0},{0.98,0},{0.36,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.5,0},{0.3,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="Resolution" >
+                    <Property Name="Text" Value="Resolution" />
+                    <Property Name="HorzExtent" Value="168" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.37,0},{0.34,0},{0.47,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="ResolutionBox" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.37,0},{0.98,0},{0.47,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.5,0},{0.5,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="EnemyHighlightLabel" >
+                    <Property Name="Text" Value="Enemy Highlight Color" />
+                    <Property Name="HorzExtent" Value="168" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.50,0},{0.34,0},{0.60,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="EHColorBox" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.50,0},{0.98,0},{0.60,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.5,0},{0.39,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+
+                <Window Type="TaharezLook/StaticText" Name="ShadowsLabel" >
+                    <Property Name="Text" Value="Shadows" />
+                    <Property Name="HorzExtent" Value="168" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.62,0},{0.34,0},{0.72,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="ShadowsDropDownList" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.62,0},{0.98,0},{0.72,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.5,0},{0.35,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+
+                <!-- Resetting graphics is no longer needed, since the changes can be applied from within the game -->
+                <!-- 
+                <Window Type="TaharezLook/Button" Name="ResetGraphicsButton" >
+                    <Property Name="Text" Value="Reset graphic options" />
+                    <Property Name="HoverImage" Value="set:MainMenu image:SPBtnHover" />
+                    <Property Name="NormalImage" Value="set:MainMenu image:SPBtnNormal" />
+                    <Property Name="PushedImage" Value="set:MainMenu image:SPBtnPushed" />
+                    <Property Name="DisabledImage" Value="set:MainMenu image:SPBtnNormal" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.018,0},{0.85,0},{0.35,0},{0.93,0}}" />
+                </Window>
+                <Window Type="TaharezLook/StaticText" Name="ResetGraphicsLabel" >
+                    <Property Name="Text" Value="Restart required for setting new options" />
+                    <Property Name="HorzExtent" Value="168" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.85,0},{0.9,0},{0.93,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                -->
+            </Window>
+            <Window Type="TaharezLook/TabContentPane" Name="OptionsMisc" >
+                <Property Name="Text" Value="Misc" />
+                <Property Name="Alpha" Value="0" />
+                <Property Name="InheritsAlpha" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0376348,0},{0.0812315,0},{0.970961,0},{0.881281,0}}" />
+                <Window Type="TaharezLook/StaticText" Name="LanguageLabel" >
+                    <Property Name="Text" Value="Language" />
+                    <Property Name="HorzExtent" Value="72" />
+                    <Property Name="VertExtent" Value="25.5702" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.08,0},{0.33,0},{0.31,0},{0.43,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="TaharezLook/Combobox" Name="LanguageBox" >
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.351176,0},{0.8,0},{0.451176,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.4,0},{0.5,0}}" />
+                    <Property Name="MaxEditTextLength" Value="1073741823" />
+                </Window>
+            </Window>
+        </Window>
+        <Window Type="TaharezLook/Button" Name="OptionsCloseButton" >
+            <Property Name="HoverImage" Value="set:MainMenu image:SPBtnHover" />
+            <Property Name="NormalImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="PushedImage" Value="set:MainMenu image:SPBtnPushed" />
+            <Property Name="DisabledImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.882,0},{0.6,0},{0.937389,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

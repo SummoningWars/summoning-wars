@@ -1,0 +1,436 @@
+<?xml version="1.0" ?>
+
+<EmotionSet name="human_standard"
+			default_image="set:emo_farmer image:normal" >
+	<Emotion name="normal" image="set:emo_farmer image:normal" />
+	<Emotion name="surprised" image="set:emo_farmer image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_farmer image:thoughtful" />
+	<Emotion name="happy" image="set:emo_farmer image:happy" />
+	<Emotion name="amused" image="set:emo_farmer image:amused" />
+	<Emotion name="excited" image="set:emo_farmer image:excited" />
+	<Emotion name="inlove" image="set:emo_farmer image:inlove" />
+	<Emotion name="bored" image="set:emo_farmer image:bored" />
+	<Emotion name="unhappy" image="set:emo_farmer image:unhappy" />
+	<Emotion name="sad" image="set:emo_farmer image:sad" />
+	<Emotion name="pain" image="set:emo_farmer image:pain" />
+	<Emotion name="sneer" image="set:emo_farmer image:sneer" />
+	<Emotion name="grin" image="set:emo_farmer image:grin" />
+	<Emotion name="offended" image="set:emo_farmer image:offended" />
+	<Emotion name="threaten" image="set:emo_farmer image:threaten" />
+	<Emotion name="angry" image="set:emo_farmer image:angry" />
+	<Emotion name="warcry" image="set:emo_farmer image:warcry" />
+	<Emotion name="injured" image="set:emo_farmer image:injured" />
+	<Emotion name="injured2" image="set:emo_farmer image:injured2" />
+	<Emotion name="injured3" image="set:emo_farmer image:injured3" />
+</EmotionSet>
+
+
+<EmotionSet name="farmer"
+			default_image="set:emo_farmer image:normal" >
+	<Emotion name="normal" image="set:emo_farmer image:normal" />
+	<Emotion name="surprised" image="set:emo_farmer image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_farmer image:thoughtful" />
+	<Emotion name="happy" image="set:emo_farmer image:happy" />
+	<Emotion name="amused" image="set:emo_farmer image:amused" />
+	<Emotion name="excited" image="set:emo_farmer image:excited" />
+	<Emotion name="inlove" image="set:emo_farmer image:inlove" />
+	<Emotion name="bored" image="set:emo_farmer image:bored" />
+	<Emotion name="unhappy" image="set:emo_farmer image:unhappy" />
+	<Emotion name="sad" image="set:emo_farmer image:sad" />
+	<Emotion name="pain" image="set:emo_farmer image:pain" />
+	<Emotion name="sneer" image="set:emo_farmer image:sneer" />
+	<Emotion name="grin" image="set:emo_farmer image:grin" />
+	<Emotion name="offended" image="set:emo_farmer image:offended" />
+	<Emotion name="threaten" image="set:emo_farmer image:threaten" />
+	<Emotion name="angry" image="set:emo_farmer image:angry" />
+	<Emotion name="warcry" image="set:emo_farmer image:warcry" />
+	<Emotion name="injured" image="set:emo_farmer image:injured" />
+	<Emotion name="injured2" image="set:emo_farmer image:injured2" />
+	<Emotion name="injured3" image="set:emo_farmer image:injured3" />
+</EmotionSet>
+
+<EmotionSet name="fenor_emotion"
+			default_image="set:emo_farmer image:normal" >
+	<Emotion name="normal" image="set:emo_farmer image:normal" />
+	<Emotion name="surprised" image="set:emo_farmer image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_farmer image:thoughtful" />
+	<Emotion name="happy" image="set:emo_farmer image:happy" />
+	<Emotion name="amused" image="set:emo_farmer image:amused" />
+	<Emotion name="excited" image="set:emo_farmer image:excited" />
+	<Emotion name="inlove" image="set:emo_farmer image:inlove" />
+	<Emotion name="bored" image="set:emo_farmer image:bored" />
+	<Emotion name="unhappy" image="set:emo_farmer image:unhappy" />
+	<Emotion name="sad" image="set:emo_farmer image:sad" />
+	<Emotion name="pain" image="set:emo_farmer image:pain" />
+	<Emotion name="sneer" image="set:emo_farmer image:sneer" />
+	<Emotion name="grin" image="set:emo_farmer image:grin" />
+	<Emotion name="offended" image="set:emo_farmer image:offended" />
+	<Emotion name="threaten" image="set:emo_farmer image:threaten" />
+	<Emotion name="angry" image="set:emo_farmer image:angry" />
+	<Emotion name="warcry" image="set:emo_farmer image:warcry" />
+	<Emotion name="injured" image="set:emo_farmer image:injured" />
+	<Emotion name="injured2" image="set:emo_farmer image:injured2" />
+	<Emotion name="injured3" image="set:emo_farmer image:injured3" />
+</EmotionSet>
+
+<EmotionSet name="councilMage_emotion"
+			default_image="set:emo_councilMage image:normal" >
+	<Emotion name="normal" image="set:emo_councilMage image:normal" />
+	<Emotion name="surprised" image="set:emo_councilMage image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_councilMage image:thoughtful" />
+	<Emotion name="happy" image="set:emo_councilMage image:happy" />
+	<Emotion name="amused" image="set:emo_councilMage image:amused" />
+	<Emotion name="excited" image="set:emo_councilMage image:excited" />
+	<Emotion name="inlove" image="set:emo_councilMage image:inlove" />
+	<Emotion name="bored" image="set:emo_councilMage image:bored" />
+	<Emotion name="unhappy" image="set:emo_councilMage image:unhappy" />
+	<Emotion name="sad" image="set:emo_councilMage image:sad" />
+	<Emotion name="pain" image="set:emo_councilMage image:pain" />
+	<Emotion name="sneer" image="set:emo_councilMage image:sneer" />
+	<Emotion name="grin" image="set:emo_councilMage image:grin" />
+	<Emotion name="offended" image="set:emo_councilMage image:offended" />
+	<Emotion name="threaten" image="set:emo_councilMage image:threaten" />
+	<Emotion name="angry" image="set:emo_councilMage image:angry" />
+	<Emotion name="warcry" image="set:emo_councilMage image:warcry" />
+	<Emotion name="injured" image="set:emo_councilMage image:injured" />
+	<Emotion name="injured2" image="set:emo_councilMage image:injured2" />
+	<Emotion name="injured3" image="set:emo_councilMage image:injured3" />
+</EmotionSet>
+<EmotionSet name="councilMageCrystal_emotion"
+			default_image="set:emo_councilMageCrystal image:normal" >
+	<Emotion name="normal" image="set:emo_councilMageCrystal image:normal" />
+	<Emotion name="surprised" image="set:emo_councilMageCrystal image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_councilMageCrystal image:thoughtful" />
+	<Emotion name="happy" image="set:emo_councilMageCrystal image:happy" />
+	<Emotion name="amused" image="set:emo_councilMageCrystal image:amused" />
+	<Emotion name="excited" image="set:emo_councilMageCrystal image:excited" />
+	<Emotion name="inlove" image="set:emo_councilMageCrystal image:inlove" />
+	<Emotion name="bored" image="set:emo_councilMageCrystal image:bored" />
+	<Emotion name="unhappy" image="set:emo_councilMageCrystal image:unhappy" />
+	<Emotion name="sad" image="set:emo_councilMageCrystal image:sad" />
+	<Emotion name="pain" image="set:emo_councilMageCrystal image:pain" />
+	<Emotion name="sneer" image="set:emo_councilMageCrystal image:sneer" />
+	<Emotion name="grin" image="set:emo_councilMageCrystal image:grin" />
+	<Emotion name="offended" image="set:emo_councilMageCrystal image:offended" />
+	<Emotion name="threaten" image="set:emo_councilMageCrystal image:threaten" />
+	<Emotion name="angry" image="set:emo_councilMageCrystal image:angry" />
+	<Emotion name="warcry" image="set:emo_councilMageCrystal image:warcry" />
+	<Emotion name="injured" image="set:emo_councilMageCrystal image:injured" />
+	<Emotion name="injured2" image="set:emo_councilMageCrystal image:injured2" />
+	<Emotion name="injured3" image="set:emo_councilMageCrystal image:injured3" />
+</EmotionSet>
+
+<EmotionSet name="gertlinde_emotion"
+			default_image="set:emo_gertlinde image:normal" >
+	<Emotion name="normal" image="set:emo_gertlinde image:normal" />
+	<Emotion name="surprised" image="set:emo_gertlinde image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_gertlinde image:thoughtful" />
+	<Emotion name="happy" image="set:emo_gertlinde image:happy" />
+	<Emotion name="amused" image="set:emo_gertlinde image:amused" />
+	<Emotion name="excited" image="set:emo_gertlinde image:excited" />
+	<Emotion name="inlove" image="set:emo_gertlinde image:inlove" />
+	<Emotion name="bored" image="set:emo_gertlinde image:bored" />
+	<Emotion name="unhappy" image="set:emo_gertlinde image:unhappy" />
+	<Emotion name="sad" image="set:emo_gertlinde image:sad" />
+	<Emotion name="pain" image="set:emo_gertlinde image:pain" />
+	<Emotion name="sneer" image="set:emo_gertlinde image:sneer" />
+	<Emotion name="grin" image="set:emo_gertlinde image:grin" />
+	<Emotion name="offended" image="set:emo_gertlinde image:offended" />
+	<Emotion name="threaten" image="set:emo_gertlinde image:threaten" />
+	<Emotion name="angry" image="set:emo_gertlinde image:angry" />
+	<Emotion name="warcry" image="set:emo_gertlinde image:warcry" />
+	<Emotion name="injured" image="set:emo_gertlinde image:injured" />
+	<Emotion name="injured2" image="set:emo_gertlinde image:injured2" />
+	<Emotion name="injured3" image="set:emo_gertlinde image:injured3" />
+	<Emotion name="fear" image="set:emo_gertlinde image:fear" />
+	<Emotion name="panic" image="set:emo_gertlinde image:panic" />
+	<Emotion name="aloof" image="set:emo_gertlinde image:aloof" />
+	<Emotion name="disgust" image="set:emo_gertlinde image:disgust" />
+</EmotionSet>
+
+<EmotionSet name="derred_emotion"
+			default_image="set:emo_derred image:normal" >
+	<Emotion name="normal" image="set:emo_derred image:normal" />
+	<Emotion name="surprised" image="set:emo_derred image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_derred image:thoughtful" />
+	<Emotion name="happy" image="set:emo_derred image:happy" />
+	<Emotion name="amused" image="set:emo_derred image:amused" />
+	<Emotion name="excited" image="set:emo_derred image:excited" />
+	<Emotion name="inlove" image="set:emo_derred image:inlove" />
+	<Emotion name="bored" image="set:emo_derred image:bored" />
+	<Emotion name="unhappy" image="set:emo_derred image:unhappy" />
+	<Emotion name="sad" image="set:emo_derred image:sad" />
+	<Emotion name="pain" image="set:emo_derred image:pain" />
+	<Emotion name="sneer" image="set:emo_derred image:sneer" />
+	<Emotion name="grin" image="set:emo_derred image:grin" />
+	<Emotion name="offended" image="set:emo_derred image:offended" />
+	<Emotion name="threaten" image="set:emo_derred image:threaten" />
+	<Emotion name="angry" image="set:emo_derred image:angry" />
+	<Emotion name="warcry" image="set:emo_derred image:warcry" />
+	<Emotion name="injured" image="set:emo_derred image:injured" />
+	<Emotion name="injured2" image="set:emo_derred image:injured2" />
+	<Emotion name="injured3" image="set:emo_derred image:injured3" />
+	<Emotion name="fear" image="set:emo_derred image:fear" />
+	<Emotion name="panic" image="set:emo_derred image:panic" />
+	<Emotion name="aloof" image="set:emo_derred image:aloof" />
+	<Emotion name="disgust" image="set:emo_derred image:disgust" />
+</EmotionSet>
+
+<EmotionSet name="tolec_emotion"
+			default_image="set:emo_tolec image:normal" >
+	<Emotion name="normal" image="set:emo_tolec image:normal" />
+	<Emotion name="surprised" image="set:emo_tolec image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_tolec image:thoughtful" />
+	<Emotion name="happy" image="set:emo_tolec image:happy" />
+	<Emotion name="amused" image="set:emo_tolec image:amused" />
+	<Emotion name="excited" image="set:emo_tolec image:excited" />
+	<Emotion name="inlove" image="set:emo_tolec image:inlove" />
+	<Emotion name="bored" image="set:emo_tolec image:bored" />
+	<Emotion name="unhappy" image="set:emo_tolec image:unhappy" />
+	<Emotion name="sad" image="set:emo_tolec image:sad" />
+	<Emotion name="pain" image="set:emo_tolec image:pain" />
+	<Emotion name="sneer" image="set:emo_tolec image:sneer" />
+	<Emotion name="grin" image="set:emo_tolec image:grin" />
+	<Emotion name="offended" image="set:emo_tolec image:offended" />
+	<Emotion name="threaten" image="set:emo_tolec image:threaten" />
+	<Emotion name="angry" image="set:emo_tolec image:angry" />
+	<Emotion name="warcry" image="set:emo_tolec image:warcry" />
+	<Emotion name="injured" image="set:emo_tolec image:injured" />
+	<Emotion name="injured2" image="set:emo_tolec image:injured2" />
+	<Emotion name="injured3" image="set:emo_tolec image:injured3" />
+	<Emotion name="fear" image="set:emo_tolec image:fear" />
+	<Emotion name="panic" image="set:emo_tolec image:panic" />
+	<Emotion name="aloof" image="set:emo_tolec image:aloof" />
+	<Emotion name="disgust" image="set:emo_tolec image:disgust" />
+</EmotionSet>
+
+<EmotionSet name="warrior_emotion"
+			default_image="set:emo_warrior image:normal" >
+	<Emotion name="normal" image="set:emo_warrior image:normal" />
+	<Emotion name="surprised" image="set:emo_warrior image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_warrior image:thoughtful" />
+	<Emotion name="happy" image="set:emo_warrior image:happy" />
+	<Emotion name="amused" image="set:emo_warrior image:amused" />
+	<Emotion name="excited" image="set:emo_warrior image:excited" />
+	<Emotion name="inlove" image="set:emo_warrior image:inlove" />
+	<Emotion name="bored" image="set:emo_warrior image:bored" />
+	<Emotion name="unhappy" image="set:emo_warrior image:unhappy" />
+	<Emotion name="sad" image="set:emo_warrior image:sad" />
+	<Emotion name="pain" image="set:emo_warrior image:pain" />
+	<Emotion name="sneer" image="set:emo_warrior image:sneer" />
+	<Emotion name="grin" image="set:emo_warrior image:grin" />
+	<Emotion name="offended" image="set:emo_warrior image:offended" />
+	<Emotion name="threaten" image="set:emo_warrior image:threaten" />
+	<Emotion name="angry" image="set:emo_warrior image:angry" />
+	<Emotion name="warcry" image="set:emo_warrior image:warcry" />
+	<Emotion name="injured" image="set:emo_warrior image:injured" />
+	<Emotion name="injured2" image="set:emo_warrior image:injured2" />
+	<Emotion name="injured3" image="set:emo_warrior image:injured3" />
+	<Emotion name="fear" image="set:emo_warrior image:fear" />
+	<Emotion name="panic" image="set:emo_warrior image:panic" />
+	<Emotion name="aloof" image="set:emo_warrior image:aloof" />
+	<Emotion name="disgust" image="set:emo_warrior image:disgust" />
+</EmotionSet>
+
+<EmotionSet name="general_emotion"
+			default_image="set:emo_general image:normal" >
+	<Emotion name="normal" image="set:emo_general image:normal" />
+	<Emotion name="surprised" image="set:emo_general image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_general image:thoughtful" />
+	<Emotion name="happy" image="set:emo_general image:happy" />
+	<Emotion name="amused" image="set:emo_general image:amused" />
+	<Emotion name="excited" image="set:emo_general image:excited" />
+	<Emotion name="inlove" image="set:emo_general image:inlove" />
+	<Emotion name="bored" image="set:emo_general image:bored" />
+	<Emotion name="unhappy" image="set:emo_general image:unhappy" />
+	<Emotion name="sad" image="set:emo_general image:sad" />
+	<Emotion name="pain" image="set:emo_general image:pain" />
+	<Emotion name="sneer" image="set:emo_general image:sneer" />
+	<Emotion name="grin" image="set:emo_general image:grin" />
+	<Emotion name="offended" image="set:emo_general image:offended" />
+	<Emotion name="threaten" image="set:emo_general image:threaten" />
+	<Emotion name="angry" image="set:emo_general image:angry" />
+	<Emotion name="warcry" image="set:emo_general image:warcry" />
+	<Emotion name="injured" image="set:emo_general image:injured" />
+	<Emotion name="injured2" image="set:emo_general image:injured2" />
+	<Emotion name="injured3" image="set:emo_general image:injured3" />
+	<Emotion name="fear" image="set:emo_general image:fear" />
+	<Emotion name="panic" image="set:emo_general image:panic" />
+	<Emotion name="aloof" image="set:emo_general image:aloof" />
+	<Emotion name="disgust" image="set:emo_general image:disgust" />
+</EmotionSet>
+
+<EmotionSet name="ireana_emotion"
+			default_image="set:emo_ireana image:normal" >
+	<Emotion name="normal" image="set:emo_ireana image:normal" />
+	<Emotion name="surprised" image="set:emo_ireana image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_ireana image:thoughtful" />
+	<Emotion name="happy" image="set:emo_ireana image:happy" />
+	<Emotion name="amused" image="set:emo_ireana image:amused" />
+	<Emotion name="excited" image="set:emo_ireana image:excited" />
+	<Emotion name="inlove" image="set:emo_ireana image:inlove" />
+	<Emotion name="bored" image="set:emo_ireana image:bored" />
+	<Emotion name="unhappy" image="set:emo_ireana image:unhappy" />
+	<Emotion name="sad" image="set:emo_ireana image:sad" />
+	<Emotion name="pain" image="set:emo_ireana image:pain" />
+	<Emotion name="sneer" image="set:emo_ireana image:sneer" />
+	<Emotion name="grin" image="set:emo_ireana image:grin" />
+	<Emotion name="offended" image="set:emo_ireana image:offended" />
+	<Emotion name="threaten" image="set:emo_ireana image:threaten" />
+	<Emotion name="angry" image="set:emo_ireana image:angry" />
+	<Emotion name="warcry" image="set:emo_ireana image:warcry" />
+	<Emotion name="injured" image="set:emo_ireana image:injured" />
+	<Emotion name="injured2" image="set:emo_ireana image:injured2" />
+	<Emotion name="injured3" image="set:emo_ireana image:injured3" />
+	<Emotion name="fear" image="set:emo_ireana image:fear" />
+	<Emotion name="panic" image="set:emo_ireana image:panic" />
+	<Emotion name="aloof" image="set:emo_ireana image:aloof" />
+	<Emotion name="disgust" image="set:emo_ireana image:disgust" />
+</EmotionSet>
+
+<EmotionSet name="rogue_emotion"
+			default_image="set:emo_rogue image:normal" >
+	<Emotion name="normal" image="set:emo_rogue image:normal" />
+	<Emotion name="surprised" image="set:emo_rogue image:surprised" />
+	<Emotion name="thoughtful" image="set:emo_rogue image:thoughtful" />
+	<Emotion name="happy" image="set:emo_rogue image:happy" />
+	<Emotion name="amused" image="set:emo_rogue image:amused" />
+	<Emotion name="excited" image="set:emo_rogue image:excited" />
+	<Emotion name="inlove" image="set:emo_rogue image:inlove" />
+	<Emotion name="bored" image="set:emo_rogue image:bored" />
+	<Emotion name="unhappy" image="set:emo_rogue image:unhappy" />
+	<Emotion name="sad" image="set:emo_rogue image:sad" />
+	<Emotion name="pain" image="set:emo_rogue image:pain" />
+	<Emotion name="sneer" image="set:emo_rogue image:sneer" />
+	<Emotion name="grin" image="set:emo_rogue image:grin" />
+	<Emotion name="offended" image="set:emo_rogue image:offended" />
+	<Emotion name="threaten" image="set:emo_rogue image:threaten" />
+	<Emotion name="angry" image="set:emo_rogue image:angry" />
+	<Emotion name="warcry" image="set:emo_rogue image:warcry" />
+	<Emotion name="injured" image="set:emo_rogue image:injured" />
+	<Emotion name="injured2" image="set:emo_rogue image:injured2" />
+	<Emotion name="injured3" image="set:emo_rogue image:injured3" />
+	<Emotion name="fear" image="set:emo_rogue image:fear" />
+	<Emotion name="panic" image="set:emo_rogue image:panic" />
+	<Emotion name="aloof" image="set:emo_rogue image:aloof" />
+	<Emotion name="disgust" image="set:emo_rogue image:disgust" />
+</EmotionSet>
+
+
+
+<Monster type="NPC" subtype="peasant" name="Peasant" fraction="human" race="human" layer="NORMAL">
+	<Mesh file="peasant_m" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="1"
+					max_health="100"
+					armor="10"
+					block="0"
+					attack="20"
+					strength="10"
+					dexterity="20"
+					magic_power="0"
+					willpower="10"
+					resistances_physical="0"
+					resistances_air="0"
+					resistances_ice="10"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<Monster type="NPC" subtype="peasant_f" name="Peasant Woman" fraction="human" race="human" layer="NORMAL">
+	<Mesh file="peasant_f" />
+	<EmotionSet name="gertlinde_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="1"
+					max_health="100"
+					armor="10"
+					block="0"
+					attack="20"
+					strength="10"
+					dexterity="20"
+					magic_power="0"
+					willpower="10"
+					resistances_physical="0"
+					resistances_air="0"
+					resistances_ice="10"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<Monster type="NPC" subtype="theTrader" name="The Trader" fraction="neutral_to_all" race="human" layer="NORMAL">
+	<RenderInfo name="theTrader" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="1500"
+					level="85"
+					max_health="1340"
+					armor="120"
+					block="40"
+					attack="90"
+					strength="120"
+					dexterity="90"
+					magic_power="75"
+					willpower="200"
+					resistances_physical="30"
+					resistances_air="80"
+					resistances_ice="70"
+					resistances_fire="50"
+					resistances_cap_physical="100"
+					resistances_cap_air="100"
+					resistances_cap_ice="100"
+					resistances_cap_fire="100"
+					walk_speed="2500"
+					attack_speed="1000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+

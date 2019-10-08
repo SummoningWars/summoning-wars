@@ -1,0 +1,11 @@
+<Treasure type="TREASURE" subtype="sarkophagusImportant" layer="BASE">
+        <RenderInfo name="sarkophagusImportant" />
+        <Geometry shape="RECT" extent_x="1.1" extent_y="2.1"/>
+		
+		<Dropslots>
+			<Dropslot pbig="0.1" pmedium="0.2" psmall="0.2" pgold="0.2" max_gold="50" min_level="0" max_level="5" magic_prob="0.1" magic_power="250" />
+			<Dropslot pbig="0.1" pmedium="0.2" psmall="0.2" pgold="0.2" max_gold="50" min_level="0" max_level="5" magic_prob="0.1" magic_power="250" />
+			<Dropslot pbig="0.1" pmedium="0.2" psmall="0.2" pgold="0.2" max_gold="50" min_level="0" max_level="5" magic_prob="0.1" magic_power="250" />
+			<Dropslot pbig="0.03" pmedium="0.08" psmall="0.05" pgold="0.05" max_gold="30" min_level="0" max_level="3" magic_prob="0.2" magic_power="200" />
+		</Dropslots>
+</Treasure>

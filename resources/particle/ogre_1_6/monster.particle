@@ -1,0 +1,627 @@
+//slugs
+particle_system SlugSpit
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 30
+        emission_rate 275
+        time_to_live 0.3
+        direction 0 0 -1
+        velocity_min 5.0
+        velocity_max 6.0
+        colour_range_start 0.3 0 0
+        colour_range_end 0.3 0.1 0
+}
+
+    affector LinearForce
+{
+        force_vector      0 0 -2
+        force_application add
+}
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+//Goblin Particles
+particle_system GoblinBuffIce
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    quota           200
+    billboard_type  point
+
+    // Area emitter
+    emitter Point
+{
+        angle           15
+        emission_rate   80
+        time_to_live    0.05
+        position        -0.6 1.2 0.6
+        direction       0 -1 0
+        velocity_min      0.3
+        velocity_max      0.4
+        colour_range_start  0 0.4 0.8 0.0
+        colour_range_end    0.2 0.5 0.8 0.0
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+
+    // Fader
+    affector ColourFader2
+{
+        red1 +0.4
+        green1 +0.4
+        blue1 +0.4
+        alpha1 +0.7
+
+        red2 -0.25
+        green2 -0.25
+        blue2 -0.25
+        alpha2 -0.3333
+
+        state_change 3.5
+}
+}
+
+particle_system GoblinBuffFire
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    quota           200
+    billboard_type  point
+
+    // Area emitter
+    emitter Point
+{
+        angle           15
+        emission_rate   80
+        time_to_live    0.05
+        position        -0.6 1.2 -0.6
+        direction       0 -1 0
+        velocity_min      0.3
+        velocity_max      0.4
+        colour_range_start    1 0 0
+        colour_range_end     0.5 0.3 0
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+
+    // Fader
+    affector ColourFader2
+{
+        red1 +0.4
+        green1 +0.4
+        blue1 +0.4
+        alpha1 +0.7
+
+        red2 -0.25
+        green2 -0.25
+        blue2 -0.25
+        alpha2 -0.3333
+
+        state_change 3.5
+}
+}
+
+particle_system GoblinBuffAir
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    quota           200
+    billboard_type  point
+
+    // Area emitter
+    emitter Point
+{
+        angle           15
+        emission_rate   80
+        time_to_live    0.05
+        position        0.6 1.2 0.0
+        direction       0 -1 0
+        velocity_min      0.3
+        velocity_max      0.4
+        colour_range_start    0.9 0.9 0.99 
+        colour_range_end    0.6 0.6 1
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+
+    // Fader
+    affector ColourFader2
+{
+        red1 +0.4
+        green1 +0.4
+        blue1 +0.4
+        alpha1 +0.7
+
+        red2 -0.25
+        green2 -0.25
+        blue2 -0.25
+        alpha2 -0.3333
+
+        state_change 3.5
+}
+}
+
+particle_system GoblinFreeze
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    quota           10000
+    billboard_type  point
+
+    // Area emitter
+    emitter Point
+{
+        angle           15
+        emission_rate   20
+        time_to_live    0.2
+        position        0.0 0.0 1.0
+        direction       0 -1 0
+        velocity_min      0.3
+        velocity_max      0.4
+        colour_range_start    0.6 0.6 1
+        colour_range_end    0.2 0.2 0.6
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+}
+
+//shadow-magic Particlesp
+particle_system Magic_Arrow_Shadow
+{
+    material         flareAlpha
+    particle_width     0.8
+    particle_height    0.8
+    cull_each        false
+    quota            300
+    billboard_type    point
+
+    emitter Ellipsoid
+{
+        angle 5
+        emission_rate 200
+        time_to_live    0.05
+        direction       0 1 0
+        velocity_min    0.2
+        velocity_max    0.6
+        colour_range_start  0 0 0
+        colour_range_end  0 0 0 0.2
+        width  0.4
+        height 0.4
+        depth 0.4
+}
+}
+
+particle_system Black_Smoke
+{
+    material        smoke
+    particle_width  1.6
+    particle_height 1.6
+    cull_each       false
+    quota           3000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Ellipsoid
+{
+        angle           360
+        emission_rate   600
+        time_to_live    0.2
+        direction       0 1 0
+        velocity        0.2
+        colour_range_start 0 0 0 
+        colour_range_end 0 0 0 0.2
+        width           9.0
+        height          9.0
+        depth           3.2
+
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+particle_system MonsterBuffShadowFront
+{
+    material        flareAlpha
+    particle_width  0.7
+    particle_height 0.7
+    cull_each       false
+    quota           200
+    billboard_type  point
+
+    //Front
+    emitter Point
+{
+        angle           360
+        emission_rate   4000
+        time_to_live    0.007
+        position        0.6 1.2 0.0
+        direction       0 -1 0
+        velocity_min      0.6
+        velocity_max      1.0
+        colour_range_start    0 0 0 
+        colour_range_end    0.2 0.2 0.2 0.2
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+    //BackLeft
+    emitter Point
+{
+        angle           15
+        emission_rate   4000
+        time_to_live    0.007
+        position        -0.6 1.2 -0.6
+        direction       0 -1 0
+        velocity_min      0.6
+        velocity_max      1.0
+        colour_range_start    0 0 0 
+        colour_range_end    0.2 0.2 0.2 0.2
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+    //BackRight
+    emitter Point
+{
+        angle           15
+        emission_rate   4000
+        time_to_live    0.007
+        position        -0.6 1.2 0.6
+        direction       0 -1 0
+        velocity_min      0.6
+        velocity_max      1.0
+        colour_range_start    0 0 0 
+        colour_range_end    0.2 0.2 0.2 0.2
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+
+    // Fader
+    affector ColourFader2
+{
+        red1 +0.4
+        green1 +0.4
+        blue1 +0.4
+        alpha1 +0.7
+
+        red2 -0.25
+        green2 -0.25
+        blue2 -0.25
+        alpha2 -0.3333
+
+        state_change 3.5
+}
+}
+
+particle_system ShadowLine
+{
+    material smoke
+    particle_width 0.8
+    particle_height 0.8
+    cull_each false
+    quota 600
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 360
+        emission_rate 15
+        time_to_live 2
+        direction 1 0 0
+        velocity_min 0.06
+        velocity_max 0.1
+        colour_range_start 0.2 0 0
+        colour_range_end 0.2 0.2 0
+}
+}
+
+//ice magic particles
+//the ring for the summoning of frostmages
+particle_system SummonRing
+{
+    material        Flare
+    particle_width  0.5
+    particle_height 0.5
+    cull_each       false
+    quota           10000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Ring
+{
+        angle           30
+        emission_rate   2000
+        time_to_live    0.06
+        direction       0 1 0
+        velocity        0.6
+        colour_range_start 0.6 0.6 1
+        colour_range_end 0.2 0.2 0.6
+        width           0.8
+        height          0.7
+        depth           0.04
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+
+}
+
+
+
+//undead particles
+
+//the burning head of a skeleton
+particle_system BurningHead
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 500
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 40
+        emission_rate 100
+        time_to_live 0.2
+        direction 0 1 0
+        velocity_min 5.0
+        velocity_max 6.0
+        colour_range_start 1 0 0
+        colour_range_end 1 0.5 0
+}
+}
+//the burning hand of a skeleton
+particle_system BurningHand
+{
+    material Flare
+    particle_width 0.2
+    particle_height 0.2
+    cull_each false
+    quota 500
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 360
+        emission_rate 100
+        time_to_live 0.1
+        direction 1 0 0
+        velocity_min 3.0
+        velocity_max 5.0
+        colour_range_start 1 0 0
+        colour_range_end 0.8 0.6 0
+}
+}
+
+//the icecold head of a skeleton
+particle_system FreezingHead
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 500
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 40
+        emission_rate 100
+        time_to_live 0.2
+        direction 0 1 0
+        velocity_min 5.0
+        velocity_max 6.0
+        colour_range_start 0.6 0.6 1
+        colour_range_end 0.2 0.2 0.6
+}
+}
+//the freezing hand of a skeleton
+particle_system FreezingHand
+{
+    material Flare
+    particle_width 0.2
+    particle_height 0.2
+    cull_each false
+    quota 500
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 360
+        emission_rate 100
+        time_to_live 0.1
+        direction 1 0 0
+        velocity_min 3.0
+        velocity_max 5.0
+        colour_range_start 0.6 0.6 1
+        colour_range_end 0.2 0.2 0.6
+}
+}
+
+
+//Lich - summon_skel
+particle_system Earth
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 40
+        emission_rate 20
+        time_to_live 0.2
+        direction 0 -1 0
+        velocity_min 5.0
+        velocity_max 6.0
+        colour_range_start 0 0 1 
+        colour_range_end 0 0.4 0.9
+}
+}
+
+particle_system SummonBuff
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    quota           10000
+    billboard_type  point
+
+    // Area emitter
+    emitter Point
+{
+        angle           15
+        emission_rate   20
+        time_to_live    2
+        position        0.0 0.0 1.0
+        direction       0 -1 0
+        velocity_min      0.3
+        velocity_max      0.4
+        colour_range_start  0 0.4 0.8 0.0
+        colour_range_end    0.2 0.5 0.8 0.0
+        width           0.2
+        height          0.2
+        depth           0.2
+}
+
+    // Fader
+    affector ColourFader2
+{
+        red1 +0.4
+        green1 +0.4
+        blue1 +0.4
+        alpha1 +0.7
+
+        red2 -0.25
+        green2 -0.25
+        blue2 -0.25
+        alpha2 -0.3333
+
+        state_change 3.5
+}
+}
+
+//freezing Sphere - dieing Lich
+particle_system Icesphere
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 360
+        emission_rate 2075
+        time_to_live 0.1
+        direction 1 0 0
+        velocity_min 3.0
+        velocity_max 4.0
+        colour_range_start  0.3 0.3 0.3 0.0
+        colour_range_end    0.8 0.8 0.8 0.0
+}
+
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+//Elementals
+//Fire
+particle_system FireElemHand
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 300
+    billboard_type point
+ 
+
+   emitter Box
+{
+        angle 60
+        emission_rate 50
+        time_to_live 0.2
+        direction 0 1 0
+        velocity_min 1.0
+        velocity_max 2.0
+        colour_range_start 1 0 0
+        colour_range_end 0.5 0.3 0
+        width           0.8
+        height          0.8
+        depth           0.8
+}
+
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}

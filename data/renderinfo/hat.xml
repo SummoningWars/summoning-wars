@@ -1,0 +1,59 @@
+<RenderInfo name="leatherHatBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_leather"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="metalHatBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_metal_armor"/>
+	</Action>
+</RenderInfo>
+
+
+
+<RenderInfo name="vagabondHat"  parent= "leatherHatBase">
+	<Entity source="vag_hat.mesh"/> 
+</RenderInfo>
+<RenderInfo name="vagabondHat#m"   parent= "leatherHatBase">
+	<Entity source="vag_hatMageM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="vagabondHat#f"   parent= "leatherHatBase">
+	<Entity source="vag_hatMageM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="vagabondHat#fs"  parent= "leatherHatBase">
+	<Entity source="vag_hatMageM.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="peasentHat"  parent= "leatherHatBase">
+	<Entity source="peasent_hat.mesh"/> 
+</RenderInfo>
+<RenderInfo name="peasentHat#m"  parent= "leatherHatBase">
+	<Entity source="peasent_hatM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="peasentHat#f"  parent= "leatherHatBase">
+	<Entity source="peasent_hatF.mesh"/> 
+</RenderInfo>
+<RenderInfo name="peasentHat#fs"  parent= "leatherHatBase">
+	<Entity source="peasent_hatF.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="crown"  parent="metalHatBase">
+	<Entity source="crown.mesh"/> 
+</RenderInfo>
+<RenderInfo name="crown#m"  parent="metalHatBase">
+	<Entity source="crownM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="crown#f"  parent="metalHatBase">
+	<Entity source="crownM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="crown#fs"  parent="metalHatBase">
+	<Entity source="crownM.mesh"/> 
+</RenderInfo>
+
+
+<RenderInfo name="merc_hlm"  parent="metalHatBase">
+	<Entity source="merc_hlm.mesh"/> 
+</RenderInfo>

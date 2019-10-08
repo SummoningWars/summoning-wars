@@ -1,0 +1,287 @@
+<Quest name="Rob the robber" table_name="rob_the_robber" domain="rob_the_robber">
+	<Description>
+		if (rob_the_robber.finished) then
+			return _("Rob the robber breathed his last and provided a downright windfall while he was on it.");
+		elseif (rob_the_robber.killed == true)then
+			return _("Rob the robber is dead and will soon be forgotten. I have his neckband and I'm on my way to Dwarfenwall to show it to this sergeant Wober. I have no idea why everyone was so afraid of this guy.");
+		else
+			return _("Rob the robber supposedly hides in the depth of the Fairywoods. Find him, dispose of him and take his neckband. At least it spares me the unsavory task of carrying a head around.");
+		end;
+	</Description>
+	
+	<NPC refname="Sergeant Lutterer">
+		<Topic name="rob_the_robber" start_option="Wanted poster">
+			<Condition>
+				if (rob_the_robber.finished ~= true and rob_the_robber.killed ~= true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				if (rob_the_robber.started == true) then
+					speak("player",_("I really should pay this guy a visit. 10000 gold pieces are not chickenfeed."), "thoughtful")
+					speak("Sergeant Lutterer",_("Watch your back."))
+				else
+					speak("player",_("Excuse me, sergeant, but I noticed this wanted poster."))
+					speak("player",_("Isn't a bounty of 10000 gold pieces a little bit over the top for one man?"),"thoughtful")
+					setSpeakerEmotion("player","normal")
+					speak("Sergeant Lutterer",_("Oh, him."), "sad")
+					speak("Sergeant Lutterer",_("The bounty hunters keep their fingers off him."),"thoughtful")
+					speak("Sergeant Lutterer",_("Every time someone wants to have killed him, he winds up dead a short time later himself."),"unhappy")
+					speak("Sergeant Lutterer",_("And Rob is plundering and murdering on."),"angry")
+					speak("Sergeant Lutterer",_("It seems he has oodles of luck, that villain."))
+					speak("Sergeant Lutterer",_("Are you interested?"))
+					addQuestion(_("Accept the quest?"))
+					addAnswer(_("Yes"),"start_rob_the_robber_quest")
+					addAnswer(_("No"),"refuse_rob_the_robber_quest")
+				end
+			</Effect>
+		</Topic>
+		
+		<Topic name="start_rob_the_robber_quest" >
+			<Effect>
+				speak("player", _("Indeed."),"grin",1000)
+				speak("player", _("10000 gold pieces are quite interesting for the traveling fund."),"normal")
+				speak("player", _("And I'm pretty lucky myself."),"sneer")
+				setSpeakerEmotion("player","normal")
+				speak("Sergeant Lutterer",_("Then take his necklace."))
+				speak("Sergeant Lutterer",_("Word is, he treasures it quite a lot."))
+				speak("Sergeant Lutterer",_("If you can take it to sergeant Wober in Dwarfenwall he will believe you that Rob is dead."))
+				speak("Sergeant Lutterer",_("Right now we suspect him to be in the Fairywoods between here and Dwarvenwall."))
+				rob_the_robber.started = true
+			</Effect>	
+		</Topic>
+		
+		<Topic name="refuse_rob_the_robber_quest" >
+			<Effect>
+				speak('player', _("Just curious."))
+			</Effect>	
+		</Topic>
+		
+		<Topic name="rob_the_robber_reward" start_option="Rob the Robber killed">
+			<Condition>
+				if (rob_the_robber.started == true and rob_the_robber.finished ~= true and rob_the_robber.killed == true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				rob_the_robber.finished = true
+				speak("player", _("Here is the necklace of Rob the robber."))
+				speak("Sergeant Lutterer",_("I'll be damned!"))
+				speak("Sergeant Lutterer",_("You really got him?"))
+				speak("Sergeant Lutterer",_("Better hope that the stories about him rising from his grave are just fairytales."))
+				speak("player", _("What about my reward?"))
+				speak("Sergeant Lutterer",_("Sergeant Wober in Dwarfenwall has it."))
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	
+	<NPC refname="Sergeant Wober">
+		<Topic name="rob_the_robber" start_option="Wanted poster">
+			<Condition>
+				if (rob_the_robber.finished ~= true and rob_the_robber.killed ~= true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				if (rob_the_robber.started == true) then
+					speak("Sergeant Wober",_("Bring me his necklace and I give you the 10000 gold pieces."));
+					speak("Sergeant Wober",_("Not a second earlier!"),"unhappy");
+				else
+					speak("player",_("Excuse me, sergeant, but I noticed this wanted poster."))
+					speak("player",_("Isn't a bounty of 10000 gold pieces a little bit over the top for one man?"),"thoughtful")
+					setSpeakerEmption("player","normal")
+					speak("Sergeant Wober",_("Oh, him."), "sad")
+					speak("Sergeant Wober",_("The bounty hunters keep their fingers off him."),"thoughtful")
+					speak("Sergeant Wober",_("Every time someone wants to have killed him, he winds up dead a short time later himself."),"unhappy")
+					speak("Sergeant Wober",_("And Rob is plundering and murdering on."),"angry")
+					speak("Sergeant Wober",_("It seems he has oodles of luck, that villain."))
+					speak("Sergeant Wober",_("Are you interested?"))
+					addQuestion(_("Accept the quest?"))
+					addAnswer(_("Yes"),"start_rob_the_robber_quest")
+					addAnswer(_("No"),"refuse_rob_the_robber_quest")
+				end
+			</Effect>
+		</Topic>
+		
+		<Topic name="start_rob_the_robber_quest" >
+			<Effect>
+				speak("player", _("Indeed.","grin"),1000)
+				speak("player", _("10000 gold pieces are quite interesting for the traveling fund."),"normal")
+				speak("player", _("And I'm pretty lucky myself."),"sneer")
+				setSpeakerEmotion("player","normal")
+				speak("Sergeant Wober",_("Then take his necklace."))
+				speak("Sergeant Wober",_("Word is, he treasures it quite a lot."))
+				speak("Sergeant Wober",_("If you can bring it to me I will believe you that Rob is dead."))
+				speak("Sergeant Wober",_("Right now we suspect him to be in the Fairywoods between here and Joringsbridge."))
+				rob_the_robber.started = true
+			</Effect>	
+		</Topic>
+		
+		<Topic name="refuse_rob_the_robber_quest" >
+			<Effect>
+				speak('player', _("Just curious."),1000)
+			</Effect>	
+		</Topic>
+		
+		<Topic name="rob_the_robber_reward" start_option="Rob the Robber (Reward)">
+			<Condition>
+				if (rob_the_robber.started == true and rob_the_robber.finished ~= true and rob_the_robber.killed == true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				rob_the_robber.finished = true
+				speak("player", _("Here is the necklace of Rob the robber."))
+				speak("Sergeant Wober",_("By all devils!"))
+				speak("Sergeant Wober",_("Someone really got him?"))
+				speak("Sergeant Wober",_("Well, I wish you luck."))
+				speak("Sergeant Wober",_("His vengeful spirit will supposedly hunt all those who hurt him."))
+				speak("Sergeant Wober",_("But that shall not be my problem."))
+				speak("Sergeant Wober",_("Here are the 10000 gold pieces."))
+				local players = getPlayers()
+				local i,player,count
+				count = 0
+				for i,player in ipairs(players) do
+					count = count + 1
+				end
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"rob_the_robber_reward") ~= true) then
+						setPlayerPrivateVar(player,"rob_the_robber_reward",true)
+						setObjectValue(player,"gold", getObjectValue(player,"gold") + (10000/count))
+					end
+				end
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	
+	<Region name="aisDarkFairyforest">
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				if (rob_the_robber.killed ~= true) then
+					rob_the_robber_tmp.rob = createObject("human_rob_fairy", "robsHideout:locRob")
+					rob_the_robber_tmp.rogue1 = createObject("human_deserter", "robsHideout:locBandit1")
+					rob_the_robber_tmp.rogue2 = createObject("human_deserter", "robsHideout:locBandit2")
+					rob_the_robber_tmp.rogue3 = createObject("human_saboteur", "robsHideout:locBandit3")
+					rob_the_robber_tmp.rogue4 = createObject("human_raider", "robsHideout:locBandit4")
+				end
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_die" once="true">
+			<Condition>
+				if (trigger.unit == rob_the_robber_tmp.rob) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				addPlayersExperience(1000,"killed_rob_fairyforest");
+				rob_the_robber.killed = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger ="command_complete" once="true">
+			<Condition>
+				if (trigger.unit == rob_the_robber_tmp.rob) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				unitSpeak(rob_the_robber_tmp.rob,"Noch mehr Wahnsinnige auf der Suche nach einem fruehen Tod?","angry");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_hit" once = "true">
+			<Condition>
+				if (trigger.defender == rob_the_robber_tmp.rob) then
+					local health = get(rob_the_robber_tmp.rob,"health");
+					local maxHealth = get(rob_the_robber_tmp.rob,"max_health");
+					health = health/maxHealth;
+					if((0.9>=health) and (health >= 0.7))then
+						return true
+					end;
+				end;
+				return false
+			</Condition>
+			<Effect>
+				if(solo())then
+					unitSpeak(rob_the_robber_tmp.rob,_("I will quarter and skin you, before I throw you to the wolves!"),"warcry");
+					if(trigger.attacker~=0)then
+						unitSpeak(trigger.attacker,_("You talk too much!"),"unhappy")
+					end;
+				else
+					unitSpeak(rob_the_robber_tmp.rob,_("I will quarter and skin everyone of you, before I throw you to the wolves!"),"warcry");
+					if(trigger.attacker~=0)then
+						unitSpeak(trigger.attacker,_("You talk too much!"),"unhappy")
+					end;
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_hit" once = "true">
+			<Condition>
+				if (trigger.defender == rob_the_robber_tmp.rob) then
+					local health = get(rob_the_robber_tmp.rob,"health");
+					local maxHealth = get(rob_the_robber_tmp.rob,"max_health");
+					health = health/maxHealth;
+					if((0.6>= health) and (health >= 0.4))then
+						return true
+					end;
+				end;
+				return false
+			</Condition>
+			<Effect>
+				if(solo())then
+					unitSpeak(rob_the_robber_tmp.rob,_("You will die! I will destroy you!!"),"warcry");
+				else
+					unitSpeak(rob_the_robber_tmp.rob,_("You will die! I will destroy you!!"),"warcry");
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_hit" once = "true">
+			<Condition>
+				if (trigger.defender == rob_the_robber_tmp.rob) then
+					local health = get(rob_the_robber_tmp.rob,"health");
+					local maxHealth = get(rob_the_robber_tmp.rob,"max_health");
+					maxHealth = health/maxHealth;
+					if((0.3>= maxHealth) and (health >= 1))then
+						return true
+					end;
+				end;
+				return false
+			</Condition>
+			<Effect>
+				rob_the_robber_tmp.attacker = trigger.attacker;
+				if(solo())then
+					unitSpeak(rob_the_robber_tmp.rob,_("My soul will crawl out of it's grave and hunt you to the ends of the world!"),"warcry");
+					startTimer("answerRob", 2500);
+				else
+					unitSpeak(rob_the_robber_tmp.rob,_("My soul will crawl out of it's grave and hunt you to the ends of the world!"),"warcry");
+					startTimer("answerRob", 2500);
+				end;
+			</Effect>
+		</Event>
+		<Event trigger ="answerRob" once = "true">
+			<Effect>
+				local speaker = rob_the_robber_tmp.attacker;
+				unitSpeak(speaker,_("Have fun with that. If you escape hell, that is."),"bored");
+			</Effect>
+		</Event>
+	</Region>
+	
+</Quest>
+

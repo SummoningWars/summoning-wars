@@ -1,0 +1,41 @@
+<!-- FIXME out of date -->
+<Sound name="hero_hit">
+	<Soundfile source="hero_hit.wav"/>
+</Sound>
+
+
+<Sound name="drop_potion">
+	<Soundfile source="inventory_sound_effects/potion_inventory.wav"/>
+</Sound>
+
+<Sound name="drop_cloth">
+	<Soundfile source="inventory_sound_effects/cloth_1.wav"/>
+	<Soundfile source="inventory_sound_effects/cloth_2.wav"/>
+</Sound>
+
+<Sound name="drop_leather">
+	<Soundfile source="inventory_sound_effects/leather_1.wav"/>
+	<Soundfile source="inventory_sound_effects/leather_2.wav"/>
+</Sound>
+
+<Sound name="drop_metal">
+	<Soundfile source="inventory_sound_effects/metal_small_1.wav"/>
+	<Soundfile source="inventory_sound_effects/metal_small_2.wav"/>
+	<Soundfile source="inventory_sound_effects/metal_small_3.wav"/>
+	<Soundfile source="inventory_sound_effects/metal_small_4.wav"/>
+</Sound>
+
+<Sound name="drop_metal_armor">
+	<Soundfile source="inventory_sound_effects/chainmail_1.wav"/>
+	<Soundfile source="inventory_sound_effects/chainmail_2.wav"/>
+</Sound>
+
+
+<Sound name="drop_ring">
+	<Soundfile source="inventory_sound_effects/ring_inventory.wav"/>
+</Sound>
+
+<Sound name="drop_wood">
+	<Soundfile source="inventory_sound_effects/wood_inventory.wav"/>
+</Sound>
+

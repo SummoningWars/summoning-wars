@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cave_column2" layer="NORMAL">
+        <Mesh file="cave_column2.mesh" />
+        <Geometry shape="CIRCLE" radius="1.032346874"/>
+</Object>

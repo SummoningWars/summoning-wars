@@ -1,0 +1,55 @@
+﻿<RenderInfo name="oneHandClubBase">
+
+	<State name="firesword">
+		<Activation>
+		<ParticleSystem objectname="firesword1" source="BurningBlade" position= "0.0 0 -0.6"/>
+		<Rotation objectname="firesword1" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+		<ParticleSystem objectname="firesword2" source="BurningBladeShort" position= "0.0 0 -0.8"/>
+		<Rotation objectname="firesword2" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="firesword1"/>
+			<Detach objectname="firesword2"/>
+		</Deactivation>
+	</State>	
+</RenderInfo>
+
+<RenderInfo name="goblinGloves" parent="playerbase">
+	<Entity source="goblin_glv.mesh"/> 
+</RenderInfo>
+<RenderInfo name="goblinGloves#m" parent="playerbaseM">
+	<Entity source="goblin_glvMW.mesh"/> 
+</RenderInfo>
+<RenderInfo name="goblinGloves#f" parent="playerbase">
+	<Entity source="goblin_glvF.mesh"/> 
+</RenderInfo>
+<RenderInfo name="goblinGloves#fs" parent="playerbase">
+	<Entity source="goblin_glvF.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="goblinArmor" parent="playerbase">
+	<Entity source="gobLeg_arm.mesh"/> 
+</RenderInfo>
+<RenderInfo name="goblinArmor#m" parent="playerbaseM">
+	<Entity source="gobLeg_arm_ms.mesh"/> 
+</RenderInfo>
+<RenderInfo name="goblinArmor#f" parent="playerbase">
+	<Entity source="gobLeg_arm_fs.mesh"/> 
+</RenderInfo>
+<RenderInfo name="goblinArmor#fs" parent="playerbase">
+	<Entity source="gobLeg_arm_fs.mesh"/> 
+</RenderInfo>
+
+
+<RenderInfo name = "goblinClub" parent= "oneHandClubBase">
+	<Entity source = "goblin_hmr.mesh"/>
+</RenderInfo>
+
+<RenderInfo name = "nailClub" parent= "oneHandClubBase">
+	<Entity source = "nail_hmr.mesh"/>
+</RenderInfo>
+
+<RenderInfo name = "rustyDagger" parent= "shortSwordBase">
+	<Entity source = "crude_sw.mesh"/>
+</RenderInfo>

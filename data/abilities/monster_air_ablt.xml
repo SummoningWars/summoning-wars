@@ -1,0 +1,66 @@
+<Ability type="air_attack" 
+		 name="air attack"
+		 description="attack with ice damage" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local pdmg = getDamageValue("phys_dmg");
+			setDamageValue("air_dmg", pdmg);
+			setDamageValue("phys_dmg", {pdmg[1]*0.1,pdmg[2]*0.1});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="air_range_attack" 
+		 description="Basic ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="air_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local pdmg = getDamageValue("phys_dmg");
+			setDamageValue("air_dmg", pdmg);
+			setDamageValue("phys_dmg", {pdmg[1]*0.1,pdmg[2]*0.1});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="magic_attack_air" 
+		 name="Magic attack" 
+		 description="Basic magic attack" 
+		 time="700.000000"
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="magic_attack_air" 
+		 critical_percent="0.500000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="magic_arrow_air" speed="12000" />
+	<Damage>
+		<CppImplementation type="magic_attack_air" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>

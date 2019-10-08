@@ -1,0 +1,88 @@
+Stand: Februar 2009
+
+1. Code::Blocks installieren
+http://downloads.sourceforge.net/codeblocks/codeblocks-8.02-setup.exe
+
+2. MinGW installieren
+http://sourceforge.net/project/downloading.php?groupname=ogre&filename=MinGW_Toolbox_Setup_wr1.exe&use_mirror=mesh
+Das Mingw Hauptverzeichnis ist in der Regel C:\MinGW, des weiteren $MINGW 
+Achtung: nicht das normale MinGW installieren, sondern die MingGW Toolbox für Ogre (der Link ist das richtige ;) )
+
+3. pthread installieren
+ftp://sourceware.org/pub/pthreads-win32/prebuilt-dll-2-8-0-release/
+In dem angegebenen Verzeichnis gibt es die Unterverzeichnisse /include und /lib. Aus diesen beiden Verzeichnissen werden alle Dateien benötigt.
+Die Dateien werden wie folgt verteilt:
+*.h nach $MINGW\include
+*.a, *.la und *.lib nach $MINGW\lib
+*.dll nach C:\Windows\System32
+Für letzeres braucht man Administratorrechte
+
+4. Ogre installieren
+ http://sourceforge.net/project/downloading.php?groupname=ogre&filename=OgreSDKSetup1.4.9_CBMingW.exe&use_mirror=heanet
+www.ogre3d.org -> Download -> Prebuild SDK -> SDK for Code::Blocks + MinGW
+Die Dateien werden in $OGRE_HOME entpackt, Voreinstellung ist C:\OgreSDK
+Hinweis: mit Version 1.6 gibt es probleme, Version 1.49 funktioniert
+
+Jetzt kann man Ogre testen:
+In $OGRE_HOME gibt es ein Verzeichnis Samples, drin ein workspace file samples. Doppelklick auf diese Datei öffnet automatisch Code::Blocks. Dort kann man mittels Build -> Rebuild Workspace alle Beispielanwendungen compilieren. Dauert eine Weile, aber sollte ohne Fehler funktionieren (nur ca 500 Warnungen). 
+Zum Starten: Doppelklick auf eines der Demoprojekte und dann Build -> Run. Hinweis: Release ist deutlich schneller als Debug ;). Hinweis2: Man muss in dem Dialog beim Starten ein Renderer aussuchen.
+
+5. Raknet installieren
+http://www.jenkinssoftware.com/raknet/downloads/RakNet-3.261.zip
+Diesmal handelt es sich um ein .zip Archiv, das man erstemal an eine beliebige Stelle, z.b. C:\raknet entpackt (des weiteren $Raknet)
+In dem Verzeichnis befindet sich ein Code::Blocks Projektfile. Dieses wird geöffnet und durchcompiliert.
+Die Dateien werden wie folgt kopiert:
+RakNet.dll aus $Raknet\lib\dll\release nach C:\Windows\System32
+libRaKNet.a aus $Raknet\lib\dll\release  nach $MinGW\lib
+*.h aus $Raknet\Source nach $MINGW\include\raknet
+Dieser Ordner muss man erst anlegen und der muss diesen Namen haben!
+
+6. fehlende dll's
+Es fehlen noch einiges dll's, sie befinden sich im Verzeichnis sumwars/misc/dll und müssen nach C:\Windows\System32. Alternativ kann man das  Microsoft DirectX 9.0c August 2006 edition SDK herunterladen (>500MB), dann hat man die dll auch - aber bitte genau diese Version der SDK, sonst hat man bei der dll eine Versionsnummer zu viel oder zuwenig, was natürlich alles inkompatibel ist (es lebe Microsoft). Deswegen habe ich die mal mit eingecheckt...
+
+7. Ogre dll's kopieren
+Die dll's aus $OGRE_HOME\bin\debug kopieren nach
+- trunk\lib
+- C:\Windows\System32
+
+Die dll's aus $OGRE_HOME\bin\release kopieren nach
+- trunk\lib
+- C:\Windows\System32
+
+8. Lua installieren
+http://luaforwindows.googlecode.com/files/Lua_v5.1.4.21.exe
+- ausführen
+- \include\*.h nach $Mingw\include kopieren
+- \lib\*.lib nach $MinGW\lib
+- \lib\*.dll nach Windows\System32\
+
+9. openAl installieren
+- http://connect.creativelabs.com/openal/Downloads/OpenAL11CoreSDK.zip
+- archiv entpacken
+- libs\Win32\*.lib nach$MinGW\lib
+- include\*.h nach $MinGW\include\AL
+- http://connect.creativelabs.com/openal/Downloads/ALUT/freealut-1.1.0-bin.zip
+- archiv entpacken
+- include\alut.h nach $MinGW\include/AL
+- lib\alut.lib nach $MinGW\lib
+- lib\alut.dll nach Windows\System32\
+
+10. CEGUI und OIS
+- in Code::Blocks:
+- settings->compiler and debugger
+- dort tab search directories
+- add $OgreHome\include
+- add $OgreHome\include\CEGUI
+- add $OgreHome\include\OIS
+
+11. gettext
+gettext herunterladen, z.b. hier:
+http://sourceforge.net/project/downloading.php?groupname=gnuwin32&filename=gettext-0.14.4.exe&use_mirror=garr
+- ausführen und erstemal irgendwo hin installieren
+Dateien verteilen wie üblich:
+- \include\*.h nach $Mingw\include 
+- \lib\*.lib nach $MinGW\lib
+- \lib\*.dll nach Windows\System32\
+
+12. Testen.
+In trunk/src gibt es das Code::Blocks Projekt, das jetzt sich compilieren lassen sollten :)

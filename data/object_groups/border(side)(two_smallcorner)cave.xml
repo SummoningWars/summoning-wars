@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="border(side)(two_smallcorner)cave" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$border_cIn" 
+            center_x="3.5" 
+            center_y="-3.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_long" 
+            center_x="0" 
+            center_y="-2.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_corner" 
+            center_x="-3.5" 
+            center_y="-3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_corner" 
+            center_x="3.5" 
+            center_y="-3.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_long" 
+            center_x="0" 
+            center_y="-1.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_medium" 
+            center_x="-1" 
+            center_y="-3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_small" 
+            center_x="2" 
+            center_y="-3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_square_m" 
+            center_x="-2" 
+            center_y="1" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$ground_square_m" 
+            center_x="2" 
+            center_y="1" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border" 
+            center_x="0" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_cIn" 
+            center_x="-3.5" 
+            center_y="-3.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$tree" 
+            center_x="3.440829428" 
+            center_y="-1.286452048" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-0.2382368373" 
+            center_y="2.01494292" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-0.8647854947" 
+            center_y="-2.942353145" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

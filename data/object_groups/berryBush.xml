@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="berryBush" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4.342123689"
+    extent_y="4.16618376"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$script_berry_bush" 
+            center_x="0" 
+            center_y="0" 
+            angle="-0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+	<Location name="locCenter" pos_x="0" pos_y="0" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="prison_wall1" layer="BASE">
+        <Mesh file="prison_wall1.mesh" />
+        <Geometry shape="RECT" extent_x="0.5" extent_y="4"/>
+</Object>

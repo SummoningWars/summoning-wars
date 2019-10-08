@@ -1,0 +1,2183 @@
+<Quest name="Tutorial" table_name="tutorial" domain="tutorial">
+	
+	<Init>
+		tutorial.phase="intro"
+		tutorial.phasenr =0;
+		tutorial.craneRepair=0;
+	</Init>
+	
+	<Description>
+		if (tutorial.finished) then
+			return _("Tutorial finished")
+		else
+			if (tutorial.phase == "intro") then
+				return _("Hand your weapon over to Derred.");
+			elseif (tutorial.phase == "learnwalk") then
+				return _("Follow Tolec and Derred.")
+			elseif (tutorial.phase == "fightslugs") then
+				return _("Kill all of the Fire Slugs in the enclosure.");
+			elseif (tutorial.phase == "findSecretDoor") then
+				return _("Find the secret entrance to the library.");
+			elseif (tutorial.phase == "killlouses") then
+				return _("Kill every spawn of the behemoth.");
+			end
+			return _("Quest description")
+		end
+	</Description>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="create_region" once="true">
+			<Effect>
+				if (tutorial.finished == false) then
+					local ice = getObjectByNameRef("experimentIce")
+					local fire =  getObjectByNameRef("experimentFire")
+					local air =  getObjectByNameRef("experimentAir")
+					scriptobjectvar[ice]["color"] = 0;
+					scriptobjectvar[fire]["color"] = 0;
+					scriptobjectvar[air]["color"] = 0;
+				
+					addArea("entryPlayerArea",{"circle","locEntryPlayer",5});
+					addArea("dangerArea",{"circle","locBackroute2",4});
+					addArea("mutantSlugsArea",{"rect","locBackroute3",{5,5}});
+					
+					local tolecpos = "locTolec";
+					local derredpos = "locDerred";
+					tutorial_tmp.tolec = createObject("tolec", tolecpos);
+					set(tutorial_tmp.tolec,"ai_state","inactive");
+					setRefName(tutorial_tmp.tolec, "Tolec");
+					
+					tutorial_tmp.derred = createObject("derred", derredpos);
+					set(tutorial_tmp.derred,"ai_state","inactive");
+					setRefName(tutorial_tmp.derred, "Derred");
+					
+					if (tutorial.phase == "fightslugs") then
+						groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locWay2","locBehemothView",nil,30);
+					end;
+					if (tutorial.phase == "earthquake") then
+						groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locSlugView","locSlugs",nil,30);
+					end;
+					if (tutorial.phase == "escapeCaves") then
+						groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locBackroute3","locPartySkills",nil,30);
+					end;
+					if (tutorial.phase == "findSecretDoor") then
+						groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locBackroute2","locPartySkills",nil,30);
+					end;
+					if (tutorial.phase == "killlouses") then
+						groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locBackroute5","locPartyLib",nil,30);
+					end;
+					
+					-- only for phases intro, learnwalk, fightslugs
+					if (2 >= tutorial.phasenr) then
+						createMonsterGroup("tutorialSlugs","locSlugs",8);
+						tutorial_tmp.slugs =0;
+					end;
+					
+					if(3 >= tutorial.phasenr)then
+						local objectName = "slugHole"
+						local object = getObjectByNameRef(objectName)
+						getObjectOutOfWay(object)
+						set(object,"usable",false)
+						setObjectFlag(object,"usable",false);
+						for i = 1, 5 do
+							objectName = "slugDebris"..i
+							object = getObjectByNameRef(objectName)
+							getObjectOutOfWay(object)
+						end;
+					end;
+					
+					if(tutorial.energy==true)then
+						deleteObject(getObjectByNameRef("energySource")) --TODO: doesn't work at all
+					end;
+					
+					tutorial_tmp.bguard1 = createObject("council_guard","locDoorGuardNorth");
+					setRefName(tutorial_tmp.bguard1, "Guard");
+					lookAt(tutorial_tmp.bguard1,getLocation("locBehemoth"));
+				
+					tutorial_tmp.bguard2 = createObject("council_guard","locDoorGuardWest");
+					setRefName(tutorial_tmp.bguard2, "Guard");
+					lookAt(tutorial_tmp.bguard2,getLocation("locBehemoth"));
+					
+					-- since phase fightslugs
+					
+				
+				
+					local door;
+					
+					local door = getObjectByNameRef("doorBehemothNorth");
+					scriptobjectvar[door]["locked"] = true;
+					door = getObjectByNameRef("doorBehemothWest");
+					scriptobjectvar[door]["locked"] = true;
+					
+					door = getObjectByNameRef("doorScene1");
+					scriptobjectvar[door]["locked"] = true;
+					
+					door = getObjectByNameRef("doorScene1");
+					scriptobjectvar[door]["locked"] = true;
+					
+					if (2 > tutorial.phasenr) then
+						door_toggle("doorBehemothNorth");
+						door_toggle("doorBehemothWest");
+					end;
+					
+					if (3 > tutorial.phasenr) then
+						door = getObjectByNameRef("slugFarmBackdoor");
+						scriptobjectvar[door]["locked"] = true;
+					end;
+					
+					if (4 > tutorial.phasenr) then
+						door = getObjectByNameRef("doorSecretLibrary");
+						scriptobjectvar[door]["locked"] = true;
+					end;
+					
+					if (tutorial.phasenr == 0) then
+						door = getObjectByNameRef("doorPrison");
+						scriptobjectvar[door]["locked"] = true;
+					end;
+					
+					door = getObjectByNameRef("doorSlugFarm");
+					scriptobjectvar[door]["locked"] = true;
+					
+					if (4 > tutorial.phasenr) then
+						door = getObjectByNameRef("slugFarmFoodDoor");
+						scriptobjectvar[door]["locked"] = true;
+					end;
+					
+					if (4 == tutorial.phasenr) then
+						createMonsterGroup("tutorialLouses","locLouses",6);
+					end;
+					
+					tutorial_tmp.louses =0;
+					tutorial_tmp.louse_count = 4;
+					
+					set(tutorial_tmp.tolec,"ignored_by_ai",true);
+					set(tutorial_tmp.derred,"ignored_by_ai",true);
+				end;
+				
+				door = getObjectByNameRef("doorSouth");
+				scriptobjectvar[door]["locked"] = true;
+				
+				door = getObjectByNameRef("doorKitchen");
+				scriptobjectvar[door]["locked"] = true;
+				
+				door = getObjectByNameRef("doorDepth");
+				scriptobjectvar[door]["locked"] = true;
+				
+				door = getObjectByNameRef("doorEast");
+				scriptobjectvar[door]["locked"] = true;
+				
+				door = getObjectByNameRef("doorWest");
+					scriptobjectvar[door]["locked"] = true;
+					
+				tutorial_tmp.slave1 = createObject("slave_miner","locSlave4",90);
+				tutorial_tmp.slave2 = createObject("slave_miner","locSlave5",90);
+				tutorial_tmp.slave3 = createObject("slave_miner","locSlave6",90);
+				
+				if (tutorial.phasenr > 1) then
+					tutorial_tmp.behemoth = createObject("tutorialBehemoth","locBehemoth");
+					deleteObject(getObjectByNameRef("behemothPrison"));
+					deleteObject(getObjectByNameRef("workerScaffolding"));
+				end;
+				
+				if (tutorial.phasenr > 3) then
+					deleteObject(getObjectByNameRef("doorBehemothNorth"));
+				end;
+				
+				if(tutorial.energy==true)then
+					deleteObject(getObjectByNameRef("energySource"))
+				end;
+					
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				if (tutorial.phase == "intro") then
+					return (unitIsInArea(trigger.player,"entryPlayerArea"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				assembleParty("elCnlLobby","locEntryPlayer","locDerred");
+				tutorial_tmp.assemble = "intro";
+			</Effect>
+		</Event>
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return (tutorial_tmp.assemble == "intro");
+			</Condition>
+			<Effect>
+				tutorial_tmp.assemble = nil;
+				groupObjectsArc(getPlayers(),"locEntryPlayer","locTolec",nil,45);
+				tutorial.started = true;
+				createDialogue();
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				local leader = getRolePlayer("leader");
+				local blockedspeaker={};
+				blockedspeaker[leader] = true;
+				
+				lookAtObject(tutorial_tmp.tolec,leader);
+				lookAtObject(tutorial_tmp.derred,leader);
+				playersLookAt(get(tutorial_tmp.tolec,"position"));
+				
+				addSpeaker(leader,"PL",true);
+				speak("PL",_("*urgh*"),"injured3");
+				-- TODO: (aufrappeln)
+				speak("PL",_("Harad's bones!"),"injured2");
+				speak("PL",_("That was at least as nasty as the first years in hell! Where am I?"),"injured");
+				
+				if (not solo()) then
+					if(duo())then
+						speak("PL",_("And who is the other sad character?"),"surprised");
+					else
+						speak("PL",_("And who are the other sad characters?"),"surprised");
+					end;
+				end;
+				
+				local warrior = getRolePlayerNonPref("warrior",nil,blockedspeaker);
+				local mage = getRolePlayerNonPref("mage",nil,blockedspeaker);
+				local archer = getRolePlayerNonPref("archer",nil,blockedspeaker);
+				local priest = getRolePlayerNonPref("priest",nil,blockedspeaker);
+				
+				addSpeaker(warrior,"warrior",true);
+				addSpeaker(mage,"mage",true);
+				addSpeaker(archer,"archer",true);
+				addSpeaker(priest,"priest",true);
+				
+				if (warrior ~= leader) then
+					speak("warrior",_("Are you looking for trouble? Who is responsible for this mess!?!"),"angry");
+				end;
+				-- TODO:  (blickt sich um)
+				
+				speak("warrior",_("I almost had that damn ogre and suddenly someone's ripping out my guts who's not even near me!"),"offended");
+				
+				if (warrior ~=0 and mage ~= 0 ) then
+					speak("mage",_("Oh yes! The miraculous mental abilities of club swingers."),"sneer");
+					speak("warrior",_("I'll show you the endurance capacities of magic squirters!"),"threaten");
+				end;
+				
+				speak("mage",_("What a disgusting ambiance. I did not desire to be here... and I had just found a nice and safe place. "),"normal");
+				
+				speak("Tolec",_("Excuse me..."),"thoughtful");
+				speak("Derred",_("No, Tolec. You must say that with much more authority."),"angry");
+				
+				if (priest ~= 0) then
+					executeInDialog('lookAt('..priest..',getLocation("locEvilMachine"))');
+				end;
+				if(solo())then
+					speak("priest",_("It seems someone here has greater knowledge of how Harad is keeping me alive and moves me."), "thoughtful");
+				else
+					speak("priest",_("It seems someone here has greater knowledge of how Harad is keeping us alive and moves us."), "thoughtful");
+				end;
+				speak("archer",_("Whoever the head honcho is here: He'd better know what he's gotten himself into."),"threaten");
+				speak("archer",_("Lots of money could appease me again."),"grin");
+				
+				if(solo())then
+					speak("Tolec",_("Please excuse your somewhat unpleasant arrival. Lord Master Soren Windclaw requests your presence. ##solo"),"unhappy")
+				else
+					speak("Tolec",_("Please excuse your somewhat unpleasant arrival. Lord Master Soren Windclaw requests your presence."),"unhappy")
+				end;
+				
+				local magopt = getRolePlayerPref("all",nil,mage);
+				local waropt = getRolePlayerPref("all",nil,warrior);
+				local arcopt = getRolePlayerPref("all",nil,archer);
+				addSpeaker(magopt,"magopt");
+				addSpeaker(waropt,"waropt");
+				addSpeaker(arcopt,"arcopt");
+				
+				speak("magopt",_("I see!"),"excited");
+				speak("magopt",_("Lord"),"grin");
+				speak("magopt",_("Master"),"grin");
+				speak("magopt",_("Windclaw."),"grin");
+				speak("magopt",_("Why didn't you say so in the first place?"),"bored");
+				speak("Derred",_("Well, if you would follow us, please?"),"happy");
+				if (not solo()) then
+					speak("waropt",_("Are you kidding us? Who the hell is this windpaw?"),"warcry");
+				else
+					speak("PL",_("Are you kidding me? Who the hell is this windpaw?"),"warcry");
+				end;
+				
+				if ((mage ~= waropt)and(isFemale(waropt)==true)) then
+					speak("mage",_("A splendid question! Short and precise. Maybe one can actually work with that one."),"thoughtful");
+				elseif((mage ~= waropt)and(isMale(waropt)==true))then
+					speak("mage",_("A splendid question! Short and precise. Maybe one can actually work with that one."),"thoughtful");
+				end;
+				
+				speak("Derred",_("Er..."),"fear");
+				if (priest ~= waropt) then
+					speak("priest",_("Keep your head, my son. Take your time to think the answer over."),"normal");
+					
+					if (priest ~= 0) then
+						blockedspeaker={};
+						blockedspeaker[priest] = true;
+						local any1 = getRolePlayer("all",nil,priest);
+						addSpeaker(any1,"any1",true);
+						speak("any1",_("It may well be your last."),"threaten");
+					end;
+				end;
+				
+				executeInDialog("addUnitCommand("..leader..",'walk',tutorial_tmp.derred,3)");
+				speak("PL",_("Spill it! Where are we, and who has the nerve to cross Branded Ones?!"),"threaten");
+				if(solo())then
+					speak("Tolec",_("Well, the Lord Master has affirmed that he will explain everything in detail to you. ##solo"),"aloof");
+					speak("Derred",_("Further more, your arrival was... somewhat exhausting. ##solo"),"amused");
+					speak("Derred",_("You shouldn't be able to pose a threat to us at the moment. ##solo"),"amused");
+				else
+					speak("Tolec",_("Well, the Lord Master has affirmed that he will explain everything in detail to you."),"aloof");
+					speak("Derred",_("Further more your arrival was... somewhat exhausting."),"amused");
+					speak("Derred",_("You shouldn't be able to pose a threat to us at the moment."),"amused");
+				end;
+				speak("waropt",_("What have you done, you bastards?!"),"angry");
+				if(solo())then
+					speak("Tolec",_("Don't worry. We have strict orders not to kill you. ##solo"),"sneer");
+				else
+					speak("Tolec",_("Don't worry. We have strict orders not to kill you."),"sneer");
+				end;
+				
+				speak("arcopt",_("That guy seems to know what he's doing."),"sad");
+				if (arcopt ~= leader) then
+					speak("PL",_("This is not the right time to be impressed."),"normal");
+				end;
+				
+				if(solo())then
+					speak("Derred",_("Fine. Now that that's clarified I'd like to ask you to surrender your weapons. ##solo"),"aloof");
+				else	
+					speak("Derred",_("Fine. Now that that's clarified I'd like to ask you all to surrender your weapons."),"aloof");
+				end;
+				speak("Tolec",_("Kindly ask."),"happy");
+				if(solo())then
+					speak("Derred",_("We cannot take any risks, and inside the council you are safe. ##solo"),"normal");
+				else	
+					speak("Derred",_("We cannot take any risks, and inside the council you are safe."),"normal");
+				end;
+				
+				speak("arcopt",_("Council? The Council of Summoners?! Is this Aisen?"),"surprised");
+				speak("Tolec",_("Yes, but that's neither here nor there!"),"angry");
+				if ( not solo()) then
+					speak("PL",_("What if we don't feel like surrendering our weapons?"),"surprised");
+					speak("Tolec",_("I'm very sorry, but before that we cannot release any of you of the safety area."),"aloof");
+				else
+					speak("PL",_("What if I don't feel like surrendering my weapons?"),"surprised");
+					speak("Tolec",_("I'm very sorry, but before that we cannot release you of the safety area. ##solo"),"aloof");
+				end;
+				
+				
+				speak("magopt",_("Safety area?! This is a goddamn prison!"),"unhappy");
+				speak("Derred",_("The choice is yours."),"bored");
+				
+				setTopicBase("Derred");
+				changeTopic("give_weapons");
+			</Effect>	
+		</Event>
+	</Region>
+
+	<Region name="elCnlLowerCaves">
+		<Event trigger="create_region">
+			<Effect>
+				local mechanism = getObjectByNameRef("mechanism")
+				setObjectAnimation(mechanism,"deleteCog", 0)
+				setObjectAnimation(mechanism,"deleteEnergy", 0)
+				if(1 > tutorial.craneRepair )then
+					-- nothing done yet
+					setObjectAnimation(mechanism,"deleteCog", 0)
+					setObjectAnimation(mechanism,"deleteEnergy", 0)
+				end
+				if(2 > tutorial.craneRepair)then
+					--no cog yet
+					setObjectAnimation(mechanism,"deleteCog", 0)
+				end
+					
+			</Effect>
+		</Event>
+	</Region>
+	<NPC refname="Derred">
+		<Topic name="give_weapons" start_option="Surrender weapons">
+			<Condition>
+				return (tutorial.phase == "intro")
+			</Condition>
+			<Effect>
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				addQuestion(_("Do you want to surrender your weapons?"),"all");
+				addAnswer(_("Yes"),"give_weapons_yes");
+				addAnswer(_("No"),"give_weapons_no");
+			</Effect>
+		</Topic>
+		
+		<Topic name="give_weapons_yes">
+			<Effect>
+				local warrior = getRolePlayer("warrior");
+				local waropt = getRolePlayerPref("all",nil,warrior);
+				addSpeaker(waropt,"waropt");
+				if (not solo()) then
+					speak("waropt",_("It seems we have no choice..."),"unhappy");
+				else
+					speak("waropt",_("It seems I have no choice..."),"unhappy");
+				end;
+				executeInDialog("startTimer('remove_weapons',1000)");
+				speakPause(2000);
+				speak("Derred",_("Very well. Follow me, please."),"normal");
+				executeInDialog("insertTrigger('start_learnwalk')");
+			</Effect>
+		</Topic>
+		
+		<Topic name="give_weapons_no">
+			<Effect>
+				speak("PL",_("Forget it!"),"angry");
+				speak("Tolec",_("As you wish, but this room is safe."),"aloof");
+				if(solo())then
+					speak("Tolec",_("You will not leave it until you surrender your weapon. ##solo"),"aloof");
+					speak("Derred",_("Just tell us by clicking on one of us, when you change your mind. ##solo"),"bored");
+				else
+					speak("Tolec",_("None of you will leave it until you surrender your weapons."),"aloof");
+					speak("Derred",_("Just tell us by clicking on one of us, when you change your minds."),"bored");
+				end;
+				
+				setSpeakerEmotion("Tolec","excited");
+				setSpeakerEmotion("Derred","excited");
+				speakPause(1000);
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<NPC refname="Tolec">
+		<Topic name="give_weapons_t" start_option="Surrender weapons">
+			<Condition>
+				return (tutorial.phase == "intro")
+			</Condition>
+			<Effect>
+				setTopicBase("Derred");
+				changeTopic("give_weapons");
+			</Effect>
+		</Topic>	
+	</NPC>
+	
+	<Region name="elCnlLobby">
+	
+		<Event trigger="remove_weapons" once="true">
+			<Effect>
+				local players = getPlayers();
+				local i,player;
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"tutorial_gave_weapon")  ~= true) then
+						removePlayerItem(player, getInventoryPosition(player,"weapon"));
+						local weapontype = getItemValue("subtype");
+						setPlayerPrivateVar(player,"tutorial_weapon", weapontype);
+						setPlayerPrivateVar(player,"tutorial_gave_weapon",true);
+						deleteItem();
+					end;
+				end;
+				
+				tutorial.phase="learnwalk"
+				tutorial.phasenr =1;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				if (tutorial.phase == "learnwalk" and tutorial_tmp.learnwalkstarted ~= true) then
+					return (unitIsInArea(trigger.player,"entryPlayerArea"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				insertTrigger("start_learnwalk");
+				unitSpeak(tutorial_tmp.derred,_("Follow me, please."));
+			</Effect>	
+		</Event>
+		
+		<Event trigger="start_learnwalk" once="true">
+			<Effect>
+				door_toggle("doorPrison");
+				addUnitCommand(tutorial_tmp.tolec,"walk","locWay1",1);
+				addUnitCommand(tutorial_tmp.derred,"walk","locWay1",1);
+				tutorial_tmp.learnwalkstarted = true;
+				tutorial_tmp.tolecway1 = true;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="command_complete">
+			<Condition>
+				return (trigger.unit == tutorial_tmp.tolec 
+				and tutorial.phase == "learnwalk"
+				and tutorial_tmp.tolecway1 == true);
+			</Condition>	
+			<Effect>
+				startTimer("check_walk_success",15000);
+			</Effect>	
+		</Event>
+		
+		<Event trigger="check_walk_success">
+			<Condition>
+				return (tutorial_tmp.walk_success ~= true);
+			</Condition>
+			<Effect>
+				tutorial_tmp.tolecway1 = false;
+				addUnitCommand(tutorial_tmp.tolec,"walk","locDerred");
+			</Effect>	
+		</Event>
+		
+		<Event trigger="command_complete">
+			<Condition>
+				return (trigger.unit == tutorial_tmp.tolec 
+				and tutorial.phase == "learnwalk"
+				and tutorial_tmp.tolecway1 == false);
+			</Condition>	
+			<Effect>
+				unitSpeak(tutorial_tmp.tolec,_("What's keeping you? Has the transport afflicted you so much that you don't even know how to walk anymore? Just click with the left mouse button at a place on the ground. Then it will all come back to you on its own."),"unhappy");
+				startTimer("tolec_back_way1",2000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="tolec_back_way1">
+			<Effect>
+				tutorial_tmp.tolecway1 = true;
+				addUnitCommand(tutorial_tmp.tolec,"walk","locWay1");
+			</Effect>	
+		</Event>
+		
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				if (tutorial.phase == "learnwalk") then
+					return (unitIsInArea(trigger.player,"waypoint1Area"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				tutorial_tmp.walk_success = true;
+				if (tutorial_tmp.tolecway1 == false) then
+					clearUnitCommands(tutorial_tmp.tolec);
+					addUnitCommand(tutorial_tmp.tolec,"walk","locWay1");
+				end;
+				addUnitCommand(tutorial_tmp.tolec,"walk","locWay2");
+				addUnitCommand(tutorial_tmp.derred,"walk","locWay2");
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				if (tutorial.phase == "learnwalk") then
+					return (unitIsInArea(trigger.player,"waypoint2Area"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				insertTrigger("behemoth_start");
+			</Effect>
+		</Event>
+		
+		
+		<Event trigger="behemoth_start" once="true">
+			<Effect>
+				setCutsceneMode(true);
+				
+				local scaff = getObjectByNameRef("workerScaffolding")
+				set(scaff,"layer","nocollision")
+				
+				moveObject(tutorial_tmp.tolec,"locWay2");
+				moveObject(tutorial_tmp.derred,"locWay2");
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBehemothDoorEast",1);
+				addUnitCommand(tutorial_tmp.derred,"walk","locBehemothDoorEast",1);
+				
+				tutorial_tmp.worker = createObject("slave_scaffolding","locWorker");
+				setRefName(tutorial_tmp.worker, "Arbeiter");
+				set(tutorial_tmp.worker,"angle",90);
+				set(tutorial_tmp.worker,"height",3)
+				moveObject(tutorial_tmp.worker,"locWorker");
+				
+				tutorial_tmp.worker2 = createObject("slave_worker","locWorker2Start");
+				setRefName(tutorial_tmp.worker2, "Arbeiter");
+				
+				tutorial_tmp.behemoth = createObject("tutorialBehemoth","locBehemothStart");
+				lookAtObject(tutorial_tmp.behemoth,tutorial_tmp.worker);
+				
+				addCameraPosition(0,"locBehemothStart" , 90,20, 30);
+				startTimer("behemoth_attack1",2000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="behemoth_attack1" once="true">
+			<Effect>
+				addUnitCommand(tutorial_tmp.behemoth,"tutorial_behemoth_fire_storm",tutorial_tmp.worker);
+				quake("locBehemothStart","locQuake1",{90,20,30},6)
+				
+				lookAtObject(tutorial_tmp.worker2,tutorial_tmp.behemoth)
+				setObjectAnimation(tutorial_tmp.worker2,"shake",1000,true);
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_hit" once="true">
+			<Condition>
+				return (trigger.defender == tutorial_tmp.worker);
+			</Condition>
+			<Effect>
+				set(tutorial_tmp.worker,"health",0);
+				
+				addUnitCommand(tutorial_tmp.worker2,"walk","locWorker2")
+				
+				startTimer("behemoth_attack2",1000);
+			</Effect>
+		</Event>
+		
+		
+		<Event trigger="behemoth_attack2" once="true">
+			<Effect>
+				addUnitCommand(tutorial_tmp.behemoth,"tutorial_behemoth_fire_storm",tutorial_tmp.worker2);
+				quake("locBehemothStart","locQuake1",{90,20,30},6)
+				
+				--trap the worker in a fire cage
+				clearUnitCommands(tutorial_tmp.worker2)
+				setObjectAnimation(tutorial_tmp.worker2,"shake",1000,true);
+				
+				startTimer("fireCage",200)
+				unitSpeak(tutorial_tmp.worker2,_("Akeran!"),panic)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("Help!"),panic)',500)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("Someone!"),panic)',1500)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("Save me!"),panic)',2800)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("I will work twice as hard!"),panic)',3500)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("Dont let me die!"),panic)',4500)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("Please!"),panic)',7500)
+				timedExecute('unitSpeak(tutorial_tmp.worker2,_("Noo!"),panic)',8000)
+				lookAtObject(tutorial_tmp.worker2,tutorial_tmp.behemoth)
+				
+				startTimer("destroy_bprison",1500);
+				startTimer("behemoth_attack3",2000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="fireCage" once="true">
+			<Effect>
+				local wpos = getPosition(tutorial_tmp.worker2)
+				tutorial_tmp.cage = createObject("fireCage",wpos)				
+			</Effect>
+		</Event>
+		
+		<Event trigger="destroy_bprison" once="true">
+			<Effect>
+				deleteObject(getObjectByNameRef("behemothPrison"));
+				deleteObject(getObjectByNameRef("workerScaffolding"));
+			</Effect>
+		</Event>
+		
+		<Event trigger="behemoth_attack3" once="true">
+			<Effect>
+				addUnitCommand(tutorial_tmp.behemoth,"hammer_bash",tutorial_tmp.worker2);
+				addUnitCommand(tutorial_tmp.behemoth,"walk","locBehemoth");
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_hit" once="true">
+			<Condition>
+				return (trigger.defender == tutorial_tmp.worker2);
+			</Condition>	
+			<Effect>
+				set(tutorial_tmp.worker2,"health",0);
+				startTimer("closeBehemothDoor1",2000);
+				deleteObject(tutorial_tmp.cage)
+			</Effect>	
+		</Event>
+		
+		<Event trigger="closeBehemothDoor1" once="true">
+			<Effect>
+				addCameraPosition(500, "locDoorGuardWest" , 0,30, 20);
+				unitSpeak(tutorial_tmp.bguard2,_("Oh Akeran! Close the gates!"),"fear");
+				timedExecute("door_toggle('doorBehemothWest')",1500);
+				startTimer("closeBehemothDoor2",3000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="closeBehemothDoor2" once="true">
+			<Effect>
+				addCameraPosition(500, "locDoorGuardNorth" , -90,30, 20);
+				timedExecute("door_toggle('doorBehemothNorth')",1500);
+				startTimer("tolec_flee",3000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="tolec_flee" once="true">
+			<Effect>
+				addCameraPosition(500, "locBehemothDoorEast" , -90,70, 20);
+				addUnitCommand(tutorial_tmp.tolec,"walk","locWay2",1);
+				addUnitCommand(tutorial_tmp.derred,"walk","locWay2",1);
+				unitSpeak(tutorial_tmp.tolec,_("Akeran's Shield! That THING is free! Back everyone! Go, go, go!"),"fear");
+				startTimer("explain_fight",3000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="explain_fight" once="true">
+			<Effect>
+				setCutsceneMode(false);
+				assembleParty("elCnlLobby","locWay2");
+				tutorial_tmp.assemble = "explain_fight";
+			</Effect>
+		</Event>
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return (tutorial_tmp.assemble == "explain_fight");
+			</Condition>
+			<Effect>
+				tutorial_tmp.assemble = nil;
+				groupObjectsArc(getPlayers(),"locBehemothView","locWay2",nil,45);
+				moveObject(tutorial_tmp.tolec,"locWay2");
+				moveObject(tutorial_tmp.derred, "locWay2");
+				
+				createDialogue();
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locWay2","locBehemothView",nil,30);
+				
+				addStandardRoles();
+				
+				local leader = getSpeaker("PL");
+				local waropt = getSpeaker("waropt");
+				local mage = getSpeaker("mage");
+				
+				lookAtObject(tutorial_tmp.tolec,leader);
+				lookAtObject(tutorial_tmp.derred,leader);
+				playersLookAt(get(tutorial_tmp.tolec,"position"));
+				
+				speak("Derred",_("We can't pass there. What do we do now?"),"unhappy");
+				speak("PL",_("Is this thing really that bad?"),"sneer");
+				speak("Derred",_("Are you blind? The beast is gigantic!"),"offendend");
+				speak("waropt",_("Size isn't everything."),"grin");
+				speak("arcopt",_("Looks like a departure ticket to me. It can't be more painful than the arrival."),"happy");
+				speak("Tolec",_("Er yes... about that..."),"thoughtful");
+				speak("priopt",_("What?"),"threaten");
+				speak("Tolec",_("The Lord Master Windclaw feared that you would kill yourself after your arrival in order to escape, so he took... measures."),"aloof");
+				
+				executeInDialog("addUnitCommand("..waropt..",'walk',tutorial_tmp.tolec)");
+				speak("waropt",_("Measures?"),"threaten");
+				speak("Derred",_("Well, we don't understand much, but it seems you don't die like us."),"thoughtful");
+				speak("Derred",_("Instead you can resurrect where you want after your body is destroyed."),"thoughtful");
+				speak("Tolec",_("Akeran must truly hate you..."),"grin");
+				if (not solo()) then
+					speak("priopt",_("So? None of us wished for this ability."),"threaten");
+				else
+					speak("priopt",_("So? I didn't wish for this ability."),"threaten");
+				end;
+				
+				speak("Derred",_("Well, as you are now, you can only do that at places of great magical concentrations. In other words..."),"amused");
+				speak("waropt",_("... just back there with all the junk."),"thoughtful");
+				if (mage ~= waropt and waropt ~= 0) then
+					speak("mage",_("I wouldn't necessarily call that 'junk'."),"sad")
+				end;
+				
+				speak("Tolec",_("Exactly, only there."),"surprised");
+				if (not solo()) then
+					speak("PL",_("It is time we speak with this Windclaw. He seems to be a smart toad."),"unhappy");
+				else
+					speak("PL",_("It is time I speak with this Windclaw. He seems to be a smart toad."),"unhappy");
+				end;
+				speak("arcopt",_("It can't be all too healthy to be this smart."),"sneer");
+				speak("Derred",_("Er, well, yes. Since the main way is currently blocked, we'll have to try to get through the enclosure with the new experiments."),"unhappy")
+				speak("Derred",_("There's a back door for feeding, and word is..."));
+				speak("Tolec",_("... that the old Firewhirl has a secret door for a direct connection to the kitchen. That could work! But the beasts are not exactly without danger."),"surprised");
+				speak("Derred",_("It's only those sluglings."),"sneer");
+				speak("Tolec",_("I don't know... I don't feel like being bedridden for three weeks just because of some slimy fire breath."),"disgust");
+				
+				if (not solo()) then
+					speak("priopt", _("To Harad! That's impossible to put up with. Give us our weapons and we'll take care of that."),"unhappy");
+				else
+					speak("priopt", _("To Harad! That's impossible to put up with. Give me my weapon and I'll take care of that."),"thoughtful");
+				end;
+				speak("Derred",_("Well, you're right about that..."),"thoughtful");
+				speak("Tolec",_("Yes. Considering the difficult circumstances we can do that, I guess. Here you go."),"thoughtful");
+				
+				executeInDialog("insertTrigger('give_back_weapons')");
+				
+				speak("waropt",_("What is this supposed to be?"),"surprised")
+				speak("waropt",_("Where is my weapon?"),"warcry");
+				
+				speak("Tolec",_("Er... Lord Master Windclaw feared that there could be a situation in which you had to fall back to, er, force of arms."),"aloof");
+				speak("Tolec",_("That's why he gave us these."),"aloof");
+				speak("Derred",_("Surely you understand that you cannot run around here with unchecked weapons."),"aloof");
+				
+				speak("waropt",_("Slowly you're getting to me."),"threaten");
+				speak("arcopt",_("What didn't he take into consideration? He is clearly paranoid."),"unhappy");
+				
+				speak("Derred",_("You... can still remember how to use a weapon, right?"),"aloof");
+				speak("Derred",_("We were told that the first minutes are like one taking a step for the first time."),"aloof");
+				
+				tutorial.phase = "fightslugs";
+				tutorial.phasenr = 2;
+				
+				setTopicBase("Derred");
+				addQuestion(_("Explain inventory?"));
+				addAnswer(_("Yes"),"explain_inventory");
+				addAnswer(_("No"),"explain_inv_no");
+			</Effect>
+		</Event>
+		
+		<Event trigger="give_back_weapons" once="true">
+			<Effect>
+				local players = getPlayers();
+				local i,player;
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"tutorial_weapon") ~= nil ) then
+						print(getPlayerPrivateVar(player,"tutorial_weapon"))
+						createItem(getPlayerPrivateVar(player,"tutorial_weapon"))
+						setPlayerPrivateVar(player,"tutorial_weapon",nil) 
+						
+						insertPlayerItem(player,false);
+					end;
+				end;
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Derred">
+		<Topic name="explain_inventory" start_option="Explain inventory">
+			<Condition>
+				return (tutorial.phase == "fightslugs" and tutorial_tmp.slugdoor_open ~= true)
+			</Condition>
+			<Effect>
+				speak("Derred",_("First you must open your inventory. By default, you do so with the 'i'-key."),"normal");
+				speak("Derred",_("Alternatively, you can click on the inventory button below in the status bar."));
+				speak("Derred",_("In the inventory you'll see your items. They are ordered by their size."));
+				speak("Derred",_("The weapon you just obtained is a mid-sized item and thus is found in the middle field."));
+				speak("Derred",_("Click on the weapon with the left mouse button. Next click on the weapon field in the equipment above your inventory, and it will be equipped."));
+				changeTopic("explain_inv_no");
+			</Effect>
+		</Topic>
+		<Topic name="explain_inv_no">
+			<Effect>
+				speak("Derred",_("Let us know when you're ready."));
+			</Effect>
+		</Topic>
+		
+		<Topic name="attack_slugs" start_option="Attack slugs">
+			<Condition>
+				return (tutorial.phase == "fightslugs" and tutorial_tmp.slugdoor_open ~= true)
+			</Condition>
+			<Effect>
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				setTopicBase("Tolec");
+				changeTopic("attack_slugs");
+			</Effect>
+		</Topic>		
+	</NPC>
+	
+	<NPC refname="Tolec">
+		<Topic name="explain_inventory" start_option="Explain inventory">
+			<Condition>
+				return (tutorial.phase == "fightslugs" and tutorial_tmp.slugdoor_open ~= true)
+			</Condition>
+			<Effect>
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				setTopicBase("Derred");
+				changeTopic("explain_inventory");
+			</Effect>
+		</Topic>
+		
+		<Topic name="attack_slugs" start_option="Attack slugs">
+			<Condition>
+				return (tutorial.phase == "fightslugs" and tutorial_tmp.slugdoor_open ~= true)
+			</Condition>
+			<Effect>
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				addStandardRoles();
+				addAllPlayersToDialog();
+				
+				local players = getPlayers();
+				local i,player;
+				local allequip = true;
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"tutorial_complete") ~= true ) then
+						getPlayerItem(player,getInventoryPosition(player,"weapon"));
+						if (getItemValue("type") == "noitem") then
+							allequip = false;
+						end;
+					end;
+				end;
+				
+				if (allequip == false) then
+					if (solo()) then
+						speak("Tolec",_("You should equip your weapon first."));
+					else
+						speak("Tolec",_("Everyone should equip their weapons first."));
+					end;
+					return;
+				end
+				
+				if(solo())then
+					speak("Tolec",_("You still know how to fight, don't you? ##solo"),"surprised");
+				else
+					speak("Tolec",_("You all still know how to fight, don't you?"),"surprised");
+				end;
+				speak("PL",_("Go in, click on it, kill it. A Branded One wouldn't forget about that."),"bored");
+				speak("Tolec",_("What does this 'click on it' mean, anyway?"),"surprised");
+				if(solo())then
+					if(femaleOnly())then
+						speak("Derred",_("No idea, but the Lord Master said that she speaks like this."),"thoughtful");
+					else
+						speak("Derred",_("No idea, but the Lord Master said that he speaks like this."),"thoughtful");
+					end;
+				else
+					speak("Derred",_("No idea, but the Lord Master said that they speak like this."),"thoughtful");
+				end;
+				if(solo())then
+					speak("waropt",_("Then I shall put the fear of Harad into these experiments!"),"excited");
+				elseif(duo())then
+					speak("waropt",_("Let's put the fear of Harad into these experiments!"),"excited");
+				else
+					speak("waropt",_("Let's put the fear of Harad into these experiments!"),"excited");
+				end;				speak("arcopt",_("I just hope they have a soul."),"thoughtful")
+				if (getSpeaker("priopt") ~= getSpeaker("arcopt")) then
+				speak("priopt",_("Don't worry. Even a golem has one. Those things will not be the exception."),"happy");
+				end;
+				speak("Derred",_("Very well. Just cover our backs while we try to open the hatch. "),"happy");
+				speak("Tolec",_("Forget it! I'm not going in while those beasts are on the loose."),"disgust");
+				
+				executeInDialog("startTimer('open_slugdoor',1500)");
+				local door = getObjectByNameRef("slugFarmBackdoor");
+				executeInDialog("addUnitCommand(tutorial_tmp.tolec,'walk',"..door..",2)");
+				tutorial_tmp.slug_door_pos = get(door,"position");
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="open_slugdoor" once="true">
+			<Effect>
+				door_toggle("slugFarmBackdoor");
+				clearUnitCommands(tutorial_tmp.tolec);
+				tutorial_tmp.slugdoor_open = true;
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_dead">
+			<Condition>
+				return (tutorial.phase == "fightslugs" and get(trigger.unit,"subtype") == "fireSlug")
+			</Condition>
+			<Effect>
+				tutorial_tmp.slugs = tutorial_tmp.slugs +1;
+				if (tutorial_tmp.slugs == 10) then
+					addUnitCommand(tutorial_tmp.tolec,'walk',tutorial_tmp.slug_door_pos,1);
+					addUnitCommand(tutorial_tmp.derred,'walk',tutorial_tmp.slug_door_pos,1);
+					addUnitCommand(tutorial_tmp.tolec,'walk',"locSlugView",2);
+					addUnitCommand(tutorial_tmp.derred,'walk',"locSlugView",2);
+				end
+			</Effect>
+		</Event>
+		
+		<Event trigger="command_complete" once="true">
+			<Condition>
+				return (tutorial.phase == "fightslugs" and tutorial_tmp.slugs == 10 and trigger.unit == tutorial_tmp.tolec and trigger.last_command)
+			</Condition>
+			<Effect>
+				assembleParty("elCnlLobby","locSlugs");
+				tutorial_tmp.assemble = "fightslugs";
+			</Effect>
+		</Event>
+		<!-- begin of needed changes-->
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return (tutorial_tmp.assemble == "fightslugs");
+			</Condition>
+			<Effect>
+				tutorial_tmp.assemble = nil;
+				groupObjectsArc(getPlayers(),"locSlugs","locSlugView",nil,45);
+				moveObject(tutorial_tmp.tolec,"locSlugView");
+				moveObject(tutorial_tmp.derred, "locSlugView");
+				groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locSlugView","locSlugs",nil,30);
+				
+				createDialogue();
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addStandardRoles();
+				addAllPlayersToDialog();
+				
+				local leader = getRolePlayer("leader");
+				lookAtObject(tutorial_tmp.tolec,leader);
+				lookAtObject(tutorial_tmp.derred,leader);
+				playersLookAt(get(tutorial_tmp.tolec,"position"));
+				
+				speak("Tolec",_("Yuck! Those things are really disgusting."),"digust");
+				speak("any",_("What kind of sissy are you?"),"sneer");
+				speak("Derred",_("Are you looking for trouble, weakling?!"),"threaten");
+				speak("Tolec",_("Wait a sec, Derred. They somehow seem stronger."),"thoughtful");
+				if(solo())then
+					speak("leader",_("Your witch stuff may have weakened me, but I take some of the power from every being I kill and become stronger."),"excited");
+				else
+					speak("leader",_("Your witch stuff may have weakened us, but we take some of the power from every being we kill and become stronger."),"excited");
+				end;
+				speak("any",_("You'd better think about who you're calling `weakling' here!"),"grin");
+				speak("Tolec",_("Hm, right. The Lord Master said that something like this could happen. Do you know how to convert this power into proper abilities?"),"thoughtful");
+				
+				tutorial_tmp.behemoth_show = true;
+				
+				--tutorial.phasenr = 3;
+				tutorial.phase = "earthquake";
+				tutorial.phasenr = 3;
+				--WORKINPROGRESS
+				setTopicBase("Tolec");
+				addQuestion("Explain level up?");
+				addAnswer(_("Yes"),"explain_levelup");
+				addAnswer(_("No"),"explain_levelup_continue");
+				
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Tolec">
+		<Topic name="explain_levelup" start_option="Explain level up">
+			<Condition>
+				--return (tutorial.phase == "findSecretDoor" and tutorial_tmp.fooddoor_open ~= true)
+				return (tutorial.phase == "earthquake" and tutorial_tmp.fooddoor_open ~= true)
+			</Condition>
+			<Effect>
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				if (getSpeaker("priopt") == 0) then
+					addSpeaker(getSpeaker("player"),"priopt");
+				end;
+				if(solo())then
+					speak("Tolec",_("You can upgrade your attributes every time, and sometimes you even have enough energy for a new skill. ##solo"),"normal");
+					speak("Derred",_("Yes. That was the thing with the big plus in the lower left corner. Just click on it and distribute your attribute points. ##solo"),"normal");
+					speak("Tolec",_("Exactly. You can distribute the skill point in the skill window. The Lord Master said that you could choose from three categories. ##solo"));
+					speak("Tolec",_("Depending on your... character mass. ##solo"),"thoughtful");
+				else
+					speak("Tolec",_("You can upgrade your attributes every time, and sometimes you even have enough energy for a new skill."),"normal");
+					speak("Derred",_("Yes. That was the thing with the big plus in the lower left corner. Just click on it and distribute your attribute points."),"normal");
+					speak("Tolec",_("Exactly. You can distribute the skill point in the skill window. The Lord Master said that you could choose from three categories."));
+					speak("Tolec",_("Depending on your... character mass."),"thoughtful");
+				end;
+				
+				speak("Derred",_("Character class."),"unhappy");
+				speak("Tolec",_("Oh, right!"),"surprised");
+				speak("Tolec",_("Branded Ones use strange phrases indeed."),"thoughtful");
+				
+				speak("priopt",_("I wonder why this Soren knows so much about the Branded Ones..."),"thoughtful");
+				speak("warrior",_("Mages are exceedingly strange... Every single one of them."),"unhappy");
+				if (getSpeaker("warrior") ~= 0) then
+					speak("mage",_("Better strange than..."),"sneer");
+				end;
+				if (tutorial_tmp.behemoth_show) then
+					changeTopic("explain_levelup_continue");
+				end;
+			</Effect>
+		</Topic>
+		<Topic name="explain_levelup_continue" >
+			<Effect>
+				insertTrigger("behemoth_show2");
+			</Effect>
+		</Topic>	
+	</NPC>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="behemoth_show2" once="true">
+			<Effect>
+				startTimer("behemoth_show_end",6000);
+				setCutsceneMode(true);
+				local pos = getLocation("locBehemoth");
+				addCameraPosition(0,"locBehemoth" , 90,20, 20);
+				addCameraPosition(1000,"locBehemoth" , 90,20, 20);
+				
+				moveObject(tutorial_tmp.behemoth, "locBehemoth");
+				lookAtObject(tutorial_tmp.behemoth, tutorial_tmp.bguard1);
+				
+				quake("locBehemoth", "locQuake2",{90,20,20},10)
+				addUnitCommand(tutorial_tmp.behemoth,"tutorial_behemoth_fire_storm",tutorial_tmp.bguard1);
+				addUnitCommand(tutorial_tmp.behemoth,"tutorial_behemoth_fire_storm",tutorial_tmp.bguard1);
+			</Effect>
+		</Event>
+		<Event trigger="behemoth_show_end" once="true">
+			<Effect>
+				setCutsceneMode(false);
+				createDialogue();
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				speak("Tolec",_("That blasted thing! I hope the walls hold out."),"fear")
+				speak("Derred",_("Quickly distribute your new points, and then let's get out of here!"),"fear");
+			</Effect>
+		</Event>
+		
+	</Region>
+	
+	<NPC refname="Derred">
+		<Topic name="open_fooddoor" start_option="Open hatch">
+			<Condition>
+				return (tutorial.phase == "earthquake" and tutorial_tmp.fooddoor_open ~= true)
+			</Condition>
+			<Effect>
+				local players = getPlayers();
+				local i,player;
+				local allattr = true;
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"tutorial_complete") ~= true) then
+						if (get(player,"attribute_points") > 0) then
+							allattr = false;
+						end;
+					end;
+				end;
+				
+				if (allattr == false) then
+					speak("Derred",_("Please distribute your attribute points first."));
+					return;
+				end;
+
+				local door = getObjectByNameRef("slugFarmFoodDoor");
+				addUnitCommand(tutorial_tmp.derred,"walk",door,2);
+				tutorial_tmp.backroute =1;
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<NPC refname="Tolec">
+		<Topic name="open_fooddoor" start_option="Open hatch">
+			<Condition>
+				return (tutorial.phase == "earthquake" and tutorial_tmp.fooddoor_open ~= true)
+			</Condition>
+			<Effect>
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				setTopicBase("Derred");
+				changeTopic("open_fooddoor");
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="command_complete" once="true">
+			<Condition>
+				return (trigger.unit == tutorial_tmp.derred and tutorial_tmp.backroute ==1 and tutorial_tmp.fooddoor_open ~= true)
+			</Condition>
+			<Effect>
+				setCutsceneMode(true)
+				addCameraPosition(0,"locBackroute2" , -120,40, 20);
+				tutorial_tmp.slugs = createMonsterGroup("tutorialMutantSlugs","locBackroute3",3);
+				tutorial_tmp.slugnr = table.getn(tutorial_tmp.slugs);
+				
+				timedExecute("door_toggle('slugFarmFoodDoor')",1000);
+				startTimer("go_backroute2",2000);
+				tutorial_tmp.fooddoor_open = true;
+			</Effect>
+		</Event>
+		<Event trigger="go_backroute2" once="true">
+			<Effect>
+				addUnitCommand(tutorial_tmp.derred,"walk","locBackroute2");
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute1");
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute2",1);
+				tutorial_tmp.see_louse = false;
+				startTimer("slugs2_scene_intro",2000)
+			</Effect>
+		</Event>
+		<Event trigger="slugs2_scene_intro" once="true">
+			<Effect>
+				addCameraPosition(0,"locBackroute2" , -120,40, 20);
+				addCameraPosition(1000,"locBackroute3" , -90,40, 20);
+				startTimer("slugs2_scene",4000);
+			</Effect>
+		</Event>
+		<Event trigger="slugs2_scene" once="true">
+			<Effect>
+				tutorial_tmp.slugs_out =0;
+				local i
+				for i=1,tutorial_tmp.slugnr do
+					addUnitCommand(tutorial_tmp.slugs[i],"walk","locMutantSlugs");
+				end;
+				local tube = getObjectByNameRef("slugEscape");
+				set(tube,"layer","nocollision");
+			</Effect>
+		</Event>
+		
+		<Event trigger="command_complete" >
+			<Condition>
+				return (get(trigger.unit,"subtype") == "fireSlug" or get(trigger.unit,"subtype") == "mutantSlug")
+			</Condition>	
+			<Effect>
+				if (trigger.success ~= true) then
+					addUnitCommand(trigger.unit,"walk","locMutantSlugs");
+					return;
+				end;
+				
+				tutorial_tmp.slugs_out = tutorial_tmp.slugs_out +1;
+				deleteObject(trigger.unit);
+				if (tutorial_tmp.slugs_out == tutorial_tmp.slugnr) then
+					addCameraPosition(300,"locBackroute3" , -90,40, 20);
+					addCameraPosition(2000,"locBackroute3" , -90,40, 20);
+					addCameraPosition(1000,"locBackroute2" , -90,40, 20);
+					startTimer("slugs2_dialog",4000);
+					
+					local tube = getObjectByNameRef("slugEscape");
+					set(tube,"layer","normal");
+				end;
+			</Effect>
+		</Event>
+		<Event trigger="slugs2_dialog" once="true">
+			<Effect>
+				addCameraPosition(0,"locBackroute2",-90,45,13);
+				
+				createDialogue();
+				
+				addAllPlayersToDialog();
+				addStandardRoles();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				speak("PL",_("More of those beasts?"),"unhappy");
+				speak("Tolec",_("Urk! They seem to have broken out somehow. I hope they don't breed in the crevices."),"disgust");
+				speak("mage",_("Have you ever heard of safety measures?"),"grin");
+				speak("Derred",_("Somewhere back there has to be the secret door."),"thoughtful");
+				speak("arcopt",_("You're not even sure it's there?"),"disgust");
+				
+				speak("Tolec",_("I don't waste my time crawling through kitchen corridors, Cursed One."),"threaten");
+				speak("priopt",_("That's correct, Branded One. You wouldn't want to be called `harvest' now, would you?"),"angry");
+				
+				speak("Tolec",_("All right allready!"),"fear");
+				
+				executeInDialog("insertTrigger('walk_backroute3')");
+			</Effect>
+		</Event>
+		
+		<Event trigger="walk_backroute3" once="true">
+			<Effect>
+				--setCutsceneMode(false);
+				addUnitCommand(tutorial_tmp.derred,"walk","locBackroute3",1);
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute3",1);
+				
+				startTimer("ceiling_crumbling",2500);
+
+				local pos = getLocation("locBehemoth");
+				addCameraPosition(0,"locBehemoth" , 90,20, 20);
+				addCameraPosition(1000,"locBehemoth" , 90,20, 20);
+				
+				moveObject(tutorial_tmp.behemoth, "locBehemoth");
+				lookAtObject(tutorial_tmp.behemoth, tutorial_tmp.bguard1);
+				
+				quake("locBehemoth", "locQuake2",{90,20,20},10)
+				addUnitCommand(tutorial_tmp.behemoth,"tutorial_behemoth_fire_storm",tutorial_tmp.bguard1);
+			</Effect>
+		</Event>
+		<Event trigger="ceiling_crumbling" once="true">
+			<Effect>
+				startTimer("party_break_down",2000)
+				unitSpeak(getPartyleader(),_("Just great!"),"angry",1500)
+				quake("locSlugs", "locSlugQuake",{-90,40,20},15)
+				pos1 = get(getObjectByNameRef("slugDebris1"),"position")
+				pos2 = get(getObjectByNameRef("slugDebris2"),"position")
+				pos3 = get(getObjectByNameRef("slugDebris3"),"position")
+				pos4 = get(getObjectByNameRef("slugDebris4"),"position")
+				pos5 = get(getObjectByNameRef("slugDebris5"),"position")
+				tutorial_tmp.emitter1 = createObject("smokeEmitter", pos1)
+				tutorial_tmp.emitter2 = createObject("smokeEmitter", pos2)
+				tutorial_tmp.emitter3 = createObject("smokeEmitter", pos3)
+				tutorial_tmp.emitter4 = createObject("smokeEmitter", pos4)
+				tutorial_tmp.emitter5 = createObject("smokeEmitter", pos5)
+				timedExecute("fadeOut(1000)",1000)
+			</Effect>
+		</Event>
+		<Event trigger="party_break_down" once="true">
+			<Effect>
+				assembleParty("elCnlLowerCaves","construction:locFallDown");
+				tutorial_tmp.assemble = "crash";
+				startTimer("breakDownCleanup",1000)
+			</Effect>
+		</Event>
+		<Event trigger="breakDownCleanup" once="true">
+			<Effect>
+				deleteObject(tutorial_tmp.emitter1)
+				deleteObject(tutorial_tmp.emitter2)
+				deleteObject(tutorial_tmp.emitter3)
+				deleteObject(tutorial_tmp.emitter4)
+				deleteObject(tutorial_tmp.emitter5)
+				
+				local objectName = "slugHole"
+				local object = getObjectByNameRef(objectName)
+				getObjectOnFloor(object)
+				set(object,"usable",true)
+				for i = 1, 5 do
+					objectName = "slugDebris"..i
+					object = getObjectByNameRef(objectName)
+					getObjectOnFloor(object)
+				end;
+
+				fadeIn(0,{0.4,0.4,0.4},{1.0,1.0,1.0},{0.3,0.3,0.3})
+				setCutsceneMode(false)
+			</Effect>
+		</Event>
+
+		<!-- end of obsolete events -->
+	</Region>
+	
+	<Region name="elCnlLowerCaves">
+		<Event trigger= "party_complete" once = "true">
+			<Condition>
+				return (tutorial_tmp.assemble == "crash");
+			</Condition>
+			<Effect>
+				fadeOut(0)
+				insertTrigger("party_down")
+			</Effect>
+		</Event>
+		<Event trigger="party_down" once="true">
+			<Effect>
+				groupObjectsArc(getPlayers(),"construction:locFallDownArc","construction:locFallDown",nil,45);
+				fadeIn(1000, {0.0,0.0,0.0},{1.0,1.0,1.0},{0.0,0.0,0.0})
+				setCutsceneMode(true)
+				addCameraPosition(0,"construction:locFallDown" , -90,70, 20);
+				
+				tutorial_tmp.tolec_d = createObject("tolec", "labCon:entry_lab");
+				setRefName(tutorial_tmp.tolec_d, "Tolec");
+				
+				tutorial_tmp.derred_d = createObject("derred", "labCon:entry_lab");
+				setRefName(tutorial_tmp.derred_d, "Derred");
+				
+				initDialog()
+				addSpeaker(tutorial_tmp.tolec_d,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred_d,"Derred",true);
+				local priest = getSpeaker("priopt")
+				local warrior = getSpeaker("waropt")
+				local leader = getSpeaker("PL")
+				
+				speak("PL",_("Damn this place!"),"injured1")
+				if(solo())then
+					speak("PL",_("If it goes to pieces completely I will be trapped down here because of what they've done to me."),"injured1")
+					speak("Derred",_("Are you all right down there? ##solo"),"warcry")
+				else
+					speak("PL",_("If it goes to pieces completely we will be trapped down here because of what they've done to us."),"injured1")
+					if(leader==priest)then
+						speak("priopt",_("No matter."), "aloof")
+					end
+						speak("priopt", _("If there is a way out of here, we'll find it."),"aloof")
+						if(warrior ~=priest)then
+							speak("waropt", _("Yeah, even if we have to use our teeth."),"grin")
+						end;
+						setSpeakerEmotion("priopt","normal")
+						setSpeakerEmotion("priopt","normal")
+						speak("Derred",_("Are you all right down there?"),"warcry")
+				end
+				setSpeakerEmotion("Derred","normal")
+				if(solo())then
+					speak("waropt",_("Like hell I am! How do I get out of here?"),"warcry")
+				else
+					speak("waropt",_("Like hell we are! How do we get out of here?"),"warcry")
+				end;
+				setSpeakerEmotion("waropt","normal")
+				speak("Tolec",_("The path is blocked from our side and we can't get to you."),"warcry")
+				speak("Tolec",_("You'll have to find another way out."),"warcry")
+				speak("Derred",_("There should be workers down there."),"warcry")
+				speak("Derred",_("Maybe they can help. We will wait here."),"warcry")
+				setSpeakerEmotion("Derred","normal")
+				speak("magopt",_("Damn them! Not exactly what I would call 'customer service'."),"angry")
+				speak("archer",_("They better have some serious coin for all this trouble."),"angry")
+				changeTopic("breakDownComplete")
+			</Effect>
+		</Event>
+		<Event trigger="breakDownComplete">
+			<Effect>
+				setCutsceneMode(false)
+				tutorial.phase="escapeCaves"
+				tutorial.phasenr = 4;
+				deleteObject(tutorial_tmp.tolec_d)
+				deleteObject(tutorial_tmp.derred_d)
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return (tutorial.phase == "escapeCaves" and (unitIsInArea(trigger.player,"construction:areaFirstContact")) and (tutorial.metSlaves ~= true))
+			</Condition>	
+			<Effect>
+				setCutsceneMode(true)
+				addCameraPosition(0,get(trigger.player,"position") , -90,70, 20);
+				
+				fadeOut(1000)
+				startTimer("firstContact",1200)
+			</Effect>
+		</Event>
+		<Event trigger="firstContact" once="true">
+			<Effect>
+				fadeIn(1000, {0.0,0.0,0.0},{1.0,1.0,1.0},{0.0,0.0,0.0})
+				addCameraPosition(0,"construction:locOverseerStart" , -90,70, 20);
+				
+				moveObject(tutorial_tmp.overseer,"construction:locOverseerStart")
+				
+				groupObjectsArc(getPlayers(),"construction:locParty","construction:locOverseerStart",nil,45);
+				moveObject(getPartyleader(),"construction:locPartyLeader")
+				
+				initDialog()
+				addSpeaker(tutorial_tmp.overseer,"overseer")
+				addSpeaker(tutorial_tmp.slave5,"slave")
+				
+				speak("overseer",_("Move it you lazy maggots! This place is not building itself."),"angry")
+				changeTopic("cameraRotation")
+			</Effect>
+		</Event>
+		<Event trigger="cameraRotation" once="true">
+			<Effect>
+				addCameraPosition(2000,"construction:locOverseerStart" , 90,60, 20);
+				lookAtEachOther(getPartyleader(),tutorial_tmp.overseer)
+				
+				speak("overseer",_("Finally you guards return..."),"happy")
+				speak("overseer",_("Wait, who are you?"),"surprised")
+				if(solo())then
+					speak("PL",_("I'm someone who is stuck down here, that's who."),"normal")
+				else
+					speak("PL",_("We are people who are stuck down here, that's who."),"normal")
+				end;
+				speak("PL",_("Do you know how to get out of here?"),"normal")
+				speak("overseer",_("Sorry, no. The stairway collapsed earlier."),"sad")
+				speak("arcopt",_("There's only one way down here?!"),"unhappy")
+				speak("arcopt",_("Have you not thought about what could happen with your pet monsters up there?"),"unhappy")
+				speak("overseer",_("This is not for me to decide."),"offended")
+				speak("overseer",_("It is through the Council's will and Akeran's wisdom."),"happy")
+				speak("priopt",_("And if you die here?"),"thoughtful")
+				speak("overseer",_("If that's how it is decided, we will work here until our time comes."),"happy")
+				speak("overseer",_("We all think alike here."),"happy")
+				speak("slave",_("..."),"injured2",2000)
+				speak("PL",_("Be that as it may, but is there another way to get out of here?"),"unhappy")
+				if(not solo())then
+					speak("arcopt",_("Preferably today."),"aloof")
+				end
+				speak("overseer",_("Well, there might be."),"normal")
+				speak("overseer",_("You see that crane over there?"),"normal")
+				changeTopic("showCrane")
+			</Effect>
+		</Event>
+		<Event trigger="showCrane">
+			<Effect>
+				--TODO camera
+				speak("overseer",_("It was damaged by falling rocks earlier."),"normal")
+				speak("overseer",_("You could use it to get to the sewer tunnels that connect the different levels of this most magnificent construction."),"normal")
+				speak("PL",_("I suppose as you suggested this plan, you have a way of repairing it?"),"aloof")
+				speak("overseer",_("Of course I have a plan."),"amused")
+				speak("overseer",_("I sent one of my workers to get a cog earlier."),"amused")
+				speak("overseer",_("If he hasn't been eaten by the slugs out there, he should be back any minute now."),"amused")
+				speak("overseer",_("Why don't you get an energy crystal in the meantime?"),"amused")
+				speak("overseer",_("Without it the whole crane is useless."),"amused")
+				speak("any",_("And where would one get an energy crystal in these forsaken caves?"),aloof)
+				speak("overseer",_("These halls are not forsaken!"),"offended")
+				speak("overseer",_("They are filled with the unfathomable wisdom of Akeran and will soon be one of the greatest works in his name."),"offended")
+				speak("arcopt",_("Of course. So, where?"),unhappy)
+				speak("overseer",_("Akeran protects, Akeran guides."),"happy")
+				speak("overseer",_("Look for a connection to a laboratory on the upper level."),"happy")
+				speak("overseer",_("You can go there and... borrow one, if you're lucky."),"happy")
+				speak("overseer",_("Just ask the master of the laboratory and he will surely give you one, if you're found worthy of Akeran's blessing."),"happy")
+				speak("magopt",_("This man is beginning to test my patience."),unhappy)
+				if(not solo())then
+					local mage = getSpeaker("magopt")
+					local other = getSpeaker("arcopt")
+					--makes sure the mage talks to another person
+					if(mage == other)then
+						other = getSpeaker("waropt")
+						if(mage == other)then
+							other = getSpeaker("priopt")
+						end
+					end
+					addSpeaker(other,"other")
+					speak("other",_("Let's just get the crystal. I'm sure we will get Akeran's blessing."),grin)
+					speak("magopt",_(""),grin,1000)
+				end
+				changeTopic("firstContactEnd")
+			</Effect>
+		</Event>
+		<Event trigger="firstContactEnd">
+			<Effect>
+				tutorial.metSlaves = true
+				setCutsceneMode(false)
+				tutorial_tmp.assemble = "talkedToOverseer"
+				addUnitCommand(tutorial_tmp.overseer,"walk","construction:locOverseer")
+			</Effect>
+		</Event>
+		<!-- Scene 2 - the party meets the workers
+		 
+		camera movement over the overseer and his three sla... underlings, who are working, two guards and three slaves are lying dead on the ground
+		-->
+		<Event trigger="command_complete">
+			<Condition>
+				return(trigger.unit== tutorial_tmp.overseer and tutorial_tmp.assemble == "talkedToOverseer")
+			</Condition>
+			<Effect>
+				set(tutorial_tmp.overseer,"angle",180)
+			</Effect>
+		</Event>
+		<!-- enter the lab connection -->
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return((tutorial_tmp.enteredConnection ~= true) and (unitIsInArea(trigger.player,"labCon:areaSewerLabConnection")))
+			</Condition>
+			<Effect>
+				print("entered sewer connection")
+				--createFloatingText("entered the first event",get(trigger.player,"position"))
+				unitSpeak(trigger.player,_("This looks like it could be a way up."))
+				tutorial_tmp.enteredConnection = true
+				if(solo())then
+					tutorial_tmp.secondConnection = true
+				end
+				tutorial_tmp.connectionTalker = trigger.player
+				tutorial_tmp.labTalk = true
+			</Effect>
+		</Event>
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return ((tutorial_tmp.enteredConnection == true) and (tutorial_tmp.secondConnection ~= true) and (trigger.player ~= tutorial_tmp.connectionTalker) and (unitIsInArea(trigger.player,"labCon:areaSewerLabConnection")))
+			</Condition>
+			<Effect>
+				unitSpeak(trigger.player,_("Let's just try it out."))
+				tutorial_tmp.secondConnection = true
+			</Effect>
+		</Event>
+		
+		<Event trigger="cogLeanClicked" once="true">
+			<Effect>
+				tutorial.cog=true;
+				deleteObject(getObjectByNameRef("repairCog"));
+			</Effect>
+		</Event>
+	</Region>
+	<!-- Lab -->
+	<Region name="elCnlLobby">
+		<!-- Party enters the lab -->
+		<Event trigger="enter_region" once="true">
+			<Condition>
+				--TODO: replace with a safer check by area
+				return tutorial_tmp.labTalk==true
+			</Condition>
+			<Effect>
+				fadeOut(0)
+				fadeIn(2000, {0.4,0.4,0.4},{1,1,1},{0.3,0.3,0.3})
+				setCutsceneMode(true)
+				addCameraPosition(0,"entry_lab" , -90,70, 20);
+				assembleParty("elCnlLobby","entry_lab")
+				tutorial_tmp.assemble="lab"
+			</Effect>
+		</Event>
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return tutorial_tmp.assemble=="lab"
+			</Condition>
+			<Effect>
+				initDialog()
+
+				speak("magopt",_("So, this really is the lab, and that should be the crystal"),"thoughtful")
+				--TODO camera movement
+				speak("magopt",_("but there is no oh-so-blessed master here."),"thoughtful")
+				speak("arcopt",_("Then he can't have any objections, can he?"),"grin")
+				if(solo())then
+					speak("magopt",_("I'd better be careful, though."),"thoughtful")
+					speak("magopt",_("This doesn't look like I can simply take it."),"thoughtful")
+					speak("magopt",_("I guess I would first have to stop whatever is using the crystal right now."),"thoughtful")
+				else
+					local leader = getSpeaker("PL")
+					local archer = getSpeaker("arcopt")
+					
+					if(leader ~=archer)then
+						speak("PL",_("I guess not."),"grin")
+					end;
+					speak("PL",_("Let's just take it."),"grin")
+					speak("magopt",_("Better be careful, though."),"thoughtful")
+					speak("magopt",_("This doesn't look like you can simply take it."),"thoughtful")
+					speak("magopt",_("I guess we would first have to stop whatever is using the crystal right now."),"thoughtful")
+				end;
+				changeTopic("endLabTalk")
+				
+			</Effect>
+		</Event>
+		<Event trigger="endLabTalk">
+			<Effect>
+				setCutsceneMode(false)
+			</Effect>
+		</Event>
+		<!-- The Party gets the energy source-->		
+		<Event trigger="energySourceUsed">
+			<Effect>
+				local esrc = getObjectByNameRef("energySource")
+				local stat = experimentStatus();
+				
+				if(stat==3)then
+					--print("the source was aquired")
+					tutorial.energy = true
+					deleteObject(esrc) --TODO: doesn't work at all
+				else
+					print("wrong combination")
+					if(stat==0)then
+						--print("you were frozen")
+						unitSpeak(trigger.user,_("Yikes, it's freezing!"),"unhappy")
+					elseif(stat==1)then
+						unitSpeak(trigger.user,_("That felt like standing on a single mountaintop during a thunderstorm... and the energy source still won't come of."),"unhappy")
+						--print("you were electrocuted")
+					elseif(stat==2)then
+						unitSpeak(trigger.user,_("Ouch, I burnt my hands!"),"unhappy")
+						--print("you were burnt")
+					else
+						--print("nothing really happens")
+						unitSpeak(trigger.user,_("Hm... it's stuck. I think I may have to temper around with this setup a bit more."),"thoughtful")
+					end;
+					timedExecute('scriptobjectvar['..esrc..']["lockdown"] = nil',500);
+				end;
+			</Effect>
+		</Event>
+	</Region>
+	<!-- party repairs the crane -->
+	<Region name="elCnlLowerCaves">
+		<Event trigger="mechanismClicked" once="true">
+			<Condition>
+			-- tutorial.craneRepair(1=energy, 2=cog, 3 = all done)
+			--TODO repair the mechanism
+				--if(energy==true and 1 > tutorial.craneRepair)then
+				--	setObjectAnimation(trigger.used_object,"addEnergy", 0)
+				--	tutorial.craneRepair=1
+				--elseif(tutorial.cog==true and 2 > tutorial.craneRepair) then
+				--	setObjectAnimation(trigger.used_object,"addCog", 0)
+				--	tutorial.craneRepair=2
+				--elseif(tutorial.craneRepair==2)then
+					-- everything in place
+				--	setObjectAnimation(trigger.used_object,"rotateCogs", 8000)
+				--	return true;
+				--end		
+				--return false;
+				if((tutorial.energy==true) and (tutorial.cog==true))then
+					setObjectAnimation(trigger.used_object,"rotateCogs", 8000)
+					return (true)
+				else
+					unitSpeak(trigger.user,_("I have to find an energy source and a cog before that thing will work again."),"thoughtful")
+					return false
+				end;
+			</Condition>
+			<Effect>
+				setCutsceneMode(true);
+				addCameraPosition(0,get(trigger.user,"position") , -90,70, 20);
+				tutorial.craneFunctional=true;
+				local crane = getObjectByNameRef("crane")
+				startTimer("rotateCrane",1600)
+				addTriggerVariable("crane",crane)
+				
+				initDialog()
+				addSpeaker(trigger.user,"User")
+				speak("User",_("Finally. Now, lets get out of here."),"normal")
+				executeInDialog("lookAtObject("..trigger.user..","..crane..")")
+				speak("User",_("And all it takes to get out of here is a walk through the sewers."),"unhappy")
+				executeInDialog("fadeOut(2000)")
+				speak("User",_("Again."),"unhappy")
+				changeTopic("useCrane")
+			</Effect>
+		</Event>
+		
+		<Event trigger="mechanismClicked">
+			<Condition>
+				return tutorial.craneRepair==3
+			</Condition>
+			<Effect>
+				teleportPlayer(trigger.user,"elCnlLobby","locBackroute3")
+			</Effect>
+		</Event>
+		
+		<Event trigger="rotateCrane" once="true">
+			<Effect>
+				rotate(trigger.crane,90,1,50)
+			</Effect>
+		</Event>
+		<!-- teleport Party in front of the library-->
+		<Event trigger="useCrane" once="true">
+			<Effect>
+				assembleParty("elCnlLobby","locBackroute3");
+				setCutsceneMode(false);
+				fadeIn(0, {0,0,0},{1,1,1},{0,0,0});
+				tutorial.assemble="backToTD"
+				tutorial.craneRepair=3
+			</Effect>
+		</Event>
+	</Region>
+	<!-- party is back upstairs-->
+	<Region name="elCnlLobby">
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return tutorial.assemble=="backToTD"
+			</Condition>
+			<Effect>
+				
+				setCutsceneMode(true);
+				fadeOut(0)
+				moveObject(tutorial_tmp.tolec,"locBackroute2")
+				moveObject(tutorial_tmp.derred,"locDerredAfterCave")
+				
+				addCameraPosition(0,"locBackroute2" , -90,70, 20);
+				lookAtEachOther(tutorial_tmp.derred,tutorial_tmp.tolec)
+				
+				fadeIn(2000,{0.4,0.4,0.4},{1,1,1},{0.3,0.3,0.3})
+				
+				initDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true)
+				addSpeaker(tutorial_tmp.derred,"Derred",true)
+				
+				speak("Derred",_("And then she says..."),"amused")
+				executeInDialog("lookAt(tutorial_tmp.tolec,'locBackroute3')")
+				speak("Tolec",_("Akerans Flaming Eyes, look over there!"),"surprised")
+				changeTopic("reemergence")
+			</Effect>
+		</Event>
+		<!--
+		<Event trigger="explain_skills" once="true">
+			<Effect>
+				createDialogue();
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				addStandardRoles();
+				
+				speak("leader",_("That should have been the last one."),"amused");
+				speak("Derred",_("What a massacre."),"disgust");
+				speak("Tolec",_("Really, somehow lacking in style."),"thoughtful");
+				speak("warrior",_("Are you looking for trouble?!"),"threaten");
+				speak("Tolec",_("In fact, have you thought of using your powerful skills?"),"aloof");
+				speak("Tolec",_("The Lord Master thought that you could do considerably more than dully beat your enemies."));
+				speak("magopt",_("Really?"),"surprised");
+				
+				tutorial_tmp.skill_continue = true;
+				
+				setTopicBase("Derred");
+				addQuestion(_("Explain skills?"));
+				addAnswer(_("Yes"),"explain_skills");
+				addAnswer(_("No"),"explain_skills_no");
+			</Effect>	
+		</Event>
+		-->
+		<Event trigger="reemergence">
+			<Effect>
+				playersLookAt("locBackroute2")
+				lookAt(tutorial_tmp.derred,"locBackroute3")
+				addCameraPosition(1000,"locBackroute3" , -90,70, 20);
+				addUnitCommand(tutorial_tmp.derred,"walk","locDerredSkills")
+				addUnitCommand(tutorial_tmp.tolec,"walk","locTolecSkills")
+				
+				if(solo())then
+					speak("PL",_("I am NOT doing that again."),"unhappy");
+					speak("archer",_("At least not until I got paid. Seriously paid."), "unhappy")
+					speak("Tolec",_("You made it!"),"happy")
+				else
+					speak("arcopt",_("We are NOT doing that again."),"unhappy");
+					speak("archer",_("At least not until we got paid. Seriously paid."), "unhappy")
+					speak("Tolec",_("They made it!"),"happy")
+				end
+				speak("waropt",_("No thanks to you guys."),"angry")
+				speak("priopt",_("Did you even know just how many escaped slugs you have in the basement?"),"unhappy")
+				speak("Tolec",_("It's not like they could kill you."),"grin")
+				speak("magopt",_("It still hurts being hurt, you know?"),"unhappy")
+				speak("Tolec",_("While we are on the topic..."),"normal");
+				if(solo())then
+					speak("Tolec",_("In fact, have you thought of using your powerful skills?##solo"), "normal")
+					speak("Derred",_("The Lord Master thought that you could do considerably more than dully beat your enemies.##solo"),"thoughtful")
+				else
+					speak("Tolec",_("In fact, have you thought of using your powerful skills?"), "normal")
+					speak("Derred",_("The Lord Master thought that you could do considerably more than dully beat your enemies."),"thoughtful")
+				end
+				speak("PL",_("Really?"))
+				
+				tutorial.phase = "findSecretDoor"
+				tutorial_tmp.skill_continue = true
+				
+				setTopicBase("Derred");
+				addQuestion(_("Explain skills?"),"all");
+				addAnswer(_("Yes"),"explain_skills");
+				addAnswer(_("No"),"explain_skills_no");
+				tutorial.assemble=""
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Derred">
+		<Topic name="explain_skills" start_option="Explain skills">
+			<Condition>
+				return (tutorial.phase == "killlouses" or (tutorial.phase == "findSecretDoor" and tutorial.craneRepair==3))
+			</Condition>
+			<Effect>
+				speak("Derred",_("With the 't'-key you open the skill window. Here you can choose a skill."));
+				speak("Derred",_("Just click with the same mouse button you would like to use the skill with on the skill icon."));
+				speak("Derred",_("Skills are distinguished into two groups."));
+				speak("Derred",_("After you have used a skill, you cannot use a skill of that group for a while."));
+				speak("Derred",_("Look at the picture in the status bar to know if a skill is ready for use."));
+				
+				if (tutorial_tmp.skill_continue) then
+					tutorial_tmp.skill_continue = nil;
+					changeTopic("explain_skills_no");
+				end;
+			</Effect>
+		</Topic>
+		
+		<Topic name="explain_skills_no">
+				<Effect>
+					if (tutorial_tmp.skill_continue) then
+						if (solo()) then
+							speak("arcopt",_("Don't worry, I'm almost feeling fit again."),"sneer");
+						else
+							speak("arcopt",_("Don't worry, we're almost feeling fit again."),"sneer");
+						end
+					end;
+					
+					speak("Tolec",_("Very well. The secret door is here."),"happy");
+					speak("Derred",_("Wait a second. What if the old geezer has attached a trap to it?"),"thoughtful");
+					if (solo() and femaleOnly()) then
+						speak("Tolec",_("You're right. It's best if you do it, Branded One. At least nothing lasting can happen that way.##female"),"surprised") ;
+					elseif(solo() and maleOnly())then
+						speak("Tolec",_("You're right. It's best if you do it, Branded One. At least nothing lasting can happen that way.##male"),"surprised") ;
+					else
+						speak("Tolec",_("You're right. It's best if you do it, Branded Ones. At least nothing lasting can happen that way."),"thoughtful");
+					end;
+					if(femaleOnly())then
+						speak("arcopt",_("'course. Send the Branded One first.##female"),"unhappy");
+					else
+						speak("arcopt",_("'course. Send the Branded One first.##male"),"unhappy");
+					end;
+					local door = getObjectByNameRef("doorSecretLibrary");
+					scriptobjectvar[door]["locked"] = false;
+					executeInDialog("setCutsceneMode(false)");
+			   </Effect>
+		</Topic>
+	
+		<Topic name="secret_door"  start_option="Open secret door">
+			<Condition>
+				return (tutorial.craneRepair==3 and tutorial_tmp.phase == "findSecretDoor" and tutorial.finished~=true);
+			</Condition>
+			<Effect>
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				speak("Derred",_("Do you see the shelf in that passage? That is the door. Just move it by clicking on it."),"normal");
+				speak("Derred",_("You'd better hope there's no trap."),"grin");
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<NPC refname="Tolec">
+		<Topic name="secret_door" start_option="Open secret door">
+			<Condition>
+				return (tutorial.craneRepair==3);
+			</Condition>
+			<Effect>
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				speak("Tolec",_("Do you see the shelf in that passage? That is the door. Just move it by clicking on it."),"normal");
+				speak("Derred",_("I hope nothing explodes."),"thoughtful");
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="object_use" once="true">
+			<Condition>
+				return (tutorial.phase == "findSecretDoor" and trigger.used_object == getObjectByNameRef("doorSecretLibrary") and tutorial_tmp.mutslugs_dead == true)
+			</Condition>	
+			<Effect>
+				addUnitCommand(tutorial_tmp.derred,"walk","locBackroute4",1);
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute4",1);
+				addUnitCommand(tutorial_tmp.derred,"walk","locBackroute5",1);
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute5",1);
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return (tutorial.phase == "findSecretDoor" and (unitIsInArea(trigger.player,"seeLouseArea")))
+			</Condition>	
+			<Effect>
+				assembleParty("elCnlLobby","locPartyLib");
+				tutorial_tmp.assemble = "louses";
+			</Effect>
+		</Event>
+		
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return (tutorial_tmp.assemble == "louses");
+			</Condition>
+			<Effect>
+				tutorial_tmp.assemble = nil;
+				moveObject(tutorial_tmp.tolec,"locBackroute5");
+				moveObject(tutorial_tmp.derred, "locBackroute5");
+				groupObjectsArc(getPlayers(),"locPartyLib","locBackroute5",nil,45);
+				groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locBackroute5","locPartyLib",nil,30);
+				
+				createDialogue();
+				addAllPlayersToDialog();
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				addStandardRoles();
+				
+				speak("Tolec",_("Good, Firewhirl is not here."), "happy");
+				speak("Derred",_("What is he researching here all the time? All those flowers can hardly be for the purpose of the Council and Akeran."),"thoughtful");
+				speak("magopt",_("I'm sure there's more to it than meets the eye. An apple elemental for example."),"sneer");
+				speak("Derred",_("I wouldn't put it past him."),"amused");
+				speak("Tolec",_("Joking aside! We must go on."));
+				
+				if (solo()) then
+					speak("leader",_("With all the damn beasts roaming around here freely, I almost think they just want me as an exterminator."),"unhappy");
+				else
+					speak("leader",_("With all the damn beasts roaming around here freely, I almost think they just want us as exterminators."),"unhappy");
+				end;
+				
+				executeInDialog("insertTrigger('tolec_open_libdoor')");
+			</Effect>	
+		</Event>
+		
+		<Event trigger="tolec_open_libdoor" once="true">
+			<Effect>
+				local door = getObjectByNameRef("doorLibrary");
+				addCameraPosition(0,"locBackroute5" , -90,70, 20);
+				setCutsceneMode(true);
+				addUnitCommand(tutorial_tmp.tolec,"walk",door,1);
+				
+				tutorial_tmp.tolec_libdoor = true;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="command_complete" once="true">
+			<Condition>
+				return (trigger.unit ==  tutorial_tmp.tolec
+				and tutorial_tmp.tolec_libdoor == true);
+			</Condition>	
+			<Effect>
+				local door = getObjectByNameRef("doorLibrary");
+				door_toggle(door);
+				timedExecute('addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute6",1);',1000);
+				startTimer("behemoth_attack_4",2000);
+			</Effect>	
+		</Event>
+		
+		<Event trigger="behemoth_attack_4" once="true">
+			<Effect>
+				addCameraPosition(1000,"locDoorGuardNorth" , 45,45, 25);
+				local door = getObjectByNameRef("doorBehemothNorth");
+				--moveObject(tutorial_tmp.behemoth,"locBehemothRaid");
+				addUnitCommand(tutorial_tmp.behemoth,"attack",door);
+				tutorial_tmp.behemoth_door_attack = true;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="command_complete" once="true">
+			<Condition>
+				return (trigger.unit == tutorial_tmp.behemoth 
+				and tutorial_tmp.behemoth_door_attack == true);
+			</Condition>	
+			<Effect>
+				tutorial_tmp.behemoth_door_attack = false;
+				local door = getObjectByNameRef("doorBehemothNorth");
+				deleteObject(door);
+				addUnitCommand(tutorial_tmp.bguard1,"walk","locLouses");
+				unitSpeak(tutorial_tmp.bguard1,_("Help!"),"fear");
+				
+				addUnitCommand(tutorial_tmp.behemoth,"fire_ball",tutorial_tmp.bguard1);
+			</Effect>	
+		</Event>
+		
+		<Event trigger="unit_dead" once="true">
+			<Condition>
+				return (trigger.unit== tutorial_tmp.bguard1)
+			</Condition>
+			<Effect>
+				local pos = get(tutorial_tmp.behemoth,"position");
+				tutorial_tmp.lousepos = { pos[1],pos[2]-6 };
+				tutorial_tmp.louse={};
+				tutorial_tmp.louse_count =0;
+				insertTrigger("slaves_flee");
+			</Effect>	
+		</Event>
+		
+		<Event trigger="slaves_flee"  once="true">
+			<Effect>
+				timedExecute('addCameraPosition(500,"locSlave6" , 0,45, 25)',1000);
+				addUnitCommand(tutorial_tmp.slave1,"walk","locWay3");
+				addUnitCommand(tutorial_tmp.slave2,"walk","locWay3");
+				addUnitCommand(tutorial_tmp.slave3,"walk","locWay3");
+				unitSpeak(tutorial_tmp.slave3,_("Help!"),"fear",2000);
+				tutorial_tmp.delslaves = true;
+				
+				timedExecute('addCameraPosition(500,"locDoorGuardNorth" , 45,45, 25);',4000);
+				startTimer("create_louse",5000);
+			</Effect>	
+		</Event>
+		
+		<Event trigger="unit_moved" >
+			<Condition>
+				return (get(trigger.unit,"subtype") == "slave_miner" and tutorial_tmp.delslaves==true and unitIsInArea(trigger.unit,"fleeingSlaves"))
+			</Condition>	
+			<Effect>
+				deleteObject(trigger.unit);
+			</Effect>
+		</Event>
+		
+		<Event trigger="create_louse">
+			<Effect>
+				if (tutorial_tmp.louse_count ~= 4) then
+					tutorial_tmp.louse_count = tutorial_tmp.louse_count +1;
+					tutorial_tmp.louse[tutorial_tmp.louse_count] = createObject("fireLouse",tutorial_tmp.lousepos,270);
+					addUnitCommand(tutorial_tmp.louse[tutorial_tmp.louse_count], "walk","locLouses",2);
+					startTimer("create_louse",2500+math.random(1500));
+				else
+					tutorial_tmp.louses = 0;
+					timedExecute('addCameraPosition(1000,"locBackroute5" , -90,70, 20)',1000);
+					startTimer("tolec_retreat",2000);
+				end;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="tolec_retreat"  once="true">
+			<Effect>
+				unitSpeak(tutorial_tmp.tolec,_("Oops"));
+				addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute5");
+				tutorial_tmp.tolec_retreat = true;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="command_complete" once="true">
+			<Condition>
+				return (trigger.unit == tutorial_tmp.tolec 
+				and tutorial_tmp.tolec_retreat == true);
+			</Condition>	
+			<Effect>
+				tutorial_tmp.tolec_retreat = nil;
+				local door = getObjectByNameRef("doorLibrary");
+				lookAtObject(tutorial_tmp.tolec,door);
+				door_toggle(door);
+				startTimer("louse_dialog",2000);
+			</Effect>	
+		</Event>
+		
+		<Event trigger="louse_dialog" once="true">
+			<Effect>
+				setCutsceneMode(false);
+				groupObjectsArc(getPlayers(),"locPartyLib","locBackroute5",nil,45);
+				groupObjectsArc({tutorial_tmp.tolec,tutorial_tmp.derred} ,"locBackroute5","locPartyLib",nil,30);
+				
+				createDialogue();
+				addAllPlayersToDialog();
+				addStandardRoles();
+				
+				addSpeaker(tutorial_tmp.tolec,"Tolec",true);
+				addSpeaker(tutorial_tmp.derred,"Derred",true);
+				
+				speak("Derred",_("What a day. Did you know that thing could spit little monsters?"),"unhappy");
+				speak("Tolec",_("The Lord Master didn't say anything about that..."),"thoughtful");
+				speak("magopt",_("Something unwritten in the book of the omniscient airpaw?"),"sneer");
+				speak("Tolec",_("Windclaw, heretic!"),"threaten");
+				if (solo()) then
+					speak("Derred",_("A Cursed One has to be happy if he has something to kill all along, right?"),"disgust");
+					speak("any",_("I'm a Branded One! That is far worse than being cursed."),"threaten");
+					speak("Tolec",_("The mighty Akeran truly punished you dearly."),"thoughtful");
+					speak("PL",_("Spare me your elementalist drivel and get out of my way!"),"angry");
+					speak("warrior",_("I truly am the exterminator here."),"bored");
+				else
+					speak("Derred",_("Cursed Ones have to be happy if they have something to kill all along, right?"),"disgust");
+					speak("any",_("We're Branded Ones! That is far worse than being cursed."),"threaten");
+					speak("Tolec",_("The mighty Akeran truly punished them dearly."),"thoughtful");
+					speak("PL",_("Spare us your elementalist drivel and get out of our way!"),"angry");
+					speak("warrior",_("We truly are the exterminators here."),"bored");
+				end;
+				
+				tutorial.phase = "killlouses";
+				tutorial.phasenr = 4;
+			</Effect>	
+		</Event>
+	
+		<Event trigger="unit_dead">
+			<Condition>
+				return (tutorial.phase == "killlouses" and get(trigger.unit,"subtype") == "fireLouse")
+			</Condition>
+			<Effect>
+				tutorial_tmp.louses = tutorial_tmp.louses +1;
+				if (tutorial_tmp.louses == tutorial_tmp.louse_count) then
+					local door = getObjectByNameRef("doorLibrary");
+					door_setopen(door,true);
+					
+					addUnitCommand(tutorial_tmp.derred,"walk","locBackroute6",4);
+					addUnitCommand(tutorial_tmp.tolec,"walk","locBackroute6",4);
+					tutorial_tmp.door = getObjectByNameRef("doorScene1");
+					addUnitCommand(tutorial_tmp.derred,"walk","locDerredScene1",1);
+					addUnitCommand(tutorial_tmp.tolec,"walk","locTolecScene1",1);
+					
+					tutorial.finished = true;
+					tutorial.phase="finished";
+					
+					fortify_dwall_tmp.derred = tutorial_tmp.derred;
+					fortify_dwall_tmp.tolec = tutorial_tmp.tolec;
+					
+					local players = getPlayers();
+					local i,player;
+					for i,player in ipairs(players) do
+						setPlayerPrivateVar(player,"tutorial_complete",true);
+					end;
+				end;
+			</Effect>
+		</Event>
+		
+		
+	</Region>
+	
+	<Region name="elCnlLobby">
+		<Event trigger="create_region" once="true">
+			<Effect>
+				local slug = createObject("mutantSlug","locLabRat");
+				set(slug,"health",0.7*get(slug,"health"));
+			</Effect>	
+		</Event>
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return (unitIsInArea(trigger.player,"stupidLabSpeech") and tutorial.lab_comment ~= true);
+			</Condition>
+			<Effect>
+				local players = getObjectsInArea({"circle",get(trigger.player,"position"),15},"player");
+				tutorial.lab_comment = true;
+				
+				createDialogue();
+				addPlayersToDialog(players);
+				addStandardRoles( listToSet(players));
+				
+				local leader = getSpeaker("leader");
+				local archer = getSpeaker("archer");
+				local mage = getSpeaker("mage");
+				
+				speak("leader",_("Wow! They really believe in orderly and thorough research."),"sneer");
+				speak("leader", _("How many slugs do you have to cut to believe they are slimy?"),"sneer");
+				if (solo() ~= true) then
+					speak("archer",_("Take a look around. That stuff has to be worth a fortune!"),"excited");
+				else
+					speak("archer",_("That stuff must be worth a fortune!"),"excited");
+				end;
+				if (archer ~= nil) then
+					speak("warrior",_("This junk?"),"bored");
+				end;
+				if (leader ~= mage) then
+					speak("mage",_("Philistine."),"unhappy");
+				end;
+			</Effect>	
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return (unitIsInArea(trigger.player,"theSlugsEscaped") and tutorial.lab_comment2 ~= true);
+			</Condition>
+			<Effect>
+				tutorial.lab_comment2 = true;
+				unitSpeak(trigger.player,_("If they hadn't all those needless balustrades into the void, they wouldn't have to mop escaped sluglings from the floor."),"sneer");
+			</Effect>	
+		</Event>
+		
+		<Event trigger="unit_hit">
+			<Condition>
+				return (trigger.defender == tutorial_tmp.behemoth);
+			</Condition>
+			<Effect>
+				clearUnitCommands(tutorial_tmp.behemoth);
+				addUnitCommand(tutorial_tmp.behemoth, "tutorial_fire_ball",trigger.attacker);
+				if (get(tutorial_tmp.behemoth,"max_health")*0.5 > get(tutorial_tmp.behemoth,"health")) then
+					clearUnitCommands(tutorial_tmp.behemoth);
+					addUnitCommand(tutorial_tmp.behemoth, "tutorial_fire_wall",trigger.attacker);
+				end;
+			</Effect>	
+		</Event>
+	</Region>
+</Quest>

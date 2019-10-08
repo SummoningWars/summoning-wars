@@ -1,0 +1,5 @@
+﻿<!-- Kohorte Aisener Soldaten, rein grafisch -->
+<ScriptObject type="SCRIPTOBJECT" subtype="graf_troop" layer="NOCOLLISION">
+	<RenderInfo name="graf_troop"/>
+	<Geometry shape="circle" radius="0.3"/>
+</ScriptObject>

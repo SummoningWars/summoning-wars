@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="dummy_r" layer="NORMAL">
+	<Mesh file="dummy_r.mesh" />
+	<Geometry shape="CIRCLE" radius="0.5154940776"/>
+</Object>

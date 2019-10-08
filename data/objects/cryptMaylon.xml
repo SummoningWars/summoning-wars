@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cryptMaylon" layer="NORMAL">
+        <Mesh file="cryptMaylon.mesh" />
+        <Geometry shape="CIRCLE" radius="2.854436069"/>
+</Object>

@@ -1,0 +1,650 @@
+<?xml version="1.0" ?>
+<!-- Dorfwachen, Aisen -->
+<Monster type="NPC" subtype="guard" name="Guard" fraction="human" race="human" layer="NORMAL">
+	<Mesh file="guard_ais" />
+	<EmotionSet name="tolec_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="20"
+					max_health="500"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="30"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="1000"
+					step_length="1.2"
+					attack_range="2"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+	
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- General Greif -->
+<Monster type="NPC" subtype="general_greif" name="General Greif" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="general" />
+	<EmotionSet name="general_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="83"
+					max_health="1070"
+					armor="230"
+					block="60"
+					attack="120"
+					strength="120"
+					dexterity="55"
+					magic_power="15"
+					willpower="60"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+<!-- General Greif, bewaffnet -->
+<Monster type="NPC" subtype="general_greif_battle" name="General Greif" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="generalReady" />
+	<EmotionSet name="general_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="83"
+					max_health="2670"
+					armor="230"
+					block="60"
+					attack="120"
+					strength="150"
+					dexterity="55"
+					magic_power="15"
+					willpower="200"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		<Ability type="monster_bash" rating="2"/>
+		<Ability type="monster_whirl" rating="0" all_target_rating="0.8"/>
+		<Ability type="resurrection_fire_storm"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="15"  />
+</Monster>
+
+<!-- Prinz Karlen -->
+<Monster type="NPC" subtype="prince" name="Prince Karlen" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="prince" />
+	<EmotionSet name="general_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="83"
+					max_health="1070"
+					armor="230"
+					block="60"
+					attack="120"
+					strength="120"
+					dexterity="55"
+					magic_power="15"
+					willpower="60"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Leonard von Robenforst -->
+<Monster type="NPC" subtype="mentor" name="Leonard von Robenforst" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="mentor" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="83"
+					max_health="1070"
+					armor="230"
+					block="60"
+					attack="120"
+					strength="120"
+					dexterity="55"
+					magic_power="15"
+					willpower="60"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- wounded scout for the scout quest-->
+<Monster type="NPC" subtype="questScout" name="Scout" fraction="neutral_to_all" race="default" layer="NORMAL">
+	<Mesh file="guard_ais" />
+	<EmotionSet name="tolec_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="20"
+					max_health="500"
+					armor="60"
+					block="0"
+					attack="40"
+					strength="50"
+					dexterity="35"
+					magic_power="15"
+					willpower="20"
+					resistances_physical="30"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="1000"
+					step_length="1.2"
+					attack_range="2"
+					>
+		
+	<Ability type="noaction"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Aisener Heiler, Zwergentrutz -->
+<Monster type="NPC" subtype="aisen_healer" name="Healer" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="aisen_healer" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="16"
+					max_health="1000"
+					armor="80"
+					block="0"
+					attack="50"
+					strength="32"
+					dexterity="38"
+					magic_power="59"
+					willpower="63"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="4500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="heal" rating="2"/>
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Haendler, Zwergentrutz -->
+<Monster type="NPC" subtype="aisen_trader" name="Trader" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="peasant_m" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="16"
+					max_health="500"
+					armor="80"
+					block="0"
+					attack="50"
+					strength="32"
+					dexterity="38"
+					magic_power="59"
+					willpower="63"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="heal" rating="2"/>
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Haendlerin, Zwergentrutz -->
+<Monster type="NPC" subtype="aisen_traderess" name="Trader" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="peasant_f" />
+	<EmotionSet name="gertlinde_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="16"
+					max_health="500"
+					armor="80"
+					block="0"
+					attack="50"
+					strength="32"
+					dexterity="38"
+					magic_power="59"
+					willpower="63"
+					resistances_physical="30"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2000"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="heal" rating="2"/>
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+
+<!-- Belagerung Zwergentrutz -->
+
+<!-- Bogenschuetze, Zwergentrutz, Verteidigung-->
+<Monster type="NPC" subtype="bowman_siegeDefense" name="Bowman" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="bowman_siege" />
+	<BasicAttributes
+					experience="45"
+					level="10"
+					max_health="300"
+					armor="60"
+					block="60"
+					attack="140"
+					power="80"
+					strength="20"
+					dexterity="40"
+					magic_power="5"
+					willpower="20"
+					resistances_physical="0"
+					resistances_air="20"
+					resistances_ice="20"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="1000"
+					step_length="1.5"
+					attack_range="0.8"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="10" ai_chase_range="20"/>
+</Monster>
+
+<!-- AisenerMagier, Zwergentrutz, Verteidigung -->
+<Monster type="NPC" subtype="aisen_mageDefense" name="Avaeras Order, Firemage" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="aisen_mage" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="19"
+					max_health="240"
+					armor="60"
+					block="0"
+					attack="50"
+					strength="32"
+					dexterity="38"
+					magic_power="30"
+					willpower="43"
+					resistances_physical="10"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="1800"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		
+		<Ability type="avaera_firebolt" rating="2"/>
+		<Ability type="avaera_fireball" rating="1.2" all_target_rating="0.5" all_target_rating_radius="1.5"/> 
+		<Ability type="avaera_firecolumn" rating="0" all_target_rating="1.5" all_target_rating_radius="2"/> 
+		
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+
+<!-- AisenerMagier, Zwergentrutz -->
+<Monster type="NPC" subtype="aisen_mage" name="Avaeras Order, Firemage" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="aisen_mage" />
+	<EmotionSet name="human_standard" />
+	<BasicAttributes
+					experience="0"
+					level="19"
+					max_health="240"
+					armor="60"
+					block="0"
+					attack="50"
+					strength="32"
+					dexterity="38"
+					magic_power="45"
+					willpower="43"
+					resistances_physical="10"
+					resistances_air="17"
+					resistances_ice="23"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="1800"
+					step_length="1.2"
+					attack_range="0.5"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		
+		<Ability type="avaera_firebolt" rating="2"/>
+		<Ability type="avaera_fireball" rating="1.2" all_target_rating="0.5" all_target_rating_radius="1.5"/> 
+		<Ability type="avaera_firecolumn" rating="0" all_target_rating="1.5" all_target_rating_radius="2"/> 
+		<Ability type="die"/>
+		
+		<Ability type="magic_attack" rating="1"/>
+		
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Pikeniere, Zwergentrutz-->
+<Monster type="NPC" subtype="guard_siege" name="Guard" fraction="human" race="human" layer="NORMAL">
+	<Mesh file="guard_ais" />
+	<EmotionSet name="tolec_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="20"
+					max_health="600"
+					armor="90"
+					block="0"
+					attack="40"
+					strength="60"
+					dexterity="40"
+					magic_power="15"
+					willpower="25"
+					resistances_physical="30"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="1000"
+					step_length="1.2"
+					attack_range="2"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+	
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Bogenschuetze, Zwergentrutz-->
+<Monster type="NPC" subtype="bowman_siege" name="Bowman" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="bowman_siege" />
+	<BasicAttributes
+					experience="45"
+					level="16"
+					max_health="300"
+					armor="60"
+					block="60"
+					attack="140"
+					power="80"
+					strength="20"
+					dexterity="45"
+					magic_power="5"
+					willpower="20"
+					resistances_physical="0"
+					resistances_air="20"
+					resistances_ice="20"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="2500"
+					attack_speed="1000"
+					step_length="1.5"
+					attack_range="0.8"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="10" ai_chase_range="20"/>
+</Monster>
+
+<!-- Generalswache, Zwergentrutz-->
+<Monster type="NPC" subtype="elite_siege" name="Elite Swordsman" fraction="human" race="human" layer="NORMAL">
+	<RenderInfo name="elite_swordsman" />
+	<EmotionSet name="tolec_emotion" />
+	<BasicAttributes
+					experience="0"
+					level="24"
+					max_health="1250"
+					armor="130"
+					block="50"
+					attack="120"
+					strength="130"
+					dexterity="45"
+					magic_power="25"
+					willpower="40"
+					resistances_physical="45"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3500"
+					attack_speed="2200"
+					step_length="1.2"
+					attack_range="1.0"
+					>
+		
+		<Ability type="noaction"/>
+		<Ability type="walk"/>
+		<Ability type="die"/>
+		
+		<Ability type="attack" rating="1"/>
+		<Ability type="legion_bash" rating="1" all_target_rating="0.2"/>
+		<Ability type="legion_whirl" rating="0" all_target_rating="0.5"/>
+	
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>

@@ -1,0 +1,45 @@
+<RenderInfo name="example">
+	<!-- erste Entity wird automatisch mainmesh genannt, alle weiteren muessen Namen haben -->
+	<Entity source="warrior_m.mesh"/>
+	
+	<!-- zulaessig fuer bone:
+		 "" - eigenstaendiges Objekt
+		 "bonename" - wird an das mainmesh angehaengt
+		 "objectname:bonename" - wird an das angegebene Objekt angehaengt -->
+	<!-- zulaessig fuer source:
+		 "meshname.mesh" - bei Entity
+		 "ParticleSystemName" - bei ParticleSystem
+		 "RenderInfoName" - bei Subobject -->
+	<!-- optional: position und rotation (relativ), scale -->
+	<Entity  objectname="sword" bone="itemRightHand" source="short_sw.mesh"/>
+	<Subobject objectname="shield" bone="mainmesh:itemLeftHand" source="example_shield" />
+	<ParticleSystem objectname="halo" source="shield" position="0.0 50.0 0.0" rotation="90.0 0.0 0.0" scale = "0.5"/>
+	
+	
+	<Action name="actioname">
+		<!-- default fuer start: 0.0, default fuer end: 1.0 -->
+		<Animation name="walk" />
+		<Movement start="0.0" end="0.5" start_vec="0.0 0.0 0.0" end_vec="1.0 0.0 0.0" />
+		<Rotation start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		<Scale  start="0.5" end="1.0" start_val="2.0" end_val="1.0" />
+		<Detach time="0.4" objectname="shield" />
+		<Visibility objectname="shield" time="0.2" visible="false"/>
+		<!-- alle Bestandteile koennen auch dynamisch eingefuegt werden -->
+		<Subobject time="0.9" objectname="shield" bone="mainmesh:itemLeftHand" source="example_shield" />
+	</Action>
+	
+	<State name="statusname" >
+		<Activation time="200">
+		</Activation>
+		
+		<Active time="1000">
+		</Active>
+		
+		<Deactivation time="200">
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="example_shield">
+	<Entity source="buckler_sh.mesh"/>
+</RenderInfo>	

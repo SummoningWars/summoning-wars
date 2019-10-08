@@ -1,0 +1,359 @@
+Hit
+{
+    material        flareAlpha
+    particle_width  0.2
+    particle_height 0.2
+	cull_each       false
+    quota           5000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Point
+{
+        angle           360
+        emission_rate   600
+        time_to_live    0.3
+        direction       0 1 0
+        velocity_min    1.0
+        velocity_max    1.0
+        colour_range_start  1 0 0 
+        colour_range_end    1 0 0 
+        width           2.0
+        height          2.0
+        depth           0.6
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 -4 0
+        force_application add
+}
+
+}
+
+SpecialAttackLineWhite
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 350
+        time_to_live 1.0
+        direction 1 1 1
+        velocity_min 0.02
+        velocity_max 0.04
+        colour_range_start 0.3 0.3 0.3
+		colour_range_end 0.3 0.3 0.3
+}
+}
+
+SpecialAttackLineSweepStrike
+{
+    material Flare
+    particle_width 0.6
+    particle_height 0.6
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 350
+        time_to_live 1.0
+        direction 1 1 1
+        velocity_min 0.02
+        velocity_max 0.04
+        colour_range_start 0.1 0.1 0.1
+        colour_range_end 0.1 0.1 0.1
+}
+}
+
+Warcry
+{
+    material Flare
+    particle_width 0.6
+    particle_height 0.2
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 350
+        time_to_live 1.0
+        direction 1 1 1
+        velocity_min 0.02
+        velocity_max 0.04
+        colour_range_start 0.1 0.1 0
+		colour_range_end 0.1 0 0
+}
+}
+
+Heal
+{
+    material Flare
+    particle_width 0.6
+    particle_height 0.2
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 350
+        time_to_live 1.0
+        direction 1 1 1
+        velocity_min 0.02
+        velocity_max 0.04
+        colour_range_start 0 0.1 0
+		colour_range_end 0.1 0.1 0
+}
+}
+
+FireSword
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 15
+        emission_rate 275
+        time_to_live 0.4
+        direction 0 0 1
+        velocity_min 5.0
+        velocity_max 6.0
+        colour_range_start 0.3 0 0
+        colour_range_end 0.3 0.1 0
+}
+
+    affector LinearForce
+{
+        force_vector      0 0 2
+        force_application add
+}
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+}
+
+BurningBlade
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 300
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 15
+        emission_rate 275
+        time_to_live 0.075
+        direction 0 0 1
+        velocity_min 5.0
+        velocity_max 8.0
+        colour_range_start 0.3 0 0
+        colour_range_end 0.3 0.1 0
+}
+
+    affector LinearForce
+{
+        force_vector      0 0.6 2
+        force_application add
+}
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+}
+
+FrostBlade
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 300
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 15
+        emission_rate 275
+        time_to_live 0.075
+        direction 0 0 1
+        velocity_min 5.0
+        velocity_max 8.0
+        colour_range_start  0.6 0.6 1
+        colour_range_end    0.2 0.2 0.6
+}
+
+    affector LinearForce
+{
+        force_vector      0 0.6 2
+        force_application add
+}
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+}
+
+BurningBladeShort
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 15
+        emission_rate 275
+        time_to_live 0.075
+        direction 0 0 1
+        velocity_min 3.0
+        velocity_max 4.0
+        colour_range_start 0.3 0 0
+        colour_range_end 0.3 0.1 0
+}
+
+    affector LinearForce
+{
+        force_vector      0 0.6 2
+        force_application add
+}
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+}
+
+BurningAxe
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 10000
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 25
+        emission_rate 150
+        time_to_live 0.08
+        direction 1 0 0
+        velocity_min 1.5
+        velocity_max 3.0
+        colour_range_start 0.6 0 0
+        colour_range_end 0.6 0.3 0
+}
+}
+
+BurningAxeRing
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+	cull_each       false
+    quota           10000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Cylinder
+{
+        angle           30
+        emission_rate   1200
+        time_to_live    0.06
+        direction       0 1 0
+        velocity    	0.6
+        colour_range_start  0.9 0 0
+        colour_range_end    0.6 0.3 0
+        width           0.8
+        height          0.7
+        depth           0.3
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+
+}
+
+//the blindness imbued into a projectile
+BlindShot
+{
+    material        flareAlpha
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+	cull_each       false
+    quota          2000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Box
+{
+        angle           360
+        emission_rate   300
+		position		0 0.0 0.0
+        time_to_live    0.05
+        direction       0 1 0
+        velocity    	0.6
+        colour_range_start  0 0 0
+		colour_range_end  0 0 0 0.2
+		width           0.1
+        height          0.1
+        depth           0.1
+}
+}

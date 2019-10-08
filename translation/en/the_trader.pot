@@ -1,0 +1,431 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: theTrader.xml
+msgid "The Trader"
+msgstr ""
+
+#: theTrader.xml
+msgid "Quest finished"
+msgstr ""
+
+#: theTrader.xml
+msgid "A strange trader offered me to sell Empty Scrolls."
+msgstr ""
+
+#: theTrader.xml
+msgid "elCnlLobby"
+msgstr ""
+
+#: theTrader.xml
+msgid "medMercCamp"
+msgstr ""
+
+#: theTrader.xml
+msgid "A moment, dear madam."
+msgstr ""
+
+#: theTrader.xml
+msgid "A moment, dear sir."
+msgstr ""
+
+#: theTrader.xml
+msgid "A moment, dear ladies."
+msgstr ""
+
+#: theTrader.xml
+msgid "A moment, dear sirs."
+msgstr ""
+
+#: theTrader.xml
+msgid "A moment, ladies and gentlemen."
+msgstr ""
+
+#: theTrader.xml
+msgid "What is it now?"
+msgstr ""
+
+#: theTrader.xml
+msgid "It seems, you are stuck in Harad's black claws."
+msgstr ""
+
+#: theTrader.xml
+msgid "What are you trying to say?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Well, I want to say I'd like to lend you my services."
+msgstr ""
+
+#: theTrader.xml
+msgid "You are a trader?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Indeed."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Unfortunatly I bet on the wrong branch and now I'm stuck with a large "
+"contingent of Empty Scrolls."
+msgstr ""
+
+#: theTrader.xml
+msgid "What do we want with empty scrolls?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Didn't you hear the capital letters?"
+msgstr ""
+
+#: theTrader.xml
+msgid "What kind of scrolls are they?"
+msgstr ""
+
+#: theTrader.xml
+msgid "I see you are a man of reason!"
+msgstr ""
+
+#: theTrader.xml
+msgid "I see you are a woman of reason!"
+msgstr ""
+
+#: theTrader.xml
+msgid "Much to my regret, an Empty Scroll is only capable of one thing:"
+msgstr ""
+
+#: theTrader.xml
+msgid "To establish a way through Harad's black abyss."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"To make it worse only to spots of great magical concentration like that "
+"big road shrine over there."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Furthermore, a scroll's power is depleted quickly and limited only to one "
+"person."
+msgstr ""
+
+#: theTrader.xml
+msgid "Explain the waypoint system?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Yes"
+msgstr ""
+
+#: theTrader.xml
+msgid "No"
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"When you get close to a waypoint, your aura will summon the familiar spirits "
+"to ignite the shrine's warning flames."
+msgstr ""
+
+#: theTrader.xml
+msgid "Fear not, they will not harm you in any way, honest."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"You can be sure that you are able to use the road shrine if you "
+"see the flames."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"If you click on a road shrine, your body will be transported through Harad's "
+"domain."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"In your mind's eye you will see a map with all the waypoints you have "
+"already visited."
+msgstr ""
+
+#: theTrader.xml
+msgid "These are shown as small yellow points."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"If you have an open portal in the world, that will be shown too, with a red "
+"dot."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Click on one of these symbols, and your body will rematerialize at your "
+"destination, as fast as the wind."
+msgstr ""
+
+#: theTrader.xml
+msgid "Hmm. You seem to know a great deal about this, for a trader."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"You pick these things up in your travels, except for business acumen, "
+"apparently."
+msgstr ""
+
+#: theTrader.xml
+msgid "Clearly you are in the wrong line of work."
+msgstr ""
+
+#: theTrader.xml
+msgid "Be wary, it is not as safe around Medair as it used to be."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Even travelling the roads may prove to be dangerous. Particularly if you are "
+"heading north."
+msgstr ""
+
+#: theTrader.xml
+msgid "Goblins and other beasts have stolen quite a lot recently."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"You may find it convenient to make a short detour to a well-stocked trader."
+msgstr ""
+
+#: theTrader.xml
+msgid "Meaning yourself?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Actually not, regrettably."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"As reported, I invested badly in the Empty Scrolls and have no available "
+"capital."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"I'm afraid I have insufficient gold to buy assorted wares from treasure "
+"hunters and scavengers."
+msgstr ""
+
+#: theTrader.xml
+msgid "But I can supply you with scrolls for a long time. That's a promise."
+msgstr ""
+
+#: theTrader.xml
+msgid "One reason being; customers are rare in these parts."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Surely they can be found anywhere, especially in a place like this."
+msgstr ""
+
+#: theTrader.xml
+msgid "With all due respect, nobody wanting to buy scrolls from poor traders."
+msgstr ""
+
+#: theTrader.xml
+msgid "Regardless, not many Branded Ones would have listened to me as you have."
+msgstr ""
+
+#: theTrader.xml
+msgid "Allow me to give you an Empty Scroll as a gift."
+msgstr ""
+
+#: theTrader.xml
+msgid "Grace me with your presence again soon, if you please."
+msgstr ""
+
+#: theTrader.xml
+msgid "Wait! Does this thing have to be called Empty Scroll?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Why not town portal or something like that?"
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Well, they were sold to me as Empty Scrolls, but what you call them is "
+"entirely up to you."
+msgstr ""
+
+#: theTrader.xml
+msgid "Why not \"way to the town\" or something like that?"
+msgstr ""
+
+#: theTrader.xml
+msgid "What kind of name is that supposed to be!?"
+msgstr ""
+
+#: theTrader.xml
+msgid "How about: \"town portal\"?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Now, now, honorable customers!"
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"They were sold to me as Empty Scrolls, but what you call them is entirely up "
+"to you!"
+msgstr ""
+
+#: theTrader.xml
+msgid "And how do we use them?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Like a common potion."
+msgstr ""
+
+#: theTrader.xml
+msgid "Explain the belt?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Well, you know about your inventory, right?"
+msgstr ""
+
+#: theTrader.xml
+msgid "I thought so."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"At the bottom you have the small items tab, click on it to access the three "
+"rows of your small items inventory."
+msgstr ""
+
+#: theTrader.xml
+msgid "The top row represents your belt."
+msgstr ""
+
+#: theTrader.xml
+msgid "If you place a potion there, it appears in the belt row."
+msgstr ""
+
+#: theTrader.xml
+msgid "I'm sure you noticed, right?"
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Long years on the battlefield have honed my ability to change potions for "
+"similar potions immediately once I have used one."
+msgstr ""
+
+#: theTrader.xml
+msgid "A useful skill."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+" A common skill. Any sell-sword that wants to avoid a quick and meaningless "
+"death knows of it."
+msgstr ""
+
+#: theTrader.xml
+msgid "Well, whatever."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"If you want to use a potion you can do so by clicking on it with the right "
+"mouse button in the inventory or the belt."
+msgstr ""
+
+#: theTrader.xml
+msgid "Alternatively you can select the number of the belt slot it is in."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"That is, 1 for the potion on the left, 2 for the second from the left and so "
+"on."
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"This works for all usable items alike, so naturally for the scrolls, too."
+msgstr ""
+
+#: theTrader.xml
+msgid "Oh! It's that simple?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Oddball."
+msgstr ""
+
+#: theTrader.xml
+msgid "joringsbridge"
+msgstr ""
+
+#: theTrader.xml
+msgid "What are you doing here?"
+msgstr ""
+
+#: theTrader.xml
+msgid ""
+"Well, I noticed you were headed north, and I thought it would be convenient "
+"for you to know I'm nearby."
+msgstr ""
+
+#: theTrader.xml
+msgid "Well, you are right, I guess."
+msgstr ""
+
+#: theTrader.xml
+msgid "greyCurseCaveFis"
+msgstr ""
+
+#: theTrader.xml
+msgid "dwarfenwall"
+msgstr ""
+
+#: theTrader.xml
+msgid "I see you have reached dwarfenwall safely."
+msgstr ""
+
+#: theTrader.xml
+msgid "How nice to see you have escaped from the caves."
+msgstr ""
+
+#: theTrader.xml
+msgid "No thanks to you. May I continue to offer you my services?"
+msgstr ""
+
+#: theTrader.xml
+msgid "Surely. Now that I finally have a sound anchor again."
+msgstr ""
+

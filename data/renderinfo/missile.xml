@@ -1,0 +1,395 @@
+
+
+<RenderInfo name="arrowbase">
+	<Soundobject objectname="sound" />
+	
+	<Action name="explode">
+		<Detach objectname="arrow" />
+		<ParticleSystem objectname="explosion" source="Explosion" position="0 1.6 0" />
+	</Action>
+	
+	<Action name="fly">
+		<Sound objectname="sound" name="arrow"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="arrow" parent="arrowbase"  >
+		<Entity objectname="arrow" source="arrow.mesh" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="fire_arrow"  parent="arrowbase" >
+	<Entity objectname="arrow"  source="arrow.mesh" position="0 1.6 0" />
+	<ParticleSystem objectname="particle" source="Firebolt" position="0 1.6 0" />
+	
+	<Action name="explode">
+		<Detach objectname="arrow" />
+		<Detach objectname="particle" />
+		<ParticleSystem objectname="explosion" source="Fire_Explosion" position="0 1.6 0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="ice_arrow"  parent="arrowbase" >
+	<Entity objectname="arrow" source="arrow.mesh" position="0 1.6 0" />
+	<ParticleSystem objectname="particle" source="Ice_Arrow" position="0.65 1.6 0" />
+	<ParticleSystem objectname="trail" source="IceArrowTrail" position="0.65 1.6 0" />
+	<Action name="explode">
+		<Detach objectname="arrow" />
+		<Detach objectname="particle" />
+		<Detach objectname="trail" />
+		<ParticleSystem objectname="explosion" source="Ice_Explosion" position="0 1.6 0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="wind_arrow" parent="arrowbase">
+	<Entity objectname="arrow" source="arrow.mesh" position="0 1.6 0" />
+	<ParticleSystem objectname="particle"  source="Wind_Arrow" position="0.65 1.6 0" />
+	<ParticleSystem objectname="trail" source="WindArrowTrail" position="0.65 1.6 0" />
+	
+	<Action name="explode">
+		<Detach objectname="arrow" />
+		<Detach objectname="particle" />
+		<Detach objectname="trail" />
+		<ParticleSystem objectname="explosion" source="Wind_Explosion" position="0 1.6 0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="poison_arrow" parent="arrowbase">
+	<Entity objectname="arrow" source="arrow.mesh" position="0 1.6 0" />
+	<ParticleSystem objectname="particle" source="Ice_Arrow" position="0 1.6 0" />
+	
+	<Action name="explode">
+		<Detach objectname="arrow" />
+		<ParticleSystem objectname="explosion" source="Explosion" position="0 1.6 0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="blind_arrow" parent="arrowbase">
+	<Entity objectname="arrow" source="arrow.mesh" position="0 1.6 0" />
+	<ParticleSystem objectname="particle" source="BlindShot" position="0.5 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="guided_arrow" parent="arrowbase">
+	<Entity objectname="arrow" source="arrow.mesh" position="0 1.6 0" />
+	<ParticleSystem objectname="particle" source="Guided_Arrow" position="0 1.6 0" />
+</RenderInfo>
+
+  <!-- -->
+
+<RenderInfo name="magic_arrow">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Magic_Arrow" position="0 1.6 0"/>
+</RenderInfo>
+<RenderInfo name="magic_arrow_fire">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Magic_Arrow_Fire" position="0 1.6 0"/>
+</RenderInfo>
+<RenderInfo name="magic_arrow_air">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Magic_Arrow_Lightning" position="0 1.6 0"/>
+</RenderInfo>
+<RenderInfo name="magic_arrow_ice">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Magic_Arrow_Ice" position="0 1.6 0"/>
+</RenderInfo>
+
+<RenderInfo name="magic_arrow_shadow">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Magic_Arrow_Shadow" position="0 1.6 0"/>
+</RenderInfo>
+
+<RenderInfo name="fire_bolt">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Firebolt" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="fire_ball">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Fireball" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="fire_wall">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="column" source="Firewall" position="0 1.2 0" />
+	
+	<Action name="shrink">
+		<Scale objectname="ring" start_val="4.0" end_val="0.1" />
+		<Detach objectname="ring" time="1.0" />
+	</Action>
+	
+</RenderInfo>
+
+<RenderInfo name="fire_wave">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Firewave" position="0 1.2 0" />
+	
+	<Action name="grow">
+		<Scale objectname="particle" start_val="0.5" end_val="7.0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="fire_storm">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Firewave" position="0 1.2 0" />
+	
+	<Action name="grow">
+		<Scale objectname="particle" start_val="0.5" end_val="10.0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="frost_wave">
+	<ParticleSystem objectname="particle" source="Frostwave" position="0 1.2 0" />
+	
+	<Action name="grow">
+		<Scale objectname="particle" start_val="0.5" end_val="7.0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="ice_bolt">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Icebolt" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="ice_ring">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Icering" position="0 1.6 0" />
+	
+	<Action name="grow">
+		<Scale objectname="particle" start_val="0.5" end_val="4.0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="blizzard">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Blizzard" position="-1 3.5 0" />
+</RenderInfo>
+
+<RenderInfo name="freeze">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Freeze" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="lightning">
+	<Soundobject objecname="sound"/>
+	<ParticleSystem objectname="particle" source="Lightning" position="0 3 0" />
+	
+	<Action name="stationary">
+		<Sound objectname="sound" name="lightning"/>
+	</Action>
+	<Action name="fly">
+		<Sound objectname="sound" name="lightning"/>
+	</Action>
+	<Action name="explode">
+		<Sound objectname="sound" name="lightning"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="thunderstorm">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Thunderstorm" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="tempest">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Thunderstorm" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="chain_lightning">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Chainlightning" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="static_shield">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Static_shield" position="0 1.6 0" />
+</RenderInfo>
+
+
+
+
+
+
+
+
+
+<RenderInfo name="explosion">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Explosion" position="0 1.3 0" />
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.2" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="fire_explosion">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Fire_Explosion" position="0 1.6 0" />
+	
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.2" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="ice_explosion">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Ice_Explosion" position="0 1.6 0" />
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.2" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="wind_explosion">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Wind_Explosion" position="0 1.6 0" />
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.2" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="explosion_3">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Explosion" position="0 1.3 0" />
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.8" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="fire_explosion_3">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Fire_Explosion" position="0 1.6 0" />
+	
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.8" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="ice_explosion_3">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Ice_Explosion" position="0 1.6 0" />
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.8" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="wind_explosion_3">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Wind_Explosion" position="0 1.6 0" />
+	<Action name="stable">
+		<Scale objectname="particle" start_val="0.1" end_val="1.8" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="elem_explosion">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="ElemExplosion" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="light_beam">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Lightbeam" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="divine_beam">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Divine_Beam" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="acid">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Acid" position="0 1.6 0" />
+</RenderInfo>
+
+<RenderInfo name="hypnosis">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Hypnosis" position="0 1.6 0" />
+</RenderInfo>
+
+
+<RenderInfo name="behemoth_fire_wave">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Firewave" position="0 1.2 0" />
+	
+	<Action name="grow">
+		<Scale objectname="particle" start_val="0.5" end_val="12.0" />
+	</Action>
+	
+</RenderInfo>
+
+<RenderInfo name="freezingDeath">
+	<Soundobject objectname="sound" />
+	<ParticleSystem objectname="particle" source="Icering" position="0 1.2 0" />
+	
+	<Action name="grow">
+		<Scale objectname="particle" start_val="0.5" end_val="12.0" />
+	</Action>
+	
+</RenderInfo>
+
+<RenderInfo name="throwing_dagger">
+	<Subobject objectname="dagger" source="throwing_dagger_sub" position="0 1.6 0" rotation="0 90 0"/>
+	<Soundobject objectname="sound" />
+	
+	<Action name="fly">
+		<Sound objectname="sound" name="throw_knife"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="throwing_dagger_sub">
+	<Soundobject objectname="sound" />
+	<Entity objectname="dagger" source="dagger_sw.mesh" position="0 0 0" />
+	<Action name="fly">
+		<Rotation objectname="dagger" start="0.0" end="1.0" start_vec="0.0 00.0 90.0" end_vec="3600.0 00.0 90.0" />
+	</Action>
+</RenderInfo>	
+
+<RenderInfo name="throwing_berry">
+	<Entity objectname="berry" source="berry.mesh" position="0 1.0 0" />
+	<Soundobject objectname="sound" />
+	
+	<Action name="fly">
+		<Rotation objectname="berry" start="0.0" end="1.0" start_vec="0.0 00.0 00.0" end_vec="0.0 00.0 3600.0" />
+		<Sound objectname="sound" name="throw_blunt"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="throwing_rock">
+	<Entity objectname="rock" source="stone_void.mesh" position="0 1.0 0" />
+	<Soundobject objectname="sound" />
+	
+	<Action name="fly">
+		<Rotation objectname="rock" start="0.0" end="1.0" start_vec="0.0 00.0 00.0" end_vec="0.0 00.0 3600.0" />
+		<Sound objectname="sound" name="throw_blunt"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="catapult_rock">
+	<Entity objectname="stone" source="boulder.mesh" position="0 0 0" rotation="0 -90 0"/>
+	
+	<Action name="stable">
+		<Animation objectname="stone" name="impact"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="smoke_wave">
+	<Entity objectname="stone" source="boulder.mesh" position="0 0 0"/>
+	
+	<Action name="stable">
+		<ParticleSystem objectname="impactCloud" source="Smoke_Explosion"/>
+		<Scale objectname="impactCloud" start="0" end="0.6" start_val="0.5" end_val="2.0"/>
+		<Scale objectname="impactCloud" start="0.6" end="1" start_val="1.5" end_val="0.5" />
+		<!--<Detach objectname="impactCloud" time="1.0"/>-->
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="catapult_skeleton">
+	<Entity source="skeleton.mesh" position="0 0 0" rotation="0 -90 0"/>
+	<ParticleSystem objectname="flames" source="Firesphere" bone="pelvis"/>
+	
+	<Action name="stable">
+		<Animation name="impact"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="black_cloud">
+	<ParticleSystem objectname="cloud" source="Black_Smoke" position="0 2 0"/>
+</RenderInfo>
+
+

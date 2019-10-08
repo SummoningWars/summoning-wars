@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cogStone" layer="NORMAL">
+        <Mesh file="cogStone.mesh" />
+        <Geometry shape="CIRCLE" radius="1.289480475"/>
+</Object>

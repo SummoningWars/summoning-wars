@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cogOld" layer="NORMAL">
+        <Mesh file="cogOld.mesh" />
+        <Geometry shape="CIRCLE" radius="1.289480475"/>
+</Object>

@@ -1,0 +1,100 @@
+<Ability type="summon_skelBow"
+		 name="Summon Skeleton"
+		 description="Creates a skeleton."
+		 time="2000.000000"
+		 timer_nr="2.000000"
+		 timer_value="7000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("bow_skel",goal);
+			set(obj,"fraction",frac);
+			addUnitCommand(obj,"guard",self,15,"secondary");
+		</LuaImplementation>
+	</Effect>
+</Ability>
+<Ability type="summon_skelSword"
+		 name="Summon Skeleton"
+		 description="Creates a skeleton."
+		 time="2000.000000"
+		 timer_nr="2.000000"
+		 timer_value="7000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("sword_skel",goal);
+			set(obj,"fraction",frac);
+			addUnitCommand(obj,"guard",self,15,"secondary");
+		</LuaImplementation>
+	</Effect>
+</Ability>
+<Ability type="summon_skelAxe"
+		 name="Summon Skeleton"
+		 description="Creates a skeleton."
+		 time="2000.000000"
+		 timer_nr="2.000000"
+		 timer_value="7000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("axe_skel",goal);
+			set(obj,"fraction",frac);
+			addUnitCommand(obj,"guard",self,15,"secondary");
+		</LuaImplementation>
+	</Effect>
+</Ability>
+<Ability type="summon_skelAxe2"
+		 name="Summon Skeleton"
+		 description="Creates a skeleton."
+		 time="2000.000000"
+		 timer_nr="2.000000"
+		 timer_value="7000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("axe2_skel",goal);
+			set(obj,"fraction",frac);
+			addUnitCommand(obj,"guard",self,15,"secondary");
+		</LuaImplementation>
+	</Effect>
+</Ability>
+
+<Ability type="maylon_sommon_skel"
+		 name="Summon Skeleton"
+		 description="Creates a skeleton."
+		 time="2000.000000"
+		 timer_nr="2.000000"
+		 timer_value="40000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<LuaImplementation>
+			local frac = get(self,"fraction");
+			local obj = createObject("skel_maylon",goal);
+			set(obj,"fraction",frac);
+			addUnitCommand(obj,"guard",self,15,"secondary");
+			obj = createObject("skel_maylon",goal);
+			set(obj,"fraction",frac);
+			addUnitCommand(obj,"guard",self,15,"secondary");
+		</LuaImplementation>
+	</Effect>
+</Ability>
+

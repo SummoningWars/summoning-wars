@@ -1,0 +1,146 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2010-08-31 17:29+0200\n"
+"Last-Translator: kalimgard <kalimgard@users.sourceforge.net>\n"
+"Language-Team: german <de@sumwars>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: testquest.xml
+msgid "testquest"
+msgstr "Testquest"
+
+#: testquest.xml
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: testquest.xml
+msgid "Test"
+msgstr "Test"
+
+#: testquest.xml
+msgid "This is a Test"
+msgstr "Das ist ein Test"
+
+#: testquest.xml
+msgid "surprised"
+msgstr "surprised"
+
+#: testquest.xml
+msgid "thoughtful"
+msgstr "thoughtful"
+
+#: testquest.xml
+msgid "happy"
+msgstr "happy"
+
+#: testquest.xml
+msgid "amused"
+msgstr "amused"
+
+#: testquest.xml
+msgid "excited"
+msgstr "excited"
+
+#: testquest.xml
+msgid "in love"
+msgstr "in love"
+
+#: testquest.xml
+msgid "bored"
+msgstr "bored"
+
+#: testquest.xml
+msgid "unhappy"
+msgstr "unhappy"
+
+#: testquest.xml
+msgid "sad"
+msgstr "sad"
+
+#: testquest.xml
+msgid "pain"
+msgstr "pain"
+
+#: testquest.xml
+msgid "sneer"
+msgstr "sneer"
+
+#: testquest.xml
+msgid "grin"
+msgstr "grin"
+
+#: testquest.xml
+msgid "offended"
+msgstr "offended"
+
+#: testquest.xml
+msgid "threatening"
+msgstr "threatening"
+
+#: testquest.xml
+msgid "angry"
+msgstr "angry"
+
+#: testquest.xml
+msgid "shouting a warcry"
+msgstr "shouting a warcry"
+
+#: testquest.xml
+msgid "exhausted"
+msgstr "exausted"
+
+#: testquest.xml
+msgid "injured"
+msgstr "injured"
+
+#: testquest.xml
+msgid "deadly injured"
+msgstr "deadly injured"
+
+#: testquest.xml
+msgid "afraid"
+msgstr "afraid"
+
+#: testquest.xml
+msgid "in panic"
+msgstr "in panic"
+
+#: testquest.xml
+msgid "putting up a distance"
+msgstr "putting up a distance"
+
+#: testquest.xml
+msgid "being disgusted"
+msgstr "being disgusted"
+
+#: testquest.xml
+msgid "and yet another Test"
+msgstr "und noch ein Test"
+
+#: testquest.xml
+msgid "again a test"
+msgstr "wieder ein Test"
+
+#: testquest.xml
+msgid "I am the first guard"
+msgstr ""
+
+#: testquest.xml
+msgid "I am the second guard"
+msgstr ""
+
+#: testquest.xml
+#, fuzzy
+msgid "I am Fenor Marken"
+msgstr "Fenor Marken"

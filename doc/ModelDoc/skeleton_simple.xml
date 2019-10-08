@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="models.xsl"?>
+
+
+<creature>
+  <name>skeleton_simple</name>
+  <meshname>.mesh</meshname>
+  <mayafilename>undead Army_3.mb</mayafilename>
+
+
+
+  <animations>
+    <clip>
+      <name>idle</name>
+      <startframe>1</startframe>
+      <endframe>19</endframe>
+    </clip>
+    <clip>
+      <name>WalkOneHand</name>
+      <startframe>20</startframe>
+      <endframe>44</endframe>
+    </clip>
+    <clip>
+      <name>raise</name>
+      <startframe>45</startframe>
+      <endframe>70</endframe>
+    </clip>
+    <clip>
+      <name>AttackOneHand_1</name>
+      <startframe>72</startframe>
+      <endframe>88</endframe>
+    </clip>
+    <clip>
+      <name>AttackOneHand_2</name>
+      <startframe>89</startframe>
+      <endframe>109</endframe>
+    </clip>
+    <clip>
+      <name>AttackOneHand_3</name>
+      <startframe>110</startframe>
+      <endframe>129</endframe>
+    </clip>
+    <clip>
+      <name>Die</name>
+      <startframe>130</startframe>
+      <endframe>155</endframe>
+    </clip>
+  </animations>
+
+</creature>

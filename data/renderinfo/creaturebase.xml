@@ -1,0 +1,311 @@
+<RenderInfo name="creaturebase" >
+	<Soundobject objectname="general" />
+	<Soundobject objectname="voice" />
+	
+	<State name="mute">
+		<Activation>
+			<ParticleSystem objectname="mute" source="Mute" position="0 2.4 -0.3"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="mute"/>
+		</Deactivation>
+	</State>
+	
+	<State name="blind">
+		<Activation>
+			<ParticleSystem objectname="blind" source="Blind" bone="crown"/>
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="blind"/>
+		</Deactivation>
+	</State>
+	
+	<State name="berserk">
+		<Activation>
+			<ParticleSystem objectname="berserk" source="Berserk" position="0 2.4 0" />
+		</Activation>
+		
+		<Active time="1000">
+			<Movement objectname="berserk" start="0.0" end="0.3" start_vec="0.0 2.4 0.0" end_vec="0.0 2.5 0.0" />
+			<Movement objectname="berserk" start="0.3" end="0.5" start_vec="0.0 2.5 0.0" end_vec="0.0 2.4 0.0" />
+			<Movement objectname="berserk" start="0.5" end="0.8" start_vec="0.0 2.4 0.0" end_vec="0.0 2.5 0.0" />
+			<Movement objectname="berserk" start="0.8" end="1.0" start_vec="0.0 2.5 0.0" end_vec="0.0 2.4 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="berserk"/>
+		</Deactivation>
+	</State>
+	
+	<State name="confused">
+		<Activation>
+			<ParticleSystem objectname="confuse" source="Confuse" position="0 1.8 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="confuse"/>
+		</Deactivation>
+	</State>
+	
+	<State name="poisoned">
+		<Activation>
+			<ParticleSystem objectname="poisoned" source="Poison" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="poisoned"/>
+		</Deactivation>
+	</State>
+	
+	<State name="burning">
+		<Activation>
+			<ParticleSystem objectname="burning" source="Burning" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="burning"/>
+		</Deactivation>
+	</State>
+	
+	<State name="paralyzed">
+		<Activation>
+			<ParticleSystem objectname="paralyzed" source="Paralyze" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="paralyzed"/>
+		</Deactivation>
+	</State>
+	
+	<State name="frozen">
+		<Activation>
+			<Entity objectname="frozen" source="iceSmall.mesh"  highlightable="false"/>
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="frozen"/>
+		</Deactivation>
+	</State>
+	
+	<State name="bleed">
+		<Activation>
+			<ParticleSystem objectname="bleed" source="Hit" position="0 1.5 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="bleed"/>
+		</Deactivation>
+	</State>
+	
+	<State name="wind_arrows">
+		<Activation>
+			<ParticleSystem objectname="magic" source="HandLightning" bone="itemLeftHand" position="0 0 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="magic"/>
+		</Deactivation>
+	</State>
+	<State name="storm_arrows" reference = "wind_arrows">
+		<Activation>
+			<ParticleSystem objectname="magic" source="HandLightning" bone="itemLeftHand" position="0 0 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="magic"/>
+		</Deactivation>
+	</State>
+	
+	<State name="ice_arrows">
+		<Activation>
+			<ParticleSystem objectname="magic" source="HandIce" bone="itemLeftHand" position="0 0 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="magic"/>
+		</Deactivation>
+	</State>
+	<State name="frost_arrows">
+		<Activation>
+			<ParticleSystem objectname="magic" source="HandIce" bone="itemLeftHand" position="0 0 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="magic"/>
+		</Deactivation>
+	</State>
+	
+	<State name="aimed_shot">
+		<Activation>
+			<ParticleSystem objectname="snipe" source="Snipe" position="0 1.8 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="snipe"/>
+		</Deactivation>
+	</State>
+	<State name="bow_spirit">
+		<Activation>
+			<ParticleSystem objectname="sprites" source="BowBuffSprite" position="0 1.6 0"  />
+		</Activation>
+		<Active time="1000">
+			<Rotation objectname="sprites" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		<Deactivation>
+			<Detach objectname="sprites"/>
+		</Deactivation>
+	</State>
+	<State name="wind_walk">
+		<Activation>
+			<ParticleSystem objectname="windWalk" source="Windwalk" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="windWalk"/>
+		</Deactivation>
+	</State>
+	
+	<State name="blade_storm">
+		<Activation>
+			<ParticleSystem objectname="bladeStormLeft" source="BladeStorm" bone="ellbowLeft" />
+			<ParticleSystem objectname="bladeStormRight" source="BladeStorm" bone="ellbowRight" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="bladeStormLeft" />
+			<Detach objectname="bladeStormRight" />
+		</Deactivation>
+	</State>
+	<State name="keen_mind">
+		<Activation>
+			<ParticleSystem objectname="keenMind" source="KeenMind" bone="crown" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="keenMind" />
+		</Deactivation>
+	</State>
+	<State name="magic_shield">
+		<Activation>
+			<ParticleSystem objectname="buffIce" source="GoblinBuffIce"/>
+			<ParticleSystem objectname="buffFire" source="GoblinBuffFire"/>
+			<ParticleSystem objectname="buffAir" source="GoblinBuffAir"/>
+		</Activation>
+		
+		<Active time="1000">
+			<Rotation objectname="buffIce" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="buffFire" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="buffAir" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="buffFire" />
+			<Detach objectname="buffIce" />
+			<Detach objectname="buffAir" />
+		</Deactivation>
+	</State>
+	<State name="spirit_shield">
+		<Activation>
+			<ParticleSystem objectname="confuseImmune" source="SpiritConfuse" />
+			<ParticleSystem objectname="berserkImmune" source="SpiritBerserk" />
+		</Activation>
+		
+		<Active time="1000">
+			<Rotation objectname="confuseImmune" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="berserkImmune" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="confuseImmune" />
+			<Detach objectname="berserkImmune" />
+		</Deactivation>
+	</State>
+	<State name="blazing_shield">
+		<Activation>
+			<ParticleSystem objectname="blaze" source="BlazingShield" position="0 2.6 0"  />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="blaze"/>
+		</Deactivation>
+	</State>
+	<State name="omniscent_eye">
+		<Activation>
+			<ParticleSystem objectname="muteImmune" source="SpiritMute" />
+			<ParticleSystem objectname="blindImmune" source="SpiritBlind" />
+		</Activation>
+		
+		<Active time="1000">
+			<Rotation objectname="muteImmune" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="blindImmune" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="muteImmune" />
+			<Detach objectname="blindImmune" />
+		</Deactivation>
+	</State>
+	<State name="remedial_water">
+		<Activation>
+			<ParticleSystem objectname="poisonImmune" source="SpiritPoison" />
+			<ParticleSystem objectname="burnImmune" source="SpiritBurn" />
+		</Activation>
+		
+		<Active time="1000">
+			<Rotation objectname="poisonImmune" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="burnImmune" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="poisonImmune" />
+			<Detach objectname="burnImmune" />
+		</Deactivation>
+	</State>
+	
+	<State name="flame_armor">
+		<Activation>
+			<ParticleSystem objectname="flameRing" source="BurningAxeRing" scale="2.5"/>
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="flameRing"/>
+		</Deactivation>
+	</State>
+	
+	<!--<State name="goblin_magic_shield" reference="magic_shield"/>-->
+	<State name="goblin_magic_shield">
+		<Activation>
+			<ParticleSystem objectname="buffIce" source="GoblinBuffIce"/>
+			<ParticleSystem objectname="buffFire" source="GoblinBuffFire"/>
+			<ParticleSystem objectname="buffAir" source="GoblinBuffAir"/>
+		</Activation>
+		
+		<Active time="1000">
+			<Rotation objectname="buffIce" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="buffFire" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+			<Rotation objectname="buffAir" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="buffFire" />
+			<Detach objectname="buffIce" />
+			<Detach objectname="buffAir" />
+		</Deactivation>
+	</State>
+	<State name="shadow_magic_shield">
+		<Activation>
+			<ParticleSystem objectname="buff" source="MonsterBuffShadowFront"/>
+		</Activation>
+		
+		<Active time="1000">
+			<Rotation objectname="buff" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 360.0 0.0" />
+		</Active>
+		
+		<Deactivation>
+			<Detach objectname="buff" />
+		</Deactivation>
+	</State>
+
+</RenderInfo>

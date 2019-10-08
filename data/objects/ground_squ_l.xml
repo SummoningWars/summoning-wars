@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="ground_squ_l" layer="NOCOLLISION">
+        <Mesh file="ground_squ_l.mesh" />
+        <Geometry shape="RECT" extent_x="4" extent_y="4"/>
+</Object>

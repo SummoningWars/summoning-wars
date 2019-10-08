@@ -1,0 +1,29 @@
+﻿<RenderInfo name="twoHandSwordBase" parent="swordBase">
+	<State name="firesword">
+		<Activation>
+			<ParticleSystem objectname="firesword1" source="BurningBlade" position= "0 0 -0.2"/>
+			<Rotation objectname="firesword1" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword2" source="BurningBlade" position= "0 0 -0.5"/>
+			<Rotation objectname="firesword2" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword3" source="BurningBlade" position= "0 0 -0.8"/>
+			<Rotation objectname="firesword3" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword4" source="BurningBlade" position= "0 0 -1.2"/>
+			<Rotation objectname="firesword4" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="firesword1"/>
+			<Detach objectname="firesword2"/>
+			<Detach objectname="firesword3"/>
+			<Detach objectname="firesword4"/>
+		</Deactivation>
+	</State>	
+</RenderInfo>
+
+<RenderInfo name= "farmerSword" parent="twoHandSwordBase">
+	<Entity source = "farm2h_sw.mesh"/>
+</RenderInfo>
+
+<RenderInfo name= "mercenaryBlade" parent="twoHandSwordBase">
+	<Entity source = "merc2h_sw.mesh"/>
+</RenderInfo>

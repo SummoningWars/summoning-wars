@@ -1,0 +1,62 @@
+<Quest name="testquest" table_name="testquest" domain="testquest">
+	<NPC refname="Fenor Marken">
+		<Topic name="testtopic1" start_option="Test">
+			<Effect>
+				addSpeaker(guard1,"guard1");
+				addSpeaker(guard2,"guard2");
+				
+				setSpeakerEmotion('Fenor Marken',"normal");
+				speak('Fenor Marken',_("This is a Test"));
+				setSpeakerEmotion('Fenor Marken',"surprised");
+				speak('Fenor Marken',_("surprised"));
+				setSpeakerEmotion('Fenor Marken',"thoughtful");
+				speak('Fenor Marken',_("thoughtful"));
+				removeSpeaker('Fenor Marken');
+				setSpeakerEmotion('Fenor Marken',"happy");
+				speak('Fenor Marken',_("happy"))
+				addSpeakerInDialog(fenor,'Fenor Marken');
+				setSpeakerEmotion('Fenor Marken',"amused");
+				speak('Fenor Marken',_("amused"));
+				setSpeakerEmotion('Fenor Marken',"excited");
+				speak('Fenor Marken',_("excited"));
+				setSpeakerEmotion('Fenor Marken',"inlove");
+				speak('Fenor Marken',_("in love"));
+				setSpeakerEmotion('Fenor Marken',"bored");
+				speak('Fenor Marken',_("bored"));
+				setSpeakerEmotion('Fenor Marken',"unhappy");
+				speak('Fenor Marken',_("unhappy"));
+				setSpeakerEmotion('Fenor Marken',"sad");
+				speak('Fenor Marken',_("sad"));
+				setSpeakerEmotion('Fenor Marken',"pain");
+				speak('Fenor Marken',_("pain"));
+				setSpeakerEmotion('Fenor Marken',"sneer");
+				speak('Fenor Marken',_("sneer"));
+				setSpeakerEmotion('Fenor Marken',"grin");
+				speak('Fenor Marken',_("grin"));
+				setSpeakerEmotion('Fenor Marken',"offended");
+				speak('Fenor Marken',_("offended"));
+				setSpeakerEmotion('Fenor Marken',"threaten");
+				speak('Fenor Marken',_("threatening"));
+				setSpeakerEmotion('Fenor Marken',"angry");
+				speak('Fenor Marken',_("angry"));
+				setSpeakerEmotion('Fenor Marken',"warcry");
+				speak('Fenor Marken',_("shouting a warcry"));
+				setSpeakerEmotion('Fenor Marken',"injured");
+				speak('Fenor Marken',_("exhausted"));
+				setSpeakerEmotion('Fenor Marken',"injured2");
+				speak('Fenor Marken',_("injured"));
+				setSpeakerEmotion('Fenor Marken',"injured3");
+				speak('Fenor Marken',_("deadly injured"));
+				speak('Fenor Marken',_("afraid"),"fear");
+				speak('Fenor Marken',_("in panic"),"panic");
+				speak('Fenor Marken',_("putting up a distance"),"aloof");
+				speak('Fenor Marken',_("being disgusted"),"disgust");
+				speak('player',_("and yet another Test"));
+				speak('Fenor Marken',_("again a test"));
+				speak('guard1',"I am the first guard")
+				speak('guard2',"I am the second guard")
+				speak('Fenor Marken',"I am Fenor Marken")
+			</Effect>
+		</Topic>
+	</NPC>
+</Quest>

@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="axe2HStand" layer="NORMAL">
+        <Mesh file="axe2HStand.mesh" />
+        <Geometry shape="RECT" extent_x="0.1118971592" extent_y="0.3041524679"/>
+</Object>

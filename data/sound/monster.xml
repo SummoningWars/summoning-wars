@@ -1,0 +1,106 @@
+<Sound name="goblin_attack" probability="0.3">
+	<Soundfile source="monster_sound_effects/goblin_att_1.wav"/>
+	<Soundfile source="monster_sound_effects/goblin_att_2.wav"/>
+	<Soundfile source="monster_sound_effects/goblin_att_3.wav"/>
+	<Soundfile source="monster_sound_effects/goblin_att_4.wav"/>
+</Sound>
+
+<Sound name="goblin_hit">
+	<Soundfile source="monster_sound_effects/goblin_hit_1.wav"/>
+	<Soundfile source="monster_sound_effects/goblin_hit_2.wav"/>
+	<Soundfile source="monster_sound_effects/goblin_hit_3.wav"/>
+</Sound>
+
+<Sound name="goblin_die">
+	<Soundfile source="monster_sound_effects/goblin_die_1.wav"/>
+	<Soundfile source="monster_sound_effects/goblin_die_2.wav"/>
+</Sound>
+
+<Sound name="zombie_attack" probability="0.3">
+	<Soundfile source="monster_sound_effects/zombie_att_1.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_att_2.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_att_3.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_att_4.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_att_5.wav"/>
+</Sound>
+
+<Sound name="zombie_hit">
+	<Soundfile source="monster_sound_effects/zombie_hit_1.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_hit_2.wav"/>
+</Sound>
+
+<Sound name="zombie_die">
+	<Soundfile source="monster_sound_effects/zombie_die_1.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_die_2.wav"/>
+	<Soundfile source="monster_sound_effects/zombie_die_3.wav"/>
+</Sound>
+
+<Sound name="skel_die">
+	<Soundfile source="monster_sound_effects/bone1.wav"/>
+	<Soundfile source="monster_sound_effects/bone2.wav"/>
+	<Soundfile source="monster_sound_effects/bone3.wav"/>
+</Sound>
+
+<Sound name="slug_attack" probability="0.3">
+	<Soundfile source="monster_sound_effects/slug_att_1.wav"/>
+	<Soundfile source="monster_sound_effects/slug_att_2.wav"/>
+	<Soundfile source="monster_sound_effects/slug_att_3.wav"/>
+</Sound>
+
+<Sound name="slug_hit">
+	<Soundfile source="monster_sound_effects/slug_hit_1.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_2.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_3.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_4.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_5.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_6.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_7.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_8.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_9.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_10.wav"/>
+</Sound>
+
+<Sound name="slug_die">
+	<Soundfile source="monster_sound_effects/slug_die_1.wav"/>
+	<Soundfile source="monster_sound_effects/slug_die_2.wav"/>
+	<Soundfile source="monster_sound_effects/slug_die_3.wav"/>
+</Sound>
+
+<Sound name="beatle_attack" probability="0.3">
+	<Soundfile source="monster_sound_effects/beatle_att_1.wav"/>
+	<Soundfile source="monster_sound_effects/beatle_att_2.wav"/>
+	<Soundfile source="monster_sound_effects/beatle_att_3.wav"/>
+</Sound>
+
+<!-- TODO specific sounds needed -->
+<Sound name="beatle_hit">
+	<Soundfile source="monster_sound_effects/slug_hit_1.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_2.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_3.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_4.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_5.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_6.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_7.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_8.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_9.wav"/>
+	<Soundfile source="monster_sound_effects/slug_hit_10.wav"/>
+</Sound>
+
+<!-- TODO specific sounds needed -->
+<Sound name="beatle_die">
+	<Soundfile source="monster_sound_effects/slug_die_1.wav"/>
+	<Soundfile source="monster_sound_effects/slug_die_2.wav"/>
+	<Soundfile source="monster_sound_effects/slug_die_3.wav"/>
+</Sound>
+
+<Sound name="wolf_att">
+	<Soundfile source="monster_sound_effects/wolf_att_1.wav"/>
+</Sound>
+
+<Sound name="wolf_die">
+	<Soundfile source="monster_sound_effects/wolf_die_1.wav"/>
+</Sound>
+
+<Sound name="spider_attack" probability="0.3">
+	<Soundfile source="monster_sound_effects/spider_att_1.wav"/>
+</Sound>

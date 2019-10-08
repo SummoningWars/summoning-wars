@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="modWP_top" layer="NORMAL">
+        <Mesh file="modWP_top.mesh" />
+        <Geometry shape="CIRCLE" radius="4.5"/>
+</Object>

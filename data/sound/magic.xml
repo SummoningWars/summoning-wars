@@ -1,0 +1,11 @@
+
+<Sound name="lightning">
+	<Soundfile source="magic_synth_sound_effects/thunder_1.wav"/>
+	<Soundfile source="magic_synth_sound_effects/thunder_2.wav"/>
+	<Soundfile source="magic_synth_sound_effects/thunder_3.wav"/>
+</Sound>
+<Sound name="thunderstorm">
+	<Soundfile source="magic_synth_sound_effects/thunder_1.wav"/>
+	<Soundfile source="magic_synth_sound_effects/thunder_2.wav"/>
+	<Soundfile source="magic_synth_sound_effects/thunder_3.wav"/>
+</Sound>

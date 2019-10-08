@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- An object group is a collection of objects, locations, and areas that can be inserted into a region without having to place every single object yourself.
+	This is especially useful for decorative elements like stones, flowers and the likes that can be inserted by the map generator only, because you cannot know how the region will look like.
+	The name has to be unique.
+	The version serves no purpose at the moment.
+-->
+<ObjectGroup name="village" version="1.0">
+<!-- Shape basically does the same as for a simple object. See the object-documentation, if you don't know how it works.
+	"angle" means a predefined angle every objectgroup will have once it is inserted by the map generator. Unless you really want to do this, it is recommended to let the instance using the object group decide this.
+-->
+  <Shape
+    type="RECT"
+    extent_x="20"
+    extent_y="20"
+    angle="0"
+  />
+
+  <!-- Here you will add every object that the group contains.
+  -->
+  <ObjectContent>
+	<!-- Every object in a group is decribed by:
+		subtype: the unique name of the object you want to place. Of course there has to exist a description for the subtype.
+		name:	a name for an object by which it can be referenced later via lua-script by "groupName:objectName". It has to be unique for the object_group.
+		center_x, center_y: The center of the object. If the object is a massive house covering 4*6, then you should not add stuff in this area unless you put it where it can be seen.
+		height: the height of an object. 0 is the ground, positiv values make it float in the air and negative values will make it dissapear below ground.
+				This is mainly used for crates and boxes that are stacked, but it can be used to hide something, too.
+		angle: the angle of the object. If you don't change it, the object will use it's inital orientation, facing east.
+		probability: a value between 0 and 1 defining, how probable it is that the object will really be there.
+		prob_angle:	if this is set to "true", the map generator will rotate the object by an arbitrary angle.
+	-->
+    <Object subtype="teleporter" name="the_teleporter"
+            center_x="0" 
+            center_y="4" 
+           height="0" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+	<!-- an object may be a template-->
+	<Object subtype="$tree"
+            center_x="4" 
+            center_y="4" 
+           height="0" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+<!--	All locations in the group are listed here.
+		There is alway a location named "center" in an object group.
+		You can access locations with lua by "groupName:location". Of course this only works if the group is added as a NamedObjectGroup(see world.xml) or 
+			when it is placed by the mag generator, the locations-tag is not empty and you capture it with the event "create_template".
+-->
+  <Locations>
+	<!-- Every location has to have a name and a position. Since it is only a point, there is no shape.-->
+    <Location name="locQuestGuy" pos_x="0" pos_y="0" />
+	<Location name="locWeaponTrader" pos_x="12" pos_y="8" />
+	<Location name="locWeaponTrader" pos_x="8" pos_y="4" />
+	<!-- Since this is a group that would be used as a region_template, the exits have to be placed manually.
+		Be aware, that exit_north is only a location, whereas the real exit is an area defined in the region. So make sure, that the entry doesn't cause the player to be thrown into the exit by return.
+	-->
+	<Location name="exit_north" pos_x="0" pos_y="2" />
+	<Location name="entry_north" pos_x="6" pos_y="2" />
+  </Locations>
+	<!-- areas are handled similar to locations.
+		There is always an area by the name "area". It's shape comes from the objectGroup itself.
+		Areas are accessed by "groupName:areaName". The same restrictions as for locations hold true here.
+	-->
+  <Areas>
+	<!-- Areas have:
+		name: is unique for the objectGroup
+		angle (makes only sense, if the area is shaped rectangular)
+		center_x, center_y: The position of the center of the area. At the same time the coordinates of the center-location.
+		shape-attributes that are the same as an objects(See object.xml). 
+	-->
+    <Area name="areaExample" angle="0" center_x="8" center_y="8" type="RECT" extent_x="4" extent_y="2" />
+  </Areas>
+
+</ObjectGroup>

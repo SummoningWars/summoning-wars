@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="woodShieldLean" layer="NORMAL">
+        <Mesh file="woodShieldLean.mesh" />
+        <Geometry shape="RECT" extent_x="0.1476098129" extent_y="0.4765225098"/>
+</Object>

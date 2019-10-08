@@ -1,0 +1,309 @@
+particle_system Blind
+{
+    material        flareAlpha
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    cull_each       false
+    quota          2000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Box
+{
+        angle           360
+        emission_rate   300
+        position        0.0 -0.1 0.1
+        time_to_live    0.1
+        direction       0 1 0
+        velocity        1
+        colour_range_start  0 0 0
+        colour_range_end  0 0 0 0.2
+        width           0.4
+        height          0.4
+        depth           0.4
+}
+}
+
+particle_system Poison
+{
+    material        FlarePointSprite
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    cull_each       false
+    quota           1000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Box
+{
+        angle           30
+        emission_rate   100
+        time_to_live    0.3
+        position    0.0 1.0 0.0
+        direction       0 1 0
+        velocity        0
+        colour_range_start  0 1 0
+        colour_range_end    0.4 1 0.3
+        width           0.8
+        height          0.8
+        depth           2.4
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+
+}
+
+particle_system Berserk
+{
+    material berserk
+    particle_width 0.6
+    particle_height 0.6
+    cull_each false
+    quota 1
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 1000
+        time_to_live 0.001
+        position    0.0 0.0 0.0
+        direction 0 1 0
+        colour_range_start 1 1 1
+}
+}
+
+particle_system Confuse
+{
+    material        confuse
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    quota           1
+    billboard_type  point
+    
+    emitter Point
+{
+        angle           0
+        emission_rate   1000
+        time_to_live    0.001
+        position    0.0 1.0 0.0
+        direction       0 1 0
+        velocity        0
+        colour_range_start    1 1 1
+        colour_range_end    1 1 1
+}
+}
+
+particle_system Mute
+{
+    material        mute
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    cull_each       false
+    quota           1
+    billboard_type  point
+    
+    emitter Point
+{
+        angle           0
+        emission_rate   1000
+        time_to_live    0.001
+        direction       0 1 0
+        velocity        0
+        colour_range_start  1 1 1
+        colour_range_end    1 1 1
+}
+}
+
+particle_system Paralyze
+{
+    material flareAlpha
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 5000
+    billboard_type point
+ 
+
+   emitter Box
+{
+        angle 30
+        emission_rate 275
+        time_to_live 0.2
+        position    0.0 1.0 0.0
+        direction 0 -1 0
+        velocity_min 1.0
+        velocity_max 2.0
+        colour_range_start 1 0.7 0.4
+        colour_range_end 0.9 0.7 0.3
+        width           0.8
+        height          0.8
+        depth           2.4
+}
+
+
+    // Make em float downwards
+    affector LinearForce
+{
+        force_vector      0 -2 0
+        force_application add
+}
+
+}
+
+particle_system Frozen
+{
+    material        Aureola
+    particle_width  3.0
+    particle_height 3.0
+    cull_each       false
+    quota           100
+    billboard_type  perpendicular_common
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+
+    // Area emitter
+    emitter Box
+{
+        angle           30
+        emission_rate   2
+        time_to_live    4.2
+        position        0.0 -0.4 0.0
+        direction       0 1 0
+        velocity_min      0.0
+        velocity_max      0.6
+        colour_range_start  0.3 0.3 0.3 0.0
+        colour_range_end    0.8 0.8 0.8 0.0
+        width           0.2
+        height          0.2
+        depth           0.6
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 1.4 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader2
+{
+        red1 +0.4
+        green1 +0.4
+        blue1 +0.4
+        alpha1 +0.7
+
+        red2 -0.25
+        green2 -0.25
+        blue2 -0.25
+        alpha2 -0.3333
+
+        state_change 3.5
+}
+
+    // Rotater
+    affector Rotator
+{
+        rotation_range_start 0
+        rotation_range_end 360
+        rotation_speed_range_start 0
+        rotation_speed_range_end 180
+}
+}
+
+particle_system Burning
+{
+    material        FlarePointSprite
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    cull_each       false
+    quota           1000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Box
+{
+        angle           30
+        emission_rate   100
+        time_to_live    0.3
+        position    0.0 1.0 0.0
+        direction       0 1 0
+        velocity        0
+        colour_range_start    1 0 0
+        colour_range_end    1 0.5 0
+        width           0.8
+        height          0.8
+        depth           2.4
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+particle_system BladeStorm
+{
+    material        FlarePointSprite
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    cull_each       false
+    quota           500
+    billboard_type  point
+    
+    // Area emitter
+    emitter Box
+{
+        angle           30
+        emission_rate   50
+        time_to_live    0.01
+        position    0.0 0.0 0.0
+        direction       1 0 0
+        velocity        1.4
+        colour_range_start  1 1 1
+        colour_range_end    0.9 0.9 0.9
+        width           0.2
+        height          0.2
+        depth           0.4
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}

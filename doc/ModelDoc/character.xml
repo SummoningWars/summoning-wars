@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="models.xsl"?>
+
+
+<creature>
+  <name>character</name>
+  <meshname>warrior.mesh</meshname>
+  <mayafilename>character_animation_seperated2.mb</mayafilename>
+
+
+
+  <animations>
+    <clip>
+      <name>attack</name>
+      <startframe>0</startframe>
+      <endframe>24</endframe>      
+    </clip>
+    <clip>
+      <name>attackTwoHands</name>
+      <startframe>25</startframe>
+      <endframe>49</endframe>      
+    </clip>
+    <clip>
+      <name>idle</name>
+      <startframe>50</startframe>
+      <endframe>105</endframe>      
+    </clip>
+    <clip>
+      <name>WalkOneHand</name>
+      <startframe>105</startframe>
+      <endframe>138</endframe>      
+    </clip>
+    <clip>
+      <name>attackMagicTwoHands</name>
+      <startframe>139</startframe>
+      <endframe>163</endframe>      
+    </clip>
+  </animations>
+
+
+
+</creature>

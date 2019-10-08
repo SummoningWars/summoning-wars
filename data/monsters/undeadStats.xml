@@ -1,0 +1,2426 @@
+<!-- Untote -->
+
+<!-- maylons guardian skeleton -->
+<Monster type="MONSTER" subtype="skel_maylon" name="Guardian Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="axe2_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="100" min_level="2" max_level="7" magic_prob="0.2" magic_power="350" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="50" min_level="2" max_level="6" magic_prob="0.4" magic_power="300" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="25"
+		level="6"
+		max_health="110"
+		armor="30"
+		block="10"
+		power="70"
+		attack="90"
+		strength="45"
+		dexterity="15"
+		magic_power="0"
+		willpower="30"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="0"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="1.0"
+		attack_range="1.8"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Zombie, Maylons Grab -->
+<Monster type="MONSTER" subtype="zombie_crypt" name="Zombie" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="zombie" />
+	<Dropslots >
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.04" pgold="0.05" min_gold="1" max_gold="30" min_level="0" max_level="3" magic_prob="0.1" magic_power="150" />
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.03" pgold="0.05" min_gold="1" max_gold="20" min_level="0" max_level="2" magic_prob="0.2" magic_power="150" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="13"
+		level="5"
+		max_health="180"
+		armor="0"
+		block="0"
+		power="70"
+		attack="40"
+		strength="30"
+		dexterity="15"
+		magic_power="0"
+		willpower="5"
+		resistances_physical="0"
+		resistances_air="20"
+		resistances_ice="20"
+		resistances_fire="-30"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="1000"
+		attack_speed="1000"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<MonsterGroup name="zombies_maylon" >
+	<SubGroup subtype="zombie_crypt" number="7" prob="0.7" />
+</MonsterGroup>
+
+<!-- Maylon -->
+<Monster type="MONSTER" subtype="maylonMummy" name="Maylon" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="maylonMummy" />
+	
+	<BasicAttributes
+		experience="200"
+		level="8"
+		max_health="600"
+		armor="20"
+		block="0"
+		attack="150"
+		power="150"
+		strength="50"
+		dexterity="10"
+		magic_power="20"
+		willpower="100"
+		resistances_physical="30"
+		resistances_air="0"
+		resistances_ice="50"
+		resistances_fire="-50"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="1500"
+		attack_speed="1000"
+		step_length="2.0"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="attack" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="monster_icebolt"  timer = "5000" rating="3"/>
+	<Ability type="noaction" />
+	<Ability type="summoned" time="4000"/>
+	<Ability type="maylon_sommon_skel" rating="4"/>
+
+	<Immunity type="berserk"/>
+	<Immunity type="confused"/>
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="15" ai_shoot_range="9" ai_randaction_prob="0.0" />
+</Monster>
+
+<Monster type="MONSTER" subtype="maylon" name="Maylons Ghost" fraction="human" race="undead" layer="AIR">
+	<RenderInfo name="ghost_slim" />
+	
+	<BasicAttributes
+		experience="10"
+		level="17"
+		max_health="100"
+		armor="48"
+		block="10"
+		power="25"
+		attack="37"
+		strength="25"
+		dexterity="15"
+		magic_power="0"
+		willpower="10"
+		resistances_physical="50"
+		resistances_air="0"
+		resistances_ice="0"
+		resistances_fire="-50"
+		resistances_cap_physical="100"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="summoned" time="2000"/>
+		<Ability type="die" />
+		<Ability type="noaction" time="4000"/>
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- skeleton, oldsword -->
+<Monster type="MONSTER" subtype="sword_skel" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="sword_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="30" max_gold="100" min_level="8" max_level="16" magic_prob="0.2" magic_power="550" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="20" max_gold="50" min_level="7" max_level="15" magic_prob="0.4" magic_power="400" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="95"
+		level="15"
+		max_health="380"
+		armor="40"
+		block="0"
+		power="150"
+		attack="80"
+		strength="45"
+		dexterity="30"
+		magic_power="0"
+		willpower="30"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1100"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- skeleton, giant-->
+<Monster type="MONSTER" subtype="giant_skel" name="Giant Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="giant_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="90" max_gold="250" min_level="10" max_level="17" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="80" max_gold="200" min_level="10" max_level="16" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="80" max_gold="200" min_level="9" max_level="17" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="80" max_gold="180" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="330"
+					level="17"
+					max_health="1200"
+					armor="50"
+					block="0"
+					power="180"
+					attack="100"
+					strength="80"
+					dexterity="30"
+					magic_power="0"
+					willpower="100"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="2000"
+					attack_speed="1200"
+					step_length="1.5"
+					attack_range="2"
+					>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+<!-- skeleton, bowman-->
+<Monster type="MONSTER" subtype="bow_skel" name="Skeleton Archer" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="bow_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="30" max_gold="100" min_level="8" max_level="16" magic_prob="0.2" magic_power="550" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="20" max_gold="50" min_level="7" max_level="15" magic_prob="0.4" magic_power="400" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="95"
+					level="15"
+					max_health="200"
+					armor="25"
+					block="0"
+					power="100"
+					attack="150"
+					strength="30"
+					dexterity="45"
+					magic_power="0"
+					willpower="30"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="900"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="7"  />
+</Monster>
+
+<!-- skeleton, axe -->
+<Monster type="MONSTER" subtype="axe_skel" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="axe_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="20" max_gold="100" min_level="8" max_level="18" magic_prob="0.2" magic_power="550" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="10" max_gold="50" min_level="8" max_level="16" magic_prob="0.4" magic_power="450" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="100"
+		level="15"
+		max_health="400"
+		armor="48"
+		block="40"
+		power="200"
+		attack="90"
+		strength="40"
+		dexterity="30"
+		magic_power="0"
+		willpower="35"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="2200"
+		attack_speed="1000"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- skeleton, 2haxe -->
+<Monster type="MONSTER" subtype="axe2_skel" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="axe2_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" min_gold="30" max_gold="100" min_level="10" max_level="19" magic_prob="0.2" magic_power="600" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.05" pgold="0.05" min_gold="20" max_gold="50" min_level="8" max_level="17" magic_prob="0.4" magic_power="450" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="125"
+		level="16"
+		max_health="520"
+		armor="40"
+		block="0"
+		power="250"
+		attack="80"
+		strength="60"
+		dexterity="25"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="2200"
+		attack_speed="700"
+		step_length="1.0"
+		attack_range="2.2"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- shadow skeleton, bow, blinds -->
+<Monster type="MONSTER" subtype="shadow_bow_skel" name="Skeleton Shadow Archer" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="bow_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" min_gold="30" max_gold="100" min_level="9" max_level="17" magic_prob="0.2" magic_power="550" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.05" pgold="0.05" min_gold="20" max_gold="50" min_level="8" max_level="16" magic_prob="0.4" magic_power="450" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="120"
+					level="16"
+					max_health="190"
+					armor="35"
+					block="25"
+					power="100"
+					attack="180"
+					strength="30"
+					dexterity="40"
+					magic_power="12"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="900"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="dark_shot" rating="2" timernr="1" timer_value="10000"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="7"  />
+</Monster>
+
+<!-- Frostbone, skeleton archer, unique -->
+<Monster type="MONSTER" subtype="frostbone" name="Frostbone" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="iceSkeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="90" max_gold="250" min_level="10" max_level="17" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="80" max_gold="200" min_level="10" max_level="16" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="80" max_gold="200" min_level="9" max_level="17" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="80" max_gold="180" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="350"
+					level="17"
+					max_health="800"
+					armor="35"
+					block="25"
+					power="130"
+					attack="250"
+					strength="30"
+					dexterity="75"
+					magic_power="20"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="dark_shot" rating="2" timer_nr="1" timer_value="6000"/>
+		<Ability type="ice_shot" rating="1" timer_nr="0"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14"  ai_shoot_range="8"  />
+</Monster>
+
+<!-- Brennendes Skelett-->
+<Monster type="MONSTER" subtype="fire_skel" name="Burning Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="burningSkeletonBowman" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="30" max_gold="100" min_level="9" max_level="18" magic_prob="0.2" magic_power="600" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="20" max_gold="50" min_level="8" max_level="15" magic_prob="0.4" magic_power="450" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="120"
+					level="17"
+					max_health="300"
+					armor="40"
+					block="0"
+					power="90"
+					attack="160"
+					strength="25"
+					dexterity="35"
+					magic_power="12"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="-50"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="80"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="fire_shot" rating="1"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="7"  />
+</Monster>
+
+<MonsterGroup name="skeletons_15_1" >
+	<SubGroup subtype="sword_skel" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel" number="1" prob="1.0" />
+	<SubGroup subtype="sword_skel" number="1" prob="0.5" />
+	<SubGroup subtype="bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+<MonsterGroup name="skeletons_15_2" >
+	<SubGroup subtype="sword_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel" number="1" prob="0.5" />
+	<SubGroup subtype="bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+<MonsterGroup name="skeletons_16_1" >
+	<SubGroup subtype="sword_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel" number="1" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel" number="1" prob="0.5" />
+	<SubGroup subtype="bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+<MonsterGroup name="skeletons_16_2" >
+	<SubGroup subtype="axe_skel" number="1" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel" number="2" prob="1.0" />
+	<SubGroup subtype="sword_skel" number="2" prob="0.5" />
+	<SubGroup subtype="bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+<MonsterGroup name="skeletons_16_3" >
+	<SubGroup subtype="axe2_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel" number="1" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe2_skel" number="1" prob="0.5" />
+	<SubGroup subtype="shadow_bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+
+<MonsterGroup name="skeletons_giant" >
+	<SubGroup subtype="giant_skel" number="1" prob="1.0" />
+	<SubGroup subtype="sword_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+<MonsterGroup name="skeletons_frostbone" >
+	<SubGroup subtype="axe2_skel" number="1" prob="1.0" />
+	<SubGroup subtype="frostbone" number="1" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel" number="1" prob="1.0" />
+	<SubGroup subtype="axe2_skel" number="1" prob="0.5" />
+	<SubGroup subtype="shadow_bow_skel" number="1" prob="0.5" />
+</MonsterGroup>
+
+<!-- Untote Sense -->
+<!-- Unique Monster fuer Ueberfall auf Ireana-->
+<Monster type="MONSTER" subtype="reaper_skel" name="Undead Scythe" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="scy_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="60" max_gold="180" min_level="12" max_level="16" magic_prob="0.5" magic_power="550" />
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="50" max_gold="80" min_level="10" max_level="15" magic_prob="0.5" magic_power="400" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="40" max_gold="60" min_level="10" max_level="14" magic_prob="0.5" magic_power="350" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="60" max_gold="150" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="450"
+		level="15"
+		max_health="1300"
+		armor="50"
+		block="0"
+		power="150"
+		attack="100"
+		strength="80"
+		dexterity="15"
+		magic_power="0"
+		willpower="100"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="1.0"
+		attack_range="1.8"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Nekromant -->
+<Monster type="MONSTER" subtype="necromancer" name="Necromancer" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	<Dropslots >
+		<Dropslot pbig="0.1" pmedium="0.2" psmall="0.2" pgold="0.2" max_gold="50" min_level="10" max_level="40" magic_prob="0.5" magic_power="1000" />
+		<Dropslot pbig="0.05" pmedium="0.08" psmall="0.04" pgold="0.3" min_gold="100" max_gold="500" min_level="0" max_level="20" magic_prob="0.2" magic_power="1000" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="20"
+		level="23"
+		max_health="250"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="35"
+		willpower="50"
+		resistances_physical="30"
+		resistances_air="0"
+		resistances_ice="50"
+		resistances_fire="-50"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="1500"
+		attack_speed="1000"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="attack" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="ice_bolt"  rating="3"/>
+	<Ability type="noaction"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="15" ai_shoot_range="9" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- skeleton, worker -->
+<Monster type="MONSTER" subtype="worker_skel" name="Worker Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="worker_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="100" min_level="0" max_level="10" magic_prob="0.1" magic_power="1000" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="50" min_level="0" max_level="20" magic_prob="0.2" magic_power="1000" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="10"
+		level="18"
+		max_health="100"
+		armor="48"
+		block="10"
+		power="25"
+		attack="37"
+		strength="25"
+		dexterity="15"
+		magic_power="0"
+		willpower="10"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="0"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" time="700"/>
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Belagerung Zwergentrutz -->
+<!-- burning skeleton, catapult  -->
+<Monster type="MONSTER" subtype="catapult_skel" name="Burning Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="flaming_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0." pmedium="0.01" psmall="0.09" pgold="0.0" min_gold="20" max_gold="100" min_level="8" max_level="18" magic_prob="0.2" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="110"
+		level="16"
+		max_health="500"
+		armor="48"
+		block="0"
+		power="200"
+		attack="90"
+		strength="60"
+		dexterity="30"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="65"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="65"
+		walk_speed="2200"
+		attack_speed="1200"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="flame_shot" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="1500"/>
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" ai_shoot_range="8" />
+</Monster>
+
+<!-- Lich, Zwergentrutz -->
+<Monster type="MONSTER" subtype="lich_siege" name="Lich" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="lich" />
+	
+	<BasicAttributes
+		experience="20"
+		level="23"
+		max_health="5000"
+		armor="200"
+		block="30"
+		attack="20"
+		power="25"
+		strength="55"
+		dexterity="90"
+		magic_power="100"
+		willpower="500"
+		resistances_physical="40"
+		resistances_air="60"
+		resistances_ice="80"
+		resistances_fire="-20"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="1500"
+		attack_speed="1000"
+		step_length="2.0"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="attack" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="ice_bolt"  rating="3" timer_value="2000"/>
+	<Ability type="noaction" />
+	<Ability type="talk" />
+	<Ability type="summon_skelBow" rating="4" timer_value="4000"/>
+	<Ability type="summon_skelSword" rating="4" timer_value="4000"/>
+	<Ability type="summon_skelAxe" rating="4" timer_value="4000"/>
+	<Ability type="summon_skelAxe2" rating="4" timer_value="4000"/>
+
+	<Immunity type="berserk"/>
+	<Immunity type="confused"/>
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="20" ai_shoot_range="20" />
+</Monster>
+
+<!-- Necromancer, siege, defense-->
+<Monster type="MONSTER" subtype="necromancer_siegeDefense" name="Necromancer" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+		
+	<BasicAttributes
+		experience="20"
+		level="23"
+		max_health="250"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="35"
+		willpower="50"
+		resistances_physical="30"
+		resistances_air="0"
+		resistances_ice="50"
+		resistances_fire="-50"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="1500"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_shadow" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="black_storm"  rating="3"/>
+	<Ability type="noaction"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="15" ai_shoot_range="15" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- skeleton, bowman, siege, defense-->
+<Monster type="MONSTER" subtype="bow_skel_siegeDefense" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="bow_skeleton" />
+	
+	<BasicAttributes
+					experience="100"
+					level="15"
+					max_health="250"
+					armor="25"
+					block="0"
+					power="100"
+					attack="150"
+					strength="30"
+					dexterity="60"
+					magic_power="0"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="15"  ai_shoot_range="10"  />
+</Monster>
+
+
+<!-- skeleton, oldsword, siege -->
+<Monster type="MONSTER" subtype="sword_skel_siege" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="sword_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.0" pmedium="0.01" psmall="0.09" pgold="0.03" min_gold="30" max_gold="100" min_level="12" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="100"
+		level="15"
+		max_health="450"
+		armor="40"
+		block="0"
+		power="120"
+		attack="80"
+		strength="40"
+		dexterity="30"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- skeleton, bowman, siege -->
+<Monster type="MONSTER" subtype="bow_skel_siege" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="bow_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.08" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="100"
+					level="15"
+					max_health="250"
+					armor="25"
+					block="0"
+					power="85"
+					attack="130"
+					strength="30"
+					dexterity="50"
+					magic_power="0"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="7"  />
+</Monster>
+
+<!-- skeleton, axe, siege -->
+<Monster type="MONSTER" subtype="axe_skel_siege" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="axe_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.08" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="110"
+		level="16"
+		max_health="500"
+		armor="48"
+		block="0"
+		power="150"
+		attack="90"
+		strength="50"
+		dexterity="30"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="2200"
+		attack_speed="1200"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- skeleton, 2haxe, siege -->
+<Monster type="MONSTER" subtype="axe2_skel_siege" name="Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="axe2_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.08" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="140"
+		level="17"
+		max_health="700"
+		armor="40"
+		block="0"
+		power="200"
+		attack="70"
+		strength="60"
+		dexterity="25"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="1.0"
+		attack_range="2.2"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- first mini-boss during the siege of dwarfenwall-->
+<Monster type="MONSTER" subtype="boss1_siege" name="Huge Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="giant_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="150" max_gold="300" min_level="15" max_level="20" magic_prob="0.5" magic_power="550" />
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="100" max_gold="250" min_level="15" max_level="19" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="100" max_gold="250" min_level="13" max_level="18" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="120" max_gold="250" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="410"
+					level="18"
+					max_health="1400"
+					armor="50"
+					block="0"
+					power="180"
+					attack="100"
+					strength="80"
+					dexterity="30"
+					magic_power="0"
+					willpower="100"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="2000"
+					attack_speed="1200"
+					step_length="1.5"
+					attack_range="2"
+					>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- burning skeleton archer, siege-->
+<Monster type="MONSTER" subtype="fire_skel_bow_siege" name="Burning Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="burningSkeletonBowman" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.1" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="120"
+					level="17"
+					max_health="200"
+					armor="40"
+					block="0"
+					power="90"
+					attack="160"
+					strength="25"
+					dexterity="44"
+					magic_power="12"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="-50"
+					resistances_fire="40"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="80"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="fire_range_attack" rating="1"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		<Immunity type="burning"/>
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="7"  />
+</Monster>
+
+<!-- burning skeleton, 2haxe, siege -->
+<Monster type="MONSTER" subtype="fire_skel_axe2_siege" name="Burning Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="burningSkeletonAxeman" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.1" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="140"
+		level="18"
+		max_health="500"
+		armor="40"
+		block="0"
+		power="250"
+		attack="80"
+		strength="55"
+		dexterity="25"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="-50"
+		resistances_fire="40"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="80"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="1.0"
+		attack_range="2.2"
+	>
+		<Ability type="walk" />
+		<Ability type="fire_attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		<Immunity type="burning"/>
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- burning skeleton, oldsword, siege -->
+<Monster type="MONSTER" subtype="fire_skel_sword_siege" name="Burning Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="burningSkeletonSwordsman" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.1" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="120"
+		level="18"
+		max_health="380"
+		armor="40"
+		block="0"
+		power="150"
+		attack="80"
+		strength="42"
+		dexterity="30"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="-50"
+		resistances_fire="40"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="80"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="fire_attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		<Immunity type="burning"/>
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- frost skeleton, oldsword, siege -->
+<Monster type="MONSTER" subtype="frost_skel_sword_siege" name="Frost Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="frostSkeletonSwordsman" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.1" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="140"
+		level="18"
+		max_health="360"
+		armor="40"
+		block="0"
+		power="150"
+		attack="80"
+		strength="42"
+		dexterity="30"
+		magic_power="0"
+		willpower="40"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="40"
+		resistances_fire="-70"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="80"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk" />
+		<Ability type="ice_attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		<Immunity type="frozen"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- frost skeleton, bow, siege -->
+<Monster type="MONSTER" subtype="frost_skel_bow_siege" name="Frost Skeleton Archer" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="iceSkeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.1" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="140"
+					level="17"
+					max_health="180"
+					armor="35"
+					block="25"
+					power="130"
+					attack="250"
+					strength="30"
+					dexterity="40"
+					magic_power="14"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-70"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="80"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="ice_range_attack" rating="1" timer_nr="0"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		<Immunity type="frozen"/>
+
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14"  ai_shoot_range="8"  />
+</Monster>
+
+
+<!-- shadow skeleton, bow, blinds, siege -->
+<Monster type="MONSTER" subtype="shadow_bow_skel_siege" name="Skeleton Shadow Archer" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="bow_skeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.1" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="120"
+					level="16"
+					max_health="180"
+					armor="35"
+					block="25"
+					power="100"
+					attack="180"
+					strength="30"
+					dexterity="40"
+					magic_power="12"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="900"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="range_attack" rating="1"/>
+		<Ability type="dark_shot" rating="2" timernr="1" timer_value="10000"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12"  ai_shoot_range="7"  />
+</Monster>
+
+<!-- Chilling Death, second mini-boss, skeleton archer, siege -->
+<Monster type="MONSTER" subtype="boss2_siege" name="Chilling Death" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="iceSkeleton" />
+	<Dropslots >
+		<Dropslot pbig="0.3" pmedium="0.3" psmall="0.2" pgold="0.05" min_gold="150" max_gold="400" min_level="15" max_level="20" magic_prob="0.6" magic_power="550" />
+		<Dropslot pbig="0.3" pmedium="0.3" psmall="0.2" pgold="0.05" min_gold="120" max_gold="300" min_level="14" max_level="19" magic_prob="0.6" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="100" max_gold="300" min_level="13" max_level="18" magic_prob="0.6" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="80" max_gold="280" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="600"
+					level="17"
+					max_health="1700"
+					armor="35"
+					block="35"
+					power="130"
+					attack="250"
+					strength="30"
+					dexterity="75"
+					magic_power="20"
+					willpower="40"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="50"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="3000"
+					attack_speed="1000"
+					step_length="1.0"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="dark_shot" rating="2" timer_nr="1" timer_value="6000"/>
+		<Ability type="ice_shot" rating="1" timer_nr="0"/>
+		<Ability type="summoned" time="2000" />
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14"  ai_shoot_range="8"  />
+</Monster>
+
+<!-- third mini-boss during the siege of dwarfenwall-->
+<Monster type="MONSTER" subtype="boss3_siege" name="Savage Skeleton" fraction="undead" race="undead" layer="NORMAL">
+	<Dropslots >
+		<Dropslot pbig="0.4" pmedium="0.4" psmall="0.1" pgold="0.05" min_gold="150" max_gold="400" min_level="15" max_level="21" magic_prob="0.7" magic_power="550" />
+		<Dropslot pbig="0.4" pmedium="0.4" psmall="0.1" pgold="0.05" min_gold="120" max_gold="300" min_level="15" max_level="20" magic_prob="0.7" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.8" pgold="0.00" min_gold="100" max_gold="300" min_level="15" max_level="20" magic_prob="0.7" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="150" max_gold="500" />
+	</Dropslots>
+	<RenderInfo name="savageSkeleton" />
+	
+	<BasicAttributes
+					experience="650"
+					level="17"
+					max_health="3250"
+					armor="50"
+					block="0"
+					power="180"
+					attack="100"
+					strength="100"
+					dexterity="30"
+					magic_power="0"
+					willpower="100"
+					resistances_physical="20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="2000"
+					attack_speed="1200"
+					step_length="1.5"
+					attack_range="2"
+					>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="4000" />
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- fourth boss during the siege of dwarfenwall-->
+<Monster type="MONSTER" subtype="boss4_siege" name="Boney Brothers" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="boneyBrothers" />
+	<Dropslots >
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="150" max_gold="400" min_level="15" max_level="22" magic_prob="0.8" magic_power="600" />
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="120" max_gold="300" min_level="15" max_level="21" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="1.0" pgold="0.00" min_gold="100" max_gold="300" min_level="15" max_level="20" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="150" max_gold="500" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="750"
+					level="17"
+					max_health="2800"
+					armor="30"
+					block="100"
+					power="180"
+					attack="100"
+					strength="100"
+					dexterity="60"
+					magic_power="30"
+					willpower="100"
+					resistances_physical="-20"
+					resistances_air="0"
+					resistances_ice="40"
+					resistances_fire="-50"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="0"
+					walk_speed="2500"
+					attack_speed="1400"
+					step_length="1.5"
+					attack_range="2"
+					>
+		<Ability type="walk" />
+		<Ability type="throw_grenade" rating="20"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000" />
+		<Ability type="block_down" rating="0" random_rating="21"/>
+		
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="1.1" />
+	
+	<AI ai_sight_range="12" ai_shoot_range="8"/>
+</Monster>
+
+<!-- Icemage, siege-->
+<Monster type="MONSTER" subtype="necromancer_ice_siege" name="Icemage" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.2" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	<BasicAttributes
+		experience="150"
+		level="18"
+		max_health="250"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="35"
+		willpower="50"
+		resistances_physical="00"
+		resistances_air="0"
+		resistances_ice="25"
+		resistances_fire="00"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="1500"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_ice" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="guided_icicle" rating="2"/>
+	<Ability type="noaction"/>
+	<Ability type="summoned" time="2000" />
+	
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14" ai_shoot_range="9" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- Frostmage, siege-->
+<Monster type="MONSTER" subtype="necromancer_frost_siege" name="Frostmage" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.2" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="180"
+		level="19"
+		max_health="300"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="22"
+		willpower="50"
+		resistances_physical="00"
+		resistances_air="0"
+		resistances_ice="30"
+		resistances_fire="00"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="1500"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_ice" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="ice_ball" rating="2"/>
+	<Ability type="monster_freeze" rating="3"/>
+	<Ability type="noaction"/>
+	<Ability type="summoned" time="2000" />
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14" ai_shoot_range="9" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- Nervan the Frostbringer, unique frostmage, siege-->
+<Monster type="MONSTER" subtype="boss5_siege" name="Neivan the Frostbringer" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	
+	<Dropslots >
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="150" max_gold="400" min_level="15" max_level="22" magic_prob="1.0" magic_power="600" />
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="120" max_gold="300" min_level="15" max_level="21" magic_prob="1.0" magic_power="550" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="1.0" pgold="0.00" min_gold="100" max_gold="300" min_level="15" max_level="20" magic_prob="1.0" magic_power="550" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="200" max_gold="600" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="900"
+		level="23"
+		max_health="3000"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="55"
+		willpower="150"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="30"
+		resistances_fire="0"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="1500"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_ice" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="ice_ball" rating="1" all_target_rating="0.6" all_target_rating_radius="1.5"/>
+	<Ability type="guided_icicle" rating="2"/>
+	<Ability type="monster_frost_wave" rating="0" all_target_rating="2.5" all_target_rating_radius="7"/>
+	<Ability type="noaction"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="15" ai_shoot_range="10" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- Blackmage, siege-->
+<Monster type="MONSTER" subtype="necromancer_black_siege" name="Blackmage" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.2" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="160"
+		level="18"
+		max_health="300"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="40"
+		willpower="50"
+		resistances_physical="00"
+		resistances_air="0"
+		resistances_ice="00"
+		resistances_fire="00"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="1700"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_shadow" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="shadow_magic_shield" rating="2"/>
+	<Ability type="noaction"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14" ai_shoot_range="9" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- Black Raven, unique blackmage, siege-->
+<Monster type="MONSTER" subtype="boss6_siege" name="Black Raven" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	
+	<Dropslots >
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="150" max_gold="400" min_level="16" max_level="22" magic_prob="1.0" magic_power="650" />
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="120" max_gold="300" min_level="15" max_level="22" magic_prob="1.0" magic_power="600" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="1.0" pgold="0.00" min_gold="100" max_gold="300" min_level="15" max_level="22" magic_prob="1.0" magic_power="600" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="300" max_gold="1000" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="1200"
+		level="20"
+		max_health="4000"
+		armor="30"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="60"
+		willpower="250"
+		resistances_physical="00"
+		resistances_air="0"
+		resistances_ice="20"
+		resistances_fire="20"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="1500"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_shadow" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="black_storm" timer_nr="1" timer_value="14000" rating="2" all_target_rating="0.3" all_target_rating_radius="5"/>
+	<Ability type="shadow_magic_shield" rating="0.5" all_target_rating="0.5" all_target_rating_radius="12"/>
+	<Ability type="noaction"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="15" ai_shoot_range="10" ai_randaction_prob="0.0" />
+</Monster>
+
+
+<!-- monstergroups for the siege -->
+
+<MonsterGroup name="weakSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="weakSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easySkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easySkeletonsDwall2" >
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easySkeletonsDwall3" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+
+<MonsterGroup name="mediumSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="4" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumSkeletonsDwall3" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardSkeletonsDwall3" >
+	<SubGroup subtype="sword_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="5" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easyFireSkeletonsDwall1" >
+	<SubGroup subtype="fire_skel_sword_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easyFireSkeletonsDwall2" >
+	<SubGroup subtype="fire_skel_sword_siege" number="1" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="1" prob="1.0" />
+	<SubGroup subtype="fire_skel_bow_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumFireSkeletonsDwall1" >
+	<SubGroup subtype="fire_skel_sword_siege" number="3" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_bow_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumFireSkeletonsDwall2" >
+	<SubGroup subtype="fire_skel_sword_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="1" prob="1.0" />
+	<SubGroup subtype="fire_skel_bow_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardFireSkeletonsDwall1" >
+	<SubGroup subtype="fire_skel_sword_siege" number="3" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="3" prob="1.0" />
+	<SubGroup subtype="fire_skel_bow_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardFireSkeletonsDwall2" >
+	<SubGroup subtype="fire_skel_sword_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_bow_siege" number="4" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easyIceSkeletonsDwall1" >
+	<SubGroup subtype="frost_skel_sword_siege" number="3" prob="1.0" />
+	<SubGroup subtype="frost_skel_bow_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easyIceSkeletonsDwall2" >
+	<SubGroup subtype="frost_skel_sword_siege" number="1" prob="1.0" />
+	<SubGroup subtype="frost_skel_bow_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumIceSkeletonsDwall1" >
+	<SubGroup subtype="frost_skel_sword_siege" number="4" prob="1.0" />
+	<SubGroup subtype="frost_skel_bow_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumIceSkeletonsDwall2" >
+	<SubGroup subtype="frost_skel_sword_siege" number="2" prob="1.0" />
+	<SubGroup subtype="frost_skel_bow_siege" number="4" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardIceSkeletonsDwall1" >
+	<SubGroup subtype="frost_skel_sword_siege" number="5" prob="1.0" />
+	<SubGroup subtype="frost_skel_bow_siege" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardIceSkeletonsDwall2" >
+	<SubGroup subtype="frost_skel_sword_siege" number="3" prob="1.0" />
+	<SubGroup subtype="frost_skel_bow_siege" number="5" prob="1.0" />
+</MonsterGroup>
+
+
+<MonsterGroup name="easyShadowSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easyShadowSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="necromancer_ice_siege" number="1" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumShadowSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumShadowSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="necromancer_ice_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardShadowSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardShadowSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="necromancer_ice_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easySpecialSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="3" prob="1.0" />
+	<SubGroup subtype="necromancer_frost_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="easySpecialSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="necromancer_ice_siege" number="1" prob="1.0" />
+	<SubGroup subtype="necromancer_black_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumSpecialSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="necromancer_frost_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="mediumSpecialSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="necromancer_black_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardSpecialSkeletonsDwall1" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="necromancer_frost_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="hardSpecialSkeletonsDwall2" >
+	<SubGroup subtype="sword_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="axe2_skel_siege" number="1" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="shadow_bow_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="necromancer_black_siege" number="1" prob="1.0" />
+</MonsterGroup>
+
+
+<MonsterGroup name="boss1" >
+	<SubGroup subtype="boss1_siege" number="1" prob="1" />
+</MonsterGroup>
+<MonsterGroup name="boss2" >
+	<SubGroup subtype="boss2_siege" number="1" prob="1" />
+	<SubGroup subtype="axe2_skel_siege" number="3" prob="1" />
+</MonsterGroup>
+<MonsterGroup name="boss3" >
+	<SubGroup subtype="boss3_siege" number="1" prob="1" />
+</MonsterGroup>
+<MonsterGroup name="boss4" >
+	<SubGroup subtype="boss4_siege" number="1" prob="1" />
+</MonsterGroup>
+<MonsterGroup name="boss5" >
+	<SubGroup subtype="boss5_siege" number="1" prob="1" />
+</MonsterGroup>
+<MonsterGroup name="boss6" >
+	<SubGroup subtype="boss6_siege" number="1" prob="1" />
+</MonsterGroup>
+
+<!-- Nar'Asoroth -->
+<Monster type="MONSTER" subtype="asoroth" name="Nar'Asoroth" fraction="undead" race="undead" layer="NORMAL">
+	<RenderInfo name="asoroth" />
+	<Dropslots >
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="150" max_gold="400" min_level="18" max_level="24" magic_prob="1.0" magic_power="750" />
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="150" max_gold="400" min_level="18" max_level="24" magic_prob="1.0" magic_power="750" />
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="150" max_gold="400" min_level="18" max_level="24" magic_prob="1.0" magic_power="750" />
+		<Dropslot pbig="0.5" pmedium="0.5" psmall="0.0" pgold="0.00" min_gold="150" max_gold="400" min_level="18" max_level="24" magic_prob="1.0" magic_power="750" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="10000"
+		level="22"
+		max_health="20000"
+		armor="60"
+		block="40"
+		attack="120"
+		power="140"
+		strength="80"
+		dexterity="60"
+		magic_power="50"
+		willpower="230"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="50"
+		resistances_fire="-25"
+		resistances_cap_physical="70"
+		resistances_cap_air="80"
+		resistances_cap_ice="100"
+		resistances_cap_fire="40"
+		walk_speed="1500"
+		attack_speed="1000"
+		step_length="2.0"
+		attack_range="3"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="noaction" />
+	<Ability type="talk" />
+	<Ability type="die" time="6000" />
+	
+	<Ability type="attack" rating="1"/>
+	<Ability type="asoroth_icicle" rating="2"/>
+	<Ability type="asoroth_guided_icicle" rating="0"/>
+	<Ability type="asoroth_summon_skel" rating="3"/>
+	<Ability type="asoroth_ice_attack"/>
+	<Ability type="asoroth_guided_iceball" all_target_rating_radius="3" all_target_rating="0.1"/>
+	<Ability type="asoroth_frost_wave" all_target_rating_radius="5" all_target_rating="2" rating="-100"/>
+	<Ability type="asoroth_meteor" />
+	<Ability type="asoroth_ice_obelisk" />
+	<Ability type="asoroth_call_army"/>
+	<Ability type="asoroth_black_storm" all_target_rating_radius="4" all_target_rating="0.1"/>
+	
+	
+	<Immunity type="berserk"/>
+	<Immunity type="confused"/>
+	<Immunity type="poisoned"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="15" ai_shoot_range="15" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- Blackmage, personal attendend of Nar'Asortoth-->
+<Monster type="MONSTER" subtype="necromancer_black_attendend" name="Blackmage" fraction="undead" race="human" layer="NORMAL">
+	<RenderInfo name="necromancer" />
+	<Dropslots >
+		<Dropslot pbig="0.3" pmedium="0.5" psmall="0.1" pgold="0.0" min_gold="150" max_gold="400" min_level="18" max_level="22" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.3" pmedium="0.3" psmall="0.2" pgold="0.1" min_gold="120" max_gold="300" min_level="18" max_level="22" magic_prob="0.8" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.1" pgold="0.00" min_gold="100" max_gold="300" min_level="18" max_level="22" magic_prob="1.0" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="200" max_gold="600" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="1000"
+		level="20"
+		max_health="2000"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="60"
+		willpower="100"
+		resistances_physical="00"
+		resistances_air="0"
+		resistances_ice="00"
+		resistances_fire="00"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="80"
+		resistances_cap_fire="50"
+		walk_speed="2500"
+		attack_speed="1700"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="walk" />
+	<Ability type="magic_attack_shadow" rating="1"/>
+	<Ability type="die" time = "3000" />
+	<Ability type="shadow_magic_shield" rating="2"/>
+	<Ability type="noaction"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="14" ai_shoot_range="9" ai_randaction_prob="0.0" />
+</Monster>
+
+<!-- Ice Obelisk-->
+<Monster type="MONSTER" subtype="oblisk_ice" name="Ice Obelisk" fraction="undead" race="elemental" layer="NORMAL">
+	<RenderInfo name="iceObelisk" />
+	<Dropslots >
+		<Dropslot pbig="0.005" pmedium="0.01" psmall="0.2" pgold="0.03" min_gold="30" max_gold="100" min_level="14" max_level="20" magic_prob="0.05" magic_power="550" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="160"
+		level="18"
+		max_health="1500"
+		armor="20"
+		block="0"
+		attack="20"
+		power="25"
+		strength="25"
+		dexterity="10"
+		magic_power="15"
+		willpower="50"
+		resistances_physical="00"
+		resistances_air="0"
+		resistances_ice="100"
+		resistances_fire="-50"
+		resistances_cap_physical="80"
+		resistances_cap_air="80"
+		resistances_cap_ice="100"
+		resistances_cap_fire="20"
+		walk_speed="2500"
+		attack_speed="2000"
+		step_length="1.5"
+		attack_range="2"
+	>
+		
+	<Ability type="die" time = "3000" />
+	<Ability type="obelisk_icicle" rating = "1"/>
+	<Ability type="noaction"/>
+
+	<Immunity type="blind"/>
+	<Immunity type="poisoned"/>
+	<Immunity type="berserk"/>
+	<Immunity type="confused"/>
+	<Immunity type="mute"/>
+	<Immunity type="frozen"/>
+	
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	
+	
+	<AI ai_sight_range="15" ai_shoot_range="15" ai_randaction_prob="0.0" />
+</Monster>
+
+<MonsterGroup name="campSkeletons" >
+	<SubGroup subtype="sword_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="axe_skel_siege" number="2" prob="1.0" />
+	<SubGroup subtype="bow_skel_siege" number="3" prob="1.0" />
+</MonsterGroup>
+<MonsterGroup name="asorothLastResort" >
+	<SubGroup subtype="fire_skel_sword_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_axe2_siege" number="2" prob="1.0" />
+	<SubGroup subtype="fire_skel_bow_siege" number="4" prob="1.0" />
+</MonsterGroup>

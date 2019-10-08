@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="crane" layer="NORMAL">
+        <Mesh file="crane.mesh" />
+        <Geometry shape="CIRCLE" radius="2.876952994"/>
+</Object>

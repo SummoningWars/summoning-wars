@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="bush" layer="BUSH">
+        <Mesh file="bush.mesh" />
+        <Geometry shape="CIRCLE" radius="3.350146958"/>
+</Object>

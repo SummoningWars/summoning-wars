@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="cryptShrine" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="3.940686509"
+    extent_y="3.940686509"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="cave_wall_cOut1" 
+            center_x="-2" 
+            center_y="-3" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_cOut1" 
+            center_x="-2" 
+            center_y="0" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_cOut1" 
+            center_x="3" 
+            center_y="0" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_cOut1" 
+            center_x="3" 
+            center_y="-3" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_m1" 
+            center_x="0.5" 
+            center_y="-3" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_m1" 
+            center_x="0.5" 
+            center_y="0" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_s1" 
+            center_x="3" 
+            center_y="-1.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="cave_wall_s1" 
+            center_x="-2" 
+            center_y="-1.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="0.4381807137" 
+            center_y="0.2173245501" 
+			height="1.723426124" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="ground_squ_s" 
+            center_x="1.5" 
+            center_y="-1.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="ground_squ_s" 
+            center_x="-0.5" 
+            center_y="-1.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_column1" 
+            center_x="2.5" 
+            center_y="1.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="konz_column1" 
+            center_x="-1.5" 
+            center_y="1.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="konz_podest" 
+            center_x="0.5" 
+            center_y="0" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

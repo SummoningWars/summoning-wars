@@ -1,0 +1,19 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="energySource" layer="NORMAL">
+    <Mesh file="energySource.mesh" />
+    <Geometry shape="CIRCLE" radius="0.5981700199"/>
+	<Flags usable="true" exact_picking="true" collision_detect="false" />
+		
+	<Event trigger="object_use">
+		<Effect>
+			if(scriptobjectvar[trigger.used_object]["lockdown"] ~= true)then
+				insertTrigger("energySourceUsed")
+				addTriggerVariable("used_object",trigger.used_object)
+				addTriggerVariable("user",trigger.user)
+				
+				scriptobjectvar[trigger.used_object]["lockdown"] = true;
+				--timedExecute('scriptobjectvar['..trigger.used_object..']["lockdown"] = nil',500);
+				--Note: this line will throw an error on destruction of the object, so it was migrated into the energySourceUsed event
+			end
+		</Effect>
+	</Event>
+</ScriptObject>

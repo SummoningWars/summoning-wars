@@ -1,0 +1,225 @@
+<creature>
+  <name>goblinGreen</name>
+  <meshname>goblinGreen.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Characters/NPC/Goblinoide/goblinAnimation13.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>walk</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>walk with weapon</description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description>you're... dead</description>
+    </clip>
+    <clip>
+      <name>idle1</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description>nothing to do</description>
+    </clip>
+    <clip>
+      <name>idle2</name>
+      <startframe>73</startframe>
+      <endframe>96</endframe>
+      <description>jump a little</description>
+    </clip>
+    <clip>
+      <name>idle3</name>
+      <startframe>97</startframe>
+      <endframe>120</endframe>
+      <description>scratch the earth</description>
+    </clip>
+    <clip>
+      <name>attackArmed1</name>
+      <startframe>121</startframe>
+      <endframe>144</endframe>
+      <description>attack with one handed weapon</description>
+    </clip>
+    <clip>
+      <name>attackArmed2</name>
+      <startframe>145</startframe>
+      <endframe>168</endframe>
+      <description>attack with one handed weapon</description>
+    </clip>
+    <clip>
+      <name>attack1</name>
+      <startframe>169</startframe>
+      <endframe>192</endframe>
+      <description>attack unarmed</description>
+    </clip>
+    <clip>
+      <name>attack2</name>
+      <startframe>193</startframe>
+      <endframe>216</endframe>
+      <description>attack unarmed</description>
+    </clip>
+    <clip>
+      <name>attackRanged1</name>
+      <startframe>217</startframe>
+      <endframe>240</endframe>
+      <description>attack with a bow</description>
+    </clip>
+    <clip>
+      <name>walkRanged</name>
+      <startframe>241</startframe>
+      <endframe>264</endframe>
+      <description>walk with bow</description>
+    </clip>
+    <clip>
+      <name>idleRanged1</name>
+      <startframe>265</startframe>
+      <endframe>288</endframe>
+      <description>idle with bow</description>
+    </clip>
+    <clip>
+      <name>idleRanged2</name>
+      <startframe>289</startframe>
+      <endframe>312</endframe>
+      <description>play the horned beast - with bow</description>
+    </clip>
+    <clip>
+      <name>goblinSpecial</name>
+      <startframe>313</startframe>
+      <endframe>336</endframe>
+      <description>a special attack for green fellows</description>
+    </clip>
+    <clip>
+      <name>hammerWalk</name>
+      <startframe>337</startframe>
+      <endframe>348</endframe>
+      <description>someone has a weapon too big for himself</description>
+    </clip>
+    <clip>
+      <name>hammerAttack</name>
+      <startframe>349</startframe>
+      <endframe>372</endframe>
+      <description>attack with a overlong weapon</description>
+    </clip>
+    <clip>
+      <name>hammerBash</name>
+      <startframe>373</startframe>
+      <endframe>396</endframe>
+      <description>not to be confused with hammerbash</description>
+    </clip>
+    <clip>
+      <name>hammerIdle</name>
+      <startframe>397</startframe>
+      <endframe>420</endframe>
+      <description>rest from carrying such a overweighted weapon</description>
+    </clip>
+    <clip>
+      <name>sweepStrike</name>
+      <startframe>421</startframe>
+      <endframe>444</endframe>
+      <description>a secret art from the deadly depth of gobjutsu</description>
+    </clip>
+    <clip>
+      <name>attackTwinBlades</name>
+      <startframe>445</startframe>
+      <endframe>468</endframe>
+      <description>feel the might of gobjutsu</description>
+    </clip>
+    <clip>
+      <name>twinBladeJuggling</name>
+      <startframe>469</startframe>
+      <endframe>496</endframe>
+      <description>a true master of gobjutsu trains always and everywhere</description>
+    </clip>
+    <clip>
+      <name>idleTwinBlades</name>
+      <startframe>497</startframe>
+      <endframe>520</endframe>
+      <description>stand somwhere while concentrating on the essence of gobjutsu</description>
+    </clip>
+    <clip>
+      <name>ride</name>
+      <startframe>521</startframe>
+      <endframe>539</endframe>
+      <description>ride a wolf</description>
+    </clip>
+    <clip>
+      <name>idleRide</name>
+      <startframe>540</startframe>
+      <endframe>563</endframe>
+      <description>pet your pet</description>
+    </clip>
+    <clip>
+      <name>dieRide</name>
+      <startframe>564</startframe>
+      <endframe>586</endframe>
+      <description>the goblin ALWAYS dies with his loyal pet</description>
+    </clip>
+    <clip>
+      <name>attackRide</name>
+      <startframe>587</startframe>
+      <endframe>610</endframe>
+      <description>a mighty spearthrust on wolfback</description>
+    </clip>
+    <clip>
+      <name>attackMagic1</name>
+      <startframe>611</startframe>
+      <endframe>634</endframe>
+      <description>shoot a little magic arrow</description>
+    </clip>
+    <clip>
+      <name>attackMagic2</name>
+      <startframe>635</startframe>
+      <endframe>658</endframe>
+      <description>throw a little magic arrow</description>
+    </clip>
+    <clip>
+      <name>castMagicWeak</name>
+      <startframe>659</startframe>
+      <endframe>682</endframe>
+      <description>cast a lightning or a icicle</description>
+    </clip>
+    <clip>
+      <name>castMagicStrong</name>
+      <startframe>683</startframe>
+      <endframe>714</endframe>
+      <description>cast a buff or sonething big like a blizzard</description>
+    </clip>
+    <clip>
+      <name>showBow</name>
+      <startframe>715</startframe>
+      <endframe>738</endframe>
+      <description>point at someone, jumping on the spot while holding a bow</description>
+    </clip>
+    <clip>
+      <name>idleRock</name>
+      <startframe>739</startframe>
+      <endframe>762</endframe>
+      <description>stand around with a rock-like Weapon</description>
+    </clip>
+    <clip>
+      <name>idleBerry</name>
+      <startframe>763</startframe>
+      <endframe>786</endframe>
+      <description>eat something from a rock-like weapon. Edible Objects recommended by the Goblin Bureau of Healthcare</description>
+    </clip>
+    <clip>
+      <name>throw</name>
+      <startframe>787</startframe>
+      <endframe>810</endframe>
+      <description>throw a rock-like weapon</description>
+    </clip>
+    <clip>
+      <name>walkRock</name>
+      <startframe>811</startframe>
+      <endframe>834</endframe>
+      <description>walk with a rock-like wepon</description>
+    </clip>
+    <clip>
+      <name>talk</name>
+      <startframe>835</startframe>
+      <endframe>858</endframe>
+      <description>a talking goblin - it really exists. Not suitable for bowwielders</description>
+    </clip>
+  </animations>
+
+</creature>

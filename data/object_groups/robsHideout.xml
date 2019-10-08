@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="robsHideout" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="11.12762247"
+    extent_y="12.58156082"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="campFire" 
+            center_x="0.1200918329" 
+            center_y="0.997628137" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="-1.321581781" 
+            center_y="-6.145872288" 
+            angle="80.73924623" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="-6.059891578" 
+            center_y="7.42223803" 
+            angle="-33.37713866" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="3.676725213" 
+            center_y="8.504064842" 
+            angle="-130.3681256" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="8.959112332" 
+            center_y="-1.848408316" 
+            angle="-181.2151196" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$tree" 
+            center_x="-4.574132991" 
+            center_y="-2.683922357" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-5.467813614" 
+            center_y="-9.225810014" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-6.219327189" 
+            center_y="3.005961711" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="5.279210167" 
+            center_y="-8.109880284" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+    <Location name="locBandit1" pos_x="-1.869975281" pos_y="-1.69293213" />
+    <Location name="locBandit2" pos_x="1.103208736" pos_y="-2.013770415" />
+    <Location name="locBandit3" pos_x="2.951701737" pos_y="-0.2926341474" />
+    <Location name="locBandit4" pos_x="2.487894603" pos_y="2.298182415" />
+    <Location name="locRob" pos_x="-1.852042676" pos_y="3.364496213" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

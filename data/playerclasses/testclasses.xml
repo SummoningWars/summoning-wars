@@ -1,0 +1,59 @@
+<!--
+<PlayerClass type="_testclass" name="_testclass">
+	<BasicAttributes
+					max_health="200"
+					armor="20"
+					block="0"
+					attack="30"
+					power="30"
+					strength="50"
+					dexterity="20"
+					magic_power="10"
+					willpower="20"
+					resistances_physical="0"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3000"
+					attack_speed="2000"
+					step_length="1.5"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="die"/>
+		<Ability type="dead" />
+		<Ability type="take_item" />
+		<Ability type="use" />
+		<Ability type="speak" />
+		<Ability type="noaction" />
+		<Ability type="trade" />
+		
+		<Ability type="attack" />
+		<Ability type="summon_skelBow" />
+		<Ability type="summon_skelSword" />
+		<Ability type="testfireball" />
+		<Ability type="testbooster" />
+		<Ability type="teststatushealer" />
+	</BasicAttributes>
+	<ItemRequirementTag name="warrior" />
+	<ItemRequirementTag name="mage" />
+	<BasicAbility type="attack" />
+	<Look name="test" render_info="warrior_m" gender="male" emotionset="human_standard"/>
+	<SkilltreeTabs tab1="test skills1" tab2="test skills2" tab3="test skills2" />
+	
+	<Item type="dagger_sw" />
+	<Item type="heal_1" />
+	<Item type="heal_1" />
+	
+	<LearnableAbility type="attack" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.050000" required_level="0" image="set:skills image:bash"/>
+	<LearnableAbility type="summon_skelBow" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.050000" required_level="1" image="set:skills image:magic_attack"/>
+	<LearnableAbility type="summon_skelSword" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.450000" required_level="1"/>
+	<LearnableAbility type="testbooster" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.250000" required_level="1"/>
+	<LearnableAbility type="teststatushealer" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.650000" required_level="1"/>
+		
+</PlayerClass>
+-->

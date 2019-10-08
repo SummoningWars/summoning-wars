@@ -1,0 +1,30 @@
+Zu der Verwendung der Makefile:
+
+Zuerst in eine shell gehen und in das entsprechende Quelltext-Verzeichnis
+wechseln z.B. cd SVN/server/trunk. Dort befindet sich eine Makefile. 
+In der Datei Makefile.objs werden die Targets definiert. Wenn man z.B.
+"testapp.cpp" compilieren will schreibt man in die Datei "testapp.o".
+Dann fuehrt man make aus, welches dann die application compiliert und zusammen
+linkt.
+Man kann make auch Targets mitgeben, die man als Parameter anhaengt z.B.
+
+make	clean	// loescht alle compilierten *.o Dateien & die Anwendung
+
+	build	// compiliert & linkt die Anwendung
+
+	compile	// compiliert die Targets aus der Makefile.objs
+
+	run	// compiliert & linkt die Anwendung und fuehrt sie aus
+	
+	doxygen	// fuehrt Doxygen aus
+
+	view	// fuehrt Doxygen aus und oeffnet einen Browser mit 
+		// html/index.html
+
+
+PS: Es kann passieren, dass der Compiler oder Linker Aenderungen im Quelltext 
+nicht erkennt, deshalb ist es sehr nuetzlich kombinierte Targets zu verwenden
+z.B.:
+
+make clean run	// Loescht das aktuelle Build und baut die Anwendung komplett
+		// neu

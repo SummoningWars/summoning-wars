@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="konz_door_wl" layer="NORMAL">
+        <Mesh file="konz_door_wl.mesh" />
+        <Geometry shape="RECT" extent_x="0.5" extent_y="1"/>
+</Object>

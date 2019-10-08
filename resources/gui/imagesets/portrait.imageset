@@ -1,0 +1,3 @@
+<Imageset AutoScaled="false" Imagefile="portrait.png" Name="Portrait" NativeHorzRes="800" NativeVertRes="600">
+	<Image Height="105" Name="Portrait" Width="94" XPos="0" YPos="0" />
+</Imageset>

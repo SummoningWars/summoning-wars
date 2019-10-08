@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="bronsFarm" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="14.44303777"
+    extent_y="14.44303777"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$door_wing_m" name="bronsFarmDoor" 
+            center_x="3.5" 
+            center_y="13" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="9" 
+            center_y="-7.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="-12.5" 
+            center_y="-8" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="-8" 
+            center_y="-12.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="0" 
+            center_y="-12.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="-12.5" 
+            center_y="0" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="13.5" 
+            center_y="-3" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_cOut" 
+            center_x="4.5" 
+            center_y="-7.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_cOut" 
+            center_x="-12.5" 
+            center_y="-12.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_cOut" 
+            center_x="13.5" 
+            center_y="5.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_cOut" 
+            center_x="4.5" 
+            center_y="-12.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_cOut" 
+            center_x="13.5" 
+            center_y="-7.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_m" 
+            center_x="13.5" 
+            center_y="3" 
+           height="6.938893904e-018" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_m" 
+            center_x="11" 
+            center_y="5.5" 
+           height="6.938893904e-018" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_m" 
+            center_x="4.5" 
+            center_y="-10" 
+           height="6.938893904e-018" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_s" 
+            center_x="8" 
+            center_y="5.5" 
+           height="6.938893904e-018" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence1" 
+            center_x="2.95280058" 
+            center_y="-2.929424338" 
+           height="3.552713679e-015" 
+            angle="39.1740002" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_t1" 
+            center_x="5.5" 
+            center_y="-6.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen2" 
+            center_x="-8.748826583" 
+            center_y="6" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen3" 
+            center_x="1.5" 
+            center_y="6.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen4" 
+            center_x="-8.5" 
+            center_y="-8.5" 
+            angle="-44.92521003" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen4" 
+            center_x="-1.5" 
+            center_y="3" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen4" 
+            center_x="3.5" 
+            center_y="10" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+    <Location name="locFarm" pos_x="0" pos_y="13.73736308" />
+    <Location name="locGoblins1" pos_x="-10.19588751" pos_y="11.25521725" />
+    <Location name="locGoblins2" pos_x="10.83340631" pos_y="9.76503702" />
+    <Location name="locWife" pos_x="3.664719696" pos_y="10.77810628" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

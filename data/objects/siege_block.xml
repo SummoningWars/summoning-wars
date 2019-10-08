@@ -1,0 +1,5 @@
+<ScriptObject subtype="siege_block" layer="BASE">
+        <RenderInfo name="siege_block"/>
+        <Geometry shape="RECT" extent_x="2.039341492" extent_y="4.053518708"/>
+		<Flags usable="false" exact_picking="true" collision_detect="false" />
+</ScriptObject>

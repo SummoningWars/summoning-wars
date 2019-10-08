@@ -1,0 +1,10 @@
+<Imageset AutoScaled="true" Imagefile="Inventory.png" Name="Inventory" NativeHorzRes="304" NativeVertRes="424">
+    <Image Height="826" Name="InvBackground" Width="538" XPos="0" YPos="0" />
+    <Image Height="1" Name="BorderHorz" Width="122" XPos="554" YPos="149" />
+    <Image Height="144" Name="BigSlotBack" Width="483" XPos="551" YPos="0" />
+    <Image Height="144" Name="MediumSlotBack" Width="483" XPos="551" YPos="156" />
+    <Image Height="142" Name="SmallSlotBack" Width="481" XPos="554" YPos="313" />
+    <Image Height="16" Name="GoldPile" Width="26" XPos="554" YPos="460" />
+    <Image Height="24" Name="WeaponSwitchState1" Width="93" XPos="583" YPos="460" />
+    <Image Height="24" Name="WeaponSwitchState2" Width="93" XPos="679" YPos="460" />
+</Imageset>

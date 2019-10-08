@@ -1,0 +1,309 @@
+<!-- Kappe -->
+<!-- WAR, PRI, ARC, MAG -->
+<Item type="helmet" subtype="cap_hlm" name="cap" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="all"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="2"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Lederkappe -->
+<!-- WAR, PRI, ARC, MAG -->
+<Item type="helmet" subtype="lthcap_hlm" name="leather cap" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="3"
+		character_requirement="all"
+		min_enchant="30"
+		max_enchant="60"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="5"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="3"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Lederhelm -->
+<!-- WAR, PRI, ARC -->
+<Item type="helmet" subtype="leath_hlm" name="leather helmet" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="5"
+		character_requirement="warrior,priest,archer"
+		min_enchant="50"
+		max_enchant="100"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="5"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Soeldnerkopf -->
+<!-- WAR, ARC --><!-- abschreckende Maske um Furcht bei Feinden zu verursachen -->
+<Item type="helmet" subtype="merchd_hlm" name="mercenary head" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="warrior,archer"
+		min_enchant="60"
+		max_enchant="150"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="15"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="8"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Novizenhelm -->
+<!-- PRI -->
+<Item type="helmet" subtype="novice_hlm" name="novice headgear" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="priest"
+		min_enchant="50"
+		max_enchant="170"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="12"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="8"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Soeldnerhelm -->
+<!-- WAR, PRI -->
+<Item type="helmet" subtype="merc_hlm" name="mercenary helmet" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="13"
+		character_requirement="warrior,priest"
+		min_enchant="60"
+		max_enchant="190"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="25"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Waldlaeuferstirband -->
+<!-- ARC -->
+<Item type="helmet" subtype="rngbnd_hlm" name="ranger bandana" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="13"
+		character_requirement="archer"
+		min_enchant="60"
+		max_enchant="180"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="23"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Assasssinenkapuze -->
+<!-- WAR, ARC -->
+<Item type="helmet" subtype="assass_hlm" name="assassin hood" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="19"
+		character_requirement="warrior,archer"
+		min_enchant="70"
+		max_enchant="210"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="35"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="19"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Birett -->
+<!-- PRI -->
+<Item type="helmet" subtype="birett_hlm" name="biretta" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="merc_hlm" />
+	<Attribute
+		level_requirement="19"
+		character_requirement="priest"
+		min_enchant="75"
+		max_enchant="230"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="31"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="19"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kettenturban -->
+<!-- WAR, PRI, ARC -->
+<Item type="helmet" subtype="turban_hlm" name="chain turban" size="medium">
+	<Image image="set:merc_hlm.png image:full_image" />
+	<Mesh file="turban_hlm.mesh" />
+	<Attribute
+		level_requirement="23"
+		character_requirement="warrior,archer,priest"
+		min_enchant="90"
+		max_enchant="260"
+		modchance_health_mod="0.1"
+		modchance_armor_mod="0.1"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+		modchance_willpower_mod="0.1"
+	/>
+
+  <EquipEffect
+		darmor="41"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="21"
+		probability="1.0"
+	/>
+</Item>

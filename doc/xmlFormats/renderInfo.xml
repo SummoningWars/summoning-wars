@@ -1,0 +1,144 @@
+<!-- RenderInfo contains various information for an object 
+	in fact, every thing presented here can be combined, but for better depiction this documentation shows something pretty close to a real example.
+	
+	A RenderInfo doesn't have to contain any information about a mesh and can be entirely abstract.
+	You will want to use this for information that is the same for every object using the RenderInfo as a base.
+	Creaturebase would be an example of a very fundamental RenderInfo. Every monster will use it later.
+	Since it is like that, only states are described here. A state can be a status modification like blind or mute,
+	or a state set by an ability. Since it is not necesserily sure noone but the originaly intended recipient will get it, it can't hurt to put it into the creaturebase.
+-->
+
+<!-- TODO: time für state und action-->
+<RenderInfo name="creaturebase" >
+	
+	<State name="mute">
+		<!-- A state is something that comes and goes. As such it is a good idea to have an activation and a deactivation, even though these tags are optional.
+			You can set particle systems, add meshes, play sounds and do basically everything possible in RenderInfos, although it might not be very reasonable.
+		-->
+		<Activation>
+			<ParticleSystem objectname="mute" source="Mute" position="0 2.4 -0.3"  />
+		</Activation>
+		<!-- Usually in the deactivation tag everything you did in the activation tag is reversed.
+			You wouldn't want the particle systems be stuck on the character forever.
+		-->
+		<Deactivation>
+			<!-- Detach takes away any part of a RenderInfo. Objectname specifies the object in case.-->
+			<Detach objectname="mute"/>
+		</Deactivation>
+	</State>
+	
+	<State name="state_from_customized_ability">
+		<Activation>
+			<!-- ParticleSystem will be explained later on. Note the bone-attribute though. As it references a bone in a skeleton it is a dangerous thing to use at a place like this.
+				In the end it means, that every skeleton will have to have a bone named "crown".
+			-->
+			<ParticleSystem objectname="huge_explosion" source="HugeExplosionParticleSystem" bone="crown"/>
+		</Activation>
+		
+		<!-- You can use a stable tag for the time between activation and deactivation.
+		Sometimes you want something different here than the inital activation sequenz left, sometimes you only have a stable tag (i.e. arrows only fly)-->
+		<Stable>
+			<Detach objectname="huge_explosion"/>
+			<ParticleSystem objectname="fancy_aura" source="FancyAuraParticleSystem"/>
+		</Stable>
+		
+		<Deactivation>
+			<Detach objectname="fancy_aura"/>
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<!-- A RenderInfo can have a parent. It will inherit Animations and States from it, but not meshes. Multiple parents are not allowed.
+	CyborgBase is a more specific, nevertheless still abstract, base that is used for a whole family of monsters.
+	As such it still contains no information about a mesh, but defines commonly used animations.
+-->
+<RenderInfo name = "cyborgBase" parent="creaturebase">
+	<!-- Actions used by monsters (or any object for that matter) can be mapped to an animation by an action tag.
+	If there is no Animation defined here the monster will use it's initial pose when it performs the action.-->
+	
+	<Action name="noaction">
+		<!-- A simple animation only needs the name of the animation. The skeleton the object uses has to contain it.-->
+		<Animation name="idle" />
+	</Action>
+	
+	<Action name="die">
+		<Animation name="die" />
+		<!-- ParticleSystem adds a particle system to the main mesh. Everything but objectname and source is optional.
+			objectname: the name used to identify a part of the RenderInfo. It has to be unique. A second object using the same name will not be attached.
+			source: the name of a particle system, that has to be defined in a .particle script.
+			time: the moment a particle System will be attached. By default 0. 0 means at the very beginning of an action, 1 is the end.
+			position: the position of the particle system (or any other object you want to attach) relative to the origin of the RenderInfo. the format is "x y z"
+		-->
+		<ParticleSystem time = "0.2" objectname="overload" source="ParticleSystemOfHorribleDeath" position="0.0 0.0 0.0" />
+	</Action>
+	<!-- If an Action occurs more than once, one of the possibilities will be chosen arbitrary.-->
+	<Action name="die">
+		<Animation name="dieHorribleDeath" />
+	</Action>
+	
+	<Action name="walk">
+		<!-- Action can contain more than one Animation. If two animations play at the same time it will produce strange results at best.
+			Using start and end you can specify timeslots for an animation.
+		-->
+		<Animation name="stepLeft" start="0" end="0.5"/>
+		<Animation name="stepRight" start="0.5" end="1"/>
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="killerBurst"/>
+		<!-- You can specify a bone where the particle system should be added. position is the relative to that bone. Of course, the bone has to be existent in the used skeleton.-->
+		<ParticleSystem time = "0.2" objectname="strike" source="ParticleSystemStrikeEffect" bone="itemRightHand" position="0.0 -2.0 0.0" />
+		<!-- Don't forget to detach particle systems when you no longer need them, or else they will stick until the object is deleted.-->
+		<Detach objectname="strike" time="1"/>
+	</Action>
+	<!-- A special case is an action name with '#'-characters in it's name. This is only relevant for playercharacters.
+		The first suffix corresponds to the mode of attack. It can be #Unarmed, #OneHand, #TwoHands.
+		The second suffix corresponds to the type of weapon used. It can be whatever comes to mind, even if it is recommended to use reasonable descriptions.
+		Those two things are defined with the item the character uses, so see item.xml, too.
+		This very specialized action-description is owed ot the fact, that a sword and a wand are both one-handed weapons, but used very differently nevertheless.
+		If the character tries to use a weapon without a specialized action description, sumwars will first fall bach to action#UsedHands and - should this not exist either - then to action.
+	-->
+	<Action name="attack#TwoHanded#weapontype">
+		<Animation name="killerBurstTwoHands"/>
+	</Action>
+</RenderInfo>
+
+<!-- The next step is a real object. It is a child of cyborgBase and consequentially a grandchild of creaturebase. It will inherit everything cyborgBase inherited. This can be a virtually infinit chain, but be wary of circular dependencies.-->
+<RenderInfo name="cyborg" parent="cyborgBase">
+	<!-- An entity is a mesh used by an object. You can have one mesh that is not named. It will be automatically assigned to "mainmesh". Everything else has to be named, so make sure of that.-->
+	<Entity source="cyborg.mesh"/>
+	<!-- Entities that are not the mainmesh can be assigned to certain bones of the skeleton assuming that the mainmesh has one.
+		rotation (Particle Systems can have it, too) is a local rotation relative to whatever point you attached the entity to.
+		A bone or simply the origin of the object you are constructing.
+		encoding: "x-axis y-axis z-axis"
+		Of course entities can have a position as well.
+	-->
+	<Entity objectname="head" bone="crown" source="dentedCyborgHead.mesh" rotation="0 90 0"/>
+	<Entity objectname="helmet" bone="crown" source="evilStormTrooperHelmet.mesh" />
+	
+	<!-- Subobjects are more than pure meshes like entities, but whole RenderInfo's themselfes.
+		They will get every animation, the object gets and move accordingly.
+		Of course this means, they have to have the animations, or you will only see the initial pose of the subObject.-->
+	<Subobject objectname="rightArm" source="bloodstainedAttackArm" />
+</RenderInfo>
+<!-- Note that bloodstainedAttackArm uses cyborgBase, too. This is recommended to make sure, every action is defined to some extend.
+	inherit="animation" means that the RenderInfo will only inherit Action and Animation tags.
+	This is a good choice for secondary RenderInfos, since ParticleSystems will be dublicated otherwise and throw errors because their names are already in use.
+-->
+<RenderInfo name="bloodstainedAttackArm" parent="cyborgBase" inherit="animation">
+	<Entity source="bloodyCyberArm.mesh"/>
+	<!-- Remeber that objects can contain animations as well. If parents contain the same Action, it will be overwritten. 
+		On Action die, the bloodstained attack arm will only ever perform the animation dissassamble, never die or dieHorribleDeath.
+	-->
+	<Action name="die">
+		<Animation name="dissassamble"/>
+	</Action>
+</RenderInfo>
+<!-- Similar to Actions, suffixes with '#' relate to characters.
+	It is a way to link certain RenderInfos to certain classes. See classes.xml for more information.-->
+<RenderInfo name="bloodstainedAttackArm#giant" parent="cyborgBase" inherit="animation">
+	<Entity source="bloodyCyberArmGiant.mesh"/>
+	<Action name="die">
+		<Animation name="dissassamble"/>
+	</Action>
+</RenderInfo>

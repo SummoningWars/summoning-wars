@@ -1,0 +1,133 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2010-07-25 09:49\n"
+"Last-Translator: Francesco Miglietta (fra9000) <miglietta.francesco@gmail."
+"com>\n"
+"Language-Team: Italian <http://gamesopensource.altervista.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: theAmbush.xml
+msgid "The Ambush"
+msgstr "L'agguato"
+
+#: theAmbush.xml
+msgid ""
+"Ireana survived and, as a token of her gratitude, provided our next job. I "
+"always knew the councilmen only wanted an exterminator."
+msgstr ""
+"Ireana e' sopravvissuta e come segno della sua gratitudina ci ha fornito il "
+"nostro prossimo compito. Ho sempre saputo che il Consiglio aveva bisogno "
+"solo di uno sterminatore."
+
+#: theAmbush.xml
+msgid ""
+"A female council-mage by the name of Ireana of Northborough seems to be in "
+"trouble west of Dwarfenwall. Nothing a Branded One couldn't solve. If she "
+"survives long enough..."
+msgstr ""
+"Una donna del Consiglio dei maghi di nome Ireana di Nordburg sembra essere "
+"in difficolta' a ovest di Dwarfenwall. Niente che un Marchiato non possa "
+"risolvere, sempre che lei sopravviva abbastanza a lungo..."
+
+#: theAmbush.xml
+msgid "aisWolfstones"
+msgstr "Le pietre dei lupi"
+
+#: theAmbush.xml
+msgid "Dwarfenwall is in that direction. I shouldn't go this way yet."
+msgstr ""
+"Dwarfenwall e' in quella direzione. Per il momento non prenderei questa "
+"strada."
+
+#: theAmbush.xml
+msgid "Wait!"
+msgstr "Aspetta!"
+
+#: theAmbush.xml
+msgid "I am making haste, alright?"
+msgstr "Sono troppo precipitoso?"
+
+#: theAmbush.xml
+msgid "You have to go into the western woods right now."
+msgstr "Ora come ora devi addentrarti nei boschi verso occidente."
+
+#: theAmbush.xml
+msgid "We are making haste, alright?"
+msgstr "Siamo troppo precipitosi?"
+
+#: theAmbush.xml
+msgid "The prince's fiancé is in danger."
+msgstr "La fidanzata del principe e' in pericolo."
+
+#: theAmbush.xml
+msgid "Who?"
+msgstr "Chi?"
+
+#: theAmbush.xml
+msgid "The archmage Ireana of Northborough"
+msgstr "L'arcimaga Ireana di Nordburg."
+
+#: theAmbush.xml
+msgid "Will that be payed extra?"
+msgstr "Verra' pagato come extra?"
+
+#: theAmbush.xml
+msgid "What?"
+msgstr "Che cosa?!"
+
+#: theAmbush.xml
+msgid ""
+"I thought she was one of your fancy elementalist amazones. Can't she look "
+"after herself?"
+msgstr ""
+"Pensavo fosse una delle vostre fantastiche elementaliste-amazzoni. Non "
+"riesce piu' a badare a se stessa?"
+
+#: theAmbush.xml
+msgid "Don't start to argue and help her! She needs your help!"
+msgstr "Non iniziare a discutere e vai ad aiutarla! Ha bisogno del tuo aiuto!"
+
+#: theAmbush.xml
+msgid "What do you think? Shall we bail someone out?"
+msgstr "Cosa credi? Pensi davvero che l'abbandoneremmo la'?"
+
+#: theAmbush.xml
+msgid "I'm not sure..."
+msgstr "Non ne sono sicuro..."
+
+#: theAmbush.xml
+msgid "Well, it couldn't really hurt..."
+msgstr "Guarda, non e' che la cosa ci ferisca piu' di tanto..."
+
+#: theAmbush.xml
+msgid "Will that be payed extra??"
+msgstr "Verra' pagato come extra?"
+
+#: theAmbush.xml
+msgid "Argh! Do I have to-"
+msgstr "Argh! E io dovrei-"
+
+#: theAmbush.xml
+msgid "Alright already, safe your breath!"
+msgstr "Stai tranquillo, risparmia il fiato!"
+
+#: theAmbush.xml
+msgid "What do you think, friends, do we want to bail someone out?"
+msgstr "Cosa ne pensate amici? Vogliamo aiutarla?"
+
+#: theAmbush.xml
+msgid "The firefighters are on the way."
+msgstr "Le squadre anti-incendio stanno gia' andando."

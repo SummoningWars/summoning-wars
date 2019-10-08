@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="mutantSlugExp1" layer="NORMAL">
+        <Mesh file="mutantSlugExp1.mesh" />
+        <Geometry shape="RECT" extent_x="0.638258265" extent_y="0.2684499765"/>
+</Object>

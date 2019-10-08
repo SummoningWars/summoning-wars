@@ -1,0 +1,17 @@
+Hans:
+	- lua Doku online stellen
+	- Forschung: Austauschen der Meshes bei Anlegen von Ruestungsteilen
+	- Logger
+	- Balancing / weitere Gegner
+
+Steffen:
+	- Emotionsets
+	- Spalt
+	- Übersetzungen
+	- Bandit mit Zweihandschwert
+	- Template für aisMistSlope
+	- Rob auslagern
+	
+Andreas:
+	- Totenbeschwoerer fertig
+	- Kutsche

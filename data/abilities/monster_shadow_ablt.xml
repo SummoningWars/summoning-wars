@@ -1,0 +1,74 @@
+<Ability type="magic_attack_shadow" 
+		 name="Magic attack" 
+		 description="Basic magic attack" 
+		 time="700.000000"
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="magic_attack_ice" 
+		 critical_percent="0.500000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="magic_arrow_shadow" speed="12000" />
+	<Damage>
+		<CppImplementation type="magic_attack_ice" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="black_storm"
+		 name="Cloud of Despair"
+		 description="The mage calls forth a black cloud that stuns and blinds his foes."
+		 time="1401.000000"
+		 timer_nr="2.000000"
+		 timer_value="14000.000000"
+		 base_ability="magic_attack"
+		 critical_percent="0.800000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="black_cloud" />
+	<Damage>
+		<CppImplementation type="magic_attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local idmg = getDamageValue("ice_dmg");
+			setDamageValue("ice_dmg", {idmg[1] + magic*0.33, idmg[2] + magic*0.5});
+			local willpower = get(self,"willpower");
+			setDamageValue("blind",willpower*1);
+			setDamageValue("paralyzed",willpower*1);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="shadow_magic_shield"
+		 name="Magic Shield"
+		 description=""
+		 time="1001.000000"
+		 timer_nr="2.000000"
+		 timer_value="200000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",30000);
+			setBaseModValue("resist_ice",20);
+			setBaseModValue("resist_fire",20);
+			setBaseModValue("resist_air",20);
+			setBaseModValue("flag","shadow_magic_shield");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+
+

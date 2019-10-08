@@ -1,0 +1,100 @@
+<ObjectTemplate name="$tree" type="FIXED_OBJECT">
+        <Environment name="meadow" default="true">
+                <Object name="tree01_02" />
+                <Object name="tree02_02" />
+                <Object name="tree03_02" />
+                <Object name="tree04_02" />
+                <Object name="tree05_02" />
+                <Object name="tree06_02" />
+                <Object name="tree07_02" />
+                <Object name="tree08_02" />
+                <Object name="tree09_02" />
+
+                <Object name="tree01_04" />
+                <Object name="tree02_04" />
+                <Object name="tree03_04" />
+                <Object name="tree04_04" />
+                <Object name="tree05_04" />
+                <Object name="tree06_04" />
+                <Object name="tree07_04" />
+                <Object name="tree08_04" />
+                <Object name="tree09_04" />
+
+				<Object name="tree01_05" />
+                <Object name="tree02_05" />
+                <Object name="tree03_05" />
+                <Object name="tree04_05" />
+                <Object name="tree05_05" />
+                <Object name="tree06_05" />
+                <Object name="tree07_05" />
+                <Object name="tree08_05" />
+                <Object name="tree09_05" />
+        </Environment>
+		<Environment name="meadow#1">
+			    <Object name="tree01_02" />
+                <Object name="tree02_02" />
+                <Object name="tree03_02" />
+                <Object name="tree04_02" />
+                <Object name="tree05_02" />
+                <Object name="tree06_02" />
+                <Object name="tree07_02" />
+                <Object name="tree08_02" />
+                <Object name="tree09_02" />
+		</Environment>
+		<Environment name="meadow#2">
+			    <Object name="tree01_04" />
+                <Object name="tree02_04" />
+                <Object name="tree03_04" />
+                <Object name="tree04_04" />
+                <Object name="tree05_04" />
+                <Object name="tree06_04" />
+                <Object name="tree07_04" />
+                <Object name="tree08_04" />
+                <Object name="tree09_04" />
+		</Environment>
+		<Environment name="meadow#3">
+			    <Object name="tree01_05" />
+                <Object name="tree02_05" />
+                <Object name="tree03_05" />
+                <Object name="tree04_05" />
+                <Object name="tree05_05" />
+                <Object name="tree06_05" />
+                <Object name="tree07_05" />
+                <Object name="tree08_05" />
+                <Object name="tree09_05" />
+		</Environment>
+        <Environment name="hills">
+                <Object name="tree01_01" />
+                <Object name="tree02_01" />
+                <Object name="tree03_01" />
+                <Object name="tree04_01" />
+                <Object name="tree05_01" />
+                <Object name="tree06_01" />
+                <Object name="tree07_01" />
+                <Object name="tree08_01" />
+                <Object name="tree09_01" />
+
+                <Object name="tree01_03" />
+                <Object name="tree02_03" />
+                <Object name="tree03_03" />
+                <Object name="tree04_03" />
+                <Object name="tree05_03" />
+                <Object name="tree06_03" />
+                <Object name="tree07_03" />
+                <Object name="tree08_03" />
+                <Object name="tree09_03" />
+
+				<Object name="tree01_06" />
+                <Object name="tree02_06" />
+                <Object name="tree03_06" />
+                <Object name="tree04_06" />
+                <Object name="tree05_06" />
+                <Object name="tree06_06" />
+                <Object name="tree07_06" />
+                <Object name="tree08_06" />
+                <Object name="tree09_06" />
+        </Environment>
+		<Environment name="cave">
+        </Environment>
+		<Environment name="vault"/>
+</ObjectTemplate>

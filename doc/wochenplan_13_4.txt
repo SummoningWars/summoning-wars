@@ -1,0 +1,17 @@
+Hans:
+	* Credits
+	* Musikengine
+
+Andreas:
+	* Webspace organisieren
+	* Webseite
+
+Steffen:
+	* Endkampf
+	* Verbesserungen in Zwergentrutz (Tuer, Stopper)
+
+Michael:
+	* Screenshots
+	* Website (Content)
+	* Exe um eine Ebene nach oben
+	* Skillbilder

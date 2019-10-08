@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="TaharezLook/StaticImage" Name="CharCreate" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0.0,0},{1,0},{1.0,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Window Type="TaharezLook/StaticText" Name="CharNameLabel" >
+            <Property Name="Text" Value="Name" />
+            <Property Name="HorzExtent" Value="41" />
+            <Property Name="VertExtent" Value="25.5702" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.03,0},{0.04,0},{0.14,0},{0.096,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Editbox" Name="NameBox" >
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.16,0},{0.044,0},{0.31,0},{0.098,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+        <Window Type="TaharezLook/StaticText" Name="CharClassLabel" >
+            <Property Name="Text" Value="Class" />
+            <Property Name="HorzExtent" Value="42" />
+            <Property Name="VertExtent" Value="25.5702" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.111,0},{0.14,0},{0.25,0},{0.194,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Listbox" Name="ClassList" >
+            <Property Name="Text" Value="Options" />
+            <Property Name="UnifiedAreaRect" Value="{{0.054,0},{0.2,0},{0.3,0},{0.33,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Listbox" Name="LookList" >
+            <Property Name="Text" Value="Options" />
+            <Property Name="UnifiedAreaRect" Value="{{0.054,0},{0.37,0},{0.3,0},{0.50,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="AbortButton" >
+            <Property Name="Text" Value="Cancel" />
+            <Property Name="HoverImage" Value="set:MainMenu image:SPBtnHover" />
+            <Property Name="NormalImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="PushedImage" Value="set:MainMenu image:SPBtnPushed" />
+            <Property Name="DisabledImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0755,0},{0.63,0},{0.265,0},{0.69,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="CharCreateButton" >
+            <Property Name="Text" Value="Create" />
+            <Property Name="HoverImage" Value="set:MainMenu image:SPBtnHover" />
+            <Property Name="NormalImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="PushedImage" Value="set:MainMenu image:SPBtnPushed" />
+            <Property Name="DisabledImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0755,0},{0.53,0},{0.265,0},{0.59,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

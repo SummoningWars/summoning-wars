@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="potionMedium" layer="NORMAL">
+        <Mesh file="potionMedium.mesh" />
+        <Geometry shape="CIRCLE" radius="0.1391326889"/>
+</Object>

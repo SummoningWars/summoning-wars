@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="meshtest" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="meshtest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-D_DEBUG" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="OgreMain_d" />
+					<Add library="OIS_d" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="meshtest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DNDEBUG" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="OgreMain" />
+					<Add library="OIS" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mthreads" />
+			<Add option="-fmessage-length=0" />
+			<Add option="-fexceptions" />
+			<Add option="-fident" />
+			<Add option="-DWIN32" />
+			<Add option="-D_WINDOWS" />
+			<Add option="-Wall" />
+			<Add directory="C:\OgreSDK\include" />
+			<Add directory="C:\OgreSDK\samples\include" />
+			<Add directory="C:\OgreSDK\samples\refapp\include" />
+		</Compiler>
+		<Linker>
+			<Add option="-Wl,--enable-runtime-pseudo-reloc" />
+			<Add option="-Wl,--enable-auto-image-base" />
+			<Add option="-Wl,--add-stdcall-alias" />
+			<Add directory="C:\OgreSDK\lib" />
+			<Add directory="C:\OgreSDK\bin\Debug" />
+			<Add directory="C:\OgreSDK\bin\Release" />
+		</Linker>
+		<Unit filename="ExampleApplication.h" />
+		<Unit filename="ExampleFrameListener.h" />
+		<Unit filename="document.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="sumwarsframelistener.cpp" />
+		<Unit filename="sumwarsframelistener.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

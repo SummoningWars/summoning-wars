@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="graphicengine" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="graphicengine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DDEBUG_LEVEL=5" />
+				</Compiler>
+				<Linker>
+					<Add library="OgreMain" />
+					<Add library="OIS" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="graphicengine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DDEBUG_LEVEL=1" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="OgreMain" />
+					<Add library="OIS" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-mthreads" />
+			<Add option="-fmessage-length=0" />
+			<Add option="-fexceptions" />
+			<Add option="-fident" />
+			<Add option="-DWIN32" />
+			<Add option="-D_WINDOWS" />
+			<Add directory="C:\OgreSDK\include" />
+			<Add directory="C:\OgreSDK\samples\include" />
+			<Add directory="C:\OgreSDK\samples\refapp\include" />
+			<Add directory="..\..\src\gui" />
+			<Add directory="..\..\src\core" />
+		</Compiler>
+		<Linker>
+			<Add option="-Wl,--enable-runtime-pseudo-reloc" />
+			<Add option="-Wl,--enable-auto-image-base" />
+			<Add option="-Wl,--add-stdcall-alias" />
+			<Add library="C:\MinGW\lib\libintl.lib" />
+			<Add library="C:\MinGW\lib\OpenAL32.lib" />
+			<Add library="C:\MinGW\lib\alut.lib" />
+			<Add directory="C:\OgreSDK\lib" />
+			<Add directory="C:\OgreSDK\bin\Debug" />
+			<Add directory="C:\OgreSDK\bin\Release" />
+		</Linker>
+		<Unit filename="..\..\src\core\elementattrib.cpp" />
+		<Unit filename="..\..\src\core\elementattrib.h" />
+		<Unit filename="..\..\src\core\geometry.cpp" />
+		<Unit filename="..\..\src\core\geometry.h" />
+		<Unit filename="..\..\src\core\logger.cpp" />
+		<Unit filename="..\..\src\core\logger.h" />
+		<Unit filename="..\..\src\gui\graphicmanager.cpp" />
+		<Unit filename="..\..\src\gui\graphicmanager.h" />
+		<Unit filename="..\..\src\gui\graphicobject.cpp" />
+		<Unit filename="..\..\src\gui\graphicobject.h" />
+		<Unit filename="..\..\src\gui\graphicobjectrenderinfo.cpp" />
+		<Unit filename="..\..\src\gui\graphicobjectrenderinfo.h" />
+		<Unit filename="..\..\src\gui\sound.cpp" />
+		<Unit filename="..\..\src\gui\sound.h" />
+		<Unit filename="ExampleApplication.h" />
+		<Unit filename="ExampleFrameListener.h" />
+		<Unit filename="debug.h" />
+		<Unit filename="document.h" />
+		<Unit filename="elementattrib.h" />
+		<Unit filename="gameobject.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="sumwarsframelistener.cpp" />
+		<Unit filename="sumwarsframelistener.h" />
+		<Unit filename="tinystr.cpp" />
+		<Unit filename="tinystr.h" />
+		<Unit filename="tinyxml.cpp" />
+		<Unit filename="tinyxml.h" />
+		<Unit filename="tinyxmlerror.cpp" />
+		<Unit filename="tinyxmlparser.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

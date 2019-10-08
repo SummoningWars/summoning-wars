@@ -1,0 +1,15 @@
+<Imageset AutoScaled="false" Imagefile="ControlPanel.png" Name="ControlPanel" NativeHorzRes="1024" NativeVertRes="768">
+	<Image Height="215" Name="Belt" Width="1009" XPos="9" YPos="2" />
+	<Image Height="27" Name="SlotNumbers" Width="290" XPos="68" YPos="378" />
+	<Image Height="37" Name="CharInfoButton" Width="37" XPos="866" YPos="324" />
+	<Image Height="37" Name="ChatOpenButton" Width="37" XPos="866" YPos="364" />
+	<Image Height="37" Name="QuestInfoButton" Width="37" XPos="909" YPos="324" />
+	<Image Height="37" Name="SkillTreeButton" Width="37" XPos="909" YPos="364" />
+	<Image Height="37" Name="InventoryButton" Width="37" XPos="951" YPos="324" />
+	<Image Height="37" Name="OptionsButton" Width="37" XPos="951" YPos="364" />
+	<Image Height="37" Name="SaveExitButton" Width="37" XPos="993" YPos="324" />
+	<Image Height="37" Name="PartyButton" Width="37" XPos="993" YPos="364" />
+	<Image Name="HPBackground" XPos="398" YPos="2" Width="183" Height="183" />
+	<Image Name="HPForeground" XPos="398" YPos="228" Width="183" Height="183" />
+	<Image Name="ProgressBarDimSegment" XPos="220" YPos="409" Width="21" Height="42" />
+</Imageset>

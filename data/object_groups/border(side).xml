@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="border(side)" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$plant_bushes" 
+            center_x="0.5756230702" 
+            center_y="-0.07770829124" 
+           height="-1.776356839e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="3.167862866" 
+            center_y="2.218474965" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-3.119091551" 
+            center_y="1.938620982" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-1.859198106" 
+            center_y="-0.6571159271" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-2.679162323" 
+            center_y="-2.302128309" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="2.866364337" 
+            center_y="-3.237539" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$border" 
+            center_x="0" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$tree" 
+            center_x="-2.284543609" 
+            center_y="1.917960787" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-0.4970664236" 
+            center_y="-2.697408212" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

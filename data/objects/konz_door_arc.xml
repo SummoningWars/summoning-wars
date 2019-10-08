@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="konz_door_arc" layer="NOCOLLISION">
+        <Mesh file="konz_door_m1.mesh" />
+        <Geometry shape="RECT" extent_x="0.5" extent_y="2"/>
+</Object>

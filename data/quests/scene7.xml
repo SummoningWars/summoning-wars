@@ -1,0 +1,91 @@
+<Quest name="The Poolmonster" table_name="scene7" domain="the_poolmonster">
+	
+	<Init>
+		local a = 2
+	</Init>
+	
+	<Description>
+		if (scene7.finished) then
+			return _("Quest finished")
+		else
+			return _("Quest description")
+		end
+	</Description>
+	
+	<NPC refname="Soren Windclaw">
+		<Topic name="scene7_dialogue">
+			<Effect>
+				addCameraPosition(0,get(getRole("PL"),"position"),20,40,20);
+				addCameraPosition(20000,get(getRole("PL"),"position"),220,60,30);
+
+				speak("MAGast",_("Wow, thats beautiful."));
+				speak("WARast",_("Are you getting sentimental now?"));
+				speak("MAGast",_("... Der Anblick hat mich nur an mein Leben"));
+				speak("ANY",_("Du kannst dich an dein Leben vor der"));
+				speak("MAGast",_("... only dimly"));
+				speak("PL",_("Sometimes I wish,"));
+				speak("WARast",_("I know enough people,"));
+				speak("PL",_("... only externally."));
+				speak("MAGast",_("..."));
+
+				-- (sie schweigen einen Moment.)
+
+				speak("ANY",_("Do you really think that it"));
+				speak("PRIast",_("Even the great"));
+				speak("ANY",_("I hope you have"));
+				speak("MAGast",_("Why has it really"));
+
+				-- Alle zucken mit den Schultern, keiner weiss es
+
+				speak("PL",_("We have to go now."));
+				speak("MAGast",_("Just a moment please."));
+				speak("ARCast",_("Whats that on the water over there?"));
+				speak("ANYast",_("Looks like a..."));
+
+				changeTopic("end_cutscene7_fight");
+			</Effect>
+		</Topic>
+		
+		<Topic name="end_cutscene7_fight">
+			<Effect>
+				setCutsceneMode(false);
+				scene7_tmp.pondmonster = createObject("fireElemS","entry_west");
+				unitSpeak(scene7_tmp.pondmonster,_("*Roar!*"));
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	
+	<Region name="greyCurseLake">
+		<Event trigger="create_region" once="true">
+			<Effect>
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				-- if (scene6.scene6 == true and scene7.scene7 ~= true) then
+				if (scene7.scene7 ~= true) then
+					return (unitIsInArea(trigger.player,"greyCurseLakeEntryWestArea"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				createDialogue();
+				addSpeaker(trigger.player,"Player");
+				addStandardSpeakers("greyCurseLake","entry_west");
+				setTopicBase("Soren Windclaw");
+				
+				-- if(getPlayers()[2] ~= nil) then
+					setCutsceneMode(true);
+					changeTopic("scene7_dialogue");
+				-- else
+					-- changeTopic("end_cutscene7_fight");
+				-- end;
+			</Effect>
+		</Event>
+	</Region>
+	
+</Quest>
+

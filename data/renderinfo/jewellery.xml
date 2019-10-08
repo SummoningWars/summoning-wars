@@ -1,0 +1,35 @@
+<RenderInfo name="ringBase">
+	<ParticleSystem objectname="particle" source="ItemFlare" position="0 0 0"/>
+	
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_ring"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="amuletBase">
+	<ParticleSystem objectname="particle" source="ItemFlare" position="0 0 0"/>
+	
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_ring"/>
+	</Action>
+</RenderInfo>
+
+
+<RenderInfo name="bronze_rng" parent= "ringBase">
+	<Entity source="bronze_rng.mesh" scale = "2.5"/>
+</RenderInfo>
+
+<RenderInfo name="silver_rng" parent= "ringBase">
+	<Entity source="silver_rng.mesh" scale = "2.5"/>
+</RenderInfo>
+
+<RenderInfo name="gold_rng" parent= "ringBase">
+	<Entity source="gold_rng.mesh" scale = "2.5"/>
+</RenderInfo>
+
+
+<RenderInfo name="feath_aml" parent= "amuletBase">
+	<Entity source="feath_aml.mesh" scale = "2.5"/>
+</RenderInfo>

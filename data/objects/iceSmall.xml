@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="iceSmall" layer="NORMAL">
+        <Mesh file="iceSmall.mesh" />
+        <Geometry shape="CIRCLE" radius="0.5"/>
+</Object>

@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="comCrystal" layer="NORMAL">
+        <Mesh file="comCrystal.mesh" />
+        <Geometry shape="CIRCLE" radius="0.3469774315"/>
+</Object>

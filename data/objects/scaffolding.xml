@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="scaffolding" layer="NORMAL">
+        <Mesh file="scaffolding.mesh" />
+        <Geometry shape="RECT" extent_x="1" extent_y="3"/>
+</Object>

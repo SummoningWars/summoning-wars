@@ -1,0 +1,692 @@
+<?xml version="1.0" ?>
+
+<!-- ONE HANDED SWORDS -->
+<!-- Dagger -->
+<Item type="weapon" subtype="dagger_sw" name="dagger" size="medium">
+	<RenderInfo name = "dagger"/>
+	<Image image="set:dagger_sw.png image:full_image" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="4"
+		damage_max_physical="6"
+		damage_attack="40"
+		damage_power="25"
+		attack_range="0.9"
+		two_handed="no"
+		dattack_speed="300"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Short Sword -->
+<Item type="weapon" subtype="short_sw" name="shortsword" size="medium">
+	<RenderInfo name = "shortSword"/>
+	<Image image="set:short_sw.png image:full_image" />
+	<Attribute
+		level_requirement="3"
+		character_requirement="warrior"
+		min_enchant="30"
+		max_enchant="80"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="9"
+		damage_max_physical="15"
+		damage_attack="45"
+		damage_power="30"
+		attack_range="1.2"
+		two_handed="no"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="3"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Bronze Sword -->
+<Item type="weapon" subtype="bronze_sw" name="bronzesword" size="medium">
+	<RenderInfo name = "bronzeSword"/>
+	<Image image="set:bronze_sw.png image:full_image" />
+	<Attribute
+		level_requirement="5"
+		character_requirement="warrior"
+		min_enchant="40"
+		max_enchant="130"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="12"
+		damage_max_physical="16"
+		damage_attack="58"
+		damage_power="35"
+		attack_range="1.5"
+		two_handed="no"
+		dattack_speed="-50"
+	/>
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- -Sabre -->
+<Item type="weapon" subtype="sabre_sw" name="sabre" size="medium">
+	<Image image="set:sabre_sw.png image:full_image" />
+	<RenderInfo name="sabre" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="warrior"
+		min_enchant="50"
+		max_enchant="170"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	
+	<EquipEffect />
+  
+  <WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="15"
+		damage_max_physical="22"
+		damage_attack="60"
+		damage_power="40"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="8"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Legions Blade-->
+<Item type="weapon" subtype="legion_sw" name="legion blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="legionBlade" />
+	<Attribute
+		level_requirement="13"
+		character_requirement="warrior"
+		min_enchant="60"
+		max_enchant="200"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="18"
+		damage_max_physical="25"
+		damage_attack="80"
+		damage_power="60"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- long sword  -->
+<Item type="weapon" subtype="long_sw" name="long sword" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="19"
+		character_requirement="warrior"
+		min_enchant="70"
+		max_enchant="250"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="22"
+		damage_max_physical="31"
+		damage_attack="74"
+		damage_power="56"
+		attack_range="1.5"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="19"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- coastal sword-->
+<Item type="weapon" subtype="coast_sw" name="sword of the coast" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="25"
+		character_requirement="warrior"
+		min_enchant="80"
+		max_enchant="300"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="27"
+		damage_max_physical="36"
+		damage_attack="96"
+		damage_power="76"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="25"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- council sabre-->
+<Item type="weapon" subtype="council_sw" name="council sabre" size="medium">
+	<Image image="set:council_sw.png image:full_image" />
+	<RenderInfo name="councilSabre"/>
+	<Attribute
+		level_requirement="25"
+		character_requirement="warrior"
+		min_enchant="80"
+		max_enchant="300"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="24"
+		damage_max_physical="44"
+		damage_attack="70"
+		damage_power="110"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="25"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- scimitar-->
+<Item type="weapon" subtype="scimita_sw" name="scimitar" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="30"
+		character_requirement="warrior"
+		min_enchant="90"
+		max_enchant="350"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="27"
+		damage_max_physical="38"
+		damage_attack="100"
+		damage_power="70"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="30"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- barbar sword-->
+<Item type="weapon" subtype="barbar_sw" name="barbarian sword" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="35"
+		character_requirement="warrior"
+		min_enchant="90"
+		max_enchant="380"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="38"
+		damage_max_physical="50"
+		damage_attack="90"
+		damage_power="110"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="35"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- northlings blade -->
+<Item type="weapon" subtype="northli_sw" name="northlings blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="40"
+		character_requirement="warrior"
+		min_enchant="110"
+		max_enchant="450"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.0"
+		modchance_damage_ice_mod="0.20"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="10"
+		damage_max_physical="20"
+		damage_min_ice="47"
+		damage_max_ice="49"
+		damage_attack="110"
+		damage_power="90"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="40"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- steel sword-->
+<Item type="weapon" subtype="steel_sw" name="steel sword" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="45"
+		character_requirement="warrior"
+		min_enchant="120"
+		max_enchant="500"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="40"
+		damage_max_physical="53"
+		damage_attack="115"
+		damage_power="115"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="45"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- assassins blade-->
+<Item type="weapon" subtype="assassi_sw" name="assassins blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="50"
+		character_requirement="warrior"
+		min_enchant="130"
+		max_enchant="550"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="48"
+		damage_max_physical="53"
+		damage_attack="110"
+		damage_power="140"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="50"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- diamond sword-->
+<Item type="weapon" subtype="diamond_sw" name="diamont sword" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="55"
+		character_requirement="warrior"
+		min_enchant="140"
+		max_enchant="600"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="47"
+		damage_max_physical="63"
+		damage_attack="135"
+		damage_power="135"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="55"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- dwarf steel sword-->
+<Item type="weapon" subtype="dwarfst_sw" name="dwarfsteel sword" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="60"
+		character_requirement="warrior"
+		min_enchant="150"
+		max_enchant="650"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="51"
+		damage_max_physical="67"
+		damage_attack="150"
+		damage_power="155"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="60"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- demon blade -->
+<Item type="weapon" subtype="demon_sw" name="demon blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="65"
+		character_requirement="warrior"
+		min_enchant="160"
+		max_enchant="700"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.20"
+		modchance_damage_ice_mod="0.0"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="25"
+		damage_max_physical="35"
+		damage_min_fire="29"
+		damage_max_fire="37"
+		damage_attack="150"
+		damage_power="170"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-700"
+	/>
+	<DropChance
+		level="65"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- hero blade -->
+<Item type="weapon" subtype="heroe_sw" name="hero blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="70"
+		character_requirement="warrior"
+		min_enchant="170"
+		max_enchant="750"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="57"
+		damage_max_physical="76"
+		damage_attack="165"
+		damage_power="165"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="70"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- angel blade -->
+<Item type="weapon" subtype="angel_sw" name="angel blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="75"
+		character_requirement="warrior"
+		min_enchant="180"
+		max_enchant="800"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="60"
+		damage_max_physical="80"
+		damage_attack="190"
+		damage_power="175"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="75"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- gods blade -->
+<Item type="weapon" subtype="gods_sw" name="gods blade" size="medium">
+	<Image image="set:sword.png image:full_image" />
+	<RenderInfo name="longSword"/>
+	<Attribute
+		level_requirement="80"
+		character_requirement="warrior"
+		min_enchant="200"
+		max_enchant="1000"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="67"
+		damage_max_physical="90"
+		damage_attack="210"
+		damage_power="200"
+		attack_range="1.6"
+		two_handed="no"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="80"
+		probability="1.0"
+	/>
+</Item>

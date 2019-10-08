@@ -1,0 +1,687 @@
+<!-- TWO HANDED AXES -->
+
+<!-- Holzfälleraxt -->
+<Item type="weapon" subtype="lumber_axe" name="lumberjack axe" size="big">
+	<Image image="set:lumber_axe.png image:full_image" />
+	<RenderInfo name = "lumberAxe" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest"
+		min_enchant="30"
+		max_enchant="50"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="7"
+		damage_max_physical="16"
+		damage_attack="25"
+		damage_power="40"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-800"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Großaxt-->
+<Item type="weapon" subtype="great_axe" name="great axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name = "greatAxe" />
+	<Attribute
+		level_requirement="3"
+		character_requirement="warrior,priest"
+		min_enchant="40"
+		max_enchant="90"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="15"
+		damage_max_physical="36"
+		damage_attack="29"
+		damage_power="53"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-800"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Reißeraxt -->
+<Item type="weapon" subtype="riping_axe" name="ripping axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="5"
+		character_requirement="warrior,priest"
+		min_enchant="50"
+		max_enchant="140"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="26"
+		damage_max_physical="43"
+		damage_attack="30"
+		damage_power="90"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-900"
+	/>
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Henkersaxt -->
+<Item type="weapon" subtype="execut_axe" name="executioner axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="10"
+		character_requirement="warrior,priest"
+		min_enchant="60"
+		max_enchant="200"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="29"
+		damage_max_physical="62"
+		damage_attack="38"
+		damage_power="84"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="10"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schmetteraxt -->
+<Item type="weapon" subtype="smash_axe" name="smashing axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="14"
+		character_requirement="warrior,priest"
+		min_enchant="75"
+		max_enchant="220"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="32"
+		damage_max_physical="65"
+		damage_attack="45"
+		damage_power="120"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-800"
+	/>
+	<DropChance
+		level="14"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Ogerbeil -->
+<Item type="weapon" subtype="ogrhac_axe" name="ogre hatchet" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="18"
+		character_requirement="warrior,priest"
+		min_enchant="100"
+		max_enchant="270"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="38"
+		damage_max_physical="71"
+		damage_attack="60"
+		damage_power="110"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-900"
+	/>
+	<DropChance
+		level="18"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Sensenaxt -->
+<Item type="weapon" subtype="scythe_axe" name="scythe axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="25"
+		character_requirement="warrior,priest"
+		min_enchant="120"
+		max_enchant="300"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="48"
+		damage_max_physical="81"
+		damage_attack="68"
+		damage_power="96"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="25"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Barbarenstreitaxt -->
+<Item type="weapon" subtype="barbar_axe" name="barbarian axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="30"
+		character_requirement="warrior,priest"
+		min_enchant="175"
+		max_enchant="700"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="54"
+		damage_max_physical="85"
+		damage_attack="76"
+		damage_power="106"
+		attack_range="2.7"
+		two_handed="no"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="30"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Knochenbrecher -->
+<Item type="weapon" subtype="bnebrk_axe" name="bonebreaker axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="35"
+		character_requirement="warrior,priest"
+		min_enchant="195"
+		max_enchant="800"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="60"
+		damage_max_physical="95"
+		damage_attack="70"
+		damage_power="126"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-900"
+	/>
+	<DropChance
+		level="35"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Riesenaxt -->
+<Item type="weapon" subtype="giant_axe" name="giant axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="40"
+		character_requirement="warrior,priest"
+		min_enchant="215"
+		max_enchant="900"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="70"
+		damage_max_physical="106"
+		damage_attack="98"
+		damage_power="126"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="40"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schlachtaxt -->
+<Item type="weapon" subtype="slautr_axe" name="slaughter axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="45"
+		character_requirement="warrior,priest"
+		min_enchant="235"
+		max_enchant="1000"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.1"
+		modchance_damage_ice_mod="0.1"
+		modchance_damage_air_mod="0.1"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="74"
+		damage_max_physical="124"
+		damage_attack="108"
+		damage_power="132"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-900"
+	/>
+	<DropChance
+		level="45"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Ogerreißer -->
+<Item type="weapon" subtype="ogrkil_axe" name="ogretearer" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="50"
+		character_requirement="warrior,priest"
+		min_enchant="255"
+		max_enchant="1100"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="80"
+		damage_max_physical="126"
+		damage_attack="122"
+		damage_power="148"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="50"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Zwergenstahlaxt -->
+<Item type="weapon" subtype="dwfstl_axe" name="dwarfensteel axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="55"
+		character_requirement="warrior,priest"
+		min_enchant="275"
+		max_enchant="1200"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="107"
+		damage_max_physical="143"
+		damage_attack="144"
+		damage_power="152"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-800"
+	/>
+	<DropChance
+		level="55"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Sternenaxt -->
+<Item type="weapon" subtype="star_axe" name="star axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="60"
+		character_requirement="warrior,priest"
+		min_enchant="300"
+		max_enchant="1350"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="108"
+		damage_max_physical="149"
+		damage_attack="139"
+		damage_power="162"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="60"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Königsaxt -->
+<Item type="weapon" subtype="king_axe" name="kings axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="65"
+		character_requirement="warrior,priest"
+		min_enchant="315"
+		max_enchant="1400"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="60"
+		damage_max_physical="75"
+		damage_attack="145"
+		damage_power="182"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="65"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Folteraxt -->
+<Item type="weapon" subtype="tortur_axe" name="torture axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="70"
+		character_requirement="warrior,priest"
+		min_enchant="335"
+		max_enchant="1500"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="65"
+		damage_max_physical="196"
+		damage_attack="162"
+		damage_power="186"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="70"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eislandaxt -->
+<Item type="weapon" subtype="ice_axe" name="iceland axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="75"
+		character_requirement="warrior,priest"
+		min_enchant="375"
+		max_enchant="1600"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.0"
+		modchance_damage_ice_mod="0.20"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="59"
+		damage_max_physical="83"
+		damage_min_ice="45"
+		damage_max_ice="85"
+		damage_attack="168"
+		damage_power="190"
+		attack_range="2.7"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="75"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Todesaxt -->
+<Item type="weapon" subtype="death_axe" name="death axe" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<RenderInfo name= "greatAxe" />
+	<Attribute
+		level_requirement="80"
+		character_requirement="warrior,priest"
+		min_enchant="395"
+		max_enchant="2000"
+		enchant_multiplier="1.7"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="axe"
+		damage_min_physical="126"
+		damage_max_physical="185"
+		damage_attack="194"
+		damage_power="245"
+		attack_range="2.7"
+		two_handed="no"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="80"
+		probability="1.0"
+	/>
+</Item>

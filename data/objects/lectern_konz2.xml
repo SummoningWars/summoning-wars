@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="lectern_konz2" layer="NORMAL">
+	<Mesh file="lectern_konz2.mesh" />
+	<Geometry shape="RECT" extent_x="0.5740409255" extent_y="0.7659865779"/>
+</Object>

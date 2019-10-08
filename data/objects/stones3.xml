@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+
+<Object type="FIXED_OBJECT" subtype="stones3">
+	<Mesh file="stones3.mesh" />
+	<Geometry shape="RECT" extent_x="4.0" extent_y ="4.0" />
+</Object>
+

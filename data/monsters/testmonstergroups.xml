@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<MonsterGroup name="goblins_1" >
+	<SubGroup subtype="goblin" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="goblins_3" >
+	<SubGroup subtype="goblin" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="goblins_5" >
+	<SubGroup subtype="goblin" number="10" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="goblins_10" >
+	<SubGroup subtype="goblin" number="10" prob="1.0" />
+</MonsterGroup>
+
+
+
+
+<!--
+  TestWelt
+  -->
+
+
+

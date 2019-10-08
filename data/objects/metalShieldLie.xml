@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="metalShieldLie" layer="NORMAL">
+        <Mesh file="metalShieldLie.mesh" />
+        <Geometry shape="CIRCLE" radius="0.5"/>
+</Object>

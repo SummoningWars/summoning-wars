@@ -1,0 +1,7 @@
+<Imageset AutoScaled="false" Imagefile="TradeWindow.png" Name="TradeWindow" NativeHorzRes="800" NativeVertRes="600">
+	<Image Height="826" Name="Background" Width="538" XPos="0" YPos="0" />
+	<Image Height="163" Name="BtnUp" Width="33" XPos="628" YPos="225" />
+	<Image Height="163" Name="BtnUpHover" Width="33" XPos="689" YPos="225" />
+	<Image Height="163" Name="BtnDown" Width="33" XPos="628" YPos="413" />
+	<Image Height="163" Name="BtnDownHover" Width="33" XPos="689" YPos="413" />
+</Imageset>

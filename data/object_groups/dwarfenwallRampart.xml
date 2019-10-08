@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="dwarfenwallRampart" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="60.9274725"
+    extent_y="68.15270832"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$barricade" 
+            center_x="-10.10067297" 
+            center_y="27.33478278" 
+            angle="30.74159641" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="-11.39139202" 
+            center_y="17.88581994" 
+            angle="68.61923377" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="14.5274511" 
+            center_y="9.861298696" 
+            angle="-244.7777245" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="-14.60079084" 
+            center_y="9.761539693" 
+            angle="71.67658893" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="0.09197466171" 
+            center_y="7.131748578" 
+            angle="89.74086738" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="9.296671027" 
+            center_y="28.17948615" 
+            angle="-217.5410299" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="-0.5095760882" 
+            center_y="22.39343831" 
+            angle="-269.5193818" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$barricade" 
+            center_x="10.02823016" 
+            center_y="17.56176291" 
+            angle="-255.1404312" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-10.86736225" 
+            center_y="-3.038883823" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-12.06233224" 
+            center_y="0.9057015879" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-2.051296895" 
+            center_y="-0.4552286105" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-20.08191109" 
+            center_y="-13.44422522" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="5.010750837" 
+            center_y="-15.4483628" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_deb_l" 
+            center_x="16.36023505" 
+            center_y="-4.086640972" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-39.70317657" 
+            center_y="-46.29370997" 
+           height="1.297718025" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$tree" 
+            center_x="29.5" 
+            center_y="31.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="5.516183244" 
+            center_y="-8.15275193" 
+           height="1.297718025" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-29.95256652" 
+            center_y="-48.21927204" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-24.8062169" 
+            center_y="-50.38978437" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-29.15953406" 
+            center_y="-51.82295171" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-26.05281724" 
+            center_y="-54.37547022" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-22.79159019" 
+            center_y="-56.59607463" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-48" 
+            center_y="-60" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-20" 
+            center_y="-62" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-25.26126483" 
+            center_y="-60.3871183" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-15" 
+            center_y="-60.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-36.48386777" 
+            center_y="-52.73338897" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-34.59636099" 
+            center_y="-48.92181464" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-42.7044285" 
+            center_y="-49.21845104" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-39.91536031" 
+            center_y="-43.38768057" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-42.53656097" 
+            center_y="-55.16288751" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-35.46815721" 
+            center_y="-57.69205794" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-31.48892708" 
+            center_y="-60.87483637" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-40.6488311" 
+            center_y="-60.20706434" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-18.16397325" 
+            center_y="-53.22724395" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-17.50313132" 
+            center_y="-44.62790499" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="1.782733437" 
+            center_y="-47.95553017" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-0.3560382228" 
+            center_y="-54.31062083" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-1.352267512" 
+            center_y="-58.69037635" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="0.2396609412" 
+            center_y="-62.19223406" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="4.847227498" 
+            center_y="-57.61313381" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="9.164778021" 
+            center_y="-60.80957245" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="13.20924371" 
+            center_y="-53.17693789" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="6.573090189" 
+            center_y="-51.44782846" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="14.68836245" 
+            center_y="-44.22369644" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="7.023558348" 
+            center_y="-37.87813228" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="23.4452135" 
+            center_y="-47.40741676" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="18.62184203" 
+            center_y="-51.32263452" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="23.38814107" 
+            center_y="-52.92459948" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="17.36462552" 
+            center_y="-56.07965332" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="14.26357955" 
+            center_y="-60.36239872" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="20.35242131" 
+            center_y="-60.58261472" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="21.96270758" 
+            center_y="-56.07320644" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="28.972439" 
+            center_y="-58.37102373" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="25.20928754" 
+            center_y="-53.3354978" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="24.43004622" 
+            center_y="-59.23371285" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="26.91855416" 
+            center_y="-48.95513706" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="48.5" 
+            center_y="-62.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="29" 
+            center_y="-53.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="32" 
+            center_y="-39.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="38" 
+            center_y="-35.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="33" 
+            center_y="-22" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="38.5" 
+            center_y="-13.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-31" 
+            center_y="32" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="46" 
+            center_y="4.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="32.5" 
+            center_y="20" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="33" 
+            center_y="7.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-33" 
+            center_y="-24" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-43.63709045" 
+            center_y="-15.80507047" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-52.5" 
+            center_y="-22" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-46" 
+            center_y="-23" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-30" 
+            center_y="7.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-35.5" 
+            center_y="13" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-28.5" 
+            center_y="24.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="28" 
+            center_y="-46" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="35" 
+            center_y="-53" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="32.5" 
+            center_y="-48.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="39" 
+            center_y="-48.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="42.5" 
+            center_y="-57" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="44.92797791" 
+            center_y="-51.17716718" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="36.5" 
+            center_y="-60" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="39.5" 
+            center_y="-54.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="51" 
+            center_y="-58" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="42" 
+            center_y="-63" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-29.31687032" 
+            center_y="-56.21265224" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-49.5" 
+            center_y="-53.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$wall_city" 
+            center_x="7.5" 
+            center_y="35.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="39.5" 
+            center_y="35.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="-40.5" 
+            center_y="35.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="31.5" 
+            center_y="35.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall" 
+            center_x="-32.5" 
+            center_y="35.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_city" 
+            center_x="-24.5" 
+            center_y="35.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_city" 
+            center_x="-16.5" 
+            center_y="35.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_city" 
+            center_x="-8.5" 
+            center_y="35.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_city" 
+            center_x="23.5" 
+            center_y="35.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$wall_city" 
+            center_x="15.5" 
+            center_y="35.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence1" 
+            center_x="-24.5" 
+            center_y="31" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence2" 
+            center_x="24.5" 
+            center_y="23" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-40" 
+            center_y="-46.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="24.5" 
+            center_y="31" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-24.5" 
+            center_y="7" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-27.5" 
+            center_y="-18" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-27.5" 
+            center_y="-26" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-27.5" 
+            center_y="-34" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-27.5" 
+            center_y="-42" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence3" 
+            center_x="-32" 
+            center_y="-46.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence4" 
+            center_x="-24.5" 
+            center_y="23" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="-24.5" 
+            center_y="15" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="27.5" 
+            center_y="-42" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="27.5" 
+            center_y="14" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="-27.5" 
+            center_y="-10" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="27.5" 
+            center_y="-18" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="27.5" 
+            center_y="-26" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="27.5" 
+            center_y="-34" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="27.5" 
+            center_y="6" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="32.5" 
+            center_y="-9" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence5" 
+            center_x="-27.5" 
+            center_y="-2" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cIn1" 
+            center_x="27.5" 
+            center_y="18.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cIn1" 
+            center_x="-27.5" 
+            center_y="2.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cIn1" 
+            center_x="32.5" 
+            center_y="1.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cIn1" 
+            center_x="32.5" 
+            center_y="-13.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cOut1" 
+            center_x="24.5" 
+            center_y="18.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cOut1" 
+            center_x="-24.5" 
+            center_y="2.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cOut1" 
+            center_x="-27.5" 
+            center_y="-46.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cOut1" 
+            center_x="27.5" 
+            center_y="1.5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_cOut1" 
+            center_x="27.5" 
+            center_y="-13.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_m1" 
+            center_x="30" 
+            center_y="1.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_m1" 
+            center_x="30" 
+            center_y="-13.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_m1" 
+            center_x="32.5" 
+            center_y="-3" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_m1" 
+            center_x="4.63374802" 
+            center_y="38.60472306" 
+           height="1.065814104e-014" 
+            angle="0.4197979133" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_m1" 
+            center_x="-7.389266821" 
+            center_y="40.19514246" 
+           height="3.552713679e-015" 
+            angle="6.589595645" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_s1" 
+            center_x="26" 
+            center_y="18.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_s1" 
+            center_x="-26" 
+            center_y="2.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="fence_s1" 
+            center_x="32.5" 
+            center_y="0" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen1" 
+            center_x="15.27956735" 
+            center_y="53.35780142" 
+           height="-1.471508092" 
+            angle="-51.62020894" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen1" 
+            center_x="-10.19561292" 
+            center_y="43.86969921" 
+           height="0.2334346296" 
+            angle="-76.59768948" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen2" 
+            center_x="5.5" 
+            center_y="45" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen3" 
+            center_x="-24.31729975" 
+            center_y="45.43390414" 
+           height="-0.04825369212" 
+            angle="-158.9115257" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen4" 
+            center_x="21.95273982" 
+            center_y="43.81190689" 
+           height="0.01931569307" 
+            angle="-182.9310136" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen4" 
+            center_x="-20" 
+            center_y="54.5" 
+           height="-8.396061624e-016" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="houseAisen4" 
+            center_x="14.85204013" 
+            center_y="43.87213349" 
+           height="-0.09579552927" 
+            angle="-136.1610607" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="stone1" 
+            center_x="-7.282276552" 
+            center_y="36.9879402" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="stone2" 
+            center_x="4.541284234" 
+            center_y="36.69576873" 
+           height="-1.804112415e-016" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+    <Location name="entry_south" pos_x="-0.5" pos_y="34.5" />
+    <Location name="exit_south" pos_x="-0.5" pos_y="39.5" />
+    <Location name="locArmy1" pos_x="-20.35308974" pos_y="-34.06325608" />
+    <Location name="locArmy2" pos_x="-12.82676716" pos_y="-34.04482644" />
+    <Location name="locArmy3" pos_x="-4.874843282" pos_y="-33.89672184" />
+    <Location name="locArmy4" pos_x="2.5" pos_y="-34" />
+    <Location name="locArmy5" pos_x="11" pos_y="-34" />
+    <Location name="locArmy6" pos_x="18" pos_y="-34" />
+    <Location name="locAttendend1" pos_x="-6.5" pos_y="-42.5" />
+    <Location name="locAttendend2" pos_x="-3" pos_y="-44.5" />
+    <Location name="locBowmen1" pos_x="-0.5525863042" pos_y="24.45511105" />
+    <Location name="locBowmen2" pos_x="-10.75901236" pos_y="19.54737702" />
+    <Location name="locBowmen3" pos_x="9.573278001" pos_y="18.96447894" />
+    <Location name="locBowmen4" pos_x="-13.73676153" pos_y="11.46273072" />
+    <Location name="locBowmen6" pos_x="0.1088854536" pos_y="9.561238166" />
+    <Location name="locBowmen7" pos_x="13.70990567" pos_y="11.7948194" />
+    <Location name="locCharge1" pos_x="-13" pos_y="-13" />
+    <Location name="locCharge2" pos_x="-18" pos_y="5" />
+    <Location name="locCharge3" pos_x="-7.230102672" pos_y="5" />
+    <Location name="locCharge4" pos_x="-3" pos_y="-11.5" />
+    <Location name="locCharge5" pos_x="8.215553776" pos_y="5.5" />
+    <Location name="locCharge6" pos_x="21.5" pos_y="-12" />
+    <Location name="locCharge7" pos_x="24" pos_y="9" />
+    <Location name="locCouncilMage" pos_x="1.139534416" pos_y="29.5790938" />
+    <Location name="locDefender1" pos_x="-20.5" pos_y="37" />
+    <Location name="locDefender2" pos_x="-15.5" pos_y="37" />
+    <Location name="locDefender3" pos_x="-10.5" pos_y="37" />
+    <Location name="locDefender4" pos_x="9" pos_y="37.5" />
+    <Location name="locDefender5" pos_x="13.5" pos_y="37.5" />
+    <Location name="locDefender6" pos_x="17.5" pos_y="37.5" />
+    <Location name="locElemental1" pos_x="-4.525416254" pos_y="13.79902615" />
+    <Location name="locElemental2" pos_x="4.092848193" pos_y="14.03786697" />
+    <Location name="locEntryGeneral" pos_x="-2.347039715" pos_y="29.36790972" />
+    <Location name="locEntryUndead" pos_x="-11" pos_y="-60" />
+    <Location name="locFissure1" pos_x="-25" pos_y="-31.5" />
+    <Location name="locFissure2" pos_x="-17" pos_y="-31" />
+    <Location name="locFissure3" pos_x="-9" pos_y="-30.5" />
+    <Location name="locFissure4" pos_x="-1" pos_y="-29.5" />
+    <Location name="locFissure5" pos_x="7" pos_y="-31" />
+    <Location name="locFissure6" pos_x="15" pos_y="-31.5" />
+    <Location name="locFissure7" pos_x="23" pos_y="-29.5" />
+    <Location name="locFissure8" pos_x="31" pos_y="-31" />
+    <Location name="locFissure9" pos_x="39" pos_y="-31" />
+    <Location name="locFissure10" pos_x="-33" pos_y="-30" />
+    <Location name="locGeneralGuard1" pos_x="-7.636855852" pos_y="28.48835177" />
+    <Location name="locGeneralGuard2" pos_x="6.800690349" pos_y="29.53958796" />
+    <Location name="locGuard1" pos_x="-8.249995321" pos_y="18.7908923" />
+    <Location name="locGuard2" pos_x="6.611590053" pos_y="18.50027003" />
+    <Location name="locGuard3" pos_x="12.11193215" pos_y="19.96206007" />
+    <Location name="locGuard4" pos_x="-13.05689332" pos_y="20.53285854" />
+    <Location name="locGuard5" pos_x="-16.59968706" pos_y="12.49105028" />
+    <Location name="locGuard6" pos_x="-11.14231573" pos_y="10.54271325" />
+    <Location name="locGuard9" pos_x="-3.058151283" pos_y="9.49736402" />
+    <Location name="locGuard10" pos_x="3.240507514" pos_y="9.426682825" />
+    <Location name="locGuard11" pos_x="10.9384057" pos_y="10.45615175" />
+    <Location name="locGuard12" pos_x="16.12011028" pos_y="13.18941468" />
+    <Location name="locLeftFlank" pos_x="-18.93938399" pos_y="25.67622338" />
+    <Location name="locLich" pos_x="-1.737272086" pos_y="-41.31298744" />
+    <Location name="locNecromancer1" pos_x="-16.76554119" pos_y="-34.01189986" />
+    <Location name="locNecromancer2" pos_x="-1.160268588" pos_y="-34.10189803" />
+    <Location name="locNecromancer3" pos_x="14.5" pos_y="-34" />
+    <Location name="locNecromancer4" pos_x="-8.5" pos_y="-34" />
+    <Location name="locNecromancer5" pos_x="7.5" pos_y="-34" />
+    <Location name="locParty" pos_x="31" pos_y="44" />
+    <Location name="locRampart1" pos_x="-5.964524095" pos_y="23.11919302" />
+    <Location name="locRampart2" pos_x="5.444185219" pos_y="23.43366193" />
+    <Location name="locRightFlank" pos_x="19.33628727" pos_y="26.29368017" />
+    <Location name="locSpawn1" pos_x="-20.39498067" pos_y="-25.53915015" />
+    <Location name="locSpawn2" pos_x="-11.62260528" pos_y="-25.39550007" />
+    <Location name="locSpawn3" pos_x="-4.523819401" pos_y="-25.37587368" />
+    <Location name="locSpawn4" pos_x="3" pos_y="-25" />
+    <Location name="locSpawn5" pos_x="9.5" pos_y="-25" />
+    <Location name="locSpawn6" pos_x="15.5" pos_y="-25" />
+    <Location name="locSpawn7" pos_x="20.5" pos_y="-25" />
+    <Location name="locSpawnBow1" pos_x="-20.08774405" pos_y="48.79000285" />
+    <Location name="locSpawnBow2" pos_x="11.95362102" pos_y="47.09545455" />
+    <Location name="locSpawnGuards" pos_x="-5.584856592" pos_y="44.57270069" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

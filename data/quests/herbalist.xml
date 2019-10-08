@@ -1,0 +1,229 @@
+<Quest name="Herb collector" table_name="herbalist" domain="herb_collector">
+	
+	<Init>
+		herbalist.bushes = 0
+	</Init>
+	
+	<Description>
+		if (herbalist.finished) then
+			return _("And another good deed done. I could get used to this.")
+		else
+			return _("The herbalist of Joringsbridge wants to have the berries of 10 bushes. Berries from "..(herbalist.bushes).." bushes have been collected.")
+		end
+	</Description>
+	
+	<Region name="joringsbridge">
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				if(herbalist.asked ~= true)then
+					herbalist_tmp.gertlinde = createObject("peasant_f", "locHerbalist");
+				else
+					herbalist_tmp.gertlinde = createObject("peasant_f", "locHerbalistHome");
+					set(herbalist_tmp.gertlinde,"angle", 190);
+				end;
+				setRefName(herbalist_tmp.gertlinde, "Gertlinde Kampfer");
+			</Effect>
+		</Event>
+		
+		
+		<Event trigger ="player_moved" once = "true">
+			<Condition>
+				if (herbalist.asked ~= true) then
+					return (unitIsInArea(trigger.player,"areaGertlinde"))
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				createDialogue()
+				herbalist_tmp.startTalk = true;
+				addSpeaker(trigger.player,'player')
+				setTopicBase("Gertlinde Kampfer");
+				setDialogueActive(false);
+				changeTopic("herbalist");
+				herbalist_tmp.player = trigger.player;
+				addArea("areaHerbQuest",{"circle",get(trigger.player,"position"),5});
+				local players = getPlayersInArea("areaHerbQuest");
+				addPlayersToDialog(players);
+				players = listToSet(players);
+				addStandardRoles(players);
+				addUnitCommand(herbalist_tmp.gertlinde,'walk',trigger.player,1.5);
+			</Effect>
+		</Event>
+		
+		<Event trigger="command_complete" once = "true">
+			<Condition>
+				if(herbalist.started ~= true)then
+					return ((trigger.unit == herbalist_tmp.gertlinde) and(herbalist_tmp.startTalk == true));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				setCurrentDialogue(herbalist_tmp.player);
+				addSpeaker(herbalist_tmp.gertlinde, "Gertlinde Kampfer");
+				lookAtObject(herbalist_tmp.gertlinde,herbalist_tmp.player);
+				lookAtObject(herbalist_tmp.player,herbalist_tmp.gertlinde);
+				setDialogueActive(true);
+			</Effect>
+		</Event>
+		
+	</Region>
+	
+	
+	<NPC refname="Gertlinde Kampfer">
+		<Topic name="herbalist" start_option="Herb gathering">
+			<Condition>
+				if (herbalist.finished ~= true) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				if (herbalist.started == true) then
+					if (herbalist.bushes >= 10) then
+						speak('player',_("Here, old women. Your berries."))
+						speak('Gertlinde Kampfer',_("Ah, well done, young one."))
+						speak('Gertlinde Kampfer',_("Here, let me give you something in return."))
+						changeTopic("herbalist_reward")
+					else
+						speak('Gertlinde Kampfer',_("I need more berries, if I am to do something useful with them."))
+					end
+				elseif(herbalist.asked==true)then
+					speak('Gertlinde Kampfer',_("Do you want to collect some berries after all?"))
+					addQuestion(_("Accept Quest?"))
+					addAnswer(_("Yes"),"start_herbalist_quest_again")
+					addAnswer(_("No"),"refuse_herbalist_quest_again")
+				else
+					herbalist.asked = true
+					speak('Gertlinde Kampfer',_("Hey there, young one!"))
+					speak('Gertlinde Kampfer',_("I see you are going to the Northern Meadow."),"thoughtful");
+					speak('player',_("That's right."))
+					if(getSpeaker("mage")~=getSpeaker('player'))then
+						speak("mage",_("Quite a trick."))
+						speak("mage",_("We were only walking through the gate."))
+						speak("priest",_("Peace."))
+					end;
+					speak('Gertlinde Kampfer',_("If you are roaming around there anyway, why don't you collect some berries for me?"),"happy");
+					speak('Gertlinde Kampfer',_("With all those goblins about an old woman can't even set a foot out of the village."),"sad");
+					setSpeakerEmotion('Gertlinde Kampfer',"normal");
+					speak('player',_("Plants are not really my forte..."),"unhappy")
+					speak('Gertlinde Kampfer',_("Fiddlesticks!"),"unhappy");
+					setSpeakerEmotion('player',"normal");
+					speak('Gertlinde Kampfer',_("It's not like I want you to collect something exotic, you know."))
+					speak('Gertlinde Kampfer',_("Just rilfberries."),"grin")
+					speak('Gertlinde Kampfer',_("Look for big bushes with fancy red fruits."),"normal");
+					speak('Gertlinde Kampfer',_("You will find them for sure."))
+					speak('Gertlinde Kampfer',_("I need the berries of at least ten bushes."))
+					speak('Gertlinde Kampfer',_("But only the red berries."),"thoughtful")
+					speak('Gertlinde Kampfer',_("The rest is of no use at all."),"grin")
+					addQuestion(_("Accept Quest?"))
+					addAnswer(_("Yes"),"start_herbalist_quest")
+					addAnswer(_("No"),"refuse_herbalist_quest")
+				end
+			</Effect>
+		</Topic>
+		
+		<Topic name="start_herbalist_quest" >
+			<Effect>
+				if(solo())then
+					speak('player', _("Very well, if I find some, I'll bring them."),"normal");
+				else
+					speak('player', _("Very well, if we find some, we'll bring them."),"normal");
+				end;
+				speak('Gertlinde Kampfer',_("Thanks, sweety."),"happy");
+				herbalist.started = true
+				startTimer("talk_done",4000);
+			</Effect>	
+		</Topic>
+		
+		<Topic name="refuse_herbalist_quest" >
+			<Effect>
+				speak('player', _("Forget it, herb woman."),"unhappy")
+				speak('player', _("I'm not going to crawl through the meadows just to search for some stupid bushes."))
+				speak('Gertlinde Kampfer',_("Have it your way."),"sad")
+				speak('Gertlinde Kampfer',_("But if you change your mind, I'm not running away from here."),"normal");
+				startTimer("talk_done",4000);
+			</Effect>	
+		</Topic>
+		
+		<Topic name="start_herbalist_quest_again" >
+			<Effect>
+				if(solo())then
+					speak('player', _("Very well, if I find some, I'll bring them along."),"normal");
+				else
+					speak('player', _("Very well, if we find some, we'll bring them."),"normal");
+				end;
+				speak('Gertlinde Kampfer',_("Thanks, sweety."),"happy");
+				herbalist.started = true
+			</Effect>	
+		</Topic>
+		
+		<Topic name="refuse_herbalist_quest_again" >
+			<Effect>
+				speak('player', _("Still no."),"unhappy");
+				speak('Gertlinde Kampfer',_("Tell me when you're not too mighty for simple work anymore, sweety."),"sneer");
+				speak('player',_("Watch your tongue, hag!"),"angry");
+			</Effect>	
+		</Topic>
+		
+		<Topic name="herbalist_reward">
+			<Condition>
+				if (herbalist.finished ~= true and herbalist.bushes >= 10) then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				herbalist.finished = true
+				local players = getPlayers()
+				local i,player
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"herbalist_reward") ~= true) then
+						setPlayerPrivateVar(player,"herbalist_reward",true)
+						setObjectValue(player,"gold", getObjectValue(player,"gold") + 50)
+					end
+				end
+				addPlayersExperience(700,"herbalist_finished");
+				dropItem("heal_1", "locHerbalist")
+				dropItem("heal_1", "locHerbalist")
+				dropItem("heal_2", "locHerbalist")
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="joringsbridge">
+		<Event trigger ="talk_done" once = "true">
+			<Effect>
+				addUnitCommand(herbalist_tmp.gertlinde,'walk','locHerbalistHome');
+				herbalist_tmp.walkBack = true;
+			</Effect>
+		</Event>
+		<Event trigger ="command_complete" once = "true">
+			<Condition>
+				return ((trigger.unit == herbalist_tmp.gertlinde) and (herbalist_tmp.walkBack == true)) 
+			</Condition>	
+			<Effect>
+				set(herbalist_tmp.gertlinde,"angle",190);
+			</Effect>
+		</Event>
+	</Region>
+	
+	<Region name="aisNorthMeadow">
+	
+		<Event trigger="berryBushPicked">
+			<Effect>
+				herbalist.bushes = herbalist.bushes + 1;
+				bushes_left = 10 - herbalist.bushes;
+				if (not (bushes_left>0)) then
+					bushes_left = 0
+				end
+				print (_("Collect"..bushes_left.." more herbs."));
+			</Effect>
+		</Event>
+	</Region>
+	
+</Quest>
+

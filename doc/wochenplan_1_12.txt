@@ -1,0 +1,18 @@
+Hans:
+	- Balancing / weitere Gegner
+	- Mapgenerator umbauen, dass je nach Umgebung verschiedene Templates verwendet werden
+	- Flag komplettieren
+	- Forschung: Austauschen der Meshes bei Anlegen von Ruestungsteilen
+
+Steffen:
+	- Scene 4
+	- Maylons Grab
+	- Emotionsets
+
+
+Andreas:
+	- Totenbeschwoerer fertig
+	- Kutsche
+
+Michael:
+	- weitere Sounds

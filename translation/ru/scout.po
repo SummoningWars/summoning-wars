@@ -1,0 +1,282 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-01 00:31+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+#: scout.xml
+msgid "The wounded scout"
+msgstr "Раненый скаут"
+
+#: scout.xml
+msgid ""
+"I rescued a scout and hopefully gained some goodwill from the local militia. "
+"Whatever good that will do."
+msgstr ""
+"Я спас скаута и, надеюсь, получил некоторую благосклонность от местной "
+"милиции. А это может пригодиться."
+
+#: scout.xml
+msgid ""
+"I really stumbled across a scout in the goblin infested caves west of "
+"Dwarfenwall. He is wounded, lost his gear to some spiders and asked me to "
+"fix it for him. I really wonder if I should do this... then again it would "
+"be an excuse to venture deeper into the caves that are obviously not under "
+"control by the undead."
+msgstr ""
+"Я наткнулся на скаута в гоблинских пещерах к востоку от Дворфенволла. Он "
+"ранен, потерял своё снаряжение из-за каких-то пауков и просит меня помочь "
+"ему. Мне действительно интересно, стоит ли мне это делать... тогда будет "
+"повод исследовать получше эти пещеры, которые, вне сомнения, не находятся "
+"под контролем зомби."
+
+#: scout.xml
+msgid "greyCurseCave"
+msgstr "Проклятая Пещера"
+
+#: scout.xml
+msgid "Wounded Scout"
+msgstr "Раненый скаут"
+
+#: scout.xml
+msgid "Are you alive?"
+msgstr "Ты живой?"
+
+#: scout.xml
+msgid "Hey, are you alright?"
+msgstr "Эй, с тобой все в порядке?"
+
+#: scout.xml
+msgid "Does it look... 'alright' to you?"
+msgstr "Разве я выгляжу так, будто все в порядке?"
+
+#: scout.xml
+msgid "Pretty much, yes."
+msgstr "Вполне нормально."
+
+#: scout.xml
+msgid "You can still talk, right?"
+msgstr "Ты все ещё можешь говорить, верно?"
+
+#: scout.xml
+msgid ""
+"Yeah, right... now, when you're done laughing... maybe you could help me?"
+msgstr "Да, верно... теперь, когда ты уже отсмеялся... может, ты поможешь мне?"
+
+#: scout.xml
+msgid "I guess I could patch you up, but I can't carry you out of here."
+msgstr ""
+"Мне кажется, я могу подлечить тебя немного, но я не смогу унести тебя отсюда."
+
+#: scout.xml
+msgid ""
+"Where I'm headed you will most certainly die a quick and meaningless death."
+msgstr ""
+"Там, куда я направляюсь, ты с большой долей вероятности умрешь быстро и "
+"бессмысленно."
+
+#: scout.xml
+msgid "I can... watch my own back..."
+msgstr "Я могу... следить за тылом..."
+
+#: scout.xml
+msgid "Most of the time... at least."
+msgstr "Большую часть времени... как минимум."
+
+#: scout.xml
+msgid "But spying on the undead... evading... those blasted goblins..."
+msgstr "Но шпионя за зомби... уклоняясь... эти проклятые гоблины..."
+
+#: scout.xml
+msgid "I got a little... careless."
+msgstr "Я стал немного... невнимательным."
+
+#: scout.xml
+msgid "West of here... there's a cave... pretty deep inside..."
+msgstr "К востоку отсюда... есть пещера... довольно глубокая..."
+
+#: scout.xml
+msgid ""
+"Lot's of wolves... but a nest of spiders, too... thought I had... it under "
+"control"
+msgstr ""
+"Полная волков... но также это и жилище для пауков... я думал... они у меня "
+"под контролем"
+
+#: scout.xml
+msgid ""
+"really big one... there. Spider, I mean... got me good... lost my gear... "
+"but got away... somehow"
+msgstr ""
+"очень большой... находится там. Паук, я имел в виду... подстерег меня... "
+"потерял мое снаряжение... но успел убежать... как-то"
+
+#: scout.xml
+msgid ""
+"The venom... can't move at all... anymore... I had an antidote in my pack..."
+msgstr ""
+"Яд... совсем не могу двигаться... больше... У меня есть противоядие в "
+"рюкзаке..."
+
+#: scout.xml
+msgid "So... if you could get... me my gear, I... would be good to go again..."
+msgstr ""
+"Так что... если ты сможешь достать... мое снаряжение, я... смогу двигаться "
+"дальше..."
+
+#: scout.xml
+msgid "If you're... not afraid... that is."
+msgstr "Если ты... не боишься."
+
+#: scout.xml
+msgid "You have a strange manner of asking for favors."
+msgstr "У тебя странная манера просить о помощи."
+
+#: scout.xml
+msgid "But since I don't have to carry you to safety, I guess it is allright."
+msgstr ""
+"Но раз я не должен нести тебя до безопасного места, я полагаю, что все "
+"нормально."
+
+#: scout.xml
+msgid "This wouldn't happen to be your stuff, would it?"
+msgstr "Это, случаем, не твое ли барахло?"
+
+#: scout.xml
+msgid "You already... found it?"
+msgstr "Ты уже... нашел её?"
+
+#: scout.xml
+msgid "Thanks..."
+msgstr "Спасибо..."
+
+#: scout.xml
+msgid "Still alive?"
+msgstr "Всё ещё живой?"
+
+#: scout.xml
+msgid "Do you... have my gear?"
+msgstr "У тебя есть мое снаряжение?"
+
+#: scout.xml
+msgid "Not yet, no."
+msgstr "Ещё нет."
+
+#: scout.xml
+msgid ""
+"Shame. It seems I'm already capable of... being paralyzed... without your "
+"help."
+msgstr ""
+"Позор. Кажется, я уже могу... стать парализованным... без твоей помощи."
+
+#: scout.xml
+msgid ""
+"Thanks for... checking back on me though. I'll be here... if you need me."
+msgstr ""
+"Спасибо за... то, что заглянул за мной. Если понадоблюсь... я буду здесь."
+
+#: scout.xml
+msgid "You are kind of messed up, you know that?"
+msgstr "Ты немного запутался, ты в курсе?"
+
+#: scout.xml
+msgid "..."
+msgstr "..."
+
+#: scout.xml
+msgid "Here it is."
+msgstr "Вот оно."
+
+#: scout.xml
+msgid "good... now, blue potion"
+msgstr "отлично... теперь синее зелье."
+
+#: scout.xml
+msgid "A blue potion?"
+msgstr "Синее зелье?"
+
+#: scout.xml
+msgid "You do realize there is at least a score of 'blue' potions here?"
+msgstr "Ты понимаешь, что тут как минимум два десятка \"синих\" зелий?"
+
+#: scout.xml
+msgid ""
+"They just... turn out that... way everytime... it's the one... with the "
+"light shade of turquoise."
+msgstr ""
+"Они просто... перемешались... как обычно... тебе нужен... с легким оттенком "
+"бирюзы."
+
+#: scout.xml
+msgid "No... too... light blue"
+msgstr "Нет... слишком... голубой"
+
+#: scout.xml
+msgid "That's... it"
+msgstr "Это... оно"
+
+#: scout.xml
+msgid "Finally!"
+msgstr "Наконец-то!"
+
+#: scout.xml
+msgid "Remember me not to kill you after all the trouble I went through."
+msgstr ""
+"Напомни мне не убивать тебя после всех тех проблем, через которые я прошел."
+
+#: scout.xml
+msgid "Gladly. Really, thank you for saving my hide."
+msgstr ""
+"С удовольствием. Действительно, спасибо тебе за то, что спас мою шкуру."
+
+#: scout.xml
+msgid "You best stay out of trouble."
+msgstr "Держись подальше от неприятностей."
+
+#: scout.xml
+msgid ""
+"Because I seriously do NOT want to rummage through your happy collection of "
+"identical looking special-purpose-potions."
+msgstr ""
+"Потому что я серьезно не хочу копаться среди твоей коллекции одинаково "
+"выглядящих зелий на все случаи жизни."
+
+#: scout.xml
+msgid "Sorry about that. Normally I'm the only one who has to keep them apart."
+msgstr ""
+"Прошу прощения за это. Обычно я единственный, кто держит их отдельно друг от "
+"друга."
+
+#: scout.xml
+msgid "Allright. Now that this is done, I will be on my way."
+msgstr "Отлично. Теперь, когда все сделано, я пойду своим путем."
+
+#: scout.xml
+msgid ""
+"I will rest a little more and then be on my way too, but in the other "
+"direction."
+msgstr ""
+"Я отдохну ещё немного, а потом пойду по своим делам, только в другом "
+"направлении."
+
+#: scout.xml
+msgid "greyWolfcave"
+msgstr "Волчья Пещера"
+
+#: scout.xml
+msgid "After killing the spider you safely pick up a backpack in good shape."
+msgstr ""
+"После убийства паука ты без опасений поднял рюкзак, который оказался в "
+"хорошем состоянии."

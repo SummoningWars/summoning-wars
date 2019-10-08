@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="mojo_tortured" layer="NORMAL">
+        <Mesh file="mojo_tortured.mesh" />
+        <Geometry shape="CIRCLE" radius="0.5"/>
+</Object>

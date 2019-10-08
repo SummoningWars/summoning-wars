@@ -1,0 +1,148 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-01 00:15+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+#: goblin_raid.xml
+msgid "goblin_raid"
+msgstr "набег_гоблинов"
+
+#: goblin_raid.xml
+msgid ""
+"Well, I got a little money for killing some goblins I would have wasted "
+"anyway. Not a bad day."
+msgstr ""
+"Хм, я получил немного денег за убийство гоблинов, которых в любом случае "
+"убил бы. Неплохой сегодня день."
+
+#: goblin_raid.xml
+msgid ""
+"It seems the sergeant from Joringsbridge is willing to pay, but he wants me "
+"to help those peasants first. There's no trust in this world anymore."
+msgstr ""
+"Кажется, сержант из Joringsbridge готов заплатить, но сначала он хочет, "
+"чтобы я потом тем крестьянам. Нет больше доверия в этом мире."
+
+#: goblin_raid.xml
+msgid ""
+"I discovered plans of a goblin raid set for a village called Joringsbridge. "
+"They were found amongst the remains of some goblin tribe. Guess I busted "
+"that party prematurely. Maybe someone official will appreciate not having "
+"hordes of goblins kicking in their doors."
+msgstr ""
+"Я нашел планы по набегу гоблинов на деревушку по названию Джорингсбридж. Они "
+"были найдены среди остатков какого-то гоблинского племени. Полагаю, я "
+"прервал их жизни преждевременно. Может быть, какой-нибудь официальный "
+"представитель будет признателен за то, что орды гоблинов не ломятся к ним."
+
+#: goblin_raid.xml
+msgid "aisDarkClearing"
+msgstr "Темная Поляна"
+
+#: goblin_raid.xml
+msgid "Sergeant Lutterer"
+msgstr "Сержант Люттерер"
+
+#: goblin_raid.xml
+msgid "Crude battle plans"
+msgstr "Жестокие планы битвы"
+
+#: goblin_raid.xml
+msgid "Hey, sergeant, I found these in the woods with some goblins."
+msgstr "Эй, сержант, я нашел это в лесах у некоторых гоблинов."
+
+#: goblin_raid.xml
+msgid "This looks like it could be Joringsbridge. Are you sure it's reliable?"
+msgstr ""
+"Кажется, это действительно мог бы быть Joringsbridge. Ты уверен, что на эти "
+"данные стоит полагаться?"
+
+#: goblin_raid.xml
+msgid "Some kind of head honcho shaman had them, so I figure they mean it."
+msgstr ""
+"Они были у какого-то главного шамана, так что мне кажется, их надо принимать "
+"всерьез."
+
+#: goblin_raid.xml
+msgid "Meant it. Whatever."
+msgstr "Надо было."
+
+#: goblin_raid.xml
+msgid "Hey, sergeant, ready to pay for the pre-emptive rescue of the village?"
+msgstr "Эй, сержант, вы готовы платить за преждевременное спасение деревни?"
+
+#: goblin_raid.xml
+msgid "I guess you can be trusted."
+msgstr "Полагаю, тебе можно доверять."
+
+#: goblin_raid.xml
+msgid "Let me thank you on behalf of the whole village."
+msgstr "Позволь мне поблагодарить тебя за защиту целой деревни."
+
+#: goblin_raid.xml
+msgid "It's always a pleasure when a good deed goes rewarded."
+msgstr "Всегда приятно, когда награждают за хорошее дело."
+
+#: goblin_raid.xml
+msgid "Sorry, but I don't know you."
+msgstr "Извини, но я не знаю тебя."
+
+#: goblin_raid.xml
+msgid "Maybe I will show some gratitude after you help Michel's family."
+msgstr ""
+"Может быть, я выражу признательность после того, как ты поможешь семье "
+"Мишеля."
+
+#: goblin_raid.xml
+msgid "As they say: One hand washes the other."
+msgstr "Как говорится, рука руку моет."
+
+#: goblin_raid.xml
+msgid "Do you want to help the peasant?"
+msgstr "Ты хочешь помочь крестьянам?"
+
+#: goblin_raid.xml
+msgid "Yes"
+msgstr "Да"
+
+#: goblin_raid.xml
+msgid "No"
+msgstr "Нет"
+
+#: goblin_raid.xml
+msgid "Then I better get back to saving helpless peasants, no?"
+msgstr "Тогда мне лучше пойти спасать этих беспомощных крестьян, не так ли?"
+
+#: goblin_raid.xml
+msgid "Fine, I'll wipe out those goblins for you."
+msgstr "Отлично, я сотру этих гоблинов с лица земли для тебя."
+
+#: goblin_raid.xml
+msgid "You do realise there's plenty more where they came from?"
+msgstr "Ты понимаешь, что их гораздо больше там, откуда они пришли?"
+
+#: goblin_raid.xml
+msgid "Just go already."
+msgstr "Короче, просто иди."
+
+#: goblin_raid.xml
+msgid "Whatever. It's not like I need the money or anything."
+msgstr ""
+"Как бы то ни было, непохоже, что я нуждаюсь в деньгах или чем-либо ещё."
+
+#: goblin_raid.xml
+msgid "And I could care less what happens to some peasant family."
+msgstr "И я могу не заботиться о том, что же там с какой-то семьей крестьян."

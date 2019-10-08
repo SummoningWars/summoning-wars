@@ -1,0 +1,15 @@
+<creature>
+  <name>mojo_tortured</name>
+  <meshname>mojo_tortured.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Items/environment/mojoAnimation2.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>tortured</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>wail in pain</description>
+    </clip>
+  </animations>
+
+</creature>

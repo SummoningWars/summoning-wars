@@ -1,0 +1,129 @@
+<creature>
+  <name>leath_armMW</name>
+  <meshname>leath_armMW.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Characters/Player/humanAnimationSeperated17.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>attack</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>attack with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>attackTwoHands</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description>attack with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>attackTwoHandsSword</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>idle</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description>nothing to do... but armed</description>
+    </clip>
+    <clip>
+      <name>idleTwoHands</name>
+      <startframe>73</startframe>
+      <endframe>96</endframe>
+      <description>bored and lazy, but wielding a two handed blade</description>
+    </clip>
+    <clip>
+      <name>walkOneHand</name>
+      <startframe>97</startframe>
+      <endframe>120</endframe>
+      <description>walk with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>attackMagicTwoHands</name>
+      <startframe>121</startframe>
+      <endframe>144</endframe>
+      <description>attack with a staff</description>
+    </clip>
+    <clip>
+      <name>attackMagicUnarmed</name>
+      <startframe>145</startframe>
+      <endframe>168</endframe>
+      <description>attack with magic, unarmed as it is</description>
+    </clip>
+    <clip>
+      <name>attackMagicOneHand</name>
+      <startframe>169</startframe>
+      <endframe>192</endframe>
+      <description>attack with a wand</description>
+    </clip>
+    <clip>
+      <name>attackRangedUnarmed</name>
+      <startframe>193</startframe>
+      <endframe>216</endframe>
+      <description>attack with a dart</description>
+    </clip>
+    <clip>
+      <name>attackRangedBow</name>
+      <startframe>217</startframe>
+      <endframe>242</endframe>
+      <description>attack with a bow</description>
+    </clip>
+    <clip>
+      <name>attackRangedCrossbow</name>
+      <startframe>288</startframe>
+      <endframe>312</endframe>
+      <description>attack with a crossbow</description>
+    </clip>
+    <clip>
+      <name>magicArrow</name>
+      <startframe>313</startframe>
+      <endframe>337</endframe>
+      <description>cast magic on your bow</description>
+    </clip>
+    <clip>
+      <name>castMagicStrong</name>
+      <startframe>338</startframe>
+      <endframe>361</endframe>
+      <description>cast a big spell</description>
+    </clip>
+    <clip>
+      <name>castMagicWeak</name>
+      <startframe>362</startframe>
+      <endframe>385</endframe>
+      <description>cast a small spell</description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>386</startframe>
+      <endframe>409</endframe>
+      <description>well... everyone does eventually</description>
+    </clip>
+    <clip>
+      <name>sweepStrikeOneHand</name>
+      <startframe>410</startframe>
+      <endframe>424</endframe>
+      <description>360 degree deadly steel</description>
+    </clip>
+    <clip>
+      <name>specialAttackOneHand</name>
+      <startframe>425</startframe>
+      <endframe>447</endframe>
+      <description>a devestating attack with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>idlePole</name>
+      <startframe>448</startframe>
+      <endframe>472</endframe>
+      <description>guards do it all the time</description>
+    </clip>
+    <clip>
+      <name>clip20</name>
+      <startframe>0</startframe>
+      <endframe>0</endframe>
+      <description></description>
+    </clip>
+  </animations>
+
+</creature>

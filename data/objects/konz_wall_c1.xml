@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="konz_wall_c1" layer="NORMAL">
+	<Mesh file="signpost.mesh" />
+	<Geometry shape="CIRCLE" radius="1"/>
+</Object>

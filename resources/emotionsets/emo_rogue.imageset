@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Imageset Name="emo_rogue" Imagefile="emo_rogue.png" NativeHorzRes="1024" NativeVertRes="768" AutoScaled="true" >
+    <Image Name="normal" XPos="1" YPos="1" Width="100" Height="100" />
+    <Image Name="surprised" XPos="102" YPos="1" Width="100" Height="100" />
+    <Image Name="thoughtful" XPos="203" YPos="1" Width="100" Height="100" />
+    <Image Name="happy" XPos="304" YPos="1" Width="100" Height="100" />
+    <Image Name="amused" XPos="405" YPos="1" Width="100" Height="100" />
+    <Image Name="excited" XPos="1" YPos="102" Width="100" Height="100" />
+    <Image Name="inlove" XPos="102" YPos="102" Width="100" Height="100" />
+    <Image Name="bored" XPos="203" YPos="102" Width="100" Height="100" />
+    <Image Name="unhappy" XPos="304" YPos="102" Width="100" Height="100" />
+    <Image Name="sad" XPos="405" YPos="102" Width="100" Height="100" />
+    <Image Name="pain" XPos="1" YPos="203" Width="100" Height="100" />
+    <Image Name="sneer" XPos="102" YPos="203" Width="100" Height="100" />
+    <Image Name="grin" XPos="203" YPos="203" Width="100" Height="100" />
+    <Image Name="offended" XPos="304" YPos="203" Width="100" Height="100" />
+    <Image Name="threaten" XPos="405" YPos="203" Width="100" Height="100" />
+    <Image Name="angry" XPos="1" YPos="304" Width="100" Height="100" />
+    <Image Name="warcry" XPos="102" YPos="304" Width="100" Height="100" />
+    <Image Name="injured" XPos="203" YPos="304" Width="100" Height="100" />
+    <Image Name="injured2" XPos="304" YPos="304" Width="100" Height="100" />
+    <Image Name="injured3" XPos="405" YPos="304" Width="100" Height="100" />
+	<Image Name="fear" XPos="1" YPos="405" Width="100" Height="100" />
+    <Image Name="panic" XPos="102" YPos="405" Width="100" Height="100" />
+    <Image Name="aloof" XPos="203" YPos="405" Width="100" Height="100" />
+    <Image Name="disgust" XPos="304" YPos="405" Width="100" Height="100" />
+</Imageset>

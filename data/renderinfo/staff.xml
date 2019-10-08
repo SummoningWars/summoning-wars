@@ -1,0 +1,27 @@
+<RenderInfo name="staffBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_wood"/>
+	</Action>
+</RenderInfo>
+
+
+<RenderInfo name="spruce_stf" parent= "staffBase">
+	<Entity source="spruce_stf.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="aprnt_stf" parent= "staffBase">
+	<Entity source="aprnt_stf.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="basicStaff" parent= "staffBase">
+	<Entity source="basicStaff.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="hermit_stf" parent= "staffBase">
+	<Entity source="hermit_stf.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="necro_stf" parent= "staffBase">
+	<Entity source="necro_stf.mesh"/>
+</RenderInfo>

@@ -1,0 +1,72 @@
+//Header
+- Information binaere Speicherung ja(1) nein(0) - 1 Byte
+- Versionsnummer - 2 byte char
+- Lange der Datei - 4 Byte int
+
+// Heldendaten
+// alle Daten sind ohne Items gespeichert
+// die Items werden beim Laden neu angelegt und so die modifizierten Werte berechnet
+- Charakterklasse - 1 Byte char
+- Name - 32 Byte char
+- Level - 1 Byte char
+- max HP - 4 Byte float
+- Staerke - 2 Byte short
+- Geschick - 2 Byte short
+- Magie - 2 Byte short
+- Wissen - 2 Byte short
+- freie Attributpunkte - 2 Byte short
+- freie Skillpunkte - 2 Byte short
+- Basisresistenzen - 8 Byte short
+- max XP - 4 Byte float
+- aktuelle XP - 4 Byte float
+- Faehigkeiten - 24 Byte bitkodiert
+- letzte Stadt - 2 Byte short
+- Basisfaehigkeit - 2 Byte short
+- Faehigkeit links - 2 Byte short
+- Faehigkeit rechts - 2 Byte short
+- Lange der Questinformationen - 2 Byte short
+- Questinformationen - x Byte, verschiedene Kodierungen
+- Anzahl der Items - 2 Byte short
+
+// Items
+- Typ  - 1 Byte char
+- Subtyp - 2 Byte short
+- Groesse - 1 Byte char
+- Ort - 2 Byte short
+- Wert - 4 Byte int
+- Information welche weiteren Daten kommen - 1 Byte bitkodiert
+/// Wirkung beim Benutzen (optional)
+/// bei allen Werten die Aenderung zum aktuellen Wert
+- HP - 4 Byte float
+- Statusveraenderungen (Zeit die man immun wird) - 32 Byte float
+/// Ruestungsattribute (optional)
+/// bei allen Attributen die Aenderung zum Basiswert
+- Ruestung - 2 Byte short
+- Blockwert - 2 Byte short
+- max HP - 4 byte float
+- Attackewert - 2 Byte short
+- max HP - 4 Byte float
+- Staerke - 2 Byte short
+- Geschick - 2 Byte short
+- Magie - 2 Byte short
+- Wissen - 2 Byte short
+- Basisresistenzen - 8 Byte short
+- Maximalresistenzen - 8 Byte short
+- Laufgeschwindigkeit - 2 Byte short
+- Angriffsgeschwindigkeit - 2 Byte short
+- Flags - 4 Byte int
+- Faehigkeiten - 24 Byte bitkodiert
+- Immunitaeten - 1 Byte bitkodiert
+/// Waffenattribute (optional)
+- Minimalschaden - 16 Byte float
+- Maximalschaden - 16 Byte float
+- Attackewert - 4 Byte float
+- Durchschlagskraft - 4 Byte float
+- Ruestung ignorieren Prozentwert - 4 Byte float
+- kritischer Treffer Prozentsatz  - 4 Byte float
+- ausgeteilte Statusveraenderungen - 16 Byte short
+- Specialflags - 2 Byte bitkodiert
+- Reichweite - 4 Byte float
+- zweihaendig - 1 Byte bool
+- Angriffsgeschwindigkeit - 2 Byte short
+

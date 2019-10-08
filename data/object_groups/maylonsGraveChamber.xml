@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="maylonsGraveChamber" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="8.096219532"
+    extent_y="11.45188503"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$misc_urn" 
+            center_x="-6.505406582" 
+            center_y="4.514626486" 
+           height="1.724566669" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="-6.505406582" 
+            center_y="2.037729173" 
+           height="1.724566669" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="4.491880129" 
+            center_y="2.039619379" 
+           height="1.724566669" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="4.491880129" 
+            center_y="4.544200652" 
+           height="1.724566669" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_door1" name="doorGrave" 
+            center_x="-1" 
+            center_y="9" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_podest" 
+            center_x="-6.5" 
+            center_y="4.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_podest" 
+            center_x="4.5" 
+            center_y="4.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_podest" 
+            center_x="4.5" 
+            center_y="2" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_podest" 
+            center_x="-6.5" 
+            center_y="2" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="-7.5" 
+            center_y="4.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="5.5" 
+            center_y="4.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="5.5" 
+            center_y="-3.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="-7.5" 
+            center_y="-3.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="-7.5" 
+            center_y="-8" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="-7.5" 
+            center_y="9" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="5.5" 
+            center_y="-8" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="2.5" 
+            center_y="-11" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="-4.5" 
+            center_y="-11" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="5.5" 
+            center_y="9" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cOut1" 
+            center_x="-4.5" 
+            center_y="-8" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cOut1" 
+            center_x="2.5" 
+            center_y="-8" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_m1" 
+            center_x="-5" 
+            center_y="9" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_m1" 
+            center_x="-7.105427358e-015" 
+            center_y="-11" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_m1" 
+            center_x="3" 
+            center_y="9" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_s1" 
+            center_x="-4.5" 
+            center_y="-9.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_s1" 
+            center_x="2.5" 
+            center_y="-9.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_s1" 
+            center_x="-3" 
+            center_y="-11" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_s1" 
+            center_x="4" 
+            center_y="-8" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_s1" 
+            center_x="-6" 
+            center_y="-8" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="sarkophagusMaylon" 
+            center_x="-1" 
+            center_y="-9" 
+           height="2.775557562e-017" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+    <Location name="locMaylon" pos_x="-1" pos_y="-6" />
+    <Location name="locMaylonGuard1" pos_x="-4.5" pos_y="-3.5" />
+    <Location name="locMaylonGuard2" pos_x="2.5" pos_y="-3.5" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

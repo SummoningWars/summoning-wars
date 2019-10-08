@@ -1,0 +1,10 @@
+#ifndef __version_h__
+#define __version_h__
+
+#define VERSION_MAJOR ${${PROJECT_NAME}_VERSION_MAJOR}
+#define VERSION_MINOR ${${PROJECT_NAME}_VERSION_MINOR}
+#define VERSION_PATCH ${${PROJECT_NAME}_VERSION_PATCH}
+#define VERSION_REVISION ${${PROJECT_NAME}_VERSION_REVISION}
+#define VERSION "${${PROJECT_NAME}_VERSION}"
+
+#endif //__version_h__

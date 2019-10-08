@@ -1,0 +1,737 @@
+<!-- Monsterbases -->
+<RenderInfo name="skeletonbase" parent="playerbase">
+	<Action name="die">
+		<Animation name="dieOneHand" />
+		<Sound objectname="general" name="skel_die"/>
+	</Action>
+	
+	<Action name="ice_attack">
+		<Animation name="attack" />
+	</Action>
+	
+	<Action name="fire_attack">
+		<Animation name="attack" />
+	</Action>
+	
+	<Action name="summoned">
+		<Animation name="raise" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+		  <!-- <Sound objectname="general" name="some_hit_sound"/> -->
+		</Active>
+	</State>
+	
+</RenderInfo>
+
+<RenderInfo name="reaperbase" parent="skeletonbase">
+	<Action name = "attack">
+		<Animation name = "attackScythe"/>
+	</Action>
+	
+	<Action name = "walk">
+		<Animation name = "walkTwoHandsHammer"/>
+	</Action>
+	
+	<Action name = "noaction">
+		<Animation name = "idleScytheSkel"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="zombiebase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="zombieWalk" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="zombieAttack1" />
+		<Sound objectname="general" name="zombie_attack"/>
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+		<Sound objectname="general" name="zombie_die"/>
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idleZombie" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+			<Sound objectname="general" name="zombie_hit"/>
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="lichbase" parent="creaturebase">
+	<State name = "frost">
+		<Activation>
+			<ParticleSystem objectname="frostscythe1" bone="itemRightHand" source="FrostBlade" position= "0 0 -3.3" rotation="0 -90 0"/>
+			<ParticleSystem objectname="frostscythe2" bone="itemRightHand" source="FrostBlade" position= "-0.5 0 -3.3" rotation="0 -90 0"/>
+			<ParticleSystem objectname="frostscythe3" bone="itemRightHand" source="FrostBlade" position= "-1.0 0 -3.3" rotation="0 -80 0"/>
+			<ParticleSystem objectname="frostscythe4" bone="itemRightHand" source="FrostBlade" position= "-1.5 0 -3.2" rotation="0 -70 0"/>
+			<ParticleSystem objectname="frostscythe5" bone="itemRightHand" source="FrostBlade" position= "-2.0 0 -3.0" rotation="0 -60 0"/>
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="frostscythe1"/>
+			<Detach objectname="frostscythe2"/>
+			<Detach objectname="frostscythe3"/>
+			<Detach objectname="frostscythe4"/>
+			<Detach objectname="frostscythe5"/>
+		</Deactivation>
+	</State>
+	
+	<Action name="walk">
+		<Animation name="walk" />
+	</Action>
+	
+	<Action name="talk">
+		<Animation name="talk" />
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+	</Action>
+	
+	<Action name ="noaction" >
+		<Animation  name = "idle"/>
+	</Action>
+	
+	<Action name ="attack" >
+		<Animation  name = "attack1"/>
+	</Action>
+	<Action name ="asoroth_ice_attack" >
+		<Animation  name = "attack1"/>
+	</Action>
+	
+	<Action name="summoned">
+		<Animation name="appear"/>
+		
+		<Visibility time="0" visible="false"/>
+		<Visibility time="0.4" visible="true"/>
+		
+		<Visibility objectname="scythe" time="0" visible="false"/>
+		<Visibility objectname="scythe" time="0.4" visible="true"/>
+		
+		<ParticleSystem objectname="blizzard1" source="Blizzard" position="0 3.5 0" />
+		<ParticleSystem objectname="blizzard2" source="Blizzard" position="-0.5 4.5 0" />
+		<Detach objectname="blizzard1" time="0.9"/>
+		<Detach objectname="blizzard2" time="0.9"/>
+	</Action>
+	
+	<Action name ="summon_skelSword" >
+		<Animation  name = "summon"/>
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy1" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy1" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy1" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 90.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy1" />
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy2" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy2" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy2" start="0.2" end="0.5" start_vec="0.0 90.0 0.0" end_vec="0.0 180.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy2" />
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy3" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy3" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy3" start="0.2" end="0.5" start_vec="0.0 180.0 0.0" end_vec="0.0 270.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy3" />
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy4" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy4" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy4" start="0.2" end="0.5" start_vec="0.0 270.0 0.0" end_vec="0.0 380.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy4" />
+		
+		<ParticleSystem time = "0.5" objectname="earth" bone= "itemLeftHand" source="Earth" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="earth" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy1" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy1" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy1" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 90.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy1" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy2" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy2" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy2" start="0.5" end="0.9" start_vec="0.0 90.0 0.0" end_vec="0.0 180.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy2" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy3" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy3" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy3" start="0.5" end="0.9" start_vec="0.0 180.0 0.0" end_vec="0.0 270.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy3" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy4" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy4" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy4" start="0.5" end="0.9" start_vec="0.0 270.0 0.0" end_vec="0.0 380.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy4" />
+	</Action>
+
+	<Action name ="summon_skelBow" reference = "summon_skelSword" >
+	</Action>
+	
+	<Action name ="summon_skelAxe" reference = "summon_skelSword" >
+	</Action>
+	
+	<Action name ="summon_skelAxe2" reference = "summon_skelSword" >
+	</Action>
+	
+	<Action name ="ice_bolt" >
+		<Animation  name = "castMagicWeak"/>
+		<ParticleSystem time = "0.1" objectname="handIce1" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 0.0 0.0" />
+		<Detach time="0.4" objectname="handIce1" />
+		<ParticleSystem time = "0.4" objectname="handIce1" bone="mainmesh:itemLeftHand" source="Icesphere" position="0.0 0.0 0.0" />
+		<Detach time="0.7" objectname="handIce1" />
+	</Action>
+	<State name="bleed">
+		<Active>
+		  <!-- <Sound objectname="general" name="some_hit_sound"/> -->
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name = "necromancerBase" parent="playerbase">
+	<Action name="noaction">
+		<Animation name="idlePole" />
+	</Action>
+	
+	<Action name="die">
+		<Animation name="dieOneHand" />
+	</Action>
+	
+	<Action name="walk">
+		<Animation name="walkOneHand" />
+	</Action>
+	
+	<Action name="talk">
+		<Animation name="talkPole" />
+	</Action>
+	
+	<Action name="kneelDown">
+		<Animation name="kneelDownPole"/>
+	</Action>
+	<Action name="kneel">
+		<Animation name="kneelPole"/>
+	</Action>
+	<Action name="kneelUp">
+		<Animation name="kneelUpPole"/>
+	</Action>
+	
+	<Action name="summoned">
+		<!-- so that the necromancer will not move -->
+		<Animation name="idlePole" start="0" end="50.0"/>
+		<Entity objectname="iceblock" source="iceSmall.mesh"  highlightable="false" scale="1.1"/>
+		<Movement start="0.0" end="0" start_vec="0.0 0.0 0.0" end_vec="0.0 -3.0 0.0" />
+		<Movement objectname="iceblock" start="0.0" end="0" start_vec="0.0 0.0 0.0" end_vec="0.0 -3.0 0.0" />
+		
+		
+		
+		<ParticleSystem objectname="cloud" source="SummonRing" position="0 2 0" scale="3.0"/>
+		<Scale  objectname="cloud" start="0" end="0.4" start_val="0.1" end_val="3.0" />
+		<Movement objectname="cloud" start="0.4" end="0.7" start_vec="0.0 2.0 0.0" end_vec="0.0 0.2 0.0" />
+		<Rotation objectname="cloud" start="0.0" end="0.7" start_vec="0.0 0.0 0.0" end_vec="180.0 90.0 180.0" />
+		
+		<ParticleSystem objectname="earth" source="EarthGush" time="0.73"/>
+		<Movement start="0.7" end="0.9" start_vec="0.0 -3.0 0.0" end_vec="0.0 .0 0.0" />
+		<Movement objectname="iceblock" start="0.7" end="0.9" start_vec="0.0 -3.0 0.0" end_vec="0.0 0.0 0.0" />
+		
+		<Detach objectname="iceblock" time="0.95"/>
+		<Detach objectname="earth" time="0.95" />
+		<Detach objectname="cloud" time="0.95" />
+	</Action>
+	
+	<Action name="magic_attack">
+		<Animation name="attackMagicTwoHands" />
+		<ParticleSystem objectname="magicEnergy" bone="mainmesh:itemRightHand" source="Magic_Arrow" position="0.0 0.0 -1.4" />
+		<Detach time="0.4" objectname="magicEnergy" />
+	</Action>
+	<Action name="magic_attack_ice">
+		<Animation name="attackMagicTwoHands" />
+		<ParticleSystem objectname="magicEnergy" bone="mainmesh:itemRightHand" source="HandIce" position="0.0 0.0 -1.4" />
+		<Detach time="0.4" objectname="magicEnergy" />
+	</Action>
+	<Action name="magic_attack_shadow">
+		<Animation name="attackMagicTwoHands" />
+		<ParticleSystem objectname="magicEnergy" bone="mainmesh:itemRightHand" source="Magic_Arrow_Shadow" position="0.0 0.0 -1.4" />
+		<Detach time="0.4" objectname="magicEnergy" />
+	</Action>
+	
+	<Action name="guided_icicle">
+		<Animation name="castMagicWeak" />
+		<ParticleSystem objectname="magicEnergy1" bone="mainmesh:itemRightHand" source="HandIce" position="0.0 0.0 -1.4" />
+		<ParticleSystem objectname="magicEnergy2" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 -0.50 0" />
+		<Detach time="0.4" objectname="magicEnergy1" />
+		<Detach time="0.6" objectname="magicEnergy2" />
+	</Action>
+	<Action name="ice_ball">
+		<Animation name="castMagicWeak" />
+		<ParticleSystem objectname="magicEnergy1" bone="mainmesh:itemRightHand" source="HandIce" position="0.0 0.0 -1.4" />
+		<ParticleSystem objectname="magicEnergy2" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 -0.50 0" />
+		<Detach time="0.4" objectname="magicEnergy1" />
+		<Detach time="0.6" objectname="magicEnergy2" />
+	</Action>
+	<Action name="monster_freeze">
+		<Animation name="castMagicWeak" />
+		<ParticleSystem objectname="magicEnergy1" bone="mainmesh:itemRightHand" source="HandIce" position="0.0 0.0 -1.4" />
+		<ParticleSystem objectname="magicEnergy2" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 -0.50 0" />
+		<Detach time="0.4" objectname="magicEnergy1" />
+		<Detach time="0.6" objectname="magicEnergy2" />
+	</Action>
+	<Action name="frost_wave">
+		<Animation name="castMagicStrong" />
+		<ParticleSystem time = "0" objectname="magicEnergy" bone="mainmesh:magicEffects" source="IceDown" position="0.0 0.0 0.0" />
+		<Detach time = "0.9" objectname = "magicEnergy"/>
+		<ParticleSystem time = "0.6" objectname="ring" bone="mainmesh:itemRightHand" source="Icering" position="0.0 0.0 2.0" />
+		<Scale objectname="ring" start = "0.6" end = "0.7" start_val="1.0" end_val="2.5" />
+		<Detach time = "0.7" objectname = "ring" />
+	</Action>
+	
+	<Action name="monster_frost_wave" reference="frost_wave"/>
+	
+	<Action name="shadow_magic_shield">
+		<Animation name="priestMagicSmall" />
+		<ParticleSystem objectname="magicEnergy" bone="mainmesh:itemRightHand" source="Magic_Arrow_Shadow" position="0.0 0.0 -1.4" />
+		<Detach time="0.9" objectname="magicEnergy" />
+	</Action>
+	<Action name="black_storm">
+		<Animation name="idlePole" />
+		
+		<ParticleSystem time = "0.25" objectname="handleHeal" bone="mainmesh:itemRightHand" source="ShadowLine" position="0.0 0.0 0.0" />
+		<Detach time="0.7" objectname="handleHeal" />
+		<Movement  objectname="handleHeal" start="0.26" end="0.4" start_vec="0.0 0.0 0.0" end_vec="0.0 0.0 -1.5" />
+		
+		<ParticleSystem time = "0.4" objectname="healStar1" bone="mainmesh:itemRightHand" source="ShadowLine" position="2.0 0.0 -1.4" />
+		<Detach time="0.7" objectname="healStar1" />
+		<Movement  objectname="healStar1" start="0.4" end="0.6" start_vec="0.0 0.0 -1.4" end_vec="2.0 0.0 -1.4" />
+		
+		<ParticleSystem time = "0.4" objectname="healStar2" bone="mainmesh:itemRightHand" source="ShadowLine" position="0.0 2.0 -1.2" />
+		<Detach time="0.7" objectname="healStar2" />
+		<Movement  objectname="healStar2" start="0.4" end="0.6" start_vec="0.0 0.0 -1.4" end_vec="0.0 2.0 -1.2" />
+		 
+		<ParticleSystem time = "0.4" objectname="healStar3" bone="mainmesh:itemRightHand" source="ShadowLine" position="0.0 -2.0 -1.3" />
+		<Detach time="0.7" objectname="healStar3" />
+		<Movement  objectname="healStar3" start="0.4" end="0.6" start_vec="0.0 0.0 -1.4" end_vec="0.0 -2.0 -1.3" />
+		
+		<ParticleSystem time = "0.4" objectname="healStar4" bone="mainmesh:itemRightHand" source="ShadowLine" position="-2.0 0.0 -1.0" />
+		<Detach time="0.7" objectname="healStar4" />
+		<Movement  objectname="healStar4" start="0.4" end="0.6" start_vec="0.0 0.0 -1.4" end_vec="-2.0 0.0 -0.8" />
+	</Action>
+	
+</RenderInfo>
+
+<RenderInfo name="obeliskbase" parent="creaturebase">
+	<State name="bleed">
+		<Active>
+		  <!-- <Sound objectname="general" name="some_hit_sound"/> -->
+		</Active>
+	</State>
+</RenderInfo>
+
+
+<!-- Monster -->
+
+<RenderInfo name="sword_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="old_sw.mesh" />
+</RenderInfo>
+
+<RenderInfo name="axe_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="ironha_axe.mesh" />
+	<Entity objectname="shield" bone="itemLeftHand" source="broken_shd.mesh" />
+</RenderInfo>
+
+<RenderInfo name="axe2_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="great_axe.mesh" />
+	
+	<Action name = "attack">
+		<Animation name = "attackTwoHandsBlunt"/>
+	</Action>
+	
+	<Action name = "walk">
+		<Animation name = "walkTwoHandsHammer"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="bow_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemLeftHand" source="bow.mesh" />
+	<Action name="die">
+		<Animation name="dieBowUndead" />
+		<Sound objectname="sound" name="skel_die"/>
+	</Action>
+	<Action name="dark_shot">
+		<Animation name="attackRangedBow" />
+	</Action>
+	<Action name="walk">
+		<Animation name="walkBow" />
+	</Action>
+	<Action name="noaction">
+		<Animation name="idleBow"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="burningSkeletonBowman" parent="skeletonbase">
+	<Entity source="skeleton.mesh" />
+	<Entity objectname="weapon" bone="itemLeftHand" source="bow.mesh" />
+	<ParticleSystem objectname="burningHead" source="BurningHead" bone="root" position="0 0 0" rotation="0 0 0"/>
+	<ParticleSystem objectname="burningHand" source="BurningHand" bone="handBoneLeft" position="0 0 0"/>
+	
+	<Action name="die">
+		<Animation name="dieBowUndead" />
+		<Sound objectname="sound" name="skel_die"/>
+	</Action>
+	<Action name="walk">
+		<Animation name="walkBow" />
+	</Action>
+	<Action name="fire_range_attack">
+		<Animation name="attackRangedBow" />
+	</Action>
+	<Action name="fire_shot">
+		<Animation name="attackRangedBow" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="burningSkeletonAxeman" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="great_axe.mesh" />
+	<ParticleSystem objectname="burningHead" source="BurningHead" bone="root" position="0 0 0" rotation="0 0 0"/>
+	<ParticleSystem objectname="burningHand" source="BurningHand" bone="handBoneLeft" position="0 0 0"/>
+	
+	<ParticleSystem objectname="firesword1" bone="itemRightHand" source="BurningAxeRing" position= "0 0 -1.3" rotation="0 180 0"/>
+	<!--<Rotation objectname="firesword1" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />-->
+		
+	<Action name = "attack">
+		<Animation name = "attackTwoHandsBlunt"/>
+	</Action>
+	<Action name = "walk">
+		<Animation name = "walkTwoHandsHammer"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="burningSkeletonSwordsman" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="old_sw.mesh" />
+	<ParticleSystem objectname="burningHead" source="BurningHead" bone="root" position="0 0 0" rotation="0 0 0"/>
+	<ParticleSystem objectname="burningHand" source="BurningHand" bone="handBoneLeft" position="0 0 0"/>
+
+	<ParticleSystem objectname="firesword1" bone="itemRightHand" source="BurningBlade" position= "0 0 -0.3"/>
+	<ParticleSystem objectname="firesword2" bone="itemRightHand" source="BurningBlade" position= "0 0 -0.5"/>
+	<ParticleSystem objectname="firesword3" bone="itemRightHand" source="BurningBlade" position= "0 0 -0.9"/>
+	<ParticleSystem objectname="firesword4" bone="itemRightHand" source="BurningBlade" position= "0 0 -1.1"/>
+</RenderInfo>
+
+<RenderInfo name="scy_skeleton" parent="reaperbase">
+	<Entity source="skeleton.mesh" scale="1.3"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="blood_scy.mesh" scale="0.7"/>
+	<Subobject objectname = "armor" source="rustArmor"/>
+</RenderInfo>
+
+<RenderInfo name="zombie" parent="zombiebase">
+	<Entity source="zombie_norm.mesh"/>
+</RenderInfo>
+
+<!-- Verfluchte Hoehlen -->
+<RenderInfo name="giant_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh" scale = "1.5"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="old_sw.mesh" />
+</RenderInfo>
+
+<RenderInfo name="iceSkeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemLeftHand" source="bow.mesh" />
+	<ParticleSystem objectname="iceHead" source="FreezingHead" bone="root" position="0 0 0" rotation="0 0 0"/>
+	<ParticleSystem objectname="iceHand" source="FreezingHand" bone="handBoneLeft" position="0 0 0"/>
+	
+	<Action name="die">
+		<Animation name="dieBowUndead" />
+		<Sound objectname="sound" name="skel_die"/>
+	</Action>
+	<Action name="walk">
+		<Animation name="walkBow" />
+	</Action>
+	<Action name="ice_shot">
+		<Animation name="attackRangedBow" />
+	</Action>
+	<Action name="ice_range_attack">
+		<Animation name="attackRangedBow" />
+	</Action>
+	<Action name="dark_shot">
+		<Animation name="attackRangedBow" />
+	</Action>
+</RenderInfo>
+
+<!-- der Spalt -->
+<RenderInfo name = "necromancer" parent="necromancerBase">
+	<Entity source="necromancerM.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_necro.mesh" />
+	<Entity objectname="hair" bone="crown" source="hair_punk_1.mesh" />
+	<Subobject objectname="robe" source="necromancerRobeEnemy" />
+	<Entity objectname="weapon" bone="itemRightHand" source="necro_stf.mesh" />
+</RenderInfo>
+
+<RenderInfo name="worker_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="pick_axe.mesh" />
+	
+	<Action name = "attack">
+		<Animation name = "attackTwoHandsBlunt"/>
+	</Action>
+	<Action name = "walk">
+		<Animation name = "walkTwoHandsHammer"/>
+	</Action>
+	<Action name = "noaction">
+		<Animation name = "attackTwoHands"/>
+	</Action>
+</RenderInfo>
+
+<!-- Zwergentrutz, Luftunterstuetzung -->
+<RenderInfo name="flaming_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<ParticleSystem objectname="burningHead" source="BurningHead" bone="root" position="0 0 0" rotation="0 0 0"/>
+	
+	<Action name="die">
+		<Animation name="dieOneHand" />
+		<Detach objectname="burningHead" time="0.5"/>
+		<Detach objectname="burningHandLeft" time="0.7"/>
+		<Detach objectname="burningHandRight" time="0.8"/>
+		<Sound objectname="sound" name="skel_die"/>
+	</Action>
+	<Action name="summoned">
+		<Animation name="getUpImpact" />
+		<ParticleSystem objectname="burningHandLeft" source="BurningHand" bone="handBoneLeft" position="0 0 0" time="0.2"/>
+		<ParticleSystem objectname="burningHandRight" source="BurningHand" bone="handBoneRight" position="0 0 0" time="0.5"/>
+		
+	</Action>
+	<Action name="flame_shot">
+		<Animation name="attackUnarmed"/>
+	</Action>
+</RenderInfo>
+
+<!-- frost skeleton, sword-->
+<RenderInfo name="frostSkeletonSwordsman" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="old_sw.mesh" />
+	<ParticleSystem objectname="iceHead" source="FreezingHead" bone="root" position="0 0 0" rotation="0 0 0"/>
+	<ParticleSystem objectname="iceHand" source="FreezingHand" bone="handBoneRight" position="0 0 0"/>
+
+	<ParticleSystem objectname="frostsword1" bone="itemRightHand" source="FrostBlade" position= "0 0 -0.3"/>
+	<ParticleSystem objectname="frostsword2" bone="itemRightHand" source="FrostBlade" position= "0 0 -0.5"/>
+	<ParticleSystem objectname="frostsword3" bone="itemRightHand" source="FrostBlade" position= "0 0 -0.9"/>
+	<ParticleSystem objectname="frostsword4" bone="itemRightHand" source="FrostBlade" position= "0 0 -1.1"/>
+</RenderInfo>
+
+<!-- giant skeleton with a giant hammer-club-thing -->
+<RenderInfo name="savageSkeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh" scale="1.5"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="giant_hmr.mesh" />
+	
+	<Action name="summoned">
+		<Animation name="raiseSavage"/>
+		<Entity objectname="stone" source="giant_hmr.mesh" position="0.65 -0.5 -0.9" rotation="20 55 60" scale="1.5"/>
+		<Visibility objectname="weapon" time="0" visible="false"/>
+		<Visibility objectname="weapon" time="0.7" visible="true"/>
+		<Detach objectname="stone" time="0.7"/>
+	</Action>
+	<Action name = "attack">
+		<Animation name = "attackTwoHandsBlunt"/>
+	</Action>
+	
+	<Action name = "walk">
+		<Animation name = "walkTwoHandsHammer"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="lich" parent="lichbase">
+	<Entity source="lich.mesh"/>
+	<Entity objectname = "scythe" bone="itemRightHand" source="blood_scy.mesh"/>
+	
+	<Action name="die">
+		<Animation name="die" />
+		<!--<Scale start="0.3" end="1.0" start_val="1.0" end_val="0.1" />-->
+		<ParticleSystem time = "0" objectname="headFire" bone="mainmesh:crown" source="Firesphere" position="0.0 0.0 0.0" />
+		<ParticleSystem time = "0.2" objectname="handIce1" bone="mainmesh:itemLeftHand" source="Icesphere" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.2" objectname="handIce2" bone="mainmesh:itemLeftHand" source="Icesphere" position="0.0 0.0 0.0" />
+		<Detach time="0.4" objectname="handIce1" />
+		<Detach time="0.4" objectname="handIce2" />
+		<ParticleSystem time = "0.41" objectname="handIce3" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.41" objectname="handIce4" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 0.0 0.0" />
+		<ParticleSystem time = "0.4" objectname="column" source="LichDeadColumn" position="-1.0 0.0 0.0" />
+		<Detach time="0.6" objectname="handIce3" />
+		<Detach time="0.6" objectname="handIce4" />
+		<ParticleSystem time = "0.61" objectname="handIce5" bone="mainmesh:itemLeftHand" source="HandFire" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.61" objectname="handIce6" bone="mainmesh:itemLeftHand" source="HandFire" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="handIce5" />
+		<Detach time="0.8" objectname="handIce6" />
+		<ParticleSystem time = "0.81" objectname="handIce7" bone="mainmesh:itemLeftHand" source="Firesphere" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.81" objectname="handIce8" bone="mainmesh:itemLeftHand" source="Firesphere" position="0.0 0.0 0.0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="boneyBrothers" parent="skeletonbase">
+	<Entity source="skeleton.mesh" position="-0.65 0 0"/>
+	<Entity objectname="helmet" source="merc_hlm.mesh" bone="crown"/>
+	<Subobject name="shieldCarrier" source="shield_skeleton" position="0.65 0 0"/>
+	
+	<Action name = "throw_grenade">
+		<Animation name = "attackRangedThrow"/>
+	</Action>
+	<Action name="block_down">
+		<Animation name="attackRangedHalf" start="0.0" end="0.4"/>
+		
+		<ParticleSystem objectname="explosion" source="Fire_Explosion" position="0 1.6 0" time="0.4"/>
+		<Scale objectname="explosion" start_val="0.1" end_val="1.2" start="0.4" end="0.7"/>
+		
+		<Animation name="fallUnconsciousOneHand" start="0.4" end="0.7"/>
+		<Animation name="getUpOneHand" start="0.7" end="1.0"/>
+		<Detach objectname="shieldCarrier" time="0.8"/>
+		<Detach objectname="explosion" time="0.6"/>
+	</Action>
+</RenderInfo>
+<RenderInfo name="shield_skeleton" parent="skeletonbase">
+	<Entity source="skeleton.mesh"/>
+	<Entity objectname="weapon" bone="itemLeftHand" source="goblin_shd.mesh" scale="2.0"/>
+	
+	<Action name="block_down">
+		<Animation name ="idleShield" start="0" end="0.4"/>
+		<Animation name ="dieShield" start="0.4" end="0.8"/>
+		<Visibility visible="false" time="0.8"/>
+		<Visibility objectname="weapon" visible="false" time="0.8"/>
+	</Action>
+	
+	<Action name = "throw_grenade">
+		<Animation name = "idleShield"/>
+	</Action>
+	<Action name = "walk">
+		<Animation name = "walkShield"/>
+	</Action>
+	<Action name = "noaction">
+		<Animation name = "idleShield"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="iceObelisk" parent="obeliskbase">
+	<Entity source="obelisk_ice.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="asoroth" parent="lich">
+
+	<Action name ="asoroth_summon_skel" reference = "summon_skelSword" />
+	<Action name ="asoroth_ice_obelisk" reference = "summon_skelSword" />
+	<Action name ="asoroth_meteor" reference = "summon_skelSword" />
+	<Action name ="asoroth_black_storm" reference = "summon_skelSword" />
+	<Action name ="asoroth_call_army" reference = "summon_skelSword" />
+	
+	<Action name ="asoroth_frost_wave" reference = "ice_bolt" />
+	
+	<Action name ="asoroth_guided_iceball" reference = "ice_bolt" />
+	<Action name ="asoroth_guided_icicle" reference = "ice_bolt" />
+	<Action name ="asoroth_icicle" reference = "ice_bolt" />
+
+</RenderInfo>
+
+<!-- Maylons Grab -->
+<RenderInfo name="maylonMummy" parent="lichbase">
+	<Entity source="lich.mesh"/>
+	<Entity objectname = "scythe" bone="itemRightHand" source="blood_scy.mesh"/>
+	
+	<Action name ="monster_icebolt" >
+		<Animation  name = "castMagicWeak"/>
+		<ParticleSystem time = "0.1" objectname="handIce1" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 0.0 0.0" />
+		<Detach time="0.4" objectname="handIce1" />
+		<ParticleSystem time = "0.4" objectname="handIce1" bone="mainmesh:itemLeftHand" source="Icesphere" position="0.0 0.0 0.0" />
+		<Detach time="0.7" objectname="handIce1" />
+	</Action>
+	
+	<Action name ="maylon_sommon_skel" >
+		<Animation  name = "summon"/>
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy1" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy1" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy1" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 90.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy1" />
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy2" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy2" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy2" start="0.2" end="0.5" start_vec="0.0 90.0 0.0" end_vec="0.0 180.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy2" />
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy3" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy3" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy3" start="0.2" end="0.5" start_vec="0.0 180.0 0.0" end_vec="0.0 270.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy3" />
+		
+		<ParticleSystem time = "0.2" objectname="magicEnergy4" source="BowBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy4" start="0.2" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 2.0 0.0" />
+		<Rotation objectname = "magicEnergy4" start="0.2" end="0.5" start_vec="0.0 270.0 0.0" end_vec="0.0 380.0 0.0" />
+		<Detach time="0.5" objectname="magicEnergy4" />
+		
+		<ParticleSystem time = "0.5" objectname="earth" bone= "itemLeftHand" source="Earth" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="earth" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy1" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy1" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy1" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 90.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy1" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy2" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy2" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy2" start="0.5" end="0.9" start_vec="0.0 90.0 0.0" end_vec="0.0 180.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy2" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy3" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy3" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy3" start="0.5" end="0.9" start_vec="0.0 180.0 0.0" end_vec="0.0 270.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy3" />
+		
+		<ParticleSystem time = "0.5" objectname="magicEnergy4" source="SummonBuff" position="0.0 0.0 0.0" />
+		<Movement objectname = "magicEnergy4" start="0.5" end="0.9" start_vec="0.0 0.0 0.0" end_vec="0.0 2.50 0.0" />
+		<Rotation objectname = "magicEnergy4" start="0.5" end="0.9" start_vec="0.0 270.0 0.0" end_vec="0.0 380.0 0.0" />
+		<Detach time="0.9" objectname="magicEnergy4" />
+	</Action>
+	
+	<Action name="die">
+		<Animation name="die" />
+		<!--<Scale start="0.3" end="1.0" start_val="1.0" end_val="0.1" />-->
+		<ParticleSystem time = "0" objectname="headFire" bone="mainmesh:crown" source="Firesphere" position="0.0 0.0 0.0" />
+		<ParticleSystem time = "0.2" objectname="handIce1" bone="mainmesh:itemLeftHand" source="Icesphere" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.2" objectname="handIce2" bone="mainmesh:itemLeftHand" source="Icesphere" position="0.0 0.0 0.0" />
+		<Detach time="0.4" objectname="handIce1" />
+		<Detach time="0.4" objectname="handIce2" />
+		<ParticleSystem time = "0.41" objectname="handIce3" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.41" objectname="handIce4" bone="mainmesh:itemLeftHand" source="HandIce" position="0.0 0.0 0.0" />
+		<ParticleSystem time = "0.4" objectname="column" source="LichDeadColumn" position="-1.0 0.0 0.0" />
+		<Detach time="0.6" objectname="handIce3" />
+		<Detach time="0.6" objectname="handIce4" />
+		<ParticleSystem time = "0.61" objectname="handIce5" bone="mainmesh:itemLeftHand" source="HandFire" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.61" objectname="handIce6" bone="mainmesh:itemLeftHand" source="HandFire" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="handIce5" />
+		<Detach time="0.8" objectname="handIce6" />
+		<ParticleSystem time = "0.81" objectname="handIce7" bone="mainmesh:itemLeftHand" source="Firesphere" position="0.0 -0.20 -0.10" />
+		<ParticleSystem time = "0.81" objectname="handIce8" bone="mainmesh:itemLeftHand" source="Firesphere" position="0.0 0.0 0.0" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="ghost_slim" parent="creaturbase">
+	<Entity source="human_ghost.mesh"/>
+	<Entity objectname="head" bone = "crown" source="head_ghost.mesh"/>
+	
+	<Action name="noaction">
+		<Animation name="float"/>
+	</Action>
+	
+	<Action name="summoned">
+		<Animation name="rise"/>
+	</Action>
+	
+	<Action name="die">
+		<Animation name="ascendToHeaven"/>
+	</Action>
+	
+	<Action name="talk">
+		<Animation name="ghostTalk"/>
+	</Action>
+</RenderInfo>

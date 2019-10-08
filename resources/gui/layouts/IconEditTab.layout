@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="IconEditTab" >
+        <Property Name="UnifiedAreaRect" Value="{{0.19043,0},{0.266927,0},{0.727539,0},{0.800781,0}}" />
+        <Window Type="TaharezLook/StaticImage" Name="IconEditTab/3DView" >
+            <Property Name="UnifiedAreaRect" Value="{{0.0545455,0},{0.0487805,0},{0.336364,0},{0.609756,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Checkbox" Name="IconEditTab/UseGlow" >
+            <Property Name="Text" Value="Use Glow" />
+            <Property Name="UnifiedAreaRect" Value="{{0.354545,0},{0.0487805,0},{0.781818,0},{0.134146,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

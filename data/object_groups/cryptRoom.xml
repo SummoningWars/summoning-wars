@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="cryptRoom" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="10.03836625"
+    extent_y="7.103074122"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$misc_urn" 
+            center_x="-6.048439021" 
+            center_y="3.320288103" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="6.036142446" 
+            center_y="3.3755061" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="-6.030877075" 
+            center_y="2.545636449" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="2.132817733" 
+            center_y="4.089640137" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="6.022280482" 
+            center_y="4.105663647" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="6.028211936" 
+            center_y="2.640897774" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="3.925543172" 
+            center_y="4.038757324" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="3.081770977" 
+            center_y="4.038301367" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="$treasure_sarkophagus" 
+            center_x="4" 
+            center_y="-1" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="false" 
+    />
+    <Object subtype="$treasure_sarkophagus" 
+            center_x="-4" 
+            center_y="-1" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="false" 
+    />
+    <Object subtype="$treasure_sarkophagus" 
+            center_x="0" 
+            center_y="-1" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_urn" 
+            center_x="-6.034507861" 
+            center_y="4.076317013" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_door1" 
+            center_x="-0.5" 
+            center_y="5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="-2.5" 
+            center_y="-5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="7" 
+            center_y="-0.5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall1" 
+            center_x="-7" 
+            center_y="-0.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="7" 
+            center_y="-5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="7" 
+            center_y="5" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="-7" 
+            center_y="-5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_cIn1" 
+            center_x="-7" 
+            center_y="5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_m1" 
+            center_x="3.5" 
+            center_y="5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_m1" 
+            center_x="3.5" 
+            center_y="-5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_m1" 
+            center_x="-4.5" 
+            center_y="5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_t1" 
+            center_x="6" 
+            center_y="-5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_t1" 
+            center_x="6" 
+            center_y="5" 
+            angle="90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_t1" 
+            center_x="-7" 
+            center_y="4" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="konz_wall_t1" 
+            center_x="7" 
+            center_y="4" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

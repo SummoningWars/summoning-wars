@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	 TEMPLATE
+	 <World>
+		 <Region id="short" name="string">
+			 <Settings dimx="short" dimy="short" area_percent="float" complexity="float" granularity="int" />
+			 
+			 
+			 <ExitDirections north="bool" south="bool" west="bool" east="bool" />
+			 
+			 <Exits>
+				 <Exit name="string" destination_region="string" destination_location="string" >
+					 <Shape shape="RECT" extent_x="float" extent_y="float" />
+					 OR
+					 <Shape shape="CIRCLE" radius="float" />
+				 </Exit>
+				 ...
+			 </Exits>
+			 
+			 <NamedObjectGroups>
+				 <NameObjectGroup name="string" object_group="string" priority="int" />
+				 ...
+			 </NamedObjectGroups>
+			 
+			 <ObjectGroups>
+				 <ObjectGroup object_group="string" priority="int" number="int" probability="float" />
+				 ...
+			 </ObjectGroups>	
+			 
+			 <Environments>
+				 <Environment height="float" name="string" />
+				 ...
+			 </Environments>
+			 
+			 <SpawnGroups>
+				 <SpawnGroup group_name="string" number="int" />
+				 ...
+			 </SpawnGroups>
+			 
+			 <ReviveLocation  location="string" />
+			 
+		 </Region>
+	 </World>
+-->
+	 
+	 <World>
+		<Region id="1011" name="maptest">
+			 <Settings dimx="20" dimy="20" area_percent="0.40" complexity="0.3" granularity="8" ground="grass1"/>
+			 <ExitDirections north="false" south="true" west="false" east="false" />
+			 <Exits>
+				 <Exit name="exit_south" destination_region="region1" destination_location="entry_north" >
+					 <Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				 </Exit>
+			 </Exits> 
+			 <Environments>
+				 <Environment height="0.6" name="meadow" />
+				 <Environment height="1.0" name="hills" />
+			 </Environments>
+			 <ReviveLocation  location="entry_south" />
+			 
+			<ObjectGroups>
+				<ObjectGroup object_group="test3" priority="2" number="3" probability="1"/>
+				<ObjectGroup object_group="test1" priority="1" number="4" probability="1"/>
+			</ObjectGroups>
+		</Region>
+	 
+		 <Region id="1001" name="sandbox">
+			 <Settings dimx="16" dimy="16" area_percent="0.40" complexity="0.4" granularity="8" ground="grass1"/>
+			 <ExitDirections north="false" south="true" west="false" east="false" />
+			 <Exits>
+				 <Exit name="exit_south" destination_region="region1" destination_location="entry_north" >
+					 <Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				 </Exit>
+			 </Exits> 
+			 <Environments>
+				 <Environment height="0.6" name="meadow" />
+				 <Environment height="1.0" name="hills" />
+			 </Environments>
+			 <ReviveLocation  location="entry_south" />
+			
+			 <Event trigger ="create_region" once = "true">
+				 <Effect>
+					 local pos = getLocation("entry_south");
+					 pos[2] = pos[2]-6;
+					 pos[1] = pos[1]+6;
+					 addLocation('GuardLocation', pos);
+					 addArea('GuardArea',{'circle',pos,12});
+					 pos[2] = pos[2]-4;
+					 pos[1] = pos[1]+4;
+					 addLocation('SkelLocation', pos);
+					 pos[2] = pos[2]+1;
+					 pos[1] = pos[1]+1;
+					 addLocation('SkelLocation2', pos);
+					 pos[2] = pos[2]+1;
+					 pos[1] = pos[1]+1;
+					 addLocation('SkelLocation3', pos);
+					 
+					 --guard = createObject('guard_siege','GuardLocation');
+				 </Effect>
+			 </Event>
+			 <Event trigger ="player_moved" once = "true">
+				 <Condition>
+					 return (unitIsInArea(trigger.player,'GuardArea'))
+				 </Condition>
+				 <Effect>
+					 lich = createObject('asoroth','SkelLocation');
+					 --skel = createObject('axe_skel_siege','SkelLocation2');
+					-- skel = createObject('axe_skel_siege','SkelLocation3');
+				 </Effect>
+			</Event>
+			<Event trigger="unit_hit">
+			<Condition>
+				return (trigger.defender == lich)
+			</Condition>
+			<Effect>
+				local lich = trigger.defender
+				--local hp = get(lich, "health")
+				--local mhp = get(lich, "max_health")
+				local percent = get(lich, "health")/ get(lich, "max_health")
+				--print(hp.."/"..mhp.." => "..percent.."%");
+				if((0.85 >= percent) and (defend_dwall_tmp.lich85 ~= true))then
+					defend_dwall_tmp.lich85 = true;
+					insertTrigger("under85");
+				elseif((0.75 >= percent) and (defend_dwall_tmp.lich75 ~= true))then
+					defend_dwall_tmp.lich75 = true;
+					insertTrigger("under75");
+				elseif((0.60 >= percent) and (defend_dwall_tmp.lich60 ~= true))then
+					defend_dwall_tmp.lich60 = true;
+					insertTrigger("under60");
+				elseif((0.5 >= percent) and (defend_dwall_tmp.lich50 ~= true))then
+					defend_dwall_tmp.lich50 = true;
+					insertTrigger("under50");
+				elseif((0.4 >= percent) and (defend_dwall_tmp.lich40 ~= true))then
+					defend_dwall_tmp.lich40 = true;
+					insertTrigger("under40");
+				elseif((0.25 >= percent) and (defend_dwall_tmp.lich25 ~= true))then
+					defend_dwall_tmp.lich25 = true;
+					insertTrigger("under25");
+				elseif((0.15 >= percent) and (defend_dwall_tmp.lich15 ~= true))then
+					defend_dwall_tmp.lich15 = true;
+					insertTrigger("under15");
+				end;
+			</Effect>
+		</Event>
+		<Event trigger="under85" once="true">
+			<Effect>
+				print("lich unlocked homing icicle")
+				set(lich,"ai_ability_rating:asoroth_guided_icicle",2)
+				set(lich,"ai_ability_rating:asoroth_icicle",0)
+			</Effect>
+		</Event>
+		<Event trigger="under75" once="true">
+			<Effect>
+				print("lich unlocked obelisk")
+				set(lich,"ai_ability_rating:asoroth_summon_skel",0)
+				set(lich,"ai_ability_rating:asoroth_ice_obelisk",3)
+			</Effect>
+		</Event>
+		<Event trigger="under60" once="true">
+			<Effect>
+				print("lich unlocked homing iceball")
+				set(lich,"ai_ability_rating:asoroth_guided_icicle",0)
+				set(lich,"ai_ability_rating:asoroth_guided_iceball",2)
+			</Effect>
+		</Event>
+		<Event trigger="under50" once="true">
+			<Effect>
+				print("lich switched to icedamage and invoked icearmor")
+				set(lich,"ai_ability_rating:attack",0)
+				set(lich,"ai_ability_rating:asoroth_ice_attack",1)
+				setObjectFlag(lich, "frost");
+			</Effect>
+		</Event>
+		<Event trigger="under40" once="true">
+			<Effect>
+				print("lich unlocked icewave")
+				set(lich,"ai_ability_rating:asoroth_ice_obelisk",0)
+				set(lich,"ai_ability_rating:asoroth_frost_wave",3)
+			</Effect>
+		</Event>
+		<Event trigger="under25" once="true">
+			<Effect>
+				print("lich unlocked meteor")
+				set(lich,"ai_ability_rating:asoroth_guided_iceball",0)
+				set(lich,"ai_ability_rating:asoroth_meteor",3)
+			</Effect>
+		</Event>
+		<Event trigger="under15" once="true">
+			<Effect>
+				fadeIn(1500,{0.15,0.15,0.15},{0.7,0.7,0.7},{0.1,0.1,0.1})
+				addUnitCommand(lich,"asoroth_call_army")
+				set(lich,"ai_ability_rating:asoroth_frost_wave",-100)
+				set(lich,"ai_ability_rating:asoroth_black_storm",3)
+			</Effect>
+		</Event>
+		
+		 </Region>
+		 
+		 <Region id="1002" name="spawnAbyss">
+			 <Settings dimx="32" dimy="32" area_percent="0.3" complexity="0.4" granularity="6" ground="grass1"/>
+			 <ExitDirections north="false" south="true" west="false" east="false" />
+			 <Exits>
+				 <Exit name="exit_south" destination_region="region1" destination_location="entry_north" >
+					 <Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				 </Exit>
+			 </Exits> 
+			 <Environments>
+				 <Environment height="0.6" name="meadow" />
+				 <Environment height="1.0" name="hills" />
+			 </Environments>
+			 <ReviveLocation  location="entry_south" />
+			<SpawnGroups>
+				<SpawnGroup group_name="allGoblins" number="10" />
+			</SpawnGroups>
+		</Region>
+		 
+	<Region id="1003" name="benchmarkBox">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Settings dimx="50" dimy="50" region_template="benchmarkRegion" ground="council_ground"/>
+		<WorldPosition world_x="0.0" world_y ="0.0" />
+		
+		<Music>
+			<Track source="treacherous_paths.ogg" />
+		</Music>
+		
+		<ReviveLocation  location="locCenter" />
+		<Environments>
+			<Environment height="1.0" name="council" />
+		</Environments>
+		
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				the_switch = createObject("switch","locCenter");
+				created_objects = {};
+				objectinfo = {};
+			</Effect>
+		</Event>
+		<Event trigger ="object_use" >
+			<Condition>
+				return (trigger.used_object == the_switch)
+			</Condition>
+			<Effect>
+				createDialogue  ()
+				local pl = getPlayers()[1];
+				addSpeaker(pl);
+				addQuestion("Which benchmark test");
+				addAnswer("400 fixed objects","fixed1");
+				addAnswer("1600 fixed objects","fixed2");
+				addAnswer("6400 fixed objects","fixed3");
+				addAnswer("1024 alfisko objects","alfisko1");
+				addAnswer("10000 alfisko objects","alfisko2");
+				addAnswer("25 animated objects","animated1");
+				addAnswer("100 animated objects","animated2");
+				addAnswer("400 animated objects","animated3");
+				addAnswer("16 particle systems", "particle1");
+				addAnswer("64 particle systems", "particle2");
+				addAnswer("256 particle systems", "particle3");
+				addAnswer("back to camp", "tocamp");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="tocamp" >
+			<Effect>
+				setOption("cap_fps","true");
+				camp();
+			</Effect>
+		</Event>
+
+		<Event trigger ="fixed1" >
+			<Effect>
+				objectinfo["fardist"] = 50;
+				objectinfo["neardist"] = 35;
+				objectinfo["type"]="signpost";
+				objectinfo["num"] = 20;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="fixed2" >
+			<Effect>
+				objectinfo["fardist"] = 90;
+				objectinfo["neardist"] = 60;
+				objectinfo["type"]="signpost";
+				objectinfo["num"] = 40;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="fixed3" >
+			<Effect>
+				objectinfo["fardist"] = 160;
+				objectinfo["neardist"] = 120;
+				objectinfo["type"]="signpost";
+				objectinfo["num"] = 80;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="alfisko1" >
+			<Effect>
+				objectinfo["fardist"] = 160;
+				objectinfo["neardist"] = 120;
+				objectinfo["type"]="alfiskoSmall";
+				objectinfo["num"] = 32;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="alfisko2" >
+			<Effect>
+				objectinfo["fardist"] = 160;
+				objectinfo["neardist"] = 120;
+				objectinfo["type"]="alfiskoSmall";
+				objectinfo["num"] = 100;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="animated1" >
+			<Effect>
+				objectinfo["fardist"] = 20;
+				objectinfo["neardist"] = 10;
+				objectinfo["type"]="axe_skel";
+				objectinfo["num"] = 5;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="animated2" >
+			<Effect>
+				objectinfo["fardist"] = 30;
+				objectinfo["neardist"] = 20;
+				objectinfo["type"]="axe_skel";
+				objectinfo["num"] = 10;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="animated3" >
+			<Effect>
+				objectinfo["fardist"] = 50;
+				objectinfo["neardist"] = 35;
+				objectinfo["type"]="axe_skel";
+				objectinfo["num"] = 20;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="particle1" >
+			<Effect>
+				objectinfo["fardist"] = 20;
+				objectinfo["neardist"] = 10;
+				objectinfo["type"]="pureFire";
+				objectinfo["num"] = 4;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="particle2" >
+			<Effect>
+				objectinfo["fardist"] = 30;
+				objectinfo["neardist"] = 20;
+				objectinfo["type"]="pureFire";
+				objectinfo["num"] = 8;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		<Event trigger ="particle3" >
+			<Effect>
+				objectinfo["fardist"] = 40;
+				objectinfo["neardist"] = 30;
+				objectinfo["type"]="pureFire";
+				objectinfo["num"] = 16;
+				
+				insertTrigger("init_benchmark");
+			</Effect>
+		</Event>
+		
+		<Event trigger ="init_benchmark" >
+			<Effect>
+				
+				setCutsceneMode(true);
+				
+				addCameraPosition(0,"locCorner1", 0,70,objectinfo["fardist"]);
+				
+				 for i = 1,objectinfo["num"] do
+					 for j = 1,objectinfo["num"] do
+						local index =(i-1)*objectinfo["num"]+j;
+						local pos = getLocation("locCorner1");
+						pos[1] = pos[1] + i-objectinfo["num"]/2;
+						pos[2] = pos[2] + j-objectinfo["num"]/2;
+						
+						created_objects[index] = createObject(objectinfo["type"],pos);
+					end
+				end
+				the_location = "locCorner1";
+				
+				
+				startTimer("start_benchmark",2000);
+			</Effect>
+		</Event>	
+		
+		
+		<Event trigger ="start_benchmark" >
+			<Effect>
+				benchmark();
+				addCameraPosition(1000,location, 0,45,objectinfo["neardist"]);
+				addCameraPosition(1500,location, 180,45,objectinfo["neardist"]);
+				addCameraPosition(1500,location, 360,45,objectinfo["neardist"]);
+				addCameraPosition(1000,location, 0,45,objectinfo["fardist"]);
+				startTimer("end_benchmark",6000);
+			</Effect>
+		</Event>
+		
+		<Event trigger ="end_benchmark" >
+			<Effect>
+				print("trying to delete objects")
+				for index,id in pairs(created_objects) do
+					print("deleting object "..id)
+					deleteObject(id);
+				end
+				setCutsceneMode(false);
+			</Effect>
+		</Event>
+	</Region>
+		 
+		 <!-- soon to be tutorial-Region-->
+		 <Region id="0" name="region0">
+			 <Settings dimx="64" dimy="64" area_percent="0.30" complexity="0.4" granularity="8" ground="grass1"/>
+			 
+			 <ExitDirections north="true" south="true" west="false" east="false" />
+			 
+			 <WorldPosition world_x="0.5" world_y ="0.5" />
+			 
+			 <Exits>
+				 <Exit name="exit_south" destination_region="region1" destination_location="entry_north" >
+					 <Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				 </Exit>
+				 
+				 <!--<Exit name="exit_south" destination_region="testregion" destination_location="entry_north" >
+					 <Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				 </Exit>
+				 -->
+				 <Exit name="exit_north" destination_region="elCnlLobby" destination_location="entry_north" >
+					 <Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				 </Exit>
+				 
+			 </Exits>
+			 <Environments>
+				 <Environment height="0.6" name="meadow" />
+				 <Environment height="1.0" name="hills" />
+			 </Environments>
+			 
+			 <ObjectGroups>
+				 <ObjectGroup object_group="herbalBushes_test" priority="10" number="2" probability="1.0" />
+				 <ObjectGroup object_group="herbalBushes_test" priority="15" number="3" probability="0.7" />
+			</ObjectGroups>
+		
+			 <ReviveLocation  location="entry_south" />
+			 
+			 <Event trigger ="create_region" once = "true">
+				 <Effect>
+					 local pos = getLocation("entry_south");
+					 pos[2] = pos[2]-8;
+					 addLocation('LichLocation', pos);
+					 addLocation('TestLocation', pos);
+					 addArea('LichArea',{'circle',pos,6});
+				 </Effect>
+			 </Event>
+			 
+			 <Event trigger ="create_region" once = "true">
+				 <Effect>
+					 local pos = getLocation("entry_south");
+					 pos[2] = pos[2]-8;
+					 peasant = createObject('peasant', pos);
+					 setRefName(peasant,'peasant');
+				 </Effect>
+			 </Event>
+			
+			 <!--
+			 <Event trigger ="player_moved" once = "true">
+				 <Condition>
+					 return (unitIsInArea(trigger.player,"LichArea"))
+				</Condition>
+				 <Effect>
+					print("player is in area");
+					createDialogue();
+					addSpeaker(peasant,"peasant");
+					addSpeaker(peasant,"peasant2");
+					addSpeaker(trigger.player,"player");
+					setTopicBase("peasant");
+					changeTopic("topic1");
+				 </Effect>
+			 </Event>
+			 -->
+		
+			 <!--
+				 <Event trigger ="player_moved" once = "true">
+					 <Condition>
+						 return (unitIsInArea(trigger.player,"LichArea"))
+					 </Condition>
+					 <Effect>
+						 deleteObject(tree);
+						 lich = createObject("lich", "LichLocation");
+					 </Effect>
+				 </Event>
+				 
+				 <Event trigger ="unit_die" once = "true">
+					 <Condition>
+						 return (trigger.unit == lich)
+					 </Condition>
+					 <Effect>
+						 dropItem('demon_sw', getObjectValue(lich,'position'));
+					 </Effect>
+				 </Event>
+			 -->
+				 
+				 
+				 <!--
+					 <Event trigger ="create_region" once = "true">
+						 <Effect>
+							 setDamageValue('trapdmg','fire_dmg',5,10);
+							 trap_active = false;
+						 </Effect>
+					 </Event>
+					 
+					 <Event trigger ="player_moved">
+						 <Condition>
+							 return (unitIsInArea(trigger.player,'LichArea') and trap_active == false)
+						 </Condition>
+						 <Effect>
+							 insertTrigger('trap_fire');
+							 addTriggerVariable('goal',trigger.player);
+						 </Effect>
+					 </Event>
+					 
+					 <Event trigger ="trap_fire">
+						 <Effect>
+							 if unitIsInArea(trigger.goal,'LichArea') then
+							 createProjectile('fire_ball','trapdmg',getObjectValue(tree,'position'),getObjectValue(trigger.goal,'position'),10.0,0.3 );
+							 startTimer('trap_fire',2000);
+							 addTriggerVariable('goal',trigger.goal);
+							 trap_active = true;
+							 else
+							 trap_active = false;
+							 end 
+						 </Effect>
+					 </Event>
+					 -->
+					 
+					 <!--
+						 <Event trigger ="player_moved" once="true">
+							 <Condition>
+								 return (unitIsInArea(trigger.player,'LichArea'))
+							 </Condition>
+							 <Effect>
+								 setCutsceneMode(true);
+								 pos = getLocation('LichLocation');
+								 x = pos[1];
+								 y = pos[2];
+								 createObject('goblin' ,{x-5,y});
+								 addCameraPosition(0,pos, 270,70, 20);
+								 addCameraPosition(1000,pos, 0,45, 10);
+								 addCameraPosition(1000,pos, 90,45, 10); 
+								 addCameraPosition(1000,pos, 180,45, 10); 
+								 addCameraPosition(1000,pos, 270,45, 10); 
+								 addCameraPosition(2000,pos, 270,70, 20);
+							 </Effect>
+						 </Event>
+						 
+						 <Event trigger ="command_complete" once="true">
+							 <Condition>
+								 return (trigger.command == 'attack')
+							 </Condition>
+							 <Effect>
+								 setCutsceneMode(false);
+							 </Effect>
+						 </Event>
+						 
+						 <Event trigger ="camera_move_complete" once="true">
+							 <Effect>
+								 print("camera movement complete");
+							 </Effect>
+						 </Event>
+						 -->
+						 <!--
+						 <Event trigger ="player_moved" once="true">
+							 <Condition>
+								 return (unitIsInArea(trigger.player,'LichArea'))
+							 </Condition>
+							 <Effect>
+								 startTimer("test",10000);
+							 </Effect>
+						 </Event>
+						 
+						 <Event trigger ="test">
+							 <Effect>
+								 teleportPlayer(53,"region0","LichLocation");
+							 </Effect>
+						 </Event>
+						 -->
+					 </Region>
+					 
+		<Region id="1000" name="testregion">
+			
+			<WorldPosition world_x="0.4" world_y ="0.4" />
+		
+			<Settings dimx="20" dimy="20" region_template="test" ground = "grass1"/>
+			
+			<Environments>
+				<Environment height="0.2" name="meadow" />
+			</Environments>
+			<ReviveLocation  location="center" />
+			
+		</Region>	
+		
+		<Region id="1" name="region1">
+			
+			<Settings dimx="32" dimy="32" area_percent="0.35" complexity="0.4" granularity="8" />
+			
+			<HeroLight red="0" green="0" blue="0" />
+			<AmbientLight red="0" green="0" blue="0" />
+			<DirectionalLight red="1.0" green="1.0" blue="1.0" />
+			
+			<ExitDirections north="true" south="false" west="false" east="false" />
+			
+			<Exits>
+				<Exit name="exit_north" destination_region="region0" destination_location="entry_south" >
+					<Shape shape="RECT" extent_x="4.0" extent_y ="4.0" />
+				</Exit>
+			</Exits>
+			
+			<NamedObjectGroups>
+				<NameObjectGroup name="ort1" object_group="test2" priority="4" />
+				<NameObjectGroup name="ort2" object_group="test1" priority="3" />
+				<NameObjectGroup name="ort3" object_group="test1" priority="2" />
+			</NamedObjectGroups>
+			
+			<ObjectGroups>
+				<ObjectGroup object_group="trees3" priority="4" number="2" probability="1.0" />
+				<ObjectGroup object_group="trees2" priority="2" number="5" probability="0.7" />
+				<ObjectGroup object_group="trees1" priority="1" number="50" probability="0.5" />
+			</ObjectGroups>
+			
+			<Environments>
+				<Environment height="0.2" name="meadow" />
+				<Environment height="1.0" name="hills" />
+			</Environments>
+			
+			<SpawnGroups>
+				<SpawnGroup group_name="lich_skeletons" number="1" />
+				<SpawnGroup group_name="goblins" number="10" />
+				<SpawnGroup group_name="goblins_dogs" number="10" />
+			</SpawnGroups>
+			
+			<Event trigger ="create_region" once = "true">
+				<Effect>
+					lich = createObject("lich", "ort1:center");
+				</Effect>
+			</Event>
+			
+			<Event trigger ="create_region" once = "true">
+				<Effect>
+					lich = createObject("lich", "ort2:center");
+				</Effect>
+			</Event>
+			
+			<Event trigger ="create_region" once = "true">
+				<Effect>
+					lich = createObject("lich", "ort3:center");
+				</Effect>
+			</Event>
+			
+		</Region>
+					 
+</World>	

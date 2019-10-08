@@ -1,0 +1,116 @@
+<Ability type="fire_attack" 
+		 name="fire attack"
+		 description="attack with fire damage" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local pdmg = getDamageValue("phys_dmg");
+			setDamageValue("fire_dmg", pdmg);
+			setDamageValue("phys_dmg", {pdmg[1]*0.1,pdmg[2]*0.1});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="fire_range_attack" 
+		 description="Basic ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="fire_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			local pdmg = getDamageValue("phys_dmg");
+			setDamageValue("fire_dmg", pdmg);
+			setDamageValue("phys_dmg", {pdmg[1]*0.1,pdmg[2]*0.1});
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="magic_attack_fire" 
+		 name="Magic attack" 
+		 description="Basic magic attack" 
+		 time="700.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="magic_attack_fire" 
+		 critical_percent="0.500000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="magic_arrow_fire" speed="12000" />
+	<Damage>
+		<CppImplementation type="magic_attack_fire" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="throw_bomb" 
+		 name="throw bomb"
+		 description="Throw a bomb" 
+		 time="1000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="throw_bomb" 
+		 critical_percent="0.40000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="bomb" speed="10000" >
+		<Flag name="explodes" />
+	</Projectile>
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			setDamageValue("phys_dmg", {magic, magic*1.5});
+			setDamageValue("blockable",false);
+			setDamageValue("power",get(self,"power"));
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+<Ability type="throw_grenade" 
+		 name="throw grenade"
+		 description="Throw a bomb" 
+		 time="1000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="throw_bomb" 
+		 critical_percent="0.40000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="grenade" speed="10000" >
+		<Flag name="explodes" />
+	</Projectile>
+	<Damage>
+		<LuaImplementation>
+			local magic = get(self,"magic_power");
+			setDamageValue("phys_dmg", {magic, magic*1.5});
+			setDamageValue("blockable",false);
+			setDamageValue("power",get(self,"power"));
+		</LuaImplementation>
+	</Damage>
+</Ability>

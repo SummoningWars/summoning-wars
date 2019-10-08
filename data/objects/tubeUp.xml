@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="tubeUp" layer="NORMAL">
+        <Mesh file="tubeUp.mesh" />
+        <Geometry shape="RECT" extent_x="4.043788684" extent_y="4.00866041"/>
+</Object>

@@ -1,0 +1,17 @@
+Hans:
+	- Balancing / weitere Gegner
+	- Forschung: Austauschen der Meshes bei Anlegen von Ruestungsteilen
+	- lua Doku
+	
+Steffen:
+	- Scene 4
+	- Emotionsets (vertagt)
+	- Scene 6
+	- Spalt
+	
+Andreas:
+	- Totenbeschwoerer fertig
+	- Kutsche
+	
+Michael:
+	- weitere Sounds

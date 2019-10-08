@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="stone_l1" layer="NORMAL">
+	<Mesh file="stone_l1.mesh" />
+	<Geometry shape="RECT" extent_x="2" extent_y="3.331964025"/>
+</Object>

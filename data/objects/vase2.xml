@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="vase2" layer="NORMAL">
+	<Mesh file="vase2.mesh" />
+	<Geometry shape="CIRCLE" radius="0.1956664602"/>
+</Object>

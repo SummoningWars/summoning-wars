@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="sarkophagusBig" layer="NORMAL">
+        <Mesh file="sarkophagusBig.mesh" />
+        <Geometry shape="RECT" extent_x="1.05648321" extent_y="2.158637254"/>
+</Object>

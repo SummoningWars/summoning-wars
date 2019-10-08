@@ -1,0 +1,12 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="hole" layer="NORMAL">
+        <Mesh file="hole.mesh" />
+        <Geometry shape="RECT" extent_x="2.792312146" extent_y="2.36728436"/>
+		<Flags usable="true" exact_picking="true" collision_detect="true" />
+		
+		<Event trigger="object_use">
+			<Effect>
+				insertTrigger("holeClicked")
+				addTriggerVariable("user",trigger.user)
+			</Effect>
+		</Event>
+</ScriptObject>

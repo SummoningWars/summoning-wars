@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<GUILayout>
+	<Window Type="TaharezLook/FrameWindow" Name="Main">
+            <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property Name="FrameEnabled" Value="false" />
+            <Property Name="TitlebarEnabled" Value="false" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+
+		<Window Type="TaharezLook/Button" Name="cmdQuit">
+			<Property Name="Text" Value="Quit" />
+       		<Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.7,0},{0.6,0},{0.77,0}}" />
+		</Window>
+		<Window Type="TaharezLook/Button" Name="cmdOptions">
+       		<Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.6,0},{0.6,0},{0.67,0}}" />
+			<Property Name="Text" Value="Options" />
+		</Window>
+		<Window Type="TaharezLook/Button" Name="cmdInstantAction">
+       		<Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.5,0},{0.6,0},{0.57,0}}" />
+			<Property Name="Text" Value="Instant Action" />
+		</Window>
+	</Window>
+</GUILayout>

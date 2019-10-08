@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=SumWars
+GenericName=Summoning Wars
+Comment=A multi-player, 3D Action Role-Playing Game
+TryExec=/usr/games/sumwars
+Exec=/usr/games/sumwars
+Categories=Game;RolePlaying;
+Icon=/usr/share/icons/hicolor/128x128/sumwars.png
+Terminal=false

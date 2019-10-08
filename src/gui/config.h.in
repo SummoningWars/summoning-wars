@@ -1,0 +1,8 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// Generated file, do not edit!  Make changes to config.h.in instead.
+
+#define CFG_FILES_DIR "@CFG_FILES_DIR@"
+
+#endif

@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cogScript_stand" layer="NORMAL">
+        <Mesh file="cogScript_stand.mesh" />
+        <Geometry shape="RECT" extent_x="0.3099902505" extent_y="0.6474180658"/>
+</Object>

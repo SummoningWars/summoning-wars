@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="trees1" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$flower" 
+            center_x="3.325427402" 
+            center_y="-2.576901347" 
+			height="1.776356839e-015" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="2.852003967" 
+            center_y="2.58225844" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-0.3973389069" 
+            center_y="2.701576129" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-0.6354275298" 
+            center_y="0.5831910911" 
+			height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="0.6684516082" 
+            center_y="-3.192381372" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-2.370879719" 
+            center_y="-0.942143091" 
+			height="1.776356839e-015" 
+            angle="0" 
+            probability="0.5" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-2" 
+            center_y="-2" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="2.667014436" 
+            center_y="0.2618778871" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-3.334221059" 
+            center_y="3.518772552" 
+            angle="0" 
+            probability="0.3" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

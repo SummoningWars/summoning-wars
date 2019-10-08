@@ -1,0 +1,705 @@
+<!-- HAMMER -->
+<!-- ONE HANDED HAMMER -->
+
+<!-- hammer -->
+<Item type="weapon" subtype="hammer_hmr" name="hammer" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "hammer" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="5"
+		damage_max_physical="7"
+		damage_attack="27"
+		damage_power="29"
+		attack_range="1.1"
+		two_handed="no"
+		dattack_speed="300"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Zeremonienhammer -->
+<Item type="weapon" subtype="cermon_hmr" name="cermeonial hammer" size="medium">
+	<Image image="set:cermon_hmr.png image:full_image" />
+	<RenderInfo name = "ceremonialHammer" />
+	<Attribute
+			  level_requirement="3"
+			  character_requirement="priest"
+			  min_enchant="30"
+			  max_enchant="80"
+			  modchance_strength_mod="0.1"
+			  modchance_dexterity_mod="0.1"
+			  modchance_magic_power_mod="0.05"
+			  modchance_damage_phys_mod="0.15"
+			  modchance_damage_fire_mod="0.10"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.10"
+			  modchance_damage_mult_phys_mod="0.1"
+			  modchance_attack_mod="0.1"
+			  modchance_power_mod="0.1"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+					damage_min_physical="9"
+					damage_max_physical="16"
+					damage_attack="30"
+					damage_power="35"
+					attack_range="1.1"
+					two_handed="no"
+					dattack_speed="150"
+					/>
+	<DropChance
+			   level="1"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Eisenhammer -->
+<Item type="weapon" subtype="iron_hmr" name="iron hammer" size="medium">
+	<Image image="set:iron_hmr.png image:full_image" />
+	<RenderInfo name = "ironHammer" />
+	<Attribute
+		level_requirement="5"
+		character_requirement="priest"
+		min_enchant="40"
+		max_enchant="130"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="12"
+		damage_max_physical="18"
+		damage_attack="38"
+		damage_power="52"
+		attack_range="1.5"
+		two_handed="no"
+		dattack_speed="-120"
+	/>
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eisenbeschlagene Keule -->
+<Item type="weapon" subtype="iroclb_hmr" name="iron club" size="medium">
+	<Image image="set:iroclb_hmr.png image:full_image" />
+	<RenderInfo name = "ironClub" />
+	<Attribute
+		level_requirement="7"
+		character_requirement="warrior,priest"
+		min_enchant="45"
+		max_enchant="140"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="14"
+		damage_max_physical="25"
+		damage_attack="42"
+		damage_power="57"
+		attack_range="1.3"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schlaegel -->
+<Item type="weapon" subtype="maul_hmr" name="maul" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="priest"
+		min_enchant="40"
+		max_enchant="160"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="12"
+		damage_max_physical="26"
+		damage_attack="38"
+		damage_power="83"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="8"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Morgenstern -->
+<Item type="weapon" subtype="mrnstr_hmr" name="morning star" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="13"
+		character_requirement="priest"
+		min_enchant="60"
+		max_enchant="200"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="19"
+		damage_max_physical="27"
+		damage_attack="59"
+		damage_power="82"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kraehenkopf -->
+<Item type="weapon" subtype="crow_hmr" name="crowhead" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="19"
+		character_requirement="priest"
+		min_enchant="70"
+		max_enchant="250"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="22"
+		damage_max_physical="36"
+		damage_attack="66"
+		damage_power="85"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="19"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Reiterhammer -->
+<Item type="weapon" subtype="rider_hmr" name="rider hammer" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="25"
+		character_requirement="priest"
+		min_enchant="80"
+		max_enchant="300"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="27"
+		damage_max_physical="38"
+		damage_attack="74"
+		damage_power="87"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-550"
+	/>
+	<DropChance
+		level="25"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Streitkolben -->
+<Item type="weapon" subtype="mace_hmr" name="mace" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="30"
+		character_requirement="priest"
+		min_enchant="90"
+		max_enchant="350"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="30"
+		damage_max_physical="40"
+		damage_attack="88"
+		damage_power="94"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-350"
+	/>
+	<DropChance
+		level="30"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Stahlhammer -->
+<Item type="weapon" subtype="steel_hmr" name="steel hammer" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="35"
+		character_requirement="priest"
+		min_enchant="100"
+		max_enchant="400"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="33"
+		damage_max_physical="45"
+		damage_attack="97"
+		damage_power="104"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="35"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kriegshammer -->
+<Item type="weapon" subtype="battle_hmr" name="battle hammer" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="40"
+		character_requirement="priest"
+		min_enchant="110"
+		max_enchant="450"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="39"
+		damage_max_physical="50"
+		damage_attack="104"
+		damage_power="144"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-500"
+	/>
+	<DropChance
+		level="40"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schmetterkopf -->
+<Item type="weapon" subtype="smash_hmr" name="smashhead" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="45"
+		character_requirement="priest"
+		min_enchant="120"
+		max_enchant="500"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.1"
+		modchance_damage_ice_mod="0.1"
+		modchance_damage_air_mod="0.1"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="40"
+		damage_max_physical="55"
+		damage_attack="94"
+		damage_power="165"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-750"
+	/>
+	<DropChance
+		level="45"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Stahlstreitkolben -->
+<Item type="weapon" subtype="stlmce_hmr" name="steel mace" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="50"
+		character_requirement="priest"
+		min_enchant="130"
+		max_enchant="550"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="44"
+		damage_max_physical="58"
+		damage_attack="122"
+		damage_power="143"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="50"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Stahlschlaegel -->
+<Item type="weapon" subtype="stlml_hmr" name="steel maul" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="55"
+		character_requirement="priest"
+		min_enchant="140"
+		max_enchant="600"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="47"
+		damage_max_physical="63"
+		damage_attack="146"
+		damage_power="151"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-350"
+	/>
+	<DropChance
+		level="55"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Sechskantstreitkolben -->
+<Item type="weapon" subtype="mace6_hmr" name="sixedged mace" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="60"
+		character_requirement="priest"
+		min_enchant="150"
+		max_enchant="650"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.20"
+		modchance_damage_ice_mod="0.0"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="51"
+		damage_max_physical="68"
+		damage_attack="16"
+		damage_power="155"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-550"
+	/>
+	<DropChance
+		level="60"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Silberhammer -->
+<Item type="weapon" subtype="silver_hmr" name="silver hammer" size="medium">
+	<Image image="set:axe.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="65"
+		character_requirement="priest"
+		min_enchant="150"
+		max_enchant="700"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="62"
+		damage_max_physical="74"
+		damage_attack="164"
+		damage_power="173"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="65"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Diamanthammer -->
+<Item type="weapon" subtype="diamnt_hmr" name="diamont hammer" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+			  level_requirement="70"
+		character_requirement="priest"
+		min_enchant="170"
+		max_enchant="750"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="57"
+		damage_max_physical="78"
+		damage_attack="168"
+		damage_power="177"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-400"
+	/>
+	<DropChance
+		level="70"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Priesterstreitkolben -->
+<Item type="weapon" subtype="prsmce_hmr" name="priest mace" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="75"
+		character_requirement="priest"
+		min_enchant="170"
+		max_enchant="780"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="61"
+		damage_max_physical="82"
+		damage_attack="172"
+		damage_power="178"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="75"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Heiliger Hammer -->
+<Item type="weapon" subtype="holy_hmr" name="holy hammer" size="medium">
+	<Image image="set:hammer.png image:full_image" />
+	<RenderInfo name= "ironHammer" />
+	<Attribute
+		level_requirement="80"
+		character_requirement="priest"
+		min_enchant="200"
+		max_enchant="1000"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="67"
+		damage_max_physical="92"
+		damage_attack="194"
+		damage_power="226"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="80"
+		probability="1.0"
+	/>
+</Item>

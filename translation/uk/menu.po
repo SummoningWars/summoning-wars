@@ -1,0 +1,820 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-12 21:30+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: Ukrainian\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#: ../src/core/creature.cpp:3165
+msgid "Miss"
+msgstr "Промах"
+
+#: ../src/core/damage.cpp:143 ../src/gui/charinfo.cpp:930
+msgid "Physical"
+msgstr "Фізичне"
+
+#: ../src/core/damage.cpp:145 ../src/gui/charinfo.cpp:939
+msgid "Fire"
+msgstr "Вогонь"
+
+#: ../src/core/damage.cpp:147 ../src/gui/charinfo.cpp:936
+msgid "Ice"
+msgstr "Лід"
+
+#: ../src/core/damage.cpp:149 ../src/gui/charinfo.cpp:933
+msgid "Air"
+msgstr "Повітря"
+
+#: ../src/core/damage.cpp:159
+msgid "Physical resistance"
+msgstr "Фізична стійкість"
+
+#: ../src/core/damage.cpp:161
+msgid "Fire resistance"
+msgstr "Вогнестійкість"
+
+#: ../src/core/damage.cpp:163
+msgid "Ice resistance"
+msgstr "Стійкість до льоду"
+
+#: ../src/core/damage.cpp:165
+msgid "Air resistance"
+msgstr "Стійкість до вітру"
+
+#: ../src/core/damage.cpp:175
+msgid "blind"
+msgstr "сліпий"
+
+#: ../src/core/damage.cpp:177
+msgid "poisoned"
+msgstr "отруєний"
+
+#: ../src/core/damage.cpp:179
+msgid "mute"
+msgstr "німий"
+
+#: ../src/core/damage.cpp:181
+msgid "confused"
+msgstr "спутаний"
+
+#: ../src/core/damage.cpp:183
+msgid "berserk"
+msgstr "шалений"
+
+#: ../src/core/damage.cpp:185
+msgid "paralyzed"
+msgstr "паралізований"
+
+#: ../src/core/damage.cpp:187
+msgid "frozen"
+msgstr "заморожений"
+
+#: ../src/core/damage.cpp:189
+msgid "burning"
+msgstr "палаючий"
+
+#: ../src/core/damage.cpp:264 ../src/core/damage.cpp:268
+msgid "damage"
+msgstr "пошкодження"
+
+#: ../src/core/damage.cpp:286
+msgid "can not be blocked"
+msgstr "не може бути заблоковано"
+
+#: ../src/core/damage.cpp:293 ../src/gui/charinfo.cpp:901
+msgid "Attack"
+msgstr "Напад"
+
+#: ../src/core/damage.cpp:309
+msgid "ignores armor"
+msgstr "ігнорує броню"
+
+#: ../src/core/damage.cpp:316 ../src/gui/charinfo.cpp:916
+msgid "Power"
+msgstr "Енергія"
+
+#: ../src/core/damage.cpp:328
+msgid "Chance for critical hit"
+msgstr "Шанс на критичний удар"
+
+#: ../src/core/document.cpp:838
+msgid "Please select a character first!"
+msgstr "Спочатку виберіть персонажа!"
+
+#: ../src/core/document.cpp:1205 ../src/core/item.cpp:953
+#: ../src/core/item.cpp:955 ../src/core/item.cpp:1183
+#: ../src/core/item.cpp:1189
+msgid "Required level"
+msgstr "Необхідний рівень"
+
+#: ../src/core/document.cpp:1215
+msgid "Timer"
+msgstr "Таймер"
+
+#: ../src/core/document.cpp:1216
+msgid "Cast delay"
+msgstr "Затримка метання"
+
+#: ../src/core/item.cpp:945 ../src/core/item.cpp:1169
+msgid "Value"
+msgstr "Ціна"
+
+#: ../src/core/item.cpp:948 ../src/core/item.cpp:1175
+msgid "Selling Value"
+msgstr "Ціна на продаж"
+
+#: ../src/core/item.cpp:964 ../src/core/item.cpp:1204
+msgid "Required class"
+msgstr "Необхідний клас"
+
+#: ../src/core/item.cpp:1022 ../src/core/item.cpp:1030
+#: ../src/core/item.cpp:1264 ../src/core/item.cpp:1274
+msgid "Heals "
+msgstr "Лікує "
+
+#: ../src/core/item.cpp:1022 ../src/core/item.cpp:1264
+msgid " hitpoints"
+msgstr " очків здоров'я"
+
+#: ../src/core/item.cpp:1033 ../src/core/item.cpp:1280
+msgid "immune for "
+msgstr "імунітет до "
+
+#: ../src/core/item.cpp:1045 ../src/core/item.cpp:1294
+msgid "Two-handed weapon"
+msgstr "Дворучна зброя"
+
+#: ../src/core/item.cpp:1050 ../src/core/item.cpp:1301
+#: ../src/gui/charinfo.cpp:911
+msgid "Range"
+msgstr "Дальність"
+
+#: ../src/core/item.cpp:1061 ../src/core/item.cpp:1314
+msgid "Damage"
+msgstr "Пошкодження"
+
+#: ../src/core/item.cpp:1073 ../src/core/item.cpp:1342
+#: ../src/gui/charinfo.cpp:921
+msgid "Armor"
+msgstr "Лати"
+
+#: ../src/core/item.cpp:1078 ../src/core/item.cpp:1354
+#: ../src/gui/charinfo.cpp:600
+msgid "Block"
+msgstr "Блок"
+
+#: ../src/core/item.cpp:1083 ../src/core/item.cpp:1366
+msgid "max hitpoints"
+msgstr "макс очків здоров'я"
+
+#: ../src/core/item.cpp:1088 ../src/core/item.cpp:1378
+#: ../src/gui/charinfo.cpp:871
+msgid "Strength"
+msgstr "Сила"
+
+#: ../src/core/item.cpp:1093 ../src/core/item.cpp:1390
+#: ../src/gui/charinfo.cpp:875
+msgid "Dexterity"
+msgstr "Спритність"
+
+#: ../src/core/item.cpp:1098 ../src/core/item.cpp:1402
+msgid "Magic Power"
+msgstr "Маг. Сила"
+
+#: ../src/core/item.cpp:1103 ../src/core/item.cpp:1414
+#: ../src/gui/charinfo.cpp:879
+msgid "Willpower"
+msgstr "Сила волі"
+
+#: ../src/core/item.cpp:1118 ../src/core/item.cpp:1445
+msgid " max. "
+msgstr " макс. "
+
+#: ../src/gui/itemwindow.cpp:168
+#: ../src/gui/itemwindow.cpp:169
+msgid "Equipped:\n"
+msgstr "Споряджений:\n"
+
+#: ../src/gui/itemwindow.cpp:191
+msgid "Equipped (secondary):\n"
+msgstr "Споряджений (вторинний):\n"
+
+#: ../src/gui/itemwindow.cpp:216
+msgid "Equipped (left):\n"
+msgstr "Споряджений (зліва):\n"
+
+#: ../src/gui/itemwindow.cpp:217
+msgid "Equipped (right):\n"
+msgstr "Споряджений (справа):\n"
+
+#: ../src/gui/itemwindow.cpp:256
+msgid "Hovered:\n"
+msgstr "Очікує:\n"
+
+#: ../src/gui/itemwindow.cpp:265
+msgid "Attached:\n"
+msgstr "Прив'язаний:\n"
+
+#: ../src/gui/charcreate.cpp:120 ../src/gui/charinfo.cpp:864
+#: ../src/gui/partyinfo.cpp:450 ../src/gui/savegamelist.cpp:186
+msgid "Name"
+msgstr "Ім'я"
+
+#: ../src/gui/charcreate.cpp:123 ../src/gui/charinfo.cpp:867
+#: ../src/gui/savegamelist.cpp:187
+msgid "Class"
+msgstr "Клас"
+
+#: ../src/gui/charcreate.cpp:126
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: ../src/gui/charcreate.cpp:129 ../src/gui/savegamelist.cpp:180
+msgid "Create"
+msgstr "Створити"
+
+#: ../src/gui/charcreate.cpp:221
+msgid "You must enter a hero name!"
+msgstr "Ви повинні ввести ім'я персонажу!"
+
+#: ../src/gui/charcreate.cpp:237
+msgid "A character with that name already exists!"
+msgstr "Персонаж з таким іменем вже існує!"
+
+#: ../src/gui/charinfo.cpp:323
+msgid "Base damage"
+msgstr "Базова шкода"
+
+#: ../src/gui/charinfo.cpp:325
+msgid "You have"
+msgstr "У вас"
+
+#: ../src/gui/charinfo.cpp:325
+msgid "attribute points to spend"
+msgstr "невикористаних очків атрибутів"
+
+#: ../src/gui/charinfo.cpp:569
+msgid "Damage dealt by "
+msgstr "Пошкодження, що наносяться від "
+
+#: ../src/gui/charinfo.cpp:588
+msgid "Chance to hit "
+msgstr "Ймовірність попадання "
+
+#: ../src/gui/charinfo.cpp:604
+msgid "Evade"
+msgstr "Ухилитись"
+
+#: ../src/gui/charinfo.cpp:622
+msgid "Chance to get hit by "
+msgstr "Шанс постраждати від "
+
+#: ../src/gui/charinfo.cpp:642
+msgid "Player info"
+msgstr "Інформація"
+
+#: ../src/gui/charinfo.cpp:645
+msgid "Attributes"
+msgstr "Характеристика"
+
+#: ../src/gui/charinfo.cpp:648
+msgid "Offense"
+msgstr "Напад"
+
+#: ../src/gui/charinfo.cpp:651
+msgid "Defense"
+msgstr "Захист"
+
+#: ../src/gui/charinfo.cpp:713
+msgid "Damage dealt to  "
+msgstr "Пошкодження, що наносяться до  "
+
+#: ../src/gui/charinfo.cpp:872
+msgid "Strength increases hitpoints, melee damage and attack power."
+msgstr "Сила збільшує очки здоров'я, пошкодження в ближньому бою і силу атаки."
+
+#: ../src/gui/charinfo.cpp:876
+msgid "Dexterity increases ranged damage, attack accuracy and attack speed"
+msgstr ""
+"Спритність збільшує дальність нанесення шкоди, точність та швидкість атаки"
+
+#: ../src/gui/charinfo.cpp:880
+msgid ""
+"Willpower decreases the duration and the impact of status changes \n and increases magical melee damage."
+msgstr ""
+"Сила волі зменшує тривалість і вплив змін стану і збільшує магічну шкоду в \n ближньому бою."
+
+#: ../src/gui/charinfo.cpp:884
+msgid "Magic power"
+msgstr "Маг. сила"
+
+#: ../src/gui/charinfo.cpp:885
+msgid "Magic power increases the damage of magical attacks."
+msgstr "Магічна сила збільшує шкоду від магічних атак."
+
+#: ../src/gui/charinfo.cpp:888
+msgid "Attr points"
+msgstr "Очки атриб"
+
+#: ../src/gui/charinfo.cpp:889
+msgid "Attribute points remaining to distribute"
+msgstr "Не витрачені очки атрибутів"
+
+#: ../src/gui/charinfo.cpp:892 ../src/gui/controlpanel.cpp:245
+msgid "Experience"
+msgstr "Досвід"
+
+#: ../src/gui/charinfo.cpp:893
+msgid "Current experience and experience necessary for next level-up."
+msgstr "Поточний досвід і досвід, необхідний для переходу на рівень вверх."
+
+#: ../src/gui/charinfo.cpp:896 ../src/gui/controlpanel.cpp:229
+msgid "Hitpoints"
+msgstr "Здоров'я"
+
+#: ../src/gui/charinfo.cpp:897
+msgid "Current and maximal hitpoints."
+msgstr "Поточні та максимальні очки здоров'я."
+
+#: ../src/gui/charinfo.cpp:902
+msgid ""
+"Attack value determines the chance to hit enemies that can block or evade."
+msgstr ""
+"Атака значення визначає ймовірність потрапляння ворогів, які можуть "
+"блокувати або ухилитися."
+
+#: ../src/gui/charinfo.cpp:906
+msgid "Attacks/s"
+msgstr "Атак/с"
+
+#: ../src/gui/charinfo.cpp:907
+msgid "Number of attacks per second."
+msgstr "Кількість нападів в секунду."
+
+#: ../src/gui/charinfo.cpp:912
+msgid "Weapon Range in meters."
+msgstr "Радіус дії Зброї в метрах."
+
+#: ../src/gui/charinfo.cpp:917
+msgid "Attack power influences the damage dealt to armored enemies."
+msgstr "Сила атаки впливає на пошкодження, що завдаються ворогам в обладунках."
+
+#: ../src/gui/charinfo.cpp:922
+msgid "Armor reduces the damage of physical attacks."
+msgstr "Броня зменшує пошкодження від фізичних атак."
+
+#: ../src/gui/charinfo.cpp:926
+msgid ""
+"Block value determines the chance to avoid damage from physical attacks."
+msgstr "Значення Блоку визначає шанс уникнути шкоди від фізичних атак."
+
+#: ../src/gui/controlpanel.cpp:73
+msgid "Chat"
+msgstr "Чат"
+
+#: ../src/gui/controlpanel.cpp:387 ../src/gui/mainmenu.cpp:144
+#: ../src/gui/optionswindow.cpp:254
+msgid "Options"
+msgstr "Опції"
+
+#: ../src/gui/controlpanel.cpp:390
+msgid "Save & Exit"
+msgstr "Зберегти & Вийти"
+
+#: ../src/gui/controlpanel.cpp:393 ../src/gui/optionswindow.cpp:319
+#: ../src/gui/inventory.cpp:369
+msgid "Inventory"
+msgstr "Інвентар"
+
+#: ../src/gui/controlpanel.cpp:396
+msgid "Character"
+msgstr "Персонаж"
+
+#: ../src/gui/controlpanel.cpp:399 ../src/gui/optionswindow.cpp:325
+#: ../src/gui/skilltree.cpp:579
+msgid "Skilltree"
+msgstr "Дерево навичок"
+
+#: ../src/gui/controlpanel.cpp:402
+msgid "Party"
+msgstr "Команда"
+
+#: ../src/gui/controlpanel.cpp:405 ../src/gui/optionswindow.cpp:334
+#: ../src/gui/questinfo.cpp:136
+msgid "Quests"
+msgstr "Квести"
+
+#: ../src/gui/inventory.cpp:366
+msgid "Drop:"
+msgstr "Кинути:"
+
+#: ../src/gui/inventory.cpp:372
+msgid "Small"
+msgstr "Малі"
+
+#: ../src/gui/inventory.cpp:375
+msgid "Medium"
+msgstr "Середні"
+
+#: ../src/gui/inventory.cpp:378
+msgid "Big"
+msgstr "Великі"
+
+#: ../src/gui/mainmenu.cpp:132
+msgid "Single player"
+msgstr "Одиночна гра"
+
+#: ../src/gui/mainmenu.cpp:135
+msgid "Join game"
+msgstr "Приєднатись до гри"
+
+#: ../src/gui/mainmenu.cpp:138
+msgid "Host game"
+msgstr "Створити гру по мережі"
+
+#: ../src/gui/mainmenu.cpp:141
+msgid "Credits"
+msgstr "Кредити"
+
+#: ../src/gui/mainmenu.cpp:147
+msgid "Quit"
+msgstr "Вихід"
+
+#: ../src/gui/mainmenu.cpp:632
+msgid "Really delete savegame?"
+msgstr "Стерти збережену гру?"
+
+#: ../src/gui/mainmenu.cpp:632
+msgid "Yes"
+msgstr "Так"
+
+#: ../src/gui/mainmenu.cpp:632
+msgid "No"
+msgstr "Ні"
+
+#: ../src/gui/tradewindow.cpp:248
+msgid "Chest"
+msgstr "Скриня"
+
+#: ../src/gui/messageboxes.cpp:52 ../src/gui/messageboxes.cpp:198
+#: ../src/gui/networkwindows.cpp:95 ../src/gui/networkwindows.cpp:223
+#: ../src/gui/optionswindow.cpp:367 ../src/gui/tradewindow.cpp:265
+msgid "Ok"
+msgstr "Ok"
+
+#: ../src/gui/messageboxes.cpp:55
+msgid "Abort"
+msgstr "Відхилити"
+
+#: ../src/gui/messageboxes.cpp:58
+msgid "Save and Exit?"
+msgstr "Зберегти і вийти?"
+
+# WIndow Title
+#: ../src/gui/networkwindows.cpp:83
+msgid "Join_game"
+msgstr "Приєднатись"
+
+#: ../src/gui/networkwindows.cpp:98
+msgid "Max. number of players"
+msgstr "Макс. кількість гравців"
+
+#: ../src/gui/networkwindows.cpp:101 ../src/gui/networkwindows.cpp:229
+msgid "Port"
+msgstr "Порт"
+
+# WIndow Title
+#: ../src/gui/networkwindows.cpp:184
+msgid "Host_game"
+msgstr "Створити гру"
+
+#: ../src/gui/networkwindows.cpp:226
+msgid "Host"
+msgstr "Хост"
+
+#: ../src/gui/optionswindow.cpp:91
+msgid "Easy"
+msgstr "Проста"
+
+#: ../src/gui/optionswindow.cpp:92
+msgid "Normal"
+msgstr "Нормальна"
+
+#: ../src/gui/optionswindow.cpp:93
+msgid "Hard"
+msgstr "Складна"
+
+#: ../src/gui/optionswindow.cpp:94
+msgid "Insane"
+msgstr "Навіжена"
+
+#: ../src/gui/optionswindow.cpp:164
+msgid "White"
+msgstr "Білий"
+
+#: ../src/gui/optionswindow.cpp:165
+msgid "Black"
+msgstr "Чорний"
+
+#: ../src/gui/optionswindow.cpp:166
+msgid "Red"
+msgstr "Червноний"
+
+#: ../src/gui/optionswindow.cpp:167
+msgid "Green"
+msgstr "Зелений"
+
+#: ../src/gui/optionswindow.cpp:168
+msgid "Blue"
+msgstr "Синій"
+
+#: ../src/gui/optionswindow.cpp:169
+msgid "Yellow"
+msgstr "Жовтий"
+
+#: ../src/gui/optionswindow.cpp:170
+msgid "Magenta"
+msgstr "Пурпуровий"
+
+#: ../src/gui/optionswindow.cpp:171
+msgid "Cyan"
+msgstr "Блакитний"
+
+#: ../src/gui/optionswindow.cpp:172
+msgid "Orange"
+msgstr "Оранжевий"
+
+#: ../src/gui/optionswindow.cpp:173
+msgid "Pink"
+msgstr "Рожевий"
+
+#: ../src/gui/optionswindow.cpp:174
+msgid "Purple"
+msgstr "Фіалковий"
+
+#: ../src/gui/optionswindow.cpp:175
+msgid "Cornflower Blue"
+msgstr "Волошковий"
+
+#: ../src/gui/optionswindow.cpp:184
+msgid "Fullscreen (Exclusive Mode)"
+msgstr "Повний екран"
+
+#: ../src/gui/optionswindow.cpp:185
+msgid "Window (With Borders)"
+msgstr "Вікно"
+
+#: ../src/gui/optionswindow.cpp:190
+msgid "Window (Fullscreen)"
+msgstr "Вікно на весь екран"
+
+#: ../src/gui/optionswindow.cpp:191
+msgid " - recommended"
+msgstr " - рекомендовано"
+
+#: ../src/gui/optionswindow.cpp:211
+msgid "System default"
+msgstr "Системна"
+
+#: ../src/gui/optionswindow.cpp:308
+msgid "Shortkeys"
+msgstr "Гарячі Клавіші"
+
+#: ../src/gui/optionswindow.cpp:310
+msgid "Gameplay"
+msgstr "Геймплей"
+
+#: ../src/gui/optionswindow.cpp:312
+msgid "Audio"
+msgstr "Аудіо"
+
+#: ../src/gui/optionswindow.cpp:314
+msgid "Graphic"
+msgstr "Графіка"
+
+#: ../src/gui/optionswindow.cpp:316 ../src/gui/optionswindow.cpp:361
+msgid "Language"
+msgstr "Мова"
+
+#: ../src/gui/optionswindow.cpp:299
+msgid "Restart required for setting new options"
+msgstr "Для застосування змін перезапустіть гру"
+
+#: ../src/gui/optionswindow.cpp:307
+msgid "Reset graphic options"
+msgstr "Скинути граф. параметри"
+
+#: ../src/gui/optionswindow.cpp:322
+msgid "Character screen"
+msgstr "Екран Персонажа"
+
+#: ../src/gui/optionswindow.cpp:328
+msgid "Party screen"
+msgstr "Екран Команди"
+
+#: ../src/gui/optionswindow.cpp:331
+msgid "Chatbox"
+msgstr "Панель Чату"
+
+#: ../src/gui/optionswindow.cpp:337
+msgid "Minimap"
+msgstr "Мінімапа"
+
+#: ../src/gui/optionswindow.cpp:340
+msgid "Swap equipement"
+msgstr "Зміна спорядження"
+
+#: ../src/gui/optionswindow.cpp:343
+msgid "Item Labels"
+msgstr "Мітки об'єктів"
+
+#: ../src/gui/optionswindow.cpp:346
+msgid "Difficulty"
+msgstr "Складність"
+
+#: ../src/gui/optionswindow.cpp:349
+msgid "Text Speed"
+msgstr "Швидкість тексту"
+
+#: ../src/gui/optionswindow.cpp:352
+msgid "Sound"
+msgstr "Звук"
+
+#: ../src/gui/optionswindow.cpp:355
+msgid "Music"
+msgstr "Музика"
+
+#: ../src/gui/optionswindow.cpp:358
+msgid "Enemy Highlight Color"
+msgstr "Колір підсвітки ворога"
+
+#: ../src/gui/optionswindow.cpp:364
+msgid "Grab mouse in windowed mode (needs restart)"
+msgstr "Захопл. мишку в вікон. режимі (потр. рестарт)"
+
+#: ../src/gui/optionswindow.cpp:414
+msgid "Video Driver"
+msgstr "Драйвер відео"
+
+#: ../src/gui/optionswindow.cpp:417
+msgid "Display Mode"
+msgstr "Режим"
+
+#: ../src/gui/optionswindow.cpp:420
+msgid "Resolution"
+msgstr "Розширення"
+
+#: ../src/gui/optionswindow.cpp:616
+msgid ""
+"Please restart the game\n"
+" for the changes to take effect!"
+msgstr ""
+"Перезапустіть гру\n"
+" для застосування змін"
+
+#: ../src/gui/questinfo.cpp:160
+msgid "open"
+msgstr "відкриті"
+
+#: ../src/gui/questinfo.cpp:163
+msgid "finished"
+msgstr "завершені"
+
+#: ../src/gui/questinfo.cpp:166
+msgid "failed"
+msgstr "провалені"
+
+#: ../src/gui/savegamelist.cpp:174
+msgid "Characters"
+msgstr "Персонажі"
+
+#: ../src/gui/savegamelist.cpp:183
+msgid "Delete"
+msgstr "Видалити"
+
+#: ../src/gui/savegamelist.cpp:188
+#: ../src/gui/charinfo.cpp:488
+msgid "Level"
+msgstr "Рівень"
+
+#: ../src/gui/skilltree.cpp:537
+msgid "Skillpoints"
+msgstr "Очки умінь"
+
+#: ../src/gui/skilltree.cpp:542
+msgid "Next Skillpoint at Level"
+msgstr "Нові Очки умінь на Рівні"
+
+#: ../src/gui/worldmap.cpp:141
+msgid "Town Portal"
+msgstr "Міський Портал"
+
+#: playerclasses.xml
+msgid "Warrior"
+msgstr "Воїн"
+
+#: playerclasses.xml
+msgid "Magician"
+msgstr "Маг"
+
+#: playerclasses.xml
+msgid "Archer"
+msgstr "Лучник"
+
+#: playerclasses.xml
+msgid "Priest"
+msgstr "Священник"
+
+#: playerclasses.xml
+msgid "ranger"
+msgstr "ренжер"
+
+#: playerclasses.xml
+msgid "archer"
+msgstr "лучник"
+
+#: playerclasses.xml
+msgid "wizard"
+msgstr "чародій"
+
+#: playerclasses.xml
+msgid "sorceress"
+msgstr "чаклунка"
+
+#: playerclasses.xml
+msgid "mage"
+msgstr "маг"
+
+#: playerclasses.xml
+msgid "priest"
+msgstr "жрець"
+
+#: playerclasses.xml
+msgid "priestess"
+msgstr "жриця"
+
+#: playerclasses.xml
+msgid "warrior"
+msgstr "воїн"
+
+#: playerclasses.xml
+msgid "fencer"
+msgstr "фехтувальник"
+
+#: playerclasses.xml
+msgid "Fire magic"
+msgstr "Магія вогню"
+
+#: playerclasses.xml
+msgid "Ice magic"
+msgstr "Магія льоду"
+
+#: playerclasses.xml
+msgid "Air magic"
+msgstr "Магія повітря"
+
+#: playerclasses.xml
+msgid "Light Magic"
+msgstr "Магія світла"
+
+#: playerclasses.xml
+msgid "Water Magic"
+msgstr "Магія води"
+
+#: playerclasses.xml
+msgid "Wind Magic"
+msgstr "Магія вітру"
+
+#: playerclasses.xml
+msgid "Marksmanship"
+msgstr "Влучна стрільба"
+
+#: playerclasses.xml
+msgid "Fighting skills"
+msgstr "Бойові вміння"
+
+#: playerclasses.xml
+msgid "Passive skills"
+msgstr "Пасивні вміння"
+
+#: playerclasses.xml
+msgid "Fighting spirit"
+msgstr "Бойовий дух"
+
+#: playerclasses.xml
+msgid "Hunter magic"
+msgstr "Мисливська магія"

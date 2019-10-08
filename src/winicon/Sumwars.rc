@@ -1,0 +1,65 @@
+// Microsoft Visual C++ generated resource script.
+// Note: Manually edited by Augustin Preda. If it doesn't work, he's the one to blame.
+//
+
+//
+// The resource header (defines the icon).
+//
+#include "resource.h"
+
+//
+// Version information requires inclusion of either <windows.h> or <winver.h>
+//
+#include <WinVer.h>
+
+// -------------------------------
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SUMWARS_APP_ICON        ICON                    "..\\..\\resources\\icon\\SumWars.ico"
+
+
+// -------------------------------
+//
+// Version information 
+//
+
+VS_VERSION_INFO VERSIONINFO
+  FILEVERSION    0,5,5,0
+  PRODUCTVERSION 0,5,5,0
+  FILEFLAGSMASK  0x3fL
+#ifdef _DEBUG
+  FILEFLAGS 0x1L
+#else
+  FILEFLAGS 0x0L
+#endif
+  FILEOS 0x40004L
+  FILETYPE 0x1L
+  FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "Comments", "Pre-release\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Summoning Wars\0"
+            VALUE "FileVersion", "0, 5, 5, 0\0"
+            VALUE "InternalName", "SumWars\0"
+            VALUE "LegalCopyright", "The Summoning Wars Team - 2011\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "sumwars.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Summoning Wars\0"
+            VALUE "ProductVersion", "0, 5, 5, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+		VALUE "Translation", 0x000, 1200
+    END
+END

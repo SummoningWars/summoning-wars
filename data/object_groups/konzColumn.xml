@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="konzColumn" version="1.0">
+  <Shape
+    type="CIRCLE"
+    radius="1"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="konz_column1" 
+            center_x="0" 
+            center_y="0" 
+            angle="-0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

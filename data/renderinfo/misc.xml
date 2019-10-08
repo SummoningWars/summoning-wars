@@ -1,0 +1,84 @@
+<RenderInfo name="campFire">
+	<Entity  source="campFire.mesh"/>
+	<ParticleSystem objectname="fire" source="CampFire"/>
+	<ParticleSystem objectname="fireBase" source="CampFireBase"/>
+</RenderInfo>
+
+<RenderInfo name="pureFire">
+	<ParticleSystem objectname="fire" source="CampFire"/>
+	<ParticleSystem objectname="fireBase" source="CampFireBase"/>
+</RenderInfo>
+
+
+<RenderInfo name="waypoint">
+	<Entity  source="waypoint.mesh"/>
+	
+	<State name="active">
+		<Activation time="200">
+			<ParticleSystem objectname="fire1" source="CampFire" position="0.0 1.1 -1.56"/>
+			<ParticleSystem objectname="fire2" source="CampFire" position="1.47 1.1 -0.161"/>
+			<ParticleSystem objectname="fire3" source="CampFire" position="1.056 1.247 1.192"/>
+			<ParticleSystem objectname="fire4" source="CampFire" position="-0.406 1.22 1.441"/>
+			<ParticleSystem objectname="fire5" source="CampFire" position="-1.479 1.289 -0.097"/>
+		</Activation>
+		
+		<Deactivation time="200">
+			<Detach objectname="fire1"/>
+			<Detach objectname="fire2"/>
+			<Detach objectname="fire3"/>
+			<Detach objectname="fire4"/>
+			<Detach objectname="fire5"/>
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<!-- smoke from above - meant for the fissure -->
+<RenderInfo name="smoke">
+	<ParticleSystem objectname="smoke" source="Smoke" position="0 4 0"/>
+</RenderInfo>
+
+<!-- an explosive device from the council -->
+<RenderInfo name="council_bomb">
+	<Entity source="council_bomb.mesh"/>
+	
+	<Action name="charge">
+		<ParticleSystem objectname="particle" source="Bomb" position="0.0 0.1 0.0"/>
+		<Scale  objectname="particle" start="0" end="0.8" start_val="10.0" end_val="0.3" />
+	</Action>
+	<Action name="detonate">
+		<ParticleSystem objectname="explosion1" source="Fire_Explosion" position="0 0.2 0" />
+		<Scale objectname="explosion1" start="0" end="0.5" start_val="0.1" end_val="1.2" />
+		<Detach time="0.6" objectname="explosion1" />
+		
+		<ParticleSystem objectname="explosion2" source="Fire_Explosion" position="3 0.2 0" time="0.2"/>
+		<Scale objectname="explosion2" start="0.2" end="0.7" start_val="0.1" end_val="1.2" />
+		<Detach time="0.8" objectname="explosion2" />
+		
+		<ParticleSystem objectname="explosion3" source="Fire_Explosion" position="3 0.2 0" time="0.1"/>
+		<Scale objectname="explosion3" start="0.1" end="0.6" start_val="0.1" end_val="1.2" />
+		<Detach time="0.7" objectname="explosion3" />
+		
+		<ParticleSystem objectname="explosion4" source="Fire_Explosion" position="1.5 0.2 0.9" time="0.2"/>
+		<Scale objectname="explosion4" start="0.2" end="0.7" start_val="0.1" end_val="1.2" />
+		<Detach time="0.8" objectname="explosion4" />
+		
+		<ParticleSystem objectname="explosion5" source="Fire_Explosion" position="-2.0 0.2 -1.0" time="0.5"/>
+		<Scale objectname="explosion5" start="0.5" end="1.0" start_val="0.1" end_val="1.2" />
+		<Detach time="1.0" objectname="explosion5" />
+	</Action>
+</RenderInfo>
+
+<!-- a block from the wall made during the siege - a playeholder for a real crack -->
+<RenderInfo name="siege_block">
+	<Entity source="stone4.mesh"/>
+	
+	<Action name="rise">
+		<Visibility time="0" visible="false"/>
+		<ParticleSystem objectname="smoke" source="Smoke_Cube" position="0.0 0 0.0"/>
+		<ParticleSystem objectname="earth" source="EarthGeysir" position="0.0 0 0.0"/>
+		
+		<Visibility time="0.6" visible="true"/>
+		<Detach time="1.0" objectname="smoke"/>
+		<Detach time="1.0" objectname="earth"/>
+	</Action>
+</RenderInfo>

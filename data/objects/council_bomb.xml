@@ -1,0 +1,4 @@
+<ScriptObject subtype="council_bomb" layer="NOCOLLISION">
+        <RenderInfo name="council_bomb" />
+        <Geometry shape="CIRCLE" radius="0.5"/>
+</ScriptObject>

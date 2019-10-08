@@ -1,0 +1,33 @@
+<creature>
+  <name>bloodbeak</name>
+  <meshname>bloodbeak.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWars/Maya Stuff/Scenes/Animation/bloodbeakAni.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>fly</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>attack1</name>
+      <startframe>24</startframe>
+      <endframe>48</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>clip4</name>
+      <startframe>0</startframe>
+      <endframe>0</endframe>
+      <description></description>
+    </clip>
+  </animations>
+
+</creature>

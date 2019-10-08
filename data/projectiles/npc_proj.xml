@@ -1,0 +1,10 @@
+﻿<Projectile  subtype="freezingDeath"
+		   lifetime="1400"
+		   radius="12"
+		   implementation = "grow_effect_at_each"
+		   >
+	<RenderInfo name="freezingDeath" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>	
+</Projectile>

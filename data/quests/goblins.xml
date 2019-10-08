@@ -1,0 +1,104 @@
+<Quest name="The goblinslayer" table_name="goblins" domain="the_goblinslayer">
+	
+	<Init>
+		goblins.nr =0;
+	</Init>
+	
+	<Description>
+		if (goblins.finished) then
+			return _("Quest finished");
+		end
+		if (goblins.nr >=10) then
+			return _("you killed enough goblins");
+		end
+		nr = (10-goblins.nr)
+		return gettext("'kill '..nr..' more goblins'");
+	</Description>
+	
+	<NPC refname="peasant">
+		<Topic name="goblins" start_option="Goblins">
+			<Condition>
+				return (not goblins.finished)
+			</Condition>
+			<Effect>
+				if (goblins.started) then
+					if (goblins.nr >=10) then
+						speak('player', _("I have killed them all."))
+						speak('peasant',_("Wow... you're a real hero, aren't ya?"));
+						changeTopic('finish_gob_quest');
+					else
+						speak('peasant',_("Leave me alone and kill some more goblins."));
+					end
+				else
+					speak('peasant',_("There are some stupid goblins pissing me off."));
+					speak('peasant',_("If you kill 10 of 'em, I'll give you a precious reward."));
+					speak('peasant',_("Interested?"));
+					addQuestion(_("Accept the quest?"));
+					addAnswer(_("Yes"),'start_gob_quest'); 
+					addAnswer(_("No"),'end');
+				end
+			</Effect>
+		</Topic>
+		
+		<Topic name="goblins_reward" start_option="Goblins (reward)">
+			<Condition>
+				if (goblins.finished == false) then return false end;
+				return (getPlayerPrivateVar(getSpeaker('player'),"goblinsreward2") ~= true)
+			</Condition>
+			<Effect>
+				speak('peasant',_("You want a second reward?"));
+				speak('player', _("Of course!"),1000)
+				speak('peasant',_("Then I'll give you this goblin club. Be happy."));
+				setPlayerPrivateVar(getSpeaker('player'),"goblins.reward2",true);
+				changeTopic('goblins_reward2');
+			</Effect>
+		</Topic>
+		
+		
+		<Topic name="start_gob_quest" >
+			<Effect>
+				speak('player', _("Nearly done."),1000)
+				speak('peasant',_("Have fun then."));
+				goblins.started = true;
+				goblins.nr =0;
+			</Effect>	
+		</Topic>
+		
+		<Topic name="finish_gob_quest" >
+			<Effect>
+				
+				goblins.finished = true;
+				local players = getPlayers();
+				local i,player;
+				for i,player in ipairs(players) do
+					if (getPlayerPrivateVar(player,"goblins.reward") ~= true) then
+						setPlayerPrivateVar(player,"goblins.reward",true);
+						setObjectValue(player,"attribute_points", getObjectValue(player,"attribute_points") +5);
+					end;
+				end;	
+			</Effect>
+		</Topic>
+		
+		<Topic name="goblins_reward2" >
+			<Effect>
+				local npc = getSpeaker('peasant');
+				dropItem("goblin_hmr", getPosition(npc),500);
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="region1">
+		<Event trigger ="unit_die">
+			<Condition>
+				if (not goblins.started or goblins.nr >= 10) then
+					return false;
+				end
+				return (getType(trigger.unit) == "goblin");
+			</Condition>
+			<Effect>
+				goblins.nr = goblins.nr +1;
+			</Effect>
+		</Event>
+	</Region>
+	
+</Quest>

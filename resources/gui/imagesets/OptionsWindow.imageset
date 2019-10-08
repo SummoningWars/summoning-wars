@@ -1,0 +1,3 @@
+<Imageset AutoScaled="false" Imagefile="OptionsWindow.png" Name="OptionsWindow" NativeHorzRes="800" NativeVertRes="600">
+    <Image Height="745" Name="Background" Width="798" XPos="0" YPos="0" />
+</Imageset>

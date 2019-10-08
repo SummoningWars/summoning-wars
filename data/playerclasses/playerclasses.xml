@@ -1,0 +1,437 @@
+<PlayerClass type="warrior" name="Warrior">
+	<BasicAttributes
+					max_health="200"
+					armor="20"
+					block="0"
+					attack="20"
+					power="30"
+					strength="50"
+					dexterity="20"
+					magic_power="10"
+					willpower="20"
+					resistances_physical="10"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3000"
+					attack_speed="2000"
+					step_length="1.5"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="die"/>
+		<Ability type="dead" />
+		<Ability type="take_item" />
+		<Ability type="use" />
+		<Ability type="speak" />
+		<Ability type="noaction" />
+		<Ability type="trade" />
+		
+		<Ability type="attack" />
+	</BasicAttributes>
+	<BasicAbility type="attack" />
+	<ItemRequirementTag name="warrior" />
+	
+	<Look name="warrior" render_info="warrior_m" gender="male" emotionset="warrior_emotion" hair="hairShort_ms1.mesh" item_suffix="#m"/>
+	<Look name="fencer" render_info="warrior_f" gender="female" emotionset="gertlinde_emotion" hair="hair_fs1.mesh" item_suffix="#fs"/>
+	
+	<SkilltreeTabs tab1="Fighting skills" tab2="Passive skills" tab3="Fighting spirit" />
+	
+	<Item type="dagger_sw" />
+	<Item type="heal_1" />
+	<Item type="heal_1" />
+	
+	<LearnableAbility type="attack" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.020000" required_level="0" />
+	<LearnableAbility type="bash" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="hammer_bash" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="around_blow" />
+	</LearnableAbility>
+	<LearnableAbility type="around_blow" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="bash" />
+	</LearnableAbility>
+	<LearnableAbility type="whirl_blow" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="around_blow" />
+	</LearnableAbility>
+	<LearnableAbility type="smash" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="hammer_bash" />
+	</LearnableAbility>
+	<LearnableAbility type="hate_mage" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="bash" />
+	</LearnableAbility>
+	<LearnableAbility type="charge" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="bash" />
+	</LearnableAbility>
+	<LearnableAbility type="storm_charge" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="charge" />
+	</LearnableAbility>
+	<LearnableAbility type="block" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="steadfast" />
+	</LearnableAbility>
+	<LearnableAbility type="steadfast" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="monster_hunter" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="monster_slayer" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="monster_hunter" />
+	</LearnableAbility>
+	<LearnableAbility type="endurance" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="monster_slayer" />
+		<RequiredAbility type="weaponmaster" />
+	</LearnableAbility>
+	<LearnableAbility type="weaponmaster" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="block" />
+	</LearnableAbility>
+	<LearnableAbility type="firesword" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="flamesword" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="flamearmor" />
+	</LearnableAbility>
+	<LearnableAbility type="flamearmor" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="firesword" />
+	</LearnableAbility>
+	<LearnableAbility type="battle_cry" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="decoy" />
+	</LearnableAbility>
+	<LearnableAbility type="warcry" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="scare" />
+		<RequiredAbility type="fury" />
+	</LearnableAbility>
+	<LearnableAbility type="regenerate" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="decoy" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="scare" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="battle_cry" />
+	</LearnableAbility>
+	<LearnableAbility type="anger" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15" />
+	<LearnableAbility type="fury" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="anger" />
+</LearnableAbility>
+	
+</PlayerClass>
+
+<PlayerClass type="mage" name="Magician">
+	<BasicAttributes
+					max_health="100"
+					armor="15"
+					block="0"
+					attack="10"
+					power="10"
+					strength="15"
+					dexterity="15"
+					magic_power="45"
+					willpower="25"
+					resistances_physical="0"
+					resistances_air="10"
+					resistances_ice="10"
+					resistances_fire="10"
+					resistances_cap_physical="60"
+					resistances_cap_air="60"
+					resistances_cap_ice="60"
+					resistances_cap_fire="60"
+					walk_speed="3000"
+					attack_speed="1500"
+					step_length="1.5"
+					attack_range="20"
+					>
+		<Ability type="walk" />
+		<Ability type="die"/>
+		<Ability type="dead" />
+		<Ability type="take_item" />
+		<Ability type="use" />
+		<Ability type="speak" />
+		<Ability type="noaction" />
+		<Ability type="trade" />
+		
+		<Ability type="magic_attack" />
+	</BasicAttributes>
+	<ItemRequirementTag name="mage" />
+	
+	
+	<BasicAbility type="magic_attack" />
+
+	<Look name="wizard" render_info="mage_m" gender="male" emotionset="councilMage_emotion"  hair="hairLong_ms4.mesh" item_suffix="#m"/>
+	<Look name="sorceress" render_info="mage_f" gender="female" emotionset="ireana_emotion"  hair="hair_fs2.mesh" item_suffix="#f"/>
+	
+	<SkilltreeTabs tab1="Fire magic" tab2="Ice magic" tab3="Air magic" />
+	
+	<Item type="spruce_wnd_fire" />
+	<Item type="heal_1" />
+	<Item type="heal_1" />
+	
+	<LearnableAbility type="magic_attack" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.020000" required_level="0" />
+	<LearnableAbility type="fire_bolt" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="fire_strike" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="fire_bolt" />
+	</LearnableAbility>
+	<LearnableAbility type="fire_wave" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="inferno_ball" />
+	</LearnableAbility>
+	<LearnableAbility type="fire_storm" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="fire_wave" />
+	</LearnableAbility>
+	<LearnableAbility type="fire_ball" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="fire_bolt" />
+	</LearnableAbility>
+	<LearnableAbility type="inferno_ball" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="fire_ball" />
+	</LearnableAbility>
+	<LearnableAbility type="fire_wall" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="fire_strike" />
+		<RequiredAbility type="fire_ball" />
+	</LearnableAbility>
+	<LearnableAbility type="inflame" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.400000" required_level="15" />
+	<LearnableAbility type="ice_bolt" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="ice_spike" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="ice_bolt" />
+	</LearnableAbility>
+	<LearnableAbility type="snow_storm" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="freeze" />
+		<RequiredAbility type="ice_ring" />
+	</LearnableAbility>
+	<LearnableAbility type="blizzard" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="snow_storm" />
+	</LearnableAbility>
+	<LearnableAbility type="ice_ring" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="ice_bolt" />
+	</LearnableAbility>
+	<LearnableAbility type="frost_ring" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="ice_ring" />
+	</LearnableAbility>
+	<LearnableAbility type="freeze" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="ice_bolt" />
+	</LearnableAbility>
+	<LearnableAbility type="chill" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15" />
+	<LearnableAbility type="lightning" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="lightning_strike" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="lightning" />
+	</LearnableAbility>
+	<LearnableAbility type="thunderstorm" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="chain_lightning" />
+		<RequiredAbility type="lightning" />
+	</LearnableAbility>
+	<LearnableAbility type="thunderstorm2" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="thunderstorm" />
+	</LearnableAbility>
+	<LearnableAbility type="chain_lightning" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="lightning" />
+	</LearnableAbility>
+	<LearnableAbility type="chain_lightning2" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="chain_lightning" />
+	</LearnableAbility>
+	<LearnableAbility type="static_shield" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="ionisation" />
+	</LearnableAbility>
+<LearnableAbility type="ionisation" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15" />
+</PlayerClass>
+
+<PlayerClass type="archer" name="Archer">
+	<BasicAttributes
+					max_health="150"
+					armor="15"
+					block="0"
+					attack="30"
+					power="20"
+					strength="25"
+					dexterity="45"
+					magic_power="15"
+					willpower="15"
+					resistances_physical="0"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3600"
+					attack_speed="1500"
+					step_length="1.5"
+					attack_range="20"
+					>
+		<Ability type="walk" />
+		<Ability type="die"/>
+		<Ability type="dead" />
+		<Ability type="take_item" />
+		<Ability type="use" />
+		<Ability type="speak" />
+		<Ability type="noaction" />
+		<Ability type="trade" />
+		
+		<Ability type="range_attack" />
+	</BasicAttributes>
+	<ItemRequirementTag name="archer" />
+	
+	
+	<BasicAbility type="range_attack" />
+
+	<Look name="ranger" render_info="archer_m" gender="male" emotionset="rogue_emotion"  hair="hairShort_mt5.mesh" item_suffix="#m"/>
+	<Look name="archer" render_info="archer_f" gender="female" emotionset="ireana_emotion"  hair="hair_fs3.mesh" item_suffix="#f"/>
+	
+	<SkilltreeTabs tab1="Marksmanship" tab2="Passive skills" tab3="Hunter magic" />
+	
+	<Item type="pract_sbw" />
+	<Item type="heal_1" />
+	<Item type="heal_1" />
+	
+	<LearnableAbility type="range_attack" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.020000" required_level="0" />
+	<LearnableAbility type="triple_shot" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="guided_triple_shot" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="multishot" />
+	</LearnableAbility>
+	<LearnableAbility type="multishot" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="triple_shot" />
+	</LearnableAbility>
+	<LearnableAbility type="volley_shot" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="guided_triple_shot" />
+	</LearnableAbility>
+	<LearnableAbility type="pierce" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="weak_point" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="blind_rage" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="weak_point" />
+	</LearnableAbility>
+	<LearnableAbility type="vacuum" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="death_roulette" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="guided_triple_shot" />
+	</LearnableAbility>
+	<LearnableAbility type="exploding_arrow" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15" />
+	<LearnableAbility type="exploding_cascade" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="exploding_arrow" />
+		<RequiredAbility type="volley_shot" />
+	</LearnableAbility>
+	<LearnableAbility type="evade" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="critical_strike" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="evade" />
+	</LearnableAbility>
+	<LearnableAbility type="concentration" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="evade" />
+	</LearnableAbility>
+	<LearnableAbility type="mental_wall" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="concentration" />
+	</LearnableAbility>
+	<LearnableAbility type="resist_ice" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="resist_air" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="resist_ice" />
+	</LearnableAbility>
+	<LearnableAbility type="aimed_shot" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="bow_spirit" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="aimed_shot" />
+	</LearnableAbility>
+	<LearnableAbility type="ice_arrows" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15" />
+	<LearnableAbility type="freezing_arrows" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="ice_arrows" />
+	</LearnableAbility>
+	<LearnableAbility type="wind_arrows" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="storm_arrows" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="wind_arrows" />
+	</LearnableAbility>
+	<LearnableAbility type="wind_walk" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5" />
+
+	
+</PlayerClass>
+
+<PlayerClass type="priest" name="Priest">
+	<BasicAttributes
+					max_health="200"
+					armor="20"
+					block="0"
+					attack="20"
+					power="20"
+					strength="25"
+					dexterity="15"
+					magic_power="15"
+					willpower="45"
+					resistances_physical="0"
+					resistances_air="0"
+					resistances_ice="0"
+					resistances_fire="0"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="50"
+					walk_speed="3000"
+					attack_speed="2000"
+					step_length="1.5"
+					attack_range="1"
+					>
+		<Ability type="walk" />
+		<Ability type="die"/>
+		<Ability type="dead" />
+		<Ability type="take_item" />
+		<Ability type="use" />
+		<Ability type="speak" />
+		<Ability type="noaction" />
+		<Ability type="trade" />
+		
+		<Ability type="holy_attack" />
+	</BasicAttributes>
+	<ItemRequirementTag name="priest" />
+	
+	<BasicAbility type="holy_attack" />
+
+	<Look name="priest" render_info="priest_m" gender="male" emotionset="human_standard"  hair="priestHair" item_suffix="#m"/>
+	<Look name="priestess" render_info="priest_f" gender="female" emotionset="gertlinde_emotion"  hair="hair_fs1.mesh" item_suffix="#fs"/>
+
+	<SkilltreeTabs tab1="Light Magic" tab2="Water Magic" tab3="Wind Magic" />
+	
+	<Item type="hammer_hmr" />
+	<Item type="heal_1" />
+	<Item type="heal_1" />
+	
+	<LearnableAbility type="holy_attack" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.020000" required_level="0" />
+	<LearnableAbility type="holy_light" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="holy_fire" skilltree_tab="1" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="holy_light" />
+	</LearnableAbility>
+	<LearnableAbility type="dmgreduce_undead" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15" >
+		<RequiredAbility type="holy_light" />
+	</LearnableAbility>
+	<LearnableAbility type="light_beam" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="cure_blind_mute_party" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="light_beam" />
+	</LearnableAbility>
+	<LearnableAbility type="blazing_shield" skilltree_tab="1" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="burning_sun" skilltree_tab="1" skilltree_posx="0.700000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="cure_blind_mute_party" />
+	</LearnableAbility>
+	
+	<LearnableAbility type="break_binding" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.400000" required_level="15" />
+	<LearnableAbility type="disrupt_binding" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="break_binding" />
+	</LearnableAbility>
+	<LearnableAbility type="magic_shield" skilltree_tab="2" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="cure_pois_burn_party" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="heal" />
+	</LearnableAbility>
+	<LearnableAbility type="dmgreduce_elemental" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="break_binding" />
+	</LearnableAbility>
+	<LearnableAbility type="acid" skilltree_tab="2" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="cure_pois_burn_party" />
+	</LearnableAbility>
+	<LearnableAbility type="heal" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="heal_party" skilltree_tab="2" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="heal" />
+	</LearnableAbility>
+	
+	<LearnableAbility type="divine_wind" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="divine_storm" skilltree_tab="3" skilltree_posx="0.200000" skilltree_posy="0.590000" required_level="35">
+		<RequiredAbility type="divine_wind" />
+	</LearnableAbility>
+	<LearnableAbility type="blade_storm" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.020000" required_level="1" />
+	<LearnableAbility type="cure_conf_bsrk_party" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.210000" required_level="5" />
+	<LearnableAbility type="dmgreduce_demon" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.400000" required_level="35">
+		<RequiredAbility type="divine_wind" />
+	</LearnableAbility>
+	<LearnableAbility type="hypnosis" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.400000" required_level="15">
+		<RequiredAbility type="cure_conf_bsrk_party" />
+	</LearnableAbility>
+	<LearnableAbility type="hypnosis2" skilltree_tab="3" skilltree_posx="0.700000" skilltree_posy="0.780000" required_level="60">
+		<RequiredAbility type="hypnosis" />
+	</LearnableAbility>
+	<LearnableAbility type="keen_mind" skilltree_tab="3" skilltree_posx="0.450000" skilltree_posy="0.210000" required_level="5">
+		<RequiredAbility type="blade_storm" />
+	</LearnableAbility>
+
+	
+</PlayerClass>
+

@@ -1,0 +1,17 @@
+<RenderInfo name="bowBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_wood"/>
+	</Action>
+</RenderInfo>
+
+<!-- shortbows -->
+<RenderInfo name="practiceBow" parent= "bowBase">
+	<Entity source="bow.mesh"/>
+</RenderInfo>
+
+<!-- longbows -->
+<RenderInfo name="turneyLongbow" parent= "bowBase">
+	<Entity source="turney_lbw.mesh"/>
+</RenderInfo>
+

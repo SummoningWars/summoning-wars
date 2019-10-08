@@ -1,0 +1,174 @@
+<Ability type="dead" 
+		 name="dead" 
+		 description="dead" 
+		 time="1000.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="-1.000000" />
+
+<Ability type="die" 
+		 name="die" 
+		 description="die" 
+		 time="1000.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="-1.000000" />
+
+<Ability type="summoned" 
+		 name="summoned" 
+		 description="first action that is performed by a summoned monster" 
+		 time="1000.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="-1.000000" />
+
+<Ability type="noaction" 
+		 name="no action" 
+		 description="" 
+		 time="2000.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="-1.000000" />
+
+<Ability type="speak" 
+		 name="speak" 
+		 description="speak with someone" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.700000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="speak" />
+	</Effect>
+</Ability>	
+
+<Ability type="take_item" 
+		 name="take up item" 
+		 description="take item" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.700000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="take_item" />
+	</Effect>
+</Ability>
+
+<Ability type="use" 
+		 name="use" 
+		 description="" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.500000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="use" />
+	</Effect>
+</Ability>	
+
+<Ability type="walk" 
+		 name="walk" 
+		 description="walk" 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="walk" 
+		 critical_percent="-1.000000" 
+		 target_type="melee" />
+
+<Ability type="guard" 
+		 name="guard" 
+		 description="guard" 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="walk" 
+		 critical_percent="-1.000000" 
+		 target_type="melee" />
+
+
+<Ability type="attack" 
+		 name="Attack" 
+		 description="Basic melee attack" 
+		 time="1.000000" timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" 
+		 radius="1">
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="holy_attack" 
+		 name="Holy attack" 
+		 description="Basic holy melee attack" 
+		 time="1.000000" timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="holy_attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="holy_attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="magic_attack" 
+		 name="Magic attack" 
+		 description="Basic magic attack" 
+		 time="1.000000" timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="magic_attack" 
+		 critical_percent="0.500000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="magic_arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="magic_attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>
+
+<Ability type="range_attack" 
+		 name="Ranged attack"
+		 description="Basic ranged attack" 
+		 time="1.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="range_attack" 
+		 critical_percent="0.660000" 
+		 target_type="ranged" >
+	<Effect>
+		<CppImplementation type="proj_fly_at_target" />
+	</Effect>
+	<Projectile type="arrow" speed="12000" />
+	<Damage>
+		<CppImplementation type="range_attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+	</Damage>
+</Ability>

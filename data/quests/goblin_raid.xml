@@ -1,0 +1,114 @@
+<Quest name="goblin_raid" table_name="goblin_raid" domain = "goblin_raid">
+	<Description>
+		if (goblin_raid.finished==true) then
+			return _("Well, I got a little money for killing some goblins I would have wasted anyway. Not a bad day.")
+		elseif(goblin_raid.askedForReward==true)then
+			return(_("It seems the sergeant from Joringsbridge is willing to pay, but he wants me to help those peasants first. There's no trust in this world anymore."))
+		else
+			return _("I discovered plans of a goblin raid set for a village called Joringsbridge. They were found amongst the remains of some goblin tribe. Guess I busted that party prematurely. Maybe someone official will appreciate not having hordes of goblins kicking in their doors.")
+		end
+	</Description>
+	<Region name= "aisDarkClearing">
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				goblin_raid_tmp.regresh = createObject("goblin_regresh", "temple:locGoblinShaman");
+				createObject("goblin_tguard", "temple:locGoblinGuard1");
+				createObject("goblin_apprtc", "temple:locGoblinGuard2");
+				createObject("goblin_tguard", "temple:locGoblinGuard3");
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_die" once="true">
+			<Condition>
+				return trigger.unit == goblin_raid_tmp.regresh
+			</Condition>
+			<Effect>
+				goblin_raid.amulet = true
+				goblin_raid.battlePlans = true
+				printQuestMessage("You found a leather skin containing what seems like the plans of a raid on a nearby village.");
+				printQuestMessage("You picked up an amulet with tribal markings. It seems valuable only to goblins.");
+				goblin_raid.started=true
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Sergeant Lutterer">
+		<Topic name= "goblin_raid" start_option="Crude battle plans">
+			<Condition>
+				return ((goblin_raid.battlePlans == true) and (goblin_raid.askedForReward~=true) and (goblin_raid.finished~=true))
+			</Condition>
+			<Effect>
+				addStandardRoles();
+				addSpeaker(joringsbridge.sergeant,"sergeant");
+				speak("player",_("Hey, sergeant, I found these in the woods with some goblins."))
+				speak("sergeant",_("This looks like it could be Joringsbridge. Are you sure it's reliable?"),"thoughtful")
+				speak("player",_("Some kind of head honcho shaman had them, so I figure they mean it."))
+				speak("player",_("Meant it. Whatever."),"grin")
+				goblin_raid.askedForReward = true
+				if(farm_siege.rescued==true)then
+					changeTopic("collect_reward_raid")
+				else
+					changeTopic("no_trust")
+				end
+			</Effect>
+		</Topic>
+		<Topic name= "goblin_raid_again" start_option="Crude battle plans">
+			<Condition>
+				return ((goblin_raid.battlePlans == true) and (goblin_raid.askedForReward==true) and (goblin_raid.finished~=true))
+			</Condition>
+			<Effect>
+				addStandardRoles();
+				addSpeaker(joringsbridge.sergeant,"sergeant");
+				speak("player",_("Hey, sergeant, ready to pay for the pre-emptive rescue of the village?"),"grin")
+				if(farm_siege.rescued==true)then
+					changeTopic("collect_reward_raid")
+				else
+					changeTopic("no_trust")
+				end
+			</Effect>
+		</Topic>
+		
+		<Topic name="collect_reward_raid">
+			<Effect>
+				speak("sergeant",_("I guess you can be trusted."),"happy")
+				speak("sergeant",_("Let me thank you on behalf of the whole village."),"normal")
+				if(not solo())then
+					printQuestMessage("The party gained 3000 goldpieces")
+				else
+					printQuestMessage("You gained 3000 goldpieces")
+				end
+				addPlayersGold(3000/getPlayerNumber(), getPlayers())
+				speak("player",_("It's always a pleasure when a good deed goes rewarded."),"grin")
+				goblin_raid.finished = true
+			</Effect>
+		</Topic>
+		<Topic name="no_trust">
+			<Effect>
+				speak("sergeant",_("Sorry, but I don't know you."),"normal")
+				speak("sergeant",_("Maybe I will show some gratitude after you help Michel's family."),"normal")
+				speak("sergeant",_("As they say: One hand washes the other."),"normal")
+				if(farm_siege.started~=true)then
+					addQuestion(_("Do you want to help the peasant?"),"all");
+					addAnswer(_("Yes"),"help_michel");
+					addAnswer(_("No"),"dont_help_michel");
+				else
+					speak("player",_("Then I better get back to saving helpless peasants, no?"),"unhappy")
+				end
+			</Effect>
+		</Topic>
+		<Topic name="help_michel">
+			<Effect>
+				speak("player",_("Fine, I'll wipe out those goblins for you."),"bored")
+				speak("player",_("You do realise there's plenty more where they came from?"),"grin")
+				speak("sergeant",_("Just go already."),"unhappy")
+				farm_siege.started = true
+			</Effect>
+		</Topic>
+		<Topic name="dont_help_michel">
+			<Effect>
+				speak("player",_("Whatever. It's not like I need the money or anything."),"bored")
+				speak("player",_("And I could care less what happens to some peasant family."),"unhappy")
+			</Effect>
+		</Topic>
+	</NPC>
+</Quest>

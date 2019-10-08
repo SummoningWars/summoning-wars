@@ -1,0 +1,22 @@
+<!-- An object Template consists of
+	name: the unique name of the object_template. It has to be started by a "$"-character
+	type: the type of the object (FIXED_OBJECT, SCRIPTOBJECT, TREASURE). It has to be the same for all real objects representing a template.
+		The shape of the objects should be the same to actually make them replacements of one another.
+-->
+<ObjectTemplate name="$tree" type="FIXED_OBJECT">
+	<!-- Every environment can hold a virtually infinit number of objects. One of them will replace a template randomly.
+		default: An environment with this attribute will be used by every unknown environment.
+	-->
+	<Environment name="meadow" default="true">
+			<Object name="tree1" />
+			<Object name="tree2" />
+			<Object name="tree3" />
+	</Environment>
+	<!-- Of course, objects replacing a template don't have to actually make sense. But it would be better.-->
+	<Environment name="mountains">
+			<Object name="random_stone" />
+	</Environment>
+	<!-- An empty envrionment leads to the template being not replaced by anything at all. This is useful if you have environments where the object would simply be out of place. -->
+	<Environment name="spaceship">
+	</Environment>
+</ObjectTemplate>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="border(corner)" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="4"
+    extent_y="4"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="$flower" 
+            center_x="0.06353943248" 
+            center_y="-0.6124297522" 
+           height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="0.893325746" 
+            center_y="1.810845617" 
+           height="-1.776356839e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="2.295547873" 
+            center_y="0.09484690766" 
+           height="-5.329070518e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-0.5241724022" 
+            center_y="1.150153734" 
+           height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="1.345469757" 
+            center_y="-2.556140564" 
+           height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-1.435545474" 
+            center_y="-1.547694716" 
+           height="-3.552713679e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-2.251942498" 
+            center_y="-2.924170563" 
+           height="-5.329070518e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$flower" 
+            center_x="-3.064930496" 
+            center_y="-0.9498926952" 
+           height="-5.329070518e-015" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$border_cOut" 
+            center_x="3.5" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_m" 
+            center_x="3.5" 
+            center_y="1" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_m" 
+            center_x="0" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_s" 
+            center_x="3.5" 
+            center_y="-3" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_s" 
+            center_x="-3" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_t" 
+            center_x="3.5" 
+            center_y="-1.5" 
+            angle="-180" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$border_t" 
+            center_x="2.5" 
+            center_y="3.5" 
+            angle="-90" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$tree" 
+            center_x="0.02946109693" 
+            center_y="-2.754003" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="2.198768895" 
+            center_y="1.768799857" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+    <Object subtype="$tree" 
+            center_x="-2.482515505" 
+            center_y="1.146194645" 
+            angle="0" 
+            probability="0.7" 
+            prob_angle="true" 
+    />
+  </ObjectContent>
+
+  <Locations>
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

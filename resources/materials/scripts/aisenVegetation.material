@@ -1,0 +1,49 @@
+material vegetation
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.5 0.5 0.5 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit
+			{
+				texture env_grassland.png
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+
+material Vegetation_Atlas
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.800000 0.800000 0.800000
+			specular 0.500000 0.500000 0.500000 12.500000
+			
+			scene_blend alpha_blend
+			alpha_rejection greater 120
+			depth_write on
+			depth_check on
+			
+			texture_unit
+			{
+				texture Atlastex_veg.png
+			}
+		}
+	}
+}
+

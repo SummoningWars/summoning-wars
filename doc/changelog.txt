@@ -1,0 +1,25 @@
+0.5.1
+	Programming:
+		* Improved target selection system
+		* Enabled fast-forward with a click into the game windows in dialogs
+		* Dialogs used only two corners now
+		* Enabled equipping items with right-click
+		* restricted camera-movement
+		* Single-player game may be paused with ESC now
+		* XML-Based options storage system
+		* Double-Click on Savegame immediately loads it
+		
+	Build system:
+		* Added support for cmake build system
+		
+	Sounds:
+		* Added drop sounds for most items
+		* Added alternative sounds for arrow
+	
+	Graphics:
+		* Added Worldmap
+		* Changed Heal and Heal Party Skill Icons
+		
+	Translation:
+		* Added full English translation and set this as default option
+		

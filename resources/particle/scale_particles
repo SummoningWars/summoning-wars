@@ -1,0 +1,36 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import os,sys,re,string
+
+for filename in os.listdir("."):
+	if re.match(".*?\.particle",filename):
+		print "converting file:",filename
+	
+		braces = 0
+		file = open(filename, "r")
+		text = file.readlines()
+		file.close()
+		outfile = open('./convert/'+filename,'w')
+		searchlist = ["particle_width","particle_height","position", "velocity_min","velocity_max","width","height", "depth"]
+		for line in text:
+			line = line.rstrip('\r\n')
+			found = 0;
+			for string in searchlist:
+				if line.find(string)!=-1:
+					found = 1;
+			if found == 1 :
+				sp = str.split(line," ");
+				index = 0
+				for val in sp:
+					if val != "" :
+						try:
+							sp[index] = str(0.02*float(val))
+						except(ValueError):
+							pass
+					index = index+1
+				
+				print >>outfile, str(" ").join(sp)
+			else:
+				print >>outfile, line
+		
+		

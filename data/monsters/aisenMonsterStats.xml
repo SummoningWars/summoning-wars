@@ -1,0 +1,335 @@
+<!-- Blutschnabel -->
+<Monster type="MONSTER" subtype="bloodbeak" name="Bloodbeak" fraction="monster" race="animal" layer="AIR">
+	<RenderInfo name="bloodbeak" />
+	<Dropslots >
+		<Dropslot pbig="0.06" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="30" max_gold="80" min_level="5" max_level="13" magic_prob="0.2" magic_power="450" />
+		<Dropslot pbig="0.06" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="20" max_gold="50" min_level="4" max_level="8" magic_prob="0.4" magic_power="300" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="40"
+		level="11"
+		max_health="180"
+		armor="5"
+		block="0"
+		attack="120"
+		power="150"
+		strength="25"
+		dexterity="30"
+		magic_power="0"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="40"
+		resistances_ice="0"
+		resistances_fire="-30"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="1.0"
+		attack_range="2.5"
+	>
+		<Ability type="walk"/>
+		
+		<Ability type="attack" rating="1"/>
+		<Ability type="noaction" />
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<MonsterGroup name="bloodbeaks" >
+	<SubGroup subtype="bloodbeak" number="7" prob="0.7" />
+</MonsterGroup>
+
+<Monster type="MONSTER" subtype="giant_wolf" name="Giant wolf" fraction="monster" race="animal" layer="NORMAL">
+	<RenderInfo name="giant_wolf" />
+	<Dropslots >
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="50" max_gold="150" min_level="11" max_level="17" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="30" max_gold="60" min_level="10" max_level="16" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="30" max_gold="60" min_level="9" max_level="16" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="100" max_gold="200" />
+	</Dropslots>
+	<BasicAttributes
+		experience="300"
+		level="16"
+		max_health="1800"
+		armor="15"
+		block="0"
+		attack="150"
+		power="150"
+		strength="50"
+		dexterity="40"
+		magic_power="0"
+		willpower="20"
+		resistances_physical="0"
+		resistances_air="20"
+		resistances_ice="20"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="2200"
+		attack_speed="1000"
+		step_length="2"
+		attack_range="3.0"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<Monster type="MONSTER" subtype="wolf" name="wolf" fraction="monster" race="animal" layer="NORMAL">
+	<RenderInfo name="wolf" />
+	<Dropslots >
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.06" pgold="0.05" min_gold="40" max_gold="90" min_level="8" max_level="15" magic_prob="0.2" magic_power="500" />
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.04" pgold="0.05" min_gold="20" max_gold="60" min_level="7" max_level="15" magic_prob="0.4" magic_power="400" />
+	</Dropslots>
+	<BasicAttributes
+		experience="45"
+		level="14"
+		max_health="450"
+		armor="15"
+		block="0"
+		attack="100"
+		power="100"
+		strength="25"
+		dexterity="40"
+		magic_power="0"
+		willpower="20"
+		resistances_physical="0"
+		resistances_air="20"
+		resistances_ice="20"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="1"
+		attack_range="1.5"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<MonsterGroup name="wolves" >
+	<SubGroup subtype="wolf" number="3" prob="1" />
+	<SubGroup subtype="wolf" number="5" prob="0.5" />
+</MonsterGroup>
+
+<MonsterGroup name="wolves_giant" >
+	<SubGroup subtype="wolf" number="4" prob="1" />
+	<SubGroup subtype="giant_wolf" number="1" prob="1" />
+</MonsterGroup>
+
+
+
+<!-- quest monster for the scout quest-->
+<Monster type="MONSTER" subtype="psychoticSpider" name="Psychotic Spider" fraction="monster" race="animal" layer="NORMAL">
+	<RenderInfo name="caveSpider" />
+	<Dropslots >
+		<Dropslot pbig="0.4" pmedium="0.5" psmall="0.1" pgold="0.00" min_gold="50" max_gold="150" min_level="11" max_level="17" magic_prob="0.8" magic_power="550" />
+		<Dropslot pbig="0.2" pmedium="0.3" psmall="0.1" pgold="0.05" min_gold="30" max_gold="60" min_level="10" max_level="17" magic_prob="0.8" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.4" pgold="0.00" min_gold="30" max_gold="60" min_level="9" max_level="16" magic_prob="0.5" magic_power="500" />
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.00" pgold="1.00" min_gold="100" max_gold="200" />
+	</Dropslots>
+	<BasicAttributes
+		experience="400"
+		level="16"
+		max_health="1400"
+		armor="40"
+		block="0"
+		attack="100"
+		power="100"
+		strength="25"
+		dexterity="40"
+		magic_power="75"
+		willpower="45"
+		resistances_physical="0"
+		resistances_air="-30"
+		resistances_ice="20"
+		resistances_fire="-20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="2"
+		attack_range="1.5"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="poison_attack" rating="2" timer_nr="1" timer_value="12000" />
+		<Ability type="stun_attack" rating="2" timer_nr="1" timer_value="12000" />
+		<Ability type="die" time="800"/>
+		<Ability type="noaction" />
+		
+		<Immunity type="poisoned"/>
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<Monster type="MONSTER" subtype="spider_cave" name="Cave Spider" fraction="monster" race="animal" layer="NORMAL">
+	<RenderInfo name="caveSpiderSmall" />
+	<Dropslots >
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.06" pgold="0.05" min_gold="40" max_gold="90" min_level="8" max_level="15" magic_prob="0.2" magic_power="500" />
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.04" pgold="0.05" min_gold="20" max_gold="60" min_level="7" max_level="15" magic_prob="0.4" magic_power="400" />
+	</Dropslots>
+	<BasicAttributes
+		experience="40"
+		level="14"
+		max_health="250"
+		armor="15"
+		block="0"
+		attack="120"
+		power="80"
+		strength="25"
+		dexterity="40"
+		magic_power="25"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="-20"
+		resistances_ice="20"
+		resistances_fire="-20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="2"
+		attack_range="1.5"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="poison_attack" rating="2" timer_nr="1" timer_value="5000" />
+		<Ability type="die" time="800"/>
+		<Ability type="noaction" />
+		
+		<Immunity type="poisoned"/>
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+
+
+<MonsterGroup name="spiders_cave" >
+	<SubGroup subtype="spider_cave" number="3" prob="1" />
+	<SubGroup subtype="spider_cave" number="5" prob="0.4" />
+</MonsterGroup>
+
+<Monster type="MONSTER" subtype="spider" name="Spider" fraction="monster" race="animal" layer="NORMAL">
+	<RenderInfo name="caveSpider" />
+	<Dropslots >
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.06" pgold="0.05" min_gold="40" max_gold="90" min_level="8" max_level="15" magic_prob="0.2" magic_power="500" />
+		<Dropslot pbig="0.02" pmedium="0.05" psmall="0.04" pgold="0.05" min_gold="20" max_gold="60" min_level="7" max_level="15" magic_prob="0.4" magic_power="400" />
+	</Dropslots>
+	<BasicAttributes
+		experience="45"
+		level="14"
+		max_health="250"
+		armor="15"
+		block="0"
+		attack="100"
+		power="100"
+		strength="25"
+		dexterity="40"
+		magic_power="0"
+		willpower="20"
+		resistances_physical="-10"
+		resistances_air="20"
+		resistances_ice="20"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="2"
+		attack_range="1.5"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" time="800"/>
+		<Ability type="noaction" />
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<Monster type="MONSTER" subtype="bat_giant" name="Giant Bat" fraction="monster" race="animal" layer="AIR">
+	<RenderInfo name="bat" />
+	<Dropslots >
+		<Dropslot pbig="0.06" pmedium="0.08" psmall="0.07" pgold="0.05" min_gold="30" max_gold="80" min_level="5" max_level="13" magic_prob="0.2" magic_power="450" />
+		<Dropslot pbig="0.06" pmedium="0.08" psmall="0.04" pgold="0.05" min_gold="20" max_gold="50" min_level="4" max_level="8" magic_prob="0.4" magic_power="300" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="40"
+		level="11"
+		max_health="180"
+		armor="5"
+		block="0"
+		attack="120"
+		power="150"
+		strength="25"
+		dexterity="30"
+		magic_power="0"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="40"
+		resistances_ice="0"
+		resistances_fire="-30"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="1.0"
+		attack_range="2.5"
+	>
+		<Ability type="walk"/>
+		
+		<Ability type="attack" rating="1"/>
+		<Ability type="noaction" />
+		<Ability type="die"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>

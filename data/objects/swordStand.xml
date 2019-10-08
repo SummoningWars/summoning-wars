@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="swordStand" layer="NORMAL">
+        <Mesh file="swordStand.mesh" />
+        <Geometry shape="RECT" extent_x="0.07769947535" extent_y="0.2059131859"/>
+</Object>

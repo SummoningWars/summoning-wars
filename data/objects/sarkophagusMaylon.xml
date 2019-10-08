@@ -1,0 +1,33 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="sarkophagusMaylon" layer="NORMAL">
+        <Mesh file="sarkophagusBig.mesh" />
+        <Geometry shape="RECT" extent_x="1.05648321" extent_y="2.158637254"/>
+		<Flags usable="true" exact_picking="true" collision_detect="false" />
+		
+		<Event trigger="object_use">
+		<Condition>
+			return ((maylons_grave.finished==true)and(getPlayerPrivateVar(trigger.user,"maylonsReward")~=true))
+		</Condition>
+		<Effect>
+			local player=trigger.user;
+			if(isArcher(player))then
+				createItem("hunter_sbw",300);
+				insertPlayerItem(player,false);
+			elseif(isMage(player))then
+				createItem("rock_stf",350);
+				insertPlayerItem(player,false);
+			elseif(isPriest(player))then
+				createItem("maul_hmr",200);
+				insertPlayerItem(player,false);
+			elseif(isWarrior(player))then
+				createItem("sabre_sw",200);
+				insertPlayerItem(player,false);
+			else
+				createItem("heal_2");
+				insertPlayerItem(player,false);
+			end;
+			local name = get(trigger.user,"name");
+			printQuestMessage(_(name.." received an item from Maylons Grave."));
+			setPlayerPrivateVar(player,"maylonsReward",true)
+		</Effect>
+	</Event>
+</ScriptObject>

@@ -1,0 +1,504 @@
+<Quest name="Joringsbridge" table_name="prince" domain="joringsbridge">
+	<Region name="joringsbridge">
+		<Event trigger="create_region">
+			<Condition>
+				return (prince.left_joringsbridge~=true);
+			</Condition>
+			<Effect>
+				prince_tmp.karlen = createObject("prince","locPrince");
+				setRefName(prince_tmp.karlen, "Prince Karlen");
+				set(prince_tmp.karlen,"angle",90);
+				
+				prince_tmp.leonard = createObject("mentor","locCouncellor");
+				setRefName(prince_tmp.leonard, "Leonard von Robenforst");
+				set(prince_tmp.leonard,"angle",90);
+				
+				lookAtObject(prince_tmp.karlen,joringsbridge.sergeant);
+				lookAtObject(prince_tmp.leonard,joringsbridge.sergeant);
+				lookAtObject(joringsbridge.sergeant,prince_tmp.karlen);
+				lookAtObject(joringsbridge.council,joringsbridge.sergeant);
+				
+				prince_tmp.troop1 = createObject("graf_troop", "locTroop1",-90);
+				setObjectAnimation(prince_tmp.troop1, "noaction",3000,"true");
+				
+				prince_tmp.troop2 = createObject("graf_troop", "locTroop2",-90);
+				setObjectAnimation(prince_tmp.troop2, "noaction",3000,"true");
+				
+				local populace={};
+				moveObject(herbalist_tmp.gertlinde,"locTraderView3");
+				populace[1]=herbalist_tmp.gertlinde;
+				moveObject(joringsbridge.armor,"locTraderView1");
+				populace[2]=joringsbridge.armor;
+				moveObject(joringsbridge.weapons,"locTraderView2");
+				populace[3]=joringsbridge.weapons;
+				
+				prince_tmp.peasent1 = createObject("peasant","locPeasent1");
+				populace[4]=prince_tmp.peasent1;
+				
+				prince_tmp.peasent2 = createObject("peasant_f","locPeasent2");
+				populace[5]=prince_tmp.peasent2;
+				
+				prince_tmp.peasent3 = createObject("peasant","locPeasent3");
+				populace[6]=prince_tmp.peasent3;
+				
+				prince_tmp.peasent4 = createObject("peasant","locPeasent4");
+				populace[7]=prince_tmp.peasent4;
+				
+				prince_tmp.peasent5 = createObject("peasant_f","locPeasent5");
+				populace[8]=prince_tmp.peasent5;
+				
+				prince_tmp.peasent6 = createObject("peasant_f","locPeasent6");
+				populace[9]=prince_tmp.peasent6;
+				
+				prince_tmp.peasent7 = createObject("peasant","locPeasent7");
+				populace[10]=prince_tmp.peasent7;
+				
+				groupLookAt(populace,"locPrince");
+			
+			</Effect>
+		</Event>
+		
+		<Event trigger="player_moved" once="true">
+			<Condition>
+				return ((unitIsInArea(trigger.player,"areaPrince"))and(prince.left_joringsbridge~=true));
+			</Condition>
+			<Effect>
+				setCutsceneMode(true);
+				addCameraPosition(0,get(trigger.player,"position"), -90,60, 20);
+				addCameraPosition(3000,"locPrince", -90,40, 15);
+				prince_tmp.talk=true;
+				startTimer("get_party",2500)
+			</Effect>
+		</Event>
+		
+		<Event trigger="get_party" once="true">
+			<Effect>
+				assembleParty("joringsbridge","locParty");
+				prince_tmp.party_underway=true;
+			</Effect>
+		</Event>
+		
+		<Event trigger="party_complete" once="true">
+			<Condition>
+				return(prince_tmp.talk==true);
+			</Condition>
+			<Effect>
+				groupObjectsArc(getPlayers(),"locParty","locPrince",nil,90);
+				
+				createDialogue();
+				addAllPlayersToDialog();
+				addStandardRoles();
+				
+				setTopicBase("Sergeant Lutterer");
+				
+				addSpeaker(prince_tmp.karlen,"prince",true);
+				addSpeaker(prince_tmp.leonard,"mentor",true);
+				addSpeaker(joringsbridge.sergeant,"sergeant",true);
+				addSpeaker(joringsbridge.council,"council",true);
+				
+				setSpeakerPosition("prince","right");
+				setSpeakerPosition("mentor","left");
+				setSpeakerPosition("sergeant","right");
+				setSpeakerPosition("council","left");
+				
+				speak("sergeant",_("I'm begging you, my prince!"),"pain");
+				speak("sergeant",_("Leave at least a handful of soldiers here."),"normal");
+				setSpeakerAnimation("sergeant","sad",800);
+				speak("sergeant",_("I can barly guard the village, let alone the surrounding farms!"),"sad");
+				setSpeakerAnimation("mentor","angry",800);
+				setSpeakerEmotion("sergeant","offended");
+				speak("mentor",_("Silence!"),"angry");
+				executeInDialog('unitSpeak("prince",_("..."),3500)');
+				speak("mentor",_("The safety of the country has absolute priority."),"angry");
+				speak("mentor",_("Surely you can handle a hand full of lousy goblins."),"unhappy");
+				speak("mentor",_("Not to mention you have a mighty summoner at your side."),"unhappy");
+				speak("mentor",_("That's more than enough."),"normal");
+				speak("sergeant",_("But the honourable mage has other duties!"),"aloof");
+				speak("council",_("Quite so!"),"amused");
+				speak("council",_("The pursuit of pathetic goblins is neither my duty nor do I see the point of such absurd amusement."),"normal");
+				setSpeakerEmotion("sergeant","normal");
+				speak("council",_("What would you do were the village to be attacked while I was on a fruitless hunt for goblins?"),"thoughtful");
+				speak("prince",_("And you really have no time to help out a bit?"),"surprised");
+				speak("council",_("My humble apologies, but the council has given me very important tasks."),"sad");
+				speak("council",_("As much as I'd like to help, I don't have any room for such a thing."),"normal");
+				speak("council",_("But may I use this unique opportunity to congratulate you on your upcoming wedding with the archmage Ireana of"),"happy");
+				speak("prince",_("Thanks, that is enough."),"aloof")
+				setSpeakerEmotion("council","offended");
+				changeTopic("party_comments");
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Sergeant Lutterer">
+		<Topic name="party_comments">
+			<Effect>
+				addCameraPosition(1500,"locParty", -90,40, 20)
+				speak("waropt",_("Self-satisfied parasite, that mage!"),"unhappy");
+				setSpeakerEmotion("council","normal");
+				speak("magopt",_("I just hope the kingdom has big granaries, if the greenskins torch the fields."),"aloof");
+				speak("mentor",_("The presence of the mage alone will drive out every goblin!"),"unhappy");
+				speak("mentor",_("Stop bugging the prince with your incompetence."),"angry")
+				speak("sergeant",_("!"),"angry",1000);
+				speak("mentor",_("Don't you have something better to do?"),"aloof")
+				if(solo())then
+					speak("any",_("And they say, my kind is cold-hearted..."),"disgust");
+				else
+					speak("any",_("And they say, our kind is cold-hearted..."),"disgust");
+				end;
+				setSpeakerEmotion("any","normal");
+				changeTopic("sergeant_leaves");
+			</Effect>
+		</Topic>
+		
+		<Topic name="sergeant_leaves">
+			<Effect>
+				setObjectAnimation(prince_tmp.troop1,"walk",1000,"true");
+				set(prince_tmp.troop1,"speed",{0,-0.0018});
+			
+				setObjectAnimation(prince_tmp.troop2,"walk",1000,"true");
+				set(prince_tmp.troop2,"speed",{0,-0.0018});
+			
+				addUnitCommand(joringsbridge.sergeant,"walk","locSergeantHome",2);
+				
+				prince_tmp.peasent= createObject("peasant","entry_west");
+				setRefName(prince_tmp.peasent,"Michel Bron");
+				addUnitCommand(prince_tmp.peasent,"walk","locPeasentMichel");
+				addSpeaker(prince_tmp.peasent,"michel");
+				
+				speak("michel",_("Guards! Guards!"),"panic",3000);
+				
+				executeInDialog('lookAt('..prince_tmp.karlen..',"locPeasentMichel");');
+				executeInDialog('lookAt('..prince_tmp.leonard..',"locPeasentMichel");');
+				executeInDialog('lookAt('..joringsbridge.council..',"locPeasentMichel");');
+				
+				speak("michel",_("Help! My farm is being raided by goblins!"),"panic");
+				speak("michel",_("My family..."),"panic");
+				changeTopic("peasent_arrives");
+			</Effect>
+		</Topic>
+		
+		<Topic name="peasent_arrives">
+			<Effect>
+				addUnitCommand(joringsbridge.sergeant,"walk","locSergeant",1);
+				
+				speak("mentor",_("Take the fool away!"),"unhappy");
+				speak("mentor",_("The prince has more important matters to tend to."),"unhappy");
+				
+				setSpeakerAnimation("prince","angry",800);
+				speak("prince", _("Wait!"),"normal")
+				speak("prince", _("What happened?"),"normal")
+				
+				speak("michel",_("Forgive me, my prince, but my wife and my children are still there."),"fear");
+				speak("michel",_("I don't know how long the house will withstand them."));
+				speak("michel",_("I beg of you: help me!"),"sad");
+				
+				speak("prince", _("We..."),"sad",500);
+				speak("mentor", _("My prince!"),"unhappy");
+				speak("mentor", _("We don't have time!"),"normal");
+				speak("mentor", _("The demons are at the northern border!"),"normal");
+				
+				speak("prince", _("I know!"),"angry");
+				setSpeakerPosition("prince","right");
+				
+				speak("prince", _("2000 gold pieces for everyone who is willing to help this humble man!"),"aloof");
+				executeInDialog('unitSpeak('..prince_tmp.leonard..',_("ts"),"unhappy",3000)');
+				executeInDialog('addCameraPosition(1500,"locParty", 90,40, 20)');
+				if(solo())then
+					speak("any",_("2000 gold pieces."),"amused")
+				else
+					speak("any",_("2000 for every one."),"amused")
+				end;
+				speak("arcopt",_("That could almost be worth the trouble."),"thoughtful");
+				changeTopic("soren_interferes");
+			</Effect>
+		</Topic>
+		
+		<Topic name="soren_interferes">
+			<Effect>
+				deleteObject(prince_tmp.troop1);
+				deleteObject(prince_tmp.troop2);
+			
+				prince_tmp.soren = createObject("sorenCrystal","locCrystal");
+				addSpeaker(prince_tmp.soren,"soren");
+				
+				local waropt = getSpeaker("waropt");
+				local magopt = getSpeaker("magopt");
+				local leader = getSpeaker("PL");
+				local sawCrystal = leader;
+				if(magopt ~= waropt)then
+					sawCrystal = waropt;
+				elseif(magopt == leader)then
+					sawCrystal = getPlayers()[2];
+				end;
+				
+				addSpeaker(sawCrystal,"hawkeye");
+				
+				playersLookAt("locCrystal");
+				
+				if(solo())then
+					speak("soren",_("Don't even think about it!"),"unhappy");
+					speak("soren",_("You are to go to Dwarfenwall immediately!"),"unhappy");
+					speak("PL", _("Where do you come from? Didn't I exclude you?"),"surprised");
+					speak("soren",_("Your trifles cannot stop me."),"grin");
+					speak("PL", _("The blood always works..."),"thoughtful");
+					speak("PL", _("Ah!"),"excited")
+					speak("PL", _("The mage over there has another of those crystals on his staff, hasn't he?"),"unhappy")
+					speak("PL", _("You people are really unnerving somehow."),"unhappy");
+					speak("soren",_("Who cares what you think? Let the peasant be a peasant and get moving!"),"unhappy");
+					speak("PL", _("Well..."),"thoughtful",1500);
+				else
+					speak("soren",_("Don't even think about it!"),"unhappy");
+					speak("soren",_("You have to go to Dwarfenwall immediately!"),"unhappy");
+					speak("magopt", _("Where did you pop out from? Didn't we exclude you?"),"surprised");
+					speak("soren",_("Your trifles cannot stop me."),"grin");
+					speak("hawkeye", _("Rubbish! Take a look at the crystal on the mege's staff."),"grin");
+					speak("hawkeye", _("Looks like our model, doesn't it?"),"sneer");
+					speak("soren", _("Whatever. Get moving!"),"unhappy");
+					speak("PL", _("Well..."),"thoughtful",1500);
+				end;
+
+				addQuestion(_("Help the peasant?"));
+				addAnswer(_("Yes"),"help_peasent");
+				addAnswer(_("No"),"no_help");
+			</Effect>
+		</Topic>
+		
+		<Topic name="help_peasent">
+			<Effect>
+				local scoffSoren = getSpeaker("PL");
+				if(scoffSoren ~= getSpeaker("magopt"))then
+					scoffSoren = getSpeaker("magopt");
+				elseif(not solo())then
+					scoffSoren = getPlayers()[2];
+				end;
+				addSpeaker(scoffSoren,"scoffSoren");
+			
+				speak("waropt",_("Only a stone would watch deedless."),"angry");
+				speak("waropt", _("Who knows how many sou... goblins are walking around there!"),"grin");
+				speak("arcopt",_("And we get money. Two birds with one stone."),"thoughtful");
+				
+				if(solo())then
+					speak("soren",_("What do you think you're doing? You are to go to Dwarfenwall!"),"angry");
+					speak("PL",_("When I get there was never part of the deal!"),"aloof");
+					speak("PL",_("If the city is lost, I'll just conquer it back!"),"aloof");
+				else
+					speak("PL",_("So it's decided."),"normal");
+					speak("soren",_("What do you think you're doing? You are to go to Dwarfenwall!"),"angry");
+					speak("PL",_("When we get there was never part of the deal!"),"aloof");
+					speak("PL",_("If the city is lost, we'll just conquer it back!"),"aloof");
+					speak("scoffSoren",_("Yes, show him who's in charge!"),"amused");
+				end;
+				changeTopic("accept_job");
+			</Effect>
+		</Topic>
+		
+		<Topic name="accept_job">
+			<Effect>
+				addCameraPosition(1500,"locParty", -90,40, 20);
+				prince_tmp.leaderWalks=true;
+				addUnitCommand(getPlayers()[1],"walk","locLeader",1);
+				
+				if(not solo())then
+					local leader = getSpeaker("PL");
+					--this will assign the role of a snide comment to someone other then the partyleader
+					local scoffSoren = getSpeaker("warrior");
+					if((scoffSoren == nil)or(scoffSoren == leader))then
+						scoffSoren = getSpeaker("archer");
+						if((scoffSoren == nil)or(scoffSoren == leader))then
+							scoffSoren = getSpeaker("mage");
+							if((scoffSoren == nil)or(scoffSoren == leader))then
+								scoffSoren = getPlayers()[2];
+							end;
+						end;
+					end;
+					addSpeaker(scoffSoren,"scoffSoren");
+				end;
+				
+				if(solo())then
+					speak("PL", _("Prince, I take the job!"),"normal");
+				else
+					speak("PL", _("Prince, we take the job!"),"normal");
+				end;
+				
+				executeInDialog('unitSpeak('..prince_tmp.leonard..',_("By Marek!"),"fear")');
+				executeInDialog('unitSpeak('..joringsbridge.sergeant..',_("Who is that?"),"surprised")');
+				executeInDialog('lookAt('..prince_tmp.karlen..',"locLeader");');
+				executeInDialog('lookAt('..prince_tmp.leonard..',"locLeader");');
+				executeInDialog('lookAt('..prince_tmp.peasent..',"locLeader");');
+				executeInDialog('lookAt('..joringsbridge.council..',"locLeader");');
+				executeInDialog('lookAt('..joringsbridge.sergeant..',"locLeader");');
+				
+				
+				if(solo())then
+					speak("prince",_("Aren't you the... auxiliary forces of the council? ##solo"),"surprised");
+				else
+					speak("prince",_("Aren't you the... auxiliary forces of the council?"),"surprised");
+					speak("scoffSoren",_("... under the heel of a certain Soren Airpaw, at your service."),"amused");
+					speak("soren",_("Windclaw, you fool!"),"angry");
+					speak("scoffSoren",_("Oops..."),"thoughtful");
+					setSpeakerEmotion("soren","normal");
+					setSpeakerEmotion("scoffSoren","normal");
+				end;
+				speak("PL",_("Is that a problem for you?"),"aloof");
+				speakPause("2000");
+				speak("prince",_("... probably not. Alright, even if I don't like it."),"normal");
+				setSpeakerPosition("mentor","right");
+				speak("mentor",_("Are you sure?"),"thoughtful");
+				speak("mentor",_("What if they kill the peasants along?"),"grin");
+				setSpeakerEmotion("mentor","normal");
+				
+				speak("prince",_("Sergeant!"),"normal");
+				speak("prince",_("Only hand over the gold if the goblins are driven off and the peasants are alive in the end."),"normal");
+				speak("prince",_("Otherwise, do your work diligently."),"normal")
+				
+				setSpeakerPosition("sergeant","right");
+				speak("sergeant",_("As you wish, my Prinz."),"normal");
+				
+				speak("any",_("That much distrust is really unnecessary during a war. "),"sad");
+				farm_siege.started=true;
+				executeInDialog('insertTrigger("clean_after_talking")');
+			</Effect>
+		</Topic>
+				
+		<Topic name="no_help">
+			<Effect>
+				addCameraPosition(1500,"locParty", -90,40, 20)
+				
+				speak("prince",_("Nobody?"),"offended",2000);
+
+				executeInDialog('lookAtObject('..prince_tmp.karlen..','..joringsbridge.sergeant..')');
+				speak("prince",_("Sergeant!"),"normal");
+
+				executeInDialog('lookAtObject('..joringsbridge.sergeant..','..prince_tmp.karlen..')');
+				setSpeakerPosition("sergeant","right");
+				speak("sergeant",_("My prince?"),"normal");
+				
+				speak("prince",_("I am true to my word."),"normal");
+				speak("prince",_("Hand over the gold, if you find someone who helps you after all."),"normal");
+				
+				speak("sergeant",_("As you wish, my prince."),"normal");
+				
+				executeInDialog('lookAtObject('..prince_tmp.karlen..','..prince_tmp.peasent..')');
+				speak("prince",_("I'm sorry, good man."),"sad");
+				speak("prince",_("I will pray that your family is safe long enough."),"sad");
+				setSpeakerAnimation("mentor","sad",1500);
+				farm_siege.ignored_first_request=true;
+				executeInDialog('insertTrigger("clean_after_talking")');
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<Region name="joringsbridge">
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				return (prince_tmp.leaderWalks == true);
+			</Condition>
+			<Effect>
+				prince_tmp.leaderWalks = false;
+				lookAtObject(getPlayers()[1],prince_tmp.karlen);
+			</Effect>
+		</Event>
+		
+		<Event trigger = "clean_after_talking" once="true">
+			<Effect>
+				setCutsceneMode(false);
+				deleteObject(prince_tmp.soren);
+				
+				prince.left_joringsbridge = true;
+				
+				lookAt(joringsbridge.council,"locParty");
+				
+				addUnitCommand(prince_tmp.karlen,"walk","exit_north");
+				addUnitCommand(prince_tmp.leonard,"walk","exit_north");
+				
+				addUnitCommand(joringsbridge.sergeant,"walk","locSergeantHome");
+				addUnitCommand(joringsbridge.armor,"walk","locArmorTrader");
+				addUnitCommand(joringsbridge.weapons,"walk","locWeaponTrader");
+				addUnitCommand(herbalist_tmp.gertlinde,"walk","locHerbalist");
+				
+				addUnitCommand(prince_tmp.peasent,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent1,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent2,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent3,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent4,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent5,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent6,"walk","locTavern",1);
+				addUnitCommand(prince_tmp.peasent7,"walk","locTavern",1);
+			</Effect>
+		</Event>
+		
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				return ((unitIsInArea(joringsbridge.sergeant,"areaSergeant"))and (prince.left_joringsbridge == true));
+			</Condition>
+			<Effect>
+				set(joringsbridge.sergeant,"angle",170);
+			</Effect>
+		</Event>
+		
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				return ((unitIsInArea(joringsbridge.armor,"areaArmor"))and (prince.left_joringsbridge == true));
+			</Condition>
+			<Effect>
+				set(joringsbridge.armor,"angle",230);
+			</Effect>
+		</Event>
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				return ((unitIsInArea(joringsbridge.weapons,"areaWeapon"))and (prince.left_joringsbridge == true));
+			</Condition>
+			<Effect>
+				set(joringsbridge.weapons,"angle",180);
+			</Effect>
+		</Event>
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				return ((unitIsInArea(herbalist_tmp.gertlinde,"areaGertlinde"))and (prince.left_joringsbridge == true));
+			</Condition>
+			<Effect>
+				set(herbalist_tmp.gertlinde,"angle",0);
+			</Effect>
+		</Event>
+		
+		<Event trigger = "command_complete">
+			<Condition>
+				if((unitIsInArea(trigger.unit,"areaTavern"))and (prince.left_joringsbridge == true))then
+					local unit = get(trigger.unit,"subtype")
+					return ((unit=="peasant") or (unit=="peasant_f"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				deleteObject(trigger.unit);
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_moved" once="true">
+			<Condition>
+				local unit = get(trigger.unit,"subtype");
+				if((unit == "prince")and (prince.left_joringsbridge==true))then
+					return (unitIsInArea(trigger.unit,"areaJBNorth"));
+				end;
+				return false;
+			</Condition>
+			<Effect>
+				deleteObject(trigger.unit);
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_moved" once="true">
+			<Condition>
+				local unit = get(trigger.unit,"subtype");
+				if((unit == "mentor")and (prince.left_joringsbridge==true))then
+					return (unitIsInArea(trigger.unit,"areaJBNorth"));
+				end;
+				return false;
+			</Condition>
+			<Effect>
+				deleteObject(trigger.unit);
+			</Effect>
+		</Event>
+	</Region>
+</Quest>

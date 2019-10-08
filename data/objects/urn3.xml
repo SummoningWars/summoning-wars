@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="urn3" layer="NORMAL">
+        <Mesh file="urn3.mesh" />
+        <Geometry shape="CIRCLE" radius="0.1368170472"/>
+</Object>

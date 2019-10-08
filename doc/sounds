@@ -1,0 +1,38 @@
+Waffengerauesche:
+- Schlag Nahkampfwaffe
+- Bogen (ok)
+- Staebe
+
+Dropgeraeusche:
+- Metallwaffe, Holzwaffe (ok) 
+- Metallruestung, Lederruestung (ok), Stoffruestung (ok) (analog fuer andere Ruestungsteile)
+- Ringe/Amulett
+- Trank (ok)
+- Gold
+
+Faehigkeiten:
+- Feuer-, Eis-, Blitzmagie
+- Dauergeraeusch Feuer-, Eis-, Blitzmagie
+- Angriff Priester
+- Heilung
+- Statuszauber
+- Kampfschrei
+- Explosion ( Feuer, Eis, Blitz)
+
+Treffergeraeusche (~250ms) / Sterbegeraeusche (~500ms)
+- Mensch (Mann / Frau)
+- Goblin
+- Hund
+- Vogel
+- Skelett
+- Zombie
+- Lich
+- Schnecke
+- Behemoth
+
+Objekte
+- Tuer, Gitter
+- Truhe
+- Sarkophag
+- Wegpunkt (aktivieren)
+

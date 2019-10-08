@@ -1,0 +1,469 @@
+<Ability type="anger" 
+		 name="Barbarian anger" 
+		 description="The warrior sets himself in the state of berserk, attacking his enemies with vicious blows, while completely neglecting his defence." 
+		 time="501.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="40000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000" 
+		 target_type="self">
+	<Effect>
+		<CppImplementation type="berserk" />
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			local str = get(self,"strength");
+			setBaseModValue("time",10000);
+			setBaseModValue("strength",str);
+			setBaseModValue("armor",-0.5*get(self,"armor"));
+		</LuaImplementation>
+	</BaseAttributesMod>	
+</Ability>
+
+<Ability type="around_blow" 
+		 name="Sweeping blow" 
+		 description="Attacks every enemy in weapon range." 
+		 time="0.700000" 
+		 timer_nr="1.000000" 
+		 timer_value="3000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.800000" 
+		 target_type="melee"
+		 radius = "-1">
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			setDamageValue("attack", getDamageValue("attack")*1.5);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="bash" 
+		 name="Bash" 
+		 description="Attacks one enemy for serious damage." 
+		 time="1.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			setDamageValue("power", getDamageValue("power")*1.5);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="battle_cry"
+		 name="Battlecry" 
+		 description="The warrior releases a mighty cry that causes his enemies to lose concentration, ultimatly reducing their defence and slowing them down."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="30000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 radius="12"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="battle_cry" />
+	</Effect>
+</Ability>
+
+<Ability type="block" 
+		 name="Block"
+		 description="The warriors mastery of shields and weapons allows him to block damage at an increased rate." time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+
+<Ability type="charge" 
+		 name="Charge" 
+		 description="Launches an assault at an enemy with increasing speed. The faster the warrior is, the more damage a charge inflicts." 
+		 time="0.500000" 
+		 timer_nr="1.000000" 
+		 timer_value="5000.000000" 
+		 base_ability="attack"
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+		<CppImplementation type="hammer_bash" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="charge" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="decoy"
+		 name="Taunt" 
+		 description="Causes surrounding monsters to attack the warrior more likely." 
+		 time="501.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="20000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 radius="12"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+	<Damage>
+		<LuaImplementation>
+			local strength = get(self,"strength");
+			local willpower = get(self,"willpower");
+			setDamageValue("taunt", 0.5*(strength + math.min(strength,willpower*4)));
+			setDamageValue("blockable", false);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="endurance" 
+		 name="Warmaster" 
+		 description="The warrior has become used to the ways of the battlefield to a point, where he can regenerate his abilities faster than normal." 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000"
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+
+<Ability type="firesword" 
+		 name="Fire and sword" 
+		 description="The warrior calls the spirits of fire upon his weapon, causing it to deal firedamage. The damage depends on the warriors spellpower." 
+		 time="501.000000" 
+		 timer_nr="3.000000" 
+		 timer_value="240000.000000"
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="firesword" />
+		<LuaImplementation>
+			setBaseModValue("time",60000);
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="flamearmor" 
+		 name="Flame armor" 
+		 description="The warrior surrounds himself with angry spirits of fire, who will burn his enemies to ashes, if they dare to come to close." 
+		 time="501.000000" 
+		 timer_nr="3.000000" 
+		 timer_value="300000.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="flamearmor" />
+		<LuaImplementation>
+			setBaseModValue("time",100000);
+			setBaseModValue("max_resist_fire",25);
+			setBaseModValue("resist_fire",50);
+			setBaseModValue("flag","flame_armor");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="flamesword" 
+		 name="Pact of flames" 
+		 description="The warrior calls upon the fires of hell, causing his weapon to deal firedamage for a significant time. His enemies might catch fire when hit."
+		 time="501.000000" 
+		 timer_nr="3.000000" 
+		 timer_value="240000.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<CppImplementation type="flamesword" />
+		<LuaImplementation>
+			setBaseModValue("time",120000);
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="fury" 
+		 name="barbarian power" 
+		 description="The warrior becomes even more bloodthirsty, launching at his enemies with increased attackspeed and damage in a berserk state. Even while neglecting his defence, the impact is not as big as with the barbarian anger."
+		 time="500.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="40000.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000" 
+		 target_type="self">
+	<Effect>
+		<CppImplementation type="berserk" />
+		<CppImplementation type="basemod_at_self" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			local str = get(self,"strength");
+			setBaseModValue("time",10000);
+			setBaseModValue("strength",str);
+			setBaseModValue("attack_speed",1000);
+			setBaseModValue("armor",-0.25*get(self,"armor"));
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="hammer_bash" 
+		 name="Hammer blow" 
+		 description="Attacks one enemy with a brutal blow and damages nearby enemies as well." 
+		 time="1.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+		<CppImplementation type="hammer_bash" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			setDamageValue("power", getDamageValue("power")*2);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="hate_mage" 
+		 name="Silencer" 
+		 description="Attacks an enemy with a chance to inflict silence." 
+		 time="1.000000" 
+		 timer_nr="1.000000"
+		 timer_value="4000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.800000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("mute", get(self,"strength"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="monster_hunter" 
+		 name="Monster hunter" 
+		 description="For each monster the warrior kills, his strength increases for a short amount of time." 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+
+<Ability type="monster_slayer" 
+		 name="Monster slayer" 
+		 description="The warrior has become the worst nightmare of monsters, with every one of them falling at his feet increasing his strength and attackspeed for a short amount of time."
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+
+<Ability type="regenerate" 
+		 name="Regeneration" 
+		 description="The warrior regains up to 50 percent hitpoints of his total hitpoints through the sheer power of his will."
+		 time="1001.000000" 
+		 timer_nr="3.000000" 
+		 timer_value="120000.000000"
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 target_type="self">
+	<Effect>
+		<CppImplementation type="dynmod_at_self" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("health",0.5*get(self,"max_health"));
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="scare" 
+		 name="Defiances" 
+		 description="Nearby monsters will attack the warrior, if they are able to. Some will run away in fear. The warriors defence is increased. "
+		 time="501.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="20000.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.800000"
+		 target_type="self"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+		<CppImplementation type="basemod_at_self" />
+		<CppImplementation type="scare" />
+	</Effect>
+	<Damage>
+		<LuaImplementation>
+			local strength = get(self,"strength");
+			local willpower = get(self,"willpower");
+			setDamageValue("taunt", 0.5*(strength + math.min(strength,willpower*4)));
+			setDamageValue("blockable", false);
+		</LuaImplementation>	
+	</Damage>	
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",10000);
+			setBaseModValue("armor",get(self,"armor"));
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="smash"
+		 name="Smash blow" 
+		 description="Attacks an enemy with an unblockable, armor piercing blow."
+		 time="1.000000" 
+		 timer_nr="1.000000" 
+		 timer_value="4000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.800000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*3);
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="steadfast" 
+		 name="Perseverance" 
+		 description="The warriors defence increases proportional to the cuts and bruises he receives in combat. The more serious the wounds, the more difficult he is to kill."
+		 time="0.000000"
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+
+<Ability type="storm_charge" 
+		 name="Charge scythe"
+		 description="Launches an even stronger charge attack, that may inflict stun." 
+		 time="0.500000" 
+		 timer_nr="1.000000" 
+		 timer_value="5000.000000" 
+		 base_ability="attack" 
+		 critical_percent="0.660000" 
+		 target_type="melee" >
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+		<CppImplementation type="hammer_bash" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="storm_charge" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="warcry"
+		 name="Warcry" 
+		 description="The battle hardened warrior's scream slows down his opponents, sometimes confusing them as well." time="501.000000" 
+		 timer_nr="2.000000" 
+		 timer_value="30000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.800000"
+		 radius="12"
+		 target_type="self">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="battle_cry" />
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+	<Damage>
+		<LuaImplementation>
+			local strength = get(self,"strength");
+			local willpower = get(self,"willpower");
+			setDamageValue("confused", 0.5*(strength + math.min(strength,willpower*4)));
+			setDamageValue("blockable", false);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="weaponmaster"
+		 name="Weaponmaster" 
+		 description="The warriors mastery of weapons increases the damage of his basic attacks by 20%." 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+
+<Ability type="whirl_blow" 
+		 name="Whirl blow" 
+		 description="Attacks every enemy in weapon range with a triple sweeping strike." 
+		 time="1.500000" 
+		 timer_nr="1.000000" 
+		 timer_value="6000.000000"
+		 base_ability="attack" 
+		 critical_percent="0.300000" 
+		 target_type="melee"
+		 radius ="-1">
+	<Effect>
+		<CppImplementation type="dmg_at_enemies_in_radius" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="attack" />
+		<CppImplementation type="weapon_damage" />
+		<CppImplementation type="small_numbers" />
+		<LuaImplementation>
+			setDamageValue("attack", getDamageValue("attack")*2);
+		</LuaImplementation>
+	</Damage>
+</Ability>
+
+

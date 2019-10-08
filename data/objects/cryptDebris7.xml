@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cryptDebris7" layer="NORMAL">
+        <Mesh file="cryptDebris7.mesh" />
+        <Geometry shape="RECT" extent_x="1.791218577" extent_y="1.090191373"/>
+</Object>

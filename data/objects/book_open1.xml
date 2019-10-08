@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="book_open1" layer="NORMAL">
+	<Mesh file="book_open1.mesh" />
+	<Geometry shape="RECT" extent_x="0.3159276487" extent_y="0.4283480671"/>
+</Object>

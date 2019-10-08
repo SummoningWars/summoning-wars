@@ -1,0 +1,15 @@
+<creature>
+  <name>boulder</name>
+  <meshname>boulder.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Items/Movables/catapult_rock.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>impact</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description></description>
+    </clip>
+  </animations>
+
+</creature>

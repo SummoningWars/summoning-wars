@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="blockExit" layer="NORMAL">
+        <Mesh file="blockExit.mesh" />
+        <Geometry shape="RECT" extent_x="4.593426678" extent_y="4.593426678"/>
+</Object>

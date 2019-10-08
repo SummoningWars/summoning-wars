@@ -1,0 +1,7 @@
+<!--
+Altering this file won't do you any good since the waypoint is hardcoded in waypoint.cpp.
+-->
+<Object type="FIXED_OBJECT" subtype="waypoint" layer="NORMAL">
+	<RenderInfo name="waypoint" />
+	<Geometry shape="RECT" extent_x="2.4" extent_y="2.2"/>
+</Object>

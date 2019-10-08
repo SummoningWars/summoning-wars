@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="councilGuardCorpse3" layer="NOCOLLISION">
+        <Mesh file="councilGuardCorpse3.mesh" />
+        <Geometry shape="RECT" extent_x="1.17583091" extent_y="0.5"/>
+</Object>

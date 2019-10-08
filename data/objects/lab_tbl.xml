@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="lab_tbl" layer="NORMAL">
+	<Mesh file="lab_tbl.mesh" />
+	<Geometry shape="RECT" extent_x="0.8944137941" extent_y="1.919505318"/>
+</Object>

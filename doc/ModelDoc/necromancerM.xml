@@ -1,0 +1,507 @@
+<creature>
+  <name>necromancerM</name>
+  <meshname>necromancerM.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Characters/Player/humanAnimationSeperated43.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>attack</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>attack with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>attackTwoHands</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description>attack with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>idleZombie</name>
+      <startframe>425</startframe>
+      <endframe>425</endframe>
+      <description>a zombie in stand-still</description>
+    </clip>
+    <clip>
+      <name>idle</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description>nothing to do... but armed</description>
+    </clip>
+    <clip>
+      <name>idleTwoHands</name>
+      <startframe>73</startframe>
+      <endframe>96</endframe>
+      <description>bored and lazy, but wielding a two handed blade</description>
+    </clip>
+    <clip>
+      <name>walkOneHand</name>
+      <startframe>97</startframe>
+      <endframe>120</endframe>
+      <description>walk with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>attackMagicTwoHands</name>
+      <startframe>121</startframe>
+      <endframe>144</endframe>
+      <description>attack with a staff</description>
+    </clip>
+    <clip>
+      <name>attackMagicUnarmed</name>
+      <startframe>145</startframe>
+      <endframe>168</endframe>
+      <description>attack with magic, unarmed as it is</description>
+    </clip>
+    <clip>
+      <name>attackMagicOneHand</name>
+      <startframe>169</startframe>
+      <endframe>192</endframe>
+      <description>attack with a wand</description>
+    </clip>
+    <clip>
+      <name>attackRangedUnarmed</name>
+      <startframe>193</startframe>
+      <endframe>216</endframe>
+      <description>attack with a dart</description>
+    </clip>
+    <clip>
+      <name>attackRangedBow</name>
+      <startframe>217</startframe>
+      <endframe>242</endframe>
+      <description>attack with a bow</description>
+    </clip>
+    <clip>
+      <name>attackRangedCrossbow</name>
+      <startframe>243</startframe>
+      <endframe>266</endframe>
+      <description>attack with a crossbow</description>
+    </clip>
+    <clip>
+      <name>magicArrow</name>
+      <startframe>267</startframe>
+      <endframe>290</endframe>
+      <description>cast magic on your bow</description>
+    </clip>
+    <clip>
+      <name>castMagicStrong</name>
+      <startframe>291</startframe>
+      <endframe>314</endframe>
+      <description>cast a big spell</description>
+    </clip>
+    <clip>
+      <name>castMagicWeak</name>
+      <startframe>315</startframe>
+      <endframe>338</endframe>
+      <description>cast a small spell</description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>339</startframe>
+      <endframe>362</endframe>
+      <description>well... everyone does eventually</description>
+    </clip>
+    <clip>
+      <name>sweepStrikeOneHand</name>
+      <startframe>363</startframe>
+      <endframe>376</endframe>
+      <description>360 degree deadly steel</description>
+    </clip>
+    <clip>
+      <name>specialAttackOneHand</name>
+      <startframe>378</startframe>
+      <endframe>400</endframe>
+      <description>a devestating attack with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>idlePole</name>
+      <startframe>401</startframe>
+      <endframe>424</endframe>
+      <description>guards do it all the time</description>
+    </clip>
+    <clip>
+      <name>zombieWalk</name>
+      <startframe>425</startframe>
+      <endframe>444</endframe>
+      <description>a zombies prefered means of moving</description>
+    </clip>
+    <clip>
+      <name>zombieAttack1</name>
+      <startframe>445</startframe>
+      <endframe>469</endframe>
+      <description>a vile claw-attack</description>
+    </clip>
+    <clip>
+      <name>walkTwoHands</name>
+      <startframe>470</startframe>
+      <endframe>493</endframe>
+      <description>walk with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>walkTwoHandsHammer</name>
+      <startframe>494</startframe>
+      <endframe>517</endframe>
+      <description>walk with a big Hammer</description>
+    </clip>
+    <clip>
+      <name>walkBow</name>
+      <startframe>518</startframe>
+      <endframe>541</endframe>
+      <description>walk with a bow</description>
+    </clip>
+    <clip>
+      <name>walkUnarmed</name>
+      <startframe>542</startframe>
+      <endframe>565</endframe>
+      <description>walk without burden</description>
+    </clip>
+    <clip>
+      <name>idleBow</name>
+      <startframe>566</startframe>
+      <endframe>589</endframe>
+      <description>not exactly the stalking hunter...</description>
+    </clip>
+    <clip>
+      <name>idleTwoHandsBlunt</name>
+      <startframe>590</startframe>
+      <endframe>614</endframe>
+      <description>idle with a two handed axe or hammer</description>
+    </clip>
+    <clip>
+      <name>swordMagic</name>
+      <startframe>615</startframe>
+      <endframe>638</endframe>
+      <description>cast a fire on your blade</description>
+    </clip>
+    <clip>
+      <name>sweepStrikeTwoHands</name>
+      <startframe>639</startframe>
+      <endframe>662</endframe>
+      <description>attack everything around you with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>specialAttackTwoHands</name>
+      <startframe>663</startframe>
+      <endframe>686</endframe>
+      <description>a mighty blow with a mighty weapon</description>
+    </clip>
+    <clip>
+      <name>attackUnarmed</name>
+      <startframe>687</startframe>
+      <endframe>710</endframe>
+      <description>even a dagger would be better than this</description>
+    </clip>
+    <clip>
+      <name>warcry</name>
+      <startframe>711</startframe>
+      <endframe>734</endframe>
+      <description>scream out loud</description>
+    </clip>
+    <clip>
+      <name>priestMagicSmall</name>
+      <startframe>735</startframe>
+      <endframe>758</endframe>
+      <description>cast a little patch</description>
+    </clip>
+    <clip>
+      <name>priestMagicStrong</name>
+      <startframe>759</startframe>
+      <endframe>782</endframe>
+      <description>cast a buff</description>
+    </clip>
+    <clip>
+      <name>attackTwoHandsBlunt</name>
+      <startframe>783</startframe>
+      <endframe>806</endframe>
+      <description>clobber 'em good</description>
+    </clip>
+    <clip>
+      <name>castMagicWeakUnarmed</name>
+      <startframe>807</startframe>
+      <endframe>830</endframe>
+      <description>cast a small spell without a weapon</description>
+    </clip>
+    <clip>
+      <name>castMagicStrongUnarmed</name>
+      <startframe>831</startframe>
+      <endframe>854</endframe>
+      <description>cast a big spell without a weapon</description>
+    </clip>
+    <clip>
+      <name>castBowBuff</name>
+      <startframe>855</startframe>
+      <endframe>878</endframe>
+      <description>a little help from the spirits</description>
+    </clip>
+    <clip>
+      <name>shrugOneHand</name>
+      <startframe>879</startframe>
+      <endframe>902</endframe>
+      <description>shrug with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>sadOneHand</name>
+      <startframe>903</startframe>
+      <endframe>926</endframe>
+      <description>shake your head with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>scratchOneHand</name>
+      <startframe>927</startframe>
+      <endframe>950</endframe>
+      <description>scratch your head with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>angryOneHand</name>
+      <startframe>951</startframe>
+      <endframe>974</endframe>
+      <description>wave your sword around in a dangerous manor to amphasize your point</description>
+    </clip>
+    <clip>
+      <name>point</name>
+      <startframe>975</startframe>
+      <endframe>986</endframe>
+      <description>point at someone with a sharp item</description>
+    </clip>
+    <clip>
+      <name>depoint</name>
+      <startframe>986</startframe>
+      <endframe>998</endframe>
+      <description>stop pointing at someone</description>
+    </clip>
+    <clip>
+      <name>pointing</name>
+      <startframe>986</startframe>
+      <endframe>986</endframe>
+      <description>stand there pointing your blade- very rude indeed</description>
+    </clip>
+    <clip>
+      <name>laugh</name>
+      <startframe>999</startframe>
+      <endframe>1022</endframe>
+      <description>show your happyness - but don't sheath your weapon</description>
+    </clip>
+    <clip>
+      <name>talk</name>
+      <startframe>1023</startframe>
+      <endframe>1046</endframe>
+      <description>talk with someone, weapon in hand</description>
+    </clip>
+    <clip>
+      <name>dieOneHand</name>
+      <startframe>1047</startframe>
+      <endframe>1070</endframe>
+      <description>die while loosing your shield. not recommended for bows</description>
+    </clip>
+    <clip>
+      <name>raise</name>
+      <startframe>1071</startframe>
+      <endframe>1094</endframe>
+      <description>crawl out of the earth - not very healthy for normal people, too skilled for zombies</description>
+    </clip>
+    <clip>
+      <name>dieBowUndead</name>
+      <startframe>1095</startframe>
+      <endframe>1118</endframe>
+      <description>die. Not very likely for living beings with flesh</description>
+    </clip>
+    <clip>
+      <name>idleSitBarrel</name>
+      <startframe>1119</startframe>
+      <endframe>1142</endframe>
+      <description>sit on a rather large barrel and do nothing</description>
+    </clip>
+    <clip>
+      <name>idleSitChair</name>
+      <startframe>1143</startframe>
+      <endframe>1166</endframe>
+      <description>sit on a chair and wait</description>
+    </clip>
+    <clip>
+      <name>idleScytheSkel</name>
+      <startframe>1167</startframe>
+      <endframe>1167</endframe>
+      <description>stand around with a scythe. No motion at all.</description>
+    </clip>
+    <clip>
+      <name>attackScythe</name>
+      <startframe>1168</startframe>
+      <endframe>1191</endframe>
+      <description>swing a scythe in a very undead way. not recommended for living creatures</description>
+    </clip>
+    <clip>
+      <name>unconscious</name>
+      <startframe>1192</startframe>
+      <endframe>1193</endframe>
+      <description>lie on the ground</description>
+    </clip>
+    <clip>
+      <name>getUpOneHand</name>
+      <startframe>1193</startframe>
+      <endframe>1216</endframe>
+      <description>gert up from the ground with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>getUpBow</name>
+      <startframe>1217</startframe>
+      <endframe>1240</endframe>
+      <description>get up with a bow</description>
+    </clip>
+    <clip>
+      <name>float</name>
+      <startframe>1241</startframe>
+      <endframe>1264</endframe>
+      <description>float above the ground - mages and ghosts</description>
+    </clip>
+    <clip>
+      <name>rise</name>
+      <startframe>1265</startframe>
+      <endframe>1288</endframe>
+      <description>a ghost rising up from under the ground</description>
+    </clip>
+    <clip>
+      <name>talkPole</name>
+      <startframe>1289</startframe>
+      <endframe>1312</endframe>
+      <description>talk with a long weapon in your hand</description>
+    </clip>
+    <clip>
+      <name>throwDagger1</name>
+      <startframe>1313</startframe>
+      <endframe>1336</endframe>
+      <description>throw a sharp, short weapon; diagonal shoulder</description>
+    </clip>
+    <clip>
+      <name>throwDagger2</name>
+      <startframe>1337</startframe>
+      <endframe>1360</endframe>
+      <description>throw a sharp, short weapon; same shoulder</description>
+    </clip>
+    <clip>
+      <name>throwDagger3</name>
+      <startframe>1361</startframe>
+      <endframe>1384</endframe>
+      <description>throw a sharp, short weapon from the hip</description>
+    </clip>
+    <clip>
+      <name>ghostTalk</name>
+      <startframe>1385</startframe>
+      <endframe>1408</endframe>
+      <description>talk while floating in the air</description>
+    </clip>
+    <clip>
+      <name>ascendToHeaven</name>
+      <startframe>1409</startframe>
+      <endframe>1432</endframe>
+      <description>a ghost ascending into a godly heaven</description>
+    </clip>
+    <clip>
+      <name>sadPole</name>
+      <startframe>1433</startframe>
+      <endframe>1456</endframe>
+      <description>shake your head with a polearm</description>
+    </clip>
+    <clip>
+      <name>walkPole</name>
+      <startframe>1457</startframe>
+      <endframe>1480</endframe>
+      <description>walk with a polearm - not recommended for staffs</description>
+    </clip>
+    <clip>
+      <name>showItemPole</name>
+      <startframe>1481</startframe>
+      <endframe>1504</endframe>
+      <description>hold up a small item (potion,rock...) while holding a staff or polearm</description>
+    </clip>
+    <clip>
+      <name>kneelDownPole</name>
+      <startframe>1505</startframe>
+      <endframe>1517</endframe>
+      <description>get down on one knee - recomended for staffs, not suitable for bows and shields</description>
+    </clip>
+    <clip>
+      <name>kneelPole</name>
+      <startframe>1517</startframe>
+      <endframe>1529</endframe>
+      <description>stay on one knee. recommended for staffs, not suitable for bows and shields</description>
+    </clip>
+    <clip>
+      <name>kneelUpPole</name>
+      <startframe>1529</startframe>
+      <endframe>1540</endframe>
+      <description>get up from a kneeling position. recommended for staffs, not suitable for bows and shields</description>
+    </clip>
+    <clip>
+      <name>impact</name>
+      <startframe>1541</startframe>
+      <endframe>1564</endframe>
+      <description>a humanoid falling from the sky. very unhealthy. really.</description>
+    </clip>
+    <clip>
+      <name>getUpImpact</name>
+      <startframe>1565</startframe>
+      <endframe>1587</endframe>
+      <description>get up after being smashed into the ground</description>
+    </clip>
+    <clip>
+      <name>attackPole</name>
+      <startframe>1588</startframe>
+      <endframe>1611</endframe>
+      <description>attack with a spear or a polearm</description>
+    </clip>
+    <clip>
+      <name>raiseSavage</name>
+      <startframe>1612</startframe>
+      <endframe>1659</endframe>
+      <description>raise a savage skeleton. The one with the giant hammer-thing.</description>
+    </clip>
+    <clip>
+      <name>walkShield</name>
+      <startframe>1660</startframe>
+      <endframe>1683</endframe>
+      <description>walk with a really big shield in front of you</description>
+    </clip>
+    <clip>
+      <name>idleShield</name>
+      <startframe>1684</startframe>
+      <endframe>1707</endframe>
+      <description>stand around carrying a really big shield</description>
+    </clip>
+    <clip>
+      <name>attackRangedThrow</name>
+      <startframe>1708</startframe>
+      <endframe>1731</endframe>
+      <description>throw something grenade-like</description>
+    </clip>
+    <clip>
+      <name>fallUnconsciousOneHand</name>
+      <startframe>1732</startframe>
+      <endframe>1755</endframe>
+      <description>fall into unconscious position - looks rather odd</description>
+    </clip>
+    <clip>
+      <name>dieShield</name>
+      <startframe>1756</startframe>
+      <endframe>1779</endframe>
+      <description>die by an explosion in the back - preferebly with a large shield in hands</description>
+    </clip>
+    <clip>
+      <name>attackRangedHalf</name>
+      <startframe>193</startframe>
+      <endframe>204</endframe>
+      <description>only half of the unarmed range attack</description>
+    </clip>
+    <clip>
+      <name>die_scaffolding</name>
+      <startframe>1780</startframe>
+      <endframe>1804</endframe>
+      <description>death by falling from a scaffolding or falling from a scaffolding by death</description>
+    </clip>
+    <clip>
+      <name>shake</name>
+      <startframe>1805</startframe>
+      <endframe>1828</endframe>
+      <description>shaking with fear</description>
+    </clip>
+  </animations>
+
+</creature>

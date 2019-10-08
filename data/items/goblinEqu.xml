@@ -1,0 +1,313 @@
+<!-- Goblinruestung -->
+<!-- WAR, PRI, ARC, MAG-->
+<!-- Zusaetzliches Mesh: gobLeg_arm.mesh -->
+<Item type="armor" subtype="goblin_arm" name="goblin armor" size="medium">
+	<Image image="set:gobLeg_Arm.png image:full_image" />
+	<RenderInfo name="goblinArmor" />
+	<Attribute
+			level_requirement="3"
+			character_requirement="all" 
+			min_enchant="20"
+			max_enchant="75"
+			modchance_health_mod="0.11"
+			modchance_armor_mod="0.15"
+			modchance_resist_phys_mod="0.12"
+			modchance_resist_fire_mod="0.07"
+			modchance_resist_ice_mod="0.12"
+			modchance_resist_air_mod="0.11"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.15"
+			modchance_willpower_mod="0.12"
+			/>
+	
+	<EquipEffect
+				darmor="16"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="3"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Goblinarmschiene -->
+<!-- WAR, PRI, ARC, MAG -->
+<Item type="gloves" subtype="goblin_glv" name="goblin bracer" size="medium">
+	<Image image="set:goblin_glv.png image:full_image" />
+	<RenderInfo name = "goblinGloves"/>
+	<Attribute
+		level_requirement="2"
+		character_requirement="all"
+		min_enchant="20"
+		max_enchant="35"
+		modchance_armor_mod="0.12"
+		modchance_resist_phys_mod="0.10"
+		modchance_resist_fire_mod="0.12"
+		modchance_resist_ice_mod="0.12"
+		modchance_resist_air_mod="0.12"
+		modchance_resist_all_mod="0.1"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.12"
+		modchance_magic_power_mod="0.1"
+		/>
+
+  <EquipEffect
+		darmor="7"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="2"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schamanenmaske -->
+<Item type="helmet" subtype="goblin_hlm" name="shaman mask" size="medium">
+	<Image image="set:goblin_hlm.png image:full_image" />
+	<Mesh file="goblin_hlm.mesh" />
+	<Attribute
+			level_requirement="5"
+			character_requirement="priest,mage" 
+			min_enchant="40"
+			max_enchant="110"
+			modchance_health_mod="0.11"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.13"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="6"
+				dresistances_air="15"
+				dresistances_ice="10"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="5"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Goblin Keule -->
+<Item type="weapon" subtype="goblin_hmr" name="goblin club" size="medium">
+	<Image image="set:goblin_hmr.png image:full_image" />
+	<RenderInfo name = "goblinClub" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="2"
+		damage_max_physical="10"
+		damage_attack="20"
+		damage_power="25"
+		attack_range="1.3"
+		two_handed="no"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Rostiger Dolch-->
+<Item type="weapon" subtype="crude_sw" name="rusty dagger" size="medium">
+	<RenderInfo name = "rustyDagger" />
+	<Image image="set:crude_sw.png image:full_image" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_strength_mod="0.15"
+		modchance_dexterity_mod="0.1"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="sword"
+		damage_min_physical="3"
+		damage_max_physical="5"
+		damage_attack="30"
+		damage_power="25"
+		attack_range="0.8"
+		two_handed="no"
+		dattack_speed="200"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Schamanenstab -->
+<Item type="weapon" subtype="goblin_stf" name="shaman staff" size="big">
+	<Image image="set:goblin_stf.png image:full_image" />
+	<Mesh file="goblin_stf.mesh" />
+	<Attribute
+			  level_requirement="12"
+			  character_requirement="mage"
+			  min_enchant="120"
+			  max_enchant="450"
+			  modchance_willpower_mod="0.1"
+			  modchance_magic_power_mod="0.2"
+			  modchance_damage_ice_mod="0.10"
+			  modchance_damage_air_mod="0.40"
+			  modchance_damage_mult_ice_mod="0.2"
+			  />
+	<EquipEffect />
+	<WeaponAttribute
+					weapon_type="staff"
+					damage_min_air="15"
+					damage_max_air="21"
+					multiplier_air="1.10"
+					damage_attack="54"
+					damage_power="53"
+					attack_range="20"
+					two_handed="yes"
+					dattack_speed="-400"
+					/>
+	<DropChance
+			   level="12"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Nagelkeule -->
+<Item type="weapon" subtype="nail_hmr" name="nail club" size="medium">
+	<Image image="set:nail_hmr.png image:full_image" />
+	<RenderInfo name = "nailClub" />
+	<Attribute
+		level_requirement="4"
+		character_requirement="warrior,priest"
+		min_enchant="25"
+		max_enchant="80"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="hammer"
+		damage_min_physical="9"
+		damage_max_physical="17"
+		damage_attack="26"
+		damage_power="40"
+		attack_range="1.4"
+		two_handed="no"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Goblinbogen -->
+<Item type="weapon" subtype="goblin_sbw" name="goblin bow" size="medium">
+	<Mesh file="goblin_sbw.mesh" />
+	<Image image="set:goblin_sbw.png image:full_image" />
+	<Attribute
+		level_requirement="2"
+		character_requirement="archer"
+		min_enchant="20"
+		max_enchant="50"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="4"
+		damage_max_physical="7"
+		damage_attack="38"
+		damage_power="27"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="200"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Goblinspeer -->
+<Item type="weapon" subtype="gobSpear_pol" name="goblin spear" size="big">
+	<Image image="set:axe2H.png image:full_image" />
+	<Mesh file="gobSpear_pol.mesh" />
+	<Attribute
+		level_requirement="12"
+		character_requirement="warrior"
+		min_enchant="55"
+		max_enchant="120"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="pole"
+		damage_min_physical="22"
+		damage_max_physical="61"
+		damage_attack="28"
+		damage_power="74"
+		attack_range="3.2"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="12"
+		probability="0.0"
+	/>
+</Item>

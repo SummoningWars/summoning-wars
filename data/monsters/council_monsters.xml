@@ -1,0 +1,415 @@
+<!-- Monster des Konzils der Elementarbeschwoerer -->
+
+<!-- Feuerschnecke -->
+<!-- L1 -->
+<Monster type="MONSTER" subtype="fireSlug" name="Fire Slug" fraction="summoner" race="elemental" layer="NORMAL">
+	<RenderInfo name="fireSlug" />
+	<Dropslots >
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.1" pgold="0.05" max_gold="10" min_level="1" max_level="1" magic_prob="0.0" magic_power="50" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="10"
+		level="1"
+		max_health="15"
+		armor="2"
+		block="0"
+		attack="12"
+		power="10"
+		strength="8"
+		dexterity="14"
+		magic_power="20"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="0.8"
+		attack_range="2.0"
+	>
+		<Ability type="walk" />
+
+		<Ability type="attack"  rating="1"/>
+		<Ability type="die"/>
+		<Ability type="summoned"  time = "2000"/>
+		<Ability type="noaction" time="5000"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+<Monster type="MONSTER" subtype="fireSlug2" name="Fire Slug" fraction="summoner" race="elemental" layer="NORMAL">
+	<RenderInfo name="fireSlug" />
+	<Dropslots >
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.1" pgold="0.05" max_gold="10" min_level="1" max_level="1" magic_prob="0.0" magic_power="50" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="1"
+		level="1"
+		max_health="15"
+		armor="2"
+		block="0"
+		attack="12"
+		power="10"
+		strength="8"
+		dexterity="14"
+		magic_power="20"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="0.8"
+		attack_range="2.0"
+	>
+		<Ability type="walk" />
+
+		<Ability type="attack"  rating="1"/>
+		<Ability type="die"/>
+		<Ability type="summoned"  time = "2000"/>
+		<Ability type="noaction" time="5000"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+
+<!-- Mutantschnecke -->
+<!-- L3 -->
+<Monster type="MONSTER" subtype="mutantSlug" name="Mutant Slug" fraction="summoner" race="elemental" layer="NORMAL">
+	<RenderInfo name="mutantSlug" />
+	<Dropslots >
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.1" pgold="0.05" max_gold="10" min_level="1" max_level="1" magic_prob="0.0" magic_power="50" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="10"
+		level="1"
+		max_health="40"
+		armor="2"
+		block="0"
+		attack="12"
+		power="10"
+		strength="8"
+		dexterity="14"
+		magic_power="20"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="0.8"
+		attack_range="2.0"
+	>
+		<Ability type="walk" />
+
+		<Ability type="attack"  rating="1"/>
+		<Ability type="die"/>
+		<Ability type="noaction" time="5000"/>
+		<Ability type="summoned" time = "2000"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+<Monster type="MONSTER" subtype="mutantSlug2" name="Mutant Slug" fraction="summoner" race="elemental" layer="NORMAL">
+	<RenderInfo name="mutantSlug" />
+	<Dropslots >
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.1" pgold="0.05" max_gold="10" min_level="1" max_level="1" magic_prob="0.0" magic_power="50" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="1"
+		level="1"
+		max_health="40"
+		armor="2"
+		block="0"
+		attack="12"
+		power="10"
+		strength="8"
+		dexterity="14"
+		magic_power="20"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1200"
+		step_length="0.8"
+		attack_range="2.0"
+	>
+		<Ability type="walk" />
+
+		<Ability type="attack"  rating="1"/>
+		<Ability type="die"/>
+		<Ability type="noaction" time="5000"/>
+		<Ability type="summoned" time = "2000"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+
+
+<!-- Feuerassel -->
+<!-- Level 5 -->
+<Monster type="MONSTER" subtype="fireLouse" name="Fire Louse" fraction="summoner" race="elemental" layer="NORMAL">
+	<RenderInfo name="fireLouse" />
+	<Dropslots >
+		<Dropslot pbig="0.00" pmedium="0.0" psmall="0.1" pgold="0.05" max_gold="10" min_level="1" max_level="1" magic_prob="0.0" magic_power="50" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="15"
+		level="1"
+		max_health="80"
+		armor="2"
+		block="0"
+		attack="12"
+		power="10"
+		strength="20"
+		dexterity="14"
+		magic_power="20"
+		willpower="15"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="20"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="3000"
+		attack_speed="1000"
+		step_length="0.8"
+		attack_range="1.0"
+	>
+	
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="summoned" time = "2000"/>
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+
+
+<!-- Feuerkuecken -->
+<!-- L20 -->
+<Monster type="MONSTER" subtype="fireElemS" name="Firefletchling" fraction="summoner" race="elemental" layer="NORMAL">
+	<RenderInfo name="fireElemS" />
+	
+	<BasicAttributes
+		experience="30"
+		level="20"
+		max_health="300"
+		armor="10"
+		block="0"
+		attack="60"
+		power="70"
+		strength="75"
+		dexterity="40"
+		magic_power="55"
+		willpower="30"
+		resistances_physical="10"
+		resistances_air="0"
+		resistances_ice="-80"
+		resistances_fire="100"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="20"
+		resistances_cap_fire="100"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="0.5"
+	>
+		<Ability type="walk" />
+		<Ability type="attack"  rating="1"/>
+		<Ability type="die" />
+
+		<Ability type="noaction" />
+		<Ability type="summoned" time="2000"/>
+		<Ability type="fire_ball"  rating="3"/>
+
+	</BasicAttributes>
+	
+	<Geometry radius="1.0" />
+	
+	<AI ai_sight_range="10" ai_chase_range="20"/>
+</Monster>
+
+<!-- Inferno Behemoth -->
+<!-- L65 -->
+<Monster type="MONSTER" subtype="infBehemoth" name="Inferno Behemoth" fraction="summoner" category="SUMMONED" layer="NORMAL">
+	<RenderInfo name="infBehemoth" />
+	<Dropslots >
+		<Dropslot pbig="0.3" pmedium="0.45" psmall="0.05" pgold="0.05" max_gold="500" min_level="50" max_level="70" magic_prob="0.3" magic_power="1800" />
+		<Dropslot pbig="0.20" pmedium="0.25" psmall="0.10" pgold="0.05" max_gold="400" min_level="45" max_level="65" magic_prob="0.2" magic_power="1400" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="5000"
+		level="65"
+		max_health="3800"
+		armor="500"
+		block="60"
+		attack="400"
+		power="10"
+		strength="750"
+		dexterity="160"
+		magic_power="10"
+		willpower="600"
+		resistances_physical="40"
+		resistances_air="40"
+		resistances_ice="-10"
+		resistances_fire="100"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="100"
+		walk_speed="1000"
+		attack_speed="800"
+		step_length="0.8"
+		attack_range="2.5"
+	>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="fire_ball" rating="2.5" />
+		<Ability type="hammer_bash" rating="2" />
+		<Ability type="whirl_blow" rating="0" all_target_rating="0.75"/>
+		<Ability type="storm_charge" rating="3" />
+		<Ability type="inflame" />
+		<Ability type="fire_storm" rating="3"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="2.0" />
+	
+	<AI ai_sight_range="20" ai_chase_range="20"/>
+</Monster>
+
+<Monster type="MONSTER" subtype="tutorialBehemoth" name="Inferno Behemoth" fraction="summoner" category="SUMMONED" layer="NORMAL">
+	<RenderInfo name="infBehemoth" />
+	<Dropslots >
+		<Dropslot pbig="0.3" pmedium="0.45" psmall="0.05" pgold="0.05" max_gold="500" min_level="50" max_level="70" magic_prob="0.3" magic_power="1800" />
+		<Dropslot pbig="0.20" pmedium="0.25" psmall="0.10" pgold="0.05" max_gold="400" min_level="45" max_level="65" magic_prob="0.2" magic_power="1400" />
+	</Dropslots>
+	
+	<BasicAttributes
+					experience="5000"
+					level="65"
+					max_health="3800"
+					armor="500"
+					block="60"
+					attack="400"
+					power="10"
+					strength="750"
+					dexterity="600"
+					magic_power="600"
+					willpower="600"
+					resistances_physical="40"
+					resistances_air="40"
+					resistances_ice="-10"
+					resistances_fire="100"
+					resistances_cap_physical="50"
+					resistances_cap_air="50"
+					resistances_cap_ice="50"
+					resistances_cap_fire="100"
+					walk_speed="1000"
+					attack_speed="800"
+					step_length="0.8"
+					attack_range="2.5"
+					>
+		<Ability type="walk" />
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		<Ability type="fire_ball" rating="2.5" />
+		<Ability type="tutorial_fire_ball" rating="0" timer_nr="0"/>
+		<Ability type="tutorial_fire_wall" rating="0" timer_nr="0"/>
+		<Ability type="hammer_bash" rating="2" />
+		<Ability type="inflame" />
+		<Ability type="tutorial_behemoth_fire_storm" rating="0" timer_nr="0"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="2.0" />
+	
+	<AI ai_sight_range="10" ai_chase_range="10"/>
+</Monster>
+
+
+<MonsterGroup name="elemental" >
+	<SubGroup subtype="fireElemS" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="slugs" >
+	<SubGroup subtype="fireSlug" number="10" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="caveSlugs" >
+	<SubGroup subtype="fireSlug2" number="4" prob="1.0" />
+	<SubGroup subtype="fireSlug2" number="3" prob="0.5" />
+	<SubGroup subtype="mutantSlug2" number="2" prob="0.7" />
+</MonsterGroup>
+
+<MonsterGroup name="louses" >
+	<SubGroup subtype="fireLouse" number="2" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="theThingFromTheDarkAbyssOfFire" >
+	<SubGroup subtype="infBehemoth" number="1" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="tutorialSlugs" >
+	<SubGroup subtype="fireSlug" number="10" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="tutorialMutantSlugs" >
+	<SubGroup subtype="fireSlug" number="3" prob="1.0" />
+	<SubGroup subtype="mutantSlug" number="3" prob="1.0" />
+</MonsterGroup>
+
+<MonsterGroup name="tutorialLouses" >
+	<SubGroup subtype="fireLouse" number="4" prob="1.0" />
+</MonsterGroup>
+

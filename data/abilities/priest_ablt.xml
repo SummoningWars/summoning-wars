@@ -1,0 +1,645 @@
+<Ability type="acid"
+		 name="Acid"
+		 description="The priest turns normal water into deadly acid, poisoning one enemy."
+		 time="701.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="acid" />
+	<Damage>
+		<CppImplementation type="holy_attack" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			local willpower = get(self,"willpower");
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+			setDamageValue("poisoned",willpower*1);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="blade_storm"
+		 name="Bladestorm"
+		 description="The priest strengthens the weaponarms of his comrades, leading to increased attackspeed for everyone."
+		 time="1001.000000"
+		 timer_nr="3.000000"
+		 timer_value="240000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",80000);
+			setBaseModValue("attack_speed",700);
+			setBaseModValue("flag","blade_storm");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="blazing_shield"
+		 name="Blazing Shield"
+		 description="The party is surrounded by holy energy. Everyones defense is increased. With increasing willpower the effect improves."
+		 time="1001.000000"
+		 timer_nr="3.000000"
+		 timer_value="240000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",80000);
+			setBaseModValue("block",get(self,"willpower")*0.25)
+			setBaseModValue("armor",get(self,"willpower")*0.5)
+			setBaseModValue("flag","blazing_shield");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="break_binding"
+		 name="Breaking Blow"
+		 description="The priest attacks an enemy with energy that causes elementals to be blown back where they come from."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="holy_attack"
+		 critical_percent="0.660000"
+		 target_type="melee">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			local magic = get(self,"magic_power");
+			local edmg = math.min(willpower/3,magic*2);
+			setDamageValue("ice_dmg", { edmg,  edmg*1.4});
+			setDamageValue("fire_dmg", { edmg*0.8,  edmg*1.6});
+			setDamageValue("air_dmg", { edmg*0.5,  edmg*2});
+			
+			setDamageValue("blockable",false);
+			setDamageValue("extra_dmg_race","elemental");
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="burning_sun"
+		 name="Glaring Sun"
+		 description="The priest calls forth a mighty explosion of light that can blind every enemy in an area."
+		 time="701.000000"
+		 timer_nr="1.000000"
+		 timer_value="11000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged"
+		 radius="5">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_enemies_around_target" />
+	</Effect>
+	<Projectile type="light_beam" />
+	
+	<Damage>
+		<CppImplementation type="holy_attack" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+			setDamageValue("blind",willpower);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="cure_blind_mute"
+		 name="Gentle Glow"
+		 description="The priest bathes a partymember in a mild light, releaving him of blindness and silence."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="3000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party">
+	<Effect>
+		<CppImplementation type="dynmod_at_target" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("blind_immune_time",1);
+			setDynModValue("mute_immune_time",1);
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="cure_blind_mute_party"
+		 name="Omniscent Eye"
+		 description="The party will be immune to blind and mute for some time. Those ailments will also be healed."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="6000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+		<CppImplementation type="dynmod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",30000);
+			setBaseModValue("flag","omniscent_eye");
+		</LuaImplementation>
+	</BaseAttributesMod>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("blind_immune_time",30000);
+			setDynModValue("mute_immune_time",30000);
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="cure_conf_bsrk"
+		 name="Restore Concentration"
+		 description="The priest heals one friend from confusion and berserk. Those ailments will also be healed."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="3000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dynmod_at_target" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("confused_immune_time",1);
+			setDynModValue("berserk_immune_time",1);
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="cure_conf_bsrk_party"
+		 name="Spirit Shield"
+		 description="The priest grants immunity to berserk and confuse to all his partymembers for a small amount of time. Those ailments will also be healed."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="6000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+		<CppImplementation type="dynmod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",30000);
+			setBaseModValue("flag","spirit_shield");
+		</LuaImplementation>
+	</BaseAttributesMod>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("confused_immune_time",30000);
+			setDynModValue("berserk_immune_time",30000);
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="magic_shield"
+		 name="Magic Shield"
+		 description="The priest conjures a magic shield for all partymembers thats reduces the damage dealt by elemental attacks."
+		 time="1001.000000"
+		 timer_nr="3.000000"
+		 timer_value="280000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",90000);
+			setBaseModValue("resist_ice",20);
+			setBaseModValue("resist_fire",20);
+			setBaseModValue("resist_air",20);
+			setBaseModValue("max_resist_ice",10);
+			setBaseModValue("max_resist_fire",10);
+			setBaseModValue("max_resist_air",10);
+			setBaseModValue("flag","magic_shield");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="cure_pois_burn"
+		 name="Ease Pain"
+		 description="The priest treats a partymemener with healing water that washes away every poison and stops burns."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="3000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dynmod_at_target" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("poisoned_immune_time",1);
+			setDynModValue("burning_immune_time",1);
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="cure_pois_burn_party"
+		 name="Remedial Water"
+		 description="The priests grants every partymember immunity to poison and burn for a small amount of time while healing these effects."
+		 time="501.000000"
+		 timer_nr="2.000000"
+		 timer_value="6000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000" 
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+		<CppImplementation type="dynmod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",30000);
+			setBaseModValue("flag","remedial_water");
+		</LuaImplementation>
+	</BaseAttributesMod>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("poisoned_immune_time",30000);
+			setDynModValue("burning_immune_time",30000);
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="disrupt_binding"
+		 name="Dismissing Strike"
+		 description="The priest strikes with all his might. While normal monsters have little to fear from this attack elementals will be easily destroyed by it."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="holy_attack"
+		 critical_percent="0.660000"
+		 target_type="melee">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dmg_at_target" />
+	</Effect>
+	<Damage>
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			local magic = get(self,"magic_power");
+			local edmg = math.min(willpower/3,magic*2);
+			setDamageValue("ice_dmg", { edmg*1.5,  edmg*2});
+			setDamageValue("fire_dmg", { edmg*1.2,  edmg*2.4});
+			setDamageValue("air_dmg", { edmg*0.7,  edmg*3});
+			setDamageValue("mute",willpower*2/3);
+			setDamageValue("blockable",false);
+			setDamageValue("extra_dmg_race","elemental");
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="divine_storm"
+		 name="God Strike"
+		 description="Only strong and durable demons will be able to resist the priests sacred strike."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="6000.000000"
+		 base_ability="holy_attack"
+		 critical_percent="0.660000"
+		 target_type="melee"
+		 radius="3">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_enemies_around_target" />
+	</Effect>
+	<Projectile type="divine_beam"/>
+	<Damage>
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			local magic = get(self,"magic_power");
+			local edmg = math.min(willpower/3,magic*2);
+			setDamageValue("blockable",false);
+			setDamageValue("air_dmg",{edmg,edmg*3.5});
+			setDamageValue("extra_dmg_race","demon");
+			setDamageValue("power",3*getDamageValue("power"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="divine_wind"
+		 name="Windstrike"
+		 description="The priest creates a vortex with his attack, that can suck a demonic creature right back to hell."
+		 time="1.000000"
+		 timer_nr="1.000000"
+		 timer_value="2500.000000"
+		 base_ability="holy_attack"
+		 critical_percent="0.660000"
+		 target_type="melee">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="divine_beam" />
+	<Damage>
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			local magic = get(self,"magic_power");
+			local edmg = math.min(willpower/3,magic*2);
+			setDamageValue("blockable",false);
+			setDamageValue("air_dmg",{edmg,edmg*3.5});
+			setDamageValue("extra_dmg_race","demon");
+			setDamageValue("power",3*getDamageValue("power"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="heal"
+		 name="Cure"
+		 description="The priest restores the hitpoints of one partymember."
+		 time="701.000000"
+		 timer_nr="2.000000"
+		 timer_value="30000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dynmod_at_target" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("health",3*get(self,"willpower"));
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="heal_party"
+		 name="Grand Cure"
+		 description="The priest restores hitpoints for every partymember."
+		 time="701.000000"
+		 timer_nr="2.000000"
+		 timer_value="60000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="dynmod_at_allies_in_radius" />
+	</Effect>
+	<DynAttributesMod>
+		<LuaImplementation>
+			setDynModValue("health",3*get(self,"willpower"));
+		</LuaImplementation>
+	</DynAttributesMod>
+</Ability>
+
+<Ability type="holy_fire"
+		 name="Sanctified Strike"
+		 description="The priest attacks with godly power, easily sending undead creatures back to their graves."
+		 time="1.000000"
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000"
+		 base_ability="holy_attack"
+		 critical_percent="0.660000"
+		 target_type="melee">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="light_beam" />
+	<Damage>
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			local magic = get(self,"magic_power");
+			local edmg = math.min(willpower/3,magic*2);
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + willpower*0.4 + edmg, fdmg[2] + willpower*0.8 + edmg*2});
+			setDamageValue("ice_dmg",{0,0});
+			setDamageValue("blockable",false);
+			setDamageValue("extra_dmg_race","undead");
+			setDamageValue("power",3*getDamageValue("power"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="holy_light" 
+		 name="Bright Blow"
+		 description="The priest attacks an enemy with a blow imbued with holy power. Undead will be severely damaged by the sacred energies."
+		 time="1.000000"
+		 timer_nr="1.000000" 
+		 timer_value="2000.000000" 
+		 base_ability="holy_attack"
+		 critical_percent="0.660000"
+		 target_type="melee">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="light_beam" />
+	<Damage>
+		<CppImplementation type="weapon_damage" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			local magic = get(self,"magic_power");
+			local edmg = math.min(willpower/3,magic*2);
+			local fdmg = getDamageValue("fire_dmg");
+			setDamageValue("fire_dmg", {fdmg[1] + willpower*0.25 + edmg*0.75, fdmg[2] + willpower*0.5 + edmg*1.5});
+			setDamageValue("ice_dmg",{0,0});
+			setDamageValue("blockable",false);
+			setDamageValue("extra_dmg_race","undead");
+			setDamageValue("power",3*getDamageValue("power"));
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="hypnosis"
+		 name="Hypnosis"
+		 description="The priest confuses a monster, causing it to attack at random."
+		 time="701.000000"
+		 timer_nr="1.000000"
+		 timer_value="4000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="hypnosis" />
+	<Damage>
+		<CppImplementation type="holy_attack" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			local willpower = get(self,"willpower");
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+			setDamageValue("confused",willpower);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="hypnosis2"
+		 name="Hypnotic Vortex"
+		 description="The priest creates a distracting vortex with the ability to confuse every enemy caught in it."
+		 time="701.000000"
+		 timer_nr="1.000000"
+		 timer_value="7000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged"
+		 radius="3">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_enemies_around_target" />
+	</Effect>
+	<Projectile type="hypnosis" />
+	<Damage>
+		<CppImplementation type="holy_attack" />
+		<LuaImplementation>
+			local willpower = get(self,"willpower");
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+			setDamageValue("confused",willpower);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="keen_mind"
+		 name="Keen Mind"
+		 description="The priest increases everyones spellpower for a short time making spells more effective. The effect becomes stronger with increasing willpower of the priest."
+		 time="701.000000"
+		 timer_nr="3.000000"
+		 timer_value="280000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",80000);
+			setBaseModValue("magic_power",get(self,"willpower")*0.5)
+			setBaseModValue("flag","keen_mind");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="light_beam"
+		 name="Glistening Glare"
+		 description="The priest casts a dazzling light, that can cause an enemy to be affected by blind."
+		 time="701.000000"
+		 timer_nr="1.000000"
+		 timer_value="3000.000000"
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="ranged">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="proj_at_target" />
+	</Effect>
+	<Projectile type="light_beam" />
+	<Damage>
+		<CppImplementation type="holy_attack" />
+		<LuaImplementation>
+			setDamageValue("phys_mult", getDamageValue("phys_mult")*2);
+			local willpower = get(self,"willpower");
+			setDamageValue("blockable",false);
+			setDamageValue("ignore_armor",true);
+			setDamageValue("blind",willpower);
+		</LuaImplementation>	
+	</Damage>
+</Ability>
+
+<Ability type="divine_will"
+		 name="Divine Will"
+		 description="The priests protecting influence raises the willpower of all partymembers temporarily. The effect becomes stronger with increasing willpower of the priest."
+		 time="1001.000000"
+		 timer_nr="3.000000"
+		 timer_value="300000.000000" 
+		 base_ability="noaction"
+		 critical_percent="0.660000"
+		 target_type="party_all"
+		 radius="12">
+	<Flag name="mute_affected" />
+	<Effect>
+		<CppImplementation type="basemod_at_allies_in_radius" />
+	</Effect>
+	<BaseAttributesMod>
+		<LuaImplementation>
+			setBaseModValue("time",90000);
+			setBaseModValue("willpower",get(self,"willpower")*0.5)
+			setBaseModValue("flag","divine_will");
+		</LuaImplementation>
+	</BaseAttributesMod>
+</Ability>
+
+<Ability type="dmgreduce_undead" 
+		 name="Holy Shield"
+		 description="The priest is surrounded by a shimmering light that repells undead attacks. Damage from undead beings is reduced by one third." 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+		 
+<Ability type="dmgreduce_demon" 
+		 name="Banishing Aura"
+		 description="The priests powers allow him to surround himself with an aura that immitates a banishment. While it holds no real power over demons, demonic beings will be frightened, thus leading to their damage being reduced by one third." 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />
+		 
+ <Ability type="dmgreduce_elemental" 
+		 name="Elemental Vortex"
+		 description="The priest can unconsciously create an elemental vortex that will drain one third of incoming damage from elemental beings." 
+		 time="0.000000" 
+		 timer_nr="0.000000" 
+		 timer_value="0.000000" 
+		 base_ability="noaction" 
+		 critical_percent="0.000000" 
+		 target_type="passive" />

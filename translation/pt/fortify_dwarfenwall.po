@@ -1,0 +1,857 @@
+# Portuguese translations for sumwars package
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-04-07 21:09+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: fortify_dwarfenwall.xml
+msgid "Fortify Dwarfenwall"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Quest finished"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Quest description"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "elCnlLobby"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Derred"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Speak with Windclaw"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Follow us, please."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Tolec"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "The Council is not all that impressive..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Natch! Now you're having a big mouth again."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Why exactly was it that I put up with your company?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Hush! You can argue later."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Finally we're here!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "((That room doesn't feel good at all.))"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Do you feel that?! It feels like..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Quiet!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "My Lord! The... Branded Ones are here now."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Very well."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "He awaits you now."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You're presence is no longer needed."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "My Lord, those are-"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "As you wish. My apologies."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Come on, he knows what he's doing."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Nice shack!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Well, the corners are a bit dirty though."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "...not to say: slimy."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Those ritual objects have seen better times, too."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Yes, they warned me that you're difficult. ##solo"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Yes, they warned me that you're difficult."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Difficult?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I'm putting in so much effort, and everything I get is \"difficult\""
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"You're putting in so much effort, and everything you get is \"difficult\""
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Tsk. I feel like burning off the whole place."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I feel like burning off the whole place."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "With all those wimps here it's hardly worth the effort, isn't it?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Then again..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"If more of those giant things break free that could cause a little trouble..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"And the odds are pretty high... after all the monsters here have their own "
+"head."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I know this nice little spell..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Would you please take a quick look at this crystal. ##solo"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Would you please take a quick look at this crystal."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Is that a...?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Quite so."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "It is a crystal straight from the heart of Harad's hell."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "How is it possible that you're still alive?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Indeed the right question."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "With an answer, that could release you from your suffering."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"With an answer, that could release every one of you from your suffering."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "But before I give it to you, you have to do something for me."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "May Harad curse you!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Tsk tsk. How rude to use the name of the Cursed One in Akeran's halls."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "This is a goddamn den of thieves."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You're missing the main point."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"You should realize that it is entirely up to you, how long you will be in "
+"the slavery of the deathgod."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Fulfill my orders to Akeran's and the council's satisfaction and I have the "
+"power to release you of his claws."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Forever."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "If not, however..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Heard that one a thousend times already. Cut the speach."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "We know that one already. Cut the speach."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"What?!! The curse can be lifted from us? Why do I hear of this only now?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "As you wish."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"But I should warn you. The task is pretty dangerous and you are likely to "
+"die more than once."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Harad's curse has to have some advantage."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Except the pain..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Even here you have to whine."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You are indeed a bunch of difficult people."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You are indeed difficult."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "He's beginning to make me angry."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Peace!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Pathetic fool!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "The first thing you have to learn are obviously manners. ##solo"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Pathetic fools!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "The first thing you have to learn are obviously manners."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Consider it as a small bonus:"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Before your real assignment you will go to Dwarfenwall as backup."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Show the undead there who the real favourite of the deathgod is."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Smells like exploitation."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Besides the necromancers don't follow Harad."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "This robed wimp ranks pretty high among all the miserable rats"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "for who's chestnuts I pulled out of the fire."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Me too, I don't understand why we should do his bidding. In the end he is -"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Just a man!!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You obviously misjudge your position."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "What do you think will happen, if you're revealed in town?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"We know everything about your accursed kind, and believe me, no one will be "
+"stupid enough to kill you."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Continue to be snotty?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Yes"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "No"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Soren Windclaw"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You consider yourself very mighty and clever, don't you?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Surely he has written down that knowledge of his somewhere."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "We can search for it after he's dead."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "A good opportunity, indeed."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Surely you have written down that knowledge of your's somewhere."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I can search for it after your untimely death."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Yes, they warned me about that, too."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I will keep an eye on you and give you orders with this crystal."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"This simple elemental will remind you now that immortality has little "
+"meaning here."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Of course."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"With our freedom as the price we will do everything in our might to be "
+"successful."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I don't like it."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"I have to take care of the preparations for the prince's imminent wedding "
+"now."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "There is no time for further explanations."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Take this crystal and some gold."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I will send you orders with it when the time comes."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "There you go! That was rather tame."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "That was the weakest elemental I could possibly summon."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Always remember that."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Take some gold and equip yourselves in the mercenary camp north of town."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "There you'll find everything you need."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Everything?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I cannot waste time here any longer."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "The prince will marry soon and there are lots of preparations to make."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "With this crystal I will keep in touch with you."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Surely it's not really allowed by the most divine Akeran to blackmail my "
+"combat strength."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Surely it's not really allowed by the most divine Akeran to blackmail our "
+"combat strength."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Now go!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "medBackalley"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "((That Windclaw is somehow weird.))"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "((He knows too much. And he has a real stone of Harad's hell.))"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "((And that crystal, he palmed off on me...))"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "((Looks like a spying crystal. Well, we will know that soon.))"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Hm... I guess I'll look for enemies of the council."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "And then I'll take apart those summoner-imps with them."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Shouldn't be too hard."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "That's what you think, Branded One!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "... said the spying Lord Master."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Not a pretty habit you have there, Airpaw..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Windclaw!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "And you better accustom yourself to be monitored."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I'm no idiot."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "But you're not omniscient, too."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "What are you trying to say?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Well... that thing was made by the mage guild of Aisen, right?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "And?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You're a zealot, aren't you?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Avaera, goddess of magic? Ring a bell? The people there are pretty "
+"devotional."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"They are bound to have given Avaeras blessing on that crystal to make it "
+"work that much better."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Guard your tongue, scum! What is that supposed to change?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Everything."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Do you know what happens, if that comes into contact with the blood of "
+"Branded Ones?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"It's not as if I had a bunch of you Cursed Ones here for experimental "
+"purposes."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Right, right."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Your people would be quite surprised were I came from."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "And it's Branded One."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Blind and deaf, but not mute, eh?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "It's going to be a wearisome journey, if this keeps going on..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Calm yourself, Lord of the unpleasent airs!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I can hear you and we can talk, if it has to be."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "That's enough, don't you think?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"You can't possibly have enough money, so that I would let you gawp at me all "
+"the time."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Just pray to your Akeran that I never find a way to send a fireball through "
+"that blasted thing."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Well, well... knowledge about the gods is power, if you are exposed to their "
+"moods."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Just be glad I didn't smash the whole crystal."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Allow yourself more of such impertinences and I'll have you thrown into the "
+"dungeon tower!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "What am I to do with you councilmen?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Can we blind that crystal somehow?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"I bet the guy is sitting in a cozy armchair right now and watching that we "
+"don't break ranks."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I've seen something like this in the army before..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Of course. There is this nice little trick."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Don't you dare, or-"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "That's it."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "And now he can't hear us anymore?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Only if we want to. Our blood works wonders on blessed items."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"It's a good thing that this was blessed by devoted aisen mages to Avaera. "
+"Even if the goddess of magic is unlikely to be amused about my attachment."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "But he can still annoy us."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "We're bound to notice, if he has something to tell us."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "So, what are you thinking about this matter?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Did I get that right?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Does he really have the power to take Harad's curse from us?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "That's what he said."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"I for one have never heard, that someone besides us could take anything from "
+"hell."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "But that thing was the real deal without a doubt."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Even looking at it gave me goosebumps."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "You almost fainted!"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "He promised us freedom."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I don't even have memories of it..."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Still, it's unlikely that he will keep his word."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Even if he has this power, we're too valuable for his ends."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "We are truly branded."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "But if there's only a small possibility I'm willing to try it."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "If stupidity had a weight, you couldn't move a millimeter."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "If arrogance had a smell, you'd suffocate instantly."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Alright, we vote on our course of action."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Follow the councils orders?"
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I'll see, how this is developing."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Until the cards are on the table I'll be powerful enough to take what's mine "
+"by force, if needed."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Then it's decided."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Woe befall them if they break their promise."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "That guy will never keep his promise in his life."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "But right now I cannot go to war with a whole kingdom."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "So I'll just grin and bear it and gain his trust."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "I'll see, what opportunities occur."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "The whole thing is too unsure."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"But we can't afford open resistance right now, so we have to grin and bear "
+"it."
+msgstr ""
+
+#: fortify_dwarfenwall.xml
+msgid "Let's gain their trust."
+msgstr ""

@@ -1,0 +1,32 @@
+*** GUI Imageset license file ***
+This file contains all license information for artwork located in the gui/imageset directory
+
+
+If not declared otherwise, all artwork is released under the authors default license.
+
+
+Artwork provided by: CrazyEddie's GUI (CEGUI) library
+License: MIT
+Visit http://www.cegui.org.uk for more information
+Files:
+	TaharezLook.tga  (Original)
+
+Artwork provided by: Michael Kempf (kemic)
+Default License: CC-BY-SA
+Files:
+	TaharezLook.tga 
+	
+Artwork provided by: Andreas Schönefeld
+Default License: CC-BY-SA
+Files:
+	startscreen.png
+
+Artwork provided by: Andreas Schönefeld, Michael Kempf (kemic), Francesco (hal9000)
+Default License: CC-BY-SA
+Files:
+	skills.png
+	
+Artwork provided by: Psycho
+Default License: CC-BY-SA
+Files:
+	worldMap.png

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="goblinSanctuary" version="1.0">
+  <Shape
+    type="CIRCLE"
+    radius="24.54604977"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="comCrystal" 
+            center_x="0.09195301497" 
+            center_y="-0.7388852612" 
+			height="-4.399258735e-015" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$money" 
+            center_x="0.2453480637" 
+            center_y="-1.10663231" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$misc_potions" 
+            center_x="0.5004592802" 
+            center_y="-1.437948866" 
+			height="-3.511080315e-015" 
+            angle="6.361109363e-015" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_potions" 
+            center_x="0.665861415" 
+            center_y="-1.068925626" 
+			height="-3.511080315e-015" 
+            angle="6.361109363e-015" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_potions" 
+            center_x="0.4141528488" 
+            center_y="-0.732873619" 
+			height="-3.511080315e-015" 
+            angle="6.361109363e-015" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$misc_potions" 
+            center_x="0.8429732014" 
+            center_y="-0.8861126302" 
+			height="-3.511080315e-015" 
+            angle="6.361109363e-015" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-16.21079365" 
+            center_y="1.067004335" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-12.26265886" 
+            center_y="-10.15619557" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-8.617603211" 
+            center_y="-14.48823248" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-14.61860149" 
+            center_y="-15.20480367" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-14.13084744" 
+            center_y="7.038848098" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="-7.923434443" 
+            center_y="17.55932847" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="11.43248416" 
+            center_y="12.06003766" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="8.539073362" 
+            center_y="15.43499549" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="13.91718132" 
+            center_y="16.04159098" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="17.45623498" 
+            center_y="10.39101337" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="16.6047639" 
+            center_y="2.199473989" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_block" 
+            center_x="9.08370958" 
+            center_y="-13.66575168" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="7.771561172e-016" 
+            center_y="12" 
+            angle="-45.90616187" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-12" 
+            center_y="8.326672685e-016" 
+            angle="29.93726104" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="12" 
+            center_y="2.775557562e-016" 
+            angle="-118.0112061" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-6.938893904e-016" 
+            center_y="-12" 
+            angle="-193.7611385" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-7" 
+            center_y="7" 
+            angle="16.94210249" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="8" 
+            center_y="7" 
+            angle="-79.46077044" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="8" 
+            center_y="-8" 
+            angle="-152.4976598" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_debris" 
+            center_x="-9" 
+            center_y="-9" 
+            angle="81.46902104" 
+            probability="1" 
+            prob_angle="false" 
+    />
+    <Object subtype="$single_block" 
+            center_x="19.45166641" 
+            center_y="-8.281708166" 
+            angle="0" 
+            probability="1" 
+            prob_angle="true" 
+    />
+    <Object subtype="stone_l1" 
+            center_x="-0.08061227619" 
+            center_y="-0.1360793494" 
+            angle="0" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+    <Location name="locGoblinGuard1" pos_x="5" pos_y="4" />
+    <Location name="locGoblinGuard2" pos_x="0.314982242" pos_y="-7.914541113" />
+    <Location name="locGoblinGuard3" pos_x="-7" pos_y="0" />
+    <Location name="locGoblinShaman" pos_x="2.852938328" pos_y="-1.469783257" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

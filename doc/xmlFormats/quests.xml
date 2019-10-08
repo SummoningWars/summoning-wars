@@ -1,0 +1,97 @@
+<!-- Everything belonging to a quest is contained in a Quest-tag.
+	name: The unique name displayed in quest window. This name will be translated to the current language. This data will be restored when loading the savegame. 
+		In this example store data to glory.some_variable to write it to savegame.
+		In addition, a table named table_name_tmp (in this example glory_tmp) will be created. It is advisable to store all temporary data of the quest to this table. A common use case is to store object IDs, as these get invalid after ending a game.
+		
+-->
+
+<Quest name="A quest of glory" table_name="glory">
+		
+	<!-- 
+		Quest description, that is displayed in the quest window, if "table_name.started" is "true". 
+		This tag must contain lua script code that returns a string. Usually the return value depends on some values stored in the quest table. 
+		Do not forget to place the _() around the text to enable translation. 
+		-->
+	<Description>
+		if (glory.finished==true) then
+			return _("You did the deed and the glory is yours.")
+		elseif(glory.struckDown==true)then
+			return(_("You did the deed but haven't been rewarded yet."))
+		else
+			return _("You set on a quest for glory.")
+		end
+	</Description>
+	
+	<!-- 
+		Quests may add speech options to NPC. These are included in an NPC tag.
+		refname: Unique name that is used to identify an option as an NPC. See the setRefname function reference.
+		-->
+	<NPC refname="Glory Master">
+		<!-- 
+			A topic is essentially an event that may be triggered by the player by speaking to the NPC. 
+			name: topic identifier, must be unique for each NP
+			start_option: If this attribute exists, the player might start speaking about this topic directly by speaking to the NPC. The attribute supplied will be the name of the option that starts the topic. This string is translated.
+		-->	
+		<Topic name= "get_quest_glory" start_option="A glorious quest">
+			<!--
+				Condition is an optional tag that restricts the circumstances under which the topic is available.
+				The tag must contain lua code that returns bool. 
+				If a Condition tag is used, the option to start this topic is displayed only if the lua code returns true.
+				-->
+			<Condition>
+				return(glory.started~=true);
+			</Condition>
+			
+			<!-- Effect is the tag in which the effects of choosing the topic are defined in lua code.
+				Normally this would be a speech, but it can be everything possible with lua.-->
+			<Effect>
+				lua code
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<!-- A Quest can add events to a region defined in the world (see world.xml).-->
+	<Region name="outback">
+		<!-- Every event has to have a "trigger" it will react to. This is a string that can relate to a system generated trigger(see lua doc).
+			Alternatively it can be an arbitrary name for a trigger created during the quest by your lua code.-->
+		<Event trigger="create_region">
+			<Condition>
+				return (glory.struckDown~=true)
+			</Condition>
+			<Effect>
+				lua code
+				glory_tmp.gloryMonster=createObject("gloryMonster","locGlory");
+			</Effect>
+		</Event>
+		<!-- If the optional attribute once is set to true, the event will only occur once. It will be deleted once the effect has been carried out.-->
+		<Event trigger ="unit_dead" once="true">
+			<Condition>
+				return ((glory.struckDown~= true)and(trigger.unit==glory_tmp.gloryMonster))
+			</Condition>
+			<Effect>
+				glory.struckDown=true;
+				insertTrigger("personalGloryTrigger")
+			</Effect>
+		</Event>
+		
+		
+		<Event trigger ="personalGloryTrigger">
+			<Effect>
+				lua code
+			</Effect>
+		</Event>
+	</Region>
+	
+	<!-- The same NPC can be added several times to a quest. This is recommended to keep the code readable.-->
+	<NPC refname="Glory Master">
+		<Topic name="glory_reward" start_option="The glory is mine.">
+			<Condition>
+				return((glory.struckDown==true)and(glory.finished ~=true));
+			</Condition>
+			<Effect>
+				lua code
+			</Effect>
+		</Topic>
+	</NPC>
+</Quest>
+

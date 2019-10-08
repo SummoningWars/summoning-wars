@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="TaharezLook/FrameWindow" Name="luaScriptTab" >
+        <Property Name="Alpha" Value="0.1" />
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="TitlebarEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0725001,0},{0.0133335,0},{0.928755,0},{0.936666,0}}" />
+        <Property Name="CloseButtonEnabled" Value="False" />
+        <Window Type="TaharezLook/Button" Name="luaScriptTab/ExecuteScriptButton" >
+            <Property Name="Text" Value="Execute" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.00365257,0},{0.900724,0},{0.270077,0},{0.988268,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Menubar" Name="luaScriptTab/MenuBar" >
+            <Property Name="ItemSpacing" Value="10" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.00711788,0},{0.0104692,0},{0.992602,0},{0.070938,0}}" />
+        </Window>
+        <Window Type="TaharezLook/TabControl" Name="luaScriptTab/FileTabControl" >
+            <Property Name="TabHeight" Value="{0,38}" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="TabPanePosition" Value="Top" />
+            <Property Name="UnifiedAreaRect" Value="{{0.00903386,0},{0.0826716,0},{0.992288,0},{0.892241,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Editbox" Name="luaScriptTab/fileDirectoryEditBox" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.27833,0},{0.898973,0},{0.990234,0},{0.98666,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+    </Window>
+</GUILayout>

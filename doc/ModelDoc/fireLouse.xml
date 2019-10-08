@@ -1,0 +1,45 @@
+<creature>
+  <name>fireLouse</name>
+  <meshname>fireLouse.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWars/Maya Stuff/Scenes/Animation/fireLouseAnimation.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>walk</name>
+      <startframe>1</startframe>
+      <endframe>15</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>16</startframe>
+      <endframe>24</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>attack</name>
+      <startframe>25</startframe>
+      <endframe>40</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>idle1</name>
+      <startframe>41</startframe>
+      <endframe>49</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>idle2</name>
+      <startframe>50</startframe>
+      <endframe>65</endframe>
+      <description></description>
+    </clip>
+    <clip>
+      <name>jump</name>
+      <startframe>66</startframe>
+      <endframe>99</endframe>
+      <description>get spawned</description>
+    </clip>
+  </animations>
+
+</creature>

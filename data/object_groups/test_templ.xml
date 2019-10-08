@@ -1,0 +1,155 @@
+<ObjectGroup name = "herbalBushes_test" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "4.0"
+		  extent_y = "4.0"
+		  angle ="0"
+		  />
+	
+	<Locations>
+		<Location name = "herb" pos_x="0" pos_y="0" />
+	</Locations>
+</ObjectGroup>
+
+<ObjectGroup name = "test1" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "8.0"
+		  extent_y = "8.0"
+		  angle ="0"
+		  />
+	
+	<ObjectContent>
+		<Object subtype="$border"
+				center_x="0"
+				center_y="7"
+				angle = "-90"
+				probability ="1"
+				prob_angle = "false"
+					/>
+		
+		<Object subtype="$border"
+				center_x="7"
+				center_y="0"
+				angle = "-180"
+				probability ="1"
+				prob_angle = "false"
+				/>
+	
+		<Object subtype="$border"
+				center_x="0"
+				center_y="-7"
+				angle = "-270"
+				probability ="1"
+				prob_angle = "false"
+				/>
+	
+		<Object subtype="$border"
+				center_x="-7"
+				center_y="0"
+				angle = "0"
+				probability ="1"
+				prob_angle = "false"
+				/>
+	</ObjectContent>
+</ObjectGroup>
+
+
+<ObjectGroup name = "test2" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "10.0"
+		  extent_y = "10.0"
+		  angle ="0"
+		  />
+	<ObjectContent>
+		<Object subtype="$border"
+				center_x="0"
+				center_y="9"
+				angle = "-90"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$border"
+				center_x="9"
+				center_y="0"
+				angle = "-180"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$border"
+				center_x="0"
+				center_y="-9"
+				angle = "-270"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$border"
+				center_x="-9"
+				center_y="0"
+				angle = "0"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$tree"
+				center_x="0"
+				center_y="0"
+				angle = "0"
+				prob_angle = "true"
+					/>
+	</ObjectContent>
+</ObjectGroup>
+
+
+<ObjectGroup name = "test3" >
+	<Shape
+		  type = "RECT"
+		  extent_x = "16.0"
+		  extent_y = "16.0"
+		  angle ="0"
+		  />
+	<ObjectContent>
+		<Object subtype="$border"
+				center_x="0"
+				center_y="15"
+				angle = "-90"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$border"
+				center_x="15"
+				center_y="0"
+				angle = "-180"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$border"
+				center_x="0"
+				center_y="-15"
+				angle = "-270"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$border"
+				center_x="-15"
+				center_y="0"
+				angle = "0"
+				probability ="1"
+				prob_angle = "false"
+				/>
+		
+		<Object subtype="$tree"
+				center_x="0"
+				center_y="0"
+				angle = "0"
+				prob_angle = "true"
+					/>
+	</ObjectContent>
+</ObjectGroup>

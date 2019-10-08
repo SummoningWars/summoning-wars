@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@ --buildsystem=cmake --parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE:STRING="Release" \
+		-DNO_TINYXML:BOOL=ON \
+		-DNO_ENET:BOOL=ON \
+		-DBUILD_TOOLS:BOOL=OFF
+
+override_dh_auto_install:
+	dh_auto_install
+
+	rm -fv debian/tmp/usr/share/games/sumwars/resources/gui/fonts/DejaVu*.ttf
+	rm -fv debian/tmp/usr/share/games/sumwars/resources/particles/{scale_particles,create_ogre_1_6_particles}

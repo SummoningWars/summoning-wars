@@ -1,0 +1,37 @@
+<RenderInfo name="wolfbase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="walk" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack" />
+		<Sound objectname="general" name="wolf_att"/>
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+		<Sound objectname="general" name="wolf_die"/>
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle1" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+		  <!-- <Sound objectname="general" name="some_hit_sound"/> -->
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="gobDog" parent="wolfbase">
+	<Entity source="gobDog.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="wolf" parent="wolfbase">
+	<Entity source="gobDog.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="giant_wolf" parent="wolfbase">
+	<Entity source="gobDog.mesh" scale="2"/>
+</RenderInfo>

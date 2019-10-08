@@ -1,0 +1,5 @@
+﻿<!-- Ein Emitter fuer Rauch. Rein grafisch -->
+<ScriptObject subtype="smokeEmitter" layer="NOCOLLISION">
+	<RenderInfo name="smoke"/>
+	<Geometry shape="circle" radius="0.3"/>
+</ScriptObject>

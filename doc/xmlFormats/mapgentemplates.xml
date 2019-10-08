@@ -1,0 +1,21 @@
+<!-- ObjectGroupTemplate is basically the same as an ObjectTemplate. Since ObjectGroups are composed of various objects, it has no type.
+	Since ObjectGroupTemplates are used by the map generator and are predefined in the source code you can only replace these.
+	You shouldn't temper with the template names and the shape, unless you know exactly, what you are doing (i.e. you rigged the source code itself.)
+-->
+<ObjectGroupTemplate name="$border(side)">
+	<Shape
+		  type="RECT"
+		  extent_x="4"
+		  extent_y="4"
+		  angle="0"
+		  />
+	<!-- Environments work the same as with ObjectTemplates, but the ObjectGroups should really fit into the shape and there shouldn't be empty environmants.
+		You risk holes in the border of the regions otherwise.
+	-->
+	<Environment name="meadow" default="true">
+		<ObjectGroup name="border(side)" />
+	</Environment>
+	<Environment name="cave">
+		<ObjectGroup name="border(side)cave" />
+	</Environment>
+</ObjectGroupTemplate>

@@ -1,0 +1,369 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-11-01 \n"
+"Last-Translator: kalimgard <kalimgard@users.sourceforge.net>\n"
+"Language-Team: german <translation-team-de@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: rescue_willard.xml
+msgid "A friend in need"
+msgstr "Ein Freund in Not"
+
+#: rescue_willard.xml
+msgid ""
+"Willard is back in Medair and he even forked out some money. Who said it "
+"wouldn't pay to let people live? At least as long there are enough goblins "
+"around."
+msgstr ""
+"Willard ist wieder in Medair und er hat sogar ein bisschen Geld springen "
+"lassen. Wer sagt denn, dass es sich nicht auszahlt, die Leute am Leben zu "
+"lassen? Zumindest so lange es reichlich Goblins gibt."
+
+#: rescue_willard.xml
+msgid ""
+"Willard is in hiding somewhere around the Aisen Meadow. Due to his injury he "
+"will show himself only if there are no goblins around."
+msgstr ""
+"Willard versteckt sich irgendwo in der Aisener Wiese. Er wird sich wegen "
+"seiner Verletzung sicher nur zeigen, wenn keine Goblins in der Nähe sind."
+
+#: rescue_willard.xml
+msgid ""
+"A long search and quite a lot of dead goblins later Willard has finally "
+"shown himself. I should give him the stone and be done with it."
+msgstr ""
+"Langes suchen und etliche tote Goblins später ist Willard endlich "
+"aufgetaucht. Ich sollte ihm den Stein geben und es hinter mich bringen."
+
+#: rescue_willard.xml
+msgid "medMercCamp"
+msgstr "Söldnerlager von Medair"
+
+#: rescue_willard.xml
+msgid "Hey there!"
+msgstr "Heda!"
+
+#: rescue_willard.xml
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: rescue_willard.xml
+msgid "Willard"
+msgstr "Willard"
+
+#: rescue_willard.xml
+msgid "I hope you are making a good time searching for Willard. ##solo"
+msgstr "Ich hoffe, Ihr kommt mit Eurer Suche nach Willard voran."
+
+#: rescue_willard.xml
+msgid "I hope you are making a good time searching for Willard."
+msgstr "Ich hoffe, Ihr kommt mit Eurer Suche nach Willard voran."
+
+#: rescue_willard.xml
+msgid "Have you changed your mind?"
+msgstr "Habt Ihr es euch etwa anders überlegt?"
+
+#: rescue_willard.xml
+msgid "Search for Willard?"
+msgstr "Nach Willard suchen?"
+
+#: rescue_willard.xml
+msgid "Yes"
+msgstr "Ja"
+
+#: rescue_willard.xml
+msgid "No"
+msgstr "Nein"
+
+#: rescue_willard.xml
+msgid "If I'm not mistaken you are a Branded One."
+msgstr "Wenn mich nicht alles täuscht seid ihr ein Gezeichneter."
+
+#: rescue_willard.xml
+msgid "If I'm not mistaken you are Branded Ones."
+msgstr "Wenn mich nicht alles täuscht seid ihr Gezeichnete."
+
+#: rescue_willard.xml
+msgid "What the..."
+msgstr "Was zum..."
+
+#: rescue_willard.xml
+msgid "Do I have a sign somewere saying: Caution, dangerous monster??"
+msgstr ""
+"Habe ich irgendwo ein Schild auf dem steht: Achtung, gefährliches Monster??"
+
+#: rescue_willard.xml
+msgid "That is the second time today!"
+msgstr "Das ist schon das zweite Mal heute!"
+
+#: rescue_willard.xml
+msgid "I could always feel if someone was a Branded One."
+msgstr "Ich konnte schon immer spüren, wenn jemand ein Gezeichneter war."
+
+#: rescue_willard.xml
+msgid ""
+"But don't worry, I will give noone away, as long as they are behaving "
+"correctly."
+msgstr ""
+"Aber keine Sorge, ich werde niemanden verraten, solange er sich korrekt "
+"verhält."
+
+#: rescue_willard.xml
+msgid "There is something I'd like to ask of you. ##solo"
+msgstr "Es gibt da etwas, um das ich Euch bitten möchte. ##solo"
+
+#: rescue_willard.xml
+msgid "Only someone like you could do it reliably. ##solo"
+msgstr "Nur jemand wie Ihr könnte das zuverlässig erledigen. ##solo"
+
+#: rescue_willard.xml
+msgid "There is something I'd like to ask of you."
+msgstr "Es gibt da etwas, um das ich euch bitten möchte."
+
+#: rescue_willard.xml
+msgid "Only someone like you could do it reliable."
+msgstr "Nur jemand wie Ihr könnte das zuverlässig erledigen."
+
+#: rescue_willard.xml
+msgid "Who would have thought that?"
+msgstr "Wer hätte das gedacht?"
+
+#: rescue_willard.xml
+msgid "Does an honorable member of the city guard wants someone's throat cut?"
+msgstr ""
+"Will ein ehrbares Mitglied der Stadtwache etwa jemandes Kehle "
+"durchgeschnitten sehen?"
+
+#: rescue_willard.xml
+msgid "What? I could have hired a professional assassin for that."
+msgstr "Häh? Dafür hätte ich einen professionellen Attentäter anheuern können."
+
+#: rescue_willard.xml
+msgid ""
+"I thought you were the kind of Branded Ones that doesn't kill every human "
+"crossing their way."
+msgstr ""
+"Ich dachte, Ihr wärt die Sorte Gezeichnete, die nicht wahllos alle Menschen "
+"umbringen, die ihren Weg kreuzen."
+
+#: rescue_willard.xml
+msgid "I'm sorry. Maybe my mouth slipped."
+msgstr "Verzeiht. Vielleicht war mein Mund schneller als mein Kopf."
+
+#: rescue_willard.xml
+msgid "Whatever. What is it you really want?"
+msgstr "Wie auch immer. Was wollt Ihr wirklich?"
+
+#: rescue_willard.xml
+msgid "Thanks. My name is Fenor Marken."
+msgstr "Danke. Mein Name ist Fenor Marken."
+
+#: rescue_willard.xml
+msgid "I have a friend with the gamekeepers."
+msgstr "Es ist so: Ich habe einen Freund bei den Wildhütern."
+
+#: rescue_willard.xml
+msgid ""
+"He was in the meadows with two collegues, when they were attacked by goblins."
+msgstr ""
+"Er war mit zwei Kollegen in den Wiesen, als sie von Goblins überfallen "
+"wurden."
+
+#: rescue_willard.xml
+msgid "And those cowards left him behind injured!"
+msgstr "Und diese Feiglinge haben ihn verletzt zurück gelassen!"
+
+#: rescue_willard.xml
+msgid "Surely you don't want me to bring back his corpse, do you?"
+msgstr "Sicher wollt Ihr nicht, dass ich seine Leiche zurück bringe."
+
+#: rescue_willard.xml
+msgid "Surely you don't want us to bring back his corpse, do you?"
+msgstr "Sicher wollt Ihr nicht, dass wir seine Leiche zurück bringe."
+
+#: rescue_willard.xml
+msgid "No, Willard isn't someone who would be killed by some lousy goblins."
+msgstr ""
+"Nein. Willard ist niemand, der sich von ein paar lausigen Goblins umbringen "
+"lässt."
+
+#: rescue_willard.xml
+msgid "I'm sure he waits somewhere for help."
+msgstr ""
+"Ich bin sicher, er wartet irgendwo darauf, dass ihm jemand zu Hilfe eilt."
+
+#: rescue_willard.xml
+msgid "I'm sure you are very busy."
+msgstr "Nun seid Ihr sicher sehr beschäftigt."
+
+#: rescue_willard.xml
+msgid "That is why I only ask you to bring him this phasestone. ##solo"
+msgstr "Deswegen bitte ich Euch, ihm diesen Phasenstein zu bringen. ##solo"
+
+#: rescue_willard.xml
+msgid "That is why I only ask you to bring him this phasestone."
+msgstr "Deswegen bitte ich Euch, ihm diesen Phasenstein zu bringen."
+
+#: rescue_willard.xml
+msgid "I wouldn't entrust this to anyone normaly."
+msgstr "Normalerweise würde ich das niemandem anvertrauen."
+
+#: rescue_willard.xml
+msgid "Much less someone totally unknown."
+msgstr "Schon gar keinen wildfremden Leuten."
+
+#: rescue_willard.xml
+msgid "Who wouldn't take off with it?"
+msgstr "Wer würde nicht einfach damit verschwinden?"
+
+#: rescue_willard.xml
+msgid "But you Branded Ones have other ways and means to travel, haven't you."
+msgstr "Aber ihr Gezeichneten habt andere Mittel und Wege, um zu reisen."
+
+#: rescue_willard.xml
+msgid "And you cannot use a phasestone since it is dedicated to Avaera, right?"
+msgstr ""
+"Und einen Phasenstein könnt ihr nicht benutzen, weil er Avaera geweiht ist, "
+"stimmt's?"
+
+#: rescue_willard.xml
+msgid "That is why I called you when you were passing."
+msgstr ""
+"Deswegen habe ich mich an Euch gewandt, als Ihr hier vorbei gekommen seid."
+
+#: rescue_willard.xml
+msgid "You know quite a lot."
+msgstr "Ihr wisst recht viel."
+
+#: rescue_willard.xml
+msgid "Your friend is as good as safe."
+msgstr "Euer Freund ist so gut wie gerettet"
+
+#: rescue_willard.xml
+msgid "And doesn't even ask what the rest of us is thinking."
+msgstr "Und fragt nicht mal, was der Rest von uns denkt."
+
+#: rescue_willard.xml
+msgid "Thank you. ##solo"
+msgstr "Ich danke Euch ##solo"
+
+#: rescue_willard.xml
+msgid "Thank you."
+msgstr "Ich danke Euch"
+
+#: rescue_willard.xml
+msgid ""
+"I'm sorry, but I don't want to waste my time searching for any gamekeepers."
+msgstr ""
+"Es tut mir Leid, aber ich will meine Zeit nicht damit verschwenden, nach "
+"irgendwelchen Wildhütern zu suchen."
+
+#: rescue_willard.xml
+msgid "You are as cold-hearted as they say. ##solo"
+msgstr "Ihr seid genauso kaltherzig, wie man es euch nachsagt. ##solo"
+
+#: rescue_willard.xml
+msgid "I'm sorry, but we cannot waste our time searching for any gamekeepers."
+msgstr ""
+"Es tut mir Leid, aber wir können unsere Zeit nicht damit verschwenden, nach "
+"irgendwelchen Wildhütern zu suchen."
+
+#: rescue_willard.xml
+msgid "You are as cold-hearted as they say."
+msgstr "Ihr seid genauso kaltherzig, wie man es euch nachsagt."
+
+#: rescue_willard.xml
+msgid "If only I could leave here."
+msgstr "Wenn ich doch nur hier weg könnte."
+
+#: rescue_willard.xml
+msgid "I would search for him myself."
+msgstr "Dann würde ich ihn selbst suchen gehen."
+
+#: rescue_willard.xml
+msgid "Then what do you want of me? ##solo"
+msgstr "Was wollt Ihr dann von mir? ##solo"
+
+#: rescue_willard.xml
+msgid "Leave, before I tell someone about you! ##solo"
+msgstr "Verschwindet, bevor ich jemandem von Euch erzähle! ##solo"
+
+#: rescue_willard.xml
+msgid "Then what do you want from me?"
+msgstr "Was wollt Ihr dann von mir?"
+
+#: rescue_willard.xml
+msgid "Leave, before I tell someone about you!"
+msgstr "Verschwindet, bevor ich jemandem von Euch erzähle!"
+
+#: rescue_willard.xml
+msgid "Give Willard the stone (Reward)"
+msgstr "Willard den Stein geben (Belohnung)"
+
+#: rescue_willard.xml
+msgid "Thank's for your help."
+msgstr "Danke für eure Hilfe."
+
+#: rescue_willard.xml
+msgid "Can I ask you for another favor?"
+msgstr "Kann ich euch um noch einen Gefallen bitten?"
+
+#: rescue_willard.xml
+msgid "My leg is hurt and I won't make it to Medair alone."
+msgstr "Ich bin am Bein verwundet und schaffe es allein nicht bis nach Medair."
+
+#: rescue_willard.xml
+msgid "You are Willard, I suppose."
+msgstr "Ich nehme an, ihr seid Willard."
+
+#: rescue_willard.xml
+msgid "That's me. Why do you know my name?"
+msgstr "Der bin ich. Woher kennt ihr meinen Namen?"
+
+#: rescue_willard.xml
+msgid "Your friend Fenor Marken sent us to give you this phasestone."
+msgstr ""
+"Euer Freund Fenor Marken schickt uns, um euch einen Phasenstein zu geben."
+
+#: rescue_willard.xml
+msgid "Holy gods! He still has that thing?"
+msgstr "Bei den Göttern! Er hat das Ding immer noch?"
+
+#: rescue_willard.xml
+msgid "That was one of our youthful follys."
+msgstr "Das ist eine unserer Jugendsünden gewesen."
+
+#: rescue_willard.xml
+msgid "Mine is long used up."
+msgstr "Meiner ist längst verbraucht."
+
+#: rescue_willard.xml
+msgid "Good old Fenor. Here, a token of my appreciation."
+msgstr "Der gute Fenor. Hier, lasst mich meine Dankbarkeit zeigen."
+
+#: rescue_willard.xml
+msgid "Surely someone of your trade can always use a little money?"
+msgstr "Sicher kann jemand mit eurem Handwerk immer Geld gebrauchen?"
+
+#: rescue_willard.xml
+msgid "Thank you very much."
+msgstr "Ich danke euch."
+
+#: rescue_willard.xml
+msgid "aisMeadow"
+msgstr "Aisener Wiese"
+
+#: rescue_willard.xml
+msgid "So here is this Willard."
+msgstr "Hier steckt also dieser Willard."

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="TaharezLook/FrameWindow" Name="ChatRootWindow" >
+        <Property Name="TitlebarFont" Value="Commonwealth-10" />
+        <Property Name="TitlebarEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.126758,0},{0.00859365,0},{0.67168,0},{0.521614,0}}" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="False" />
+        <Window Type="TaharezLook/StaticText" Name="ChatTextBox" >
+            <Property Name="UnifiedAreaRect" Value="{{0.0107901,0},{0.0101163,0},{0.992967,0},{0.843295,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Editbox" Name="ChatInputLine" >
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0172587,0},{0.854329,0},{0.992982,0},{0.976468,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+    </Window>
+</GUILayout>

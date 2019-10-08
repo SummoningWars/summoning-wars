@@ -1,0 +1,26 @@
+material arrowMat
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.80992 0.80992 0.80992 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit
+			{
+				texture Pfeil_0005.gif
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}

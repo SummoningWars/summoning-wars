@@ -1,0 +1,47 @@
+<RenderInfo name="treasure_box" >
+	<Entity objectname="closed" source="box_m1.mesh"/>
+	
+	<State name="open">
+		<Activation time="500">
+			<Detach objectname="closed"/>
+			<Entity objectname="open" source="box_m3.mesh"/>
+		</Activation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="chestBox" >
+	<Entity objectname="base" source="chestBox.mesh"/>
+	<Entity objectname="lid" source="chestLid.mesh" position="0.41 0.76 0 "/>
+	
+	<State name="open">
+		<Activation time="500">
+			<Rotation objectname="lid" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 0.0 -50.0" />
+		</Activation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="sarkophagusSimple" >
+	<Entity objectname="base" source="sarkophagus.mesh"/>
+	<Entity objectname="lid" source="sarkophagusLid1.mesh"/>
+	
+	<State name="open">
+		<Activation time="500">
+			<Rotation objectname="lid" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 15.0 0.0" />
+			<Movement objectname="lid" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.3 0.0 0.0" />
+		</Activation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="sarkophagusImportant" >
+	<Entity objectname="base" source="sarkophagus.mesh"/>
+	<Entity objectname="lid" source="sarkophagusLid2.mesh"/>
+	
+	<State name="open">
+		<Activation time="500">
+			<Rotation objectname="lid" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.0 15.0 0.0" />
+			<Movement objectname="lid" start="0.0" end="1.0" start_vec="0.0 0.0 0.0" end_vec="0.3 0.0 0.0" />
+		</Activation>
+	</State>
+</RenderInfo>
+
+

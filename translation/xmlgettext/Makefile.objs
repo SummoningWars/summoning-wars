@@ -1,0 +1,6 @@
+xmlgettext.o
+tinystr.o
+tinyxml.o
+tinyxmlerror.o
+tinyxmlparser.o
+

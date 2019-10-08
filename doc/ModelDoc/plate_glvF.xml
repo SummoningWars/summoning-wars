@@ -1,0 +1,315 @@
+<creature>
+  <name>plate_glvF</name>
+  <meshname>plate_glvF.mesh</meshname>
+  <mayafilename>C:/ASteffen/SumWarss/Models/scenes/Characters/Player/humanFemaleAnimation18.mb</mayafilename>
+
+  <animations>
+    <clip>
+      <name>walkOneHand</name>
+      <startframe>1</startframe>
+      <endframe>24</endframe>
+      <description>walk with one handed weapon and shield</description>
+    </clip>
+    <clip>
+      <name>walkUnarmed</name>
+      <startframe>25</startframe>
+      <endframe>48</endframe>
+      <description>walk without weapon</description>
+    </clip>
+    <clip>
+      <name>walkTwoHands</name>
+      <startframe>49</startframe>
+      <endframe>72</endframe>
+      <description>walk with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>walkBow</name>
+      <startframe>73</startframe>
+      <endframe>96</endframe>
+      <description>walk with bow</description>
+    </clip>
+    <clip>
+      <name>attackRangedBow</name>
+      <startframe>97</startframe>
+      <endframe>120</endframe>
+      <description>attack with a bow</description>
+    </clip>
+    <clip>
+      <name>die</name>
+      <startframe>121</startframe>
+      <endframe>144</endframe>
+      <description>you're... dead</description>
+    </clip>
+    <clip>
+      <name>magicArrow</name>
+      <startframe>145</startframe>
+      <endframe>168</endframe>
+      <description>cast some Magic on your Bow</description>
+    </clip>
+    <clip>
+      <name>attackMagicUnarmed</name>
+      <startframe>168</startframe>
+      <endframe>192</endframe>
+      <description>attack with magic</description>
+    </clip>
+    <clip>
+      <name>castMagicWeakUnarmed</name>
+      <startframe>193</startframe>
+      <endframe>216</endframe>
+      <description>cast a small spell without weapon</description>
+    </clip>
+    <clip>
+      <name>castMagicStrongUnarmed</name>
+      <startframe>217</startframe>
+      <endframe>248</endframe>
+      <description>cast a big spell without weapon</description>
+    </clip>
+    <clip>
+      <name>attackMagicOneHand</name>
+      <startframe>249</startframe>
+      <endframe>272</endframe>
+      <description>attack with a wand</description>
+    </clip>
+    <clip>
+      <name>castMagicWeak</name>
+      <startframe>273</startframe>
+      <endframe>296</endframe>
+      <description>cast a small spell with a wand</description>
+    </clip>
+    <clip>
+      <name>castMagicStrong</name>
+      <startframe>301</startframe>
+      <endframe>346</endframe>
+      <description>cast a big spell with a wand</description>
+    </clip>
+    <clip>
+      <name>attackMagicTwoHands</name>
+      <startframe>347</startframe>
+      <endframe>370</endframe>
+      <description>attack with a wand</description>
+    </clip>
+    <clip>
+      <name>idle</name>
+      <startframe>371</startframe>
+      <endframe>394</endframe>
+      <description>idle with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>idleTwoHands</name>
+      <startframe>395</startframe>
+      <endframe>418</endframe>
+      <description>idle with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>attackTwoHands</name>
+      <startframe>419</startframe>
+      <endframe>450</endframe>
+      <description>attack with a two handed sword</description>
+    </clip>
+    <clip>
+      <name>shrugOneHand</name>
+      <startframe>451</startframe>
+      <endframe>466</endframe>
+      <description>shrug with a one handed Weapon and a shield</description>
+    </clip>
+    <clip>
+      <name>sadOneHand</name>
+      <startframe>466</startframe>
+      <endframe>485</endframe>
+      <description>shake your head with one handed weapon and shield</description>
+    </clip>
+    <clip>
+      <name>scratchOneHand</name>
+      <startframe>485</startframe>
+      <endframe>508</endframe>
+      <description>scratch your head with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>angryOneHand</name>
+      <startframe>508</startframe>
+      <endframe>533</endframe>
+      <description>show your anger - with one handed weapon</description>
+    </clip>
+    <clip>
+      <name>point</name>
+      <startframe>533</startframe>
+      <endframe>540</endframe>
+      <description>point at someone with a weapon</description>
+    </clip>
+    <clip>
+      <name>depoint</name>
+      <startframe>540</startframe>
+      <endframe>546</endframe>
+      <description>take back a point with a weapon</description>
+    </clip>
+    <clip>
+      <name>laugh</name>
+      <startframe>546</startframe>
+      <endframe>570</endframe>
+      <description>laugh with a weapon</description>
+    </clip>
+    <clip>
+      <name>warcry</name>
+      <startframe>570</startframe>
+      <endframe>591</endframe>
+      <description>point your blade at the sky</description>
+    </clip>
+    <clip>
+      <name>talk</name>
+      <startframe>591</startframe>
+      <endframe>606</endframe>
+      <description>talk while holding weapons</description>
+    </clip>
+    <clip>
+      <name>attack</name>
+      <startframe>607</startframe>
+      <endframe>630</endframe>
+      <description>attack with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>sweepStrikeOneHand</name>
+      <startframe>631</startframe>
+      <endframe>664</endframe>
+      <description>360 degree deadly steel - one handed</description>
+    </clip>
+    <clip>
+      <name>specialAttackOneHand</name>
+      <startframe>665</startframe>
+      <endframe>688</endframe>
+      <description>do a special one hand attack</description>
+    </clip>
+    <clip>
+      <name>sweepStrikeTwoHands</name>
+      <startframe>689</startframe>
+      <endframe>725</endframe>
+      <description>sweep the cave - with a big sword</description>
+    </clip>
+    <clip>
+      <name>specialAttackTwoHands</name>
+      <startframe>726</startframe>
+      <endframe>749</endframe>
+      <description>deadly uppercut with a two handed Sword</description>
+    </clip>
+    <clip>
+      <name>swordMagic</name>
+      <startframe>750</startframe>
+      <endframe>773</endframe>
+      <description>cast a spell on your sword</description>
+    </clip>
+    <clip>
+      <name>priestMagicSmall</name>
+      <startframe>774</startframe>
+      <endframe>797</endframe>
+      <description>cast a priest spell with a one handed weapon</description>
+    </clip>
+    <clip>
+      <name>priestMagicStrong</name>
+      <startframe>798</startframe>
+      <endframe>821</endframe>
+      <description>cast a big spell with a two handed hammer</description>
+    </clip>
+    <clip>
+      <name>walkTwoHandsHammer</name>
+      <startframe>822</startframe>
+      <endframe>845</endframe>
+      <description>walk with a big hammer or axe</description>
+    </clip>
+    <clip>
+      <name>attackTwoHandsBlunt</name>
+      <startframe>846</startframe>
+      <endframe>869</endframe>
+      <description>attack with a mighty hammer or axe</description>
+    </clip>
+    <clip>
+      <name>idleTwoHandsBlunt</name>
+      <startframe>870</startframe>
+      <endframe>893</endframe>
+      <description>be there, do nothing, hold on to a big hammer or axe</description>
+    </clip>
+    <clip>
+      <name>attackUnarmed</name>
+      <startframe>894</startframe>
+      <endframe>917</endframe>
+      <description>kick the vermin</description>
+    </clip>
+    <clip>
+      <name>idleBow</name>
+      <startframe>918</startframe>
+      <endframe>940</endframe>
+      <description>ready, but nothing to fight</description>
+    </clip>
+    <clip>
+      <name>attackRangedUnarmed</name>
+      <startframe>942</startframe>
+      <endframe>965</endframe>
+      <description>throw a deadly dart</description>
+    </clip>
+    <clip>
+      <name>idlePole</name>
+      <startframe>966</startframe>
+      <endframe>989</endframe>
+      <description>stand guard with a weapon of your trade</description>
+    </clip>
+    <clip>
+      <name>castBowBuff</name>
+      <startframe>990</startframe>
+      <endframe>1013</endframe>
+      <description>cast a non-elemental Bow buff</description>
+    </clip>
+    <clip>
+      <name>pointing</name>
+      <startframe>540</startframe>
+      <endframe>540</endframe>
+      <description>point at someone constantly</description>
+    </clip>
+    <clip>
+      <name>lieOneHand</name>
+      <startframe>1014</startframe>
+      <endframe>1014</endframe>
+      <description>unconscious but still armed with a one handed weaon</description>
+    </clip>
+    <clip>
+      <name>getUpOneHand</name>
+      <startframe>1014</startframe>
+      <endframe>1038</endframe>
+      <description>stand up with a one handed Weapon</description>
+    </clip>
+    <clip>
+      <name>lieBow</name>
+      <startframe>1039</startframe>
+      <endframe>1039</endframe>
+      <description>unconscious with a bow</description>
+    </clip>
+    <clip>
+      <name>getUpBow</name>
+      <startframe>1039</startframe>
+      <endframe>1062</endframe>
+      <description>get up with a bow</description>
+    </clip>
+    <clip>
+      <name>talkPole</name>
+      <startframe>1063</startframe>
+      <endframe>1086</endframe>
+      <description>talk while holding a staff-like weapon</description>
+    </clip>
+    <clip>
+      <name>kneelDownPole</name>
+      <startframe>1087</startframe>
+      <endframe>1097</endframe>
+      <description>kneel down. recommended for staffs, not suitable for bows and shields</description>
+    </clip>
+    <clip>
+      <name>kneelPole</name>
+      <startframe>1097</startframe>
+      <endframe>1108</endframe>
+      <description>kneel. recommended for staffs, not suitable for bows and shields</description>
+    </clip>
+    <clip>
+      <name>kneelUpPole</name>
+      <startframe>1108</startframe>
+      <endframe>1120</endframe>
+      <description>get up from kneeling position. recommended for staffs, not suitable for bows and shields</description>
+    </clip>
+  </animations>
+
+</creature>

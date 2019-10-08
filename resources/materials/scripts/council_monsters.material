@@ -1,0 +1,34 @@
+material council_monsters
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.5372 0.5372 0.5372 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture konzil_monsters.png
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+			
+			texture_unit
+             {
+                texture konzil_monsters_ambient.png            
+                tex_coord_set 0
+                colour_op add
+                scale 1 1
+				scroll 0 0
+				rotate 0
+             }
+
+		}
+	}
+}

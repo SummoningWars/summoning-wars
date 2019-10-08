@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="modWP_platform" layer="NORMAL">
+        <Mesh file="modWP_platform.mesh" />
+        <Geometry shape="RECT" extent_x="3.873376258" extent_y="2.352809395"/>
+</Object>

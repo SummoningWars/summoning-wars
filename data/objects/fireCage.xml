@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="fireCage" layer="BASE">
+        <RenderInfo name="fireCage" />
+        <Geometry shape="CIRCLE" radius= "1.5"/>
+</Object>

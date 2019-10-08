@@ -1,0 +1,465 @@
+//blockade of fire
+particle_system FirewallBlock
+{
+    material        Flare
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    quota           10000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Cylinder
+{
+        angle           30
+        emission_rate   400
+        time_to_live    5
+        direction       0 1 0
+        velocity        0
+        colour_range_start  1 0 0
+        colour_range_end    0.5 0.5 0
+        width           1.0
+        height          4.0
+        depth           1.2
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+// cage of fire
+particle_system FireCage
+{
+    material        Flare
+    particle_width  0.4
+    particle_height 0.4
+    cull_each       false
+    quota              3000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Ring
+{
+        angle           10
+        emission_rate   1500
+        time_to_live    1.5
+        direction       0 1 0
+        velocity        0
+        colour_range_start  1 0 0
+        colour_range_end    0.5 0.5 0
+        width           3.0
+        height          3.0
+        depth           0.4
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+//the bomb Spell
+particle_system Bomb
+{
+    material        Flare
+    particle_width  0.6
+    particle_height 0.6
+    cull_each       false
+    quota           3000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Cylinder
+{
+        angle           30
+        emission_rate   400
+        time_to_live    0.5
+        direction       0 1 0
+        velocity        0
+        colour_range_start  1 0 0
+        colour_range_end    0.5 0.5 0
+        width           4.0
+        height          4.0
+        depth           1.2
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+
+
+}
+
+//Items
+particle_system ItemFlare
+{
+    material Flare
+    particle_width 0.2
+    particle_height 0.2
+    cull_each false
+    quota 5
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 15
+        emission_rate 5
+        time_to_live 1
+        direction 0 1 0
+        velocity_min 0.3
+        velocity_max 1.4
+        colour_range_start 0.6 0.6 0.4
+        colour_range_end 0.6 0.3 0.3
+}
+}
+
+
+//Outdoors
+particle_system CampFire
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 500
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 25
+        emission_rate 150
+        time_to_live 0.2
+        direction 0 1 0
+        velocity_min 1.5
+        velocity_max 3.0
+        colour_range_start 0.6 0 0
+        colour_range_end 0.6 0.3 0
+}
+}
+
+particle_system CampFireBase
+{
+    material        Flare
+    particle_width  0.3
+    particle_height 0.3
+    cull_each       false
+    quota           1000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Cylinder
+{
+        angle           30
+        emission_rate   200
+        time_to_live    0.1
+        direction       0 1 0
+        velocity        0.6
+        colour_range_start  0.9 0 0
+        colour_range_end    0.6 0.3 0
+        width           1.0
+        height          1.0
+        depth           0.3
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+//Destruction
+//Smoke coming down
+particle_system Smoke
+{
+    material        smoke
+    particle_width  1.0
+    particle_height 1.0
+    cull_each       false
+    quota           10000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Cylinder
+{
+        angle           30
+        emission_rate   300
+        time_to_live    2
+        direction       0 -1 0
+        velocity        2
+        colour_range_start  1 1 1 0.2
+        width           4.0
+        height          4.0
+        depth           0.4
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+//smoke in a sphere
+particle_system Smoke_Explosion
+{
+    material        smoke
+    particle_width  1.0
+    particle_height 1.0
+    cull_each       false
+    quota           3000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Ellipsoid
+{
+        angle           360
+        emission_rate   600
+        time_to_live    0.2
+        direction       0 1 0
+        velocity        0.2
+        colour_range_start  1  1 1 0.2
+        width           4.0
+        height          4.0
+        depth           3.2
+
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 2 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+
+//smoke in a cube
+particle_system Smoke_Cube
+{
+    material        smoke
+    particle_width  1.0
+    particle_height 1.0
+    cull_each       false
+    quota           3000
+    billboard_type  point
+    
+    // Area emitter
+    emitter Ellipsoid
+{
+        angle           360
+        emission_rate   600
+        time_to_live    0.4
+        direction       0 1 0
+        velocity        0.2
+        colour_range_start  1  1 1 0.2
+        width           4.0
+        height          8.0
+        depth           2.0
+
+}
+
+    // Make em float upwards
+    affector LinearForce
+{
+        force_vector      0 0.4 0
+        force_application add
+}
+
+    // Fader
+    affector ColourFader
+{
+        red -0.25
+        green -0.25
+        blue -0.25
+}
+}
+//brown particles flying up and coming down again
+particle_system EarthGeysir
+{
+    material flareAlpha
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 5000
+    billboard_type point
+ 
+
+   emitter Box
+{
+        angle 45
+        emission_rate 1000
+        time_to_live 40
+        position    0.0 1.0 0.0
+        direction 0 1 0
+        velocity_min 3.0
+        velocity_max 4.0
+        colour_range_start 1 0.7 0.4
+        colour_range_end 0.9 0.7 0.3
+        width           4.0
+        height          4.0
+        depth           0.8
+}
+
+
+    // Make em float downwards
+    affector LinearForce
+{
+        force_vector      0 -2 0
+        force_application add
+}
+
+}
+
+//Earth gushing out at the summoning of a frostmage
+particle_system EarthGush
+{
+    material flareAlpha
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 500
+    billboard_type point
+ 
+
+   emitter Box
+{
+        angle 45
+        emission_rate 300
+        time_to_live 40
+        position    0.0 0.2 0.0
+        direction 0 1 0
+        velocity_min 1.0
+        velocity_max 2.4
+        colour_range_start 1 0.7 0.4
+        colour_range_end 0.9 0.7 0.3
+        width           1.0
+        height          1.0
+        depth           0.8
+}
+
+
+    // Make em float downwards
+    affector LinearForce
+{
+        force_vector      0 -2 0
+        force_application add
+}
+
+}
+
+//Machinery
+
+//fire part of the council crane energy machinery
+particle_system EnergyFire
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 100
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 20
+        time_to_live 0.3
+        direction 0.3 0 0.8
+        velocity_min 1.0
+        velocity_max 3.0
+        colour_range_start 1 0 0
+        colour_range_end 1 0.5 0
+}
+}
+//air part of the council crane energy machinery
+particle_system EnergyAir
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 100
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 20
+        time_to_live 0.3
+        direction 0.3 0 0.8
+        velocity_min 1.0
+        velocity_max 3.0
+        colour_range_start 0.9 0.9 0.99 
+        colour_range_end 0.6 0.6 1
+}
+}
+//ice part of the council crane energy machinery
+particle_system EnergyIce
+{
+    material Flare
+    particle_width 0.4
+    particle_height 0.4
+    cull_each false
+    quota 100
+    billboard_type point
+ 
+
+   emitter Point
+{
+        angle 0
+        emission_rate 20
+        time_to_live 0.3
+        direction 0.3 0 0.8
+        velocity_min 1.0
+        velocity_max 3.0
+        colour_range_start  0.0 0.4 1
+        colour_range_end    0.0 0.2 1
+}
+}

@@ -1,0 +1,31 @@
+<RenderInfo name="birdbase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="fly" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack1" />
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="fly" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+		  <!-- <Sound objectname="general" name="some_hit_sound"/> -->
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="bloodbeak" parent="birdbase">
+	<Entity source="bloodbeak.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="bat" parent="birdbase">
+	<Entity source="bat.mesh"/>
+</RenderInfo>

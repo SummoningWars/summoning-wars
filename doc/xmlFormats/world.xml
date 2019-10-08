@@ -1,0 +1,212 @@
+<!--the World tag contains information about the composition of the world 
+	Attributes:	start_region: 	the name of the region a player will be spawned in when he/she enters the game for the first time
+				start_location:	the name of the location in the start region, where players will be spawned. This can be any location existing in the region
+-->
+
+
+<World start_region="start_village" start_location="entry_south">
+<!--
+	type:	the name of the fraction
+-->
+	<Fraction type="citizens">
+		<!--
+			fraction: the name of the fraction a relation is dedicated to
+				the fractions default and player do always exist. Player means obviously the human players, whereas default is the relation the fraction will have with any other faction until something different is specified.
+			relation: the relation between two fractions. it can be:
+				hostile, aka kill on sight
+				neutral, meaning memebers of those fractions will not attack or hurt each other(by area effects), but projectils will not pass neutral creatures
+				allied, which is almost like a party, except you won't get experience for enemies killed by an allied unit
+		-->
+		<Relation fraction="default" relation="neutral" />
+		<Relation fraction="player" relation="allied" />
+	</Fraction>
+	
+	<Fraction type="police">
+		<Relation fraction="default" relation="neutral" />
+		<Relation fraction="evil_empire" relation="hostile" />
+	</Fraction>
+	
+	<Fraction type="evil_empire">
+		<Relation fraction="default" relation="hostile" />
+		<Relation fraction="player" relation="hostile" />
+		<Relation fraction="citizens" relation="neutral" />
+		<Relation fraction="police" relation="allied" />
+	</Fraction>
+<!-- 	
+		Note that the relation between police and evil_empire is allied, because the evil_empire-fraction is handled after the police.
+		Would this be the other way round, the two fractions would end up being enemies.
+		To prevent such inconsistent statements from occuring, it is best to only reference fractions allready initialised.
+-->	
+	<Fraction type="reaver">
+		<Relation fraction="default" relation="hostile" />
+		<Relation fraction="player" relation="hostile" />
+		<Relation fraction="citizens" relation="hostile" />
+		<Relation fraction="evil_empire" relation="hostile" />
+		<Relation fraction="police" relation="hostile" />
+	</Fraction>
+
+	<TitleMusic source="" />
+	
+	<!-- The first region.
+		Every player entering this world for the very first time will be spawned here, because we said so in the world-tag (start_region="start_village").
+		This is an example of a region using a predefined ObjectGroup.
+		Every region has to have a unique id and name.
+	-->
+	<Region id="83" name="start_village">
+		<!-- 
+			The light settings of the region. Every type of light consists of red green and blue. You can vary these settings to get coloured light
+			AmbientLight is a kind of diffuse light that is everywhere. It is determining the basic brightness of a region
+			DirectionalLight is what in real life would be the sun.
+			HeroLight is a circle of Light surrounding the heroes. It is only seen for the player.
+		-->
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<!--
+			The general settings of the region. This one is a predefined region that will not be generated randomly.
+			dimx and dimy is the extend of the region in x and y direction with the origin being in northwest. Since it uses a region_template, the region has to be big enough for the ObjectGroup to fit in it.
+				Note that currently the two measurements are not the same. The region has to be roughly half as big as the template you use for it to fit.
+			region_template indicates that this is a predefined region. It will use the ObjectGroup specified by the attribute
+			ground is the name of a material that will be used as ground. If there is no ground specified it will be pitch black
+		-->
+		<Settings dimx="20" dimy="20" region_template="village"  ground="grass1"/>
+		
+		<!--
+			The world position defines, where on the worldmap the corresponding circle will be put.
+			The coordinates are relative (0,0 being the origin in the upper left corner and 1,1 being the counterpart in the lower right)
+			If waypoint is set to true the generator will place a waypoint at a location called WaypointLoc. This is here contained in the "village"-ObjectGroup.
+				Be sure to understand that no object is placed in the ObjectGroup but only the location is specified.
+		-->
+		<WorldPosition world_x="0.5" world_y ="0.9" waypoint="true"/>
+		
+		<!--
+			A tag simply telling in which direction an exit from this region exists. If true, the exit exists, otherwise it won't.
+			TODO: for region templates??
+		-->
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<!--
+			The bindings of exits and entrences from regions
+		-->
+		<Exits>
+			<!--
+				name: the name of the location where this exit is situated
+				destination_region: The region this exit connects to
+				destination_location: The location in the destination region where the players will be respawned
+			-->
+			<Exit name="exit_north" destination_region="outback" destination_location="entry_south" >
+				<!--
+					The shape of the area, that will capture players and teleport them to wherever the exit connects to.
+					shape can be
+						"RECT", in which case extend_x and extend_y are a vector to a corner of the rectangle. This specific shape would be a square with an edgelength of 8
+						"CIRCLE", where by radius a circle is specified
+				-->
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="teleporter" destination_region="spaceship" destination_location="teleporter" >
+				<Shape shape="CIRCLE" radius="2" />
+			</Exit>
+		</Exits>
+		
+		<!--
+			Environment will tell the map generator which environment this region has. Since this is a predefined ObjectGroup it is recommended to have only one environment.
+			The environment will determine, which real objects will replace templates. This means that an ObjectGroup potentially completly changes it's style with a change of environment.
+		-->
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>		
+		
+		<!--
+			Every time a player enters a region with a specified revive location this will cause him to revive there whenever he/she dies. It is always the last visited revive location, that will be used.
+		-->
+		<ReviveLocation  location="WaypointLoc" />
+		
+		<!--
+			A region can handle events. For a better description of Events please see the quest.xml-documentation
+		-->
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				village.questor = createObject('guard', 'locQuestGuy');
+				setRefName(village.questor, 'Random Guy');
+				set(village.questor,"angle",90);
+				
+				trader = createObject('peasant', 'locWeaponTrader');
+				setRefName(trader, 'Trader');
+				set(trader,"angle",25);
+			</Effect>
+		</Event>
+	</Region>
+	
+	<!-- a completely randomly generated region -->
+	<Region id="2" name="outback">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Settings dimx="46" dimy="46" area_percent="0.3" complexity="0.4" granularity="6"  ground="grass1"/>
+		
+		<!-- Since the region is generated, WaypointLoc will be placed by the map generator. It will be there even if there is no waypoint using it. -->
+		<WorldPosition world_x="0.4" world_y ="0.8" waypoint="true"/>
+		
+		<!--
+			In a generated region the locations entry_direction and exit_direction will be placed automatically for every direction that has an exit.
+		-->
+		<ExitDirections north="false" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="village" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<!-- 
+			If there is more then one environment, the heights of the environment will be ordered and thus define environment intervalls.
+			Height is a relative number ranging from 0 to 1
+			Here everything below 0.4 would be meadow, while everything above would be hills. This only effects object templates.
+			Currently, this feature is not implemented in the map generator.
+			Environments can be defined freely, so be aware of typing errors.
+		-->
+		<Environments>
+			<Environment height="0.4" name="meadow" />
+			<Environment height="1.0" name="hills" />
+		</Environments>
+	
+		<!--
+			Named object groups are object groups that will get a name assigned by whitch it can be called by lua.
+			Name: the name the ObjectGroup can be called later
+			object_group: The ObjectGroup placed by this
+			The priority indicates the order in which the templates will be added. Higher priorities lead to earlier placing.
+			
+			If a named object group cannot be placed due to insufficient space the map generator will redo the generation of the region.
+		-->
+		<NamedObjectGroups>
+			<NameObjectGroup name="officer" object_group="officer_party" priority="4"/>
+		</NamedObjectGroups>
+		
+		<!--
+			Simple object groups are "fire and forget" groups. You will not get a hold of them again once they are placed. They are generally for decoration only.
+			If an object group contains a location, it will throw a "create_template"-event.
+			object_group: The ObjectGroup placed by this
+			number: an unnamed object group can be placed several times. Up to this value.
+			probability: The probability of this group being placed. It is a value between 0 and 1, with 1 referring to a guaranteed placement.
+			Note that even if the probability is 1 the objectgroup may not be placed in case there is not enough space for it.
+		-->
+		<ObjectGroups>
+			<ObjectGroup object_group="treePatch_med" priority="1" number="3" probability="1"/>
+			<ObjectGroup object_group="flowerPatch" priority="1" number="30" probability="0.5"/>
+		</ObjectGroups>
+		
+		<!--
+			Spawn groups are groups of monsters that will be placed in the region after it is generated.
+			group_name: The name of the monster group, see monsterStats.xml
+			number: The number of times this specific group will be spawned in the region.
+			
+			a monster group will not be placed where there is alreade a template group. This especially means that monsters in a predefined region have to be added manually.
+		-->
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_l1" number="27" />
+			<SpawnGroup group_name="goblins_bow_l1" number="18" />
+		</SpawnGroups>
+	</Region>
+</World>

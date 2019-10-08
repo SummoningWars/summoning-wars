@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="TaharezLook/StaticImage" Name="QuestInfo" >
+        <Property Name="Image" Value="set:OptionsWindow image:Background" />
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0.435,0},{0.84,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Window Type="TaharezLook/StaticText" Name="Quests" >
+            <Property Name="Text" Value="Quests" />
+            <Property Name="HorzExtent" Value="52" />
+            <Property Name="VertExtent" Value="25.5702" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.376,0},{0.035,0},{0.624,0},{0.06,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+		<Window Type="TaharezLook/ImageButton" Name="QuestInfoCloseButton" >
+			<Property Name="HoverImage" Value="set:Misc image:CloseBtnHovered" />
+			<Property Name="NormalImage" Value="set:Misc image:CloseBtnReleased" />
+			<Property Name="DisabledImage" Value="set:Misc image:CloseBtnReleased" />
+			<Property Name="PushedImage" Value="set:Misc image:CloseBtnPressed" />
+			<Property Name="UnifiedAreaRect" Value="{{0.903207,0},{0.0674265,0},{0.977863,0},{0.105715,0}}" />
+		</Window>
+        <Window Type="TaharezLook/Listbox" Name="QuestList" >
+            <Property Name="UnifiedAreaRect" Value="{{0.0389594,0},{0.192192,0},{0.970263,0},{0.484214,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Checkbox" Name="QuestOpenBox" >
+            <Property Name="UnifiedAreaRect" Value="{{0.0569016,0},{0.502446,0},{0.11352,0},{0.545984,0}}" />
+        </Window>
+        <Window Type="TaharezLook/StaticText" Name="QuestOpenLabel" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+            <Property Name="UnifiedAreaRect" Value="{{0.119699,0},{0.502446,0},{0.331069,0},{0.545983,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="TaharezLook/Checkbox" Name="QuestDoneBox" >
+            <Property Name="UnifiedAreaRect" Value="{{0.348463,0},{0.501042,0},{0.400596,0},{0.551599,0}}" />
+        </Window>
+        <Window Type="TaharezLook/StaticText" Name="QuestDoneLabel" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="TextColours" Value="tl:FF61B329 tr:FF61B329 bl:FF61B329 br:FF61B329" />
+            <Property Name="UnifiedAreaRect" Value="{{0.391076,0},{0.506658,0},{0.602446,0},{0.543176,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="TaharezLook/Checkbox" Name="QuestFailedBox" >
+            <Property Name="UnifiedAreaRect" Value="{{0.61984,0},{0.503851,0},{0.680944,0},{0.547387,0}}" />
+        </Window>
+        <Window Type="TaharezLook/StaticText" Name="QuestFailedLabel" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="TextColours" Value="tl:FFEE3B3B tr:FFEE3B3B bl:FFEE3B3B br:FFEE3B3B" />
+            <Property Name="UnifiedAreaRect" Value="{{0.682637,0},{0.508062,0},{0.929892,0},{0.54458,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="TaharezLook/MultiLineEditbox" Name="QuestDescription" >
+            <Property Name="Text" >
+</Property>
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0412021,0},{0.586678,0},{0.968021,0},{0.953107,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+    </Window>
+</GUILayout>

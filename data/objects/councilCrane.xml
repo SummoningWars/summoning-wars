@@ -1,0 +1,12 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="councilCrane" layer="BASE">
+        <RenderInfo name="councilCrane"/>
+        <Geometry shape="CIRCLE" radius="2.876952994"/>
+		<Flags usable="true" exact_picking="true" collision_detect="true" />
+		
+		<Event trigger="object_use">
+			<Effect>
+				insertTrigger("cogLeanClicked")
+				addTriggerVariable("user",trigger.user)
+			</Effect>
+		</Event>
+</ScriptObject>

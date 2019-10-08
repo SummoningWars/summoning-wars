@@ -1,0 +1,17 @@
+material shield
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend add
+			depth_write off
+
+			texture_unit
+			{
+				texture shield.png
+			}
+		}
+	}
+}

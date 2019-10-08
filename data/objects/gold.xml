@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="goldsack" layer="NORMAL">
+	<Mesh file="gold.mesh" />
+	<Geometry shape="CIRCLE" radius="0.2"/>
+</Object>

@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="board2" layer="NORMAL">
+        <Mesh file="board2.mesh" />
+        <Geometry shape="RECT" extent_x="0.3033363267" extent_y="1.314056488"/>
+</Object>

@@ -1,0 +1,58 @@
+<RenderInfo name="spiderbase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="walk" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack1" />
+		<Sound objectname="general" name="spider_attack"/>
+	</Action>
+	<Action name="attack">
+		<Animation name="attack2" />
+		<Sound objectname="general" name="spider_attack"/>
+	</Action>
+	
+	<Action name="stun_attack">
+		<Animation name="attack1" />
+		<Sound objectname="general" name="spider_attack"/>
+	</Action>
+	<Action name="stun_attack">
+		<Animation name="attack2" />
+		<Sound objectname="general" name="spider_attack"/>
+	</Action>
+
+	<Action name="poison_attack">
+		<Animation name="attack1" />
+		<Sound objectname="general" name="spider_attack"/>
+	</Action>
+	<Action name="poison_attack">
+		<Animation name="attack2" />
+		<Sound objectname="general" name="spider_attack"/>
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+		<Sound objectname="general" name="slug_die"/>
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle1" />
+	</Action>
+	<Action name="noaction">
+		<Animation name="idle2" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+		  <!-- <Sound objectname="general" name="some_hit_sound"/> -->
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="caveSpider" parent="spiderbase">
+	<Entity source="spider.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="caveSpiderSmall" parent="spiderbase">
+	<Entity source="spider.mesh" scale="0.5"/>
+</RenderInfo>

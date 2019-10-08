@@ -1,0 +1,196 @@
+<RenderInfo name="elementalbase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="float" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack1" />
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle" />
+	</Action>
+	
+	<Action name="fire_ball">
+		<Animation name="attack1" />
+	</Action>
+	
+	<Action name="summoned">
+		<Animation name="summoned" />
+		<Scale  start="0" end="1.0" start_val="0.1" end_val="1.0" />
+		<ParticleSystem objectname="summonFire" source="Firewall" />
+		<Scale  objectname="summonFire" start="0" end="1.0" start_val="0.1" end_val="0.7" />
+		<Detach objectname="summonFire" time="1.0"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="slugbase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="walk" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack" />
+		<ParticleSystem time = "0.3" objectname="spit" bone="mainmesh:crown" source="SlugSpit" position="0.0 -0.1 -0.07" />
+		<Detach time="0.9" objectname="spit" />
+		<Sound objectname="general" name="slug_attack"/>
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+		<Sound objectname="general" name="slug_die"/>
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle1" />
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle1" />
+	</Action>
+	
+	<Action name="summoned">
+		<Animation name="rise" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+			<Sound objectname="general" name="slug_hit"/>
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="lousebase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="walk" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack" />
+		<Sound objectname="general" name="beatle_attack"/>
+	</Action>
+
+	<Action name="die">
+		<Sound objectname="general" name="beatle_die"/>
+		<Animation name="die" />
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle1" />
+	</Action>
+	<Action name="noaction">
+		<Animation name="idle2" />
+	</Action>
+	<Action name="summoned">
+		<Animation name="jump" />
+	</Action>
+	
+	<State name="bleed">
+		<Active>
+			<Sound objectname="general" name="beatle_hit"/>
+		</Active>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="behemothbase" parent="creaturebase">
+	<Action name="walk">
+		<Animation name="walk" />
+	</Action>
+	
+	<Action name="attack">
+		<Animation name="attack1" />
+	</Action>
+
+	<Action name="die">
+		<Animation name="die" />
+	</Action>
+	
+	<Action name="noaction">
+		<Animation name="idle" />
+	</Action>
+
+	<Action name="fire_ball">
+		<Animation name = "throwFireball" />
+		<ParticleSystem objectname="hellfire" bone="mainmesh:tailTipRight" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire" />
+	</Action>
+	<Action name="tutorial_fire_ball">
+		<Animation name = "throwFireball" />
+		<ParticleSystem objectname="hellfire" bone="mainmesh:tailTipRight" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire" />
+	</Action>
+
+	<Action name="hammer_bash">
+		<Animation name="attack1" />
+	</Action>
+
+	<Action name="whirl_blow">
+		<Animation name="attack1" />
+	</Action>
+
+	<Action name="storm_charge">
+		<Animation name="attack1" />
+	</Action>
+
+	<Action name="inflame">
+	</Action>
+
+	<Action name="behemoth_fire_storm">
+		<Animation name = "fireWave" />
+		<ParticleSystem objectname="hellfire1" bone="mainmesh:tailTipRight" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire1" />
+		<ParticleSystem objectname="hellfire2" bone="mainmesh:tailTipLeft" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire2" />
+		<ParticleSystem objectname="hellfire3" bone="mainmesh:tailTipMiddle" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire3" />
+	</Action>
+	<Action name="tutorial_behemoth_fire_storm">
+		<Animation name = "fireWave" />
+		<ParticleSystem objectname="hellfire1" bone="mainmesh:tailTipRight" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire1" />
+		<ParticleSystem objectname="hellfire2" bone="mainmesh:tailTipLeft" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire2" />
+		<ParticleSystem objectname="hellfire3" bone="mainmesh:tailTipMiddle" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire3" />
+	</Action>
+	
+	<Action name="tutorial_fire_wall">
+		<Animation name = "fireWave" />
+		<ParticleSystem objectname="hellfire1" bone="mainmesh:tailTipRight" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire1" />
+		<ParticleSystem objectname="hellfire2" bone="mainmesh:tailTipLeft" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire2" />
+		<ParticleSystem objectname="hellfire3" bone="mainmesh:tailTipMiddle" source="Firetail" position="0.0 0.0 0.0" />
+		<Detach time="0.8" objectname="hellfire3" />
+	</Action>	
+</RenderInfo>
+
+<RenderInfo name="fireElemS" parent="elementalbase">
+	<Entity source="fireElemSmall.mesh"/>
+	<ParticleSystem objectname="rightHand" source="FireElemHand" bone="fingerjointRight"/>
+	<ParticleSystem objectname="rightLeft" source="FireElemHand" bone="fingerJointLeft"/>
+	
+	<Action name="fire_attack">
+		<Animation name="attack1" />
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="fireSlug" parent="slugbase">
+	<Entity source="fire_slug.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="mutantSlug" parent="slugbase">
+	<Entity source="fire_slug_mutant.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="fireLouse" parent="lousebase">
+	<Entity source="fireLouse.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="infBehemoth" parent="behemothbase">
+	<Entity source="infernoBehemoth.mesh"/>
+</RenderInfo>

@@ -1,0 +1,121 @@
+<RenderInfo name="guardPole_cnl" parent="guardPoleBase">
+	<Entity source="guardCnl.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="speer_pol.mesh" />
+	<Subobject objectname="armor" source="counclArmTolec" />
+	<Subobject objectname="gloves" source="sharkGlovesGuard" />
+	<Entity objectname="head" bone="crown" source="head1.mesh" />
+	<Entity objectname="helm" bone="crown" source="turban_hlm.mesh" />
+	<Entity objectname="shoulderR" bone="shoulderJointRight" source="konzPlateR.mesh" />
+	<Entity objectname="shoulderL" bone="shoulderJointLeft" source="konzPlateL.mesh" />
+</RenderInfo>
+
+<RenderInfo name = "derred" parent="guardPole_cnl">
+</RenderInfo>
+
+<RenderInfo name = "tolec" parent="playerbase">
+	<Entity source="guardCnl.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="council_sw.mesh" />
+	<Entity objectname="shield" bone="itemLeftHand" source="council_shd.mesh" />
+	<Subobject objectname="armor" source="counclArm#m" />
+	<Subobject objectname="gloves" source="sharkGloves#m" />
+	<Entity objectname="head" bone="crown" source="head1.mesh" />
+	<Entity objectname="helm" bone="crown" source="turban_hlm.mesh" />
+	<Entity objectname="shoulderR" bone="shoulderJointRight" source="konzPlateR.mesh" />
+	<Entity objectname="shoulderL" bone="shoulderJointLeft" source="konzPlateL.mesh" />
+</RenderInfo>
+
+<RenderInfo name = "soren" parent="guardPoleBase">
+	<Entity source="soren.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="hat" bone="crown" source="turban_hat.mesh" />
+	<Subobject objectname="robe" source="counclRobeSoren" />
+	<Entity objectname="weapon" bone="itemRightHand" source="council_stf.mesh" />
+	
+	<Action name="holdItem">
+		<Animation name="showItemPole"/>
+		<Entity  objectname="stone" bone="itemLeftHand" source="stone_void.mesh"/>
+		<Detach objectname="stone" time="0.99"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name = "ireana" parent="guardPoleBaseF">
+	<Entity source="femaleT_robe.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_f1.mesh" />
+	<Entity objectname="hat" bone="crown" source="turban_hat_redFT.mesh" />
+	<Subobject objectname="robe" source="counclRobeIreana" />
+	<Entity objectname="weapon" bone="itemRightHand" source="council_stf.mesh" />
+</RenderInfo>
+
+<RenderInfo name = "sorenCrystal" >
+	<Entity source="comCrystal.mesh"/>
+	
+	<Action name="noaction">
+		<Movement start="0.0" end="0.5" start_vec="0.0 0.0 0.0" end_vec="0.0 0.30 0.0" />
+		<Movement start="0.5" end="1.0" start_vec="0.0 0.3 0.0" end_vec="0.0 0.0 0.0" />
+	</Action>
+	
+	<Action name = "blindness">
+		<ParticleSystem objectname="sacrifice" source="Hit" position="0.0 1.8 0.0" />
+		<Detach time="0.8" objectname="sacrifice" />
+	</Action>
+
+</RenderInfo>
+
+<RenderInfo name = "slave_worker" parent="playerbase">
+	<Entity source="slave_m.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="hammer_hmr.mesh" />
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="helm" bone="crown" source="capWhite.mesh" />
+	
+	<Action name = "noaction">
+		<Animation name = "attack"/>
+	</Action>
+	<Action name="shake">
+		<Animation name="shake"/>
+	</Action>
+</RenderInfo>
+<RenderInfo name = "slave_scaffolding" parent="playerbase">
+	<Entity source="slave_m.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="hammer_hmr.mesh" />
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="helm" bone="crown" source="capWhite.mesh" />
+	
+	<Action name = "noaction">
+		<Animation name = "attack"/>
+	</Action>
+	<Action name = "die">
+		<Animation name = "die_scaffolding"/>
+	</Action>
+	
+</RenderInfo>
+<RenderInfo name = "slave_miner" parent="playerbase">
+	<Entity source="slave_m.mesh"/>
+	<Entity objectname="weapon" bone="itemRightHand" source="pick_axe.mesh" />
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="helm" bone="crown" source="capBlue.mesh" />
+	
+	<Action name = "noaction">
+		<Animation name = "attackTwoHands"/>
+	</Action>
+</RenderInfo>
+<RenderInfo name = "slave_overseer" parent="playerbase">
+	<Entity source="slave_m.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="helm" bone="crown" source="capRed.mesh" />
+</RenderInfo>
+
+<RenderInfo name = "councilMage" parent="guardPoleBase">
+	<Entity source="soren.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_m1.mesh" />
+	<Entity objectname="hat" bone="crown" source="turban_hat.mesh" />
+	<Subobject objectname="robe" source="counclRobeSoren" />
+	<Entity objectname="weapon" bone="itemRightHand" source="council_stf.mesh" />
+</RenderInfo>
+
+<RenderInfo name = "councilMageF" parent="guardPoleBaseF">
+	<Entity source="femaleT_robe.mesh"/>
+	<Entity objectname="head" bone="crown" source="head_f1.mesh" />
+	<Entity objectname="hat" bone="crown" source="turban_hat_redFT.mesh" />
+	<Subobject objectname="robe" source="counclRobeIreana" />
+	<Entity objectname="weapon" bone="itemRightHand" source="council_stf.mesh" />
+</RenderInfo>

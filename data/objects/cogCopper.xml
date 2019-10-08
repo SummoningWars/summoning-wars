@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cogCopper" layer="NORMAL">
+        <Mesh file="cogCopper.mesh" />
+        <Geometry shape="CIRCLE" radius="1.289480475"/>
+</Object>

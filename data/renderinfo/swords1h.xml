@@ -1,0 +1,102 @@
+<RenderInfo name="swordBase">
+	<Soundobject objectname="sound" />
+	
+	<Action name="attack">
+		<Sound objectname="sound" name="sword_attack"/>
+	</Action>
+	
+	<Action name="holy_attack" reference="attack" />
+	
+	<Action name="bash" reference="attack" />
+	<Action name="hammer_bash" reference="bash" />
+	
+	<Action name="around_blow" reference="attack"/>
+	<Action name="whirl_blow" reference="around_blow" />
+	
+	<Action name="smash" reference="attack" />
+	
+	<Action name="hate_mage" reference="attack" />
+	
+	<Action name="charge" reference="attack" />
+	<Action name="storm_charge" reference="charge" />
+	
+	<Action name="holy_light" reference="holy_attack" />
+	<Action name="holy_fire" reference="holy_light" />
+	
+	<Action name="break_binding" reference="holy_attack" />
+	<Action name="disrupt_binding" reference="break_binding" />
+	
+	<Action name="divine_wind" reference="holy_attack" />
+	<Action name="divine_storm" reference="divine_wind" />
+	
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_metal"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="shortSwordBase" parent="swordBase">
+	<State name="firesword">
+		<Activation>
+			<ParticleSystem objectname="firesword1" source="BurningBlade" position= "0 0 -0.2"/>
+			<Rotation objectname="firesword1" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword2" source="BurningBlade" position= "0 0 -0.4"/>
+			<Rotation objectname="firesword2" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword3" source="BurningBlade" position= "0 0 -0.6"/>
+			<Rotation objectname="firesword3" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="firesword1"/>
+			<Detach objectname="firesword2"/>
+			<Detach objectname="firesword3"/>
+		</Deactivation>
+	</State>
+</RenderInfo>
+<RenderInfo name="oneHandSwordBase" parent="swordBase">
+	<State name="firesword">
+		<Activation>
+			<ParticleSystem objectname="firesword1" source="BurningBlade" position= "0 0 -0.2"/>
+			<Rotation objectname="firesword1" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword2" source="BurningBlade" position= "0 0 -0.4"/>
+			<Rotation objectname="firesword2" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword3" source="BurningBlade" position= "0 0 -0.7"/>
+			<Rotation objectname="firesword3" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+			<ParticleSystem objectname="firesword4" source="BurningBlade" position= "0 0 -0.9"/>
+			<Rotation objectname="firesword4" start="0.0" end="0.0" start_vec="0.0 0.0 0.0" end_vec="0.0 180.0 0.0" />
+		</Activation>
+		
+		<Deactivation>
+			<Detach objectname="firesword1"/>
+			<Detach objectname="firesword2"/>
+			<Detach objectname="firesword3"/>
+			<Detach objectname="firesword4"/>
+		</Deactivation>
+	</State>
+</RenderInfo>
+
+<RenderInfo name="dagger" parent= "shortSwordBase">
+	<Entity source="dagger_sw.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="shortSword" parent= "shortSwordBase">
+	<Entity source="short_sw.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="bronzeSword" parent= "oneHandSwordBase">
+	<Entity source="bronze_sw.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="sabre" parent= "oneHandSwordBase">
+	<Entity source="sabre_sw.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="legionBlade" parent= "oneHandSwordBase">
+	<Entity source="long_sw.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="longSword" parent= "oneHandSwordBase">
+	<Entity source="long_sw.mesh"/>
+</RenderInfo>
+<RenderInfo name="councilSabre" parent= "oneHandSwordBase">
+	<Entity source="council_sw.mesh"/>
+</RenderInfo>

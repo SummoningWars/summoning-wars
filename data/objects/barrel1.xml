@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="barrel1" layer="NORMAL">
+        <Mesh file="barrel1.mesh" />
+        <Geometry shape="CIRCLE" radius="0.5"/>
+</Object>

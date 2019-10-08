@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cryptDebris3" layer="NORMAL">
+        <Mesh file="cryptDebris3.mesh" />
+        <Geometry shape="CIRCLE" radius="0.4105811915"/>
+</Object>

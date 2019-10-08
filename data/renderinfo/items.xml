@@ -1,0 +1,46 @@
+<RenderInfo name="potionBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_potion"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="potion"  parent="potionBase">
+	<Entity  source="heal_1.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="mediumPotion" parent="potionBase">
+	<Entity  source="heal_2.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiBlind" parent="potionBase">
+	<Entity  source="heal_bl.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiBerserk" parent="potionBase">
+	<Entity  source="heal_br.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiConfuse" parent="potionBase">
+	<Entity  source="heal_cf.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiMute" parent="potionBase">
+	<Entity  source="heal_mt.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiBurn" parent="potionBase">
+	<Entity  source="heal_bu.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiParalyze" parent="potionBase">
+	<Entity  source="heal_py.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiFreeze" parent="potionBase">
+	<Entity  source="heal_fr.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="antiPoison" parent="potionBase">
+	<Entity  source="heal_ps.mesh"/> 
+</RenderInfo>

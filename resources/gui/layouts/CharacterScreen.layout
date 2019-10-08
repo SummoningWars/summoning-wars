@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+	<Window Type="TaharezLook/StaticImage" Name="CharInfo" >
+		<Property Name="Image" Value="set:CharScreen image:Background" />
+		<Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{0.435,0},{0.84,0}}" />
+		<Property Name="BackgroundEnabled" Value="False" />
+		<Window Type="TaharezLook/StaticImage" Name="Portrait" >
+			<Property Name="Image" Value="set:Portrait image:Portrait" />
+			<Property Name="FrameEnabled" Value="True" />
+			<Property Name="UnifiedAreaRect" Value="{{0.104,0},{0.195,0},{0.275,0},{0.334,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/ImageButton" Name="CharInfoCloseButton" >
+			<Property Name="HoverImage" Value="set:Misc image:CloseBtnHovered" />
+			<Property Name="NormalImage" Value="set:Misc image:CloseBtnReleased" />
+			<Property Name="DisabledImage" Value="set:Misc image:CloseBtnReleased" />
+			<Property Name="PushedImage" Value="set:Misc image:CloseBtnPressed" />
+			<Property Name="UnifiedAreaRect" Value="{{0.903207,0},{0.0674265,0},{0.977863,0},{0.105715,0}}" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="NameLabel" >
+			<Property Name="Text" Value="Name" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="HorzFormatting" Value="HorzCentred" />
+			<Property Name="UnifiedAreaRect" Value="{{0.376,0},{0.035,0},{0.624,0},{0.06,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Playerinfo" >
+			<Property Name="Text" Value="Player info" />
+			<Property Name="TextColours" Value="tl:FFFF2400 tr:FFFF2400 bl:FFFF2400 br:FFFF2400" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.080,0},{0.125,0},{0.285,0},{0.165,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		 <Window Type="TaharezLook/StaticText" Name="Attributes" >
+			<Property Name="Text" Value="Attributes" />
+			<Property Name="TextColours" Value="tl:FFFF2400 tr:FFFF2400 bl:FFFF2400 br:FFFF2400" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.063,0},{0.400,0},{0.320,0},{0.440,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Offense" >
+			<Property Name="Text" Value="Offense" />
+			<Property Name="TextColours" Value="tl:FFFF2400 tr:FFFF2400 bl:FFFF2400 br:FFFF2400" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.070,0},{0.630,0},{0.260,0},{0.670,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Defense" >
+			<Property Name="Text" Value="Defense" />
+			<Property Name="TextColours" Value="tl:FFFF2400 tr:FFFF2400 bl:FFFF2400 br:FFFF2400" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.550,0},{0.630,0},{0.730,0},{0.670,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ClassLabel" >
+			<Property Name="Text" Value="Class" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.168,0},{0.600,0},{0.206,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ClassValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.610,0},{0.168,0},{0.770,0},{0.206,0}}" />
+ 			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="LevelLabel" >
+			<Property Name="Text" Value="Level" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.208,0},{0.600,0},{0.246,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="LevelValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.610,0},{0.208,0},{0.770,0},{0.246,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="StrengthLabel" >
+			<Property Name="Text" Value="Strength" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.453,0},{0.237,0},{0.494,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="StrengthValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.268,0},{0.453,0},{0.345,0},{0.494,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/ImageButton" Name="StrengthAddButton" >
+			<Property Name="UnifiedPosition" Value="{{0.351,0},{0.460,0}}" />
+			<Property Name="UnifiedSize" Value="{{0.061,0},{0.028,0}}" />
+			<Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+			<Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+			<Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="DexterityLabel" >
+			<Property Name="Text" Value="Dexterity" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.491,0},{0.237,0},{0.532,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="DexterityValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.268,0},{0.491,0},{0.345,0},{0.532,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/ImageButton" Name="DexterityAddButton" >
+			<Property Name="UnifiedPosition" Value="{{0.351,0},{0.498,0}}" />
+			<Property Name="UnifiedSize" Value="{{0.061,0},{0.028,0}}" />
+			<Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+			<Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+			<Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="WillpowerLabel" >
+			<Property Name="Text" Value="Willpower" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.537,0},{0.453,0},{0.780,0},{0.494,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="WillpowerValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.796,0},{0.453,0},{0.873,0},{0.494,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/ImageButton" Name="WillpowerAddButton" >
+			<Property Name="UnifiedPosition" Value="{{0.880,0},{0.460,0}}" />
+			<Property Name="UnifiedSize" Value="{{0.061,0},{0.028,0}}" />
+			<Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+			<Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+			<Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="MagicpowerLabel" >
+			<Property Name="Text" Value="Magic power" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.537,0},{0.491,0},{0.780,0},{0.532,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="MagicpowerValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.796,0},{0.491,0},{0.873,0},{0.532,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/ImageButton" Name="MagicpowerAddButton" >
+			<Property Name="UnifiedPosition" Value="{{0.880,0},{0.498,0}}" />
+			<Property Name="UnifiedSize" Value="{{0.061,0},{0.028,0}}" />
+			<Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+			<Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+			<Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="AttrPointsValueLabel" >
+			<Property Name="TextColours" Value="tl:FF0AC92B tr:FF0AC92B bl:FF0AC92Bbr:FF0AC92B" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.210,0},{0.550,0},{0.95,0},{0.595,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ExperienceLabel" >
+			<Property Name="Text" Value="Experience" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.248,0},{0.600,0},{0.296,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ExperienceValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.610,0},{0.248,0},{0.850,0},{0.296,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="HitpointsLabel" >
+			<Property Name="Text" Value="Hitpoints" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.288,0},{0.600,0},{0.328,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="HitpointsValueLabel" >
+ 			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.610,0},{0.288,0},{0.850,0},{0.328,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="AttackLabel" >
+			<Property Name="Text" Value="Attack" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.680,0},{0.240,0},{0.720,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="AttackValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.680,0},{0.480,0},{0.720,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="AttackSpeedLabel" >
+			<Property Name="Text" Value="Attacks/s" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.760,0},{0.240,0},{0.800,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="AttackSpeedValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.760,0},{0.480,0},{0.800,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="RangeLabel" >
+			<Property Name="Text" Value="Range" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.800,0},{0.240,0},{0.840,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="RangeValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.800,0},{0.480,0},{0.840,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="PowerLabel" >
+			<Property Name="Text" Value="Power" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.720,0},{0.240,0},{0.760,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="PowerValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.720,0},{0.480,0},{0.760,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ArmorLabel" >
+			<Property Name="Text" Value="Armor" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.542,0},{0.680,0},{0.745,0},{0.720,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ArmorValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.862,0},{0.680,0},{0.962,0},{0.720,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="BlockLabel" >
+			<Property Name="Text" Value="Block" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.542,0},{0.720,0},{0.745,0},{0.760,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="BlockValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.862,0},{0.720,0},{0.962,0},{0.760,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+			<Window Type="TaharezLook/StaticText" Name="BaseDmgLabel" >
+			<Property Name="Text" Value="" />
+			<Property Name="TextColours" Value="tl:FF4F94CD tr:FF4F94CD bl:FF4F94CD br:FF4F94CD" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.840,0},{0.380,0},{0.880,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="BaseDmgValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.840,0},{0.480,0},{0.880,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Skill1DmgLabel" >
+			<Property Name="Text" Value="" />
+			<Property Name="TextColours" Value="tl:FF0AC92B tr:FF0AC92B bl:FF0AC92B br:FF0AC92B" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.880,0},{0.380,0},{0.920,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Skill1DmgValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.880,0},{0.480,0},{0.920,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Skill2DmgLabel" >
+			<Property Name="Text" Value="" />
+			<Property Name="TextColours" Value="tl:FF0AC92B tr:FF0AC92B bl:FF0AC92B br:FF0AC92B" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.058,0},{0.920,0},{0.380,0},{0.960,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="Skill2DmgValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.380,0},{0.920,0},{0.480,0},{0.960,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistPhysLabel" >
+			<Property Name="Text" Value="Physical" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.542,0},{0.800,0},{0.745,0},{0.840,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistPhysValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.862,0},{0.800,0},{0.962,0},{0.840,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistFireLabel" >
+			<Property Name="Text" Value="Fire" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.542,0},{0.840,0},{0.745,0},{0.880,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistFireValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.862,0},{0.840,0},{0.962,0},{0.880,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistAirLabel" >
+			<Property Name="Text" Value="Air" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.542,0},{0.880,0},{0.745,0},{0.920,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistAirValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.862,0},{0.880,0},{0.962,0},{0.920,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistIceLabel" >
+			<Property Name="Text" Value="Ice" />
+			<Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.542,0},{0.920,0},{0.745,0},{0.960,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+		<Window Type="TaharezLook/StaticText" Name="ResistIceValueLabel" >
+			<Property Name="FrameEnabled" Value="False" />
+			<Property Name="UnifiedAreaRect" Value="{{0.862,0},{0.920,0},{0.962,0},{0.960,0}}" />
+			<Property Name="BackgroundEnabled" Value="False" />
+		</Window>
+	</Window>
+</GUILayout>

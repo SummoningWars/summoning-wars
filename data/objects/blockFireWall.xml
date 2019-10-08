@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="blockFireWall" layer="BASE">
+        <RenderInfo name="blockFireWall" />
+        <Geometry shape="RECT" extent_x="0.5" extent_y="5"/>
+</Object>

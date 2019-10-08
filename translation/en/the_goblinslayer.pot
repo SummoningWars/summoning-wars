@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: goblins.xml
+msgid "The goblinslayer"
+msgstr ""
+
+#: goblins.xml
+msgid "Quest finished"
+msgstr ""
+
+#: goblins.xml
+msgid "you killed enough goblins"
+msgstr ""
+
+#: goblins.xml
+msgid "peasant"
+msgstr ""
+
+#: goblins.xml
+msgid "Goblins"
+msgstr ""
+
+#: goblins.xml
+msgid "I have killed them all."
+msgstr ""
+
+#: goblins.xml
+msgid "Wow... you're a real hero, aren't ya?"
+msgstr ""
+
+#: goblins.xml
+msgid "Leave me alone and kill some more goblins."
+msgstr ""
+
+#: goblins.xml
+msgid "There are some stupid goblins pissing me off."
+msgstr ""
+
+#: goblins.xml
+msgid "If you kill 10 of 'em, I'll give you a precious reward."
+msgstr ""
+
+#: goblins.xml
+msgid "Interested?"
+msgstr ""
+
+#: goblins.xml
+msgid "Accept the quest?"
+msgstr ""
+
+#: goblins.xml
+msgid "Yes"
+msgstr ""
+
+#: goblins.xml
+msgid "No"
+msgstr ""
+
+#: goblins.xml
+msgid "Goblins (reward)"
+msgstr ""
+
+#: goblins.xml
+msgid "You want a second reward?"
+msgstr ""
+
+#: goblins.xml
+msgid "Of course!"
+msgstr ""
+
+#: goblins.xml
+msgid "Then I'll give you this goblin club. Be happy."
+msgstr ""
+
+#: goblins.xml
+msgid "Nearly done."
+msgstr ""
+
+#: goblins.xml
+msgid "Have fun then."
+msgstr ""
+
+#: goblins.xml
+msgid "region1"
+msgstr ""

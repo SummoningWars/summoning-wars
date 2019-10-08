@@ -1,0 +1,9 @@
+<Object type="FIXED_OBJECT" subtype="campFire" layer="BASE">
+        <RenderInfo name="campFire" />
+        <Geometry shape="CIRCLE" radius="0.753211179"/>
+</Object>
+
+<Object type="FIXED_OBJECT" subtype="pureFire" layer="NOCOLLISION">
+        <RenderInfo name="pureFire" />
+        <Geometry shape="CIRCLE" radius="0.753211179"/>
+</Object>

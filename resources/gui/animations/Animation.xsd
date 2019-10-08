@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<link rel="icon" href="/hgweb/crayzedsgui/cegui_mk2/static/hgicon.png" type="image/png" />
+<meta name="robots" content="index, nofollow"/>
+<link rel="stylesheet" href="/hgweb/crayzedsgui/cegui_mk2/static/style-gitweb.css" type="text/css" />
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="The world's largest development and download repository of Open Source code and applications" />
+  <meta name="keywords" content="Open Source, Development, Developers, Projects, Downloads, OSTG, VA Software, SF.net, SourceForge" />
+  <link rel="stylesheet" type="text/css" href="/hgweb/crayzedsgui/cegui_mk2/static/sf.css" media="screen" /> 
+
+   <!-- BEGIN: AdSolution-Tag 4.2: Global-Code [PLACE IN HTML-HEAD-AREA!] -->
+   <!-- DoubleClick Random Number -->
+   <script language="JavaScript" type="text/javascript">
+     dfp_ord=Math.random()*10000000000000000;
+     dfp_tile = 1;
+   </script>
+   <!-- End DoubleClick Random Number -->
+
+   <script type="text/javascript">
+        var google_page_url = 'http://sourceforge.net/projects/[rootname]/';
+        var sourceforge_project_name = '[rootname]';
+        var sourceforge_project_description = '';
+   </script>
+
+   <!-- END: AdSolution-Tag 4.2: Global-Code -->
+   <!-- End OSDN NavBar gid: -->
+   <!-- after META tags -->
+   <script type="text/javascript">
+     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E");
+   </script> 
+
+ <div id="doc3" class="yui-t6 login">
+   <div id="hd">
+     <div class="yui-gf">
+       <div class="yui-u first">
+         <h1>
+           <a href="http://sourceforge.net/" title="">
+            SourceForge.net
+           </a>
+         </h1>
+         <ul class="jump">
+           <li>
+            <a href="#content">Jump to main content</a>
+           </li>
+         </ul>
+       </div>
+       <div class="yui-u">
+         <a href="http://sourceforge.net/community/">
+           Community</a><a href="http://jobs.sourceforge.net">Jobs</a><a href="http://sourceforge.net/support" title="Get help and support on SourceForge.net">Help
+         </a>
+         <form action="http://sourceforge.net/search/" method="get" name="searchform">
+           <input type="hidden" name="type_of_search" value="soft" />
+           <input type="text" value="" name="words" tabindex="1" />
+           <input type="submit" value="Search" tabindex="0" />
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="yui-b">
+   <div id="fad83">
+    <!-- DoubleClick Ad Tag -->                                
+    <script type="text/javascript">
+    <script type="text/javascript">
+      //<![CDATA[
+      document.write('<script src="http://ad.doubleclick.net/adj/ostg.sourceforge/;pg=;tile='+dfp_tile+';tpc=;ord='+dfp_ord+'?" type="text/javascript"><\/script>');
+      dfp_tile++;
+      //]]>                 
+    </script>
+    </script>
+    <!-- End DoubleClick Ad Tag -->
+   </div>
+ </div>
+
+<title>SourceForge: crayzedsgui/cegui_mk2: datafiles/xml_schemas/Animation.xsd@fffb8a6c4ac8</title>
+<link rel="alternate" type="application/atom+xml"
+   href="/hgweb/crayzedsgui/cegui_mk2/atom-log" title="Atom feed for crayzedsgui/cegui_mk2"/>
+<link rel="alternate" type="application/rss+xml"
+   href="/hgweb/crayzedsgui/cegui_mk2/rss-log" title="RSS feed for crayzedsgui/cegui_mk2"/>
+</head>
+<body>
+
+<div class="page_header">
+<a href="http://mercurial.selenic.com/" title="Mercurial" style="float: right;">Mercurial</a><a href="/hgweb/crayzedsgui/cegui_mk2/summary">crayzedsgui/cegui_mk2</a> / file revision
+</div>
+
+<div class="page_nav">
+<a href="/hgweb/crayzedsgui/cegui_mk2/summary">summary</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/shortlog">shortlog</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/log">changelog</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/graph">graph</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/tags">tags</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/branches">branches</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/file/fffb8a6c4ac8/datafiles/xml_schemas/">files</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/rev/fffb8a6c4ac8">changeset</a> |
+file |
+<a href="/hgweb/crayzedsgui/cegui_mk2/file/tip/datafiles/xml_schemas/Animation.xsd">latest</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/log/fffb8a6c4ac8/datafiles/xml_schemas/Animation.xsd">revisions</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/annotate/fffb8a6c4ac8/datafiles/xml_schemas/Animation.xsd">annotate</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/diff/fffb8a6c4ac8/datafiles/xml_schemas/Animation.xsd">diff</a> |
+<a href="/hgweb/crayzedsgui/cegui_mk2/raw-file/fffb8a6c4ac8/datafiles/xml_schemas/Animation.xsd">raw</a><br/>
+</div>
+
+<div class="title">datafiles/xml_schemas/Animation.xsd</div>
+
+<div class="title_text">
+<table cellspacing="0">
+<tr>
+ <td>author</td>
+ <td>&#77;&#97;&#114;&#116;&#105;&#110;&#32;&#80;&#114;&#101;&#105;&#115;&#108;&#101;&#114;&#32;&#60;&#112;&#114;&#101;&#105;&#115;&#108;&#101;&#114;&#46;&#109;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;&#62;</td></tr>
+<tr>
+ <td></td>
+ <td>Thu Aug 25 23:10:00 2011 +0200 (4 weeks ago)</td></tr>
+
+<tr>
+ <td>changeset 2761</td>
+ <td style="font-family:monospace"><a class="list" href="/hgweb/crayzedsgui/cegui_mk2/rev/fffb8a6c4ac8">fffb8a6c4ac8</a></td></tr>
+
+
+<tr>
+ <td>permissions</td>
+ <td style="font-family:monospace">-rw-r--r--</td></tr>
+</table>
+</div>
+
+<div class="page_path">
+MOD: propertyOrigin is WidgetTypeName where possible, inbuilt widget classes except &quot;Window&quot; have &quot;CEGUI/&quot; prefix<br/>
+MOD: Added Inconsistency notes where applicable (property name, setter and getter inconsistencies)<br/>
+FIX: Various property related cleanup and fixes (mostly formatting and typos)
+</div>
+
+<div class="page_body">
+
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l1" id="l1">     1</a> &lt;?xml version=&quot;1.0&quot; ?&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l2" id="l2">     2</a> &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l3" id="l3">     3</a> 	&lt;xsd:element name=&quot;Animations&quot; type=&quot;animAnimationsType&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l4" id="l4">     4</a> 	&lt;xsd:complexType name=&quot;animAnimationsType&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l5" id="l5">     5</a>         &lt;xsd:sequence&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l6" id="l6">     6</a>             &lt;xsd:element name=&quot;AnimationDefinition&quot; type=&quot;animAnimationDefinitionType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l7" id="l7">     7</a>         &lt;/xsd:sequence&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l8" id="l8">     8</a> 	&lt;/xsd:complexType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l9" id="l9">     9</a> 	&lt;xsd:complexType name=&quot;animAnimationDefinitionType&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l10" id="l10">    10</a>         &lt;xsd:sequence&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l11" id="l11">    11</a>             &lt;xsd:element name=&quot;Affector&quot; type=&quot;animAffectorType&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l12" id="l12">    12</a>             &lt;xsd:element name=&quot;Subscription&quot; type=&quot;animSubscriptionType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l13" id="l13">    13</a>         &lt;/xsd:sequence&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l14" id="l14">    14</a> 		&lt;xsd:attribute name=&quot;name&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l15" id="l15">    15</a> 		&lt;xsd:attribute name=&quot;duration&quot; type=&quot;xsd:decimal&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l16" id="l16">    16</a> 		&lt;xsd:attribute name=&quot;replayMode&quot; type=&quot;animReplayModeEnum&quot; use=&quot;optional&quot; default=&quot;loop&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l17" id="l17">    17</a> 		&lt;xsd:attribute name=&quot;autoStart&quot; type=&quot;xsd:boolean&quot; use=&quot;optional&quot; default=&quot;false&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l18" id="l18">    18</a> 	&lt;/xsd:complexType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l19" id="l19">    19</a> 	&lt;xsd:complexType name=&quot;animAffectorType&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l20" id="l20">    20</a>         &lt;xsd:sequence&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l21" id="l21">    21</a>             &lt;xsd:element name=&quot;KeyFrame&quot; type=&quot;animKeyFrameType&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l22" id="l22">    22</a>         &lt;/xsd:sequence&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l23" id="l23">    23</a> 		&lt;xsd:attribute name=&quot;applicationMethod&quot; type=&quot;animApplicationMethodEnum&quot; use=&quot;optional&quot; default=&quot;absolute&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l24" id="l24">    24</a> 		&lt;xsd:attribute name=&quot;property&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l25" id="l25">    25</a> 		&lt;xsd:attribute name=&quot;interpolator&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l26" id="l26">    26</a> 	&lt;/xsd:complexType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l27" id="l27">    27</a> 	&lt;xsd:complexType name=&quot;animKeyFrameType&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l28" id="l28">    28</a> 		&lt;xsd:attribute name=&quot;position&quot; type=&quot;xsd:decimal&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l29" id="l29">    29</a> 		&lt;xsd:attribute name=&quot;value&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot; default=&quot;&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l30" id="l30">    30</a> 		&lt;xsd:attribute name=&quot;progression&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot; default=&quot;&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l31" id="l31">    31</a> 		&lt;xsd:attribute name=&quot;sourceProperty&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot; default=&quot;&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l32" id="l32">    32</a> 	&lt;/xsd:complexType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l33" id="l33">    33</a> 	&lt;xsd:complexType name=&quot;animSubscriptionType&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l34" id="l34">    34</a> 		&lt;xsd:attribute name=&quot;event&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l35" id="l35">    35</a> 		&lt;xsd:attribute name=&quot;action&quot; type=&quot;animActionEnum&quot; use=&quot;required&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l36" id="l36">    36</a> 	&lt;/xsd:complexType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l37" id="l37">    37</a>     &lt;xsd:simpleType name=&quot;animReplayModeEnum&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l38" id="l38">    38</a>         &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l39" id="l39">    39</a>             &lt;xsd:enumeration value=&quot;once&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l40" id="l40">    40</a>             &lt;xsd:enumeration value=&quot;loop&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l41" id="l41">    41</a>             &lt;xsd:enumeration value=&quot;bounce&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l42" id="l42">    42</a>         &lt;/xsd:restriction&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l43" id="l43">    43</a>     &lt;/xsd:simpleType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l44" id="l44">    44</a>     &lt;xsd:simpleType name=&quot;animApplicationMethodEnum&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l45" id="l45">    45</a>         &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l46" id="l46">    46</a>             &lt;xsd:enumeration value=&quot;absolute&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l47" id="l47">    47</a>             &lt;xsd:enumeration value=&quot;relative&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l48" id="l48">    48</a>             &lt;xsd:enumeration value=&quot;relative multiply&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l49" id="l49">    49</a>         &lt;/xsd:restriction&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l50" id="l50">    50</a>     &lt;/xsd:simpleType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l51" id="l51">    51</a>     &lt;xsd:simpleType name=&quot;animProgressionEnum&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l52" id="l52">    52</a>         &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l53" id="l53">    53</a>             &lt;xsd:enumeration value=&quot;linear&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l54" id="l54">    54</a>             &lt;xsd:enumeration value=&quot;discrete&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l55" id="l55">    55</a>             &lt;xsd:enumeration value=&quot;quadratic accelerating&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l56" id="l56">    56</a>             &lt;xsd:enumeration value=&quot;quadratic decelerating&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l57" id="l57">    57</a>         &lt;/xsd:restriction&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l58" id="l58">    58</a>     &lt;/xsd:simpleType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l59" id="l59">    59</a>     &lt;xsd:simpleType name=&quot;animActionEnum&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l60" id="l60">    60</a>         &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l61" id="l61">    61</a>             &lt;xsd:enumeration value=&quot;Start&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l62" id="l62">    62</a>             &lt;xsd:enumeration value=&quot;Stop&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l63" id="l63">    63</a>             &lt;xsd:enumeration value=&quot;Pause&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l64" id="l64">    64</a>             &lt;xsd:enumeration value=&quot;Unpause&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l65" id="l65">    65</a>             &lt;xsd:enumeration value=&quot;TogglePause&quot; /&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l66" id="l66">    66</a>         &lt;/xsd:restriction&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l67" id="l67">    67</a>     &lt;/xsd:simpleType&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity1">
+<pre><a class="linenr" href="#l68" id="l68">    68</a> &lt;/xsd:schema&gt;
+</pre>
+</div>
+<div style="font-family:monospace" class="parity0">
+<pre><a class="linenr" href="#l69" id="l69">    69</a> 
+</pre>
+</div>
+</div>
+
+<div class="page_footer">
+<div class="page_footer_text">crayzedsgui/cegui_mk2</div>
+<div class="rss_logo">
+<a href="/hgweb/crayzedsgui/cegui_mk2/rss-log">RSS</a>
+<a href="/hgweb/crayzedsgui/cegui_mk2/atom-log">Atom</a>
+</div>
+<br />
+
+</div>
+
+<hr />
+ <div id="ft">
+    <div class="yui-g divider">
+       <div class="yui-u first copyright">
+          &copy;Copyright 1999-2009 - 
+          <a href="http://sourceforge.com" title="Network which provides and promotes Open Source software downloads, development,
+ discussion and news.">SourceForge</a>, Inc., All Rights Reserved 
+       </div>
+       <div class="yui-u">
+          <a href="http://sourceforge.net/community/forum/forum.php?id=12">Feedback</a>
+          <a href="http://sourceforge.net/tos/tos.php">Legal</a> <a href="http://sourceforge.net/support">Help</a>
+       </div>
+    </div>
+ </div>
+                
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-32013-37");
+pageTracker._setDomainName(".sourceforge.net");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+

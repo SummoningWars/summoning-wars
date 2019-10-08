@@ -1,0 +1,17 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="berryBush" layer="BASE">
+        <RenderInfo name="berryBush" />
+        <Geometry shape="CIRCLE" radius="3.350146958"/>
+		<Flags usable="true" exact_picking="true" collision_detect="true" />
+		
+		<Event trigger="object_use">
+			<Effect>
+				local set = getScriptObjectFlag(trigger.used_object,'picked')
+				
+				if(not set)then
+					insertTrigger("berryBushPicked")
+				end
+				
+				setScriptObjectFlag(trigger.used_object,'picked',true)
+			</Effect>
+		</Event>
+</ScriptObject>

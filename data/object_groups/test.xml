@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ObjectGroup name="test" version="1.0">
+  <Shape
+    type="RECT"
+    extent_x="8.8474941"
+    extent_y="8.8474941"
+    angle="0"
+  />
+
+  <WayPoint pos_x="0" pos_y="0" />
+
+  <ObjectContent>
+    <Object subtype="mojo_tortured" 
+            center_x="-0.3414280489" 
+            center_y="-1.162400466e-016" 
+			height="-2.775557562e-017" 
+            angle="1.950649368e-014" 
+            probability="1" 
+            prob_angle="false" 
+    />
+  </ObjectContent>
+
+  <Locations>
+    <Location name="center" pos_x="4.92718999" pos_y="0" />
+  </Locations>
+
+  <Areas>
+  </Areas>
+
+</ObjectGroup>

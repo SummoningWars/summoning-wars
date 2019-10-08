@@ -1,0 +1,109 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-01 00:46+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+#: scene7.xml
+msgid "The Poolmonster"
+msgstr ""
+
+#: scene7.xml
+msgid "Quest finished"
+msgstr "Задание завершено"
+
+#: scene7.xml
+msgid "Quest description"
+msgstr "Описание задание"
+
+#: scene7.xml
+msgid "Soren Windclaw"
+msgstr "Сорен Виндклоу"
+
+#: scene7.xml
+msgid "Wow, thats beautiful."
+msgstr ""
+
+#: scene7.xml
+msgid "Are you getting sentimental now?"
+msgstr "Ты что, становишься сентиментальным?"
+
+#: scene7.xml
+msgid "... Der Anblick hat mich nur an mein Leben"
+msgstr ""
+
+#: scene7.xml
+msgid "Du kannst dich an dein Leben vor der"
+msgstr ""
+
+#: scene7.xml
+msgid "... only dimly"
+msgstr ""
+
+#: scene7.xml
+msgid "Sometimes I wish,"
+msgstr ""
+
+#: scene7.xml
+msgid "I know enough people,"
+msgstr ""
+
+#: scene7.xml
+msgid "... only externally."
+msgstr ""
+
+#: scene7.xml
+msgid "..."
+msgstr "..."
+
+#: scene7.xml
+msgid "Do you really think that it"
+msgstr ""
+
+#: scene7.xml
+msgid "Even the great"
+msgstr ""
+
+#: scene7.xml
+msgid "I hope you have"
+msgstr ""
+
+#: scene7.xml
+msgid "Why has it really"
+msgstr ""
+
+#: scene7.xml
+msgid "We have to go now."
+msgstr "Нам пора идти."
+
+#: scene7.xml
+msgid "Just a moment please."
+msgstr "Один момент, пожалуйста."
+
+#: scene7.xml
+msgid "Whats that on the water over there?"
+msgstr "Что находится в воде вон там?"
+
+#: scene7.xml
+msgid "Looks like a..."
+msgstr "Выглядит как..."
+
+#: scene7.xml
+msgid "*Roar!*"
+msgstr "*Аррр!*"
+
+#: scene7.xml
+msgid "greyCurseLake"
+msgstr ""

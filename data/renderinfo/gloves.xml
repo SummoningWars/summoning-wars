@@ -1,0 +1,67 @@
+<RenderInfo name="leatherGlovesBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_leather"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="metalGlovesBase">
+	<Soundobject objectname="sound" />
+	<Action name="drop">
+		<Sound objectname="sound" name="drop_metal_armor"/>
+	</Action>
+</RenderInfo>
+
+<RenderInfo name="leatherGloves" parent="leatherGlovesBase">
+	<Entity source="leath_glv.mesh"/>
+</RenderInfo>
+<RenderInfo name="leatherGloves#m" parent="playerbaseM" inherit="animation">
+	<Entity source="leath_glvM.mesh"/>
+	<Soundobject objectname="sound" />
+</RenderInfo>
+<RenderInfo name="leatherGloves#f" parent="playerbase" inherit="animation">
+	<Entity source="plate_glvF.mesh"/>
+	<Soundobject objectname="sound" />
+</RenderInfo>
+<RenderInfo name="leatherGloves#fs" parent="playerbase" inherit="animation">
+	<Entity source="plate_glvF.mesh"/>
+	<Soundobject objectname="sound" />
+</RenderInfo>
+
+<RenderInfo name="gloves"  parent="metalGlovesBase">
+	<Entity source="plate_glv.mesh"/>
+</RenderInfo>
+<RenderInfo name="gloves#m" parent="playerbaseM" inherit="animation">
+	<Entity source="plate_glvM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="gloves#f" parent="playerbase" inherit="animation">
+	<Entity source="plate_glvF.mesh"/> 
+</RenderInfo>
+<RenderInfo name="gloves#fs" parent="playerbase" inherit="animation">
+	<Entity source="plate_glvF.mesh"/> 
+</RenderInfo>
+
+<RenderInfo name="sharkGloves" parent="leatherGlovesBase">
+	<Entity source="shark_glv.mesh"/> 
+</RenderInfo>
+<RenderInfo name="sharkGloves#m" parent="playerbaseM" inherit="animation">
+	<Entity source="shark_glvM.mesh"/> 
+</RenderInfo>
+<RenderInfo name="sharkGloves#f" parent="playerbase" inherit="animation">
+</RenderInfo>
+<RenderInfo name="sharkGloves#fs" parent="playerbase" inherit="animation">
+</RenderInfo>
+<RenderInfo name="sharkGlovesGuard" parent="guardPoleBase" inherit="animation">
+	<Entity source="shark_glvM.mesh"/>
+</RenderInfo>
+
+<RenderInfo name="steelGloves"  parent="metalGlovesBase">
+	<Entity source="steel_glvM.mesh"/>
+</RenderInfo>
+<RenderInfo name="steelGloves#m" parent="playerbaseM" inherit="animation">
+	<Entity source="steel_glvM.mesh"/>
+</RenderInfo>
+<RenderInfo name="steelGloves#f" parent="playerbase" inherit="animation">
+</RenderInfo>
+<RenderInfo name="steelGloves#fs" parent="playerbase" inherit="animation">
+</RenderInfo>

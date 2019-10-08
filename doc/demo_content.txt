@@ -1,0 +1,109 @@
+Graphik:
+
+* neue Models:
+	+ Mutantenschnecke
+	+ Totenbeschwoerer
+	- 2-3 Buerger
+	o fliegendes Skelett ???
+	- Magierin (Ireana)
+	- Prinz
+	+ Konzilsmagier
+	+ General Greif
+	+ *kraeftiges* Frauenmesh
+	o Leomar
+	+ Kristall
+	+ Elementaristenwaechter
+	o Teichmonster
+	o Kind
+	o Pferd ???
+	
+	+ Haare, Baerte
+	
+	+ Lederhandschuhe
+	+ Magierhut, Bauernhut, Krone
+	+ Metallschild
+	+ Langbogen
+	+ Metallruestung
+	+ großer Heiltrank, Entgiftungstrank, Auftautrank
+	+ Hacke
+	
+	+ Gerueste
+	+ Truhe
+	+ modifizierter Wegpunkt
+	+ Gitter, Tuer
+	+ Barrikade
+	- Grufteingang
+	- Stadtmauer
+	o Ballista
+	- Kutsche
+	+ Beerenbuesche
+	
+* Emotionsets:
+	+ Bauer (m/w)
+	+ Konzilsleute (50%)
+	- Krieger (m/w)
+	- Schuetze (m/w)
+	+ Magier (m/w)
+	- Priester (m/w)
+	- Prinz
+	- Soren (normal / im Kristall)
+	- Schurke ???
+	- Goblins ???
+
+* Itembilder
+	+ Ruestungen
+	+ Huete / Helme
+	+ großer Heiltrank
+	+ Handschuhe
+	+ Traenke
+
+* Faehigkeitenbilder
+
+* Animationen:
+	+ Lich
+	+ Skelett
+	+ Mann / Frau
+	+ Hund
+
+* Geschosse / Effekte
+	+ Feuerwelle / Eisring
+	+ Feuerball
+	+ Eisangriff
+	+ Blitz
+	+ Explosionen
+
+* Sound ???
+
+* Templates
+	+ Mapgentemplates
+	o Teichmonsterhoehle
+	+ Konzilshalle
+	+ Zwergentrutz
+	- Joringsbrueck, Camp ueberarbeiten
+	+ Besprechungsraum in Zwergentrutz
+	+ Stadtmauer von Zwergentrutz
+	
+* Scripting
+	- Ueberarbeiten der existierenden Scenen
+	+ Scene 2 anpassen
+	- Belagerung
+	- Nebenquests ?
+	+ weitere Haendler
+	+ Heiler
+
+* weitere Monstertypen
+
+* Balancing
+
+* Webseite
+	- Forum (!)
+	
+* Programmierung
+	+ Highlighting 
+	- Schatten ???
+	- Credits
+	- Optionsmenu 
+	- Hintergrund bei Charaktervorschau
+	
+* Uebersetzung
+	- Idee: erstmal deutsch, dann uebersetzen (lassen ?)

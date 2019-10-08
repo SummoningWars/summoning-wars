@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="TaharezLook/StaticImage" Name="TradeWindow" >
+        <Property Name="Image" Value="set:TradeWindow image:Background" />
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{0.435,0},{0.84,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Window Type="TaharezLook/StaticText" Name="TradeLabel" >
+            <Property Name="Text" Value="Chest" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.351329,0},{0.035,0},{0.646428,0},{0.06,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeBigPrevButton" >
+            <Property Name="HoverImage" Value="set:TradeWindow image:BtnUpHover" />
+            <Property Name="NormalImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="PushedImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="DisabledImage" Value="set:TradeWIndow image:BtnUp" />
+            <Property Name="UnifiedAreaRect" Value="{{0.893286,0},{0.25823,0},{0.952915,0},{0.30823,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeBigNextButton" >
+            <Property Name="HoverImage" Value="set:TradeWindow image:BtnDownHover" />
+            <Property Name="NormalImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="PushedImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="DisabledImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="UnifiedAreaRect" Value="{{0.892613,0},{0.341058,0},{0.952243,0},{0.391058,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeMediumPrevButton" >
+            <Property Name="HoverImage" Value="set:TradeWindow image:BtnUpHover" />
+            <Property Name="NormalImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="PushedImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="DisabledImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="UnifiedAreaRect" Value="{{0.895529,0},{0.547517,0},{0.952916,0},{0.597517,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeMediumNextButton" >
+            <Property Name="HoverImage" Value="set:TradeWindow image:BtnDownHover" />
+            <Property Name="NormalImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="PushedImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="DisabledImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="UnifiedAreaRect" Value="{{0.894856,0},{0.627538,0},{0.952243,0},{0.677538,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeSmallPrevButton" >
+            <Property Name="HoverImage" Value="set:TradeWindow image:BtnUpHover" />
+            <Property Name="NormalImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="PushedImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="DisabledImage" Value="set:TradeWindow image:BtnUp" />
+            <Property Name="UnifiedAreaRect" Value="{{0.893286,0},{0.778209,0},{0.950673,0},{0.828209,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeSmallNextButton" >
+            <Property Name="HoverImage" Value="set:TradeWindow image:BtnDownHover" />
+            <Property Name="NormalImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="PushedImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="DisabledImage" Value="set:TradeWindow image:BtnDown" />
+            <Property Name="UnifiedAreaRect" Value="{{0.892613,0},{0.855422,0},{0.95,0},{0.905422,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="TradeCloseButton" >
+            <Property Name="HoverImage" Value="set:MainMenu image:SPBtnHover" />
+            <Property Name="NormalImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="PushedImage" Value="set:MainMenu image:SPBtnPushed" />
+            <Property Name="DisabledImage" Value="set:MainMenu image:SPBtnNormal" />
+            <Property Name="UnifiedAreaRect" Value="{{0.452243,0},{0.934385,0},{0.552243,0},{0.967538,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

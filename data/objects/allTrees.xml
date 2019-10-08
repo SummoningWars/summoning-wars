@@ -1,0 +1,315 @@
+<Object type="FIXED_OBJECT" subtype="tree01_01" layer="NORMAL"> 
+	<Mesh file="Tree01_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree01_02" layer="NORMAL"> 
+	<Mesh file="Tree01_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree01_03" layer="NORMAL"> 
+	<Mesh file="Tree01_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree01_04" layer="NORMAL"> 
+	<Mesh file="Tree01_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree01_05" layer="NORMAL"> 
+	<Mesh file="Tree01_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree01_06" layer="NORMAL"> 
+	<Mesh file="Tree01_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree01_07" layer="NORMAL"> 
+	<Mesh file="Tree01_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_01" layer="NORMAL"> 
+	<Mesh file="Tree02_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_02" layer="NORMAL"> 
+	<Mesh file="Tree02_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_03" layer="NORMAL"> 
+	<Mesh file="Tree02_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_04" layer="NORMAL"> 
+	<Mesh file="Tree02_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_05" layer="NORMAL"> 
+	<Mesh file="Tree02_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_06" layer="NORMAL"> 
+	<Mesh file="Tree02_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree02_07" layer="NORMAL"> 
+	<Mesh file="Tree02_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_01" layer="NORMAL"> 
+	<Mesh file="Tree03_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_02" layer="NORMAL"> 
+	<Mesh file="Tree03_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_03" layer="NORMAL"> 
+	<Mesh file="Tree03_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_04" layer="NORMAL"> 
+	<Mesh file="Tree03_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_05" layer="NORMAL"> 
+	<Mesh file="Tree03_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_06" layer="NORMAL"> 
+	<Mesh file="Tree03_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree03_07" layer="NORMAL"> 
+	<Mesh file="Tree03_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_01" layer="NORMAL"> 
+	<Mesh file="Tree04_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_02" layer="NORMAL"> 
+	<Mesh file="Tree04_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_03" layer="NORMAL"> 
+	<Mesh file="Tree04_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_04" layer="NORMAL"> 
+	<Mesh file="Tree04_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_05" layer="NORMAL"> 
+	<Mesh file="Tree04_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_06" layer="NORMAL"> 
+	<Mesh file="Tree04_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree04_07" layer="NORMAL"> 
+	<Mesh file="Tree04_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_01" layer="NORMAL"> 
+	<Mesh file="Tree05_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_02" layer="NORMAL"> 
+	<Mesh file="Tree05_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_03" layer="NORMAL"> 
+	<Mesh file="Tree05_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_04" layer="NORMAL"> 
+	<Mesh file="Tree05_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_05" layer="NORMAL"> 
+	<Mesh file="Tree05_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_06" layer="NORMAL"> 
+	<Mesh file="Tree05_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree05_07" layer="NORMAL"> 
+	<Mesh file="Tree05_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_01" layer="NORMAL"> 
+	<Mesh file="Tree06_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_02" layer="NORMAL"> 
+	<Mesh file="Tree06_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_03" layer="NORMAL"> 
+	<Mesh file="Tree06_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_04" layer="NORMAL"> 
+	<Mesh file="Tree06_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_05" layer="NORMAL"> 
+	<Mesh file="Tree06_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_06" layer="NORMAL"> 
+	<Mesh file="Tree06_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree06_07" layer="NORMAL"> 
+	<Mesh file="Tree06_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_01" layer="NORMAL"> 
+	<Mesh file="Tree07_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_02" layer="NORMAL"> 
+	<Mesh file="Tree07_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_03" layer="NORMAL"> 
+	<Mesh file="Tree07_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_04" layer="NORMAL"> 
+	<Mesh file="Tree07_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_05" layer="NORMAL"> 
+	<Mesh file="Tree07_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_06" layer="NORMAL"> 
+	<Mesh file="Tree07_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree07_07" layer="NORMAL"> 
+	<Mesh file="Tree07_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_01" layer="NORMAL"> 
+	<Mesh file="Tree08_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_02" layer="NORMAL"> 
+	<Mesh file="Tree08_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_03" layer="NORMAL"> 
+	<Mesh file="Tree08_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_04" layer="NORMAL"> 
+	<Mesh file="Tree08_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_05" layer="NORMAL"> 
+	<Mesh file="Tree08_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_06" layer="NORMAL"> 
+	<Mesh file="Tree08_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree08_07" layer="NORMAL"> 
+	<Mesh file="Tree08_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_01" layer="NORMAL"> 
+	<Mesh file="Tree09_01.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_02" layer="NORMAL"> 
+	<Mesh file="Tree09_02.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_03" layer="NORMAL"> 
+	<Mesh file="Tree09_03.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_04" layer="NORMAL"> 
+	<Mesh file="Tree09_04.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_05" layer="NORMAL"> 
+	<Mesh file="Tree09_05.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_06" layer="NORMAL"> 
+	<Mesh file="Tree09_06.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+
+<Object type="FIXED_OBJECT" subtype="tree09_07" layer="NORMAL"> 
+	<Mesh file="Tree09_07.mesh" /> 
+	<Geometry shape="CIRCLE" radius="0.5"/> 
+</Object> 
+

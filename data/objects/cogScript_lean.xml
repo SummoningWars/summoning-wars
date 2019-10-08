@@ -1,0 +1,12 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="cogScript_lean" layer="BASE">
+        <Mesh file="cogScript_lean.mesh" />
+        <Geometry shape="RECT" extent_x="0.3723020563" extent_y="0.6474180658"/>
+		<Flags usable="true" exact_picking="true" collision_detect="true" />
+		
+		<Event trigger="object_use">
+			<Effect>
+				insertTrigger("cogLeanClicked")
+				addTriggerVariable("user",trigger.user)
+			</Effect>
+		</Event>
+</ScriptObject>

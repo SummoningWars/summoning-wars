@@ -1,0 +1,12 @@
+<ScriptObject type="SCRIPTOBJECT" subtype="mechanismCouncilCrane" layer="NORMAL">
+        <RenderInfo name="mechanismCouncilCrane"/>
+        <Geometry shape="CIRCLE" radius="1.289480475"/>
+		
+		<Event trigger="object_use">
+			<Effect>
+				insertTrigger("mechanismClicked")
+				addTriggerVariable("used_object",trigger.used_object);
+				addTriggerVariable("user",trigger.user);
+			</Effect>
+		</Event>
+</ScriptObject>

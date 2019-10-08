@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="smallWall1" layer="NORMAL">
+	<Mesh file="smallWall1.mesh" />
+	<Geometry shape="RECT" extent_x="0.46" extent_y ="0.6" />
+</Object>

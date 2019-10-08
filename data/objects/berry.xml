@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="berry" layer="NORMAL">
+        <Mesh file="berry.mesh" />
+        <Geometry shape="CIRCLE" radius="0.179057836"/>
+</Object>

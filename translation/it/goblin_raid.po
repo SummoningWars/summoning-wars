@@ -1,0 +1,151 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-22 08:02+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: goblin_raid.xml
+msgid "goblin_raid"
+msgstr "L'assalto dei Goblin"
+
+#: goblin_raid.xml
+msgid ""
+"Well, I got a little money for killing some goblins I would have wasted "
+"anyway. Not a bad day."
+msgstr ""
+"Bene! Ho fatto su due soldi sgozzando alcuni goblin. Li avrei sperperati "
+"comunque. La giornata mi pare ottima."
+
+#: goblin_raid.xml
+msgid ""
+"It seems the sergeant from Joringsbridge is willing to pay, but he wants me "
+"to help those peasants first. There's no trust in this world anymore."
+msgstr ""
+"Sembra che il sergente di Joringsbridge possa pagarmi, ma prima vuole che "
+"aiuti quei paesani. Uffa, non c'è proprio più fiducia a sto mondo."
+
+#: goblin_raid.xml
+msgid ""
+"I discovered plans of a goblin raid set for a village called Joringsbridge. "
+"They were found amongst the remains of some goblin tribe. Guess I busted "
+"that party prematurely. Maybe someone official will appreciate not having "
+"hordes of goblins kicking in their doors."
+msgstr ""
+"Ho scoperto piani di un'attacco goblin, il bersaglio era un villaggio "
+"chiamato Joringsbridge. Li ho scovati tra le rovine di alcune tribù goblin. "
+"Penso di avergli rotto le uova nel paniere. Qualche ufficiale in città "
+"potrebbe dimostrare il suo apprezzamento per non essersi ritrovato orde di "
+"goblin che gli pigliano a calci la porta."
+
+#: goblin_raid.xml
+msgid "aisDarkClearing"
+msgstr "La tetra radura"
+
+#: goblin_raid.xml
+msgid "Sergeant Lutterer"
+msgstr "Sergente Lutterer"
+
+#: goblin_raid.xml
+msgid "Crude battle plans"
+msgstr "Grezzi piani di battaglia"
+
+#: goblin_raid.xml
+msgid "Hey, sergeant, I found these in the woods with some goblins."
+msgstr ""
+"Salve servente, ho trovato questi nelle foreste, stavano assieme ad alcuni "
+"goblin."
+
+#: goblin_raid.xml
+msgid "This looks like it could be Joringsbridge. Are you sure it's reliable?"
+msgstr "Sembra che questa sia Joringsbridge. Sei sicuro che siano affidabili?"
+
+#: goblin_raid.xml
+msgid "Some kind of head honcho shaman had them, so I figure they mean it."
+msgstr ""
+"Qualche tipo di capo sciamano psicotico li aveva, quindi penso lo siano."
+
+#: goblin_raid.xml
+msgid "Meant it. Whatever."
+msgstr "fossero ormai."
+
+#: goblin_raid.xml
+msgid "Hey, sergeant, ready to pay for the pre-emptive rescue of the village?"
+msgstr ""
+"Hey, sergente, sei pronto per pagare per il salvataggio preventivo del "
+"villaggio?"
+
+#: goblin_raid.xml
+msgid "I guess you can be trusted."
+msgstr "Penso ci si possa fidare di te."
+
+#: goblin_raid.xml
+msgid "Let me thank you on behalf of the whole village."
+msgstr "Lascia che ti ringrazi a nome dell'intero villaggio."
+
+#: goblin_raid.xml
+msgid "It's always a pleasure when a good deed goes rewarded."
+msgstr "E' sempre un piacere quando una buona azione viene ricompensata."
+
+#: goblin_raid.xml
+msgid "Sorry, but I don't know you."
+msgstr "Mi spiace ma non ho idea di chi tu sia."
+
+#: goblin_raid.xml
+msgid "Maybe I will show some gratitude after you help Michel's family."
+msgstr "Potrei mostrarti gratitudine se aiuterai la famiglia di Michel"
+
+#: goblin_raid.xml
+msgid "As they say: One hand washes the other."
+msgstr "Come si suol dire: una mano lava l'altra."
+
+#: goblin_raid.xml
+msgid "Do you want to help the peasant?"
+msgstr "Aiuteresti i paesani?"
+
+#: goblin_raid.xml
+msgid "Yes"
+msgstr "Si"
+
+#: goblin_raid.xml
+msgid "No"
+msgstr "No"
+
+#: goblin_raid.xml
+msgid "Then I better get back to saving helpless peasants, no?"
+msgstr "Allora è meglio che io vada a salvare un po' di paesani inermi no?"
+
+#: goblin_raid.xml
+msgid "Fine, I'll wipe out those goblins for you."
+msgstr "Molto bene, spazzerò via quei goblin per voi."
+
+#: goblin_raid.xml
+msgid "You do realise there's plenty more where they came from?"
+msgstr "Ti rendi conto che ce ne sono moltissimi da dove provengono?"
+
+#: goblin_raid.xml
+msgid "Just go already."
+msgstr "Va bene, muoviti."
+
+#: goblin_raid.xml
+msgid "Whatever. It's not like I need the money or anything."
+msgstr "Come ti pare. Non è che mi servano i soldi."
+
+#: goblin_raid.xml
+msgid "And I could care less what happens to some peasant family."
+msgstr "E di una famiglia di contadini non potrebbe importarmi di meno."

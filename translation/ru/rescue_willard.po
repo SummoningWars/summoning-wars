@@ -1,0 +1,360 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-01 00:51+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+#: rescue_willard.xml
+msgid "A friend in need"
+msgstr "Друг в беде"
+
+#: rescue_willard.xml
+msgid ""
+"Willard is back in Medair and he even forked out some money. Who said it "
+"wouldn't pay to let people live? At least as long there are enough goblins "
+"around."
+msgstr ""
+"Виллард вернулся обратно в Медаир и даже дал мне немного денег. Кто сказал, "
+"люди не будут платить за то, чтобы остаться в живых? По крайней мере до тех "
+"пор, пока вокруг достаточно гоблинов."
+
+#: rescue_willard.xml
+msgid ""
+"Willard is in hiding somewhere around the Aisen Meadow. Due to his injury he "
+"will show himself only if there are no goblins around."
+msgstr ""
+"Виллард прячется где-то в Низинах Аизена. Так как он ранен, он выйдет из "
+"укрытия только если рядом не будет гоблинов."
+
+#: rescue_willard.xml
+msgid ""
+"A long search and quite a lot of dead goblins later Willard has finally "
+"shown himself. I should give him the stone and be done with it."
+msgstr ""
+"После долгих поисков и довольно большого количества убитых гоблинов Виллард "
+"наконец-то нашелся. Мне надо отдать ему камень и дело сделано."
+
+#: rescue_willard.xml
+msgid "medMercCamp"
+msgstr "Лагерь наемников Медаир"
+
+#: rescue_willard.xml
+msgid "Hey there!"
+msgstr "Эй, там!"
+
+#: rescue_willard.xml
+msgid "Fenor Marken"
+msgstr "Фенор Маркен"
+
+#: rescue_willard.xml
+msgid "Willard"
+msgstr "Виллард"
+
+#: rescue_willard.xml
+msgid "I hope you are making a good time searching for Willard. ##solo"
+msgstr "Надеюсь, ты хорошо проводишь время в поисках Вилларда."
+
+#: rescue_willard.xml
+msgid "I hope you are making a good time searching for Willard."
+msgstr "Надеюсь, вы хорошо проводите время в поисках Вилларда."
+
+#: rescue_willard.xml
+msgid "Have you changed your mind?"
+msgstr "Ты изменил свое мнение?"
+
+#: rescue_willard.xml
+msgid "Search for Willard?"
+msgstr "Искать Вилларда?"
+
+#: rescue_willard.xml
+msgid "Yes"
+msgstr "Да"
+
+#: rescue_willard.xml
+msgid "No"
+msgstr "Нет"
+
+#: rescue_willard.xml
+msgid "If I'm not mistaken you are a Branded One."
+msgstr "Если я не ошибаюсь, то ты Избранный."
+
+#: rescue_willard.xml
+msgid "If I'm not mistaken you are Branded Ones."
+msgstr "Если я не ошибаюсь, то вы Избранные."
+
+#: rescue_willard.xml
+msgid "What the..."
+msgstr "Что за..."
+
+#: rescue_willard.xml
+msgid "Do I have a sign somewere saying: Caution, dangerous monster??"
+msgstr "У меня что, на лбу написано: внимание, опасный монстр?"
+
+#: rescue_willard.xml
+msgid "That is the second time today!"
+msgstr "Это уже второй раз за сегодня!"
+
+#: rescue_willard.xml
+msgid "I could always feel if someone was a Branded One."
+msgstr "Я могу чувствовать, кто является Избранным."
+
+#: rescue_willard.xml
+msgid ""
+"But don't worry, I will give noone away, as long as they are behaving "
+"correctly."
+msgstr ""
+"Но не беспокойся, я никому ничего не скажу, пока все ведут себя хорошо."
+
+#: rescue_willard.xml
+msgid "There is something I'd like to ask of you. ##solo"
+msgstr "Есть кое-что, что я бы хотел у тебя спросить."
+
+#: rescue_willard.xml
+msgid "Only someone like you could do it reliably. ##solo"
+msgstr "Только кто-то вроде тебя может сделать это наверняка."
+
+#: rescue_willard.xml
+msgid "There is something I'd like to ask of you."
+msgstr "Есть кое-что, что я бы хотел у вас спросить."
+
+#: rescue_willard.xml
+msgid "Only someone like you could do it reliable."
+msgstr "Только кто-то вроде вас может сделать это наверняка."
+
+#: rescue_willard.xml
+msgid "Who would have thought that?"
+msgstr "С чего ты это взял?"
+
+#: rescue_willard.xml
+msgid "Does an honorable member of the city guard wants someone's throat cut?"
+msgstr "Почетный член городской стражи хочет перерезать кому-то горло?"
+
+#: rescue_willard.xml
+msgid "What? I could have hired a professional assassin for that."
+msgstr "Что? Для этого я мог бы нанять профессионального убийцу ."
+
+#: rescue_willard.xml
+msgid ""
+"I thought you were the kind of Branded Ones that doesn't kill every human "
+"crossing their way."
+msgstr ""
+"Я думал, ты такой Избранный, который не убивает всех людей, которые "
+"переходят ему дорогу."
+
+#: rescue_willard.xml
+msgid "I'm sorry. Maybe my mouth slipped."
+msgstr "Прощу прощения, вырвалось."
+
+#: rescue_willard.xml
+msgid "Whatever. What is it you really want?"
+msgstr "Неважно. Что ты действительно хочешь?"
+
+#: rescue_willard.xml
+msgid "Thanks. My name is Fenor Marken."
+msgstr "Спасибо. Меня зовут Фенор Маркен."
+
+#: rescue_willard.xml
+msgid "I have a friend with the gamekeepers."
+msgstr "У меня есть друг-лесник."
+
+#: rescue_willard.xml
+msgid ""
+"He was in the meadows with two collegues, when they were attacked by goblins."
+msgstr ""
+"Он был в низинах с двумя помощниками, как их внезапно атаковали гоблины."
+
+#: rescue_willard.xml
+msgid "And those cowards left him behind injured!"
+msgstr "И эти трусы бросили его раненым!"
+
+#: rescue_willard.xml
+msgid "Surely you don't want me to bring back his corpse, do you?"
+msgstr "Конечно же, ты не хочешь, чтобы я принес обратно его труп, не так ли?"
+
+#: rescue_willard.xml
+msgid "Surely you don't want us to bring back his corpse, do you?"
+msgstr ""
+"Конечно же, ты не хочешь, чтобы мы принесли обратно его труп, не так ли?"
+
+#: rescue_willard.xml
+msgid "No, Willard isn't someone who would be killed by some lousy goblins."
+msgstr ""
+"Нет, Виллард не такой человек, которого могут убить какие-то паршивые "
+"гоблины."
+
+#: rescue_willard.xml
+msgid "I'm sure he waits somewhere for help."
+msgstr "Я уверен, он где-то затаился и ожидает помощи."
+
+#: rescue_willard.xml
+msgid "I'm sure you are very busy."
+msgstr "Я уверен, вы очень заняты."
+
+#: rescue_willard.xml
+msgid "That is why I only ask you to bring him this phasestone. ##solo"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That is why I only ask you to bring him this phasestone."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "I wouldn't entrust this to anyone normaly."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Much less someone totally unknown."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Who wouldn't take off with it?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "But you Branded Ones have other ways and means to travel, haven't you."
+msgstr "Но у вас, Избранных, свои пути и способы путешествия."
+
+#: rescue_willard.xml
+msgid "And you cannot use a phasestone since it is dedicated to Avaera, right?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "That is why I called you when you were passing."
+msgstr "Вот почему я окликнул тебя, когда ты проходил мимо."
+
+#: rescue_willard.xml
+msgid "You know quite a lot."
+msgstr "Ты знаешь довольно много."
+
+#: rescue_willard.xml
+msgid "Your friend is as good as safe."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "And doesn't even ask what the rest of us is thinking."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thank you. ##solo"
+msgstr "Спасибо тебе."
+
+#: rescue_willard.xml
+msgid "Thank you."
+msgstr "Спасибо вам."
+
+#: rescue_willard.xml
+msgid ""
+"I'm sorry, but I don't want to waste my time searching for any gamekeepers."
+msgstr ""
+"Прошу прощения, но я не хочу тратить время попусту на поиски каких-то "
+"лесников."
+
+#: rescue_willard.xml
+msgid "You are as cold-hearted as they say. ##solo"
+msgstr "Ты такой бессердечный, прямо как и говорят."
+
+#: rescue_willard.xml
+msgid "I'm sorry, but we cannot waste our time searching for any gamekeepers."
+msgstr ""
+"Прошу прощения, но мы не можем тратить время попусту на поиски каких-то "
+"лесников."
+
+#: rescue_willard.xml
+msgid "You are as cold-hearted as they say."
+msgstr "Вы такие бессердечные, прямо как и говорят."
+
+#: rescue_willard.xml
+msgid "If only I could leave here."
+msgstr "Если бы только я мог отойти отсюда."
+
+#: rescue_willard.xml
+msgid "I would search for him myself."
+msgstr "Тогда я сам пошел бы на поиски."
+
+#: rescue_willard.xml
+msgid "Then what do you want of me? ##solo"
+msgstr "Тогда что тебе от меня надо?"
+
+#: rescue_willard.xml
+msgid "Leave, before I tell someone about you! ##solo"
+msgstr "Уходи, пока я никому не рассказал про тебя!"
+
+#: rescue_willard.xml
+msgid "Then what do you want from me?"
+msgstr "Тогда что тебе от меня надо?"
+
+#: rescue_willard.xml
+msgid "Leave, before I tell someone about you!"
+msgstr "Уходи, пока я никому не рассказал про тебя!"
+
+#: rescue_willard.xml
+msgid "Give Willard the stone (Reward)"
+msgstr "Отдать Вилларду камень (Награда)"
+
+#: rescue_willard.xml
+msgid "Thank's for your help."
+msgstr "Спасибо за помощь."
+
+#: rescue_willard.xml
+msgid "Can I ask you for another favor?"
+msgstr "Могу я попросить ещё об одной услуге?"
+
+#: rescue_willard.xml
+msgid "My leg is hurt and I won't make it to Medair alone."
+msgstr "Моя нога болит, и я не смогу дойти до Медаира в одиночку."
+
+#: rescue_willard.xml
+msgid "You are Willard, I suppose."
+msgstr "Вы, как я понимаю, Виллард."
+
+#: rescue_willard.xml
+msgid "That's me. Why do you know my name?"
+msgstr "Это я. Откуда вы знаете мое имя?"
+
+#: rescue_willard.xml
+msgid "Your friend Fenor Marken sent us to give you this phasestone."
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Holy gods! He still has that thing?"
+msgstr "Святые небеса! У него все ещё есть эта штуковина?"
+
+#: rescue_willard.xml
+msgid "That was one of our youthful follys."
+msgstr "Это была одна из наших юношеских забав."
+
+#: rescue_willard.xml
+msgid "Mine is long used up."
+msgstr "Мой уже давным-давно израсходовался."
+
+#: rescue_willard.xml
+msgid "Good old Fenor. Here, a token of my appreciation."
+msgstr "Старый добрый Фенор. Вот, держите в знак моей благодарности."
+
+#: rescue_willard.xml
+msgid "Surely someone of your trade can always use a little money?"
+msgstr ""
+
+#: rescue_willard.xml
+msgid "Thank you very much."
+msgstr "Большое спасибо тебе."
+
+#: rescue_willard.xml
+msgid "aisMeadow"
+msgstr "Низина Аизена"
+
+#: rescue_willard.xml
+msgid "So here is this Willard."
+msgstr "А вот и Виллард."

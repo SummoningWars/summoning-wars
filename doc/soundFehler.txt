@@ -1,0 +1,18 @@
+nummer 1:	Sound 1 wird nicht abgespielt. Nicht sicher reproduzierbar und anscheinend 
+		höchst zufällig; passiert relativ häufig
+
+nummer 2:	Sound 3 wird nicht mehr abgespielt.
+		(ugg)
+
+nummer 3:	Sound 2 wird auch an Stelle 3 abgespielt.
+		(cast_ice, dog_atk, hero_die, poison, thunder, thunder_cast1)
+
+nummer 4:	Sound 3 wird (mehr oder weniger deutlich)leiser als Sound 1 abgespielt.
+		(arrow, dog_die, drob_wood, drop_metall, drop_potion, fire_cast, hero_hit,
+		 lich_atk, lich_die, lich_hit, monster_atk, monster_die, monster_hit, sword_atk
+		 thunder_cast2)
+
+nummer 5:	gar kein Sound wird abgespielt. (Passiert nicht jedesmal, aber gefühlt zu 50%)
+		(nicht existenter Sound 2)
+
+Soundkarte: Realtek High Definition Audio
