@@ -1,20 +1,19 @@
 # Summoning Wars Role-Playing Game
-http://www.sumwars.org/
+Summoning Wars is an open source role-playing game.
 
-# Description
+## Description
 Summoning Wars is an open source role-playing game, featuring both a
 single-player and a multiplayer mode for about 2 to 8 players.  It is available
 and proved to work for Windows, Mac OS X and GNU/Linux operating systems,
 although it might as well work in __BSD__ and similar operating systems.
 
-# License
+## License
 Summoning Wars is free software released under GNU General Public License
 version 3 or later (GPLv3+), which means that you can freely use, copy and
 modify the software.  Please see COPYING file for more information about its
 license, and AUTHORS for copyright holders.
 
-# Install
-## General instructions
+## General Instructions
 Following libraries are required to build Summoning Wars:
 
 OGRE >= 1.7.3
@@ -37,8 +36,7 @@ sudo make install
 Currently, there is no make install, so you have to start the game in the directory where you compiled it.
 Please visit our Website www.sumwars.org to give some feedback or report bugs.
 
-## OS dependant install tips
-
+## OS Dependent Install Tips
 Ubuntu:
 
 Ogre 1.7 and CEGUI 0.7 are not included in the standard repositories yet. But you may get them from this additional repo:
@@ -50,7 +48,6 @@ sudo apt-get install libogre-dev libcegui-dev libois-dev libalut-dev liblua5.1-0
 Then follow the "General instructions" section above to install the game.
 
 ## Troubleshooting
-
 Problem: Rendering does not work under Windows:
 Solution: Try replacing ogre.cfg by this (omit the last and the first line of course):
 
