@@ -1,43 +1,43 @@
-== Programming
+## Programming
 * Hans Wulf (Lastmerlin)
 * Stefan Stammberger (fusion44)
 * Nicholas Cosens (gnemo)
 * Augustin Preda (dezGusty)
 
-== Network Library For Games (NLFG)
+## Network Library For Games (NLFG)
 * David Athay (trapdoor)
 
-== Mac Conversion
+## Mac Conversion
 * David Athay (trapdoor)
 * Ben Anderman (crimson_penguin)
 
-== Graphics
-* Andreas Sch�nefeldt
-* Steffen Sch�nefeldt (Kalimgard)
+## Graphics
+* Andreas Schönefeldt
+* Steffen Schönefeldt (Kalimgard)
 * Christian Wittmann (psycho)
 * Francesco Miglietta (hal9000)
 * Adam Preisler (Alfisko)
 * Simeon Dear (Trilby)
 
-== Scripting
-* Steffen Sch�nefeldt (Kalimgard)
+## Scripting
+* Steffen Schönefeldt (Kalimgard)
 * Hans Wulf (Lastmerlin)
 
-== Story
-* Steffen Sch�nefeldt (Kalimgard)
-* Andreas Sch�nefeldt
+## Story
+* Steffen Schönefeldt (Kalimgard)
+* Andreas Schönefeldt
 
-== Sounds
+## Sounds
 * Michael Kempf (Hangman)
 * artisticdude
 * quobodup
 
-== Music
+## Music
 * Mattias Westlund (West)
 * Cheeselord
 
-== Translation
-* Steffen Sch�nefeldt (Kalimgard)
+## Translation
+* Steffen Schönefeldt (Kalimgard)
 * Michael Kempf (Hangman)
 * kroni
 * Brian Jeffears (getter77)
@@ -48,10 +48,10 @@
 * Igor Paliychuk (igorko)
 * Eugenio Fagioli (NoobAtThis)
 
-== Build System
+## Build System
 * Stefan Stammberger (fusion44)
 
-== Website
-* Andreas Sch�nefeldt
+## Website
+* Andreas Schönefeldt
 * Michael Kempf (Hangman)
 * Michael Kunz
