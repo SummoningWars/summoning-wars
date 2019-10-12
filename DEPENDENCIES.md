@@ -1,5 +1,4 @@
 # 3RD Party Libraries Used
-
 | Library                         | Purpose                                              | License                    |
 |---------------------------------|------------------------------------------------------|----------------------------|
 | OGRE3D                          | 3D Rendering Engine                                  | MIT                        |
