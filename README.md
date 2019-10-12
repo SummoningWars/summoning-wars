@@ -1,5 +1,5 @@
-# Summoning Wars Role-Playing Game
-Summoning Wars is an open source role-playing game.
+# Summoning Wars
+Summoning Wars is an open source role-playing game originally by these wonderful people fusion45, kalimgard, mpreisler, wuha at https://sourceforge.net/projects/sumwars/ as well as the contributors listed on the AUTHORS.md.
 
 ## Description
 Summoning Wars is an open source role-playing game, featuring both a
@@ -11,27 +11,29 @@ although it might as well work in __BSD__ and similar operating systems.
 Summoning Wars is free software released under GNU General Public License
 version 3 or later (GPLv3+), which means that you can freely use, copy and
 modify the software.  Please see LICENSE file for more information about its
-license, and AUTHORS.md for copyright holders.
+license, and AUTHORS.md for copyright holders. To view a full list of all dependencies and their licenses used see DEPENDENCIES.md.
 
 ## General Instructions
 Following libraries are required to build Summoning Wars:
 
-OGRE >= 1.7.3
-OIS
-CEGUI >= 0.7.5
-freealut, openal
-lua5.1
-ogg, vorbis, vorbisfile
-physfs
-POCO (for debug build only)
+* OGRE >= 1.7.3
+* OIS
+* CEGUI >= 0.7.5
+* freealut, openal
+* lua5.1
+* ogg, vorbis, vorbisfile
+* physfs
+* POCO (for debug build only)
 
 If you are lucky, all libs may be installed via package manager (apt-get, yum, emerge, pacman, ...).
 Have a look at the "OS dependant install" section below.
 
 After installing all required libraries type:
+```
 cmake -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
+```
 
 Currently, there is no make install, so you have to start the game in the directory where you compiled it.
 Please visit our Website www.sumwars.org to give some feedback or report bugs.
@@ -51,6 +53,7 @@ Then follow the "General instructions" section above to install the game.
 Problem: Rendering does not work under Windows:
 Solution: Try replacing ogre.cfg by this (omit the last and the first line of course):
 
+```
 (Begin of ogre.cfg)
 Render System=Direct3D9 Rendering Subsystem
 
@@ -58,3 +61,4 @@ Render System=Direct3D9 Rendering Subsystem
 Full Screen=No
 Video Mode=1024 x 768 @ 32-bit colour
 (End of ogre.cfg9)
+```
