@@ -13,24 +13,6 @@ IF( NOT CMAKE_BUILD_TYPE )
 ENDIF()
 MESSAGE("CMAKE_BUILD_TYPE: " ${CMAKE_BUILD_TYPE})
 
-
-IF(UPDATE_SUBVERSION_REVISION)
-    FIND_PROGRAM(Subversion_SVN_EXECUTABLE svn)
-
-    SET(Project_WC_REVISION "unknown")
-
-#IF(Subversion_SVN_EXECUTABLE)
-#    EXECUTE_PROCESS(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-#                    COMMAND ${Subversion_SVN_EXECUTABLE} info
-#                    RESULT_VARIABLE ret_var
-#                    OUTPUT_VARIABLE output_var
-#    )
-#    STRING(REGEX REPLACE "^(.*\n)?Revision: ([^\n]+).*"
-#        "\\2" Project_WC_REVISION "${output_var}")
-#ENDIF(Subversion_SVN_EXECUTABLE)
-
-ENDIF(UPDATE_SUBVERSION_REVISION)
-
 SET(${PROJECT_NAME}_VERSION_MAJOR "0")
 SET(${PROJECT_NAME}_VERSION_MINOR "5")
 SET(${PROJECT_NAME}_VERSION_PATCH "5")
@@ -362,7 +344,7 @@ SET(SRCS
   ./src/gui/optionswindow.cpp
   ./src/gui/clipboard.cpp
 )
- 
+
 IF(BUILD_TOOLS)
   SET(HEADER_FILES
     ${HEADER_FILES}
@@ -404,10 +386,10 @@ IF(BUILD_TOOLS)
     )
 ENDIF()
 
-# If building for windows based systems, the resource file (containing 
+# If building for windows based systems, the resource file (containing
 # the manifest, icon and other resources) should also be included
 IF (WIN32)
-  SET(SRCS 
+  SET(SRCS
     ${SRCS}
     ./src/winicon/Sumwars.rc
     )
@@ -426,14 +408,14 @@ ADD_EXECUTABLE(sumwars ${SRCS})
 SET(LINK_LIBS
   ${OGRE_LIBRARIES}
   ${OGRE_Terrain_LIBRARY}
-  ${OIS_LIBRARIES} 
-  ${CEGUI_LIBRARY} 
+  ${OIS_LIBRARIES}
+  ${CEGUI_LIBRARY}
   ${CEGUIOGRE_LIBRARY}
-  ${LUA_LIBRARIES} 
-  ${OPENAL_LIBRARY} 
-  ${ALUT_LIBRARY} 
+  ${LUA_LIBRARIES}
+  ${OPENAL_LIBRARY}
+  ${ALUT_LIBRARY}
   ${OGG_LIBRARY}
-  ${VORBIS_LIBRARIES} 
+  ${VORBIS_LIBRARIES}
   ${PHYSFS_LIBRARY}
   )
 IF(NO_TINYXML)
@@ -495,15 +477,15 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/resources/icon/SumWarsIcon_128x128.pn
   RENAME sumwars.png)
 
 execute_process(COMMAND sed "s|INSTALL_PATH|${CFG_FILES_DIR}|g" "${CMAKE_CURRENT_SOURCE_DIR}/resources.cfg.in" OUTPUT_FILE "${CMAKE_CURRENT_SOURCE_DIR}/resources.cfg")
-install(FILES authors.txt
+install(FILES AUTHORS.md
   DESTINATION share/games/sumwars)
 install(FILES resources.cfg ogre.cfg plugins.cfg
   DESTINATION share/games/sumwars)
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/data" "${CMAKE_CURRENT_SOURCE_DIR}/resources"
   DESTINATION share/games/sumwars
-  PATTERN .svn EXCLUDE
+  PATTERN .git EXCLUDE
   PATTERN icon EXCLUDE)
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/translation"
   DESTINATION share/games/sumwars
   FILES_MATCHING PATTERN "*.mo"
-  PATTERN .svn EXCLUDE)
+  PATTERN .git EXCLUDE)
