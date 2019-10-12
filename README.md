@@ -10,8 +10,8 @@ although it might as well work in __BSD__ and similar operating systems.
 ## License
 Summoning Wars is free software released under GNU General Public License
 version 3 or later (GPLv3+), which means that you can freely use, copy and
-modify the software.  Please see COPYING file for more information about its
-license, and AUTHORS for copyright holders.
+modify the software.  Please see LICENSE file for more information about its
+license, and AUTHORS.md for copyright holders.
 
 ## General Instructions
 Following libraries are required to build Summoning Wars:
@@ -37,7 +37,7 @@ Currently, there is no make install, so you have to start the game in the direct
 Please visit our Website www.sumwars.org to give some feedback or report bugs.
 
 ## OS Dependent Install Tips
-Ubuntu:
+__Ubuntu:__
 
 Ogre 1.7 and CEGUI 0.7 are not included in the standard repositories yet. But you may get them from this additional repo:
 https://launchpad.net/~andrewfenn/+archive/ogredev
