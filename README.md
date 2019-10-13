@@ -1,9 +1,9 @@
 # Summoning Wars
 ![Join Discord](https://img.shields.io/discord/632161897759637505)
-![release](https://flat.badgen.net/github/release/SaintWish/summoning-wars)
-![contributors](https://flat.badgen.net/github/contributors/SaintWish/summoning-wars)
-![issues-pr](https://flat.badgen.net/github/open-prs/SaintWish/summoning-wars)
-![last commit](https://flat.badgen.net/github/last-commit/SaintWish/summoning-wars)  
+![release](https://flat.badgen.net/github/release/SummoningWars/summoning-wars)
+![contributors](https://flat.badgen.net/github/contributors/SummoningWars/summoning-wars)
+![issues-pr](https://flat.badgen.net/github/open-prs/SummoningWars/summoning-wars)
+![last commit](https://flat.badgen.net/github/last-commit/SummoningWars/summoning-wars)  
 Summoning Wars is an open source role-playing game originally by these wonderful people fusion45, kalimgard, mpreisler, wuha at https://sourceforge.net/projects/sumwars/ as well as the contributors listed on the AUTHORS.md.
 
 ## Description
