@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef __SUMWARS_GUI_WINDOW_H__
+#define __SUMWARS_GUI_WINDOW_H__
 
 
 #include "document.h"
@@ -34,19 +34,17 @@ class Window
 		* \fn Window(Document* doc)
 		* \brief Konstruktor
 		*/
-		Window(Document* doc)
-		{
-			m_document = doc;
-		}
+		Window(Document* doc):
+			m_window(0),
+			m_document(doc)
+		{}
 		
 		/**
 		* \fn virtual ~Window()
 		* \brief Destruktur
 		*/
 		virtual ~Window()
-		{
-			
-		}
+		{}
 		
 		/**
 		 * \fn virtual void update() =0
@@ -105,6 +103,6 @@ class Window
 };
 
 
-#endif
+#endif // __SUMWARS_GUI_WINDOW_H__
 
 

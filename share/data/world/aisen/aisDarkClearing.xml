@@ -1,0 +1,44 @@
+<World>
+	<!-- Dunkle Lichtung -->
+	<!-- Goblin Cultsite -->
+	<Region id="2080" name="aisDarkClearing">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Settings dimx="42" dimy="42" area_percent="0.36" complexity="0.4" granularity="6"  ground="grass1"/>
+		<WorldPosition world_x="0.63" world_y ="0.59"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="false" west="true" east="false" />
+		
+		<Exits>
+			<Exit name="exit_west" destination_region="aisStonePlains" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="temple" object_group="goblinSanctuary" priority="4"/>
+		</NamedObjectGroups>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="trees1" priority="1" number="10" probability="0.8"/>
+			<ObjectGroup object_group="trees2" priority="1" number="10" probability="0.8"/>
+			<ObjectGroup object_group="treesLarge1" priority="1" number="5" probability="0.8"/>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_temple1" number="15"/>
+			<SpawnGroup group_name="goblins_temple2" number="15"/> 
+		</SpawnGroups>
+	</Region>
+</World>

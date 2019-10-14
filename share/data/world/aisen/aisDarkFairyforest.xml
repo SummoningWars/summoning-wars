@@ -1,0 +1,44 @@
+<World>
+	<!-- Aisen, Dunkler Feenwald -->
+	<!-- Raeuber, Rob der Raeuber -->
+	<Region id="2120" name="aisDarkFairyforest">
+		<AmbientLight red="0.2" green="0.2" blue="0.2" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.1" green="0.1" blue="0.1" />
+		
+		<Settings dimx="36" dimy="36" area_percent="0.4" complexity="0.4" granularity="6"  ground="wood"/>
+		<WorldPosition world_x="0.66" world_y ="0.51"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="false" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="aisFairyforest" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="trees1" priority="1" number="25" probability="0.8"/>
+			<ObjectGroup object_group="trees2" priority="1" number="25" probability="0.8"/>
+		</ObjectGroups>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="robsHideout" object_group="robsHideout" priority="4"/>
+		</NamedObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="bandits_l11_1" number="10"/>
+			<SpawnGroup group_name="bandits_l11_2" number="10"/>
+			<SpawnGroup group_name="bandits_l11_3" number="10"/>
+		</SpawnGroups>
+	</Region>
+</World>

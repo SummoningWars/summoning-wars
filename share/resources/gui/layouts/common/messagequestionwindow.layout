@@ -1,0 +1,38 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="QuestionInfoRoot" >
+        <Property Name="FrameEnabled" Value="True" />
+        <Property Name="UnifiedAreaRect" Value="{{0.3,0},{0.25,0},{0.7,0},{0.55,0}}" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="Text" Value="Confirm" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="False" />
+        <Property Name="RollUpEnabled" Value="False" />
+        <Property Name="Visible" Value="False" />
+
+        <Window Type="SWB/StaticText" Name="QuestionInfoLabel">
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="Alpha" Value="1.0" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.12,0},{0.32,0},{0.88,0},{0.43,0}}" />
+            <Property Name="MousePassThroughEnabled" Value="True" />
+        </Window>
+
+        <Window Type="SWB/Button" Name="QuestionAnswerButton1">
+            <Property Name="Alpha" Value="1.0" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.2,0},{0.6,0},{0.4,0},{0.85,0}}" />
+            <Property Name="Text" Value="Yes" />
+        </Window>
+
+        <Window Type="SWB/Button" Name="QuestionAnswerButton2">
+            <Property Name="Alpha" Value="1.0" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.6,0},{0.8,0},{0.85,0}}" />
+            <Property Name="Text" Value="No" />
+        </Window>
+
+    </Window>
+</GUILayout>

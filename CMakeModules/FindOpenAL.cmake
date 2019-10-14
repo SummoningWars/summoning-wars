@@ -61,11 +61,14 @@
 # OPENAL_LIBRARY to override this selection or set the CMake environment
 # CMAKE_INCLUDE_PATH to modify the search paths.
 
+SET (OPENAL_SEARCH_PATH ${PROJECT_SOURCE_DIR}/dependencies/openal 
+        ${PROJECT_SOURCE_DIR}/../dependencies/openal
+        $ENV{OPENALDIR})
+
 FIND_PATH(OPENAL_INCLUDE_DIR al.h
-  HINTS
-  $ENV{OPENALDIR}
+  HINTS ${OPENAL_SEARCH_PATH}
   PATH_SUFFIXES include/AL include/OpenAL include
-  PATHS
+  PATHS ${OPENAL_SEARCH_PATH}
   ~/Library/Frameworks
   /Library/Frameworks
   /usr/local
@@ -79,10 +82,9 @@ FIND_PATH(OPENAL_INCLUDE_DIR al.h
 
 FIND_LIBRARY(OPENAL_LIBRARY 
   NAMES OpenAL al openal OpenAL32
-  HINTS
-  $ENV{OPENALDIR}
+  HINTS ${OPENAL_SEARCH_PATH}
   PATH_SUFFIXES lib64 lib libs64 libs libs/Win32 libs/Win64 Release Debug
-  PATHS
+  PATHS ${OPENAL_SEARCH_PATH}
   ~/Library/Frameworks
   /Library/Frameworks
   /usr/local

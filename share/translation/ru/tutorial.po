@@ -1,0 +1,1671 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-07 23:22+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tutorial.xml:2
+msgid "Tutorial"
+msgstr "Обучение"
+
+#: tutorial.xml:11
+msgid "Tutorial finished"
+msgstr "Обучение завершено"
+
+#: tutorial.xml:14
+msgid "Hand your weapon over to Derred."
+msgstr "Отдай свое оружие Дерреду."
+
+#: tutorial.xml:16
+msgid "Follow Tolec and Derred."
+msgstr "Следуй за Толеком и Дерредом."
+
+#: tutorial.xml:18
+msgid "Kill all of the Fire Slugs in the enclosure."
+msgstr "Убей всех огненных слизней в проходе."
+
+#: tutorial.xml:20
+msgid "Find the secret entrance to the library."
+msgstr "Найди секретный вход в библиотеку."
+
+#: tutorial.xml:22
+msgid "Kill every spawn of the behemoth."
+msgstr "Убей всё потомство монстра."
+
+#: tutorial.xml:24
+msgid "Quest description"
+msgstr "Описание задания"
+
+#: tutorial.xml:28 tutorial.xml:463 tutorial.xml:952 tutorial.xml:1079
+#: tutorial.xml:1153 tutorial.xml:1543 tutorial.xml:1709 tutorial.xml:1886
+#: tutorial.xml:2136
+msgid "elCnlLobby"
+msgstr "Лобби"
+
+#: tutorial.xml:229
+msgid "*urgh*"
+msgstr "*эмм*"
+
+#: tutorial.xml:231
+msgid "Harad's bones!"
+msgstr "Кости Харада!"
+
+#: tutorial.xml:232
+msgid "That was at least as nasty as the first years in hell! Where am I?"
+msgstr ""
+"Это было как минимум так же противно, как и первые несколько лет в аду! Где "
+"я?"
+
+#: tutorial.xml:236
+msgid "And who is the other sad character?"
+msgstr "А кто этот второй печальный человек?"
+
+#: tutorial.xml:238
+msgid "And who are the other sad characters?"
+msgstr "А кто эти печальные люди?"
+
+#: tutorial.xml:253
+msgid "Are you looking for trouble? Who is responsible for this mess!?!"
+msgstr "Ищешь проблемы? Кто ответственен за весь этот беспорядок!?!"
+
+#: tutorial.xml:257
+msgid ""
+"I almost had that damn ogre and suddenly someone's ripping out my guts who's "
+"not even near me!"
+msgstr ""
+"Я почти завалил того дурацкого огра, как вдруг кто-то, кто даже был не рядом "
+"со мной, вспорол мне кишки!"
+
+#: tutorial.xml:260
+msgid "Oh yes! The miraculous mental abilities of club swingers."
+msgstr "О да! Сверхъестественные ментальные способности клуба свингеров."
+
+#: tutorial.xml:261
+msgid "I'll show you the endurance capacities of magic squirters!"
+msgstr "Я покажу тебе кузькину мать!"
+
+#: tutorial.xml:264
+msgid ""
+"What a disgusting ambiance. I did not desire to be here... and I had just "
+"found a nice and safe place. "
+msgstr ""
+"Что за омерзительное окружения. Я не хотел оказаться здесь... я только-"
+"только нашел приятное и безопасное место."
+
+#: tutorial.xml:266
+msgid "Excuse me..."
+msgstr "Прошу прощения..."
+
+#: tutorial.xml:267
+msgid "No, Tolec. You must say that with much more authority."
+msgstr "Нет, Толек. Ты должен сказать это с бОльшим авторитетом."
+
+#: tutorial.xml:273
+msgid ""
+"It seems someone here has greater knowledge of how Harad is keeping me alive "
+"and moves me."
+msgstr ""
+"Кажется, кто-то знает больше меня о том, как Харад охраняет и направляет "
+"меня."
+
+#: tutorial.xml:275
+msgid ""
+"It seems someone here has greater knowledge of how Harad is keeping us alive "
+"and moves us."
+msgstr ""
+"Кажется, кто-то знает больше нас о том, как Харад охраняет и направляет нас."
+
+#: tutorial.xml:277
+msgid ""
+"Whoever the head honcho is here: He'd better know what he's gotten himself "
+"into."
+msgstr ""
+"Кем бы ни был этот засранец, ему бы следовало знать, во что он серьезно "
+"вляпался."
+
+#: tutorial.xml:278
+msgid "Lots of money could appease me again."
+msgstr "Большая куча монет может умиротворить меня."
+
+#: tutorial.xml:281
+msgid ""
+"Please excuse your somewhat unpleasant arrival. Lord Master Soren Windclaw "
+"requests your presence. ##solo"
+msgstr ""
+"Пожалуйста, простите за ваше немного неудобное прибытие. Господин Лорд Сорен "
+"Виндклоу потребовал вашего присутствия."
+
+#: tutorial.xml:283
+msgid ""
+"Please excuse your somewhat unpleasant arrival. Lord Master Soren Windclaw "
+"requests your presence."
+msgstr ""
+"Пожалуйста, простите за ваше немного неудобное прибытие. Господин Лорд Сорен "
+"Виндклоу потребовал вашего присутствия."
+
+#: tutorial.xml:293
+msgid "I see!"
+msgstr "Ааа, ясно!"
+
+#: tutorial.xml:294
+msgid "Lord"
+msgstr "Лорд"
+
+#: tutorial.xml:295
+msgid "Master"
+msgstr "Мастер"
+
+#: tutorial.xml:296
+msgid "Windclaw."
+msgstr "Виндклоу."
+
+#: tutorial.xml:297
+msgid "Why didn't you say so in the first place?"
+msgstr "Что ж вы раньше-то не сказали?"
+
+#: tutorial.xml:298
+msgid "Well, if you would follow us, please?"
+msgstr "Хорошо, ты будешь следовать за нами?"
+
+#: tutorial.xml:300
+msgid "Are you kidding us? Who the hell is this windpaw?"
+msgstr "Ты что, издеваешься над нами? Кто, черт его побери, этот Виндпоу?"
+
+#: tutorial.xml:302
+msgid "Are you kidding me? Who the hell is this windpaw?"
+msgstr "Ты что, издеваешься надо мной? Кто, черт его побери, этот Виндпоу?"
+
+#: tutorial.xml:306 tutorial.xml:308
+msgid ""
+"A splendid question! Short and precise. Maybe one can actually work with "
+"that one."
+msgstr ""
+"Какой всеобъемлющий вопрос! Короткий и точный. Может быть, кто-нибудь может "
+"поработать над этим."
+
+#: tutorial.xml:311
+msgid "Er..."
+msgstr "Эм..."
+
+#: tutorial.xml:313
+msgid "Keep your head, my son. Take your time to think the answer over."
+msgstr "Не горячись, сынок. Подумай перед тем как дать ответ."
+
+#: tutorial.xml:320
+msgid "It may well be your last."
+msgstr "Вполне возможно, он будет последним в твоей жизни."
+
+#: tutorial.xml:325
+msgid "Spill it! Where are we, and who has the nerve to cross Branded Ones?!"
+msgstr "Цыц! Где мы и кто посмел потревожить Избранного?"
+
+#: tutorial.xml:327
+msgid ""
+"Well, the Lord Master has affirmed that he will explain everything in detail "
+"to you. ##solo"
+msgstr "Что же, Лорд Мастер заявил, что объяснит тебе все в деталях."
+
+#: tutorial.xml:328
+msgid "Further more, your arrival was... somewhat exhausting. ##solo"
+msgstr "Более того, твое прибытие было... немного утомительным."
+
+#: tutorial.xml:329
+msgid "You shouldn't be able to pose a threat to us at the moment. ##solo"
+msgstr "На данный момент ты не должен был быть способен угрожать нам."
+
+#: tutorial.xml:331
+msgid ""
+"Well, the Lord Master has affirmed that he will explain everything in detail "
+"to you."
+msgstr "Что же, Лорд Мастер заявил, что объяснит тебе все в деталях."
+
+#: tutorial.xml:332
+msgid "Further more your arrival was... somewhat exhausting."
+msgstr "Более того, ваше прибытие было... довольно утомительным."
+
+#: tutorial.xml:333
+msgid "You shouldn't be able to pose a threat to us at the moment."
+msgstr "На данный момент вы не должны были быть способны угрожать нам."
+
+#: tutorial.xml:335
+msgid "What have you done, you bastards?!"
+msgstr "Что вы сделали, засранцы?!"
+
+#: tutorial.xml:337
+msgid "Don't worry. We have strict orders not to kill you. ##solo"
+msgstr "Не волнуйся. У нас есть строгое указание не убивать тебя."
+
+#: tutorial.xml:339
+msgid "Don't worry. We have strict orders not to kill you."
+msgstr "Не волнуйся. У нас есть строгое указание не убивать тебя."
+
+#: tutorial.xml:342
+msgid "That guy seems to know what he's doing."
+msgstr "Кажется, этот парень знает, что делает."
+
+#: tutorial.xml:344
+msgid "This is not the right time to be impressed."
+msgstr "Сейчас не время восхищаться."
+
+#: tutorial.xml:348
+msgid ""
+"Fine. Now that that's clarified I'd like to ask you to surrender your "
+"weapons. ##solo"
+msgstr ""
+"Отлично, теперь, когда мы все выяснили, я бы хотел попросить тебя сдать свое "
+"оружие."
+
+#: tutorial.xml:350
+msgid ""
+"Fine. Now that that's clarified I'd like to ask you all to surrender your "
+"weapons."
+msgstr ""
+"Отлично, теперь, когда мы все выяснили, я бы хотел попросить вас сдать свое "
+"оружие."
+
+#: tutorial.xml:352
+msgid "Kindly ask."
+msgstr "По-хорошему попросить."
+
+#: tutorial.xml:354
+msgid "We cannot take any risks, and inside the council you are safe. ##solo"
+msgstr "Мы не можем рисковать, а внутри Совета вы в безопасности."
+
+#: tutorial.xml:356
+msgid "We cannot take any risks, and inside the council you are safe."
+msgstr "Мы не можем рисковать, а внутри Совета вы в безопасности."
+
+#: tutorial.xml:359
+msgid "Council? The Council of Summoners?! Is this Aisen?"
+msgstr "Совет? Совет Заклинателей?! Это Аизен?"
+
+#: tutorial.xml:360
+msgid "Yes, but that's neither here nor there!"
+msgstr "Да, но он находится ни здесь, ни там!"
+
+#: tutorial.xml:362
+msgid "What if we don't feel like surrendering our weapons?"
+msgstr "А что будет, если мы скажем, что не хотим сдавать свое оружие?"
+
+#: tutorial.xml:363
+msgid ""
+"I'm very sorry, but before that we cannot release any of you of the safety "
+"area."
+msgstr ""
+"Я сожалею, но до того момента мы не сможем выпустить никого из безопасной "
+"зоны."
+
+#: tutorial.xml:365
+msgid "What if I don't feel like surrendering my weapons?"
+msgstr "А что будет, если я скажу, что не хочу сдавать свое оружие?"
+
+#: tutorial.xml:366
+msgid ""
+"I'm very sorry, but before that we cannot release you of the safety area. "
+"##solo"
+msgstr ""
+"Я сожалею, но до того момента мы не сможем выпустить тебя из безопасной зоны."
+
+#: tutorial.xml:370
+msgid "Safety area?! This is a goddamn prison!"
+msgstr "Безопасная зона?! Да это чертова тюрьма!"
+
+#: tutorial.xml:371
+msgid "The choice is yours."
+msgstr "Выбор за тобой."
+
+#: tutorial.xml:379 tutorial.xml:1316 tutorial.xml:1626
+msgid "elCnlLowerCaves"
+msgstr ""
+
+#: tutorial.xml:399 tutorial.xml:841 tutorial.xml:1111 tutorial.xml:1806
+msgid "Derred"
+msgstr "Дерред"
+
+#: tutorial.xml:400 tutorial.xml:452
+msgid "Surrender weapons"
+msgstr "Отдать оружие"
+
+#: tutorial.xml:409
+msgid "Do you want to surrender your weapons?"
+msgstr "Ты хочешь отдать свое оружие?"
+
+#: tutorial.xml:410 tutorial.xml:819 tutorial.xml:1028 tutorial.xml:1799
+msgid "Yes"
+msgstr "Да"
+
+#: tutorial.xml:411 tutorial.xml:820 tutorial.xml:1029 tutorial.xml:1800
+msgid "No"
+msgstr "Нет"
+
+#: tutorial.xml:421
+msgid "It seems we have no choice..."
+msgstr "Кажется, у нас нет выбора..."
+
+#: tutorial.xml:423
+msgid "It seems I have no choice..."
+msgstr "Кажется, у меня нет выбора..."
+
+#: tutorial.xml:427
+msgid "Very well. Follow me, please."
+msgstr "Отлично, следуй за мной."
+
+#: tutorial.xml:434
+msgid "Forget it!"
+msgstr "Даже не думай об этом!"
+
+#: tutorial.xml:435
+msgid "As you wish, but this room is safe."
+msgstr "Дело твое, но эта зона безопасна."
+
+#: tutorial.xml:437
+msgid "You will not leave it until you surrender your weapon. ##solo"
+msgstr "Ты не покинешь её до тех пор, пока не сдашь свое оружие."
+
+#: tutorial.xml:438
+msgid ""
+"Just tell us by clicking on one of us, when you change your mind. ##solo"
+msgstr "Просто щелкни по одному из нас, если изменишь свое мнение."
+
+#: tutorial.xml:440
+msgid "None of you will leave it until you surrender your weapons."
+msgstr "Вы не покинете её до тех пор, пока не сдадите свое оружие."
+
+#: tutorial.xml:441
+msgid "Just tell us by clicking on one of us, when you change your minds."
+msgstr ""
+"Только скажи нам об этом, щелкнув по одному из нас, когда ты изменишь своё "
+"решение."
+
+#: tutorial.xml:451 tutorial.xml:873 tutorial.xml:1035 tutorial.xml:1140
+#: tutorial.xml:1870
+msgid "Tolec"
+msgstr "Толек"
+
+#: tutorial.xml:494
+msgid "Follow me, please."
+msgstr "Пожалуйста, следуй за мной."
+
+#: tutorial.xml:536
+msgid ""
+"What's keeping you? Has the transport afflicted you so much that you don't "
+"even know how to walk anymore? Just click with the left mouse button at a "
+"place on the ground. Then it will all come back to you on its own."
+msgstr ""
+"Что удерживает тебя? Неужели прибытие сюда так сильно повлияло на тебя, что "
+"ты даже не знаешь, как ходить? Просто щелкни левой кнопкой мышки где-нибудь "
+"на земле, тогда все вспомнится само собой."
+
+#: tutorial.xml:645
+msgid "Akeran!"
+msgstr "Акеран!"
+
+#: tutorial.xml:646 tutorial.xml:1987 tutorial.xml:2012
+msgid "Help!"
+msgstr "Помогите!"
+
+#: tutorial.xml:647
+msgid "Someone!"
+msgstr "Кто-нибудь!"
+
+#: tutorial.xml:648
+msgid "Save me!"
+msgstr "Спасите меня!"
+
+#: tutorial.xml:649
+msgid "I will work twice as hard!"
+msgstr "Я буду работать в два раза усерднее!"
+
+#: tutorial.xml:650
+msgid "Dont let me die!"
+msgstr "Не дайте мне умереть!"
+
+#: tutorial.xml:651
+msgid "Please!"
+msgstr "Пожалуйста!"
+
+#: tutorial.xml:652
+msgid "Noo!"
+msgstr "Нееет!"
+
+#: tutorial.xml:695
+msgid "Oh Akeran! Close the gates!"
+msgstr "О, Акеран! Закрывайте ворота!"
+
+#: tutorial.xml:714
+msgid "Akeran's Shield! That THING is free! Back everyone! Go, go, go!"
+msgstr ""
+"Щит Акерана! Это чудовище вырвалось на свободу! Все назад! Быстро, быстро, "
+"быстро!"
+
+#: tutorial.xml:752
+msgid "We can't pass there. What do we do now?"
+msgstr "Мы не можем пройти здесь. Что будем делать?"
+
+#: tutorial.xml:753
+msgid "Is this thing really that bad?"
+msgstr "Эта штуковина и вправду настолько опасна?"
+
+#: tutorial.xml:754
+msgid "Are you blind? The beast is gigantic!"
+msgstr "Ты слепой? Это чудовище просто огромно!"
+
+#: tutorial.xml:755
+msgid "Size isn't everything."
+msgstr "Размер - не главное."
+
+#: tutorial.xml:756
+msgid ""
+"Looks like a departure ticket to me. It can't be more painful than the "
+"arrival."
+msgstr ""
+"Похоже, это способ выбраться отсюда. Это не может быть более болезненным, "
+"чем мое прибытие сюда."
+
+#: tutorial.xml:757
+msgid "Er yes... about that..."
+msgstr "Да... и насчет этого..."
+
+#: tutorial.xml:758
+msgid "What?"
+msgstr "Насчет чего?"
+
+#: tutorial.xml:759
+msgid ""
+"The Lord Master Windclaw feared that you would kill yourself after your "
+"arrival in order to escape, so he took... measures."
+msgstr ""
+"Лорд Мастер Виндклоу боялся, что ты убьешь себя, чтобы скрыться отсюда, "
+"поэтому он принял... меры."
+
+#: tutorial.xml:762
+msgid "Measures?"
+msgstr "Меры?"
+
+#: tutorial.xml:763
+msgid "Well, we don't understand much, but it seems you don't die like us."
+msgstr ""
+"Нуу, мы не так много понимаем в этом, но кажется, что ты не умираешь так, "
+"как мы."
+
+#: tutorial.xml:764
+msgid "Instead you can resurrect where you want after your body is destroyed."
+msgstr ""
+"Вместо этого ты можешь воскресать там, где ты хочешь, после того как твое "
+"тело уничтожают."
+
+#: tutorial.xml:765
+msgid "Akeran must truly hate you..."
+msgstr "Акеран должен ненавидеть тебя..."
+
+#: tutorial.xml:767
+msgid "So? None of us wished for this ability."
+msgstr "И что? Мы не просили такой способности."
+
+#: tutorial.xml:769
+msgid "So? I didn't wish for this ability."
+msgstr "И что? Я не просил такой способности."
+
+#: tutorial.xml:772
+msgid ""
+"Well, as you are now, you can only do that at places of great magical "
+"concentrations. In other words..."
+msgstr ""
+"Хорошо, на данный момент ты можешь делать так только в местах высокой "
+"концентрации. Иными словами..."
+
+#: tutorial.xml:773
+msgid "... just back there with all the junk."
+msgstr "... возвращаться в это поганое место."
+
+#: tutorial.xml:775
+msgid "I wouldn't necessarily call that 'junk'."
+msgstr "Я бы не стал без необходимости называть это место поганым."
+
+#: tutorial.xml:778
+msgid "Exactly, only there."
+msgstr "Вернее, только сюда."
+
+#: tutorial.xml:780
+msgid "It is time we speak with this Windclaw. He seems to be a smart toad."
+msgstr "Похоже, пора поговорить с этим Виндклоу. Кажется, он чертовски умен."
+
+#: tutorial.xml:782
+msgid "It is time I speak with this Windclaw. He seems to be a smart toad."
+msgstr "Похоже, пора поговорить с этим Виндклоу. Кажется, он чертовски умен."
+
+#: tutorial.xml:784
+msgid "It can't be all too healthy to be this smart."
+msgstr "Это даже вредно для здоровья быть таким умным."
+
+#: tutorial.xml:785
+msgid ""
+"Er, well, yes. Since the main way is currently blocked, we'll have to try to "
+"get through the enclosure with the new experiments."
+msgstr ""
+"Эмм, ну да. Так как основной проход теперь заблокирован, мы можем попытаться "
+"пройти через загон, где проводят новые эксперименты."
+
+#: tutorial.xml:786
+msgid "There's a back door for feeding, and word is..."
+msgstr "Там есть задняя дверь для кормежки, и дело в том..."
+
+#: tutorial.xml:787
+msgid ""
+"... that the old Firewhirl has a secret door for a direct connection to the "
+"kitchen. That could work! But the beasts are not exactly without danger."
+msgstr ""
+"... что у старого Firewhirl'а есть секретная дверь с прямым проходом через "
+"кухню. Это может сработать! Но эти существа все ещё представляют опасность."
+
+#: tutorial.xml:788
+msgid "It's only those sluglings."
+msgstr "Это всего лишь вон те слизни."
+
+#: tutorial.xml:789
+msgid ""
+"I don't know... I don't feel like being bedridden for three weeks just "
+"because of some slimy fire breath."
+msgstr ""
+"Я даже не знаю... не хотелось бы проваляться в постели три недели только из-"
+"за того, что какой-то слизняк дыхнул на меня огнем."
+
+#: tutorial.xml:792
+msgid ""
+"To Harad! That's impossible to put up with. Give us our weapons and we'll "
+"take care of that."
+msgstr ""
+"Харад! Больше терпеть уже невозможно! Дайте нам свое оружие, и мы "
+"позаботимся об этом сами."
+
+#: tutorial.xml:794
+msgid ""
+"To Harad! That's impossible to put up with. Give me my weapon and I'll take "
+"care of that."
+msgstr ""
+"Харад! Больше терпеть уже невозможно! Дайте мне свое оружие, и я позабочусь "
+"об этом сам."
+
+#: tutorial.xml:796
+msgid "Well, you're right about that..."
+msgstr "Да, ты прав насчет этого..."
+
+#: tutorial.xml:797
+msgid ""
+"Yes. Considering the difficult circumstances we can do that, I guess. Here "
+"you go."
+msgstr ""
+"Да. Учитывая сложные обстоятельства, мы можем так поступить, я полагаю. Вот "
+"так."
+
+#: tutorial.xml:801
+msgid "What is this supposed to be?"
+msgstr "Это что такое?"
+
+#: tutorial.xml:802
+msgid "Where is my weapon?"
+msgstr "Где моё оружие?"
+
+#: tutorial.xml:804
+msgid ""
+"Er... Lord Master Windclaw feared that there could be a situation in which "
+"you had to fall back to, er, force of arms."
+msgstr ""
+"Эм... Лорд мастер Виндклоу боялся, что наступит такая ситуация, в которой "
+"тебе придется прибегнуть к помощи оружия."
+
+#: tutorial.xml:805
+msgid "That's why he gave us these."
+msgstr "Вот почему он дал нам это."
+
+#: tutorial.xml:806
+msgid ""
+"Surely you understand that you cannot run around here with unchecked weapons."
+msgstr ""
+"Ты, конечно же, понимаешь, что не можешь бегать здесь с непроверенным "
+"оружием."
+
+#: tutorial.xml:808
+msgid "Slowly you're getting to me."
+msgstr "Ты начинаешь доставать меня, медленно, но верно."
+
+#: tutorial.xml:809
+msgid "What didn't he take into consideration? He is clearly paranoid."
+msgstr "Что он мог не принять во внимание? Да он параноик."
+
+#: tutorial.xml:811
+msgid "You... can still remember how to use a weapon, right?"
+msgstr "Ты...до сих пор помнишь, как пользоваться оружием, верно?"
+
+#: tutorial.xml:812
+msgid ""
+"We were told that the first minutes are like one taking a step for the first "
+"time."
+msgstr "Нам сказали, что в первые минуты это как первые шаги в твоей жизни."
+
+#: tutorial.xml:818
+msgid "Explain inventory?"
+msgstr "Объяснить, как пользоваться инвентарем?"
+
+#: tutorial.xml:842 tutorial.xml:874
+msgid "Explain inventory"
+msgstr "Объяснить, как пользоваться инвентарем"
+
+#: tutorial.xml:847
+msgid ""
+"First you must open your inventory. By default, you do so with the 'i'-key."
+msgstr ""
+"Сначала ты должен открыть окно инвентаря. По умолчанию это можно сделать, "
+"нажав кнопку 'i'."
+
+#: tutorial.xml:848
+msgid ""
+"Alternatively, you can click on the inventory button below in the status bar."
+msgstr "Или же ты можешь щелкнуть по кнопке инвентаря внизу на панели."
+
+#: tutorial.xml:849
+msgid "In the inventory you'll see your items. They are ordered by their size."
+msgstr "В инвентаре ты видишь свои вещи. Они распределены по размеру."
+
+#: tutorial.xml:850
+msgid ""
+"The weapon you just obtained is a mid-sized item and thus is found in the "
+"middle field."
+msgstr ""
+"Оружие, которое ты только что получил, среднего размера, поэтому находится в "
+"среднем поле."
+
+#: tutorial.xml:851
+msgid ""
+"Click on the weapon with the left mouse button. Next click on the weapon "
+"field in the equipment above your inventory, and it will be equipped."
+msgstr ""
+"Щелкни по оружию левой кнопкой мыши. Затем щелкни в поле оружия, "
+"расположенное над инвентарем, и ты возьмешь это оружие в руки."
+
+#: tutorial.xml:857
+msgid "Let us know when you're ready."
+msgstr "Скажи нам, когда будешь готов."
+
+#: tutorial.xml:861 tutorial.xml:885
+msgid "Attack slugs"
+msgstr "Атаковать слизней"
+
+#: tutorial.xml:908
+msgid "You should equip your weapon first."
+msgstr "Тебе следует сначала взять оружие в руки."
+
+#: tutorial.xml:910
+msgid "Everyone should equip their weapons first."
+msgstr "Всем следует сначала взять оружие в руки."
+
+#: tutorial.xml:916
+msgid "You still know how to fight, don't you? ##solo"
+msgstr "Ты все ещё помнишь, как надо сражаться?"
+
+#: tutorial.xml:918
+msgid "You all still know how to fight, don't you?"
+msgstr "Все помнят, как надо сражаться?"
+
+#: tutorial.xml:920
+msgid "Go in, click on it, kill it. A Branded One wouldn't forget about that."
+msgstr ""
+"Иди к врагу, щелкай по нему, убивай его. Избранный не может забыть об этом."
+
+#: tutorial.xml:921
+msgid "What does this 'click on it' mean, anyway?"
+msgstr "Кстати, что означает 'щелкни по нему'?"
+
+#: tutorial.xml:924
+msgid "No idea, but the Lord Master said that she speaks like this."
+msgstr "Без понятия, но Лорд Мастер сказал, она всегда так говорит."
+
+#: tutorial.xml:926
+msgid "No idea, but the Lord Master said that he speaks like this."
+msgstr "Без понятия, но Лорд Мастер сказал, он всегда так говорит."
+
+#: tutorial.xml:929
+msgid "No idea, but the Lord Master said that they speak like this."
+msgstr "Без понятия, но Лорд Мастер сказал, они всегда так говорят."
+
+#: tutorial.xml:932
+msgid "Then I shall put the fear of Harad into these experiments!"
+msgstr "Тогда я должен вложить страх Харада в эти эксперименты!"
+
+#: tutorial.xml:934 tutorial.xml:936
+msgid "Let's put the fear of Harad into these experiments!"
+msgstr "Тогда мы должны вложить страх Харада в эти эксперименты!"
+
+#: tutorial.xml:937
+msgid "I just hope they have a soul."
+msgstr "Я лишь надеюсь, что у них есть душа."
+
+#: tutorial.xml:939
+msgid ""
+"Don't worry. Even a golem has one. Those things will not be the exception."
+msgstr "Не беспокойся. Даже у голема есть душа. И эти твари не исключение."
+
+#: tutorial.xml:941
+msgid "Very well. Just cover our backs while we try to open the hatch. "
+msgstr "Очень хорошо. Просто прикрой нас, пока мы пытаемся открыть дверь."
+
+#: tutorial.xml:942
+msgid "Forget it! I'm not going in while those beasts are on the loose."
+msgstr ""
+"Забудь об этом! Я не ступлю туда, до тех пора пока там находятся эти твари."
+
+#: tutorial.xml:1008
+msgid "Yuck! Those things are really disgusting."
+msgstr "Ух! Эти твари и вправду отвратительны."
+
+#: tutorial.xml:1009
+msgid "What kind of sissy are you?"
+msgstr "Ты что, трусишка?"
+
+#: tutorial.xml:1010
+msgid "Are you looking for trouble, weakling?!"
+msgstr "Ищешь проблемы, слабак?"
+
+#: tutorial.xml:1011
+msgid "Wait a sec, Derred. They somehow seem stronger."
+msgstr "Погоди секунду, Дерред. Они выглядят сильнее."
+
+#: tutorial.xml:1013
+msgid ""
+"Your witch stuff may have weakened me, but I take some of the power from "
+"every being I kill and become stronger."
+msgstr ""
+"Ваши заклинаньица, может, и ослабили меня, но я получаю некую силу от "
+"каждого, кого я убиваю, тем самым становясь сильнее."
+
+#: tutorial.xml:1015
+msgid ""
+"Your witch stuff may have weakened us, but we take some of the power from "
+"every being we kill and become stronger."
+msgstr ""
+"Ваши заклинаньица, может, и ослабили нас, но мы получаем некую силу от "
+"каждого, кого мы убиваем, тем самым становясь сильнее."
+
+#: tutorial.xml:1017
+msgid "You'd better think about who you're calling `weakling' here!"
+msgstr "Тебе следует подумать о том, кого ты называешь слабаком!"
+
+#: tutorial.xml:1018
+msgid ""
+"Hm, right. The Lord Master said that something like this could happen. Do "
+"you know how to convert this power into proper abilities?"
+msgstr ""
+"Да, верно. Лорд мастер сказал, что что-то такое должно случиться. Ты знаешь, "
+"как преобразовать эту силу в определенные способности?"
+
+#: tutorial.xml:1036
+msgid "Explain level up"
+msgstr "Объяснить поднятие уровня"
+
+#: tutorial.xml:1047
+msgid ""
+"You can upgrade your attributes every time, and sometimes you even have "
+"enough energy for a new skill. ##solo"
+msgstr ""
+"Каждый раз ты можешь улучшать свои характеристики, а иногда у тебя "
+"достаточно энергии для нового заклинания."
+
+#: tutorial.xml:1048
+msgid ""
+"Yes. That was the thing with the big plus in the lower left corner. Just "
+"click on it and distribute your attribute points. ##solo"
+msgstr ""
+"Да. Это была кнопка с изображением плюсика в левом нижнем углу. Просто "
+"щелкни по ней и распредели свои очки."
+
+#: tutorial.xml:1049
+msgid ""
+"Exactly. You can distribute the skill point in the skill window. The Lord "
+"Master said that you could choose from three categories. ##solo"
+msgstr ""
+"Верно. Ты можешь распределять очки заклинаний в окне заклинаний. Лорд мастер "
+"сказал, что ты можешь выбирать между тремя категориями."
+
+#: tutorial.xml:1050
+msgid "Depending on your... character mass. ##solo"
+msgstr "В зависимости от твоей...  массы персонажа."
+
+#: tutorial.xml:1052
+msgid ""
+"You can upgrade your attributes every time, and sometimes you even have "
+"enough energy for a new skill."
+msgstr ""
+"Каждый раз вы можете улучшать свои характеристики, а иногда у вас достаточно "
+"энергии для нового заклинания."
+
+#: tutorial.xml:1053
+msgid ""
+"Yes. That was the thing with the big plus in the lower left corner. Just "
+"click on it and distribute your attribute points."
+msgstr ""
+"Да. Это была кнопка с изображением плюсика в левом нижнем углу. Просто "
+"щелкните по ней и распределите свои очки."
+
+#: tutorial.xml:1054
+msgid ""
+"Exactly. You can distribute the skill point in the skill window. The Lord "
+"Master said that you could choose from three categories."
+msgstr ""
+"Верно. Вы можете распределять очки заклинаний в окне заклинаний. Лорд мастер "
+"сказал, что вы можете выбирать между тремя категориями."
+
+#: tutorial.xml:1055
+msgid "Depending on your... character mass."
+msgstr "В зависимости от вашей... массы персонажей."
+
+#: tutorial.xml:1058
+msgid "Character class."
+msgstr "Класса персонажа."
+
+#: tutorial.xml:1059
+msgid "Oh, right!"
+msgstr "Да, верно!"
+
+#: tutorial.xml:1060
+msgid "Branded Ones use strange phrases indeed."
+msgstr "И вправду, Избранные используют какие-то странные фразочки."
+
+#: tutorial.xml:1062
+msgid "I wonder why this Soren knows so much about the Branded Ones..."
+msgstr "Интересно, почему Сорен знает так много об Избранных..."
+
+#: tutorial.xml:1063
+msgid "Mages are exceedingly strange... Every single one of them."
+msgstr "Маги - чрезвычайно странные люди... все до единого."
+
+#: tutorial.xml:1065
+msgid "Better strange than..."
+msgstr "Лучше быть странным, чем..."
+
+#: tutorial.xml:1104
+msgid "That blasted thing! I hope the walls hold out."
+msgstr "Проклятая тварь! Надеюсь, стены выдержат."
+
+#: tutorial.xml:1105
+msgid "Quickly distribute your new points, and then let's get out of here!"
+msgstr "Быстро распредели свои очки и давай выбираться отсюда!"
+
+#: tutorial.xml:1112 tutorial.xml:1141
+msgid "Open hatch"
+msgstr "Открыть дверь"
+
+#: tutorial.xml:1129
+msgid "Please distribute your attribute points first."
+msgstr "Пожалуйста, сначала распределите свои очки."
+
+#: tutorial.xml:1231
+msgid "More of those beasts?"
+msgstr "Ещё больше этих тварей?"
+
+#: tutorial.xml:1232
+msgid ""
+"Urk! They seem to have broken out somehow. I hope they don't breed in the "
+"crevices."
+msgstr ""
+"Ух! Кажется, они как-то вырвались на свободу. Надеюсь, они не будут "
+"плодиться во всяких закоулках."
+
+#: tutorial.xml:1233
+msgid "Have you ever heard of safety measures?"
+msgstr "Ты когда-нибудь слышал о мерах безопасности?"
+
+#: tutorial.xml:1234
+msgid "Somewhere back there has to be the secret door."
+msgstr "Где-то там в конце должна быть секретная дверь."
+
+#: tutorial.xml:1235
+msgid "You're not even sure it's there?"
+msgstr "Ты даже не уверен, что она там есть?"
+
+#: tutorial.xml:1237
+msgid "I don't waste my time crawling through kitchen corridors, Cursed One."
+msgstr "Я не трачу свое время ползая через кухонные коридоры, Проклятый."
+
+#: tutorial.xml:1238
+msgid ""
+"That's correct, Branded One. You wouldn't want to be called `harvest' now, "
+"would you?"
+msgstr ""
+"Все верно, Избранный. Ты же, наверное, не хочешь быть добычей сейчас, не так "
+"ли?"
+
+#: tutorial.xml:1240
+msgid "All right allready!"
+msgstr "Всё уже нормально!"
+
+#: tutorial.xml:1268
+msgid "Just great!"
+msgstr ""
+
+#: tutorial.xml:1346
+msgid "Damn this place!"
+msgstr ""
+
+#: tutorial.xml:1348
+msgid ""
+"If it goes to pieces completely I will be trapped down here because of what "
+"they've done to me."
+msgstr ""
+
+#: tutorial.xml:1349
+msgid "Are you all right down there? ##solo"
+msgstr ""
+
+#: tutorial.xml:1351
+msgid ""
+"If it goes to pieces completely we will be trapped down here because of what "
+"they've done to us."
+msgstr ""
+
+#: tutorial.xml:1353
+msgid "No matter."
+msgstr ""
+
+#: tutorial.xml:1355
+msgid "If there is a way out of here, we'll find it."
+msgstr ""
+
+#: tutorial.xml:1357
+msgid "Yeah, even if we have to use our teeth."
+msgstr ""
+
+#: tutorial.xml:1361
+#, fuzzy
+msgid "Are you all right down there?"
+msgstr "Ищешь проблемы?"
+
+#: tutorial.xml:1365
+msgid "Like hell I am! How do I get out of here?"
+msgstr ""
+
+#: tutorial.xml:1367
+msgid "Like hell we are! How do we get out of here?"
+msgstr ""
+
+#: tutorial.xml:1370
+msgid "The path is blocked from our side and we can't get to you."
+msgstr ""
+
+#: tutorial.xml:1371
+msgid "You'll have to find another way out."
+msgstr ""
+
+#: tutorial.xml:1372
+msgid "There should be workers down there."
+msgstr ""
+
+#: tutorial.xml:1373
+msgid "Maybe they can help. We will wait here."
+msgstr ""
+
+#: tutorial.xml:1375
+msgid "Damn them! Not exactly what I would call 'customer service'."
+msgstr ""
+
+#: tutorial.xml:1376
+msgid "They better have some serious coin for all this trouble."
+msgstr ""
+
+#: tutorial.xml:1416
+msgid "Move it you lazy maggots! This place is not building itself."
+msgstr ""
+
+#: tutorial.xml:1425
+msgid "Finally you guards return..."
+msgstr ""
+
+#: tutorial.xml:1426
+#, fuzzy
+msgid "Wait, who are you?"
+msgstr "Ты что, трусишка?"
+
+#: tutorial.xml:1428
+msgid "I'm someone who is stuck down here, that's who."
+msgstr ""
+
+#: tutorial.xml:1430
+msgid "We are people who are stuck down here, that's who."
+msgstr ""
+
+#: tutorial.xml:1432
+msgid "Do you know how to get out of here?"
+msgstr ""
+
+#: tutorial.xml:1433
+msgid "Sorry, no. The stairway collapsed earlier."
+msgstr ""
+
+#: tutorial.xml:1434
+msgid "There's only one way down here?!"
+msgstr ""
+
+#: tutorial.xml:1435
+msgid ""
+"Have you not thought about what could happen with your pet monsters up there?"
+msgstr ""
+
+#: tutorial.xml:1436
+#, fuzzy
+msgid "This is not for me to decide."
+msgstr "Сейчас не время восхищаться."
+
+#: tutorial.xml:1437
+msgid "It is through the Council's will and Akeran's wisdom."
+msgstr ""
+
+#: tutorial.xml:1438
+msgid "And if you die here?"
+msgstr ""
+
+#: tutorial.xml:1439
+msgid "If that's how it is decided, we will work here until our time comes."
+msgstr ""
+
+#: tutorial.xml:1440
+msgid "We all think alike here."
+msgstr ""
+
+#: tutorial.xml:1441
+#, fuzzy
+msgid "..."
+msgstr "Эм..."
+
+#: tutorial.xml:1442
+msgid "Be that as it may, but is there another way to get out of here?"
+msgstr ""
+
+#: tutorial.xml:1444
+msgid "Preferably today."
+msgstr ""
+
+#: tutorial.xml:1446
+#, fuzzy
+msgid "Well, there might be."
+msgstr "Да, ты прав насчет этого..."
+
+#: tutorial.xml:1447
+msgid "You see that crane over there?"
+msgstr ""
+
+#: tutorial.xml:1454
+msgid "It was damaged by falling rocks earlier."
+msgstr ""
+
+#: tutorial.xml:1455
+msgid ""
+"You could use it to get to the sewer tunnels that connect the different "
+"levels of this most magnificent construction."
+msgstr ""
+
+#: tutorial.xml:1456
+msgid "I suppose as you suggested this plan, you have a way of repairing it?"
+msgstr ""
+
+#: tutorial.xml:1457
+msgid "Of course I have a plan."
+msgstr ""
+
+#: tutorial.xml:1458
+msgid "I sent one of my workers to get a cog earlier."
+msgstr ""
+
+#: tutorial.xml:1459
+msgid ""
+"If he hasn't been eaten by the slugs out there, he should be back any minute "
+"now."
+msgstr ""
+
+#: tutorial.xml:1460
+#, fuzzy
+msgid "Why don't you get an energy crystal in the meantime?"
+msgstr "Что ж вы раньше-то не сказали?"
+
+#: tutorial.xml:1461
+msgid "Without it the whole crane is useless."
+msgstr ""
+
+#: tutorial.xml:1462
+msgid "And where would one get an energy crystal in these forsaken caves?"
+msgstr ""
+
+#: tutorial.xml:1463
+msgid "These halls are not forsaken!"
+msgstr ""
+
+#: tutorial.xml:1464
+msgid ""
+"They are filled with the unfathomable wisdom of Akeran and will soon be one "
+"of the greatest works in his name."
+msgstr ""
+
+#: tutorial.xml:1465
+msgid "Of course. So, where?"
+msgstr ""
+
+#: tutorial.xml:1466
+msgid "Akeran protects, Akeran guides."
+msgstr ""
+
+#: tutorial.xml:1467
+msgid "Look for a connection to a laboratory on the upper level."
+msgstr ""
+
+#: tutorial.xml:1468
+msgid "You can go there and... borrow one, if you're lucky."
+msgstr ""
+
+#: tutorial.xml:1469
+msgid ""
+"Just ask the master of the laboratory and he will surely give you one, if "
+"you're found worthy of Akeran's blessing."
+msgstr ""
+
+#: tutorial.xml:1470
+msgid "This man is beginning to test my patience."
+msgstr ""
+
+#: tutorial.xml:1482
+msgid "Let's just get the crystal. I'm sure we will get Akeran's blessing."
+msgstr ""
+
+#: tutorial.xml:1516
+msgid "This looks like it could be a way up."
+msgstr ""
+
+#: tutorial.xml:1530
+msgid "Let's just try it out."
+msgstr ""
+
+#: tutorial.xml:1566
+msgid "So, this really is the lab, and that should be the crystal"
+msgstr ""
+
+#: tutorial.xml:1568
+msgid "but there is no oh-so-blessed master here."
+msgstr ""
+
+#: tutorial.xml:1569
+msgid "Then he can't have any objections, can he?"
+msgstr ""
+
+#: tutorial.xml:1571
+msgid "I'd better be careful, though."
+msgstr ""
+
+#: tutorial.xml:1572
+msgid "This doesn't look like I can simply take it."
+msgstr ""
+
+#: tutorial.xml:1573
+msgid ""
+"I guess I would first have to stop whatever is using the crystal right now."
+msgstr ""
+
+#: tutorial.xml:1579
+msgid "I guess not."
+msgstr ""
+
+#: tutorial.xml:1581
+msgid "Let's just take it."
+msgstr ""
+
+#: tutorial.xml:1582
+msgid "Better be careful, though."
+msgstr ""
+
+#: tutorial.xml:1583
+msgid "This doesn't look like you can simply take it."
+msgstr ""
+
+#: tutorial.xml:1584
+msgid ""
+"I guess we would first have to stop whatever is using the crystal right now."
+msgstr ""
+
+#: tutorial.xml:1609
+msgid "Yikes, it's freezing!"
+msgstr ""
+
+#: tutorial.xml:1611
+msgid ""
+"That felt like standing on a single mountaintop during a thunderstorm... and "
+"the energy source still won't come of."
+msgstr ""
+
+#: tutorial.xml:1614
+msgid "Ouch, I burnt my hands!"
+msgstr ""
+
+#: tutorial.xml:1618
+msgid ""
+"Hm... it's stuck. I think I may have to temper around with this setup a bit "
+"more."
+msgstr ""
+
+#: tutorial.xml:1648
+msgid "I am still missing a cog."
+msgstr ""
+
+#: tutorial.xml:1650
+msgid "Now all I need is the energy source."
+msgstr ""
+
+#: tutorial.xml:1652
+msgid ""
+"I have to find an energy source and a cog before that thing will work again."
+msgstr ""
+
+#: tutorial.xml:1667
+msgid "Finally. Now, lets get out of here."
+msgstr ""
+
+#: tutorial.xml:1669
+msgid "And all it takes to get out of here is a walk through the sewers."
+msgstr ""
+
+#: tutorial.xml:1671
+msgid "Again."
+msgstr ""
+
+#: tutorial.xml:1730
+msgid "And then she says..."
+msgstr ""
+
+#: tutorial.xml:1732
+msgid "Akerans Flaming Eyes, look over there!"
+msgstr ""
+
+#: tutorial.xml:1772
+msgid "I am NOT doing that again."
+msgstr ""
+
+#: tutorial.xml:1773
+msgid "At least not until I got paid. Seriously paid."
+msgstr ""
+
+#: tutorial.xml:1774
+msgid "You made it!"
+msgstr ""
+
+#: tutorial.xml:1776
+msgid "We are NOT doing that again."
+msgstr ""
+
+#: tutorial.xml:1777
+msgid "At least not until we got paid. Seriously paid."
+msgstr ""
+
+#: tutorial.xml:1778
+msgid "They made it!"
+msgstr ""
+
+#: tutorial.xml:1780
+msgid "No thanks to you guys."
+msgstr ""
+
+#: tutorial.xml:1781
+msgid "Did you even know just how many escaped slugs you have in the basement?"
+msgstr ""
+
+#: tutorial.xml:1782
+msgid "It's not like they could kill you."
+msgstr ""
+
+#: tutorial.xml:1783
+msgid "It still hurts being hurt, you know?"
+msgstr ""
+
+#: tutorial.xml:1784
+msgid "While we are on the topic..."
+msgstr ""
+
+#: tutorial.xml:1786
+#, fuzzy
+msgid "In fact, have you thought of using your powerful skills?##solo"
+msgstr ""
+"Кстати, ты не думал о том, чтобы воспользоваться своими могущественными "
+"заклинаниями?"
+
+#: tutorial.xml:1787
+#, fuzzy
+msgid ""
+"The Lord Master thought that you could do considerably more than dully beat "
+"your enemies.##solo"
+msgstr ""
+"Лорд мастер думал, что ты можешь значительно больше чем просто дубасить "
+"своих врагов."
+
+#: tutorial.xml:1789
+msgid "In fact, have you thought of using your powerful skills?"
+msgstr ""
+"Кстати, ты не думал о том, чтобы воспользоваться своими могущественными "
+"заклинаниями?"
+
+#: tutorial.xml:1790
+msgid ""
+"The Lord Master thought that you could do considerably more than dully beat "
+"your enemies."
+msgstr ""
+"Лорд мастер думал, что ты можешь значительно больше чем просто дубасить "
+"своих врагов."
+
+#: tutorial.xml:1792
+msgid "Really?"
+msgstr "Правда?"
+
+#: tutorial.xml:1798
+msgid "Explain skills?"
+msgstr "Рассказать про заклинания?"
+
+#: tutorial.xml:1807
+msgid "Explain skills"
+msgstr "Рассказать про заклинания"
+
+#: tutorial.xml:1812
+msgid ""
+"With the 't'-key you open the skill window. Here you can choose a skill."
+msgstr ""
+"С помощью кнопки 't' ты можешь открыть окно заклинаний. В нем ты можешь "
+"выбрать заклинание."
+
+#: tutorial.xml:1813
+msgid ""
+"Just click with the same mouse button you would like to use the skill with "
+"on the skill icon."
+msgstr ""
+"Просто щелкни по изображению заклинания той кнопкой мыши, которой ты "
+"собираешься использовать это заклинание."
+
+#: tutorial.xml:1814
+msgid "Skills are distinguished into two groups."
+msgstr "Заклинания разделены на две группы."
+
+#: tutorial.xml:1815
+msgid ""
+"After you have used a skill, you cannot use a skill of that group for a "
+"while."
+msgstr ""
+"После того как ты использовал заклинание, некоторое время ты не можешь "
+"использовать заклинания из этой группы "
+
+#: tutorial.xml:1816
+msgid ""
+"Look at the picture in the status bar to know if a skill is ready for use."
+msgstr "Смотри на изображение на панели чтобы знать, готово ли заклинание."
+
+#: tutorial.xml:1829
+msgid "Don't worry, I'm almost feeling fit again."
+msgstr "Не беспокойся, я снова почти что в норме."
+
+#: tutorial.xml:1831
+msgid "Don't worry, we're almost feeling fit again."
+msgstr "Не беспокойся, мы снова почти что в норме."
+
+#: tutorial.xml:1835
+msgid "Very well. The secret door is here."
+msgstr "Отлично. Вот и секретная дверь."
+
+#: tutorial.xml:1836
+msgid "Wait a second. What if the old geezer has attached a trap to it?"
+msgstr ""
+"Погоди секунду. А что если этот старый пердун устроил какую-нибудь ловушку?"
+
+#: tutorial.xml:1838
+#, fuzzy
+msgid ""
+"You're right. It's best if you do it, Branded One. At least nothing lasting "
+"can happen that way.##female"
+msgstr ""
+"Ты прав. Лучше всего, если это сделаешь ты, Избранный. Как минимум ничего "
+"плохого не случится."
+
+#: tutorial.xml:1840
+#, fuzzy
+msgid ""
+"You're right. It's best if you do it, Branded One. At least nothing lasting "
+"can happen that way.##male"
+msgstr ""
+"Ты прав. Лучше всего, если это сделаешь ты, Избранный. Как минимум ничего "
+"плохого не случится."
+
+#: tutorial.xml:1842
+#, fuzzy
+msgid ""
+"You're right. It's best if you do it, Branded Ones. At least nothing lasting "
+"can happen that way."
+msgstr ""
+"Ты прав. Лучше всего, если это сделаешь ты, Избранный. Как минимум ничего "
+"плохого не случится."
+
+#: tutorial.xml:1845
+#, fuzzy
+msgid "'course. Send the Branded One first.##female"
+msgstr "Ну конечно же надо отправить Избранного первым."
+
+#: tutorial.xml:1847
+#, fuzzy
+msgid "'course. Send the Branded One first.##male"
+msgstr "Ну конечно же надо отправить Избранного первым."
+
+#: tutorial.xml:1855 tutorial.xml:1871
+msgid "Open secret door"
+msgstr "Открыть секретную дверь"
+
+#: tutorial.xml:1864 tutorial.xml:1880
+msgid ""
+"Do you see the shelf in that passage? That is the door. Just move it by "
+"clicking on it."
+msgstr ""
+"Видишь стеллаж в этом проходе? Это и есть дверь. Отодвинь её просто щелкнув "
+"по ней."
+
+#: tutorial.xml:1865
+msgid "You'd better hope there's no trap."
+msgstr "Ты бы лучше надеялся, что там нет ловушек."
+
+#: tutorial.xml:1881
+msgid "I hope nothing explodes."
+msgstr "Надеюсь, ничего не взорвется."
+
+#: tutorial.xml:1927
+msgid "Good, Firewhirl is not here."
+msgstr "Отлично, Огненный Вихрь не тут."
+
+#: tutorial.xml:1928
+msgid ""
+"What is he researching here all the time? All those flowers can hardly be "
+"for the purpose of the Council and Akeran."
+msgstr ""
+"Что он тут все время исследует? Все эти цветы вряд ли исследуются для целей "
+"Совета и Акерана."
+
+#: tutorial.xml:1929
+msgid ""
+"I'm sure there's more to it than meets the eye. An apple elemental for "
+"example."
+msgstr ""
+"Я уверен, здесь есть много чего, скрытого от глаз. Яблочного элементаля, "
+"например."
+
+#: tutorial.xml:1930
+msgid "I wouldn't put it past him."
+msgstr "Я бы не оставлял его за собой."
+
+#: tutorial.xml:1931
+msgid "Joking aside! We must go on."
+msgstr "Шутки в сторону! Мы должны идти."
+
+#: tutorial.xml:1934
+msgid ""
+"With all the damn beasts roaming around here freely, I almost think they "
+"just want me as an exterminator."
+msgstr ""
+"Учитывая всех этих тварей, свободно шатающихся тут и там, я полагаю, что они "
+"прихватили меня всего лишь в качестве чистильщика."
+
+#: tutorial.xml:1936
+msgid ""
+"With all the damn beasts roaming around here freely, I almost think they "
+"just want us as exterminators."
+msgstr ""
+"Учитывая всех этих тварей, свободно шатающихся тут и там, я полагаю, что они "
+"прихватили нас всего лишь в качестве чистильщиков."
+
+#: tutorial.xml:2046
+msgid "Oops"
+msgstr "Упс"
+
+#: tutorial.xml:2079
+msgid "What a day. Did you know that thing could spit little monsters?"
+msgstr ""
+"Ну что за денек. Ты знал, что ЭТО может производить маленьких монстров?"
+
+#: tutorial.xml:2080
+msgid "The Lord Master didn't say anything about that..."
+msgstr "Лорд Мастер не говорил ничего насчет этого..."
+
+#: tutorial.xml:2081
+msgid "Something unwritten in the book of the omniscient airpaw?"
+msgstr "Что-то не было написано в книге всезнающей Ветряной Лапки?"
+
+#: tutorial.xml:2082
+msgid "Windclaw, heretic!"
+msgstr "Виндклоу, еретик!"
+
+#: tutorial.xml:2084
+msgid ""
+"A Cursed One has to be happy if he has something to kill all along, right?"
+msgstr ""
+"Проклятый, должно быть, радуется, если у него есть возможность убить кого-"
+"нибудь, верно?"
+
+#: tutorial.xml:2085
+msgid "I'm a Branded One! That is far worse than being cursed."
+msgstr "Я Избранный! А это ещё хуже, чем быть проклятым."
+
+#: tutorial.xml:2086
+msgid "The mighty Akeran truly punished you dearly."
+msgstr "Могущественный Акеран и вправду покарал тебя с любовью."
+
+#: tutorial.xml:2087
+msgid "Spare me your elementalist drivel and get out of my way!"
+msgstr "Перестань нести бред и убирайся с моего пути!"
+
+#: tutorial.xml:2088
+msgid "I truly am the exterminator here."
+msgstr "Я и вправду здесь в качестве чистильщика."
+
+#: tutorial.xml:2090
+msgid ""
+"Cursed Ones have to be happy if they have something to kill all along, right?"
+msgstr ""
+"Проклятые, должно быть, радуются, если у них есть возможность убить кого-"
+"нибудь, верно?"
+
+#: tutorial.xml:2091
+msgid "We're Branded Ones! That is far worse than being cursed."
+msgstr "Мы Избранные! А это ещё хуже, чем быть проклятыми."
+
+#: tutorial.xml:2092
+msgid "The mighty Akeran truly punished them dearly."
+msgstr "Могущественный Акеран и вправду покарал их с любовью."
+
+#: tutorial.xml:2093
+msgid "Spare us your elementalist drivel and get out of our way!"
+msgstr "Перестань нести бред и убирайся с нашего пути!"
+
+#: tutorial.xml:2094
+msgid "We truly are the exterminators here."
+msgstr "Мы и вправду здесь в качестве чистильщиков."
+
+#: tutorial.xml:2159
+msgid "Wow! They really believe in orderly and thorough research."
+msgstr ""
+"Ух ты! Они действительно верят во всесторонние и исчерпывающие исследования."
+
+#: tutorial.xml:2160
+msgid "How many slugs do you have to cut to believe they are slimy?"
+msgstr ""
+"Как много слизней вам пришлось разрезать, чтобы поверить, что они "
+"отвратительны?"
+
+#: tutorial.xml:2162
+msgid "Take a look around. That stuff has to be worth a fortune!"
+msgstr "Оглянись вокруг. Это же стоит целое состояние!"
+
+#: tutorial.xml:2164
+msgid "That stuff must be worth a fortune!"
+msgstr "Этот мусор должен стоить целое состояние!"
+
+#: tutorial.xml:2167
+msgid "This junk?"
+msgstr "Этот мусор?"
+
+#: tutorial.xml:2170
+msgid "Philistine."
+msgstr "Ханжа."
+
+#: tutorial.xml:2181
+msgid ""
+"If they hadn't all those needless balustrades into the void, they wouldn't "
+"have to mop escaped sluglings from the floor."
+msgstr ""
+"Если бы они не сделали все эти ненужные балюстрады в пустоту, им бы не "
+"пришлось убирать выбравшихся слизней с пола."
+
+#~ msgid "Really, somehow lacking in style."
+#~ msgstr "И вправду, как-то без стиля."
+
+#~ msgid "What a massacre."
+#~ msgstr "Что за бойня."
+
+#~ msgid "That should have been the last one."
+#~ msgstr "Этот, должно быть, последний."
+
+#~ msgid "Explain level up?"
+#~ msgstr "Объяснить поднятие уровня?"
+
+#, fuzzy
+#~ msgid "explain_skills_no"
+#~ msgstr "Рассказать про заклинания"
+
+#, fuzzy
+#~ msgid "explain_levelup_continue"
+#~ msgstr "Объяснить поднятие уровня"
+
+#, fuzzy
+#~ msgid "tutorial_weapon"
+#~ msgstr "Обучение"
+
+#, fuzzy
+#~ msgid "tutorialSlugs"
+#~ msgstr "Обучение"
+
+#, fuzzy
+#~ msgid "findSecretDoor"
+#~ msgstr "Открыть секретную дверь"
+
+#, fuzzy
+#~ msgid "derred"
+#~ msgstr "Дерред"
+
+#, fuzzy
+#~ msgid "tolec"
+#~ msgstr "Толек"

@@ -14,13 +14,19 @@
  */
 
 
-#ifndef MAIN_WINDOW_H
-#define MAIN_WINDOW_H
+#ifndef __SUMWARS_GUI_MAINWINDOW_H__
+#define __SUMWARS_GUI_MAINWINDOW_H__
 
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
 
 // needed to be able to create the CEGUI renderer interface
+#ifdef CEGUI_07
 #include "CEGUI/RendererModules/Ogre/CEGUIOgreRenderer.h"
+#else
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
+#endif
 
 // CEGUI includes
 
@@ -107,6 +113,12 @@ class MainWindow :
 	void setupCharInfo();
 
 	/**
+	 * \fn void setupDialogWindow()
+	 * \brief Create the generic dialog window
+	 */
+	void setupDialogWindow();
+
+	/**
 	 * \fn void setupSkilltree()
 	 * \brief Erzeugt das Fenster Skilltree
 	 */
@@ -131,6 +143,12 @@ class MainWindow :
 	 */
 	bool setupMainMenu();
 
+	/**
+	 * \fn bool setupRootWindow()
+	 * \brief Create the root window to serve as root element of the CEGUI interface
+	 * \return true, if successfull, false otherwise
+	 */
+	bool setupRootWindow ();
 
 	/**
 	 * \fn bool setupObjectInfo()
@@ -267,11 +285,6 @@ class MainWindow :
 	 */
 	void updateChatContent();
 	
-	/**
-	 * \brief Aktualisiert die Musik
-	 */
-	void updateMusic();
-
 	/**
 	 * \brief Updates the sound system
 	 */
@@ -416,10 +429,22 @@ class MainWindow :
 	CEGUI::Window* m_main_menu;
 
 	/**
+	 * \fn CEGUI::Window* m_root_window
+	 * \brief The root window
+	 */
+	CEGUI::Window* m_root_window;
+
+	/**
 	 * \var CEGUI::Window* m_game_screen
-	 * \brief Fenster, in dem das eigentliche Spiel laeuft
+	 * \brief The window in which the actual game is running in (this is excluding the menu).
 	 */
 	CEGUI::Window* m_game_screen;
+
+	/**
+	 * \var CEGUI::Window* m_custom_cursor
+	 * \brief A custom cursor window. Would be used typically to display items dragged by the user.
+	 */
+	CEGUI::Window* m_custom_cursor;
 
 	/**
 	 * \var Scene* m_scene
@@ -468,6 +493,11 @@ class MainWindow :
 	 */
 	bool m_ready_to_start;
 
+	/**
+	 * \brief The name of the CEGUI skin to use.
+	 */
+	std::string m_ceguiSkinName;
+
 };
 
-#endif
+#endif // __SUMWARS_GUI_MAINWINDOW_H__

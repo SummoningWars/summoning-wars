@@ -1,0 +1,338 @@
+<?xml version="1.0" ?>
+
+<!--
+HINWEISE:
+* Bei Gegenstaenden, die keine Waffen sind kann "WeaponAttribute" weggelassen
+  werden.
+
+* Moegliche Flags fuer XSpecialFlag, SpecialFlag:
+	noflags
+	unblockable
+	ignore_armor
+	extra_human_dmg
+	extra_demon_dmg
+	extra_undead_dmg
+	extra_dwarf_dmg
+	extra_drake_dmg
+	extra_fairy_dmg
+	extra_goblin_dmg
+	extra_animal_dmg
+	extra_summoned_dmg
+
+* Moegliche Flags fuer Immunity:
+	blind
+	poisoned
+	berserk
+	confused
+	mute
+	paralyzed
+	frozen
+	burning
+
+* Moegliche Flags fuer Ability:
+	noaction
+	walk
+	use
+	trade
+	attack
+	range_attack
+	magic_attack
+	holy_attack
+	defend
+	wait
+	die
+	dead
+	take_item
+	bash
+	hammer_bash
+	around_blow
+	whirl_blow
+	smash
+	hate_mage
+	charge
+	storm_charge
+	block
+	steadfast
+	monster_hunter
+	monster_slayer
+	endurance
+	weaponmaster
+	firesword
+	flamesword
+	flamearmor
+	berserk
+	warcry
+	regenerate
+	decoy
+	scare
+	anger
+	fury
+	triple_shot
+	guided_triple_shot
+	multishot
+	volley_shot
+	pierce
+	weak_point
+	blind_rage
+	vacuum
+	death_roulette
+	exploding_arrow
+	explosion_cascade
+	evade
+	critical_strike
+	concentration
+	mental_wall
+	resist_ice
+	resist_air
+	aimed_shot
+	bow_spirit
+	ice_arrows
+	freezing_arrows
+	wind_arrows
+	storm_arrows
+	wind_walk
+	fire_bolt
+	fire_strike
+	fire_wave
+	fire_storm
+	fire_ball
+	inferno_ball
+	fire_wall
+	inflame
+	ice_bolt
+	ice_spike
+	snow_storm
+	blizzard
+	ice_ring
+	frost_ring
+	freeze
+	chill
+	lightning
+	lightning_strike
+	thunderstorm
+	thunderstorm2
+	chain_lightning
+	chain_lightning2
+	static_shield
+	ionisation
+	holy_light
+	holy_fire
+	burning_rage
+	cure_blind_mute
+	cure_blind_mute_party
+	blazing_shield
+	light_beam
+	burning_sun
+	break_binding
+	disrupt_binding
+	magic_shield
+	cure_pois_burn
+	cure_pois_burn_party
+	acid
+	heal
+	heal_party
+	divine_wind
+	divine_storm
+	blade_storm
+	cure_conf_bsrk
+	cure_conf_bsrk_party
+	hypnosis
+	hypnosis2
+	keen_mind
+-->
+
+<!-- general
+<Item type="weapon" subtype="short_sw" name="string" size="medium">
+	<Image image="sword.png" />
+	<Mesh file="sword.mesh" />
+	<Attribute
+		level_requirement="char"
+		character_requirement="char"
+		price="int"
+		min_enchant="float"
+		max_enchant="float"
+		modchance_health_mod="float"
+		modchance_armor_mod="float"
+		modchance_block_mod="float"
+s		modchance_strength_mod="float"
+s		modchance_dexterity_mod="float"
+s		modchance_magic_power_mod="float"
+		modchance_willpower_mod="float"
+		modchance_resist_phys_mod="float"
+		modchance_resist_fire_mod="float"
+		modchance_resist_ice_mod="float"
+		modchance_resist_air_mod="float"
+		modchance_resist_all_mod="float"
+s		modchance_damage_phys_mod="float"
+s		modchance_damage_fire_mod="float"
+s		modchance_damage_ice_mod="float"
+s		modchance_damage_air_mod="float"
+		modchance_damage_mult_phys_mod="float"
+		modchance_damage_mult_fire_mod="float"
+		modchance_damage_mult_ice_mod="float"
+		modchance_damage_mult_air_mod="float"
+		modchance_attack_speed_mod="float"
+		modchance21="float"
+		modchance_attack_mod="float"
+		modchance_power_mod="float"
+		modchance_mage_fire_skills_mod="float"
+		modchance_mage_ice_skills_mod="float"
+		modchance_mage_air_skills_mod="float"
+		modchance27="float"
+		modchance28="float"
+		modchance29="float"
+		modchance30="float"
+	/>
+	<UseupEffect
+		dhealth="float"
+		dstatus_blind_immune_time="float"
+		dstatus_poison_immune_time="float"
+		dstatus_berserk_immune_time="float"
+		dstatus_confuse_immune_time="float"
+		dstatus_mute_immune_time="float"
+		dstatus_paralyze_immune_time="float"
+		dstatus_frozen_immune_time="float"
+		dstatus_burning_immune_time="float"
+	/>
+	<EquipEffect
+		darmor="short"
+		dblock="short"
+		dmax_health="float"
+		dattack="short"
+		dpower="short"
+		dstrength="short"
+		ddexterity="short"
+		dmagic_power="short"
+		dwillpower="short"
+		dresistances_physical="short"
+		dresistances_cap_physical="short"
+		dresistances_air="short"
+		dresistances_cap_air="short"
+		dresistances_ice="short"
+		dresistances_cap_ice="short"
+		dresistances_fire="short"
+		dresistances_cap_fire="short"
+		dwalk_speed="short"
+		dattack_speed="short"
+	>
+		<SpecialFlag type=""/>
+		...
+		<Ability type="Enumnamen der Statusveraenderung"/> 
+		...
+		<Immunity type=""/>
+		...
+	</EquipEffect>
+	<WeaponAttribute
+		weapon_type = "string"
+		damage_min_physical="float"
+		damage_max_physical="float"
+		damage_min_air="float"
+		damage_max_air="float"
+		damage_min_ice="float"
+		damage_max_ice="float"
+		damage_min_fire="float"
+		damage_max_fire="float"
+		multiplier_physical="float"
+		multiplier_air="float"
+		multiplier_ice="float"
+		multiplier_fire="float"
+		damage_attack="float"
+		damage_power="float"
+		damage_blind_power="short"
+		damage_poison_power="short"
+		damage_berserk_power="short"
+		damage_confuse_power="short"
+		damage_mute_power="short"
+		damage_paralyze_power="short"
+		damage_frozen_power="short"
+		damage_burning_power="short"
+		attack_range="float"
+		two_handed="no"
+		dattack_speed="short"
+	>
+		<SpecialFlag type=""/>
+		...
+	</WeaponAttribute>
+	
+	<DropChance
+		level="int"
+		probability="float"
+	/>
+</Item>
+-->
+
+
+<!-- ARMBRUST -->
+<!-- �bungsarmbrust -->
+<!-- Leichte Armbrust -->
+<!-- Eibenarmbrust -->
+<!-- Armbrust -->
+<!-- Kriegsarmbrust -->
+<!-- Arbaleste -->
+<!-- Klingenwerfer -->
+<!-- Repetierarmbrust -->
+<!-- Windenarmbrust -->
+<!-- B�rent�ter -->
+<!-- Schwarze Armbrust -->
+<!-- Belagerungsarmbrust -->
+<!-- Donnerschlag -->
+<!-- Leichte Zwergenarmbrust -->
+<!-- Todesholzarmbrust -->
+<!-- Assasinenarmbrust -->
+<!-- Zerst�rerarmbrust -->
+<!-- Zwergenarmbrust -->
+
+<!-- ARMOR -->
+<!-- Tuchr�stung -->
+<!-- Lederr�stung -->
+<!-- Nietenr�stung -->
+<!-- Banditenr�stung -->
+<!-- Novizenr�stung -->
+<!-- S�ldnerr�stung -->
+<!-- Waldl�uferhemd -->
+<!-- Assasinenr�stung -->
+<!-- Tempelr�stung -->
+<!-- Kettenhemd -->
+<!-- R�ubergewand -->
+<!-- Brigandine -->
+<!-- Schwarzlederr�stung -->
+<!-- Aisener Legionsr�stung -->
+<!-- Aisener Wildh�tergewand -->
+<!-- Kohler�stung -->
+<!-- Waldl�uferr�stung -->
+<!-- Drachenlederr�stung -->
+<!-- Zwergenkettenhemd -->
+<!-- D�monenlederr�stung -->
+<!-- Plattenr�stung -->
+<!-- Elfenhemd -->
+<!-- D�monenplatte -->
+<!-- D�monenj�gerr�stung -->
+<!-- Ritterr�stung -->
+<!-- Engelshemd -->
+<!-- Zwergenstahlplatte -->
+<!-- Tr�nenr�stung -->
+<!-- Heldenplatte -->
+<!-- Drachenschuppengewand -->
+<!-- Heilige Platte -->
+<!-- G�tterr�stung -->
+<!-- Elfenr�stung -->
+
+<!-- MAGICIAN ROBES -->
+<!-- Flickenrobe -->
+<!-- Lehrlingsrobe -->
+<!-- Novizenrobe -->
+<!-- Alchemistenrobe -->
+<!-- Gelehrtenrobe -->
+<!-- Magierrobe -->
+<!-- Beschw�rergewand -->
+<!-- Allwetterrobe/Himmelsrobe -->
+<!-- Nekromantenrobe -->
+<!-- Firnrobe -->
+<!-- Feenhaarrobe -->
+<!-- Vulkanrobe -->
+<!-- Zirkelrobe -->
+<!-- Magisterrobe -->
+<!-- Geisterrobe -->
+<!-- Todesrobe -->
+<!-- Elementrobe -->
+<!-- Erzmagierrobe -->

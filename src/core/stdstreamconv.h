@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef STD_STREAM_CONV_H
-#define STD_STREAM_CONV_H
+#ifndef __SUMWARS_CORE_STDSTREAMCONV_H__
+#define __SUMWARS_CORE_STDSTREAMCONV_H__
 
 #include "charconv.h"
 #include "debug.h"
@@ -69,7 +69,7 @@ class StdStreamConv : public CharConv
 		 * \brief writes a string to the buffer
 		 * \param s String
 		 */
-		virtual void toBuffer(const std::string s);
+		virtual void toBuffer(const std::string& s);
 		
 		
 		/**
@@ -253,5 +253,5 @@ class StdStreamConv : public CharConv
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_STDSTREAMCONV_H__
 

@@ -1,0 +1,194 @@
+<!-- SHIELDS -->
+
+<!-- Tartsche -->
+<Item type="shield" subtype="targe_shd" name="targe" size="medium">
+	 <Image image="shield.png" />
+	<Mesh file="shield" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="warrior,priest,mage"
+		min_enchant="20"
+		max_enchant="40"
+		modchance_armor_mod="0.05"
+		modchance_block_mod="0.3"
+		modchance_resist_phys_mod="0.05"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+	/>
+
+  <EquipEffect
+		darmor="5"
+		dblock="10"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Buckler 3-->
+<Item type="shield" subtype="buck_shd" name="buckler" size="medium">
+	 <Image image="shield.png" />
+	<Mesh file="shield" />
+	<Attribute
+		level_requirement="3"
+		character_requirement="warrior,priest,mage"
+		min_enchant="30"
+		max_enchant="60"
+		modchance_armor_mod="0.05"
+		modchance_block_mod="0.3"
+		modchance_resist_phys_mod="0.05"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+	/>
+
+  <EquipEffect
+		darmor="7"
+		dblock="15"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="3"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Holzschild 5 XX-->
+<Item type="shield" subtype="wood_shd" name="wood shield" size="medium">
+	 <Image image="shield.png" />
+	<Mesh file="wood_shd" />
+	<Attribute
+		level_requirement="5"
+		character_requirement="warrior,priest,mage"
+		min_enchant="40"
+		max_enchant="130"
+		modchance_armor_mod="0.05"
+		modchance_block_mod="0.3"
+		modchance_resist_phys_mod="0.05"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+	/>
+
+  <EquipEffect
+		darmor="10"
+		dblock="20"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Bronzeschild 8-->
+<Item type="shield" subtype="bronze_shd" name="bronze shield" size="medium">
+	<Image image="metal_shd.png" />
+	<Mesh file="metal_shd" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="warrior,priest,mage"
+		min_enchant="50"
+		max_enchant="160"
+		modchance_armor_mod="0.05"
+		modchance_block_mod="0.3"
+		modchance_resist_phys_mod="0.05"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+	/>
+
+  <EquipEffect
+		darmor="11"
+		dblock="25"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="8"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eisenschild 13 XX-->
+<Item type="shield" subtype="iron_shd" name="iron shield" size="medium">
+	<Image image="metal_shd.png" />
+	<Mesh file="metal_shd" />
+	<Attribute
+		level_requirement="13"
+		character_requirement="warrior,priest,mage"
+		min_enchant="60"
+		max_enchant="190"
+		modchance_armor_mod="0.05"
+		modchance_block_mod="0.3"
+		modchance_resist_phys_mod="0.05"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+	/>
+
+  <EquipEffect
+		darmor="15"
+		dblock="30"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Stahlschild 19-->
+<Item type="shield" subtype="steel_shd" name="steel shield" size="medium">
+	<Image image="metal_shd.png" />
+	<Mesh file="metal_shd" />
+	<Attribute
+		level_requirement="19"
+		character_requirement="warrior,priest,mage"
+		min_enchant="100"
+		max_enchant="250"
+		modchance_armor_mod="0.05"
+		modchance_block_mod="0.3"
+		modchance_resist_phys_mod="0.05"
+		modchance_resist_fire_mod="0.15"
+		modchance_resist_ice_mod="0.15"
+		modchance_resist_air_mod="0.15"
+		modchance_resist_all_mod="0.15"
+	/>
+
+  <EquipEffect
+		darmor="20"
+		dblock="45"
+  >
+	</EquipEffect>
+
+	<DropChance
+		level="19"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Verst�rkter Rundschild -->
+<!-- Gl�hender Schild -->
+<!-- Klingenschild -->
+<!-- Ogerteller -->
+<!-- Turmschild -->
+<!-- Legionsschild -->
+<!-- Zwergenstahlschild -->
+<!-- Nordlingsschild -->
+<!-- Windschild -->
+<!-- Engelsschild -->
+<!-- Heldenschild -->
+<!-- G�tterschild -->

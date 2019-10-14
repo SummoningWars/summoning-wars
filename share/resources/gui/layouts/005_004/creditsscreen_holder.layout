@@ -1,0 +1,9 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="CreditsWindow_Holder" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.113,0},{0.05,0},{0.887,0},{0.95,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="Alpha" Value="0" />
+    </Window>
+</GUILayout>

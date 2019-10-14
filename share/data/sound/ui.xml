@@ -1,0 +1,9 @@
+<Sound name="main_menu_hover_item">
+	<Soundfile source="gui_sound_effects/menu_hover_item.wav"/>
+</Sound>
+<Sound name="main_menu_click_item">
+	<Soundfile source="gui_sound_effects/menu_click_item.wav"/>
+</Sound>
+<Sound name="main_menu_notification">
+	<Soundfile source="gui_sound_effects/menu_item_horn.wav"/>
+</Sound>

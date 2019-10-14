@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WORLD_H
-#define WORLD_H
+#ifndef __SUMWARS_CORE_WORLD_H__
+#define __SUMWARS_CORE_WORLD_H__
 
 
 #include <string>
@@ -625,6 +625,11 @@ public:
 	{
 		return m_data_reload_requests;
 	}
+	
+	unsigned int getBaseRandomSeed()
+	{
+		return m_base_random_seed;
+	}
 		
 //Private stuff
 private:
@@ -751,6 +756,12 @@ private:
 	 * \brief Gibt den Ort an, an dem neu erzeugte Charaktere starten
 	 */
 	RegionLocation m_player_start_location;
+	
+	/**
+	 * \brief Base number for random seed
+	 * For debugging purpose, it might be set to a fixed value. Other options are storing it in savegame * or recreating it on every game start.
+	 */
+	unsigned int m_base_random_seed;
 
 	/**
 	 * \var  static World* m_world
@@ -770,4 +781,4 @@ private:
 	 */
 	int m_data_reload_requests;
 };
-#endif //WORLD_H
+#endif // __SUMWARS_CORE_WORLD_H__

@@ -1,0 +1,40 @@
+<World>
+	<!-- Graue Himmelsleiter, Wolfshoehle; [Hoehle]; ca. 20 Min; Level 17- 19 -->
+	<!-- Goblinhunde, DER Goblinhundemonsterboss -->
+	<Region id="23" name="greyWolfcave">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="0.6" green="0.6" blue="0.6" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="40" dimy="40" area_percent="0.4" complexity="0.3" granularity="4"  ground="cave_ground"/>
+		<WorldPosition world_x="0.63" world_y ="0.42"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+			<Track source="ambience_1.ogg" />
+			<Track source="ambience_2.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="false" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="greyCurseGrotto" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="spiders" object_group="spiderLair" priority="4"/>
+		</NamedObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="wolves" number="20" />
+			<SpawnGroup group_name="wolves_giant" number="1" />
+		</SpawnGroups>
+	</Region>
+</World>

@@ -17,6 +17,8 @@
 FIND_PATH(PHYSFS_INCLUDE_DIR physfs.h
   $ENV{PHYSFSDIR}/include
   $ENV{PHYSFSDIR}
+  ../dependencies/PhysicsFS/include
+  dependencies/PhysicsFS/include
   ~/Library/Frameworks/PhysFS.framework/Headers
   /Library/Frameworks/PhysFS.framework/Headers
   /usr/local/include/physfs
@@ -60,6 +62,8 @@ ELSE(${PHYSFS_INCLUDE_DIR} MATCHES ".framework")
     PATHS
     $ENV{PHYSFSDIR}/Release
     $ENV{PHYSFSDIR}/lib
+    ../dependencies/PhysicsFS/lib
+    dependencies/PhysicsFS/lib
     /usr/local/lib
     /usr/lib
     /sw/lib

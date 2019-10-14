@@ -13,15 +13,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 #include "benchmarktab.h"
 #include "sumwarshelper.h"
 
 #include "Ogre.h"
 #include "OgrePlatformInformation.h"
 
-#include "Poco/Environment.h"
-
+#ifdef CEGUI_07
 #include "CEGUI/CEGUIWindowManager.h"
+#else
+#include "CEGUI/WindowManager.h"
+#endif
+
 #include "CEGUI/CEGUI.h"
 
 #include <eventsystem.h>
@@ -29,7 +35,6 @@
 
 
 using namespace CEGUI;
-using Poco::Environment;
 
 CEGUI::String BenchmarkTab::WidgetTypeName = "BenchmarkTab";
 
@@ -39,13 +44,13 @@ BenchmarkTab::BenchmarkTab(const CEGUI::String& type, const CEGUI::String& name)
 {
 	setText("Benchmark");
 
-	m_tabLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout("BenchmarkTab.layout");
+	m_tabLayout = CEGUIUtility::loadLayoutFromFile ("benchmarktab.layout");
 	m_tabLayout->setPosition(UVector2(UDim(0.0f, 0.0f), UDim(0.0f, 0.0f)));
-	m_tabLayout->setSize(UVector2(UDim(1.0f, 0.0f), UDim(1.0f, 0.0f)));
-	this->addChildWindow(m_tabLayout);
+  CEGUIUtility::setWidgetSizeRel (m_tabLayout, 1.0f, 1.0f);
+  CEGUIUtility::addChildWidget(this, m_tabLayout);
 
-	m_CapsBox = static_cast<CEGUI::MultiLineEditbox*>(m_tabLayout->getChild("BenchmarkTab/ResultsEditbox"));
-	m_startBenchmarkButton = static_cast<CEGUI::PushButton*>(m_tabLayout->getChild("BenchmarkTab/StartButton"));
+	m_CapsBox = static_cast<CEGUI::MultiLineEditbox*>(m_tabLayout->getChild("ResultsEditbox"));
+	m_startBenchmarkButton = static_cast<CEGUI::PushButton*>(m_tabLayout->getChild("StartButton"));
 	
 	m_ogreRoot = Ogre::Root::getSingletonPtr();
 
@@ -58,7 +63,8 @@ BenchmarkTab::BenchmarkTab(const CEGUI::String& type, const CEGUI::String& name)
 
 bool BenchmarkTab::handleStartBenchmark(const CEGUI::EventArgs& e)
 {
-	m_log->logMessage(Environment::osName() + " " + Environment::osVersion() + " " + Environment::osArchitecture());
+    // TODO: Retriev OS information here
+    //m_log->logMessage(Environment::osName() + " " + Environment::osVersion() + " " + Environment::osArchitecture());
 	m_log->logMessage("\n---------------------");
 
 
@@ -87,11 +93,24 @@ bool BenchmarkTab::handleStartBenchmark(const CEGUI::EventArgs& e)
 	return true;
 }
 
+	
+#if OGRE_VERSION_MAJOR == 1
+#if OGRE_VERSION_MINOR == 7
 void BenchmarkTab::messageLogged(const Ogre::String& message, Ogre::LogMessageLevel lml, bool maskDebug, const Ogre::String& logName)
 {
-	m_CapsBox->appendText(message.c_str());
+        m_CapsBox->appendText(message.c_str());
 }
-
+#endif
+#if OGRE_VERSION_MINOR >= 8
+void BenchmarkTab::messageLogged(const Ogre::String& message, Ogre::LogMessageLevel lml, bool maskDebug, const Ogre::String& logName, bool& skipThisMessage)
+{
+	if (!skipThisMessage)
+    {
+        m_CapsBox->appendText(message.c_str());
+    }
+}
+#endif
+#endif
 
 void BenchmarkTab::update(OIS::Keyboard *keyboard, OIS::Mouse *mouse)
 {

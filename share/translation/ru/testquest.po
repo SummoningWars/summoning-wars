@@ -1,0 +1,133 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2010-09-11 23:13+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: testquest.xml:2
+msgid "Fenor Marken"
+msgstr ""
+
+#: testquest.xml:2
+msgid "testquest"
+msgstr ""
+
+#: testquest.xml:3
+msgid "Test"
+msgstr ""
+
+#: testquest.xml:9
+msgid "This is a Test"
+msgstr ""
+
+#: testquest.xml:11
+msgid "surprised"
+msgstr ""
+
+#: testquest.xml:13
+msgid "thoughtful"
+msgstr ""
+
+#: testquest.xml:16
+msgid "happy"
+msgstr ""
+
+#: testquest.xml:19
+msgid "amused"
+msgstr ""
+
+#: testquest.xml:21
+msgid "excited"
+msgstr ""
+
+#: testquest.xml:23
+msgid "in love"
+msgstr ""
+
+#: testquest.xml:25
+msgid "bored"
+msgstr ""
+
+#: testquest.xml:27
+msgid "unhappy"
+msgstr ""
+
+#: testquest.xml:29
+msgid "sad"
+msgstr ""
+
+#: testquest.xml:31
+msgid "pain"
+msgstr ""
+
+#: testquest.xml:33
+msgid "sneer"
+msgstr ""
+
+#: testquest.xml:35
+msgid "grin"
+msgstr ""
+
+#: testquest.xml:37
+msgid "offended"
+msgstr ""
+
+#: testquest.xml:39
+msgid "threatening"
+msgstr ""
+
+#: testquest.xml:41
+msgid "angry"
+msgstr ""
+
+#: testquest.xml:43
+msgid "shouting a warcry"
+msgstr ""
+
+#: testquest.xml:45
+msgid "exhausted"
+msgstr ""
+
+#: testquest.xml:47
+msgid "injured"
+msgstr ""
+
+#: testquest.xml:49
+msgid "deadly injured"
+msgstr ""
+
+#: testquest.xml:50
+msgid "afraid"
+msgstr ""
+
+#: testquest.xml:51
+msgid "in panic"
+msgstr ""
+
+#: testquest.xml:52
+msgid "putting up a distance"
+msgstr ""
+
+#: testquest.xml:53
+msgid "being disgusted"
+msgstr ""
+
+#: testquest.xml:54
+msgid "and yet another Test"
+msgstr ""
+
+#: testquest.xml:55
+msgid "again a test"
+msgstr ""

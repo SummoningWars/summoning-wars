@@ -1,0 +1,224 @@
+# Portuguese translations for sumwars package
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-04-07 21:09+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: maylons_grave.xml:2
+msgid "Maylons Grave"
+msgstr ""
+
+#: maylons_grave.xml:5
+msgid ""
+"Some necromancer really resurrected an old council mage. Probably to cause "
+"confusion behind the lines. At least one problem that is solved."
+msgstr ""
+
+#: maylons_grave.xml:7
+msgid ""
+"I came across some goblins in Maylon's Grave who babbled some nonsense and "
+"were chased by a zombie. Something is going on in this grave. Maybe I should "
+"have a look at it."
+msgstr ""
+
+#: maylons_grave.xml:9
+msgid ""
+"I came across some goblins in Maylon's Grave. According to their shaman a "
+"necromancer animated some undead down in the crypt. I should take a look at "
+"it."
+msgstr ""
+
+#: maylons_grave.xml:11
+msgid ""
+"I came across some goblins in Maylon's Grave who were chased by a zombie. "
+"Something is going on in this grave. Maybe I should take a look at it."
+msgstr ""
+
+#: maylons_grave.xml:16 maylons_grave.xml:264
+msgid "aisMaylonsGraveEntry"
+msgstr ""
+
+#: maylons_grave.xml:159
+msgid "Talk with the goblins?"
+msgstr ""
+
+#: maylons_grave.xml:160
+msgid "Yes"
+msgstr ""
+
+#: maylons_grave.xml:161
+msgid "No"
+msgstr ""
+
+#: maylons_grave.xml:167
+msgid "Gab Resh"
+msgstr ""
+
+#: maylons_grave.xml:170
+msgid "A goblin who wants to talk?"
+msgstr ""
+
+#: maylons_grave.xml:171
+msgid "Yes. No hurt, no kill."
+msgstr ""
+
+#: maylons_grave.xml:172
+msgid "Gab'Resh and his only harmless rustlers. No bandits."
+msgstr ""
+
+#: maylons_grave.xml:173
+msgid "You listen, yes?"
+msgstr ""
+
+#: maylons_grave.xml:174
+msgid "What will you do?"
+msgstr ""
+
+#: maylons_grave.xml:175
+msgid "Listen to the goblins"
+msgstr ""
+
+#: maylons_grave.xml:176
+msgid "Chase the goblins away"
+msgstr ""
+
+#: maylons_grave.xml:177
+msgid "Slay the goblins"
+msgstr ""
+
+#: maylons_grave.xml:188
+msgid "What could a goblin possibly have to say?"
+msgstr ""
+
+#: maylons_grave.xml:189
+msgid "We often hide here."
+msgstr ""
+
+#: maylons_grave.xml:190
+msgid "No humans coming, and if do, they never return from depth of cave."
+msgstr ""
+
+#: maylons_grave.xml:191
+msgid "But last moon black human came."
+msgstr ""
+
+#: maylons_grave.xml:192
+msgid ""
+"Now horror of the depth wandering to surface, too and being after poor "
+"goblins who never not wants to steal anything."
+msgstr ""
+
+#: maylons_grave.xml:193
+msgid "That almost sounds as if a necromancer came by."
+msgstr ""
+
+#: maylons_grave.xml:195
+msgid "I cannot leave such a problem amidst this under-guarded region."
+msgstr ""
+
+#: maylons_grave.xml:197
+msgid "We cannot leave such a problem amidst this under-guarded region."
+msgstr ""
+
+#: maylons_grave.xml:199
+msgid "Who knows what could happen?"
+msgstr ""
+
+#: maylons_grave.xml:201
+msgid ""
+"Really, I should free those poor bound souls and send them off to a short "
+"brake in Harad's Hell."
+msgstr ""
+
+#: maylons_grave.xml:203
+msgid ""
+"Really, we should free those poor bound souls and send them off to a short "
+"brake in Harad's Hell."
+msgstr ""
+
+#: maylons_grave.xml:205
+msgid "Better them than us."
+msgstr ""
+
+#: maylons_grave.xml:208
+msgid "Good warning, yes? Mighty warrior-humans let us live, no?"
+msgstr ""
+
+#: maylons_grave.xml:210
+msgid ""
+"Get lost. I have better things to do than killing a band of pathetic goblins."
+msgstr ""
+
+#: maylons_grave.xml:212
+msgid ""
+"Get lost. we have better things to do than killing a band of pathetic "
+"goblins."
+msgstr ""
+
+#: maylons_grave.xml:227
+msgid "Miserable brood! Die!"
+msgstr ""
+
+#: maylons_grave.xml:229
+msgid "Miserable brood! Slay them all!"
+msgstr ""
+
+#: maylons_grave.xml:250
+msgid "Get lost, before I change my mind!"
+msgstr ""
+
+#: maylons_grave.xml:297
+msgid "aisMaylonsGraveL1"
+msgstr ""
+
+#: maylons_grave.xml:328
+msgid "aisMaylonsGraveL2"
+msgstr ""
+
+#: maylons_grave.xml:431
+msgid "Thank you very much for liberating my soul."
+msgstr ""
+
+#: maylons_grave.xml:432
+msgid "May you do many other great deeds."
+msgstr ""
+
+#: maylons_grave.xml:433
+msgid "Akerans blessing to you."
+msgstr ""
+
+#: maylons_grave.xml:434
+msgid "My sarcophagus contains many remains of my mortal life."
+msgstr ""
+
+#: maylons_grave.xml:435
+msgid ""
+"For a long time now I have no use for it anymore. Choose yourself a weapon "
+"you like."
+msgstr ""
+
+#: maylons_grave.xml:436
+msgid "The same holds true for your friends."
+msgstr ""
+
+#: maylons_grave.xml:437
+msgid "But now I have to return into the bliss of Akerans eternal oasis."
+msgstr ""
+
+#: maylons_grave.xml:440
+msgid ""
+"I wander if he would have said that if he had known that he will make a "
+"detour to Harad's Hell first?"
+msgstr ""

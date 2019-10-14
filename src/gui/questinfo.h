@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef QUESTINFO_H
-#define QUESTINFO_H
+#ifndef __SUMWARS_GUI_QUESTINFO_H__
+#define __SUMWARS_GUI_QUESTINFO_H__
 
 
 #include "window.h"
@@ -29,10 +29,10 @@ class QuestInfo : public Window
 {
 	public:
 		/**
-	 * \fn QuestInfo (Document* doc)
-	 * \brief Konstruktor
+		 * \fn QuestInfo (Document* doc, const std::string& ceguiSkinName)
+		 * \brief Constructor
 		 */
-		QuestInfo (Document* doc);
+		QuestInfo (Document* doc, const std::string& ceguiSkinName);
 	
 		/**
 		 * \fn virtual void update()
@@ -48,36 +48,40 @@ class QuestInfo : public Window
 
 		
 	private:
-	/**
-	 * \fn bool onQuestSelected(const CEGUI::EventArgs& evt)
-	 * \brief Behandelt Auswahl einer Klasse
-	 */
-	bool onQuestSelected(const CEGUI::EventArgs& evt);
+		/**
+		 * \fn bool onQuestSelected(const CEGUI::EventArgs& evt)
+		 * \brief Behandelt Auswahl einer Klasse
+		 */
+		bool onQuestSelected(const CEGUI::EventArgs& evt);
 	
-	/**
-	 * \fn bool onLookSelected(const CEGUI::EventArgs& evt)
-	 * \brief Behandelt Auswahl eines anderen Filters
-	 */
-	bool onFilterSelected(const CEGUI::EventArgs& evt);
+		/**
+		 * \fn bool onLookSelected(const CEGUI::EventArgs& evt)
+		 * \brief Behandelt Auswahl eines anderen Filters
+		 */
+		bool onFilterSelected(const CEGUI::EventArgs& evt);
 	
-	/**
-	 * \fn void updateDescription()
-	 * \brief aktualisiert die Beschreibung
-	 */
-	void updateDescription();
+		/**
+		 * \fn void updateDescription()
+		 * \brief aktualisiert die Beschreibung
+		 */
+		void updateDescription();
 	
-	/**
-	* \brief Handles clicks to the close button
-	*/
-	bool onCloseButtonClicked(const CEGUI::EventArgs& evt);
+		/**
+		* \brief Handles clicks to the close button
+		*/
+		bool onCloseButtonClicked(const CEGUI::EventArgs& evt);
 
-	/**
-	 * \fn std::string m_questname
-	 * \brief Name des aktuell angezeigten Quests
-	 */
-	std::string m_questname;
-	
-	
+		/**
+		 * \fn std::string m_questname
+		 * \brief Name des aktuell angezeigten Quests
+		 */
+		std::string m_questname;
+
+		/**
+		 * \brief The name of the CEGUI skin to use.
+		 */
+		std::string m_ceguiSkinName;
+
 };
 
-#endif
+#endif // __SUMWARS_GUI_QUESTINFO_H__

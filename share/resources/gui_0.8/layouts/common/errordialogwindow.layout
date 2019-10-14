@@ -1,0 +1,26 @@
+
+
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="ErrorDialogWindow" >
+        <Property name="Image" value="Misc/QuestionDialog" />
+        <Property name="FrameEnabled" value="False" />
+        <Property name="Area" value="{{0.3,0},{0.25,0},{0.7,0},{0.55,0}}" />
+        <Property name="BackgroundEnabled" value="False" />
+        
+        <Window type="SWB/Button" name="ErrorDialogConfirmButton" >
+<!--            <Property name="HoverImage" value="MainMenu/SPBtnHover" />
+            <Property name="NormalImage" value="MainMenu/SPBtnNormal" />
+            <Property name="PushedImage" value="MainMenu/SPBtnPushed" />
+            <Property name="DisabledImage" value="MainMenu/SPBtnNormal" />-->
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.4,0},{0.6,0},{0.6,0},{0.75,0}}" />
+        </Window>
+        
+        <Window type="SWB/StaticText" name="ErrorDialogLabel" >
+            <Property name="FrameEnabled" value="False" />
+            <Property name="HorzFormatting" value="HorzCentred" />
+            <Property name="Area" value="{{0.120732,0},{0.327987,0},{0.889024,0},{0.439308,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+        </Window>
+    </Window>
+</GUILayout>

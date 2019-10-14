@@ -1,0 +1,34 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="MinimapWindow" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        <Property name="TitlebarEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="False" />
+        
+
+        <Window type="SWB/StaticImage" name="MinimapImage" >
+            <Property name="FrameEnabled" value="True" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Alpha" value="0.92" />
+            <Property name="Visible" value="True" />
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property name="WantsMultiClickEvents" value="False" />
+            <Property name="MousePassThroughEnabled" value="True" />
+            <Property name="Image" value="minimap_img" />
+        </Window>
+        
+        <Window type="SWB/StaticText" name="RegionNameLabel">
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Alpha" value="1.0" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="HorzFormatting" value="HorzCentred" />
+            <Property name="Area" value="{{0.25,0},{0.01,0},{0.75,0},{0.06,0}}" />
+            <Property name="MousePassThroughEnabled" value="True" />
+        
+        </Window>
+    
+    </Window>
+</GUILayout>

@@ -1,0 +1,38 @@
+<World>
+	<Region id="1910" name="greyCursedCavern">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="34" dimy="34" area_percent="0.4" complexity="0.2" granularity="8"  ground="cave_ground"/>
+		<WorldPosition world_x="0.7" world_y ="0.42"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+			<Track source="ambience_1.ogg" />
+			<Track source="ambience_2.ogg" />
+		</Music>
+		
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="greyCurseCave" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="greyCurseCaveDep" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_l14_2" number="5" />
+			<SpawnGroup group_name="goblins_l14_3" number="5" />
+			<SpawnGroup group_name="skeletons_15_1" number="10" />
+		</SpawnGroups>
+	</Region>
+</World>

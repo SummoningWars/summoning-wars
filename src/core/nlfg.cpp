@@ -99,7 +99,8 @@ int nlfg_init_client()
                     14400 / 8 /* 56K modem with 14 Kbps upstream bandwidth */);
 #endif
     nlfgQueue.head = 0;
-    return 1;
+    // enet returns NULL on failure
+    return host != 0;
 }
 
 int nlfg_init_server(unsigned int port)
@@ -124,7 +125,9 @@ int nlfg_init_server(unsigned int port)
 #endif
 
     nlfgQueue.head = 0;
-    return 1;
+
+    // enet returns NULL on failure
+    return host != 0;
 }
 
 void nlfg_init_packet(NLFG_Message *msg)
@@ -157,7 +160,16 @@ unsigned int nlfg_connect(const char *hostname, unsigned int port)
 void nlfg_disconnect()
 {
     if (peer)
+    {
         enet_peer_disconnect(peer, 0);
+        peer = 0;
+    }
+
+    if (host)
+    {
+    	enet_host_destroy(host);
+    	host = 0;
+    }
 }
 
 int nlfg_isConnected()
@@ -217,6 +229,10 @@ int nlfg_process()
                 nlfg_addMessage(msg);
                 ++packets;
             } break;
+        default:
+			{ // don't know what to do
+			
+			}
         }
     }
 

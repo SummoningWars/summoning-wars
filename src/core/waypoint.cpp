@@ -44,8 +44,6 @@ bool  Waypoint::update (float time)
 	if (World::getWorld()->isServer())
 	{
 		// alle Spieler im Umkreis von 12m suchen
-		WorldObjectMap *players = getRegion()->getPlayers();
-		WorldObjectMap::iterator it;
 
 		Shape s;
 		s.m_type = Shape::CIRCLE;
@@ -54,7 +52,8 @@ bool  Waypoint::update (float time)
 
 		Player* pl;
 
-		for (it = players->begin(); it != players->end(); ++it)
+		WorldObjectMap& players = getRegion()->getPlayers();
+		for (WorldObjectMap::const_iterator it = players.begin(); it != players.end(); ++it)
 		{
 			pl = dynamic_cast<Player*>(it->second);
 			if (pl !=0 && pl->getShape()->intersects(s))

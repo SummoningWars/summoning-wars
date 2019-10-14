@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WORLDLOADER_H
-#define WORLDLOADER_H
+#ifndef __SUMWARS_CORE_WORLDLOADER_H__
+#define __SUMWARS_CORE_WORLDLOADER_H__
 
 
 #include <map>
@@ -128,5 +128,5 @@ class WorldLoader
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_WORLDLOADER_H__
 

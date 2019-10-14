@@ -1,0 +1,45 @@
+<World>
+	<!-- Graue Himmelsleiter, Verfluchte Hoehle, Tiefe; ca. 30 Min; Level 17 - 20 -->
+	<!-- Untote -->
+	<!-- Beide Ausgaenge muessen verschliessbar sein. Der Suedausgang wird verschlossen, der Westausgang geoeffnet -->
+	<Region id="25" name="greyCurseCaveDep">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="46" dimy="46" area_percent="0.4" complexity="0.3" granularity="6"  ground="cave_ground"/>
+		<WorldPosition world_x="0.72" world_y ="0.42"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+			<Track source="ambience_1.ogg" />
+			<Track source="ambience_2.ogg" />
+		</Music>
+		
+		<ExitDirections north="true" south="true" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_north" destination_region="greyCurseCaveFis" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_south" destination_region="greyCurseCave" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_east" destination_region="greyCurseCaveEast" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="skeletons_15_1" number="20" />
+			<SpawnGroup group_name="skeletons_15_2" number="15" />
+			<SpawnGroup group_name="skeletons_giant" number="1" />
+			<SpawnGroup group_name="skeletons_16_1" number="5" />
+		</SpawnGroups>
+	</Region>
+</World>

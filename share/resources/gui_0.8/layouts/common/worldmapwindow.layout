@@ -1,0 +1,22 @@
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="WorldmapWindow" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="BackgroundEnabled" value="False" />
+        <Property name="MousePassThroughEnabled" value="False" />
+        
+        <Window type="SWB/StaticImage" name="WorldmapImage" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Alpha" value="1.0" />
+            <Property name="Visible" value="True" />
+            <Property name="FrameEnabled" value="True" />
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property name="WantsMultiClickEvents" value="False" />
+            <Property name="MousePassThroughEnabled" value="True" />
+    
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="Image" value="worldMap.png" />
+        </Window>
+            
+    </Window>
+</GUILayout>

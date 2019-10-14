@@ -1,0 +1,627 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-26 18:07+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: theFissure.xml:2
+msgid "The ambush of the undead"
+msgstr "L'imboscata dei non-morti"
+
+#: theFissure.xml:8
+msgid ""
+"The good news: No one will come through that tunnel anymore. The bad news: "
+"The way back has caved in, too. Hopefully there is another exit."
+msgstr ""
+"La buona notizia: nessuno passera' piu' da quel tunnel. La cattiva: l'uscita "
+"alternativa e' crollata. Se siamo fortunati ne troveremo un'altra."
+
+#: theFissure.xml:10
+msgid ""
+"The undead found a way under the Grey Skyladder enabling them to bypass "
+"Dwarfenwall. Because this threatens the kingdom of Aisen directly it has to "
+"be shut as fast as possible. The passage in the Cursed Caves has to be found "
+"and the destroyed with the explosion spell of Ireana of Northborough."
+msgstr ""
+"I non morti trovarono un passaggio sotto l'Altopiano Grigio che permise loro "
+"di evitare Dwarfenwall. E visto che la cosa spaventa il Regno di Aisen, "
+"bisogna chiuderlo il piu' velocemente possibilie; lo si potrebbe distruggere "
+"facilmente con uno degli incantesimi esplosivi di Ireana."
+
+#: theFissure.xml:14
+msgid "aisMounPath"
+msgstr "Sentiero di montagna"
+
+#: theFissure.xml:122
+msgid "*urgh*"
+msgstr "*urgh*"
+
+#: theFissure.xml:158
+msgid "Wow, she's gorgeous."
+msgstr "Wow, e' una donna magnifica."
+
+#: theFissure.xml:162
+msgid "You can stare at her later, we have to erase some undead."
+msgstr "Potrai guardarla dopo, abbiamo dei non morti da eliminare."
+
+#: theFissure.xml:164
+msgid "Please help us, the mage is badly injured!"
+msgstr "Per piacere aiutaci, la maga e' gravemente ferita!"
+
+#: theFissure.xml:170
+msgid "He he. Harvest!"
+msgstr "He he. Mietete!"
+
+#: theFissure.xml:308
+msgid "I have never seen someone fight like you before."
+msgstr "Non ho mai visto nessuno combattare come te prima d'ora."
+
+#: theFissure.xml:309
+msgid "You don't get out very often, do you."
+msgstr "Tu non esci molto spesso, vero?"
+
+#: theFissure.xml:311
+msgid "You developed splendid since the last time we met, didn't you? ##solo"
+msgstr "Stai alla grande dall'ultima volta che ci siamo visti. ##solo"
+
+#: theFissure.xml:313
+msgid "You developed splendid since the last time we met, didn't you?"
+msgstr "State alla grande dall'ultima volta che ci siamo visti."
+
+#: theFissure.xml:316
+msgid "How is the archmage?"
+msgstr "Come sta l'arcimaga?"
+
+#: theFissure.xml:318
+msgid "Very bad, I'm afraid."
+msgstr "Sta molto male, sono preoccupato."
+
+#: theFissure.xml:325 theFissure.xml:330 theFissure.xml:344
+msgid "Let me see."
+msgstr "Lasciami vedere."
+
+#: theFissure.xml:360
+msgid "Thank you. That was a close call for a rescue."
+msgstr "Grazie."
+
+#: theFissure.xml:361
+msgid "How could it even come to this?"
+msgstr "Come si puo' arrivare a tutto questo?"
+
+#: theFissure.xml:362
+msgid "It's very dangerous to travel so far from the roads."
+msgstr "E' molto pericoloso viaggiare lontano dalla strada."
+
+#: theFissure.xml:365
+msgid "Come off it!"
+msgstr "Non ti credo, dimmi la verita'!"
+
+#: theFissure.xml:366
+msgid "No, no, it's the truth."
+msgstr "No, no, questa e' la verita'."
+
+#: theFissure.xml:369
+msgid ""
+"It was not the best idea, but the streets are not safe these days and thus "
+"we wanted to travel concealed."
+msgstr ""
+"Non e' stata certo una buona idea, ma le strade oggigiorno non sono sicure e "
+"noi volevamo viaggiare indisturbati."
+
+#: theFissure.xml:370
+msgid "These undead layed an ambush for us here."
+msgstr "I non morti ci hanno teso un'imboscata proprio qui."
+
+#: theFissure.xml:371
+msgid "Surprise!"
+msgstr "Sorpresa!"
+
+#: theFissure.xml:372
+msgid "No wonder, this is a combat area."
+msgstr "Non c'e' da stupirsi, questa e' una zona di combattimento."
+
+#: theFissure.xml:374
+msgid "No, Dwarfenwall hasn't fallen yet."
+msgstr "No, Dwarfenwall non e' ancora caduta."
+
+#: theFissure.xml:375
+msgid ""
+"As long as that city stands, the entry to the lands of the undead is blocked."
+msgstr ""
+"Fintanto che la citta' resiste, l'ingresso nelle terre dei non morti e' "
+"bloccato."
+
+#: theFissure.xml:376
+msgid "But I fear they must have found a way around the citywalls."
+msgstr ""
+"Ho il sospetto che abbiano trovato un modo per aggirare le mura della citta'."
+
+#: theFissure.xml:377
+msgid "We mustn't allow this."
+msgstr "Non possiamo permetterlo."
+
+#: theFissure.xml:378
+msgid ""
+"If those monsters could avoid Dwarfenwall they would advance into Aisen "
+"before one week is gone."
+msgstr ""
+"Se quei mostri riescono ad evitare Dwarfenwall giungeranno ad Aisen in meno "
+"di una settimana."
+
+#: theFissure.xml:379
+msgid "It was exceedingly careless of you to leave with so few men."
+msgstr "E' stata una tua grave ingenuita' partire con cosi' pochi uomini."
+
+#: theFissure.xml:380
+msgid "The city needs every man it can get!"
+msgstr "La citta' ha bisogno di tutti gli uomini possibili!"
+
+#: theFissure.xml:381
+msgid "I have a feeling what's going to come in a moment..."
+msgstr "Ho una sensazione di cio' che aaccadra' a momenti..."
+
+#: theFissure.xml:383
+msgid "Listen, Branded One!"
+msgstr "Ascolta, Marchiato!"
+
+#: theFissure.xml:384 theFissure.xml:394
+msgid "What?!?"
+msgstr "Che cosa?!?"
+
+#: theFissure.xml:385
+msgid "That's a Branded One?"
+msgstr "Questo e' un Marchiato?"
+
+#: theFissure.xml:386 theFissure.xml:396
+msgid "Let it go."
+msgstr "Stiamo calmi."
+
+#: theFissure.xml:388
+msgid "She is on our side."
+msgstr "Lei e' dalla nostra parte."
+
+#: theFissure.xml:390
+msgid "He is on our side."
+msgstr "Lui e' dalla nostra parte."
+
+#: theFissure.xml:393
+msgid "Listen, Branded Ones!"
+msgstr "Ascoltate, Marchiati!"
+
+#: theFissure.xml:395
+msgid "Those are Branded Ones?"
+msgstr "Questi sono dei Marchiati?"
+
+#: theFissure.xml:397
+msgid "They are on our side."
+msgstr "Loro sono dalla nostra parte."
+
+#: theFissure.xml:400
+msgid "Find the way the undead came here and render it useless."
+msgstr ""
+"Trova il passaggio usato dai non morti per arrivare qui e rendilo "
+"inutilizzabile."
+
+#: theFissure.xml:401
+msgid "Will that be payed extra?"
+msgstr "Verra' pagato come extra?"
+
+#: theFissure.xml:402
+msgid "Don't you want to give them some backup?"
+msgstr "Non vuoi dargli nessun rinforzo?"
+
+#: theFissure.xml:403
+msgid "I can do what I want!"
+msgstr "Faccio solo cio' che desidero!"
+
+#: theFissure.xml:404
+msgid "Of course..."
+msgstr "Certamente..."
+
+#: theFissure.xml:405
+msgid "Slowly he's getting to me..."
+msgstr "Lentamente comincia a capirmi..."
+
+#: theFissure.xml:407
+msgid "Only now?"
+msgstr "Solo ora?"
+
+#: theFissure.xml:408
+msgid "Mages have to be naturally patient."
+msgstr "I maghi devono essere pazienti di natura."
+
+#: theFissure.xml:410
+msgid "I'm sure the undead found a hidden cave."
+msgstr "Sono sicuro che i non morti hanno trovato delle grotte sotterranee"
+
+#: theFissure.xml:411
+msgid "Please take this explosion spell."
+msgstr "Ti prego porta con the ques'incantesimo esplosivo."
+
+#: theFissure.xml:412
+msgid "It surely will be useful."
+msgstr "Sicuramente tornera' utile."
+
+#: theFissure.xml:413
+msgid "I know of a cave system north of here."
+msgstr "So che c'e' un labirinto di grotte sotterranee a nord di qui."
+
+#: theFissure.xml:414
+msgid "They say it's cursed."
+msgstr "Si dice siano maledette."
+
+#: theFissure.xml:416
+msgid "Should that frighten me?"
+msgstr "Dovrebbe spaventarmi?"
+
+#: theFissure.xml:418
+msgid "Should that frighten us?"
+msgstr "Dovrebbe spaventarci?"
+
+#: theFissure.xml:420
+msgid "..."
+msgstr "..."
+
+#: theFissure.xml:421
+msgid "probably not."
+msgstr "Probabilmente no."
+
+#: theFissure.xml:422
+msgid "Thanks for your help."
+msgstr "Grazie per il tuo aiuto."
+
+#: theFissure.xml:423
+msgid "Good luck!"
+msgstr "Buona fortuna!"
+
+#: theFissure.xml:424
+msgid "I hope we meet again soon."
+msgstr "Spero di rivederti presto."
+
+#: theFissure.xml:446
+msgid "greyCurseCaveFis"
+msgstr "La grotta sotterranea - Il crepaccio"
+
+#: theFissure.xml:502
+msgid "Unknown Lich"
+msgstr "Lich"
+
+#: theFissure.xml:525
+msgid "How is the work proceeding?"
+msgstr "Come procede il lavoro?"
+
+#: theFissure.xml:526
+msgid "Nar'Asoroth, my lord."
+msgstr "Nar'Asoroth, mio signore."
+
+#: theFissure.xml:534
+msgid ""
+"The stone is solid,but if I let the skeletons work any faster they will "
+"break apart!"
+msgstr ""
+"La pietra e' resistente, ma se faccio lavorare ancora per un po' i miei "
+"scheletri, sono sicuro riusciranno a perforarla!"
+
+#: theFissure.xml:543
+msgid "((Such an opportunity may never occur again.))"
+msgstr "(Una tale opportunita' potrebbe non ripresentarsi mai piu'.)"
+
+#: theFissure.xml:547 theFissure.xml:551 theFissure.xml:553
+msgid "Come on, this is our chance!"
+msgstr "Andiamo, questa e' la nostra possibilita'!"
+
+#: theFissure.xml:556
+msgid "Attack the lich immediately?"
+msgstr "Attaccare il Lich...immediatamente?"
+
+#: theFissure.xml:557
+msgid "Yes"
+msgstr "Si'"
+
+#: theFissure.xml:558
+msgid "No"
+msgstr "No"
+
+#: theFissure.xml:563 theFissure.xml:609
+msgid "Let's go then!"
+msgstr "Andiamo allora!"
+
+#: theFissure.xml:573 theFissure.xml:575
+msgid "Wait, we may learn something useful."
+msgstr "Aspetta, potremmo imparare qualcosa di utile."
+
+#: theFissure.xml:578
+msgid "Let them rest from time to time."
+msgstr "Lasciali riposare di tanto in tanto."
+
+#: theFissure.xml:579
+msgid "They should be able to fight, too."
+msgstr "Sono ancora in grado di combattere."
+
+#: theFissure.xml:580
+msgid "Isn't the tunnel supposed to be ready for the attack?"
+msgstr "Non si era pensato di usare il tunnel per sferrare l'attacco?"
+
+#: theFissure.xml:582
+msgid "No, the city is unimportant in the big picture."
+msgstr "No, la citta' non ha importanza nel grande disegno."
+
+#: theFissure.xml:584
+msgid "Let those aisen dogs burn their backup troops there."
+msgstr "Lasciamogli spedire tutti i rinforzi laggiu'."
+
+#: theFissure.xml:585
+msgid ""
+"The army passing through this tunnel has nothing to do with Dwarfenwall."
+msgstr ""
+"Le armate che passeranno attraverso questo tunnel non avranno niente a che "
+"fare con Dwarfenwall."
+
+#: theFissure.xml:586
+msgid "Only the crystal counts."
+msgstr "La sola cosa importante e' il cristallo."
+
+#: theFissure.xml:587
+msgid "I don't understand."
+msgstr "Non capisco."
+
+#: theFissure.xml:588
+msgid "And that is for your own good."
+msgstr "E questo e' solo un bene."
+
+#: theFissure.xml:589
+msgid "Now back to work."
+msgstr "Adesso torna a lavoro."
+
+#: theFissure.xml:592
+msgid "Your wish is my action."
+msgstr "Faro' come desidera."
+
+#: theFissure.xml:595
+msgid "That has to be the lich attacking Dwarfenwall."
+msgstr "Quello deve essere il Lich."
+
+#: theFissure.xml:596
+msgid "If I kill him now his army will fall to dust."
+msgstr "Se lo distruggo adesso l'esercito cadra' a pezzi con lui!"
+
+#: theFissure.xml:599 theFissure.xml:602 theFissure.xml:605
+msgid "That's a lich."
+msgstr "Quello e' un Lich."
+
+#: theFissure.xml:600 theFissure.xml:603 theFissure.xml:606
+msgid "If we destroy him now his army will fall apart with him!"
+msgstr "Se lo distruggiamo adesso l'esercito cadra' a pezzi con lui!"
+
+#: theFissure.xml:630
+msgid "Harvest!"
+msgstr "Mieteteli!"
+
+#: theFissure.xml:632
+msgid ""
+"What do you know. There are rats everywhere. Kill them and bring me their "
+"bones!"
+msgstr "Uccideteli tutti e portatemi indietro le loro ossa!"
+
+#: theFissure.xml:708
+msgid "Then I shall blow this crevice to smithereens."
+msgstr "Ridurro' in briciole questo posto."
+
+#: theFissure.xml:712 theFissure.xml:714
+msgid "Alright, go!"
+msgstr "Perfetto, andiamo!"
+
+#: theFissure.xml:716
+msgid "Blow this passage to smithereens!"
+msgstr "Facciamo a pezzi questo posto!"
+
+#: theFissure.xml:741
+msgid "Get out, quick!"
+msgstr "Andate via, veloci!"
+
+#: theFissure.xml:828
+msgid "Alright, Windclaw, I'm done here."
+msgstr "Esatto, Artigliodivento, qui ho finito."
+
+#: theFissure.xml:830
+msgid "Alright, Windclaw, We are done here."
+msgstr "Esatto, Artigliodivento, qui abbiamo finito."
+
+#: theFissure.xml:833
+msgid "What now?"
+msgstr "E adesso?"
+
+#: theFissure.xml:836
+msgid "You fool! Get yourself out of this mountain!"
+msgstr "Sciocco! Vai via da questa montagna!"
+
+#: theFissure.xml:837 theFissure.xml:840
+msgid "You are needed in Dwarfenwall!"
+msgstr "Sei necessario a Dwarfenwall!"
+
+#: theFissure.xml:839
+msgid "You fools! Get yourselves out of this mountain!"
+msgstr "Sciocchi! Andate via da questa montagna!"
+
+#: theFissure.xml:841
+msgid ""
+"Let's go. If we are lucky the passage is blocked too and we can all take a "
+"break."
+msgstr ""
+"Andiamo. Se siamo fortunati anche il passaggio sara' bloccato e potremmo "
+"prenderci una pausa."
+
+#: theFissure.xml:842
+msgid "In that case you can always tear yourselves apart. That would work."
+msgstr "In tal cao potresti fare a pezzi te stesso. Dovrebbe funzionare."
+
+#: theFissure.xml:843
+msgid "Does he have any idea how painful this always is?"
+msgstr "Ha la benche' minima idea di quanto sia sempre doloroso?"
+
+#: theFissure.xml:844
+msgid "That's impossible. Otherwise he wouldn't give such a stupid suggestion."
+msgstr "Impossibile. Altrimenti non avrebbe dato questo stupido suggerimento"
+
+#: theFissure.xml:845
+msgid "There really are better employers."
+msgstr "Ho conosciuto datori di lavoro migliori."
+
+#: theFissure.xml:846
+msgid "Stop bickering and get moving!"
+msgstr "Basta bisticciare e muoviamoci!"
+
+#: theFissure.xml:865
+msgid "Hopefully there is an exit in this direction."
+msgstr "Se siamo fortunati c'e' una via d'uscita da questa parte."
+
+#: theFissure.xml:866
+msgid "Who goes there?"
+msgstr "Chi va la'?"
+
+#: theFissure.xml:867
+msgid ""
+"Oh by the gods, if some of them have their eyes on this unpleasent piece of "
+"land right now."
+msgstr ""
+"Per gli dei, se solo potessero posare il loro sguardo su questo pezzo di "
+"terra dimenticato da tutti."
+
+#: theFissure.xml:869
+msgid "How nice to see a familiar face."
+msgstr "Quale piacere nel vedere una faccia familiare."
+
+#: theFissure.xml:871
+msgid "How nice to see familiar faces."
+msgstr "Quale piacere nel vedere delle facce familiari."
+
+#: theFissure.xml:874
+msgid "Not so fast, peddler!"
+msgstr "Non cosi' in fretta!"
+
+#: theFissure.xml:875
+msgid "How by Harad's eyes did you get here?"
+msgstr "Come diavolo sei arrivato fin qui?"
+
+#: theFissure.xml:877
+msgid "Oh! Well, you see..."
+msgstr "Allora, vediamo..."
+
+#: theFissure.xml:878
+msgid ""
+"I wanted to take a short cut through the mountains when suddenly the ground "
+"was caving in."
+msgstr ""
+"Volevo prendere una scorciatoia attraverso le montagne, quando "
+"improvvisamente il terreno mi e' ceduto sotto i piedi."
+
+#: theFissure.xml:879
+msgid ""
+"And after I took a careful look around I sadly had to notice the way south "
+"was blocked."
+msgstr ""
+"E dopo aver dato un'occhiata in giro ho dovuto tristemente constatare che il "
+"passaggio a sud era bloccato."
+
+#: theFissure.xml:880
+msgid "That's why I'm here."
+msgstr "Ecco perche' sono qui."
+
+#: theFissure.xml:881
+msgid "There is a cave in the east, too, but that was a bit fishy."
+msgstr "Ci deve essere un'altra galleria verso est, ma e' ancora inesplorata."
+
+#: theFissure.xml:883
+msgid "But since you are here there is still hope."
+msgstr "Ma dal momento che sei qui c'e' ancora speranza."
+
+#: theFissure.xml:884 theFissure.xml:888
+msgid "I will just wait until the road is clear."
+msgstr "Mi limitero' ad aspettare che la strada sia libera."
+
+#: theFissure.xml:885
+msgid ""
+"Your distress aside, what makes you so sure I'll not simply vanish with a "
+"town portal?"
+msgstr ""
+"Preoccupazioni a parte, cosa ti assicura che non mi volatilizzero' da un "
+"momento all'altro con un Portale Magico?"
+
+#: theFissure.xml:887
+msgid "But since you are here, appreciated friends, there is still hope."
+msgstr "Ma dal momento che siete qui, cari amici, c'e' ancora speranza."
+
+#: theFissure.xml:889
+msgid ""
+"Your distress aside, what makes you so sure we'll not simply vanish with a "
+"town portal?"
+msgstr ""
+"Preoccupazioni a parte, cosa ti assicura che ci volatilizzeremo da un "
+"momento all'altro con un Portale Magico?"
+
+#: theFissure.xml:892
+msgid ""
+"Well, that would work normally and I would gladly offer you a grand price "
+"for the help."
+msgstr ""
+"Beh, diciamo che vi potrei offrire una degna ricompensa per l'aiuto "
+"fornitomi."
+
+#: theFissure.xml:893
+msgid "But short ago, there was a notable magical explosion in this place."
+msgstr "Poco fa', c'e' stata una forte esplosione magica in questo posto."
+
+#: theFissure.xml:895
+msgid "You will discover that the scrolls take you right here again. ##solo"
+msgstr "Scopriresti che la pergamena ti riporterebbe qui, di nuovo. ##solo"
+
+#: theFissure.xml:897
+msgid "You will discover that the scrolls take you right here again."
+msgstr "Scoprireste che la pergamena vi riporterebbe qui, di nuovo."
+
+#: theFissure.xml:900
+msgid "Curse you, Windclaw!"
+msgstr "Maledetto Artigliodivento!"
+
+#: theFissure.xml:901
+msgid "Fine. Then we do it the hard way."
+msgstr "Bene. Allora lo faremo a nostre spese."
+
+#: theFissure.xml:902
+msgid ""
+"If you need something let me know. I discovered some potions back there, and "
+"I would part with them for a small amount of gold."
+msgstr ""
+"Se hai bisogno di qualcosa fammelo sapere. Ho trovato delle pozioni qua "
+"dietro e posso vendertele per una piccola somma."
+
+#: theFissure.xml:903
+msgid "You really ask money for it."
+msgstr "E ti fai pure pagare?"
+
+#: theFissure.xml:904
+msgid "But business is business."
+msgstr "Gli affari sono affari."
+
+#: theFissure.xml:921
+msgid "greyCurseCaveDep"
+msgstr "La grotta sotterranea - Profondita'"
+
+#~ msgid "Here is a good place for the spell!"
+#~ msgstr "Ecco un buon posto per praticare la magia!"

@@ -1,0 +1,967 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-21 22:02+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: fortify_dwarfenwall.xml:2
+msgid "Fortify Dwarfenwall"
+msgstr "Fortifica Dwarfenwall"
+
+#: fortify_dwarfenwall.xml:9
+msgid "Quest finished"
+msgstr "Quest completata"
+
+#: fortify_dwarfenwall.xml:11
+msgid "Quest description"
+msgstr "Obbiettivi della Quest"
+
+#: fortify_dwarfenwall.xml:14 fortify_dwarfenwall.xml:63
+#: fortify_dwarfenwall.xml:504
+msgid "elCnlLobby"
+msgstr "Consiglio degli Elementalisti, Dungeon sotterraneo"
+
+#: fortify_dwarfenwall.xml:39
+msgid "Derred"
+msgstr "Derred"
+
+#: fortify_dwarfenwall.xml:40 fortify_dwarfenwall.xml:52
+msgid "Speak with Windclaw"
+msgstr "Parla con Windclaw"
+
+#: fortify_dwarfenwall.xml:46 fortify_dwarfenwall.xml:58
+msgid "Follow us, please."
+msgstr "Seguici per favore."
+
+#: fortify_dwarfenwall.xml:51
+msgid "Tolec"
+msgstr "Tolec"
+
+#: fortify_dwarfenwall.xml:117
+msgid "The Council is not all that impressive..."
+msgstr "Il Consiglio non e' poi cosi' impressionante..."
+
+#: fortify_dwarfenwall.xml:126
+msgid "Natch! Now you're having a big mouth again."
+msgstr "Certo! Adesso vedo che sei di nuovo loquace."
+
+#: fortify_dwarfenwall.xml:132
+msgid "Why exactly was it that I put up with your company?"
+msgstr "Perche' esattamente ho dovuto mandarvi lui nella compagnia?"
+
+#: fortify_dwarfenwall.xml:140
+msgid "Hush! You can argue later."
+msgstr "Zitto! Ne puoi discutere dopo."
+
+#: fortify_dwarfenwall.xml:173
+msgid "Finally we're here!"
+msgstr "Finalmente siamo arrivati!"
+
+#: fortify_dwarfenwall.xml:176
+msgid "((That room doesn't feel good at all.))"
+msgstr "(Quella stanza non mi sembra proprio perfetta.)"
+
+#: fortify_dwarfenwall.xml:178
+msgid "Do you feel that?! It feels like..."
+msgstr "Lo senti? E' come se..."
+
+#: fortify_dwarfenwall.xml:180
+msgid "Quiet!"
+msgstr "Calmo!"
+
+#: fortify_dwarfenwall.xml:225
+msgid "My Lord! The... Branded Ones are here now."
+msgstr "Mio Signore! I Marchiati sono arrivati ora!"
+
+#: fortify_dwarfenwall.xml:226 fortify_dwarfenwall.xml:481
+#: fortify_dwarfenwall.xml:762
+msgid "Very well."
+msgstr "Molto bene."
+
+#: fortify_dwarfenwall.xml:230 fortify_dwarfenwall.xml:232
+msgid "He awaits you now."
+msgstr "Ti sta aspettando."
+
+#: fortify_dwarfenwall.xml:321
+msgid "You're presence is no longer needed."
+msgstr "La tua presenza non e' piu' necessaria."
+
+#: fortify_dwarfenwall.xml:322
+msgid "My Lord, those are-"
+msgstr "Mio Signore, quelli sono-"
+
+#: fortify_dwarfenwall.xml:324
+msgid "..."
+msgstr "..."
+
+#: fortify_dwarfenwall.xml:325
+msgid "As you wish. My apologies."
+msgstr "Come desideri. Le mie scuse."
+
+#: fortify_dwarfenwall.xml:326
+msgid "Come on, he knows what he's doing."
+msgstr "Tranquillo, lui sa quel che fa."
+
+#: fortify_dwarfenwall.xml:331
+msgid "Nice shack!"
+msgstr "Bella baracca!"
+
+#: fortify_dwarfenwall.xml:332
+msgid "Well, the corners are a bit dirty though."
+msgstr "Beh, gli angoli non sono proprio puiliti.."
+
+#: fortify_dwarfenwall.xml:333
+msgid "...not to say: slimy."
+msgstr "...per non dire melmosi."
+
+#: fortify_dwarfenwall.xml:334
+msgid "Those ritual objects have seen better times, too."
+msgstr "Questi oggetti rituali hanno visto tempi migliori."
+
+#: fortify_dwarfenwall.xml:336
+msgid "Yes, they warned me that you're difficult. ##solo"
+msgstr "Si', mi avevano avvertito che eri un tipo difficile. ##solo"
+
+#: fortify_dwarfenwall.xml:338
+msgid "Yes, they warned me that you're difficult."
+msgstr "Si', mi avevano avvertito che eri un tipo difficile."
+
+#: fortify_dwarfenwall.xml:340
+msgid "Difficult?"
+msgstr "Difficile?"
+
+#: fortify_dwarfenwall.xml:342
+msgid "I'm putting in so much effort, and everything I get is \"difficult\""
+msgstr ""
+"Io ce la sto mettendo tutta e per tutta risposta mi sento dire.. \"difficile"
+"\""
+
+#: fortify_dwarfenwall.xml:344
+msgid ""
+"You're putting in so much effort, and everything you get is \"difficult\""
+msgstr ""
+"Ce la stai mettendo tutta e per tutta risposta ti senti dire.. \"difficile\""
+
+#: fortify_dwarfenwall.xml:345
+msgid "Tsk. I feel like burning off the whole place."
+msgstr "Tse'. Sento come se volessi bruciare tutto."
+
+#: fortify_dwarfenwall.xml:347
+msgid "I feel like burning off the whole place."
+msgstr "Sento come se volessi bruciare tutto."
+
+#: fortify_dwarfenwall.xml:351
+msgid "With all those wimps here it's hardly worth the effort, isn't it?"
+msgstr ""
+"Tutti questi seccatori qui intorno rendono le cose difficili, sei d'accordo?"
+
+#: fortify_dwarfenwall.xml:353
+msgid "Then again..."
+msgstr "Inoltre..."
+
+#: fortify_dwarfenwall.xml:355
+msgid ""
+"If more of those giant things break free that could cause a little trouble..."
+msgstr ""
+"Ci si dovrebbe liberare di quelle cose enormi prima che causino problemi..."
+
+#: fortify_dwarfenwall.xml:356
+msgid ""
+"And the odds are pretty high... after all the monsters here have their own "
+"head."
+msgstr ""
+"E le probabilita' sono piuttosto alte...dopo tutto questi mostri hanno la "
+"loro testa."
+
+#: fortify_dwarfenwall.xml:357
+msgid "I know this nice little spell..."
+msgstr "Conosco questo piccolo ed ingegnoso incantesimo..."
+
+#: fortify_dwarfenwall.xml:363
+msgid "Would you please take a quick look at this crystal. ##solo"
+msgstr "Perfavore, potresti dare un'occhiata veloce a questo cristallo? ##solo"
+
+#: fortify_dwarfenwall.xml:365
+msgid "Would you please take a quick look at this crystal."
+msgstr "Perfavore, potresti dare un'occhiata veloce a questo cristallo?"
+
+#: fortify_dwarfenwall.xml:372
+msgid "Is that a...?"
+msgstr "Questo e' un... ?"
+
+#: fortify_dwarfenwall.xml:373
+msgid "Quite so."
+msgstr "proprio cosi'."
+
+#: fortify_dwarfenwall.xml:374
+msgid "It is a crystal straight from the heart of Harad's hell."
+msgstr "E' un cristallo strappato dritto dal cuore dell'inferno di Harad."
+
+#: fortify_dwarfenwall.xml:375
+msgid "How is it possible that you're still alive?"
+msgstr "Come'e' possibile che tu sia ancora vivo?"
+
+#: fortify_dwarfenwall.xml:376
+msgid "Indeed the right question."
+msgstr "In effetti la domanda e' corretta."
+
+#: fortify_dwarfenwall.xml:378
+msgid "With an answer, that could release you from your suffering."
+msgstr "Con una risposta, che potrebbe eliminare le tue sofferenze."
+
+#: fortify_dwarfenwall.xml:380
+msgid ""
+"With an answer, that could release every one of you from your suffering."
+msgstr ""
+"Con una risposta, che potrebbe eliminare ciascuna delle tue sofferenze."
+
+#: fortify_dwarfenwall.xml:382
+msgid "But before I give it to you, you have to do something for me."
+msgstr "Ma prima di dartelo, voglio che tu faccia qualcosa per me."
+
+#: fortify_dwarfenwall.xml:383
+msgid "May Harad curse you!"
+msgstr "Che Harad ti maledica!"
+
+#: fortify_dwarfenwall.xml:384
+msgid "Tsk tsk. How rude to use the name of the Cursed One in Akeran's halls."
+msgstr ""
+"Uhhm. Che maleducazione, usare il nome del Maledetto nelle sale di Akeran."
+
+#: fortify_dwarfenwall.xml:385
+msgid "This is a goddamn den of thieves."
+msgstr "Questo e' un maledetto covo di ladri."
+
+#: fortify_dwarfenwall.xml:386
+msgid "You're missing the main point."
+msgstr "Non hai afferrato il concetto."
+
+#: fortify_dwarfenwall.xml:387
+msgid ""
+"You should realize that it is entirely up to you, how long you will be in "
+"the slavery of the deathgod."
+msgstr ""
+"Devi comprendere che e' solo una tua decisione, quanto tempo rimanere "
+"schiavo del dio della morte."
+
+#: fortify_dwarfenwall.xml:388
+msgid ""
+"Fulfill my orders to Akeran's and the council's satisfaction and I have the "
+"power to release you of his claws."
+msgstr ""
+"Adempi i miei ordini per la soddisfazione di Akeran e del Consiglio e io "
+"avro' il potere di liberarti dal loro giogo."
+
+#: fortify_dwarfenwall.xml:389
+msgid "Forever."
+msgstr "Per sempre."
+
+#: fortify_dwarfenwall.xml:390
+msgid "If not, however..."
+msgstr "Tuttavia, in caso contrario..."
+
+#: fortify_dwarfenwall.xml:392
+msgid "Heard that one a thousend times already. Cut the speach."
+msgstr ""
+"Questo discorso l'ho gia' sentito almeno mille volte. Arriva al dunque."
+
+#: fortify_dwarfenwall.xml:394
+msgid "We know that one already. Cut the speach."
+msgstr "Lo sappiamo gia'. Arriva al dunque."
+
+#: fortify_dwarfenwall.xml:397
+msgid ""
+"What?!! The curse can be lifted from us? Why do I hear of this only now?"
+msgstr ""
+"Coosa!?!? La maledizione può essere rimossa? E come mai ne sento parlare "
+"solo ora?"
+
+#: fortify_dwarfenwall.xml:399
+msgid "As you wish."
+msgstr "Come desideri."
+
+#: fortify_dwarfenwall.xml:400
+msgid ""
+"But I should warn you. The task is pretty dangerous and you are likely to "
+"die more than once."
+msgstr ""
+"Ma ti devo avvertire. La missione e' alquanto pericolosa e hai buone "
+"probabilita' di rimetterci la pelle."
+
+#: fortify_dwarfenwall.xml:401
+msgid "Harad's curse has to have some advantage."
+msgstr "La maledizione di Harad deve avere qualche vantaggio."
+
+#: fortify_dwarfenwall.xml:402
+msgid "Except the pain..."
+msgstr "Eccetto il dolore..."
+
+#: fortify_dwarfenwall.xml:404
+msgid "Even here you have to whine."
+msgstr "Anche ora sei qui a piagnucolare."
+
+#: fortify_dwarfenwall.xml:407
+msgid "You are indeed a bunch of difficult people."
+msgstr "Siete davvero un gruppo di persone difficili."
+
+#: fortify_dwarfenwall.xml:409
+msgid "You are indeed difficult."
+msgstr "Sei davvero una persona difficile."
+
+#: fortify_dwarfenwall.xml:411
+msgid "He's beginning to make me angry."
+msgstr "Sta cominciando a farmi arrabbiare."
+
+#: fortify_dwarfenwall.xml:413
+msgid "Peace!"
+msgstr "Pace!"
+
+#: fortify_dwarfenwall.xml:416
+msgid "Pathetic fool!"
+msgstr "Patetico idiota!"
+
+#: fortify_dwarfenwall.xml:417
+msgid "The first thing you have to learn are obviously manners. ##solo"
+msgstr "La prima cosa che devi imparare e' ovviamente l'educazione. ##solo"
+
+#: fortify_dwarfenwall.xml:419
+msgid "Pathetic fools!"
+msgstr "Patetici idioti!"
+
+#: fortify_dwarfenwall.xml:420
+msgid "The first thing you have to learn are obviously manners."
+msgstr "La prima cosa che dovete imparare e' ovviamente l'educazione."
+
+#: fortify_dwarfenwall.xml:422
+msgid "Consider it as a small bonus:"
+msgstr "Consideralo un piccolo bonus:"
+
+#: fortify_dwarfenwall.xml:423
+msgid "Before your real assignment you will go to Dwarfenwall as backup."
+msgstr ""
+"Prima di assegnarti la tua vera missione, devi presentarti a Dwarfenwall "
+"come rimpiazzo."
+
+#: fortify_dwarfenwall.xml:424
+msgid "Show the undead there who the real favourite of the deathgod is."
+msgstr "Mostra ai non morti chi e' il vero prescelto del dio della morte."
+
+#: fortify_dwarfenwall.xml:425
+msgid "Smells like exploitation."
+msgstr "Ha l'aria di sfruttamento."
+
+#: fortify_dwarfenwall.xml:426
+msgid "Besides the necromancers don't follow Harad."
+msgstr "Comunque i necromanti non seguono Harad."
+
+#: fortify_dwarfenwall.xml:428
+msgid "This robed wimp ranks pretty high among all the miserable rats"
+msgstr "Quest inetto si distingue da tutti gli altri miserabili ratti."
+
+#: fortify_dwarfenwall.xml:429
+msgid "for who's chestnuts I pulled out of the fire."
+msgstr "E' lui che ho dovuto aiutare, mettendo a rischio la mia stessa vita."
+
+#: fortify_dwarfenwall.xml:431
+msgid ""
+"Me too, I don't understand why we should do his bidding. In the end he is -"
+msgstr ""
+"Anch'io...non capisco perche' dovremmo stare ai suoi ordini. Alla fine e' -"
+
+#: fortify_dwarfenwall.xml:432
+msgid "Just a man!!"
+msgstr "Soltanto un uomo!!"
+
+#: fortify_dwarfenwall.xml:436
+msgid "You obviously misjudge your position."
+msgstr "Hai mal interpretato la tua posizione."
+
+#: fortify_dwarfenwall.xml:437
+msgid "What do you think will happen, if you're revealed in town?"
+msgstr "Cosa pensi succedera', se ti scoprono in citta'?"
+
+#: fortify_dwarfenwall.xml:438
+msgid ""
+"We know everything about your accursed kind, and believe me, no one will be "
+"stupid enough to kill you."
+msgstr ""
+"Sappiamo tutto sulla tua odiosa razza e, credimi, nessuno sara' cosi' "
+"stupido da ucciderti."
+
+#: fortify_dwarfenwall.xml:441
+msgid "Continue to be snotty?"
+msgstr "Vuoi continuare a fare il moccioso?"
+
+#: fortify_dwarfenwall.xml:442 fortify_dwarfenwall.xml:798
+msgid "Yes"
+msgstr "Si'"
+
+#: fortify_dwarfenwall.xml:443 fortify_dwarfenwall.xml:799
+msgid "No"
+msgstr "No"
+
+#: fortify_dwarfenwall.xml:451 fortify_dwarfenwall.xml:803
+msgid "Soren Windclaw"
+msgstr "Soren Windclaw"
+
+#: fortify_dwarfenwall.xml:454
+msgid "You consider yourself very mighty and clever, don't you?"
+msgstr "Ti consideri molto potente e intelligente, non e' cosi'?"
+
+#: fortify_dwarfenwall.xml:456
+msgid "Surely he has written down that knowledge of his somewhere."
+msgstr "Sicuramente avra' annotato da qualche parte quel che sapeva."
+
+#: fortify_dwarfenwall.xml:457
+msgid "We can search for it after he's dead."
+msgstr "Non possiamo metterci a cercarlo dopo che e' morto."
+
+#: fortify_dwarfenwall.xml:459
+msgid "A good opportunity, indeed."
+msgstr "Una buona opportunita', infatti."
+
+#: fortify_dwarfenwall.xml:462
+msgid "Surely you have written down that knowledge of your's somewhere."
+msgstr "Sicuramente avrai annotato da qualche parte quel che sapevi."
+
+#: fortify_dwarfenwall.xml:463
+msgid "I can search for it after your untimely death."
+msgstr "Potro' cercarlo dopo la tua prematura fine."
+
+#: fortify_dwarfenwall.xml:465
+msgid "Yes, they warned me about that, too."
+msgstr "Si', mi avevano avvertito."
+
+#: fortify_dwarfenwall.xml:470
+msgid "I will keep an eye on you and give you orders with this crystal."
+msgstr "Ti terro' d'occhio e ti daro' gli ordini tramite questo cristallo."
+
+#: fortify_dwarfenwall.xml:471
+msgid ""
+"This simple elemental will remind you now that immortality has little "
+"meaning here."
+msgstr ""
+"Questo Elementale ti ricordera' che l'immortalita' qui non ha molto senso."
+
+#: fortify_dwarfenwall.xml:478 fortify_dwarfenwall.xml:627
+msgid "Of course."
+msgstr "Naturalmente."
+
+#: fortify_dwarfenwall.xml:479
+msgid ""
+"With our freedom as the price we will do everything in our might to be "
+"successful."
+msgstr ""
+"Se il prezzo e' la nostra liberta' faremo ogni cosa in nostro potere per "
+"avere successo."
+
+#: fortify_dwarfenwall.xml:480
+msgid "I don't like it."
+msgstr "Non mi piace."
+
+#: fortify_dwarfenwall.xml:482
+msgid ""
+"I have to take care of the preparations for the prince's imminent wedding "
+"now."
+msgstr ""
+"Ora mi devo occupare dei preparativi per l'imminente matrimonio del principe."
+
+#: fortify_dwarfenwall.xml:483
+msgid "There is no time for further explanations."
+msgstr "Non c'e' tempo per ulteriori spiegazioni."
+
+#: fortify_dwarfenwall.xml:484
+msgid "Take this crystal and some gold."
+msgstr "Prendi questo cristallo e del denaro."
+
+#: fortify_dwarfenwall.xml:485
+msgid "I will send you orders with it when the time comes."
+msgstr "Quando arrivera' il momento, ti daro' gli ordini con questo."
+
+#: fortify_dwarfenwall.xml:614
+msgid "There you go! That was rather tame."
+msgstr "E vai! Ormai e' praticamente domato."
+
+#: fortify_dwarfenwall.xml:617
+msgid "That was the weakest elemental I could possibly summon."
+msgstr "E' stato l'elementale piu' debole che potevo evocare."
+
+#: fortify_dwarfenwall.xml:618 fortify_dwarfenwall.xml:619
+msgid "Always remember that."
+msgstr "Ricordalo sempre."
+
+#: fortify_dwarfenwall.xml:620
+msgid ""
+"Take some gold and equip yourselves in the mercenary camp north of town."
+msgstr ""
+"Prendi del denaro ed equipaggiati al campo dei mercenari a nord della citta'."
+
+#: fortify_dwarfenwall.xml:621
+msgid "There you'll find everything you need."
+msgstr "Li' troverai tutto cio' di cui hai bisogno."
+
+#: fortify_dwarfenwall.xml:622
+msgid "Everything?"
+msgstr "Tutto?"
+
+#: fortify_dwarfenwall.xml:624
+msgid "I cannot waste time here any longer."
+msgstr "Non ho altro tempo da perdere."
+
+#: fortify_dwarfenwall.xml:625
+msgid "The prince will marry soon and there are lots of preparations to make."
+msgstr "Il principe si sposera' a momenti e c'e' ancora molto da preparare."
+
+#: fortify_dwarfenwall.xml:626
+msgid "With this crystal I will keep in touch with you."
+msgstr "Con questo cristallo mi terro' in contatto con te."
+
+#: fortify_dwarfenwall.xml:629
+msgid ""
+"Surely it's not really allowed by the most divine Akeran to blackmail my "
+"combat strength."
+msgstr ""
+"Sicuramente non e' consentito al piu' divino degli Akeran di ricattare le "
+"mia abilita' nel combattimento."
+
+#: fortify_dwarfenwall.xml:631
+msgid ""
+"Surely it's not really allowed by the most divine Akeran to blackmail our "
+"combat strength."
+msgstr ""
+"Sicuramente non e' consentito al piu' divino degli Akeran di ricattare le "
+"nostra abilita' nel combattimento."
+
+#: fortify_dwarfenwall.xml:633
+msgid "Now go!"
+msgstr "Vai adesso!"
+
+#: fortify_dwarfenwall.xml:648
+msgid "medBackalley"
+msgstr "Vicolo interno"
+
+#: fortify_dwarfenwall.xml:689
+msgid "((That Windclaw is somehow weird.))"
+msgstr "(Questo Windclaw ha qualcosa di strano.)"
+
+#: fortify_dwarfenwall.xml:690
+msgid "((He knows too much. And he has a real stone of Harad's hell.))"
+msgstr ""
+"(Costui sa troppo..e possiede davvero una delle pietre dell'inferno di "
+"Harad.)"
+
+#: fortify_dwarfenwall.xml:691
+msgid "((And that crystal, he palmed off on me...))"
+msgstr "(E il cristallo che mi ha rifilato...)"
+
+#: fortify_dwarfenwall.xml:692
+msgid "((Looks like a spying crystal. Well, we will know that soon.))"
+msgstr ""
+"(Questo cristallo sembra in grado di poter spiare; comunque lo scopriremo "
+"presto.)"
+
+#: fortify_dwarfenwall.xml:693
+msgid "Hm... I guess I'll look for enemies of the council."
+msgstr "Hm... Immagino debba trovare i nemici del Consiglio."
+
+#: fortify_dwarfenwall.xml:694
+msgid "And then I'll take apart those summoner-imps with them."
+msgstr "E infine dovro' portar loro via questi Imp evocati."
+
+#: fortify_dwarfenwall.xml:695
+msgid "Shouldn't be too hard."
+msgstr "Non dovrebbe essere troppo difficile."
+
+#: fortify_dwarfenwall.xml:697 fortify_dwarfenwall.xml:699
+msgid "That's what you think, Branded One!"
+msgstr "Questo e' quello che pensi, Marchiato!"
+
+#: fortify_dwarfenwall.xml:701
+msgid "... said the spying Lord Master."
+msgstr "...disse il Maestro dello spionaggio."
+
+#: fortify_dwarfenwall.xml:702
+msgid "Not a pretty habit you have there, Airpaw..."
+msgstr "Non si puo' dire che qui abbiate usanze cortesi..."
+
+#: fortify_dwarfenwall.xml:703
+msgid "Windclaw!"
+msgstr "Windclaw!"
+
+#: fortify_dwarfenwall.xml:704
+msgid "And you better accustom yourself to be monitored."
+msgstr "Ed e' bene tu ti abitua ad essere controllato."
+
+#: fortify_dwarfenwall.xml:705
+msgid "I'm no idiot."
+msgstr "Non sono un idiota."
+
+#: fortify_dwarfenwall.xml:707
+msgid "But you're not omniscient, too."
+msgstr "Ma non sei nemmeno onnisciente."
+
+#: fortify_dwarfenwall.xml:708
+msgid "What are you trying to say?"
+msgstr "Cosa stai cercando di dire?"
+
+#: fortify_dwarfenwall.xml:709
+msgid "Well... that thing was made by the mage guild of Aisen, right?"
+msgstr ""
+"Beh... tutto cio' e' stato fatto dalla Gilda dei Maghi di Aisen, giusto?"
+
+#: fortify_dwarfenwall.xml:710
+msgid "And?"
+msgstr "E?"
+
+#: fortify_dwarfenwall.xml:711
+msgid "You're a zealot, aren't you?"
+msgstr "Sei un fanatico, giusto?"
+
+#: fortify_dwarfenwall.xml:712
+msgid ""
+"Avaera, goddess of magic? Ring a bell? The people there are pretty "
+"devotional."
+msgstr ""
+"Avaera..? Divinita' della magia..? Hai presente? Le persone laggiu' sono "
+"incredibilmente devote."
+
+#: fortify_dwarfenwall.xml:713
+msgid ""
+"They are bound to have given Avaeras blessing on that crystal to make it "
+"work that much better."
+msgstr ""
+"Loro dono costretti a dare la benedizione di Avaeras al cristallo per farlo "
+"funzionare al meglio."
+
+#: fortify_dwarfenwall.xml:714
+msgid "Guard your tongue, scum! What is that supposed to change?"
+msgstr ""
+"Stai attento a quel che dici, feccia! E con questo cosa precisamente "
+"dovrebbe cambiare?"
+
+#: fortify_dwarfenwall.xml:715
+msgid "Everything."
+msgstr "Tutto."
+
+#: fortify_dwarfenwall.xml:716
+msgid ""
+"Do you know what happens, if that comes into contact with the blood of "
+"Branded Ones?"
+msgstr ""
+"Tu sai cosa succede, se per caso venisse in contatto col sangue di un "
+"Marchiato?"
+
+#: fortify_dwarfenwall.xml:717
+msgid ""
+"It's not as if I had a bunch of you Cursed Ones here for experimental "
+"purposes."
+msgstr ""
+"Non e' che solitamente ho a disposizione una dozzina di voi Maledetti per "
+"compierci su qualche esperimento..."
+
+#: fortify_dwarfenwall.xml:722
+msgid ""
+"Reverse this at once or every guard of Aisen will be on your trail, Cursed "
+"One! ##female"
+msgstr ""
+
+#: fortify_dwarfenwall.xml:724
+msgid ""
+"Reverse this at once or every guard of Aisen will be on your trail, Cursed "
+"One! ##male"
+msgstr ""
+
+#: fortify_dwarfenwall.xml:726
+msgid "Right, right."
+msgstr "Si', giusto."
+
+#: fortify_dwarfenwall.xml:727
+msgid "Your people would be quite surprised were I came from."
+msgstr ""
+"La vostra gente rimarrebbe piacevolmente sorpresa a sapere da dove provengo."
+
+#: fortify_dwarfenwall.xml:729 fortify_dwarfenwall.xml:731
+msgid "And it's Branded One."
+msgstr "Ed e' un Marchiato."
+
+#: fortify_dwarfenwall.xml:733
+msgid "You are better prepared to suffer the consequences, wretched creature."
+msgstr ""
+
+#: fortify_dwarfenwall.xml:734
+msgid "Blind and deaf, but not mute, eh?"
+msgstr "Cieco, sordo,..ma non muto, eh?"
+
+#: fortify_dwarfenwall.xml:735
+msgid "It's going to be a wearisome journey, if this keeps going on..."
+msgstr "Se continua cosi', diventera' un viaggio noioso..."
+
+#: fortify_dwarfenwall.xml:736
+msgid "Calm yourself, Lord of the unpleasent airs!"
+msgstr "Calmati, Signore dall'aria insoddisfatta!"
+
+#: fortify_dwarfenwall.xml:737
+msgid "I can hear you and we can talk, if it has to be."
+msgstr ""
+"Posso ascoltarti e possiamo anche parlare, se proprio deve essere necessario."
+
+#: fortify_dwarfenwall.xml:738
+msgid "That's enough, don't you think?"
+msgstr "Direi che basta, non credi?"
+
+#: fortify_dwarfenwall.xml:739
+msgid ""
+"You can't possibly have enough money, so that I would let you gawp at me all "
+"the time."
+msgstr ""
+"Non hai abbastanza soldi, per tenermi qui, aspettando, mentre tu mi fissi "
+"con aria da ebete."
+
+#: fortify_dwarfenwall.xml:740
+msgid ""
+"Just pray to your Akeran that I never find a way to send a fireball through "
+"that blasted thing."
+msgstr ""
+"Prega Akeran che non trovi un modo per spedire una palla di fuoco attraverso "
+"questa cosa maledetta."
+
+#: fortify_dwarfenwall.xml:741
+msgid ""
+"Well, well... knowledge about the gods is power, if you are exposed to their "
+"moods."
+msgstr ""
+"Bene, bene... la conoscenza delle divinita' e' potere, sempre che tu sia "
+"nelle loro grazie."
+
+#: fortify_dwarfenwall.xml:742
+msgid "Just be glad I didn't smash the whole crystal."
+msgstr "Sii felice che non abbia gia' rotto il cristallo."
+
+#: fortify_dwarfenwall.xml:744
+msgid ""
+"Allow yourself more of such impertinences and I'll have you thrown into the "
+"dungeon tower!"
+msgstr ""
+"Frena la tua impertinenza, o saro' costretto a gettarti nei sotterranei "
+"della torre!"
+
+#: fortify_dwarfenwall.xml:745
+msgid "What am I to do with you councilmen?"
+msgstr "Cosa devo fare con te consigliere?"
+
+#: fortify_dwarfenwall.xml:748
+msgid "Can we blind that crystal somehow?"
+msgstr "Possiamo rendere cieco il cristallo in qualche modo?"
+
+#: fortify_dwarfenwall.xml:749
+msgid ""
+"I bet the guy is sitting in a cozy armchair right now and watching that we "
+"don't break ranks."
+msgstr ""
+"Scommetto che adesso e' seduto su una comoda poltrona e ci sta guardando, "
+"controllando che non rompiamo i ranghi."
+
+#: fortify_dwarfenwall.xml:750
+msgid "I've seen something like this in the army before..."
+msgstr "Ho visto qualcosa del genere nell'esercito prima ..."
+
+#: fortify_dwarfenwall.xml:751
+msgid "Of course. There is this nice little trick."
+msgstr "Naturalmente. C'e' questo piccolo trucco."
+
+#: fortify_dwarfenwall.xml:752
+msgid "Don't you dare, or-"
+msgstr "Non osare, o-"
+
+#: fortify_dwarfenwall.xml:756
+msgid "That's it."
+msgstr "Questo e' quanto."
+
+#: fortify_dwarfenwall.xml:757
+msgid "And now he can't hear us anymore?"
+msgstr "E cosi' ora non ci puo' piu' sentire?"
+
+#: fortify_dwarfenwall.xml:758
+msgid "Only if we want to. Our blood works wonders on blessed items."
+msgstr ""
+"Solo se lo vogliamo. Il nostro sangue compie meraviglie su oggetti benedetti."
+
+#: fortify_dwarfenwall.xml:759
+msgid ""
+"It's a good thing that this was blessed by devoted aisen mages to Avaera. "
+"Even if the goddess of magic is unlikely to be amused about my attachment."
+msgstr ""
+"E' una buona cosa che sia stato benedetto dai maghi di Aisen devoti ad "
+"Avaera. Anche se e' improbabile che la dea della magia rimanga divertita dal "
+"mio attaccamento."
+
+#: fortify_dwarfenwall.xml:760
+msgid "But he can still annoy us."
+msgstr "Ma puo' ancora infastidirci."
+
+#: fortify_dwarfenwall.xml:761
+msgid "We're bound to notice, if he has something to tell us."
+msgstr "Noi siamo obbligati ad avvisare, se ha qualcosa da dirci."
+
+#: fortify_dwarfenwall.xml:764 fortify_dwarfenwall.xml:766
+msgid "So, what are you thinking about this matter?"
+msgstr "Comunque, cosa ne pensi a riguardo?"
+
+#: fortify_dwarfenwall.xml:773
+msgid "Did I get that right?"
+msgstr "Ho ottenuto tale diritto?"
+
+#: fortify_dwarfenwall.xml:774
+msgid "Does he really have the power to take Harad's curse from us?"
+msgstr "Puo' veramente liberarci dalla maledizione di Harad?"
+
+#: fortify_dwarfenwall.xml:775
+msgid "That's what he said."
+msgstr "Questo e' quello che ha detto."
+
+#: fortify_dwarfenwall.xml:776
+msgid ""
+"I for one have never heard, that someone besides us could take anything from "
+"hell."
+msgstr ""
+"Per quel che ne so, nessuno oltre a noi puo' prelevare qualcosa dall'inferno."
+
+#: fortify_dwarfenwall.xml:777
+msgid "But that thing was the real deal without a doubt."
+msgstr "Ma senz'altro e' questo il vero affare."
+
+#: fortify_dwarfenwall.xml:778
+msgid "Even looking at it gave me goosebumps."
+msgstr "Anche Solo guardandolo mi e' venuta la pelle d'oca."
+
+#: fortify_dwarfenwall.xml:781
+msgid "You almost fainted!"
+msgstr "Sei quasi svenuto!"
+
+#: fortify_dwarfenwall.xml:783
+msgid "He promised us freedom."
+msgstr "Lui ci promise la liberta'."
+
+#: fortify_dwarfenwall.xml:785
+msgid "I don't even have memories of it..."
+msgstr "Non ho nemmeno ricordi a riguardo..."
+
+#: fortify_dwarfenwall.xml:786
+msgid "Still, it's unlikely that he will keep his word."
+msgstr "Ripeto, e' improbabile che egli manterra' la sua parola."
+
+#: fortify_dwarfenwall.xml:787
+msgid "Even if he has this power, we're too valuable for his ends."
+msgstr ""
+"Anche se possiede questo potere, noi siamo troppo preziosi per i suoi fini."
+
+#: fortify_dwarfenwall.xml:788
+msgid "We are truly branded."
+msgstr "Siamo davvero marchiati."
+
+#: fortify_dwarfenwall.xml:789
+msgid "But if there's only a small possibility I'm willing to try it."
+msgstr "Ma se ci fosse anche solo una piccola possibilita', vorrei provarci."
+
+#: fortify_dwarfenwall.xml:791
+msgid "If stupidity had a weight, you couldn't move a millimeter."
+msgstr ""
+"Se la stupidita' avesse un peso, non ti potersti muovere di un millimetro."
+
+#: fortify_dwarfenwall.xml:792
+msgid "If arrogance had a smell, you'd suffocate instantly."
+msgstr "Se l'arroganza puzzasse, soffocheresti immediatamente."
+
+#: fortify_dwarfenwall.xml:794
+msgid "Alright, we vote on our course of action."
+msgstr "Bene, noi votiamo per la nostra linea di azione."
+
+#: fortify_dwarfenwall.xml:797
+msgid "Follow the councils orders?"
+msgstr "Seguiamo gli ordini del Consiglio?"
+
+#: fortify_dwarfenwall.xml:807
+msgid "I'll see, how this is developing."
+msgstr "Vediamo come si sviluppano le cose."
+
+#: fortify_dwarfenwall.xml:808
+msgid ""
+"Until the cards are on the table I'll be powerful enough to take what's mine "
+"by force, if needed."
+msgstr ""
+"Fino a quando le carte sono sul tavolo saro' abbastanza potente per prendere "
+"cio' che e' mio con la forza, se necessario."
+
+#: fortify_dwarfenwall.xml:810
+msgid "Then it's decided."
+msgstr "Allora e' deciso."
+
+#: fortify_dwarfenwall.xml:811
+msgid "Woe befall them if they break their promise."
+msgstr "Guai a coloro che romperanno la promessa."
+
+#: fortify_dwarfenwall.xml:820
+msgid "That guy will never keep his promise in his life."
+msgstr "Quel tipo non manterra' mai la promessa data."
+
+#: fortify_dwarfenwall.xml:821
+msgid "But right now I cannot go to war with a whole kingdom."
+msgstr "Ora come ora non posso entrare in guerra con tutto il regno."
+
+#: fortify_dwarfenwall.xml:822
+msgid "So I'll just grin and bear it and gain his trust."
+msgstr ""
+"Quindi mi limitero' a stringere i denti e sopportare, e otterro' la sua "
+"fiducia."
+
+#: fortify_dwarfenwall.xml:823
+msgid "I'll see, what opportunities occur."
+msgstr "Vedro', quali opportunita' si presenteranno."
+
+#: fortify_dwarfenwall.xml:825
+msgid "The whole thing is too unsure."
+msgstr "Tutta la cosa in se' e' fin troppo incerta."
+
+#: fortify_dwarfenwall.xml:826
+msgid ""
+"But we can't afford open resistance right now, so we have to grin and bear "
+"it."
+msgstr ""
+"Ma non possiamo permetterci di affrontare una resistenza aperta in questo "
+"momento, quindi dobbiamo stringere i denti e sopportare."
+
+#: fortify_dwarfenwall.xml:827
+msgid "Let's gain their trust."
+msgstr "Andiamo a guadagnarci la loro fiducia."
+
+#, fuzzy
+#~ msgid "SorenWindclawArea"
+#~ msgstr "Soren Windclaw"
+
+#, fuzzy
+#~ msgid "locSorenWindclaw"
+#~ msgstr "Soren Windclaw"
+
+#, fuzzy
+#~ msgid "derred"
+#~ msgstr "Derred"
+
+#, fuzzy
+#~ msgid "tolec"
+#~ msgstr "Tolec"

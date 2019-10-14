@@ -43,7 +43,7 @@ void NLFGClientNetwork::serverConnect(const char* hostname, int req_port )
 	unsigned success = nlfg_connect(hostname, req_port);
 	if (!success)
 	{
-        DEBUG("error connecting to server");
+        SW_DEBUG("error connecting to server");
 		m_status = NET_ERROR;
 	}
 	else
@@ -54,7 +54,7 @@ void NLFGClientNetwork::serverConnect(const char* hostname, int req_port )
 
 void NLFGClientNetwork::serverDisconnect()
 {
-	DEBUG("closing connection");
+	SW_DEBUG("closing connection");
 	nlfg_disconnect();
 	// wait to deliver disconnect message
 #ifdef WIN32
@@ -89,11 +89,11 @@ void NLFGClientNetwork::update()
             switch (id)
             {
                 case NLFG_CONNECTED:
-                    DEBUG("connected to server");
+                    SW_DEBUG("connected to server");
 					m_status = NET_CONNECTED;
                     break;
                 case NLFG_DISCONNECTED:
-                    DEBUG("connection timed out");
+                    SW_DEBUG("connection timed out");
 					m_status =NET_TIMEOUT;
                     break;
             }
@@ -124,7 +124,8 @@ void NLFGClientNetwork::pushSlotMessage(const NetworkPacket* data, int slot, Net
 		return;
 	}
 	
-    unsigned int rel;
+  unsigned int rel;
+
 	if (reliability == NET_RELIABLE)
 	{
 		rel = RELIABLE;

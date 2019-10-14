@@ -19,11 +19,14 @@
 
 #include "contenteditortab.h"
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 void ContentEditorTab::setWindowText(std::string windowname, std::string text)
 {
 	CEGUI::utf8* str = (CEGUI::utf8*) (text.c_str());
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Window* win = win_mgr.getWindow(windowname);
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+  CEGUI::Window* win = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname);
 	
 	if (win != 0)
 	{
@@ -36,8 +39,8 @@ void ContentEditorTab::setWindowText(std::string windowname, std::string text)
 
 std::string ContentEditorTab::getWindowText(std::string windowname, std::string def)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Window* win = win_mgr.getWindow(windowname);
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+	CEGUI::Window* win = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname);
 	
 	if (win != 0)
 	{
@@ -48,8 +51,8 @@ std::string ContentEditorTab::getWindowText(std::string windowname, std::string 
 
 void ContentEditorTab::setSpinnerValue(std::string windowname, double value)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Spinner* spinner =  static_cast<CEGUI::Spinner*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+	CEGUI::Spinner* spinner =  static_cast<CEGUI::Spinner*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (spinner != 0)
 	{
@@ -62,8 +65,8 @@ void ContentEditorTab::setSpinnerValue(std::string windowname, double value)
 
 double ContentEditorTab::getSpinnerValue(std::string windowname, double def)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Spinner* spinner =  static_cast<CEGUI::Spinner*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+  CEGUI::Spinner* spinner =  static_cast<CEGUI::Spinner*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (spinner != 0)
 	{
@@ -74,8 +77,8 @@ double ContentEditorTab::getSpinnerValue(std::string windowname, double def)
 
 void ContentEditorTab::setCheckboxSelected(std::string windowname, bool state)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Checkbox* box = static_cast<CEGUI::Checkbox*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+	CEGUIUtility::ToggleButton* box = static_cast<CEGUIUtility::ToggleButton*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (box != 0)
 	{
@@ -88,8 +91,8 @@ void ContentEditorTab::setCheckboxSelected(std::string windowname, bool state)
 
 bool ContentEditorTab::getCheckboxSelected(std::string windowname)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Checkbox* box = static_cast<CEGUI::Checkbox*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+  CEGUIUtility::ToggleButton* box = static_cast<CEGUIUtility::ToggleButton*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (box != 0)
 	{	
@@ -100,8 +103,8 @@ bool ContentEditorTab::getCheckboxSelected(std::string windowname)
 
 std::string ContentEditorTab::getComboboxSelection(std::string windowname, std::string def)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Combobox* box = static_cast<CEGUI::Combobox*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+  CEGUI::Combobox* box = static_cast<CEGUI::Combobox*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (box != 0)
 	{
@@ -116,8 +119,8 @@ std::string ContentEditorTab::getComboboxSelection(std::string windowname, std::
 
 void ContentEditorTab::setComboboxSelection(std::string windowname, std::string selection)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Combobox* box = static_cast<CEGUI::Combobox*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+	CEGUI::Combobox* box = static_cast<CEGUI::Combobox*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (box != 0)
 	{
@@ -133,8 +136,8 @@ void ContentEditorTab::setComboboxSelection(std::string windowname, std::string 
 
 void ContentEditorTab::setMultiLineEditboxCursor(std::string windowname, int row, int col)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::MultiLineEditbox* editor = static_cast<CEGUI::MultiLineEditbox*>(win_mgr.getWindow(windowname));
+	//CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+	CEGUI::MultiLineEditbox* editor = static_cast<CEGUI::MultiLineEditbox*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, windowname));
 	
 	if (editor != 0)
 	{
@@ -163,8 +166,8 @@ void ContentEditorTab::setMultiLineEditboxCursor(std::string windowname, int row
 			pos++;
 		}
 		
-		editor->setCaratIndex(pos);
-		editor->ensureCaratIsVisible();
+    editor->setCaretIndex(pos);
+		editor->ensureCaretIsVisible();
 		editor->activate();
 	}
 }

@@ -1,0 +1,47 @@
+<World>
+	<!-- Aisen, Nebelhang [Wald und Gebirge]; ca. 20 Minuten; eher offen; Level 16 - 18 -->
+	<!-- Goblins, einige Untote, Blutschnaebel -->
+	<Region id="2160" name="aisMistslope">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="40" dimy="40" region_template="entryGrayCaves"  ground="grass1"/>
+		<WorldPosition world_x="0.65" world_y ="0.45"/>
+		
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="aisMounPath" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="greyCurseCave" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>
+		
+		<Event trigger="create_region">
+			<Effect>
+				createMonsterGroup("goblins_l13_2","monster_group1",6);
+				createMonsterGroup("goblins_l13_2","monster_group2",6);
+				createMonsterGroup("goblins_l13_2","monster_group3",6);
+				createMonsterGroup("goblins_l13_2","monster_group4",6);
+				createMonsterGroup("goblins_l13_2","monster_group5",6);
+				createMonsterGroup("goblins_l13_2","monster_group6",6);
+				
+				createMonsterGroup("goblins_l13_2","monster_treasure",3);
+				
+				createObject("treasure_box_m1","locTreasureEast",45);
+				createObject("chestBox","locTreasureWest",-45);
+			</Effect>
+		</Event>
+	</Region>
+</World>

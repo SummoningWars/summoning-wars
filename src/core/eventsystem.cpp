@@ -26,10 +26,13 @@
 #include "dialogue.h"
 #include "scriptobject.h"
 #include "options.h"
-#include "sound.h"
+//#include "sound.h"
 #include "sumwarshelper.h"
 #include <algorithm> 
 #include <cctype>
+
+// Helper for sound operations
+#include "soundhelper.h"
 
 #ifdef DEBUG_DATABASE
 		std::map<int, std::string> EventSystem::m_code_fragments;
@@ -69,7 +72,11 @@ void EventSystem::init()
 		cleanup();
 	}
 
+#if LUA_VERSION_NUM == 501
 	m_lua = lua_open();
+#elif LUA_VERSION_NUM == 502
+    m_lua = luaL_newstate();
+#endif
 
 	luaL_openlibs(m_lua);
 	luaopen_debug(m_lua);
@@ -180,6 +187,8 @@ void EventSystem::init()
 	lua_register(m_lua, "printQuestMessage",printMessage);
 	lua_register(m_lua, "printMessage",printMessage);
 	
+	lua_register(m_lua, "translate",translate);
+	
 	lua_register(m_lua, "addMusic",addMusic);
 	lua_register(m_lua, "clearMusicList",clearMusicList);
 	lua_register(m_lua, "playSound",playSound);
@@ -277,10 +286,9 @@ bool EventSystem::executeCodeReference(int coderef)
 int EventSystem::createCodeReference(const char* code)
 {
 	int err = luaL_loadstring(EventSystem::getLuaState(),code);
-	int ref;
 	if (err ==0)
 	{
-		ref = luaL_ref(EventSystem::getLuaState(),LUA_REGISTRYINDEX);
+		int ref = luaL_ref(EventSystem::getLuaState(),LUA_REGISTRYINDEX);
 #ifdef DEBUG_DATABASE
 		m_code_fragments[ref] = code;
 #endif
@@ -377,8 +385,8 @@ int EventSystem::timedExecute(lua_State *L)
 		}
 		if (reg ==0)
 		{
+			SW_DEBUG("region for timedExecute does not exist");
 			return 0;
-			DEBUG("region for timedExecute does not exist");
 		}
 		
 		m_event = new Event();
@@ -600,7 +608,6 @@ int EventSystem::getObjectValue(lua_State *L)
 
 int EventSystem::setObjectValue(lua_State *L)
 {
-
 	int ret =0;
 	int argc = lua_gettop(L);
 	if (argc>=2 && lua_isnumber(L,1) && lua_isstring(L,2))
@@ -634,7 +641,7 @@ int EventSystem::setObjectValue(lua_State *L)
 		ERRORMSG("Syntax: setObjectValue( int id, string valname, value)");
 	}
 
-	return 0;
+	return ret;
 }
 
 int EventSystem::moveObject(lua_State *L)
@@ -827,8 +834,6 @@ int EventSystem::createProjectile(lua_State *L)
 			std::string tname = lua_tostring(L, 1);
 			Vector pos = getVector(L,2);
 
-			float speed = 0.0;
-			
 			// Schaden
 			// Projektil erzeugen
 			Projectile* pr = ObjectFactory::createProjectile(tname);
@@ -847,7 +852,7 @@ int EventSystem::createProjectile(lua_State *L)
 			// Richtung, Geschwindigkeit ermitteln
 			if (argc>=3 && (lua_istable(L,3) || lua_isstring(L,3)))
 			{
-				speed = 10000.0;
+				float speed = 10000.0;
 				Vector goal = getVector(L,3);
 				Vector dir = goal - pos;
 				dir.normalize();
@@ -1472,7 +1477,7 @@ int EventSystem::getObjectAt(lua_State *L)
 		if (m_region !=0)
 		{
 			WorldObject* wo = m_region->getObjectAt(pos);
-			DEBUG("pos %f %f wo %p",pos.m_x, pos.m_y,wo);
+			SW_DEBUG("pos %f %f wo %p",pos.m_x, pos.m_y,wo);
 			if (wo !=0)
 			{
 				lua_pushnumber(L,wo->getId());
@@ -1838,7 +1843,6 @@ int EventSystem::getPlayerItem(lua_State *L)
 	if (argc>=2  && lua_isnumber(L,1) && (lua_isnumber(L,2) || lua_isstring(L,2)))
 	{
 		int id = lua_tointeger(L, 1);
-		std::string subtype = lua_tostring(L, 2);
 		Player* pl = dynamic_cast<Player*>(World::getWorld()->getPlayer(id));
 		if (pl != 0)
 		{
@@ -1886,7 +1890,6 @@ int EventSystem::removePlayerItem(lua_State *L)
 	if (argc>=2  && lua_isnumber(L,1) && (lua_isnumber(L,2) || lua_isstring(L,2)))
 	{
 		int id = lua_tointeger(L, 1);
-		std::string subtype = lua_tostring(L, 2);
 		Player* pl = dynamic_cast<Player*>(World::getWorld()->getPlayer(id));
 		if (pl != 0)
 		{
@@ -1969,7 +1972,7 @@ int EventSystem::insertPlayerItem(lua_State *L)
 			{
 				equip = lua_toboolean(L,2);
 			}
-			pl->insertItem(m_item,true,equip);
+			pl->insertItem(m_item,equip,true);
 			m_item_in_game = true;
 		}
 	}
@@ -2510,7 +2513,7 @@ int EventSystem::setSpeakerAnimation(lua_State *L)
 			bool repeat = lua_toboolean(L, 4);
 			if (repeat)
 			{
-				DEBUG("repeat");
+				SW_DEBUG("repeat");
 				txt="#animation_r#";
 			}
 		}
@@ -2901,8 +2904,8 @@ int EventSystem::createEvent(lua_State *L)
 		}
 		if (reg ==0)
 		{
+			SW_DEBUG("region for createEvent does not exist");
 			return 0;
-			DEBUG("region for createEvent does not exist");
 		}
 		
 		m_event = new Event();
@@ -3080,7 +3083,8 @@ int EventSystem::playSound(lua_State *L)
 	int argc = lua_gettop(L);
 	if (argc>=1 && lua_isstring(L,1))
 	{
-		SoundName sname = lua_tostring(L,1);
+		std::string sname = lua_tostring(L,1);
+		//SoundName sname = lua_tostring(L,1);
 		float volume = 1.0;
 		if (argc>=2 && lua_isnumber(L,2))
 		{
@@ -3095,7 +3099,13 @@ int EventSystem::playSound(lua_State *L)
 			ppos = &position;
 		}
 		
-		SoundSystem::playAmbientSound(sname, volume, ppos);
+		//SoundSystem::playAmbientSound(sname, volume, ppos);
+		float posX = position.m_x;
+		float posY = position.m_y;
+		float posZ = 0.0;
+		SoundHelper::playSoundGroupAtPosition (sname, posX, posY, posZ);
+
+
 	}
 	else
 	{
@@ -3130,6 +3140,34 @@ int EventSystem::setOption(lua_State *L)
 	else
 	{
 		ERRORMSG("Syntax: setOption(string optionname, value)");		
+	}
+	return 0;
+}
+
+int EventSystem::translate(lua_State *L)
+{
+	int argc = lua_gettop(L);
+	if (argc>=1 && (lua_isstring(L,1) || lua_istable(L,1)))
+	{
+		TranslatableString msg;
+		getTranslatableString(L,msg,1);
+		
+		if (argc>=2)
+		{
+			std::string domain;
+			domain = lua_tostring(L,2);
+			msg.setTextDomain(domain);
+		}
+
+		std::string translation = msg.getTranslation();
+		
+		lua_pushstring(L,translation.c_str());
+		
+		return 1;
+	}
+	else
+	{
+		ERRORMSG("Syntax: translate(string message, [string domain])");		
 	}
 	return 0;
 }

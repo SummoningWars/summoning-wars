@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PLAYER_BASE_H
-#define PLAYER_BASE_H
+#ifndef __SUMWARS_CORE_PLAYERBASE_H__
+#define __SUMWARS_CORE_PLAYERBASE_H__
 
 #include "worldobject.h"
 #include "creaturestruct.h"
@@ -151,6 +151,7 @@ struct LearnableAbility
 		m_skilltree_tab = other.m_skilltree_tab;
 		m_req_level = other.m_req_level;
 		m_req_abilities = other.m_req_abilities;
+		m_image = other.m_image;
 		
 		return *this;
 	}
@@ -214,5 +215,5 @@ struct PlayerBasicData
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_PLAYERBASE_H__
 

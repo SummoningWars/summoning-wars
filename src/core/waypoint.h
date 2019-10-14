@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WAYPOINT_H
-#define WAYPOINT_H
+#ifndef __SUMWARS_CORE_WAYPOINT_H__
+#define __SUMWARS_CORE_WAYPOINT_H__
 
 #include "fixedobject.h"
 #include "geometry.h"
@@ -126,4 +126,4 @@ class Waypoint : public FixedObject
 		bool m_active;
 };
 
-#endif
+#endif // __SUMWARS_CORE_WAYPOINT_H__

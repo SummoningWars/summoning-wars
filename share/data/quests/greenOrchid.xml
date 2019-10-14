@@ -1,0 +1,180 @@
+﻿<Quest name="The Green Orchid" table_name="greenOrchid" domain="greenOrchid">
+	<Init>
+	</Init>
+	<Description>
+		if(greenOrchid.finished)then
+			return _("I found the green orchid and gave it to the girl. She gave me a amulet instead. I'm still trying to recover from the shock that I actually got something useful out of this ordeal.")
+		elseif(greenOrchid.status == 20)then
+			return("I found a scholar interested in the scroll the hat guy from Dwarfenwall gave me. And he had a green orchid. I began to doubt that flower really existed. I should bring it back to Joringsbridge.")
+		elseif(greenOrchid.status == 10)then
+			return _("I'm still looking for the green orchid. I had no luck in Dwarfenwall, but I got rid of the silly hat. Now I'm stuck with some scholar scroll. Which is astoundingly boring. I almost fell into a coma after the first three sentences.")
+		elseif(greenOrchid.status == 0) then
+			return _("I offered help to a young girl in Joringsbridge by looking for a green orchid. She gave me a useless hat for it. And by useless I mean useless. No way in hell I will ever wear that. Gee, thanks.")
+		end
+	</Description>
+
+	<Region name = "joringsbridge">
+		<Event trigger = "create_region" once = "true">
+			<Effect>
+				--create questgiver and start person
+				greenOrchid_tmp.Reba = createObject("peasant_f2", "locFlowerGirl");
+				setRefName(greenOrchid_tmp.Reba, "Reba");
+			</Effect>
+		</Event>
+	</Region>
+	<NPC refname = "Reba">
+		<Topic name = "switchTrade_start" start_option="Nice Flowers">
+			<Effect>
+				if(greenOrchid.refused == true and greenOrchid.started~=true) then
+					--player refused quest earlier
+					speak('Reba',_("I'm still looking for a green orchid to perfect my flowerbed."), "normal")
+					speak("Reba",_("Say, perhaps you can look for it on your travels?"),"normal")
+					addQuestion(_("Look for the green orchid?"))
+					addAnswer(_("Yes"),"start_orchid_quest")
+					addAnswer(_("No"),"refuse_orchid_quest_again")
+				elseif(greenOrchid.started~=true) then
+					speak('Reba',_("Hey there, traveller."), "normal")
+					speak("Reba",_("Do you like my beautiful flowerbed?"),"normal")
+					speak("Reba",_("Oh, how I'd love to have a marvelous green orchid in it..."))
+					addQuestion(_("Offer Help?"))
+					addAnswer(_("Yes"),"start_orchid_quest")
+					addAnswer(_("No"),"refuse_orchid_quest")
+				elseif(greenOrchid.status >= 20)then
+					speak('Reba',_("Oh, I remember you. Did you find the green orchid?"), "happy")
+					changeTopic("green_orchid_finish")
+				else
+					speak('Reba',_("Oh, I remember you. Did you find the green orchid?"), "happy")
+					speak("player",_("Nah, I'm still searching, sorry."),"normal")
+				end
+			</Effect>
+		</Topic>
+		
+		<Topic name = "start_orchid_quest">
+			<Effect>
+				speak("player",_("Hm, I somehow like you."),"normal")
+				speak("player",_("I'll look around."),"normal")
+				speak("player",_("If I find one, I'll give it to you."),"normal")
+				speak("Reba",_("Wow, thanks!"),"happy")
+				speak("Reba",_("You are so nice to me."),"happy")
+				speak("Reba",_("Here take this hat as a compensation."),"happy")
+				speak("player",_("No problem, girl, but this is really not necessary."),"normal")
+				speak("Reba",_("I insist. I don't expect you to work for free."),"normal")
+				speak("player",_("(Not exactly what I meant, but oh well.)"),"normal")
+				speak("player",_("(It's just a stupid hat. No harm done.)"),"unhappy")
+				greenOrchid.started = true
+				greenOrchid.status = 0
+			</Effect>
+		</Topic>
+	
+		<Topic name = "refuse_orchid_quest">
+			<Effect>
+				speak("player",_("Do I look like I care for flowers?"),"unhappy")
+				speak("Reba",_("Oh."),"sad")
+				greenOrchid.refused = true
+			</Effect>
+		</Topic>
+	
+		<Topic name = "refuse_orchid_quest_again">
+			<Effect>
+				speak("player",_("Leave me alone."),"unhappy")
+			</Effect>
+		</Topic>
+		
+		<!-- finish the quest -->
+		<Topic name = "green_orchid_finish">
+			<Effect>
+				speak("player",_("In fact I did. Here, take it."),"amused")
+				speak('Reba',_("Gee, thank you. Thank you thank you thank you."), "happy")
+				speak('Reba',_("I can't possibly show my gratitude... Oh, I know!"), "happy")
+				speak('Reba',_("My father once gave me this amulet."), "happy")
+				speak('Reba',_("It's supposed to be real powerful or something, but it's just plain ugly, don't you think?"), "happy")
+				speak('Reba',_("I hope you don't take this the wrong way"), "happy")
+				speak("player",_("Thanks. I think I can handle it's ugliness."),"amused")
+				changeTopic("greenOrchid_reward")
+			</Effect>
+		</Topic>
+		
+		<Topic name = "greenOrchid_reward">
+			<Effect>
+				-- give Reward
+				greenOrchid.finished = true;
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<!-- Second person in the quest chain -->
+	<Region name = "dwarfenwall">
+		<Event trigger = "create_region" once = "true">
+			<Effect>
+				--create 2nd switch trader
+				greenOrchid_tmp.hatguy = createObject("peasant2", "locHatGuy");
+				setRefName(greenOrchid_tmp.hatguy, "Eric");
+			</Effect>
+		</Event>
+	</Region>
+	<NPC refname = "Eric">
+		<Topic name = "tradeHat" start_option = "Whats that look for?">
+			<Condition>
+				--status less then 10
+				if(greenOrchid.started and (10>greenOrchid.status))then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				speak("Eric",_("Go away!"),"unhappy")
+				speak("player",_("You look especially depressed."),"normal")
+				speak("player",_("I can put you out of your misery if you like."),"grin")
+				speak("Eric",_("Don't mock me, stranger!"), "unhappy")
+				speak("Eric", _("Undead in front of the gates, rocks falling from the sky, annoying bypassers making creepy proposals..."),"unhappy")
+				speak("Eric",_("If only I hadn't lost my hat. I can handle anything with a good hat."), "sad")
+				speak("Eric", _("But there is noone selling hats here."), "unhappy")
+				speak("player",_("Despair not for I have your salvation."),"sneer")
+				speak("player", _("Behold the great hat of Joringsbridge, the pinnacle of uselessness... wanne have it?"),"sneer")
+				speak("Eric",_("Dear me! You'd give it to me just like that?"),"surprised")
+				speak("Eric",_("Kindness is it's own reward, but I have this scholar scroll."),"thoughtful")
+				setSpeakerEmotion("player", "unhappy")
+				speak("Eric",_("Take it instead."), happy)
+				speak("player",_("Thank. You."),"unhappy")
+				speak("player",_("Another stupid thing to carry around."),"bored")
+				greenOrchid.status = 10
+			</Effect>
+		</Topic>
+	</NPC>
+	
+	<!-- Third person in the quest chain -->
+	<Region name = "copperRock">
+		<Event trigger = "create_region" once = "true">
+			<Effect>
+				--create 3rd switch trader
+				greenOrchid_tmp.thirdguy = createObject("mentor", "locThirdGuy");
+				setRefName(greenOrchid_tmp.thirdguy, "Thomas");
+			</Effect>
+		</Event>
+	</Region>
+	<NPC refname = "Thomas">
+		<Topic name = "tradeScroll" start_option = "You look like a scholar">
+			<Condition>
+				if(greenOrchid.started and (20>greenOrchid.status) and greenOrchid.status>=10)then
+					return true
+				else
+					return false
+				end
+			</Condition>
+			<Effect>
+				speak("player", _("Hey, you look like a scholar."),"normal")
+				speak("Thomas", _("Indeed I am."),"surprised")
+				speak("player",_("I got this old scholar scroll here. Do you have a use for it?"),"happy")
+				speak("Thomas", _("Avaera's mercy! This is..."),"surprised")
+				speak("Thomas", _("No, this can't be real."),"surprised")
+				speak("Thomas", _("But it is..."),"excited")
+				speak("player", _("You can have it. Just take it."),"normal")
+				speak("Thomas",_("I can? Thank you stranger!"),"excited")
+				speak("Thomas", _("That's a very important piece for my research. Take this flower. It's nothing special, but it has a strange colour"),"happy")
+				speak("player", _("Wha... I really got something I want? Thank you man."),"happy")
+				greenOrchid.status = 20
+			</Effect>
+		</Topic>
+	</NPC>
+</Quest>

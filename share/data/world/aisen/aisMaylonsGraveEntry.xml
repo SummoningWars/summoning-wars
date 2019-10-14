@@ -1,0 +1,33 @@
+<World>
+	<!-- Maylons Grab, Eingang[Template] -->
+	<Region id="45" name="aisMaylonsGraveEntry">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="16" dimy="32" region_template="maylonsGraveEntry"  ground="council_ground"/>
+		
+		<WorldPosition world_x="0.61" world_y ="0.61"/>
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="zombies" number="12" />
+		</SpawnGroups>
+		<Exits>
+			<Exit name="exit_south" destination_region="aisPlains" destination_location="maylonsGrave:exit_crypt" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="aisMaylonsGraveL1" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="vault" />
+		</Environments>
+	</Region>
+</World>

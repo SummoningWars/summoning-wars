@@ -1,0 +1,537 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2010-08-31 17:29+0200\n"
+"Last-Translator: kalimgard <kalimgard@users.sourceforge.net>\n"
+"Language-Team: german <de@sumwars>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: theTrader.xml:2 theTrader.xml:124 theTrader.xml:262 theTrader.xml:300
+msgid "The Trader"
+msgstr "Der Händler"
+
+#: theTrader.xml:5
+msgid "Quest finished"
+msgstr "Quest beendet"
+
+#: theTrader.xml:7
+msgid "A strange trader offered me to sell Empty Scrolls."
+msgstr "Ein seltsamer Händler hat angeboten, Leere Schriftrollen zu verkaufen."
+
+#: theTrader.xml:11
+msgid "elCnlLobby"
+msgstr "Konzil der Elemente, Untergrundverließ"
+
+#: theTrader.xml:22 theTrader.xml:237
+msgid "medMercCamp"
+msgstr "Söldnerlager von Medair"
+
+#: theTrader.xml:71
+msgid "A moment, dear madam."
+msgstr "Einen Augenblick, ehrenwerte Dame."
+
+#: theTrader.xml:74
+#, fuzzy
+msgid "A moment, dear sir."
+msgstr "Einen Augenblick, ehrenwerte Herren."
+
+#: theTrader.xml:76
+msgid "A moment, dear ladies."
+msgstr "Einen Augenblick, ehrenwerte Damen."
+
+#: theTrader.xml:78
+msgid "A moment, dear sirs."
+msgstr "Einen Augenblick, ehrenwerte Herren."
+
+#: theTrader.xml:80
+#, fuzzy
+msgid "A moment, ladies and gentlemen."
+msgstr "Einen Augenblick, ehrenwerte Herrschaften."
+
+#: theTrader.xml:83
+msgid "What is it now?"
+msgstr "Was ist denn jetzt schon wieder?"
+
+#: theTrader.xml:86 theTrader.xml:88
+msgid "It seems, you are stuck in Harad's black claws."
+msgstr "Mir scheint, Ihr steckt in Harads schwarzen Klauen."
+
+#: theTrader.xml:91
+msgid "What are you trying to say?"
+msgstr "Und was willst du damit sagen?"
+
+#: theTrader.xml:92
+msgid "Well, I want to say I'd like to lend you my services."
+msgstr "Nun, ich will damit sagen, dass ich meine Dienste anbieten möchte."
+
+#: theTrader.xml:94
+msgid "You are a trader?"
+msgstr "Ihr seid Händler?"
+
+#: theTrader.xml:95 theTrader.xml:195
+msgid "Indeed."
+msgstr "Allerdings."
+
+#: theTrader.xml:96
+msgid ""
+"Unfortunatly I bet on the wrong branch and now I'm stuck with a large "
+"contingent of Empty Scrolls."
+msgstr ""
+"Doch leider setzte ich auf den falschen Zweig und stehe nun mit einem "
+"größeren Kontingent Leerer Schriftrollen da."
+
+#: theTrader.xml:98
+msgid "What do we want with empty scrolls?"
+msgstr "Was wollen wir denn mit leeren Schriftrollen?"
+
+#: theTrader.xml:100
+msgid "Didn't you hear the capital letters?"
+msgstr "Hast du die Großbuchstaben nicht gehört?"
+
+#: theTrader.xml:103
+msgid "What kind of scrolls are they?"
+msgstr "Was sind das für Rollen?"
+
+#: theTrader.xml:106
+msgid "I see you are a man of reason!"
+msgstr "Ihr seid ein Mann von Verstand!"
+
+#: theTrader.xml:108
+msgid "I see you are a woman of reason!"
+msgstr "Ihr seid eine Frau von Verstand!"
+
+#: theTrader.xml:111
+#, fuzzy
+msgid "Much to my regret, an Empty Scroll is only capable of one thing:"
+msgstr ""
+"Eine Leere Schriftrolle ist zu meinem großen Bedauern nur zu einem in der "
+"Lage:"
+
+#: theTrader.xml:112
+#, fuzzy
+msgid "To establish a way through Harad's black abyss."
+msgstr "Einen Weg durch Harads Schwarzen Abgrund schaffen."
+
+#: theTrader.xml:113
+#, fuzzy
+msgid ""
+"To make it worse only to spots of great magical concentration like that big "
+"road shrine over there."
+msgstr ""
+"Und dann auch noch nur zu einer Stelle großer magischer Konzentration wie "
+"dem dicken Wegeschrein da hinten."
+
+#: theTrader.xml:116
+#, fuzzy
+msgid ""
+"Furthermore, a scroll's power is depleted quickly and limited only to one "
+"person."
+msgstr ""
+"Die Macht erschöpft sich außerdem recht schnell und ist auf eine Person "
+"beschränkt."
+
+#: theTrader.xml:117
+msgid "Explain the waypoint system?"
+msgstr "Das Wegpunktesystem erklären?"
+
+#: theTrader.xml:118 theTrader.xml:180
+msgid "Yes"
+msgstr "Ja"
+
+#: theTrader.xml:119 theTrader.xml:181
+msgid "No"
+msgstr "Nein"
+
+#: theTrader.xml:127
+#, fuzzy
+msgid ""
+"When you get close to a waypoint, your aura will summon the familiar spirits "
+"to ignite the shrine's warning flames."
+msgstr ""
+"Wenn Ihr Euch einem Wegeschrein nähert, wird Eure Aura die Schutzgeister "
+"dieses Ortes dazu veranlassen, warnende Flammen zu entzünden."
+
+#: theTrader.xml:128
+#, fuzzy
+msgid "Fear not, they will not harm you in any way, honest."
+msgstr ""
+"Aber keine Angst, sie haben nicht die Macht, Euch wirklich gefährlich zu "
+"werden."
+
+#: theTrader.xml:129
+#, fuzzy
+msgid ""
+"You can be sure that you are able to use the road shrine if you see the "
+"flames."
+msgstr ""
+"Dafür könnt Ihr sicher sein, dass Ihr den Wegeschrein benutzen könnt, wenn "
+"Ihr die Flammen seht."
+
+#: theTrader.xml:130
+#, fuzzy
+msgid ""
+"If you click on a road shrine, your body will be transported through Harad's "
+"domain."
+msgstr ""
+"Wenn Ihr auf einen Wegeschrein klickt, wird Euer Körper sich in Harads "
+"Schwarzen Abgrund verflüchtigen."
+
+#: theTrader.xml:131
+#, fuzzy
+msgid ""
+"In your mind's eye you will see a map with all the waypoints you have "
+"already visited."
+msgstr ""
+"Vor Eurem Auge wird dann eine Karte mit allen Orten erscheinen, die Ihr "
+"bereits besucht habt."
+
+#: theTrader.xml:132
+#, fuzzy
+msgid "These are shown as small yellow points."
+msgstr "Sie werden als ein Kreis dargestellt."
+
+#: theTrader.xml:133
+#, fuzzy
+msgid ""
+"If you have an open portal in the world, that will be shown too, with a red "
+"dot."
+msgstr ""
+"Wenn Ihr ein Portal in der Welt offen habt, wird auch dieses angezeigt, "
+"allerdings durch einen roten Punkt."
+
+#: theTrader.xml:134
+#, fuzzy
+msgid ""
+"Click on one of these symbols, and your body will rematerialize at your "
+"destination, as fast as the wind."
+msgstr ""
+"Klickt auf eines dieser Symbole, und Euer Körper setzt sich in Windeseile am "
+"Zielort wieder zusammen."
+
+#: theTrader.xml:135
+msgid "Hmm. You seem to know a great deal about this, for a trader."
+msgstr ""
+
+#: theTrader.xml:136
+msgid ""
+"You pick these things up in your travels, except for business acumen, "
+"apparently."
+msgstr ""
+
+#: theTrader.xml:137
+msgid "Clearly you are in the wrong line of work."
+msgstr ""
+
+#: theTrader.xml:145
+msgid "Be wary, it is not as safe around Medair as it used to be."
+msgstr ""
+
+#: theTrader.xml:146
+msgid ""
+"Even travelling the roads may prove to be dangerous. Particularly if you are "
+"heading north."
+msgstr ""
+
+#: theTrader.xml:148
+msgid "Goblins and other beasts have stolen quite a lot recently."
+msgstr ""
+"Goblins und ähnliches Gekreuch haben in letzter Zeit allerhand gestohlen."
+
+#: theTrader.xml:149
+#, fuzzy
+msgid ""
+"You may find it convenient to make a short detour to a well-stocked trader."
+msgstr ""
+"Es mag Euch gelegen kommen, einen kurzen Abstecher zu einem gut sortierten "
+"Händler zu unternehmen."
+
+#: theTrader.xml:150
+#, fuzzy
+msgid "Meaning yourself?"
+msgstr "Nämlich Euch?"
+
+#: theTrader.xml:151
+msgid "Actually not, regrettably."
+msgstr "Zu meinem Bedauern nein."
+
+#: theTrader.xml:152
+#, fuzzy
+msgid ""
+"As reported, I invested badly in the Empty Scrolls and have no available "
+"capital."
+msgstr ""
+"Wie bereits berichtet habe ich mich mit den Leeren Schriftrollen übernommen "
+"und derzeit kein freies Kapital."
+
+#: theTrader.xml:153
+msgid ""
+"I'm afraid I have insufficient gold to buy assorted wares from treasure "
+"hunters and scavengers."
+msgstr ""
+
+#: theTrader.xml:155
+#, fuzzy
+msgid "But I can supply you with scrolls for a long time. That's a promise."
+msgstr ""
+"Aber ich kann euch noch sehr lange  versorgen, das verspreche ich Euch."
+
+#: theTrader.xml:156
+#, fuzzy
+msgid "One reason being; customers are rare in these parts."
+msgstr "Schon deswegen, weil Kundschaft in diesen Breiten rar gesät ist."
+
+#: theTrader.xml:157
+msgid "Surely they can be found anywhere, especially in a place like this."
+msgstr ""
+
+#: theTrader.xml:159
+msgid "With all due respect, nobody wanting to buy scrolls from poor traders."
+msgstr ""
+
+#: theTrader.xml:160
+#, fuzzy
+msgid ""
+"Regardless, not many Branded Ones would have listened to me as you have."
+msgstr "Nicht viele Gezeichnete hätten mir so zugehört wie Ihr."
+
+#: theTrader.xml:161
+#, fuzzy
+msgid "Allow me to give you an Empty Scroll as a gift."
+msgstr "Lasst mich Euch eine Leere Schriftrolle als Werbegeschenk überreichen."
+
+#: theTrader.xml:162
+#, fuzzy
+msgid "Grace me with your presence again soon, if you please."
+msgstr "Beehrt mich bald wieder."
+
+#: theTrader.xml:163
+#, fuzzy
+msgid "Wait! Does this thing have to be called Empty Scroll?"
+msgstr "Moment! Muss das Ding denn unbedingt \"Leere Schriftrolle heißen?\""
+
+#: theTrader.xml:165
+msgid "Why not town portal or something like that?"
+msgstr "Warum nicht Stadtportal oder so was?"
+
+#: theTrader.xml:166
+#, fuzzy
+msgid ""
+"Well, they were sold to me as Empty Scrolls, but what you call them is "
+"entirely up to you."
+msgstr ""
+"Nun, sie wurden mir als Leere Schriftrollen verkauft, aber wie Ihr sie "
+"nennt, ist gänzlich Euch überlassen."
+
+#: theTrader.xml:168
+#, fuzzy
+msgid "Why not \"way to the town\" or something like that?"
+msgstr "Warum nicht einfach \"Weg zur Stadt\" oder so?"
+
+#: theTrader.xml:170
+#, fuzzy
+msgid "What kind of name is that supposed to be!?"
+msgstr "Was soll das denn für ein Name sein??"
+
+#: theTrader.xml:172
+msgid "How about: \"town portal\"?"
+msgstr ""
+
+#: theTrader.xml:173
+msgid "Now, now, honorable customers!"
+msgstr "Aber aber, ehrenwerte Kunden!"
+
+#: theTrader.xml:174
+#, fuzzy
+msgid ""
+"They were sold to me as Empty Scrolls, but what you call them is entirely up "
+"to you!"
+msgstr ""
+"Sie wurden mir nur als Leere Schriftrollen verkauft, aber wie ihr sie nennt "
+"ist völlig Euch überlassen!"
+
+#: theTrader.xml:177
+msgid "And how do we use them?"
+msgstr "Und wie benutzt man sie nun?"
+
+#: theTrader.xml:178
+msgid "Like a common potion."
+msgstr "Wie einen ganz normalen Trank."
+
+#: theTrader.xml:179
+msgid "Explain the belt?"
+msgstr "Den Gürtel erklären?"
+
+#: theTrader.xml:187
+#, fuzzy
+msgid "Well, you know about your inventory, right?"
+msgstr "Nun, über Euer Inventar wisst Ihr ja Bescheid, richtig?"
+
+#: theTrader.xml:189
+msgid "I thought so."
+msgstr "Das dachte ich mir."
+
+#: theTrader.xml:190
+#, fuzzy
+msgid ""
+"At the bottom you have the small items tab, click on it to access the three "
+"rows of your small items inventory."
+msgstr ""
+"Ganz unten habt Ihr die kleinen Gegenstände, die in drei Reihen vorhanden "
+"sind."
+
+#: theTrader.xml:192
+msgid "The top row represents your belt."
+msgstr "Die oberste Reihe repräsentiert Euren Gürtel."
+
+#: theTrader.xml:193
+msgid "If you place a potion there, it appears in the belt row."
+msgstr ""
+"Wenn Ihr dort zum Beispiel einen Trank platziert, taucht er auch in der "
+"Gürtelleiste unten auf."
+
+#: theTrader.xml:194
+msgid "I'm sure you noticed, right?"
+msgstr "Das ist euch sicherlich schon aufgefallen?"
+
+#: theTrader.xml:196
+#, fuzzy
+msgid ""
+"Long years on the battlefield have honed my ability to change potions for "
+"similar potions immediately once I have used one."
+msgstr ""
+"Und lange Jahre auf dem Schlachtfeld haben dafür gesorgt, dass ich benutzte "
+"Tränke sofort gegen einen gleichartigen Trank austausche, wenn ich einen "
+"benutze."
+
+#: theTrader.xml:197
+msgid "A useful skill."
+msgstr "Eine nützliche Fähigkeit."
+
+#: theTrader.xml:199
+msgid ""
+" A common skill. Any sell-sword that wants to avoid a quick and meaningless "
+"death knows of it."
+msgstr ""
+
+#: theTrader.xml:201
+msgid "Well, whatever."
+msgstr "Nun, wie de auch sei."
+
+#: theTrader.xml:204
+msgid ""
+"If you want to use a potion you can do so by clicking on it with the right "
+"mouse button in the inventory or the belt."
+msgstr ""
+"Wenn Ihr einen Trank verwenden wollt, könnt Ihr das tun, indem Ihr ihn im "
+"Inventar oder im Gürtel mit rechts anklickt."
+
+#: theTrader.xml:205
+#, fuzzy
+msgid "Alternatively you can select the number of the belt slot it is in."
+msgstr ""
+"Alternativ könnt ihr auch die Ziffer des Gürtelfachs wählen, in dem er liegt."
+
+#: theTrader.xml:206
+msgid ""
+"That is, 1 for the potion on the left, 2 for the second from the left and so "
+"on."
+msgstr ""
+"Also 1 für den Trank ganz links, 2 für den zweiten von Links und so weiter."
+
+#: theTrader.xml:207
+msgid ""
+"This works for all usable items alike, so naturally for the scrolls, too."
+msgstr ""
+"Das funktioniert für alle benutzbaren Gegenstände gleich, also auch für die "
+"Schriftrollen."
+
+#: theTrader.xml:215
+msgid "Oh! It's that simple?"
+msgstr "Oh! So einfach?"
+
+#: theTrader.xml:223
+msgid "Oddball."
+msgstr "Komischer Kauz."
+
+#: theTrader.xml:253
+msgid "joringsbridge"
+msgstr "Joringsbrück"
+
+#: theTrader.xml:263
+msgid "What are you doing here?"
+msgstr "Was tut ihr hier?"
+
+#: theTrader.xml:269
+msgid ""
+"Well, I noticed you were headed north, and I thought it would be convenient "
+"for you to know I'm nearby."
+msgstr ""
+"Oh, nun, mir fiel auf, dass Ihr nach Norden wolltet, und ich dachte mir, "
+"dass es Euch vielleicht gelegen käme, mich in der Nähe zu wissen."
+
+#: theTrader.xml:270
+msgid "Well, you are right, I guess."
+msgstr "Hm, da habt Ihr auch wieder recht."
+
+#: theTrader.xml:276
+msgid "greyCurseCaveFis"
+msgstr "Der Spalt"
+
+#: theTrader.xml:288
+msgid "dwarfenwall"
+msgstr "Zwergentrutz"
+
+#: theTrader.xml:301
+msgid "I see you have reached dwarfenwall safely."
+msgstr "Ich sehe dass ihr Zwergentrutz sicher erreicht habt."
+
+#: theTrader.xml:307
+msgid "How nice to see you have escaped from the caves."
+msgstr "Wie schön, dass Ihr auch aus den Höhlen entkommen seid."
+
+#: theTrader.xml:308
+msgid "No thanks to you. May I continue to offer you my services?"
+msgstr ""
+"Das habe ich Euch zu verdanken. Darf ich Euch weiterhin meine Dienste "
+"anbieten?"
+
+#: theTrader.xml:309
+msgid "Surely. Now that I finally have a sound anchor again."
+msgstr ""
+"Aber sicher doch. Jetzt, wo ich endlich wieder einen vernünftigen Anker habe."
+
+#~ msgid "A moment, dear mister."
+#~ msgstr "Einen Augenblick, ehrenwerter Herr."
+
+#~ msgid ""
+#~ "I'm afraid all I can give you for your wares in gold would be "
+#~ "insufficient."
+#~ msgstr ""
+#~ "Ich fürchte, ich kann euch nur unzureichende Mengen an Gold für eure "
+#~ "Waren bieten."
+
+#~ msgid "They are everywhere."
+#~ msgstr "Das ist sie überall."
+
+#~ msgid "with all due respect: That is a blessing."
+#~ msgstr "Und ohne Euch zu nahe zu treten: Das ist auch gut so."
+
+#~ msgid "More like town portal."
+#~ msgstr "Wohl eher Stadtportal."
+
+#~ msgid "Doesn't everyone learn it who wants to avoid death?"
+#~ msgstr "Lernt die nicht jeder, der den Tod vermeiden will?"
+
+#, fuzzy
+#~ msgid "theTrader"
+#~ msgstr "Der Händler"

@@ -1,0 +1,38 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="CreditsWindow" >
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="Text" Value="Credits" />
+        <Property Name="TitlebarFont" Value="DejaVuSerif-12" />
+        <Property Name="CloseButtonAlignment" Value="1" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="True" />
+        <Property Name="RollUpEnabled" Value="False" />
+        <Property Name="FrameEnabled" Value="True" />
+        <Property Name="TitlebarEnabled" Value="True" />
+        <Property Name="CloseButtonEnabled" Value="False" />
+        <Property Name="Alpha" Value="1.0" />
+        <Property Name="InheritsAlpha" Value="False" />
+
+        <Window Type="SumWarsExtras/ScrollablePaneNoBar" Name="CreditsPane" >
+            <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="ContentPaneAutoSized" Value="True" />
+            <Property Name="UnifiedMaxSize" Value="{{1.0,0},{1.0,0}}" />
+
+            <!-- The top side where the player picture, and main information are displayed -->
+            <Window Type="SWB/StaticText" Name="CreditsText" >
+                <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                <Property Name="UnifiedMaxSize" Value="{{1.0,0},{5.0,0}}" />
+                <Property Name="InheritsAlpha" Value="False" />
+                <Property Name="Alpha" Value="1.0" />
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="BackgroundEnabled" Value="True" />
+                <Property Name="HorzFormatting" Value="HorzCentred" />
+                <Property Name="VertFormatting" Value="TopAligned" />
+                <Property Name="Font" Value="DejaVuSerif-12" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

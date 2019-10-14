@@ -17,7 +17,13 @@
 #define DEBUGCAMERA_H
 
 #include "debugtab.h"
-#include "CEGUI/CEGUIWindow.h"
+
+#ifdef CEGUI_07
+#include <CEGUI/CEGUIWindow.h>
+#else
+#include "CEGUI/Window.h"
+#endif
+
 #include "OgreSceneNode.h"
 
 class DebugCameraTab : public CEGUI::Window, public DebugTab

@@ -28,9 +28,12 @@ NLFGServerNetwork::NLFGServerNetwork(int max_slots)
 
 NetStatus NLFGServerNetwork::init( int auth_port )
 {
-    nlfg_init_server(auth_port);
+    if (nlfg_init_server(auth_port) == 1)
+    {
+    	return NET_OK;
+    }
 
-	return NET_OK;
+	return NET_ERROR;
 }
 
 NLFGServerNetwork::~NLFGServerNetwork()
@@ -40,10 +43,7 @@ NLFGServerNetwork::~NLFGServerNetwork()
 
 void NLFGServerNetwork::kill()
 {
-	if (nlfg_isConnected())
-	{
-		nlfg_disconnect();
-	}
+	nlfg_disconnect();
 	ServerNetwork::kill();
 }
 
@@ -75,17 +75,17 @@ void NLFGServerNetwork::update()
 				case NLFG_CONNECTED:
 					slot = insertNewSlot(packet->addr);
 					pushNewLoginSlot(slot);
-					DEBUG("connection accepted for slot %i", slot);
+					SW_DEBUG("connection accepted for slot %i", slot);
 					break;
 
 				case NLFG_DISCONNECTED:
-					DEBUG("slot %i disconnected",slot);
+					SW_DEBUG("slot %i disconnected",slot);
 					delete m_slots[slot];
 					m_slots[slot]=0;
 					break;
 					
 				default:
-					DEBUG("unknown id: %i",id);
+					SW_DEBUG("unknown id: %i",id);
 					break;
 			}
 

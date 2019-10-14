@@ -1,0 +1,30 @@
+<!--
+Extra images for SumWars
+-->
+<!--
+version:      0.1
+Last change:  $LastChangedDate: 2012-12-25 20:55:19 +0200 (Ma, 25 dec. 2012) $
+-->
+<GUIScheme version="5" name="SumWarsExtras">
+  <Imageset name="SumWarsExtras" filename="SumWarsExtras.imageset" />
+  <Imageset name="ControlPanel" filename="ControlPanel.imageset" /> <!-- TODO: this is also in SWB. Should be in a single place -->
+  <Imageset name="CharScreen" filename="CharacterScreen.imageset" /> <!-- TODO: rename to CharacterScreen -->
+  <Imageset name="Misc" filename="misc.imageset" /> <!-- TODO: rename to CharacterScreen -->
+  <Imageset name="Portrait" filename="portrait.imageset" />
+  <Imageset name="skills" filename="skills.imageset" />
+  <Imageset name="SkillTree" filename="SkillTree.imageset" />
+  <Imageset name="TradeWindow" filename="TradeWindow.imageset" />
+
+  <LookNFeel filename="SumWarsExtras.looknfeel" />
+  <WindowRendererSet filename="CEGUICoreWindowRendererSet" />
+  
+  <FalagardMapping windowType="SumWarsExtras/HPProgressBar" targetType="CEGUI/ProgressBar" renderer="Core/ProgressBar" lookNFeel="SumWarsExtras/HPProgressBar" />
+  <FalagardMapping windowType="SumWarsExtras/HPProgressOrbHighlight" targetType="CEGUI/PushButton" renderer="Core/Button" lookNFeel="SumWarsExtras/HPProgressOrbHighlight" />
+  <FalagardMapping windowType="SumWarsExtras/ScrollablePaneNoBar" targetType="CEGUI/ScrollablePane" renderer="Core/ScrollablePane" lookNFeel="SumWarsExtras/ScrollablePaneNoBar" />
+  <FalagardMapping windowType="SumWarsExtras/VerticalScrollbar"   targetType="CEGUI/Scrollbar" renderer="Core/Scrollbar" lookNFeel="SumWarsExtras/VerticalScrollbar" />
+  <FalagardMapping windowType="SumWarsExtras/HorizontalScrollbar" targetType="CEGUI/Scrollbar" renderer="Core/Scrollbar" lookNFeel="SumWarsExtras/HorizontalScrollbar" />
+  <FalagardMapping windowType="SumWarsExtras/VerticalScrollbarThumb"   targetType="CEGUI/Thumb" renderer="Core/Button" lookNFeel="SumWarsExtras/VerticalScrollbarThumb" />
+  <FalagardMapping windowType="SumWarsExtras/HorizontalScrollbarThumb" targetType="CEGUI/Thumb" renderer="Core/Button" lookNFeel="SumWarsExtras/HorizontalScrollbarThumb" />
+  <FalagardMapping windowType="SumWarsExtras/ImageButton" targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SumWarsExtras/ImageButton" />
+
+</GUIScheme>

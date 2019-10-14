@@ -1,0 +1,21 @@
+<Animations>
+    <AnimationDefinition name="HealthbarAnimation" duration="12.42" replayMode="loop">
+      <Affector property="HighlightModifier" interpolator="Colour">
+          <!--<KeyFrame position="0.0" value="1.0" />
+          <KeyFrame position="0.4" value="0.5" />-->
+          <KeyFrame position="0" value="FFBBA075" />
+          <KeyFrame position="6" value="AABBA075" />
+          <KeyFrame position="12.42" value="FFBBA075" />
+      </Affector>
+      <!--
+      <Affector property="HighlightRotation" interpolator="float">
+          <KeyFrame position="0.0" value="360" />
+          <KeyFrame position="2" value="340" />
+          <KeyFrame position="5" value="260" />
+          <KeyFrame position="8" value="100" />
+          <KeyFrame position="11" value="10" />
+          <KeyFrame position="12.42" value="0" />
+      </Affector>
+      -->
+    </AnimationDefinition>
+</Animations>

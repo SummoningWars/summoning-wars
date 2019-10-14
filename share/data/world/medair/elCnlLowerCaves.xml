@@ -1,0 +1,54 @@
+<World>
+	<!-- Council of Elements, Lower Caves-->
+	<Region id="10" name="elCnlLowerCaves">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="60" dimy="60" area_percent="0.75" complexity="0.4" granularity="6"  ground="cave_ground"/>
+		<WorldPosition world_x="0.65" world_y ="0.41"/>
+		
+		<Music>
+			<Track source="treacherous_paths.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="false" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="labCon:exit_lab" destination_region="elCnlLobby" destination_location="entry_lab" >
+				<Shape shape="RECT" extent_x="1.0" extent_y ="1.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="randomLocation" priority="0" number="1" probability="1"/>
+		</ObjectGroups>
+		<NamedObjectGroups>
+			<NamedObjectGroup name="labCon" object_group="sewerLabConnection" priority="4"/>
+			<NamedObjectGroup name="construction" object_group="lowerCavesConstruction" priority="5"/>
+			<NamedObjectGroup name="storage" object_group="councilStorage" priority="5"/>
+		</NamedObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="caveSlugs" number="10" />
+		</SpawnGroups>
+		<Event trigger="create_region">
+			<Effect>
+				local door = getObjectByNameRef("doorTreasure");
+				scriptobjectvar[door]["locked"] = true;
+				
+				tutorial_tmp.slave4 = createObject("slave_miner","construction:locSlave1",180);
+				tutorial_tmp.slave5 = createObject("slave_worker","construction:locSlave2",180);
+				set(tutorial_tmp.slave5,"layer","nocollision")
+				set(tutorial_tmp.slave5,"height",3)
+				moveObject(tutorial_tmp.slave5,"construction:locSlave2")
+				tutorial_tmp.slave6 = createObject("slave_miner","construction:locSlave3",90);
+				tutorial_tmp.overseer = createObject("slave_overseer","construction:locOverseer", 180);
+			</Effect>
+		</Event>
+	</Region>
+</World>

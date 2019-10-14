@@ -1,0 +1,58 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="QuestInfo" >
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="Alpha" value="1" />
+        <Property name="Text" value="Trade" />
+        <Property name="TitlebarFont" value="SWB-L" />
+        <Property name="CloseButtonAlignment" value="1" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+
+        <Window type="SWB/StaticImage" name="questinfo_aux" >
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+
+            <Window type="SWB/Listbox" name="QuestList" >
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{0.48,0}}" />
+            </Window>
+            
+            <Window type="SWB/Checkbox" name="QuestOpenBox" >
+                <Property name="Area" value="{{0.03,0},{0.502446,0},{0.10,0},{0.555984,0}}" />
+            </Window>
+            <Window type="SWB/StaticText" name="QuestOpenLabel" >
+                <Property name="FrameEnabled" value="False" />
+                <Property name="TextColours" value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                <Property name="Area" value="{{0.11,0},{0.502446,0},{0.32,0},{0.545983,0}}" />
+                <Property name="BackgroundEnabled" value="False" />
+            </Window>
+            <Window type="SWB/Checkbox" name="QuestDoneBox" >
+                <Property name="Area" value="{{0.33,0},{0.502446,0},{0.40,0},{0.555984,0}}" />
+            </Window>
+            <Window type="SWB/StaticText" name="QuestDoneLabel" >
+                <Property name="FrameEnabled" value="False" />
+                <Property name="TextColours" value="tl:FF61B329 tr:FF61B329 bl:FF61B329 br:FF61B329" />
+                <Property name="Area" value="{{0.41,0},{0.506658,0},{0.60,0},{0.543176,0}}" />
+                <Property name="BackgroundEnabled" value="False" />
+            </Window>
+            <Window type="SWB/Checkbox" name="QuestFailedBox" >
+                <Property name="Area" value="{{0.61,0},{0.502446,0},{0.68,0},{0.555984,0}}" />
+            </Window>
+            <Window type="SWB/StaticText" name="QuestFailedLabel" >
+                <Property name="FrameEnabled" value="False" />
+                <Property name="TextColours" value="tl:FFEE3B3B tr:FFEE3B3B bl:FFEE3B3B br:FFEE3B3B" />
+                <Property name="Area" value="{{0.69,0},{0.508062,0},{0.92,0},{0.54458,0}}" />
+                <Property name="BackgroundEnabled" value="False" />
+            </Window>
+            <Window type="SWB/MultiLineEditbox" name="QuestDescription" >
+                <Property name="Text" ></Property>
+                <Property name="MaxTextLength" value="1073741823" />
+                <Property name="Area" value="{{0.0,0},{0.586678,0},{1.0,0},{1.0,0}}" />
+                <Property name="TextParsingEnabled" value="False" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

@@ -1,0 +1,9 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="TradeWindow_Holder" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{0.352,0},{0.86,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="Alpha" Value="1" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+    </Window>
+</GUILayout>

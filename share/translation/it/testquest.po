@@ -1,0 +1,146 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-28 17:02+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: testquest.xml:2
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: testquest.xml:2
+msgid "testquest"
+msgstr "Testquest"
+
+#: testquest.xml:3
+msgid "Test"
+msgstr "Test"
+
+#: testquest.xml:9
+msgid "This is a Test"
+msgstr "Questo è un test"
+
+#: testquest.xml:11
+msgid "surprised"
+msgstr "sorpreso"
+
+#: testquest.xml:13
+msgid "thoughtful"
+msgstr "pensieroso"
+
+#: testquest.xml:16
+msgid "happy"
+msgstr "felice"
+
+#: testquest.xml:19
+msgid "amused"
+msgstr "divertito"
+
+#: testquest.xml:21
+msgid "excited"
+msgstr "eccitato"
+
+#: testquest.xml:23
+msgid "in love"
+msgstr "innamorato"
+
+#: testquest.xml:25
+msgid "bored"
+msgstr "annoiato"
+
+#: testquest.xml:27
+msgid "unhappy"
+msgstr "scontento"
+
+#: testquest.xml:29
+msgid "sad"
+msgstr "triste"
+
+#: testquest.xml:31
+msgid "pain"
+msgstr "sofferente"
+
+#: testquest.xml:33
+msgid "sneer"
+msgstr "disgustato"
+
+#: testquest.xml:35
+msgid "grin"
+msgstr "sghignazzante"
+
+#: testquest.xml:37
+msgid "offended"
+msgstr "offeso"
+
+#: testquest.xml:39
+msgid "threatening"
+msgstr "provocante"
+
+#: testquest.xml:41
+msgid "angry"
+msgstr "adirato"
+
+#: testquest.xml:43
+msgid "shouting a warcry"
+msgstr "mentre emette un'urlo di guerra"
+
+#: testquest.xml:45
+msgid "exhausted"
+msgstr "esausto"
+
+#: testquest.xml:47
+msgid "injured"
+msgstr "ferito"
+
+#: testquest.xml:49
+msgid "deadly injured"
+msgstr "ferito mortalmente"
+
+#: testquest.xml:50
+msgid "afraid"
+msgstr "preoccupato"
+
+#: testquest.xml:51
+msgid "in panic"
+msgstr "nel panico"
+
+#: testquest.xml:52
+msgid "putting up a distance"
+msgstr "tiene le distanze"
+
+#: testquest.xml:53
+msgid "being disgusted"
+msgstr "è disgustato"
+
+#: testquest.xml:54
+msgid "and yet another Test"
+msgstr "e ora un'altro Test"
+
+#: testquest.xml:55
+msgid "again a test"
+msgstr "Ancora un test"
+
+#~ msgid "I am Fenor Marken"
+#~ msgstr "sono Fenor Marken"
+
+#~ msgid "I am the second guard"
+#~ msgstr "Sono la seconda guardia"
+
+#~ msgid "I am the first guard"
+#~ msgstr "Sono la prima guardia"

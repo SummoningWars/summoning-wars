@@ -1,4 +1,5 @@
 #include "clipboard.h"
+#include "config.h"
 
 #include "debug.h"
 
@@ -6,21 +7,24 @@
 #include "tchar.h"
 #endif
 
-template<> SWUtil::Clipboard* Ogre::Singleton<SWUtil::Clipboard>::ms_Singleton = 0;
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
+template<> SWUtil::Clipboard* Ogre::Singleton<SWUtil::Clipboard>::SUMWARS_OGRE_SINGLETON = 0;
 
 namespace SWUtil
 {
 
 	Clipboard::Clipboard ()
 	{
-		DEBUG ("Clipboard costructor!");
+		SW_DEBUG ("Clipboard costructor!");
 	}
 
 
 	bool Clipboard::copy (bool cutInsteadOfCopy) 
 	{
-		DEBUG ("Reached Clipboard copy; cut? %d", cutInsteadOfCopy);
-		CEGUI::Window* sheet = CEGUI::System::getSingleton().getGUISheet();
+		SW_DEBUG ("Reached Clipboard copy; cut? %d", cutInsteadOfCopy);
+		CEGUI::Window* sheet = CEGUIUtility::getRootSheet (CEGUI::System::getSingletonPtr ());
 		if (!sheet) return false;
 
 		CEGUI::Window* active = sheet->getActiveChild();
@@ -85,12 +89,12 @@ namespace SWUtil
 
 	bool Clipboard::paste ()
 	{
-		DEBUG ("Reached clipboard paste...");
+		SW_DEBUG ("Reached clipboard paste...");
 		
 		std::string clipboardContents = _readFromClipboard ();
-		DEBUG ("Got clipboard text to be: %s", clipboardContents.c_str ());
+		SW_DEBUG ("Got clipboard text to be: %s", clipboardContents.c_str ());
 
-		CEGUI::Window* sheet = CEGUI::System::getSingleton().getGUISheet();
+		CEGUI::Window* sheet = CEGUIUtility::getRootSheet (CEGUI::System::getSingletonPtr ());
 		if (!sheet) return false;
 
 		CEGUI::Window* active = sheet->getActiveChild();
@@ -140,7 +144,7 @@ namespace SWUtil
 				edit->setText( newtext.erase( beg, len ) );
 			}
 			
-			DEBUG ("Selection start idx: %d", beg);
+			SW_DEBUG ("Selection start idx: %d", beg);
 
 			// Now paste the new text.
 			CEGUI::String newtext = edit->getText();
@@ -148,9 +152,14 @@ namespace SWUtil
 			edit->setText (newtext);
 
 			// Also update the caret location, so that it is behind the pasted text.
+#ifdef CEGUI_07
 			edit->setCaratIndex (beg + clipboardContents.length ());
+#else
+			// Ok, I won't create a function just for the caret name.
+			edit->setCaretIndex (beg + clipboardContents.length ());
+#endif
 
-			DEBUG ("updated edit box contents");
+			SW_DEBUG ("updated edit box contents");
 		}
 		else 
 		{

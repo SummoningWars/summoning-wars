@@ -1,0 +1,38 @@
+<World>
+	<!-- Graue Himmelsleiter,  Alte Zwergenmine-->
+	<Region id="3010" name="greyOldMine">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+		</Music>
+		
+		<Settings dimx="12" dimy="12" area_percent="0.4" complexity="0.3" granularity="8"  ground="cave_ground"/>
+		<WorldPosition world_x="0.66" world_y ="0.49"/>
+		
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_north" destination_region="greyOldMineL2" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_south" destination_region="aisMineEntry" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<ObjectGroups>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+		<!--<SpawnGroup group_name="bandits_l12_1" number="10"/>-->
+		</SpawnGroups>
+	</Region>
+</World>

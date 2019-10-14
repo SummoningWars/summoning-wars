@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROJECTILEBASE_H
-#define PROJECTILEBASE_H
+#ifndef __SUMWARS_CORE_PROJECTILEBASE_H__
+#define __SUMWARS_CORE_PROJECTILEBASE_H__
 
 #include "hybridimplementation.h"
 
@@ -80,4 +80,4 @@ struct ProjectileBasicData
 
 class Projectile;
 
-#endif
+#endif // __SUMWARS_CORE_PROJECTILEBASE_H__

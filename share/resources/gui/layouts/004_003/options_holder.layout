@@ -1,0 +1,9 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="OptionsWindow_Holder" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.075,0},{0.1,0},{0.925,0},{0.9,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="Alpha" Value="1" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+    </Window>
+</GUILayout>

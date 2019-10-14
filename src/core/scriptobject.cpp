@@ -70,7 +70,7 @@ bool ScriptObject::setValue(std::string valname)
 	{
 		Vector speed = EventSystem::getVector(EventSystem::getLuaState(),-1);
 		lua_pop(EventSystem::getLuaState(), 1);
-		DEBUG("speed %f %f",speed.m_x,speed.m_y);
+		SW_DEBUG("speed %f %f",speed.m_x,speed.m_y);
 		setSpeed(speed);
 		return 1;
 	}

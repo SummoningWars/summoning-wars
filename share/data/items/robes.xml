@@ -1,0 +1,239 @@
+<!-- Mages only-->
+
+<!-- Flickenrobe -->
+<Item type="armor" subtype="rag_rob" name="ragged robe" size="medium">
+	<Image image="rag_rob.png" />
+	<RenderInfo name="robeSimple" />
+	<Attribute
+			level_requirement="1"
+			character_requirement="mage" 
+			min_enchant="30"
+			max_enchant="60"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="10"
+				dresistances_fire="8"
+				dresistances_ice="10"
+				dresistances_air="15"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="1"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Lehrlingsrobe -->
+<Item type="armor" subtype="prentc_rob" name="apprentice robe" size="medium">
+	<Image image="rag_rob.png" />
+	<RenderInfo name="robeSimple" />
+	<Attribute
+			level_requirement="3"
+			character_requirement="mage" 
+			min_enchant="50"
+			max_enchant="100"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="12"
+				dresistances_fire="12"
+				dresistances_ice="16"
+				dresistances_air="20"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="3"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Novizenrobe -->
+<Item type="armor" subtype="novice_rob" name="novice robe" size="medium">
+	<Image image="novice_rob.png" />
+	<RenderInfo name="robeNovice" />
+	<Attribute
+			level_requirement="5"
+			character_requirement="mage" 
+			min_enchant="60"
+			max_enchant="150"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="20"
+				dresistances_fire="21"
+				dresistances_ice="14"
+				dresistances_air="18"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="5"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Alchemistenrobe -->
+<Item type="armor" subtype="alch_rob" name="alchemist robe" size="medium">
+	<Image image="council_rob.png" />
+	<RenderInfo name="counclRob" />
+	<Attribute
+			level_requirement="8"
+			character_requirement="mage" 
+			min_enchant="80"
+			max_enchant="170"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.07"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.08"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="25"
+				dresistances_fire="16"
+				dresistances_ice="16"
+				dresistances_air="16"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="8"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Gelehrtenrobe -->
+<Item type="armor" subtype="sholar_rob" name="scholar robe" size="medium">
+	<Image image="necromancer_robe.png" />
+	<RenderInfo name="necromancerRobe" />
+	<Attribute
+			level_requirement="13"
+			character_requirement="mage" 
+			min_enchant="90"
+			max_enchant="220"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="30"
+				dresistances_fire="12"
+				dresistances_ice="18"
+				dresistances_air="22"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="13"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Magierrobe -->
+<Item type="armor" subtype="mage_rob" name="magus robe" size="medium">
+	<Image image="novice_rob.png" />
+	<RenderInfo name="robeNovice" />
+	<Attribute
+			level_requirement="19"
+			character_requirement="mage" 
+			min_enchant="100"
+			max_enchant="260"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="45"
+				dresistances_fire="20"
+				dresistances_ice="20"
+				dresistances_air="20"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="19"
+			   probability="1.0"
+			   />
+</Item>
+
+<!-- Konzilsrobe -->
+<Item type="armor" subtype="councl_rob" name="council robe" size="medium">
+	<Image image="council_rob.png" />
+	<Mesh file="counclRob" />
+	<Attribute
+			level_requirement="27"
+			character_requirement="mage" 
+			min_enchant="180"
+			max_enchant="360"
+			modchance_health_mod="0.10"
+			modchance_armor_mod="0.08"
+			modchance_resist_phys_mod="0.10"
+			modchance_resist_fire_mod="0.13"
+			modchance_resist_ice_mod="0.14"
+			modchance_resist_air_mod="0.13"
+			modchance_resist_all_mod="0.05"
+			modchance_dexterity_mod="0.13"
+			modchance_willpower_mod="0.14"
+			/>
+	
+	<EquipEffect
+				darmor="45"
+				dresistances_fire="35"
+				dresistances_ice="15"
+				dresistances_air="25"
+				>
+	</EquipEffect>
+	
+	<DropChance
+			   level="25"
+			   probability="1.0"
+			   />
+</Item>

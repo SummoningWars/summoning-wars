@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARTY_H
-#define PARTY_H
+#ifndef __SUMWARS_CORE_PARTY_H__
+#define __SUMWARS_CORE_PARTY_H__
 
 #include "debug.h"
 #include "charconv.h"
@@ -38,7 +38,12 @@ class Party
 	 * \fn Party()
 	 * \brief Konstruktor
 	 */
-	Party(){};
+	Party()
+	:	m_id(0),
+		m_leader_id(0)
+	{
+		
+	};
 
 
 	/**
@@ -247,5 +252,5 @@ class Party
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_PARTY_H__
 

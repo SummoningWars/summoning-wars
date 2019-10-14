@@ -1,0 +1,455 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-09-10 17:14+0300\n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#: joringsbridge.xml:2
+msgid "Joringsbridge"
+msgstr "Джорінгсбрідж"
+
+#: joringsbridge.xml:3 joringsbridge.xml:392
+msgid "joringsbridge"
+msgstr "джорінгсбрідж"
+
+#: joringsbridge.xml:105
+msgid "I'm begging you, my prince!"
+msgstr "Я вас прошу, мій принце!"
+
+#: joringsbridge.xml:106
+msgid "Leave at least a handful of soldiers here."
+msgstr "Залиште тут хоча б жменьку солдатів."
+
+#: joringsbridge.xml:108
+msgid "I can barly guard the village, let alone the surrounding farms!"
+msgstr "Я ледве можу охороняти село, не кажучи вже про прилеглі ферми!"
+
+#: joringsbridge.xml:111
+msgid "Silence!"
+msgstr "Мовчати!"
+
+#: joringsbridge.xml:112
+msgid "..."
+msgstr "..."
+
+#: joringsbridge.xml:113
+msgid "The safety of the country has absolute priority."
+msgstr "Безпека країни має найвищий пріоритет."
+
+#: joringsbridge.xml:114
+msgid "Surely you can handle a hand full of lousy goblins."
+msgstr "Звичайно ви можете впоратися зі жменькою паршивих гоблінів."
+
+#: joringsbridge.xml:115
+msgid "Not to mention you have a mighty summoner at your side."
+msgstr "Не кажучи вже про те, що на вашому боці є могутній заклинач."
+
+#: joringsbridge.xml:116
+msgid "That's more than enough."
+msgstr "Цього більше, ніж досить."
+
+#: joringsbridge.xml:117
+msgid "But the honourable mage has other duties!"
+msgstr "Але почесний маг має інші обов'язки!"
+
+#: joringsbridge.xml:118
+msgid "Quite so!"
+msgstr "Абсолютно вірно!"
+
+#: joringsbridge.xml:119
+msgid ""
+"The pursuit of pathetic goblins is neither my duty nor do I see the point of "
+"such absurd amusement."
+msgstr ""
+"Погоня за жалюгідними гоблінами не входить в мої обов'язки і я не бачу сенсу "
+"в таких абсурдних розвагах."
+
+#: joringsbridge.xml:121
+msgid ""
+"What would you do were the village to be attacked while I was on a fruitless "
+"hunt for goblins?"
+msgstr ""
+"Що б ви зробили, якби село піддалось нападу в той час як я був на "
+"безплідному полюванні на гоблінів?"
+
+#: joringsbridge.xml:122
+msgid "And you really have no time to help out a bit?"
+msgstr "І ви дійсно не маєте часу, щоб трохи нам допомогти?"
+
+#: joringsbridge.xml:123
+msgid "My humble apologies, but the council has given me very important tasks."
+msgstr "Мої скромні вибачення, але Рада дала мені дуже важливі завдання."
+
+#: joringsbridge.xml:124
+msgid "As much as I'd like to help, I don't have any room for such a thing."
+msgstr "Як я б не хотів допомогти, у мене немає місця для такої речі."
+
+#: joringsbridge.xml:125
+msgid ""
+"But may I use this unique opportunity to congratulate you on your upcoming "
+"wedding with the archmage Ireana of"
+msgstr ""
+"Але я можу використати цю унікальну можливість щоб привітати Вас з майбутнім "
+"весіллям з архимагою Іреаною"
+
+#: joringsbridge.xml:126
+msgid "Thanks, that is enough."
+msgstr "Спасибі, цього достатньо."
+
+#: joringsbridge.xml:133
+msgid "Sergeant Lutterer"
+msgstr "Сержант Люттерер"
+
+#: joringsbridge.xml:137
+msgid "Self-satisfied parasite, that mage!"
+msgstr "Самовдоволений паразит, той маг!"
+
+#: joringsbridge.xml:139
+msgid ""
+"I just hope the kingdom has big granaries, if the greenskins torch the "
+"fields."
+msgstr ""
+"Я лише сподіваюся, що королівство має великі зерносховища на випадок, якщо "
+"зеленошкірі запалять поля."
+
+#: joringsbridge.xml:140
+msgid "The presence of the mage alone will drive out every goblin!"
+msgstr "Лише одна наявність мага буде виганяти кожного гобліна!"
+
+#: joringsbridge.xml:141
+msgid "Stop bugging the prince with your incompetence."
+msgstr "Досить доставати принца твоїм незнанням."
+
+#: joringsbridge.xml:142
+msgid "!"
+msgstr "!"
+
+#: joringsbridge.xml:143
+msgid "Don't you have something better to do?"
+msgstr "У тебе немає іншої роботи?"
+
+#: joringsbridge.xml:145
+msgid "And they say, my kind is cold-hearted..."
+msgstr "І вони кажуть, що мій рід є грубосерденим..."
+
+#: joringsbridge.xml:147
+msgid "And they say, our kind is cold-hearted..."
+msgstr "І вони кажуть, що наш рід є грубосерденим..."
+
+#: joringsbridge.xml:169
+msgid "Guards! Guards!"
+msgstr "Охорона! Охорона!"
+
+#: joringsbridge.xml:175
+msgid "Help! My farm is being raided by goblins!"
+msgstr "Допоможіть! На мою ферму напали гобліни!"
+
+#: joringsbridge.xml:176
+msgid "My family..."
+msgstr "Моя сім'я..."
+
+#: joringsbridge.xml:185
+msgid "Take the fool away!"
+msgstr "Заберіть звідси цього дурня!"
+
+#: joringsbridge.xml:186
+msgid "The prince has more important matters to tend to."
+msgstr "Принц повинен вирішувати важливіші питання."
+
+#: joringsbridge.xml:189
+msgid "Wait!"
+msgstr "Зачекайте!"
+
+#: joringsbridge.xml:190
+msgid "What happened?"
+msgstr "Що трапилося?"
+
+#: joringsbridge.xml:192
+msgid "Forgive me, my prince, but my wife and my children are still there."
+msgstr "Прости мене, мій принце, але моя дружина і мої діти все ще там."
+
+#: joringsbridge.xml:193
+msgid "I don't know how long the house will withstand them."
+msgstr "Я не знаю, як довго їх хатина ще витримає."
+
+#: joringsbridge.xml:194
+msgid "I beg of you: help me!"
+msgstr "Я прошу вас: допоможіть мені!"
+
+#: joringsbridge.xml:196
+msgid "We..."
+msgstr "Ми..."
+
+#: joringsbridge.xml:197
+msgid "My prince!"
+msgstr "Мій принце!"
+
+#: joringsbridge.xml:198
+msgid "We don't have time!"
+msgstr "У нас немає часу!"
+
+#: joringsbridge.xml:199
+msgid "The demons are at the northern border!"
+msgstr "Демони на північному кордоні!"
+
+#: joringsbridge.xml:201
+msgid "I know!"
+msgstr "Я знаю!"
+
+#: joringsbridge.xml:204
+msgid "2000 gold pieces for everyone who is willing to help this humble man!"
+msgstr "2000 золотих тому, хто бажає допомогти цьому скромному чоловікові!"
+
+#: joringsbridge.xml:205
+msgid "ts"
+msgstr "тс"
+
+#: joringsbridge.xml:208
+msgid "2000 gold pieces."
+msgstr "2000 золотих."
+
+#: joringsbridge.xml:210
+msgid "2000 for every one."
+msgstr "2000 для кожного."
+
+#: joringsbridge.xml:212
+msgid "That could almost be worth the trouble."
+msgstr "Це того вартує."
+
+#: joringsbridge.xml:240 joringsbridge.xml:251
+msgid "Don't even think about it!"
+msgstr "Навіть не думайте про це!"
+
+#: joringsbridge.xml:241
+msgid "You are to go to Dwarfenwall immediately!"
+msgstr "Ви повинні негайно йти в Дорфенваль!"
+
+#: joringsbridge.xml:242
+msgid "Where do you come from? Didn't I exclude you?"
+msgstr "Звідки ти взявся? Хіба я тебе не вигнав?"
+
+#: joringsbridge.xml:243 joringsbridge.xml:254
+msgid "Your trifles cannot stop me."
+msgstr "Ваші дрібниці не можуть зупинити мене."
+
+#: joringsbridge.xml:244
+msgid "The blood always works..."
+msgstr "Кров завжди працює..."
+
+#: joringsbridge.xml:245
+msgid "Ah!"
+msgstr "Ай!"
+
+#: joringsbridge.xml:246
+msgid ""
+"The mage over there has another of those crystals on his staff, hasn't he?"
+msgstr "Отой маг має ще один з тих кристалів на його палиці, чи не так?"
+
+#: joringsbridge.xml:247
+msgid "You people are really unnerving somehow."
+msgstr "Люди, ви мене нервуєте."
+
+#: joringsbridge.xml:248
+msgid "Who cares what you think? Let the peasant be a peasant and get moving!"
+msgstr ""
+"Кого хвилює, що ти думаєш? Нехай селянин буде селянином і хай йде геть!"
+
+#: joringsbridge.xml:249 joringsbridge.xml:258
+msgid "Well..."
+msgstr "Ну..."
+
+#: joringsbridge.xml:252
+msgid "You have to go to Dwarfenwall immediately!"
+msgstr "Ви повинні негайно піти в Дорфенваль!"
+
+#: joringsbridge.xml:253
+msgid "Where did you pop out from? Didn't we exclude you?"
+msgstr "Звідки ти вискочив? Хіба я тебе не вигнав?"
+
+#: joringsbridge.xml:255
+msgid "Rubbish! Take a look at the crystal on the mege's staff."
+msgstr "Дурниці! Поглянь на кристал на палиці мага."
+
+#: joringsbridge.xml:256
+msgid "Looks like our model, doesn't it?"
+msgstr "Схоже наша модель, чи не так?"
+
+#: joringsbridge.xml:257
+msgid "Whatever. Get moving!"
+msgstr "Яка різниця. Вперед!"
+
+#: joringsbridge.xml:261
+msgid "Help the peasant?"
+msgstr "Допомогти селянину?"
+
+#: joringsbridge.xml:262
+msgid "Yes"
+msgstr "Так"
+
+#: joringsbridge.xml:263
+msgid "No"
+msgstr "Ні"
+
+#: joringsbridge.xml:277
+msgid "Only a stone would watch deedless."
+msgstr "Лише камінь нічого не зробить."
+
+#: joringsbridge.xml:278
+msgid "Who knows how many sou... goblins are walking around there!"
+msgstr "Хтозна, скільки ду... гоблінів там тиняються!"
+
+#: joringsbridge.xml:279
+msgid "And we get money. Two birds with one stone."
+msgstr "І ми отримаємо гроші. Двох зайців одним пострілом."
+
+#: joringsbridge.xml:282 joringsbridge.xml:287
+msgid "What do you think you're doing? You are to go to Dwarfenwall!"
+msgstr "Як ви думаєте, що ви зробите? Ви повинні йти в Доріенваль!"
+
+#: joringsbridge.xml:283
+msgid "When I get there was never part of the deal!"
+msgstr "Коли я прийшов, це не входило в угоду!"
+
+#: joringsbridge.xml:284
+msgid "If the city is lost, I'll just conquer it back!"
+msgstr "Якщо місто втратять, я просто відвоюю його назад!"
+
+#: joringsbridge.xml:286
+msgid "So it's decided."
+msgstr "Так що це вирішено."
+
+#: joringsbridge.xml:288
+msgid "When we get there was never part of the deal!"
+msgstr "Коли ми прийшли, це не входило в угоду!"
+
+#: joringsbridge.xml:289
+msgid "If the city is lost, we'll just conquer it back!"
+msgstr "Якщо місто втратять, ми просто відвоюємо його назад!"
+
+#: joringsbridge.xml:290
+msgid "Yes, show him who's in charge!"
+msgstr "Так, покажи йому хто головний!"
+
+#: joringsbridge.xml:319
+msgid "Prince, I take the job!"
+msgstr "Принц, я берусь за цю роботу!"
+
+#: joringsbridge.xml:321
+msgid "Prince, we take the job!"
+msgstr "Принц, ми беремось за цю роботу!"
+
+#: joringsbridge.xml:324
+msgid "By Marek!"
+msgstr "За Марека!"
+
+#: joringsbridge.xml:325
+msgid "Who is that?"
+msgstr ""
+
+#: joringsbridge.xml:334
+msgid "Aren't you the... auxiliary forces of the council? ##solo"
+msgstr "Хіба ти не... допоміжна сила Ради? ##solo"
+
+#: joringsbridge.xml:336
+msgid "Aren't you the... auxiliary forces of the council?"
+msgstr "Хіба ви не... допоміжні сили Ради?"
+
+#: joringsbridge.xml:337
+msgid "... under the heel of a certain Soren Airpaw, at your service."
+msgstr "... під п'ятою деякого Сорена Повітряної Лапки, до ваших послуг."
+
+#: joringsbridge.xml:338
+msgid "Windclaw, you fool!"
+msgstr "Вітряний Пазур, дурень!"
+
+#: joringsbridge.xml:339
+msgid "Oops..."
+msgstr "Оой..."
+
+#: joringsbridge.xml:343
+msgid "Is that a problem for you?"
+msgstr "Це є для вас проблемою?"
+
+#: joringsbridge.xml:345
+msgid "... probably not. Alright, even if I don't like it."
+msgstr "... ймовірно ні. Добре, навіть якщо мені це не подобається."
+
+#: joringsbridge.xml:347
+msgid "Are you sure?"
+msgstr "Ви впевнені?"
+
+#: joringsbridge.xml:348
+msgid "What if they kill the peasants along?"
+msgstr "Що робити, якщо вони за одно вб'ють селян?"
+
+#: joringsbridge.xml:351 joringsbridge.xml:371
+msgid "Sergeant!"
+msgstr "Сержанте!"
+
+#: joringsbridge.xml:352
+msgid ""
+"Only hand over the gold if the goblins are driven off and the peasants are "
+"alive in the end."
+msgstr "Видасьте золото, лише якщо виженуть гоблів і селяни лишуться живі."
+
+#: joringsbridge.xml:353
+msgid "Otherwise, do your work diligently."
+msgstr "Інакше, робіть свою сумлінну роботу."
+
+#: joringsbridge.xml:356
+msgid "As you wish, my Prinz."
+msgstr "Як скажете, мій Принце."
+
+#: joringsbridge.xml:358
+msgid "That much distrust is really unnecessary during a war. "
+msgstr "Так багато недовіри дійсно непотрібно під час війни."
+
+#: joringsbridge.xml:368
+msgid "Nobody?"
+msgstr "Ніхто?"
+
+#: joringsbridge.xml:375
+msgid "My prince?"
+msgstr "Мій принц?"
+
+#: joringsbridge.xml:377
+msgid "I am true to my word."
+msgstr "Я дотримуюсь свого слова."
+
+#: joringsbridge.xml:378
+msgid "Hand over the gold, if you find someone who helps you after all."
+msgstr "Видай золото, якщо ти знайдеш когось на допомогу."
+
+#: joringsbridge.xml:380
+msgid "As you wish, my prince."
+msgstr "Як скажете, мій принце."
+
+#: joringsbridge.xml:383
+msgid "I'm sorry, good man."
+msgstr "Мені дуже шкода, хороший чоловік."
+
+#: joringsbridge.xml:384
+msgid "I will pray that your family is safe long enough."
+msgstr "Я буду молитися, що ваша сім'я була в безпеці якнайдовше."
+
+#, fuzzy
+#~ msgid "sergeant"
+#~ msgstr "Сержанте!"
+
+#, fuzzy
+#~ msgid "prince"
+#~ msgstr "Мій принце!"

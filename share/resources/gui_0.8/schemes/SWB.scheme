@@ -1,0 +1,80 @@
+<GUIScheme version="5" name="SWB">
+  <Imageset name="SWB" filename="SWB.imageset" />
+  <Imageset name="SWBCursors" filename="SWBCursors.imageset" />
+  <Imageset name="ControlPanel" filename="ControlPanel.imageset" />
+  <Imageset name="Inventory" filename="Inventory.imageset" />
+  <Imageset name="MainMenu" filename="MainMenu.imageset" />
+  <Imageset name="OptionsWindow" filename="OptionsWindow.imageset" />
+
+  <Font name="DejaVuSans-10" filename="DejaVuSans-10.font" />
+  <Font name="DejaVuSerif-8" filename="DejaVuSerif-8.font" />
+  <Font name="DejaVuSerif-10" filename="DejaVuSerif-10.font" />
+  <Font name="DejaVuSerif-12" filename="DejaVuSerif-12.font" />
+  <Font name="DejaVuSerif-16" filename="DejaVuSerif-16.font" />
+
+  <Font name="SWB-XS" filename="SWB-XS.font" />
+  <Font name="SWB-S" filename="SWB-S.font" />
+  <Font name="SWB-M" filename="SWB-M.font" />
+  <Font name="SWB-L" filename="SWB-L.font" />
+  <Font name="SWB-XL" filename="SWB-XL.font" />
+
+  <LookNFeel filename="SWB.looknfeel" />
+  <WindowRendererSet filename="CEGUICoreWindowRendererSet" />
+  <FalagardMapping windowType="SWB/BackgroundButton" targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SWB/BackgroundButton" />
+  <FalagardMapping windowType="SWB/Button"      targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SWB/Button" />
+  <FalagardMapping windowType="SWB/Checkbox"    targetType="CEGUI/ToggleButton"    renderer="Core/ToggleButton" lookNFeel="SWB/Checkbox" />
+  <FalagardMapping windowType="SWB/ComboDropList" targetType="CEGUI/ComboDropList" renderer="Core/Listbox" lookNFeel="SWB/ComboDropList" />
+  <FalagardMapping windowType="SWB/ComboEditbox"  targetType="CEGUI/Editbox"   renderer="Core/Editbox" lookNFeel="SWB/ComboEditbox" />
+  <FalagardMapping windowType="SWB/Combobox"  targetType="CEGUI/Combobox"   renderer="Core/Default" lookNFeel="SWB/Combobox" />
+  <FalagardMapping windowType="SWB/DoubleImageButton" targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SWB/DoubleImageButton" />
+  <FalagardMapping windowType="SWB/Editbox"          targetType="CEGUI/Editbox"          renderer="Core/Editbox"          lookNFeel="SWB/Editbox" />
+  <FalagardMapping windowType="SWB/FrameWindow"  targetType="CEGUI/FrameWindow" renderer="Core/FrameWindow"  lookNFeel="SWB/FrameWindow" />
+  <FalagardMapping windowType="SWB/GlyphButton" targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SWB/GlyphButton" />
+  <FalagardMapping windowType="SWB/GlyphButtonCombo" targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SWB/GlyphButtonCombo" />
+  <FalagardMapping windowType="SWB/GroupBox" targetType="CEGUI/GroupBox"   renderer="Core/Default"   lookNFeel="SWB/GroupBox" />
+  <FalagardMapping windowType="SWB/HorizontalScrollbar" targetType="CEGUI/Scrollbar" renderer="Core/Scrollbar" lookNFeel="SWB/HorizontalScrollbar" />
+  <FalagardMapping windowType="SWB/HorizontalScrollbarThumb" targetType="CEGUI/Thumb" renderer="Core/Button" lookNFeel="SWB/HorizontalScrollbarThumb" />
+  <FalagardMapping windowType="SWB/ImageButton" targetType="CEGUI/PushButton"  renderer="Core/Button"       lookNFeel="SWB/ImageButton" />
+  <FalagardMapping windowType="SWB/ImageCheckbox"    targetType="CEGUI/Checkbox"    renderer="Core/ToggleButton" lookNFeel="SWB/ImageCheckbox" />
+  <FalagardMapping windowType="SWB/ItemListbox" targetType="CEGUI/ItemListbox" renderer="Core/ItemListbox" lookNFeel="SWB/ItemListbox" />
+  <FalagardMapping windowType="SWB/Label" targetType="DefaultWindow" renderer="Falagard/Default" lookNFeel="SWB/Label" />
+  <FalagardMapping windowType="SWB/Listbox"           targetType="CEGUI/Listbox"           renderer="Core/Listbox"           lookNFeel="SWB/Listbox" />
+  <FalagardMapping windowType="SWB/ListboxItem" targetType="CEGUI/ItemEntry"   renderer="Core/ItemEntry"   lookNFeel="SWB/ListboxItem" />
+  <FalagardMapping windowType="SWB/ListHeader"        targetType="CEGUI/ListHeader"        renderer="Core/ListHeader"        lookNFeel="SWB/ListHeader" />
+  <FalagardMapping windowType="SWB/ListHeaderSegment" targetType="CEGUI/ListHeaderSegment" renderer="Core/ListHeaderSegment" lookNFeel="SWB/ListHeaderSegment" />
+  <FalagardMapping windowType="SWB/MultiColumnList"   targetType="CEGUI/MultiColumnList"   renderer="Core/MultiColumnList"   lookNFeel="SWB/MultiColumnList" />
+  <FalagardMapping windowType="SWB/MultiLineEditbox" targetType="CEGUI/MultiLineEditbox" renderer="Core/MultiLineEditbox" lookNFeel="SWB/MultiLineEditbox" />
+  <FalagardMapping windowType="SWB/ProgressBar"          targetType="CEGUI/ProgressBar" renderer="Core/ProgressBar" lookNFeel="SWB/ProgressBar" />
+  <FalagardMapping windowType="SWB/RadioButton" targetType="CEGUI/RadioButton" renderer="Core/ToggleButton" lookNFeel="SWB/Checkbox" />
+  <FalagardMapping windowType="SWB/RoundedPanelFrame"      targetType="DefaultWindow"  renderer="Core/Button"       lookNFeel="SWB/RoundedPanelFrame" />
+  <FalagardMapping windowType="SWB/ScrollablePane" targetType="CEGUI/ScrollablePane" renderer="Core/ScrollablePane" lookNFeel="SWB/ScrollablePane" />
+  <FalagardMapping windowType="SWB/SimplePanelFrame"      targetType="DefaultWindow"  renderer="Core/Button"       lookNFeel="SWB/SimplePanelFrame" />
+  <FalagardMapping windowType="SWB/Spinner" targetType="CEGUI/Spinner" renderer="Core/Default" lookNFeel="SWB/Spinner" />
+  <FalagardMapping windowType="SWB/StaticImage" targetType="DefaultWindow" renderer="Core/StaticImage" lookNFeel="SWB/StaticImage" />
+  <FalagardMapping windowType="SWB/StaticText"  targetType="DefaultWindow" renderer="Core/StaticText"  lookNFeel="SWB/StaticText" />
+  <FalagardMapping windowType="SWB/SystemButton" targetType="CEGUI/PushButton"  renderer="Core/Button" lookNFeel="SWB/GlyphButton" />
+  <FalagardMapping windowType="SWB/TabButton"  targetType="CEGUI/TabButton"  renderer="Core/TabButton"  lookNFeel="SWB/TabButton" />
+  <FalagardMapping windowType="SWB/TabButtonBotOnly"  targetType="CEGUI/TabButton"  renderer="Core/TabButton"  lookNFeel="SWB/TabButtonBotOnly" />
+  <FalagardMapping windowType="SWB/TabButtonPane"    targetType="DefaultWindow"    renderer="Core/Default"    lookNFeel="SWB/TabButtonPane" />
+  <FalagardMapping windowType="SWB/TabButtonTopOnly"  targetType="CEGUI/TabButton"  renderer="Core/TabButton"  lookNFeel="SWB/TabButtonTopOnly" />
+  <FalagardMapping windowType="SWB/TabControl" targetType="CEGUI/TabControl" renderer="Core/TabControl" lookNFeel="SWB/TabControl" />
+  <FalagardMapping windowType="SWB/TabContentPane"    targetType="DefaultWindow"    renderer="Core/Default"    lookNFeel="SWB/TabContentPane" />
+  <FalagardMapping windowType="SWB/TimerProgressBar"          targetType="CEGUI/ProgressBar" renderer="Core/ProgressBar" lookNFeel="SWB/TimerProgressBar" />
+  <FalagardMapping windowType="SWB/Titlebar"     targetType="CEGUI/Titlebar"    renderer="Core/Titlebar"     lookNFeel="SWB/Titlebar" />
+  <FalagardMapping windowType="SWB/VerticalScrollbar"   targetType="CEGUI/Scrollbar" renderer="Core/Scrollbar" lookNFeel="SWB/VerticalScrollbar" />
+  <FalagardMapping windowType="SWB/VerticalScrollbarThumb"   targetType="CEGUI/Thumb" renderer="Core/Button" lookNFeel="SWB/VerticalScrollbarThumb" />
+  <FalagardMapping windowType="SWB/XPProgressBar"          targetType="CEGUI/ProgressBar" renderer="Core/ProgressBar" lookNFeel="SWB/ProgressBar" />
+
+  <FalagardMapping windowType="SWB/Tooltip" targetType="CEGUI/Tooltip" renderer="Core/Tooltip" lookNFeel="SWB/Tooltip" />
+  <FalagardMapping windowType="SWB/CustomTooltip" targetType="CEGUI/Tooltip" renderer="Core/Tooltip" lookNFeel="SWB/CustomTooltip" />
+  <FalagardMapping windowType="SumwarsTooltip" targetType="CEGUI/Tooltip" renderer="Core/Tooltip" lookNFeel="SWB/CustomTooltip" />
+
+</GUIScheme>
+<!--
+SWB - SumWarsBase
+SWB is licensed under the terms of the LGPL license.
+-->
+<!--
+version:      0.1
+Last change:  $LastChangedDate: 2012-12-25 20:55:19 +0200 (Ma, 25 dec. 2012) $
+-->

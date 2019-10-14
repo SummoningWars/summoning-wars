@@ -1,0 +1,288 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-11-01 \n"
+"Last-Translator: kalimgard <kalimgard@users.sourceforge.net>\n"
+"Language-Team: german <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: scout.xml:2
+msgid "The wounded scout"
+msgstr "Der verletzte Späher"
+
+#: scout.xml:5
+msgid ""
+"I rescued a scout and hopefully gained some goodwill from the local militia. "
+"Whatever good that will do."
+msgstr ""
+"Ich habe einen Späher gerettet und hoffentlich etwas Wohlwollen von der "
+"örtlichen Miliz gewonnen, wofür auch immer das gut ist."
+
+#: scout.xml:7
+msgid ""
+"I really stumbled across a scout in the goblin infested caves west of "
+"Dwarfenwall. He is wounded, lost his gear to some spiders and asked me to "
+"fix it for him. I really wonder if I should do this... then again it would "
+"be an excuse to venture deeper into the caves that are obviously not under "
+"control by the undead."
+msgstr ""
+"Ich bin tatsächlich in den Goblinverseuchten Höhlen westlich von "
+"Zwergentrutz über einen Späher gestolpert. Er ist verletzt, hat seine "
+"Ausrüstung an einige Spinnen verloren und mich gebeten, das wieder in "
+"Ordnung zu bringen. Ich frage mich wirklich, ob ich das tun sollte... "
+"andererseits könnte das eine Ausrede sein, tiefer in die Höhlen zu gehen, "
+"die eindeutig nicht unter untoter Kontrolle stehen."
+
+#: scout.xml:11
+msgid "greyCurseCave"
+msgstr "Verfluchte Höhle"
+
+#: scout.xml:23
+msgid "Wounded Scout"
+msgstr "Verletzter Späher"
+
+#: scout.xml:24
+msgid "Are you alive?"
+msgstr "Lebst du?"
+
+#: scout.xml:30
+msgid "Hey, are you alright?"
+msgstr "Hey, geht es dir gut?"
+
+#: scout.xml:31
+msgid "Does it look... 'alright' to you?"
+msgstr "Sieht das... 'gut' für dich... aus?"
+
+#: scout.xml:32
+msgid "Pretty much, yes."
+msgstr "Eigentlich schon."
+
+#: scout.xml:33
+msgid "You can still talk, right?"
+msgstr "Du kannst immer noch reden, oder?"
+
+#: scout.xml:34
+msgid ""
+"Yeah, right... now, when you're done laughing... maybe you could help me?"
+msgstr ""
+"Ja, klar... wenn du jetzt mit lachen... fertig bist... kannst du mir "
+"vielleicht... helfen?"
+
+#: scout.xml:35
+msgid "I guess I could patch you up, but I can't carry you out of here."
+msgstr ""
+"Ich schätze, ich könnte dich zusammenflicken, aber ich kann dich hier nicht "
+"raus tragen."
+
+#: scout.xml:36
+msgid ""
+"Where I'm headed you will most certainly die a quick and meaningless death."
+msgstr ""
+"Da wo ich hingehe wirst du höchstwahrscheinlich einen schnellen und "
+"unnötigen Tod sterben."
+
+#: scout.xml:37
+msgid "I can... watch my own back..."
+msgstr "Ich kann... auf mich selbst aufpassen..."
+
+#: scout.xml:38
+msgid "Most of the time... at least."
+msgstr "Meistens... jedenfalls."
+
+#: scout.xml:39
+msgid "But spying on the undead... evading... those blasted goblins..."
+msgstr "Aber den Untoten nachspionieren... verdammten Goblins... ausweichen..."
+
+#: scout.xml:41
+msgid "I got a little... careless."
+msgstr "Bin etwas... unvorsichtig geworden."
+
+#: scout.xml:42
+msgid "West of here... there's a cave... pretty deep inside..."
+msgstr "Westlich von hier... da ist eine Höhle... ziemlich tief drinnen..."
+
+#: scout.xml:43
+msgid ""
+"Lot's of wolves... but a nest of spiders, too... thought I had... it under "
+"control"
+msgstr ""
+"Viele Wölfe... aber auch ein Nest Spinnne... dachte ich hätte es... unter "
+"Kontrolle."
+
+#: scout.xml:44
+msgid ""
+"really big one... there. Spider, I mean... got me good... lost my gear... "
+"but got away... somehow"
+msgstr ""
+"wirklich große da... Spinne, meine ich... hat mich erwischt... verlor meine "
+"Ausrüstung... aber bin irgendwie... entkommen."
+
+#: scout.xml:45
+msgid ""
+"The venom... can't move at all... anymore... I had an antidote in my pack..."
+msgstr ""
+"Das Gift... kann mich nicht mehr... bewegen... hatte ein Gegengift in meinem "
+"Rucksack..."
+
+#: scout.xml:46
+msgid "So... if you could get... me my gear, I... would be good to go again..."
+msgstr ""
+"Also... wenn du mein... Zeug besorgen könntest... wäre schnell wieder... auf "
+"den Beinen..."
+
+#: scout.xml:47
+msgid "If you're... not afraid... that is."
+msgstr "Wenn du... keine Angst hast... heißt das."
+
+#: scout.xml:48
+msgid "You have a strange manner of asking for favors."
+msgstr "Du hast eine seltsame Art, um einen Gefallen zu bitten."
+
+#: scout.xml:49
+msgid "But since I don't have to carry you to safety, I guess it is allright."
+msgstr ""
+"Aber da ich dich nicht in Sicherheit bringen kann schätze ich, es ist okay."
+
+#: scout.xml:51
+msgid "This wouldn't happen to be your stuff, would it?"
+msgstr "Das ist nicht zufällig dein Zeug?"
+
+#: scout.xml:52
+msgid "You already... found it?"
+msgstr "Du hast es... schon gefunden?"
+
+#: scout.xml:55
+msgid "Thanks..."
+msgstr "Danke..."
+
+#: scout.xml:60 scout.xml:75
+msgid "Still alive?"
+msgstr "Immer noch am Leben?"
+
+#: scout.xml:66 scout.xml:81
+msgid "Do you... have my gear?"
+msgstr "Hast du... meine Ausrüstung?"
+
+#: scout.xml:67
+msgid "Not yet, no."
+msgstr "Noch nicht, nein."
+
+#: scout.xml:68
+msgid ""
+"Shame. It seems I'm already capable of... being paralyzed... without your "
+"help."
+msgstr "Schade. Kann auch ganz gut... ohne deine Hilfe... gelähmt sein."
+
+#: scout.xml:69
+msgid ""
+"Thanks for... checking back on me though. I'll be here... if you need me."
+msgstr "Aber danke... fürs überprüfen. Ich bin hier... falls du mich brauchst."
+
+#: scout.xml:70
+msgid "You are kind of messed up, you know that?"
+msgstr "Du bist irgendwie schräg, weißt du das?"
+
+#: scout.xml:71
+msgid "..."
+msgstr "..."
+
+#: scout.xml:82
+msgid "Here it is."
+msgstr "Hier ist es."
+
+#: scout.xml:89
+msgid "good... now, blue potion"
+msgstr "Gut... jetzt, blauer Trank."
+
+#: scout.xml:90
+msgid "A blue potion?"
+msgstr "Ein blauer Trank?"
+
+#: scout.xml:91
+msgid "You do realize there is at least a score of 'blue' potions here?"
+msgstr ""
+"Du bist dir darüber im klaren, dass es hier drin mindestens zwei Dutzend "
+"'blaue' Tränke gibt?"
+
+#: scout.xml:92
+msgid ""
+"They just... turn out that... way everytime... it's the one... with the "
+"light shade of turquoise."
+msgstr ""
+"Die werden... einfach immer so... es ist der... mit der türkisen "
+"Schattierung."
+
+#: scout.xml:94
+msgid "No... too... light blue"
+msgstr "Nein... zu hell... blau"
+
+#: scout.xml:96
+msgid "That's... it"
+msgstr "Das ist... er"
+
+#: scout.xml:98
+msgid "Finally!"
+msgstr "Endlich!"
+
+#: scout.xml:99
+msgid "Remember me not to kill you after all the trouble I went through."
+msgstr "Erinnere mich daran, dich nach all der Mühe nicht umzubringen."
+
+#: scout.xml:100
+msgid "Gladly. Really, thank you for saving my hide."
+msgstr "Mit Freuden. Wirklich, danke das du meine Haut gerettest hast."
+
+#: scout.xml:101
+msgid "You best stay out of trouble."
+msgstr "Du hälst dich besser von Ärger fern."
+
+#: scout.xml:102
+msgid ""
+"Because I seriously do NOT want to rummage through your happy collection of "
+"identical looking special-purpose-potions."
+msgstr ""
+"Weil ich nämlich KEINE Lust habe, mich noch einmal durch deine fröhliche "
+"Sammlung identisch aussehender Spezialtränke zu wühlen."
+
+#: scout.xml:103
+msgid "Sorry about that. Normally I'm the only one who has to keep them apart."
+msgstr ""
+"Das tut mir Leid. Normalerweise bin ich der einzige, der sie "
+"auseinanderhalten muss."
+
+#: scout.xml:104
+msgid "Allright. Now that this is done, I will be on my way."
+msgstr ""
+"Also gut. Da das jetzt vorbei ist, werde ich mich wieder auf den Weg machen."
+
+#: scout.xml:105
+msgid ""
+"I will rest a little more and then be on my way too, but in the other "
+"direction."
+msgstr ""
+"Ich werde mich noch etwas ausruhen und dann auch auf den Weg machen. "
+"Allerding in die andere Richtung."
+
+#: scout.xml:118
+msgid "greyWolfcave"
+msgstr "Wolfshöhle"
+
+#~ msgid ""
+#~ "After killing the spider you safely pick up a backpack in good shape."
+#~ msgstr ""
+#~ "Nachdem die Riesenspinne tot ist findest du einen Rucksack in gutem "
+#~ "Zustand."
+
+#, fuzzy
+#~ msgid "questScout"
+#~ msgstr "Verletzter Späher"

@@ -1,0 +1,19 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="ChatRootWindow" >
+        <Property name="TitlebarFont" value="SWB-M" />
+        <Property name="TitlebarEnabled" value="False" />
+        <Property name="Area" value="{{0.126758,0},{0.00859365,0},{0.67168,0},{0.521614,0}}" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="False" />
+
+        <Window type="SWB/StaticText" name="ChatTextBox" >
+            <Property name="Area" value="{{0.0107901,0},{0.0101163,0},{0.992967,0},{0.843295,0}}" />
+        </Window>
+
+        <Window type="SWB/Editbox" name="ChatInputLine" >
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.0172587,0},{0.854329,0},{0.992982,0},{0.976468,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+    </Window>
+</GUILayout>

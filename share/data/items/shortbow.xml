@@ -1,0 +1,660 @@
+<!-- SHORT BOWS -->
+
+<!-- Uebungsbogen -->
+<Item type="weapon" subtype="pract_sbw" name="practice bow" size="medium">
+	<RenderInfo name="practiceBow" />
+	<Image image="bow.png" />
+	<Attribute
+		level_requirement="1"
+		character_requirement="archer"
+		min_enchant="30"
+		max_enchant="50"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="3"
+		damage_max_physical="5"
+		damage_attack="45"
+		damage_power="20"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="100"
+	/>
+	<DropChance
+		level="1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eibenkurzbogen -->
+<Item type="weapon" subtype="yew_sbw" name="yew shortbow" size="medium">
+	<RenderInfo name="practiceBow" />
+	<Image image="bow.png" />
+	<Attribute
+		level_requirement="3"
+		character_requirement="archer"
+		min_enchant="45"
+		max_enchant="80"
+		modchance_strength_mod="0.10"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="7"
+		damage_max_physical="13"
+		damage_attack="54"
+		damage_power="30"
+		attack_range="8.0"
+		two_handed="yes"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="3"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kurzbogen -->
+<Item type="weapon" subtype="short_sbw" name="shortbow" size="medium">
+	<RenderInfo name="practiceBow" />
+	<Image image="bow.png" />
+	<Attribute
+		level_requirement="5"
+		character_requirement="archer"
+		min_enchant="55"
+		max_enchant="130"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="10"
+		damage_max_physical="14"
+		damage_attack="66"
+		damage_power="33"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-50"
+	/>
+	<DropChance
+		level="5"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Jagdbogen -->
+<Item type="weapon" subtype="hunter_sbw" name="hunting bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="archer"
+		min_enchant="60"
+		max_enchant="160"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="12"
+		damage_max_physical="18"
+		damage_attack="78"
+		damage_power="49"
+		special_flags="extra_animal_dmg"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="8"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Rattanbogen -->
+<Item type="weapon" subtype="rattan_sbw" name="rattan bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="12"
+		character_requirement="archer"
+		min_enchant="70"
+		max_enchant="200"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="15"
+		damage_max_physical="24"
+		damage_attack="87"
+		damage_power="54"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-50"
+	/>
+	<DropChance
+		level="13"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Banditenbogen -->
+<Item type="weapon" subtype="bandit_sbw" name="bandit bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="17"
+		character_requirement="archer"
+		min_enchant="70"
+		max_enchant="220"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="16"
+		damage_max_physical="26"
+		damage_attack="102"
+		damage_power="62"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="50"
+	/>
+	<DropChance
+		level="19"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Nordauge -->
+<Item type="weapon" subtype="ice_sbw" name="northeye" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="23"
+		character_requirement="archer"
+		min_enchant="90"
+		max_enchant="280"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="8"
+		damage_max_physical="10"
+		damage_min_ice="17"
+		damage_max_ice="24"
+		damage_attack="97"
+		damage_power="74"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="25"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kriegskurzbogen -->
+<Item type="weapon" subtype="battle_sbw" name="battle shortbow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="30"
+		character_requirement="archer"
+		min_enchant="135"
+		max_enchant="525"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="27"
+		damage_max_physical="34"
+		damage_attack="102"
+		damage_power="92"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-50"
+	/>
+	<DropChance
+		level="30"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kompositbogen -->
+<Item type="weapon" subtype="compst_sbw" name="composite shortbow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="35"
+		character_requirement="archer"
+		min_enchant="150"
+		max_enchant="600"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="31"
+		damage_max_physical="42"
+		damage_attack="106"
+		damage_power="102"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="35"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Reiterbogen -->
+<Item type="weapon" subtype="rider_sbw" name="rider bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="40"
+		character_requirement="archer"
+		min_enchant="170"
+		max_enchant="675"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.0"
+		modchance_damage_ice_mod="0.20"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="35"
+		damage_max_physical="47"
+		damage_attack="117"
+		damage_power="108"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-100"
+	/>
+	<DropChance
+		level="40"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Kohlebogen -->
+<Item type="weapon" subtype="coal_sbw" name="coal bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="45"
+		character_requirement="archer"
+		min_enchant="180"
+		max_enchant="750"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="38"
+		damage_max_physical="51"
+		damage_attack="124"
+		damage_power="119"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="0"
+	/>
+	<DropChance
+		level="45"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eschenbogen -->
+<Item type="weapon" subtype="ash_sbw" name="ash bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="50"
+		character_requirement="archer"
+		min_enchant="195"
+		max_enchant="775"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="36"
+		damage_max_physical="52"
+		damage_attack="143"
+		damage_power="121"
+		special_flags="extra_undead_dmg"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="50"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Fluchbogen -->
+<Item type="weapon" subtype="bane_sbw" name="bane bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="55"
+		character_requirement="archer"
+		min_enchant="210"
+		max_enchant="900"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="45"
+		damage_max_physical="61"
+		damage_attack="146"
+		damage_power="135"
+		status_mod_power2="80"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="100"
+	/>
+	<DropChance
+		level="55"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Eichenkurzbogen -->
+<Item type="weapon" subtype="oak_sbw" name="oak shortbow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="60"
+		character_requirement="archer"
+		min_enchant="225"
+		max_enchant="925"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="49"
+		damage_max_physical="65"
+		damage_attack="158"
+		damage_power="147"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-200"
+	/>
+	<DropChance
+		level="60"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Seelenbogen -->
+<Item type="weapon" subtype="soul_sbw" name="soul bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="65"
+		character_requirement="archer"
+		min_enchant="240"
+		max_enchant="1050"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect/>
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="51"
+		damage_max_physical="68"
+		damage_attack="98"
+		damage_power="210"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-300"
+	/>
+	<DropChance
+		level="65"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Sucher -->
+<Item type="weapon" subtype="seeker_sbw" name="seeker" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="70"
+		character_requirement="archer"
+		min_enchant="255"
+		max_enchant="1075"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="55"
+		damage_max_physical="74"
+		damage_attack="250"
+		damage_power="120"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="300"
+	/>
+	<DropChance
+		level="70"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Chaosbogen -->
+<Item type="weapon" subtype="chaos_sbw" name="chaos shortbow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="75"
+		character_requirement="archer"
+		min_enchant="270"
+		max_enchant="1200"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="58"
+		damage_max_physical="78"
+		damage_attack="190"
+		damage_power="175"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="-50"
+	/>
+	<DropChance
+		level="75"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- Feenbogen -->
+<Item type="weapon" subtype="fairy_sbw" name="fairy bow" size="medium">
+	<Image image="bow.png" />
+	<RenderInfo name="practiceBow" />
+	<Attribute
+		level_requirement="80"
+		character_requirement="archer"
+		min_enchant="300"
+		max_enchant="1500"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.15"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+		<WeaponAttribute
+		weapon_type="bow"
+		damage_min_physical="67"
+		damage_max_physical="90"
+		damage_attack="210"
+		damage_power="200"
+		status_mod_power0="210"
+		status_mod_power1="200"
+		status_mod_power2="190"
+		status_mod_power3="180"
+		status_mod_power4="220"
+		status_mod_power5="180"
+		attack_range="8"
+		two_handed="yes"
+		dattack_speed="100"
+	/>
+	<DropChance
+		level="80"
+		probability="1.0"
+	/>
+</Item>

@@ -21,7 +21,7 @@ FixedObject::FixedObject( int id) : WorldObject(id)
 	bool tmp=FixedObject::init();
 	if (!tmp)
 	{
-		DEBUG("Initialisierung des Fixed Objects fehlgeschlagen!");
+		SW_DEBUG("Initialisierung des Fixed Objects fehlgeschlagen!");
 	}
 }
 
@@ -33,7 +33,7 @@ FixedObject::FixedObject( int id,  Subtype object_subtype)  : WorldObject( id)
 	bool tmp=FixedObject::init();
 	if (!tmp)
 	{
-		DEBUG("Initialisierung des Fixed Objects fehlgeschlagen!");
+		SW_DEBUG("Initialisierung des Fixed Objects fehlgeschlagen!");
 	}
 }
 

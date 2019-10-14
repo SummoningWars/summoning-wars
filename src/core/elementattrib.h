@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ELEMENTATTRIB_H
-#define ELEMENTATTRIB_H
+#ifndef __SUMWARS_CORE_ELEMENTATTRIB_H__
+#define __SUMWARS_CORE_ELEMENTATTRIB_H__
 
 #include <tinyxml.h>
 #include <string>
@@ -88,4 +88,4 @@ class ElementAttrib
 		std::map<std::string, TiXmlAttribute*> m_attribs;
 };
 
-#endif
+#endif // __SUMWARS_CORE_ELEMENTATTRIB_H__

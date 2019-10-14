@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MINIMAP_H
-#define MINIMAP_H
+#ifndef __SUMWARS_CORE_MINIMAP_H__
+#define __SUMWARS_CORE_MINIMAP_H__
 
 #include "geometry.h"
 #include "charconv.h"
@@ -131,5 +131,5 @@ class Minimap
 
 
 
-#endif
+#endif // __SUMWARS_CORE_MINIMAP_H__
 

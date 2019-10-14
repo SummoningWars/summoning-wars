@@ -1,0 +1,75 @@
+<World>
+	<!-- Aisen, Osthang; [Wald, Gebirge]; -->
+	<!-- Banditen -->	
+	<Region id="2170" name="aisEastslope">
+		<Settings dimx="25" dimy="25" region_template="aisEastslope"  ground="grass1"/>
+		<WorldPosition world_x="0.72" world_y ="0.45"/>
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="true" west="true" east="true" />
+		
+		<Event trigger="enter_region" once="true">
+			<Condition>
+				return defend_dwall.finished == true;
+			</Condition>
+			<Effect>
+				getObjectOutOfWay(getObjectByNameRef("blockade"))
+				print("opened the southern path")
+			</Effect>
+		</Event>
+		
+		<Exits>
+			<Exit name="exit_west" destination_region="greyCurseCaveEast" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_east" destination_region="dwarfenwall" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_south" destination_region="aisBoulderGrounds" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>
+		
+		<Event trigger="create_region" once="true">
+			<Effect>
+				createMonsterGroup("smugglers","locGroup1");
+				createMonsterGroup("smugglersRonny","locGroup2");
+				eastslope = {};
+				eastslope.guard = createObject("human_thug","locGuard");
+			</Effect>
+		</Event>
+		
+		<Event trigger="enter_region" once="true">	
+			<Condition>
+				return(theTrader.enteredDwarfenwall~=true);
+			</Condition>
+			<Effect>
+				unitSpeak(eastslope.guard, _("Watch out! Monsters from the mine! Help me!"),"panic");
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_die" once="true">
+			<Condition>
+				local sub = get(trigger.unit,"subtype");
+				if(sub=="human_ronny")then
+					return(theTrader.enteredDwarfenwall~=true);
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				local speaker = getPartyleader();
+				if(get(speaker,"region")=="aisEastslope")then
+					unitSpeak(speaker,_("Let me tell you I'm no monster. I'm worse."),"threaten");
+				end;
+			</Effect>
+		</Event>
+	</Region>
+</World>

@@ -1,0 +1,39 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="CreditsWindow" >
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="Text" value="Credits" />
+        <Property name="TitlebarFont" value="SWB-L" />
+        <Property name="CloseButtonAlignment" value="1" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+        <Property name="FrameEnabled" value="True" />
+        <Property name="TitlebarEnabled" value="True" />
+        <Property name="CloseButtonEnabled" value="False" />
+        <Property name="Alpha" value="1.0" />
+        <Property name="InheritsAlpha" value="False" />
+
+        <Window type="SumWarsExtras/ScrollablePaneNoBar" name="CreditsPane" >
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="ContentPaneAutoSized" value="True" />
+            <Property name="MaxSize" value="{{1.0,0},{1.0,0}}" />
+            <!--<Property name="FrameEnabled" value="False" />--> <!-- Property not added to SumWarsExtras -->
+
+            <!-- The top side where the player picture, and main information are displayed -->
+            <Window type="SWB/StaticText" name="CreditsText" >
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                <Property name="MaxSize" value="{{1.0,0},{5.0,0}}" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Alpha" value="1.0" />
+                <Property name="FrameEnabled" value="False" />
+                <Property name="BackgroundEnabled" value="True" />
+                <Property name="HorzFormatting" value="HorzCentred" />
+                <Property name="VertFormatting" value="TopAligned" />
+                <Property name="Font" value="SWB-L" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

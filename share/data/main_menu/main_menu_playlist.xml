@@ -1,0 +1,8 @@
+<!-- The sound-track for the menu is defined here -->
+
+<Playlist name="menu" repeat="true" shuffle="true">
+	<Track source="reluctant_hero.ogg" />
+	<Track source="battle_intro.ogg" />
+	<Track source="dark_descent.ogg" />
+	<Track source="Dark_Exploration.ogg" />
+</Playlist>

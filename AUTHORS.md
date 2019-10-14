@@ -1,17 +1,22 @@
-## Programming
+## Current Development Team
+* SaintWish - Maintainer, Programming
+
+## Ex Development Team
+#### Programming
 * Hans Wulf (Lastmerlin)
 * Stefan Stammberger (fusion44)
 * Nicholas Cosens (gnemo)
 * Augustin Preda (dezGusty)
+* Martin Preisler (Kulik)
 
-## Network Library For Games (NLFG)
+#### Network Library For Games (NLFG)
 * David Athay (trapdoor)
 
-## Mac Conversion
+#### Mac Conversion
 * David Athay (trapdoor)
 * Ben Anderman (crimson_penguin)
 
-## Graphics
+#### Graphics
 * Andreas Schönefeldt
 * Steffen Schönefeldt (Kalimgard)
 * Christian Wittmann (psycho)
@@ -19,24 +24,24 @@
 * Adam Preisler (Alfisko)
 * Simeon Dear (Trilby)
 
-## Scripting
+#### Scripting
 * Steffen Schönefeldt (Kalimgard)
 * Hans Wulf (Lastmerlin)
 
-## Story
+#### Story
 * Steffen Schönefeldt (Kalimgard)
 * Andreas Schönefeldt
 
-## Sounds
+#### Sounds
 * Michael Kempf (Hangman)
 * artisticdude
 * quobodup
 
-## Music
+#### Music
 * Mattias Westlund (West)
 * Cheeselord
 
-## Translation
+#### Translation
 * Steffen Schönefeldt (Kalimgard)
 * Michael Kempf (Hangman)
 * kroni
@@ -47,11 +52,12 @@
 * Patrick McMunn (PaddyMac)
 * Igor Paliychuk (igorko)
 * Eugenio Fagioli (NoobAtThis)
+* Rubén Viguera Marañón (vyguera)
 
-## Build System
+#### Build System
 * Stefan Stammberger (fusion44)
 
-## Website
+#### Website
 * Andreas Schönefeldt
 * Michael Kempf (Hangman)
-* Michael Kunz
+* Michael Kunz (Protogenes)

@@ -1,0 +1,70 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="TradeWindow" >
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="Alpha" Value="1" />
+        <Property Name="Text" Value="Trade" />
+        <Property Name="TitlebarFont" Value="DejaVuSerif-12" />
+        <Property Name="CloseButtonAlignment" Value="1" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="True" />
+        <Property Name="RollUpEnabled" Value="False" />
+
+        <!-- dummy holder to allow easier later updates -->
+        <!-- Note: additional sub-items will be added to this widget from code (if it's found) -->
+        <Window Type="SWB/StaticImage" Name="tradewindow_aux" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        
+        
+            <Window Type="SWB/ImageButton" Name="TradeBigPrevButton" >
+                <Property Name="HoverImage" Value="set:TradeWindow image:BtnUpHover" />
+                <Property Name="NormalImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="PushedImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="DisabledImage" Value="set:TradeWIndow image:BtnUp" />
+                <Property Name="UnifiedAreaRect" Value="{{0.95,0},{0.25823,0},{1.0,0},{0.30823,0}}" />
+            </Window>
+            <Window Type="SWB/ImageButton" Name="TradeBigNextButton" >
+                <Property Name="HoverImage" Value="set:TradeWindow image:BtnDownHover" />
+                <Property Name="NormalImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="PushedImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="DisabledImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="UnifiedAreaRect" Value="{{0.95,0},{0.341058,0},{1.0,0},{0.391058,0}}" />
+            </Window>
+            <Window Type="SWB/ImageButton" Name="TradeMediumPrevButton" >
+                <Property Name="HoverImage" Value="set:TradeWindow image:BtnUpHover" />
+                <Property Name="NormalImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="PushedImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="DisabledImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="UnifiedAreaRect" Value="{{0.95,0},{0.547517,0},{1.0,0},{0.597517,0}}" />
+            </Window>
+            <Window Type="SWB/ImageButton" Name="TradeMediumNextButton" >
+                <Property Name="HoverImage" Value="set:TradeWindow image:BtnDownHover" />
+                <Property Name="NormalImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="PushedImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="DisabledImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="UnifiedAreaRect" Value="{{0.95,0},{0.627538,0},{1.0,0},{0.677538,0}}" />
+            </Window>
+            <Window Type="SWB/ImageButton" Name="TradeSmallPrevButton" >
+                <Property Name="HoverImage" Value="set:TradeWindow image:BtnUpHover" />
+                <Property Name="NormalImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="PushedImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="DisabledImage" Value="set:TradeWindow image:BtnUp" />
+                <Property Name="UnifiedAreaRect" Value="{{0.95,0},{0.778209,0},{1.0,0},{0.828209,0}}" />
+            </Window>
+            <Window Type="SWB/ImageButton" Name="TradeSmallNextButton" >
+                <Property Name="HoverImage" Value="set:TradeWindow image:BtnDownHover" />
+                <Property Name="NormalImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="PushedImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="DisabledImage" Value="set:TradeWindow image:BtnDown" />
+                <Property Name="UnifiedAreaRect" Value="{{0.95,0},{0.855422,0},{1.0,0},{0.905422,0}}" />
+            </Window>
+            
+            <Window Type="SWB/Button" Name="TradeCloseButton" >
+                <Property Name="UnifiedAreaRect" Value="{{0.33,0},{0.95,0},{0.66,0},{1.0,0}}" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

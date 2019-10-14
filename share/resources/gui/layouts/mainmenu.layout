@@ -1,0 +1,94 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="StartMenuRoot" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{-0,0},{1,0},{1,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        
+        <Window Type="SWB/Button" Name="SinglePlayerButton" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.732617,0},{0.0434896,0},{0.986523,0},{0.100782,0}}" />
+            <Property Name="Text" Value="Singleplayer" />
+        </Window>
+        
+        <Window Type="SWB/Button" Name="ServerJoinButton" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.732812,0},{0.103906,0},{0.986718,0},{0.161198,0}}" />
+            <Property Name="Text" Value="Join Game" />
+        </Window>
+        
+        <Window Type="SWB/Button" Name="ServerHostButton" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.732031,0},{0.166927,0},{0.985937,0},{0.224219,0}}" />
+            <Property Name="Text" Value="Host Game" />
+        </Window>
+        
+        <Window Type="SWB/Button" Name="CreditsButton" >
+            <Property Name="Text" Value="Credits" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.575,0},{0.913542,0},{0.766406,0},{0.955209,0}}" />
+        </Window>
+        
+        <Window Type="SWB/Button" Name="MainOptionsButton" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.380859,0},{0.914062,0},{0.572265,0},{0.955728,0}}" />
+            <Property Name="Text" Value="Options" />
+        </Window>
+        
+        <Window Type="SWB/Button" Name="EndGameButton" >
+            <Property Name="Text" Value="Quit" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.769531,0},{0.914062,0},{0.960937,0},{0.955729,0}}" />
+        </Window>
+        
+        <Window Type="SWB/Button" Name="LoginButton" >
+            <Property Name="Text" Value="Login" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.25531,0},{0.914062,0},{0.37,0},{0.955729,0}}" />
+        </Window>
+        
+        <Window Type="SWB/StaticText" Name="SumwarsVersionLabel" >
+            <Property Name="Text" Value="VersionLabel" />
+            <Property Name="Alpha" Value="0.7" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="RightAligned" />
+            <Property Name="UnifiedAreaRect" Value="{{0.583594,0},{0.96901,0},{0.958594,0},{0.992448,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        
+        <Window Type="SWB/StaticText" Name="SumwarsOnlineIndicatorLabel" >
+            <Property Name="Text" Value="Not logged in." />
+            <Property Name="Alpha" Value="0.7" />
+            <Property Name="HorzExtent" Value="100" />
+            <Property Name="VertExtent" Value="23.1724" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="LeftAligned" />
+            <Property Name="UnifiedAreaRect" Value="{{0.27594,0},{0.96901,0},{0.558594,0},{0.992448,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        
+        <Window Type="SWB/FrameWindow" Name="SaveGameSelectionFrame" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="TitlebarFont" Value="DejaVuSans-10" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="SizingEnabled" Value="False" />
+            <Property Name="TitlebarEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0294922,0},{0.0161458,0},{0.249023,0},{0.977865,0}}" />
+            <Property Name="DragMovingEnabled" Value="False" />
+            <Property Name="CloseButtonEnabled" Value="False" />
+            <Property Name="RollUpEnabled" Value="False" />
+            <Property Name="Alpha" Value="0.2" />
+        </Window>
+        
+        <Window Type="SWB/StaticImage" Name="MainMenuSumwarsLogo" >
+            <Property Name="Alpha" Value="0.7" />
+            <Property Name="Image" Value="set:MainMenu image:Logo" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.284961,0},{0.0151042,0},{0.69707,0},{0.289844,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Property Name="MousePassThroughEnabled" Value="True" />
+        </Window>
+    </Window>
+</GUILayout>

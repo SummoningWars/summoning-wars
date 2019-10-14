@@ -1,0 +1,134 @@
+# English translations for PACKAGE package
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package
+#  <kalimgard@users.sourceforge.net>, 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2012-03-02 16:19+0100\n"
+"Last-Translator:  <kalimgard@users.sourceforge.net>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: testquest.xml:2
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: testquest.xml:2
+msgid "testquest"
+msgstr "testquest"
+
+#: testquest.xml:3
+msgid "Test"
+msgstr "Test"
+
+#: testquest.xml:9
+msgid "This is a Test"
+msgstr "This is a Test"
+
+#: testquest.xml:11
+msgid "surprised"
+msgstr "surprised"
+
+#: testquest.xml:13
+msgid "thoughtful"
+msgstr "thoughtful"
+
+#: testquest.xml:16
+msgid "happy"
+msgstr "happy"
+
+#: testquest.xml:19
+msgid "amused"
+msgstr "amused"
+
+#: testquest.xml:21
+msgid "excited"
+msgstr "excited"
+
+#: testquest.xml:23
+msgid "in love"
+msgstr "in love"
+
+#: testquest.xml:25
+msgid "bored"
+msgstr "bored"
+
+#: testquest.xml:27
+msgid "unhappy"
+msgstr "unhappy"
+
+#: testquest.xml:29
+msgid "sad"
+msgstr "sad"
+
+#: testquest.xml:31
+msgid "pain"
+msgstr "pain"
+
+#: testquest.xml:33
+msgid "sneer"
+msgstr "sneer"
+
+#: testquest.xml:35
+msgid "grin"
+msgstr "grin"
+
+#: testquest.xml:37
+msgid "offended"
+msgstr "offended"
+
+#: testquest.xml:39
+msgid "threatening"
+msgstr "threatening"
+
+#: testquest.xml:41
+msgid "angry"
+msgstr "angry"
+
+#: testquest.xml:43
+msgid "shouting a warcry"
+msgstr "shouting a warcry"
+
+#: testquest.xml:45
+msgid "exhausted"
+msgstr "exhausted"
+
+#: testquest.xml:47
+msgid "injured"
+msgstr "injured"
+
+#: testquest.xml:49
+msgid "deadly injured"
+msgstr "deadly injured"
+
+#: testquest.xml:50
+msgid "afraid"
+msgstr "afraid"
+
+#: testquest.xml:51
+msgid "in panic"
+msgstr "in panic"
+
+#: testquest.xml:52
+msgid "putting up a distance"
+msgstr "putting up a distance"
+
+#: testquest.xml:53
+msgid "being disgusted"
+msgstr "being disgusted"
+
+#: testquest.xml:54
+msgid "and yet another Test"
+msgstr "and yet another Test"
+
+#: testquest.xml:55
+msgid "again a test"
+msgstr "again a test"

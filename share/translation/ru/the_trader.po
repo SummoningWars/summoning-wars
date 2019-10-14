@@ -1,0 +1,524 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-01 00:11+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: theTrader.xml:2 theTrader.xml:124 theTrader.xml:262 theTrader.xml:300
+msgid "The Trader"
+msgstr "Торговец"
+
+#: theTrader.xml:5
+msgid "Quest finished"
+msgstr "Задание выполнено"
+
+#: theTrader.xml:7
+msgid "A strange trader offered me to sell Empty Scrolls."
+msgstr "Странный торговец предложил мне продать пустые свитки."
+
+#: theTrader.xml:11
+msgid "elCnlLobby"
+msgstr "Совет Элементов, Подземелье"
+
+#: theTrader.xml:22 theTrader.xml:237
+msgid "medMercCamp"
+msgstr "Лагерь наемников Медаир"
+
+#: theTrader.xml:71
+msgid "A moment, dear madam."
+msgstr "Один момент, мадам."
+
+#: theTrader.xml:74
+#, fuzzy
+msgid "A moment, dear sir."
+msgstr "Один момент, джентльмены."
+
+#: theTrader.xml:76
+msgid "A moment, dear ladies."
+msgstr "Один момент, леди."
+
+#: theTrader.xml:78
+msgid "A moment, dear sirs."
+msgstr "Один момент, джентльмены."
+
+#: theTrader.xml:80
+#, fuzzy
+msgid "A moment, ladies and gentlemen."
+msgstr "Один момент, леди и джентльмены."
+
+#: theTrader.xml:83
+msgid "What is it now?"
+msgstr "Что такое?"
+
+#: theTrader.xml:86 theTrader.xml:88
+msgid "It seems, you are stuck in Harad's black claws."
+msgstr "Кажется, вы застряли в черных когтях Харада."
+
+#: theTrader.xml:91
+msgid "What are you trying to say?"
+msgstr "Что ты пытаешься сказать?"
+
+#: theTrader.xml:92
+msgid "Well, I want to say I'd like to lend you my services."
+msgstr "Ну, я пытаюсь сказать, что хотел бы предложить тебе свои услуги."
+
+#: theTrader.xml:94
+msgid "You are a trader?"
+msgstr "Ты торговец?"
+
+#: theTrader.xml:95 theTrader.xml:195
+msgid "Indeed."
+msgstr "Верно."
+
+#: theTrader.xml:96
+msgid ""
+"Unfortunatly I bet on the wrong branch and now I'm stuck with a large "
+"contingent of Empty Scrolls."
+msgstr ""
+"К сожалению, я поставил не на ту сторону, поэтому сейчас я застрял тут с "
+"большим количеством Пустых Свитков."
+
+#: theTrader.xml:98
+msgid "What do we want with empty scrolls?"
+msgstr "Зачем нам понадобились пустые свитки?"
+
+#: theTrader.xml:100
+msgid "Didn't you hear the capital letters?"
+msgstr "Ты никогда не слышал о заглавных буквах?"
+
+#: theTrader.xml:103
+msgid "What kind of scrolls are they?"
+msgstr "Что это за свитки?"
+
+#: theTrader.xml:106
+msgid "I see you are a man of reason!"
+msgstr "Вижу, ты дельный человек!"
+
+#: theTrader.xml:108
+msgid "I see you are a woman of reason!"
+msgstr "Вижу, вы - деловая женщина!"
+
+#: theTrader.xml:111
+#, fuzzy
+msgid "Much to my regret, an Empty Scroll is only capable of one thing:"
+msgstr "Пустой Свиток, к моему сожалению, способен только на одно:"
+
+#: theTrader.xml:112
+#, fuzzy
+msgid "To establish a way through Harad's black abyss."
+msgstr "Установить путь через Черную Бездну Харада."
+
+#: theTrader.xml:113
+#, fuzzy
+msgid ""
+"To make it worse only to spots of great magical concentration like that big "
+"road shrine over there."
+msgstr ""
+"В таком случае, можно возвращаться к местам высокой магической концентрации, "
+"как, например, этой большой дорожной усыпальнице."
+
+#: theTrader.xml:116
+#, fuzzy
+msgid ""
+"Furthermore, a scroll's power is depleted quickly and limited only to one "
+"person."
+msgstr "Его сила быстро теряется и ограничивается только на одного человека."
+
+#: theTrader.xml:117
+msgid "Explain the waypoint system?"
+msgstr "Объяснить систему дорожных точек?"
+
+#: theTrader.xml:118 theTrader.xml:180
+msgid "Yes"
+msgstr "Да"
+
+#: theTrader.xml:119 theTrader.xml:181
+msgid "No"
+msgstr "Нет"
+
+#: theTrader.xml:127
+#, fuzzy
+msgid ""
+"When you get close to a waypoint, your aura will summon the familiar spirits "
+"to ignite the shrine's warning flames."
+msgstr ""
+"Если ты подходишь близко к дорожной точке, твоя аура заставляет духов этого "
+"места разжигать огни."
+
+#: theTrader.xml:128
+#, fuzzy
+msgid "Fear not, they will not harm you in any way, honest."
+msgstr "Но не бойся, они не могут навредить тебе никоим образом."
+
+#: theTrader.xml:129
+#, fuzzy
+msgid ""
+"You can be sure that you are able to use the road shrine if you see the "
+"flames."
+msgstr ""
+"Наоборот, ты можешь быть уверен, что можешь использовать усыпальницу, если "
+"зажжены огни."
+
+#: theTrader.xml:130
+#, fuzzy
+msgid ""
+"If you click on a road shrine, your body will be transported through Harad's "
+"domain."
+msgstr ""
+"Если ты щелкнешь по усыпальнице, твое тело унесется в Темную Пропасть Харада."
+
+#: theTrader.xml:131
+#, fuzzy
+msgid ""
+"In your mind's eye you will see a map with all the waypoints you have "
+"already visited."
+msgstr ""
+"Перед твоими глазами появится карта, на которой отмечены все места, которые "
+"ты уже посетил."
+
+#: theTrader.xml:132
+#, fuzzy
+msgid "These are shown as small yellow points."
+msgstr "Они показываются в виде кружка."
+
+#: theTrader.xml:133
+#, fuzzy
+msgid ""
+"If you have an open portal in the world, that will be shown too, with a red "
+"dot."
+msgstr ""
+"Если у тебя есть открытый портал в мире, он тоже будет показываться, но уже "
+"в виде красной точки."
+
+#: theTrader.xml:134
+#, fuzzy
+msgid ""
+"Click on one of these symbols, and your body will rematerialize at your "
+"destination, as fast as the wind."
+msgstr ""
+"Щелкни по одному из этих символов, и твое тело в мгновение ока переместится "
+"в точку назначения."
+
+#: theTrader.xml:135
+msgid "Hmm. You seem to know a great deal about this, for a trader."
+msgstr ""
+
+#: theTrader.xml:136
+msgid ""
+"You pick these things up in your travels, except for business acumen, "
+"apparently."
+msgstr ""
+
+#: theTrader.xml:137
+msgid "Clearly you are in the wrong line of work."
+msgstr ""
+
+#: theTrader.xml:145
+msgid "Be wary, it is not as safe around Medair as it used to be."
+msgstr ""
+
+#: theTrader.xml:146
+msgid ""
+"Even travelling the roads may prove to be dangerous. Particularly if you are "
+"heading north."
+msgstr ""
+
+#: theTrader.xml:148
+msgid "Goblins and other beasts have stolen quite a lot recently."
+msgstr "Гоблины и другие твари украли довольно много всего за последнее время."
+
+#: theTrader.xml:149
+#, fuzzy
+msgid ""
+"You may find it convenient to make a short detour to a well-stocked trader."
+msgstr ""
+"Было бы очень удобно сделать быстрый обходной путь к хорошему знакомому "
+"торговцу."
+
+#: theTrader.xml:150
+#, fuzzy
+msgid "Meaning yourself?"
+msgstr "Ты это про себя?"
+
+#: theTrader.xml:151
+msgid "Actually not, regrettably."
+msgstr "К сожалению, нет."
+
+#: theTrader.xml:152
+#, fuzzy
+msgid ""
+"As reported, I invested badly in the Empty Scrolls and have no available "
+"capital."
+msgstr ""
+"Как я уже говорил, я вложил деньги в Пустые Свитки, и теперь у меня нет "
+"капитала."
+
+#: theTrader.xml:153
+msgid ""
+"I'm afraid I have insufficient gold to buy assorted wares from treasure "
+"hunters and scavengers."
+msgstr ""
+
+#: theTrader.xml:155
+#, fuzzy
+msgid "But I can supply you with scrolls for a long time. That's a promise."
+msgstr ""
+"Но я могу снабжать тебя на протяжении большого промежутка времени. Обещаю."
+
+#: theTrader.xml:156
+#, fuzzy
+msgid "One reason being; customers are rare in these parts."
+msgstr ""
+"Одна из причин заключается в том, что покупатели довольно-таки редки в этих "
+"краях."
+
+#: theTrader.xml:157
+msgid "Surely they can be found anywhere, especially in a place like this."
+msgstr ""
+
+#: theTrader.xml:159
+msgid "With all due respect, nobody wanting to buy scrolls from poor traders."
+msgstr ""
+
+#: theTrader.xml:160
+#, fuzzy
+msgid ""
+"Regardless, not many Branded Ones would have listened to me as you have."
+msgstr "Не так уж много Избранных слушали бы меня, как слушал ты."
+
+#: theTrader.xml:161
+#, fuzzy
+msgid "Allow me to give you an Empty Scroll as a gift."
+msgstr "Позволь мне дать тебе Пустой Свиток бесплатно."
+
+#: theTrader.xml:162
+#, fuzzy
+msgid "Grace me with your presence again soon, if you please."
+msgstr "Будь так добр, удостой меня своим присутствием ещё раз."
+
+#: theTrader.xml:163
+#, fuzzy
+msgid "Wait! Does this thing have to be called Empty Scroll?"
+msgstr "Стой! Разве эта вещь должна называться \"Пустой Свиток\"?"
+
+#: theTrader.xml:165
+msgid "Why not town portal or something like that?"
+msgstr "Почему не городской портал или что-нибудь в этом роде?"
+
+#: theTrader.xml:166
+#, fuzzy
+msgid ""
+"Well, they were sold to me as Empty Scrolls, but what you call them is "
+"entirely up to you."
+msgstr ""
+"Ну, они были проданы мне в качестве Пустых Свитков, но то, как ты будешь их "
+"называть, зависит только от тебя."
+
+#: theTrader.xml:168
+#, fuzzy
+msgid "Why not \"way to the town\" or something like that?"
+msgstr "Почему не \"Путь домой\" или что-то вроде того?"
+
+#: theTrader.xml:170
+#, fuzzy
+msgid "What kind of name is that supposed to be!?"
+msgstr "Что это за название?"
+
+#: theTrader.xml:172
+msgid "How about: \"town portal\"?"
+msgstr ""
+
+#: theTrader.xml:173
+msgid "Now, now, honorable customers!"
+msgstr "Но, но, уважаемые покупатели!"
+
+#: theTrader.xml:174
+#, fuzzy
+msgid ""
+"They were sold to me as Empty Scrolls, but what you call them is entirely up "
+"to you!"
+msgstr ""
+"Они были проданы мне в качестве Пустых Свитков, но то, как ты будешь их "
+"называть, зависит только от тебя!"
+
+#: theTrader.xml:177
+msgid "And how do we use them?"
+msgstr "И как мы используем их?"
+
+#: theTrader.xml:178
+msgid "Like a common potion."
+msgstr "Как обычное зелье."
+
+#: theTrader.xml:179
+msgid "Explain the belt?"
+msgstr "Объяснить, как пользоваться поясом?"
+
+#: theTrader.xml:187
+#, fuzzy
+msgid "Well, you know about your inventory, right?"
+msgstr "Ну, ты знаешь о своем инвентаре, верно?"
+
+#: theTrader.xml:189
+msgid "I thought so."
+msgstr "Думаю, да."
+
+#: theTrader.xml:190
+#, fuzzy
+msgid ""
+"At the bottom you have the small items tab, click on it to access the three "
+"rows of your small items inventory."
+msgstr ""
+"Внизу экрана у тебя расположены маленькие вещи, которые занимают три линии."
+
+#: theTrader.xml:192
+msgid "The top row represents your belt."
+msgstr "Верхний ряд показывает твой пояс."
+
+#: theTrader.xml:193
+msgid "If you place a potion there, it appears in the belt row."
+msgstr "Если ты поместишь туда зелье, то оно появится и на поясе."
+
+#: theTrader.xml:194
+msgid "I'm sure you noticed, right?"
+msgstr "Я уверен, ты заметил это, верно?"
+
+#: theTrader.xml:196
+#, fuzzy
+msgid ""
+"Long years on the battlefield have honed my ability to change potions for "
+"similar potions immediately once I have used one."
+msgstr ""
+"Долгие годы на поле битвы приучили меня менять зелья на такие же сразу после "
+"того, как я ими пользуюсь."
+
+#: theTrader.xml:197
+msgid "A useful skill."
+msgstr "Полезное умение."
+
+#: theTrader.xml:199
+msgid ""
+" A common skill. Any sell-sword that wants to avoid a quick and meaningless "
+"death knows of it."
+msgstr ""
+
+#: theTrader.xml:201
+msgid "Well, whatever."
+msgstr "Ну, как бы то ни было."
+
+#: theTrader.xml:204
+msgid ""
+"If you want to use a potion you can do so by clicking on it with the right "
+"mouse button in the inventory or the belt."
+msgstr ""
+"Если ты хочешь использовать зелье, ты можешь щелкнуть по нему правой кнопкой "
+"мыши в инвентаре или на поясе."
+
+#: theTrader.xml:205
+#, fuzzy
+msgid "Alternatively you can select the number of the belt slot it is in."
+msgstr "Или же ты можешь выбрать номер слота пояса, в котором находится зелье."
+
+#: theTrader.xml:206
+msgid ""
+"That is, 1 for the potion on the left, 2 for the second from the left and so "
+"on."
+msgstr ""
+"Например, самый левый слот под цифрой 1, второй слева - под цифрой 2 и так "
+"далее."
+
+#: theTrader.xml:207
+msgid ""
+"This works for all usable items alike, so naturally for the scrolls, too."
+msgstr ""
+"Это работает для всех используемых вещей, стало быть и для свитков тоже."
+
+#: theTrader.xml:215
+msgid "Oh! It's that simple?"
+msgstr "Ого! Все так просто?"
+
+#: theTrader.xml:223
+msgid "Oddball."
+msgstr "Чудак."
+
+#: theTrader.xml:253
+msgid "joringsbridge"
+msgstr "Джорингсбридж"
+
+#: theTrader.xml:263
+msgid "What are you doing here?"
+msgstr "Что ты здесь делаешь?"
+
+#: theTrader.xml:269
+msgid ""
+"Well, I noticed you were headed north, and I thought it would be convenient "
+"for you to know I'm nearby."
+msgstr ""
+"Ну, я заметил, что ты направляешься на север, и подумал, было бы удобно, "
+"если бы ты знал, что я неподалеку."
+
+#: theTrader.xml:270
+msgid "Well, you are right, I guess."
+msgstr "Что ж, мне кажется, ты прав."
+
+#: theTrader.xml:276
+msgid "greyCurseCaveFis"
+msgstr "Проклятая Пещера-расщелина"
+
+#: theTrader.xml:288
+msgid "dwarfenwall"
+msgstr "Дворфенволл"
+
+#: theTrader.xml:301
+msgid "I see you have reached dwarfenwall safely."
+msgstr "Смотрю, ты благополучно добрался до Дворфенфолла."
+
+#: theTrader.xml:307
+msgid "How nice to see you have escaped from the caves."
+msgstr "Приятно видеть, что ты выбрался из пещер."
+
+#: theTrader.xml:308
+msgid "No thanks to you. May I continue to offer you my services?"
+msgstr "Нет, спасибо тебе. Могу я продолжить предлагать тебе свои услуги?"
+
+#: theTrader.xml:309
+msgid "Surely. Now that I finally have a sound anchor again."
+msgstr ""
+"Конечно. Особенно теперь, когда у меня снова есть место для сохранения."
+
+#~ msgid "A moment, dear mister."
+#~ msgstr "Один момент, мистер."
+
+#~ msgid ""
+#~ "I'm afraid all I can give you for your wares in gold would be "
+#~ "insufficient."
+#~ msgstr ""
+#~ "Я боюсь, всего, что я могу дать тебе за твои товары в виде золота, будет "
+#~ "недостаточно."
+
+#~ msgid "They are everywhere."
+#~ msgstr "Они везде."
+
+#~ msgid "with all due respect: That is a blessing."
+#~ msgstr "со всем уважением: это благословение."
+
+#~ msgid "More like town portal."
+#~ msgstr "Скорее городской портал."
+
+#~ msgid "Doesn't everyone learn it who wants to avoid death?"
+#~ msgstr "Разве не все, кто хочет избежать смерти, приучились к этому?"
+
+#, fuzzy
+#~ msgid "theTrader"
+#~ msgstr "Торговец"

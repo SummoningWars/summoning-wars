@@ -1,0 +1,205 @@
+# English translations for PACKAGE package
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package
+#  <kalimgard@users.sourceforge.net>, 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2012-03-02 16:19+0100\n"
+"Last-Translator:  <kalimgard@users.sourceforge.net>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: besieged_farm.xml:2
+msgid "The besieged farm"
+msgstr "The besieged farm"
+
+#: besieged_farm.xml:5
+msgid ""
+"The peasants are rescued, the goblins slain, and the service paid. What more "
+"can you ask for?"
+msgstr ""
+"The peasants are rescued, the goblins slain, and the service paid. What more "
+"can you ask for?"
+
+#: besieged_farm.xml:7
+msgid ""
+"The peasants are rescued and the goblins slain. It's time to collect the "
+"reward for the trouble in Joringsbridge."
+msgstr ""
+"The peasants are rescued and the goblins slain. It's time to collect the "
+"reward for the trouble in Joringsbridge."
+
+#: besieged_farm.xml:9
+msgid ""
+"The goblins around Bron's farm are not among the living anymore. I should "
+"knock at the door and make sure everything is all right. No peasants, no "
+"money."
+msgstr ""
+"The goblins around Bron's farm are not among the living anymore. I should "
+"knock at the door and make sure everything is all right. No peasants, no "
+"money."
+
+#: besieged_farm.xml:11
+msgid ""
+"The farm of a peasant named Michel Bron is besieged by goblins. His family "
+"needs help - fast."
+msgstr ""
+"The farm of a peasant named Michel Bron is besieged by goblins. His family "
+"needs help - fast."
+
+#: besieged_farm.xml:15 besieged_farm.xml:134
+msgid "Sergeant Lutterer"
+msgstr "Sergeant Lutterer"
+
+#: besieged_farm.xml:16
+msgid "The farm"
+msgstr "The farm"
+
+#: besieged_farm.xml:23
+msgid "Ah! Are you feeling like earning the money after all?"
+msgstr "Ah! Are you feeling like earning the money after all?"
+
+#: besieged_farm.xml:25
+msgid "Don't think I haven't seen you hanging around back there."
+msgstr "Don't think I haven't seen you hanging around back there."
+
+#: besieged_farm.xml:27
+msgid ""
+"Don't think I haven't seen you and your friend hanging around back there."
+msgstr ""
+"Don't think I haven't seen you and your friend hanging around back there."
+
+#: besieged_farm.xml:29
+msgid ""
+"Don't think I haven't seen you and your friends hanging around back there."
+msgstr ""
+"Don't think I haven't seen you and your friends hanging around back there."
+
+#: besieged_farm.xml:31
+msgid "But I don't want to complain."
+msgstr "But I don't want to complain."
+
+#: besieged_farm.xml:32
+msgid ""
+"You know the drill: Get to the Northern Meadow and drive away the goblins "
+"around Bron's farm."
+msgstr ""
+"You know the drill: Get to the Northern Meadow and drive away the goblins "
+"around Bron's farm."
+
+#: besieged_farm.xml:33
+msgid "I don't care how you do it, even if you gobble them raw."
+msgstr "I don't care how you do it, even if you gobble them raw."
+
+#: besieged_farm.xml:34
+msgid "Just kidding."
+msgstr "Just kidding."
+
+#: besieged_farm.xml:35
+msgid "When you're done, come back to me."
+msgstr "When you're done, come back to me."
+
+#: besieged_farm.xml:36
+msgid "I'm on my way."
+msgstr "I'm on my way."
+
+#: besieged_farm.xml:42
+msgid "aisNorthMeadow"
+msgstr "aisNorthMeadow"
+
+#: besieged_farm.xml:88
+msgid ""
+"That should have been enough goblins. I better look after Bron's family."
+msgstr ""
+"That should have been enough goblins. I better look after Bron's family."
+
+#: besieged_farm.xml:111
+msgid "The goblins are gone. Are you alright?"
+msgstr "The goblins are gone. Are you alright?"
+
+#: besieged_farm.xml:112
+msgid "Thank you very much."
+msgstr "Thank you very much."
+
+#: besieged_farm.xml:113
+msgid "Sadly I cannot ask you in."
+msgstr "Sadly I cannot ask you in."
+
+#: besieged_farm.xml:114
+msgid "Our barricade is quite heavy."
+msgstr "Our barricade is quite heavy."
+
+#: besieged_farm.xml:115
+msgid "But I will give word to my husband that we are alive and well."
+msgstr "But I will give word to my husband that we are alive and well."
+
+#: besieged_farm.xml:116
+msgid "How so?"
+msgstr "How so?"
+
+#: besieged_farm.xml:117
+msgid ""
+"With a crytal of Avearea, of course. It's been handed down in my family for "
+"generations."
+msgstr ""
+"With a crytal of Avearea, of course. It's been handed down in my family for "
+"generations."
+
+#: besieged_farm.xml:118
+msgid "Of course. Silly of me."
+msgstr "Of course. Silly of me."
+
+#: besieged_farm.xml:120
+msgid "Really now, "
+msgstr ""
+
+#: besieged_farm.xml:122 besieged_farm.xml:124
+msgid "Let's just go collect the money."
+msgstr "Let's just go collect the money."
+
+#: besieged_farm.xml:135
+msgid "Brons Farm"
+msgstr "Brons Farm"
+
+#: besieged_farm.xml:141
+msgid "It's done."
+msgstr "It's done."
+
+#: besieged_farm.xml:142
+msgid "I've already heard of it."
+msgstr "I've already heard of it."
+
+#: besieged_farm.xml:143
+msgid ""
+"Michel is in the tavern getting plastered - all in honor of your bravery, of "
+"course."
+msgstr ""
+"Michel is in the tavern getting plastered - all in honor of your bravery, of "
+"course."
+
+#: besieged_farm.xml:144
+msgid "But that shall be of no concern to you."
+msgstr "But that shall be of no concern to you."
+
+#: besieged_farm.xml:145
+msgid "Here's the money."
+msgstr "Here's the money."
+
+#~ msgid ""
+#~ "Really now, \"..name..\". Did you think she'd use carrier pigeons in this "
+#~ "day and age?"
+#~ msgstr ""
+#~ "Really now, \"..name..\". Did you think she'd use carrier pigeons in this "
+#~ "day and age?"
+
+#, fuzzy
+#~ msgid "bronsFarmDoor"
+#~ msgstr "Brons Farm"

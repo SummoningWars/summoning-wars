@@ -20,10 +20,32 @@
 #include "itemfactory.h"
 #include "scriptobject.h"
 
-#include "music.h"
+//#include "music.h"
+
+// Allow using the list structure (used to store music tracks in region data).
+#include <list>
+
+// Sound operations helper.
+#include "soundhelper.h"
+
+// Allow the use of the sound manager.
+#include "gussound.h"
+
+using gussound::SoundManager;
 
 RegionData::RegionData()
 {
+	m_id = -1;
+	m_dimx= 0;
+	m_dimy = 0;
+	m_area_percent = 0.0f;
+	m_complexity = 0.0f;
+	m_granularity = 0;
+	m_exit_directions[0] = false;
+	m_exit_directions[1] = false;
+	m_exit_directions[2] = false;
+	m_exit_directions[3] = false;
+  
 	for (int i=0; i<3; i++)
 	{
 		m_ambient_light[i] = 0.2;
@@ -307,73 +329,108 @@ void RegionLight::fromString(CharConv* cv)
 // This is not recommended normally: sending a partially constructed object (this)
 // to an instantiated item (m_light). In this instance it works, since m_light only
 // stores the pointer. If any other operations would be attempted, it could spell disaster.
-Region::Region(short dimx, short dimy, short id, std::string name, RegionData* data)
-	: m_light(this) 
+Region::Region(short dimx, short dimy, short id, std::string name, RegionData* data):
+	m_dimx(dimx),
+	m_dimy(dimy),
+
+	m_data_grid(dimx, dimy),
+	m_height(dimx, dimy),
+
+	m_id(id),
+	m_name(name),
+	m_cutscene_mode(false),
+
+	m_revive_location(""),
+
+	m_light(this)
 {
-	DEBUGX("creating region");
-	m_data_grid = new Matrix2d<Gridunit>(dimx,dimy);
-	m_dimx = dimx;
-	m_dimy = dimy;
-	m_name = name;
+	SW_DEBUG ("creating region [%s]", m_name.c_str ());
 
-	m_height = new Matrix2d<float>(dimx,dimy);
-	m_height->clear();
-
-	// Create the binary tree for WorldObjects
-	m_objects = new WorldObjectMap;
-	m_static_objects = new WorldObjectMap;
-
-	m_players = new WorldObjectMap;
-
-	// Baum fuer Projektile anlegen
-	m_projectiles = new ProjectileMap;
-
-	// Liste der Gegenstaende
-	m_drop_items = new DropItemMap;
-	m_drop_item_locations = new DropItemMap;
-
-	m_id = id;
-
-	m_netevents = new NetEventList;
-
-	m_cutscene_mode = false;
-	
-	m_revive_location = "";
+	m_data_grid.clear();
+	m_height.clear();
 	
 	Trigger* tr = new Trigger("create_region");
 	insertTrigger(tr);
 	
-	if (data !=0)
+	if (data)
 	{
 		m_light.init(data->m_ambient_light, data->m_hero_light, data->m_directional_light);
 		m_music_tracks = data->m_music_tracks;
 	}
 	
 	m_camera.m_region = this;
+
+	// Also create a playlist for this region, bearing the same name.
+	if (! SoundManager::getPtr ()->getMusicPlayer ()->isPlaylistRegistered (m_name))
+	{
+		SoundManager::getPtr ()->getMusicPlayer ()->registerPlaylist (m_name);
+		SoundManager::getPtr ()->getMusicPlayer ()->setRepeat (true);
+		SoundManager::getPtr ()->getMusicPlayer ()->setShuffle (true);
+		SoundManager::getPtr ()->getMusicPlayer ()->setFadePreferrences (false, false, false);
+
+		// The track names to be used are stored in rdata.
+		if (data)
+		{
+			for (std::list <std::string>::const_iterator it = data->m_music_tracks.begin ();
+				it != data->m_music_tracks.end (); ++ it)
+			{
+				try
+				{
+					// The region stores track names in the form:
+					// - tread_lightly.ogg
+					// - ambience_2.ogg
+					// The music player needs the files including their full path (absolute or relative), in the form:
+					// - .//./share/resources/music/tread_lightly.ogg
+					// - .//./share/resources/music/ambience_2.ogg
+
+					std::string fileName = SoundHelper::getNameWithPathForMusicTrack (*it);
+#if 1
+					// One could call the following function to add an "anonymous" track (with a name such as "track_01").
+					SoundManager::getPtr ()->addPlaylistTrack (m_name, fileName);
+#else
+					// Or one could opt for the manual 2 step solution:
+					SoundManager::getPtr ()->getRepository ()->addSound (*it	// sound name
+																		, fileName	// sound file path
+																		, false	// load into memory? don't do this for songs
+																		, gussound::GSC_Music // category: music.
+																		, true);	// allow only one instance of this sound to be played at one point.
+					SoundManager::getPtr ()->getMusicPlayer ()->addTrackToPlaylist (m_name, *it);
+#endif
+				}
+				catch (std::exception& e)
+				{
+					SW_DEBUG ("Region creation caught exception: %s", e.what ());
+				}
+			}
+		}
+	}
+
+	//SoundManager::getPtr ()->getMusicPlayer ()->stop ();
+	//SoundManager::getPtr ()->getMusicPlayer ()->play ();
 }
 
 Region::~Region()
 {
 	WorldObjectMap::iterator i;
-	for (i=m_objects->begin(); i!=m_objects->end();i++)
+	for (i=m_objects.begin(); i!=m_objects.end();++i)
 	{
 		delete i->second;
 	}
 
-	for (i=m_static_objects->begin(); i!=m_static_objects->end();i++)
+	for (i=m_static_objects.begin(); i!=m_static_objects.end();++i)
 	{
 		delete i->second;
 	}
 
 	ProjectileMap::iterator j;
-	for (j =  m_projectiles->begin(); j != m_projectiles->end(); j++)
+	for (j =  m_projectiles.begin(); j != m_projectiles.end(); ++j)
 	{
 		delete (j->second);
 	}
 
 
 	DropItemMap::iterator k;
-	for (k =  m_drop_items->begin(); k != m_drop_items->end(); k++)
+	for (k =  m_drop_items.begin(); k != m_drop_items.end(); ++k)
 	{
 		if (k->second->getItem() !=0)
 			delete k->second->getItem();
@@ -401,18 +458,11 @@ Region::~Region()
 	{
 		delete *it;
 	}
-	
-	delete m_objects;
-	delete m_static_objects;
-	delete m_players;
-	delete m_projectiles;
 
-	delete m_data_grid;
-	delete m_drop_items;
-	delete m_drop_item_locations;
-	delete m_height;
-	delete m_netevents;
-
+	// Note: it could be possible to remove the playlist here... but that would mean we would have to instantly cut the music.
+	// If we keep the named playlist alive, we can apply a fade-out, moving from the region playlist to the menu playlist.
+	// Once we create a new region playlist, we can remove the old one. (And if the old one is using the same ID, meaning: the user
+	// is loading the same region, we can even resume from where we were previously playing the track).
 }
 
 WorldObject* Region::getObject ( int id)
@@ -421,16 +471,16 @@ WorldObject* Region::getObject ( int id)
 
 	// Objekt im Binärbaum suchen
 
-	iter = m_objects->find(id);
+	iter = m_objects.find(id);
 
 	// Testen ob ein Objekt gefunden wurde
-	if (iter == m_objects->end())
+	if (iter == m_objects.end())
 	{
 		// unter den statischen Objekten suchen
-		iter = m_static_objects->find(id);
+		iter = m_static_objects.find(id);
 
 		// Testen ob ein Objekt gefunden wurde
-		if (iter == m_static_objects->end())
+		if (iter == m_static_objects.end())
 		{
 			// keins gefunden, NULL ausgeben
 			return 0;
@@ -453,10 +503,10 @@ Projectile* Region::getProjectile(int id)
 	ProjectileMap::iterator iter;
 
 	// Objekt im Binärbaum suchen
-	iter = m_projectiles->find(id);
+	iter = m_projectiles.find(id);
 
 	// Testen ob ein Objekt gefunden wurde
-	if (iter == m_projectiles->end())
+	if (iter == m_projectiles.end())
 	{
 		// keins gefunden, NULL ausgeben
 		return 0;
@@ -719,7 +769,7 @@ bool Region::getObjectsInShape( Shape* shape,  WorldObjectList* result,short lay
 		// Wenn nur nach Spielern gesucht ist, dann nur die Liste der Spieler durchsuchen
 
 		WorldObjectMap::iterator it;
-		for (it = m_players->begin(); it != m_players->end(); ++it)
+		for (it = m_players.begin(); it != m_players.end(); ++it)
 		{
  			if (shape->intersects(*(it->second->getShape()) ) && it->second != omit)
 			{
@@ -744,7 +794,7 @@ bool Region::getObjectsInShape( Shape* shape,  WorldObjectList* result,short lay
 		int xmax = (int) floor(0.25*(d1.m_x+4));
 		int ymax = (int) floor(0.25*(d1.m_y+4));
 		// Pruefen ob die Suchanfrage nicht aus der Region herauslaeuft
-		bool ret = false;
+
 		int is = MathHelper::Max (xmin,0);
 		int ie = MathHelper::Min(xmax,m_dimx-1);
 		int js = MathHelper::Max(ymin,0);
@@ -760,14 +810,14 @@ bool Region::getObjectsInShape( Shape* shape,  WorldObjectList* result,short lay
 
 				DEBUGX("searching in Grid Tile %i %i",i,j);
 				// Durchmustern der Listen im 4x4-Feld
-				gu = &(*m_data_grid)[i][j];
+				gu = &(m_data_grid)[i][j];
 
 				// Totenebene
 				if (group & WorldObject::DEAD)
 				{
 					DEBUGX("searching dead layer");
 
-					ret =  addObjectsInShapeFromGridunit(shape, gu, result, layer,group & WorldObject::DEAD, omit, empty_test);
+					addObjectsInShapeFromGridunit(shape, gu, result, layer,group & WorldObject::DEAD, omit, empty_test);
 					if (!result->empty() && empty_test)
 						return true;
 
@@ -778,7 +828,7 @@ bool Region::getObjectsInShape( Shape* shape,  WorldObjectList* result,short lay
 				{
 					DEBUGX("searching fixed layer");
 
-					ret =  addObjectsInShapeFromGridunit(shape, gu, result, layer,group & WorldObject::FIXED, omit, empty_test);
+					addObjectsInShapeFromGridunit(shape, gu, result, layer,group & WorldObject::FIXED, omit, empty_test);
 					if (!result->empty() && empty_test)
 						return true;
 
@@ -788,7 +838,7 @@ bool Region::getObjectsInShape( Shape* shape,  WorldObjectList* result,short lay
 				if (group & WorldObject::CREATURE)
 				{
 
-					ret =  addObjectsInShapeFromGridunit(shape, gu, result, layer,group & WorldObject::CREATURE, omit, empty_test);
+					addObjectsInShapeFromGridunit(shape, gu, result, layer,group & WorldObject::CREATURE, omit, empty_test);
 					if (!result->empty() && empty_test)
 						return true;
 
@@ -877,7 +927,7 @@ void Region::getObjectsOnLine(Line& line,  WorldObjectList* result,short layer, 
 			}
 
 			// Durchmustern der Listen im 4x4-Feld
-			gu = &(*m_data_grid)[i][j];
+			gu = &(m_data_grid)[i][j];
 
 			// Totenebene
 			if (group & WorldObject::DEAD)
@@ -935,19 +985,19 @@ bool Region::insertObject(WorldObject* object, Vector pos, float angle )
 	 // Einfügen in den Binärbaum
 	if (object->getState() != WorldObject::STATE_STATIC)
 	{
-		result &= (m_objects->insert(std::make_pair(object->getId(),object))).second;
+		result &= (m_objects.insert(std::make_pair(object->getId(),object))).second;
 		result &= (m_game_objects.insert(std::make_pair(object->getId(),object))).second;
 	}
 	else
 	{
-		result &= (m_static_objects->insert(std::make_pair(object->getId(),object))).second;
+		result &= (m_static_objects.insert(std::make_pair(object->getId(),object))).second;
 	}
 
 
 	 // Wenn das Element bereits existiert ist die Antwort false
 	if (result==false)
 	{
-		DEBUG("Object with id %i already exists",object->getId());
+		SW_DEBUG("Object with id %i already exists",object->getId());
 		return result;
 	}
 
@@ -955,7 +1005,7 @@ bool Region::insertObject(WorldObject* object, Vector pos, float angle )
 	{
 		Player* pl = dynamic_cast<Player*>(object);
 		DEBUGX("player entered Region");
-		result &= (m_players->insert(std::make_pair(object->getId(),object))).second;
+		result &= (m_players.insert(std::make_pair(object->getId(),object))).second;
 		
 		if (m_revive_location != "")
 		{
@@ -1040,7 +1090,7 @@ bool Region::insertObject(WorldObject* object, Vector pos, float angle )
 			}
 			else
 			{
-				Gridunit *gu = (m_data_grid->ind(x_g,y_g));
+				Gridunit *gu = (m_data_grid.ind(x_g,y_g));
 
 				result = gu->insertObject(object);
 			}
@@ -1068,7 +1118,7 @@ int Region::createObject(ObjectTemplateType generictype, Vector pos, float angle
 	
 	if (subtype == "")
 	{
-		DEBUG("no subtype found for generictype %s",generictype.c_str());
+		SW_DEBUG("no subtype found for generictype %s",generictype.c_str());
 		return 0;
 	}
 	
@@ -1076,7 +1126,7 @@ int Region::createObject(ObjectTemplateType generictype, Vector pos, float angle
 	WorldObject::Type type = ObjectFactory::getObjectBaseType(subtype);
 	if (type == "NONE")
 	{
-		DEBUG("no base type for subtype %s",subtype.c_str());
+		SW_DEBUG("no base type for subtype %s",subtype.c_str());
 		return 0;
 	}
 
@@ -1085,7 +1135,7 @@ int Region::createObject(ObjectTemplateType generictype, Vector pos, float angle
 
 	if (object ==0)
 	{
-		DEBUG("could not create object for generictype %s",generictype.c_str());
+		SW_DEBUG("could not create object for generictype %s",generictype.c_str());
 		return 0;
 	}
 
@@ -1112,7 +1162,7 @@ int Region::createObject(ObjectTemplateType generictype, Vector pos, float angle
 	bool ret = insertObject(object,pos,angle);
 	if (!ret)
 	{
-		DEBUG("insertion of object %s failed",object->getNameId().c_str());
+		SW_DEBUG("insertion of object %s failed",object->getNameId().c_str());
 	}
 
 	return object->getId();
@@ -1267,7 +1317,7 @@ void Region::createMonsterGroup(MonsterGroupName mgname, Vector position, float 
 
 	if (mgroup == 0)
 	{
-		DEBUG("monster group %s not found",mgname.c_str());
+		SW_DEBUG("monster group %s not found",mgname.c_str());
 		return;
 	}
 
@@ -1312,7 +1362,7 @@ void Region::createMonsterGroup(MonsterGroupName mgname, Vector position, float 
 bool  Region::insertProjectile(Projectile* object, Vector pos)
 {
 	DEBUGX("projectile inserted: %s %i",object->getSubtype().c_str(), object->getId());
-	m_projectiles->insert(std::make_pair(object->getId(),object));
+	m_projectiles.insert(std::make_pair(object->getId(),object));
 	m_game_objects.insert(std::make_pair(object->getId(),object));
 	object->getShape()->m_center = pos;
 	object->setRegionId( m_id);
@@ -1333,7 +1383,7 @@ bool  Region::deleteObject (WorldObject* object)
 	if (object == 0)
 		return false;
 	
-	if (m_objects->count(object->getId()) == 0 && m_static_objects->count(object->getId()) == 0)
+	if (m_objects.count(object->getId()) == 0 && m_static_objects.count(object->getId()) == 0)
 	{
 		// Objekt nicht gefunden
 		return false;
@@ -1361,18 +1411,18 @@ bool  Region::deleteObject (WorldObject* object)
 	 // Aus dem Binärbaum loeschen
 	if (object->getState() != WorldObject::STATE_STATIC)
 	{
-		m_objects->erase(object->getId());
+		m_objects.erase(object->getId());
 		m_game_objects.erase(object->getId());
 	}
 	else
 	{
-		m_static_objects->erase(object->getId());
+		m_static_objects.erase(object->getId());
 	}
 
 	if (object->getType() == "PLAYER")
 	{
 		DEBUGX("Player deleted");
-		m_players->erase(object->getId());
+		m_players.erase(object->getId());
 
 		
 		Trigger* tr = new Trigger("leave_region");
@@ -1400,7 +1450,7 @@ bool  Region::deleteObject (WorldObject* object)
 	
 		if (object->getLayer() & WorldObject::LAYER_COLLISION)
 		{
-			Gridunit *gu = (m_data_grid->ind(x,y));
+			Gridunit *gu = (m_data_grid.ind(x,y));
 			result = gu->deleteObject(object, object->getGridLocation()->m_index);
 		}
 	}
@@ -1417,7 +1467,7 @@ bool Region::deleteObject(int id)
 	}
 	else
 	{
-		DEBUG("no object with id %i",id);
+		SW_DEBUG("no object with id %i",id);
 	}
 	return false;
 }
@@ -1466,14 +1516,15 @@ bool Region::moveObject(WorldObject* object, Vector pos)
 	}
 	else
 	{
-		Gridunit *gu = &(*m_data_grid)[x_old][y_old];
+		//DEBUG ("Moved object to [%d] x [%d] ; in region sized %d x %d", x_new, y_new, m_dimx, m_dimy);
+		Gridunit *gu = &(m_data_grid)[x_old][y_old];
 		result =gu->deleteObject(object, object->getGridLocation()->m_index);
 		if (result == false)
 		{
 			ERRORMSG("failed to remove object %i from gridunit %i %i",object->getId(),x_old, y_old);
 		}
 
-		gu = &(*m_data_grid)[x_new][y_new];
+		gu = &(m_data_grid)[x_new][y_new];
 		result = gu->insertObject(object);
 		if (result == false)
 		{
@@ -1501,7 +1552,7 @@ bool Region::changeObjectGroup(WorldObject* object,WorldObject::Group group )
 		int y = object->getGridLocation()->m_grid_y;
 		DEBUGX("changing object in grid tile %i %i",x,y);
 	
-		Gridunit *gu = (m_data_grid->ind(x,y));
+		Gridunit *gu = (m_data_grid.ind(x,y));
 		result = gu->moveObject(object,group);
 	}
 
@@ -1545,7 +1596,7 @@ bool Region::changeObjectLayer(WorldObject* object,WorldObject::Layer layer)
 			}
 			else
 			{
-				Gridunit *gu = (m_data_grid->ind(x_g,y_g));
+				Gridunit *gu = (m_data_grid.ind(x_g,y_g));
 
 				result = gu->insertObject(object);
 				DEBUGX("insert into grid %i %i",x_g,y_g);
@@ -1573,7 +1624,7 @@ bool Region::changeObjectLayer(WorldObject* object,WorldObject::Layer layer)
 			int y = object->getGridLocation()->m_grid_y;
 			DEBUGX("deleting object in grid tile %i %i",x,y);
 			
-			Gridunit *gu = (m_data_grid->ind(x,y));
+			Gridunit *gu = (m_data_grid.ind(x,y));
 			result = gu->deleteObject(object, object->getGridLocation()->m_index);
 			
 		}
@@ -1590,9 +1641,9 @@ void Region::deleteProjectile(Projectile* proj)
 	
 	int id = proj->getId();
 
-	if (m_projectiles->count(id)!=0)
+	if (m_projectiles.count(id)!=0)
 	{
-		m_projectiles->erase(m_projectiles->find(id));
+		m_projectiles.erase(m_projectiles.find(id));
 		DEBUGX("projectile deleted: %s %i",proj->getSubtype().c_str(), proj->getId());
 	}
 	m_game_objects.erase(id);
@@ -1618,7 +1669,7 @@ void Region::update(float time)
 	
 	
 	// Durchmustern aller WorldObjects
-	for (iter =m_objects->begin(); iter!=m_objects->end(); )
+	for (iter =m_objects.begin(); iter!=m_objects.end(); )
 	{
 		object = iter->second;
 
@@ -1656,7 +1707,7 @@ void Region::update(float time)
 
 	}
 	
-	for (iter =m_objects->begin(); iter!=m_objects->end(); ++iter)
+	for (iter =m_objects.begin(); iter!=m_objects.end(); ++iter)
 	{
 		object = iter->second;
 		if (object->getDestroyed()!=true)
@@ -1670,7 +1721,7 @@ void Region::update(float time)
 	// alle Projektile updaten
 	Projectile* pr =0;
 
-	for (it3 = m_projectiles->begin(); it3 !=m_projectiles->end();)
+	for (it3 = m_projectiles.begin(); it3 !=m_projectiles.end();)
 	{
 		pr = (it3->second);
 		DEBUGX("projectile %i",pr->getId());
@@ -1708,7 +1759,7 @@ void Region::update(float time)
 
 	// DropItems updaten
 	DropItemMap::iterator it4;
-	for (it4 = m_drop_items->begin(); it4 != m_drop_items->end(); ++it4)
+	for (it4 = m_drop_items.begin(); it4 != m_drop_items.end(); ++it4)
 	{
 		it4->second->update(time);
 	}
@@ -1716,7 +1767,7 @@ void Region::update(float time)
 	if (World::getWorld()->isServer())
 	{
 		// NetEvents fuer geaenderte Objekte / Projektile erzeugen
-		for (iter =m_objects->begin(); iter!=m_objects->end(); ++iter)
+		for (iter =m_objects.begin(); iter!=m_objects.end(); ++iter)
 		{
 			object = iter->second;
 
@@ -1739,7 +1790,7 @@ void Region::update(float time)
 			}
 		}
 
-		for (it3 = m_projectiles->begin(); it3 !=m_projectiles->end();++it3)
+		for (it3 = m_projectiles.begin(); it3 !=m_projectiles.end();++it3)
 		{
 			pr = (it3->second);
 			if (pr->getNetEventMask() !=0)
@@ -1757,7 +1808,7 @@ void Region::update(float time)
 
 	// pruefen ob ein Spieler die Region verlassen hat
 	bool del = false;
-	for (iter = m_players->begin(); iter != m_players->end(); )
+	for (iter = m_players.begin(); iter != m_players.end(); )
 	{
 		// Schleife ueber die Ausgaenge
 		std::list<RegionExit>::iterator eit;
@@ -1770,7 +1821,7 @@ void Region::update(float time)
 				int id = World::getWorld()->getRegionId(eit->m_destination_region);
 
 				WorldObjectMap::iterator iter2 = iter;
-				iter ++;
+				++iter;
 				del = true;
 
 				// Spieler aus der Region entfernen
@@ -1814,7 +1865,7 @@ void Region::update(float time)
 
 					// Spieler verlaesst die Region
 					WorldObjectMap::iterator iter2 = iter;
-					iter ++;
+					++iter;
 					del = true;
 
 					// Spieler aus der Region entfernen
@@ -1991,12 +2042,12 @@ void Region::getRegionData(CharConv* cv)
 	
 
 	// Anzahl der statischen Objekte eintragen
-	DEBUGX("static objects: %i",m_static_objects->size());
-	cv->toBuffer((short) m_static_objects->size());
+	DEBUGX("static objects: %i",m_static_objects.size());
+	cv->toBuffer((short) m_static_objects.size());
 
 	// statische Objekte in den Puffer eintragen
 	WorldObjectMap::iterator it;
-	for (it = m_static_objects->begin();it!=m_static_objects->end();++it)
+	for (it = m_static_objects.begin();it!=m_static_objects.end();++it)
 	{
 		(it->second)->toString(cv);
 		DEBUGX("static object: %s",(it->second)->getNameId().c_str());
@@ -2006,7 +2057,7 @@ void Region::getRegionData(CharConv* cv)
 	// Anzahl der nicht  statischen Objekte eintragen
 	WorldObjectMap::iterator jt;
 	short nr=0;
-	for (jt = m_objects->begin();jt!=m_objects->end();++jt)
+	for (jt = m_objects.begin();jt!=m_objects.end();++jt)
 	{
 		if (jt->second->getLayer() & WorldObject::LAYER_ALL)
 			nr++;
@@ -2016,7 +2067,7 @@ void Region::getRegionData(CharConv* cv)
 
 	// nicht statische Objekte in den Puffer eintragen
 
-	for (jt = m_objects->begin();jt!=m_objects->end();++jt)
+	for (jt = m_objects.begin();jt!=m_objects.end();++jt)
 	{
 		if (jt->second->getLayer() & WorldObject::LAYER_ALL)
 		{
@@ -2028,22 +2079,22 @@ void Region::getRegionData(CharConv* cv)
 	}
 
 	// Anzahl der Projektile eintragen
-	cv->toBuffer((short) m_projectiles->size());
-	DEBUGX("projectiles: %i",m_projectiles->size());
+	cv->toBuffer((short) m_projectiles.size());
+	DEBUGX("projectiles: %i",m_projectiles.size());
 
 	// Projektile in den Puffer eintragen
 	ProjectileMap::iterator kt;
-	for (kt = m_projectiles->begin(); kt != m_projectiles->end(); ++kt)
+	for (kt = m_projectiles.begin(); kt != m_projectiles.end(); ++kt)
 	{
 		kt->second->toString(cv);
 	}
 
-	cv->toBuffer((short) m_drop_items->size());
-	DEBUGX("dropped items: %i",m_drop_items->size());
+	cv->toBuffer((short) m_drop_items.size());
+	DEBUGX("dropped items: %i",m_drop_items.size());
 
 	//  Items in den Puffer eintragen
 	DropItemMap::iterator lt;
-	for (lt = m_drop_items->begin(); lt != m_drop_items->end(); ++lt)
+	for (lt = m_drop_items.begin(); lt != m_drop_items.end(); ++lt)
 	{
 		lt->second->toString(cv);
 	}
@@ -2116,7 +2167,7 @@ void Region::createObjectFromString(CharConv* cv, WorldObjectMap* players)
 	WorldObject* oldobj = getObject(obj->getId());
 	if (oldobj != 0)
 	{
-		DEBUG("Object %i already exists",oldobj->getId());
+		SW_DEBUG("Object %i already exists",oldobj->getId());
 		oldobj->destroy();
 		deleteObject(oldobj);
 		delete oldobj;
@@ -2146,7 +2197,7 @@ void Region::createProjectileFromString(CharConv* cv)
 	Projectile* oldproj = getProjectile(proj->getId());
 	if (oldproj != 0)
 	{
-		DEBUG("Projectile %i already exists",oldproj->getId());
+		SW_DEBUG("Projectile %i already exists",oldproj->getId());
 		deleteProjectile(oldproj);
 		delete oldproj;
 	}
@@ -2168,13 +2219,13 @@ void Region::createItemFromString(CharConv* cv)
 	DropItem* di = new DropItem(id);
 	di->fromString(cv);
 
-	if (m_drop_items->count(id) >0)
+	if (m_drop_items.count(id) >0)
 	{
 		DEBUGX("Item %i already exists",di->getId());
 		deleteItem(id);
 	}
-	m_drop_items->insert(std::make_pair(id,di));
-	m_drop_item_locations->insert(std::make_pair(di->getLocationId(),di));
+	m_drop_items.insert(std::make_pair(id,di));
+	m_drop_item_locations.insert(std::make_pair(di->getLocationId(),di));
 	m_game_objects.insert(std::make_pair(di->getId(),di));
 }
 
@@ -2185,7 +2236,7 @@ void Region::createDialogueFromString(CharConv* cv)
 	
 	if (m_dialogues.count(id) >0)
 	{
-		DEBUG("Dialogue %i already exists",id);
+		SW_DEBUG("Dialogue %i already exists",id);
 		deleteDialogue(m_dialogues[id]);
 	}	
 	
@@ -2207,10 +2258,10 @@ void Region::setRegionData(CharConv* cv,WorldObjectMap* players)
 
 	// alle bisherigen statischen Objekte entfernen
 	WorldObjectMap::iterator it, itnext;
-	for (it = m_static_objects->begin();it!=m_static_objects->end();it++)
+	for (it = m_static_objects.begin();it!=m_static_objects.end();++it)
 	{
 		itnext = it;
-		itnext ++;
+		++itnext;
 		
 		it->second->destroy();
 		deleteObject(it->second);
@@ -2218,15 +2269,15 @@ void Region::setRegionData(CharConv* cv,WorldObjectMap* players)
 		
 		it = itnext;
 	}
-	m_static_objects->clear();
+	m_static_objects.clear();
 
 	// alle bisherigen nichtstatischen Objekte entfernen
 	// die SpielerObjekte bleiben erhalten, alle anderen werden geloescht
 	WorldObjectMap::iterator jt, jtnext;
-	for (jt = m_objects->begin();jt!=m_objects->end();)
+	for (jt = m_objects.begin();jt!=m_objects.end();)
 	{
 		jtnext = jt;
-		jtnext++;
+		++jtnext;
 		if (jt->second->getType() != "PLAYER")
 		{
 			jt->second->destroy();
@@ -2235,12 +2286,12 @@ void Region::setRegionData(CharConv* cv,WorldObjectMap* players)
 		}
 		jt = jtnext;
 	}
-	m_objects->clear();
-	m_players->clear();
+	m_objects.clear();
+	m_players.clear();
 	
 	// DropItems loeschen
 	DropItemMap::iterator k;
-	for (k =  m_drop_items->begin(); k != m_drop_items->end(); k++)
+	for (k =  m_drop_items.begin(); k != m_drop_items.end(); ++k)
 	{
 		if (k->second->getItem() !=0)
 		{
@@ -2249,7 +2300,7 @@ void Region::setRegionData(CharConv* cv,WorldObjectMap* players)
 		m_game_objects.erase(k->second->getId());
 		delete k->second;
 	}
-	m_drop_items->clear();
+	m_drop_items.clear();
 	
 	std::list<Trigger*>::iterator l;
 	for (l = m_triggers.begin(); l != m_triggers.end(); ++l)
@@ -2331,7 +2382,7 @@ void Region::getRegionCheckData(CharConv* cv)
 	// Anzahl der nicht  statischen Objekte eintragen
 	WorldObjectMap::iterator jt;
 	short nr=0;
-	for (jt = m_objects->begin();jt!=m_objects->end();++jt)
+	for (jt = m_objects.begin();jt!=m_objects.end();++jt)
 	{
 		if (jt->second->getLayer() & WorldObject::LAYER_ALL)
 			nr++;
@@ -2341,7 +2392,7 @@ void Region::getRegionCheckData(CharConv* cv)
 
 	// nicht statische Objekte in den Puffer eintragen
 
-	for (jt = m_objects->begin();jt!=m_objects->end();++jt)
+	for (jt = m_objects.begin();jt!=m_objects.end();++jt)
 	{
 		if (jt->second->getLayer() & WorldObject::LAYER_ALL)
 		{
@@ -2351,22 +2402,22 @@ void Region::getRegionCheckData(CharConv* cv)
 	}
 
 	// Anzahl der Projektile eintragen
-	cv->toBuffer((short) m_projectiles->size());
-	DEBUGX("projectiles: %i",m_projectiles->size());
+	cv->toBuffer((short) m_projectiles.size());
+	DEBUGX("projectiles: %i",m_projectiles.size());
 
 	// Projektile in den Puffer eintragen
 	ProjectileMap::iterator kt;
-	for (kt = m_projectiles->begin(); kt != m_projectiles->end(); ++kt)
+	for (kt = m_projectiles.begin(); kt != m_projectiles.end(); ++kt)
 	{
 		cv->toBuffer((kt->second)->getId());
 	}
 
-	cv->toBuffer((short) m_drop_items->size());
-	DEBUGX("dropped items: %i",m_drop_items->size());
+	cv->toBuffer((short) m_drop_items.size());
+	DEBUGX("dropped items: %i",m_drop_items.size());
 
 	//  Items in den Puffer eintragen
 	DropItemMap::iterator lt;
-	for (lt = m_drop_items->begin(); lt != m_drop_items->end(); ++lt)
+	for (lt = m_drop_items.begin(); lt != m_drop_items.end(); ++lt)
 	{
 		cv->toBuffer((lt->second)->getId());
 	}
@@ -2528,14 +2579,14 @@ void Region::checkRegionData(CharConv* cv)
 		cv->fromBuffer(id);
 		objects.insert(id);
 		
-		if (m_objects->count(id) ==0)
+		if (m_objects.count(id) ==0)
 		{
 			// Objekt fehlt beim Client
 			objectsmissing.insert(id);
 		}
 	}
 	
-	for (it = m_objects->begin();it!=m_objects->end();++it)
+	for (it = m_objects.begin();it!=m_objects.end();++it)
 	{
 		wo = it->second;
 		if (objects.count(wo->getId()) ==0)
@@ -2556,14 +2607,14 @@ void Region::checkRegionData(CharConv* cv)
 		cv->fromBuffer(id);
 		objects.insert(id);
 		
-		if (m_projectiles->count(id) ==0)
+		if (m_projectiles.count(id) ==0)
 		{
 			// Objekt fehlt beim Client
 			projmissing.insert(id);
 		}
 	}
 	
-	for (kt = m_projectiles->begin(); kt!=m_projectiles->end();++kt)
+	for (kt = m_projectiles.begin(); kt!=m_projectiles.end();++kt)
 	{
 		pr = kt->second;
 		if (objects.count(pr->getId()) ==0)
@@ -2584,14 +2635,14 @@ void Region::checkRegionData(CharConv* cv)
 		cv->fromBuffer(id);
 		objects.insert(id);
 		
-		if (m_drop_items->count(id) ==0)
+		if (m_drop_items.count(id) ==0)
 		{
 			// Objekt fehlt beim Client
 			itemmissing.insert(id);
 		}
 	}
 	
-	for (lt = m_drop_items->begin(); lt!=m_drop_items->end();++lt)
+	for (lt = m_drop_items.begin(); lt!=m_drop_items.end();++lt)
 	{
 		di = lt->second;
 		if (objects.count(di->getId()) ==0)
@@ -2686,7 +2737,7 @@ bool  Region::dropItem(Item* item, Vector pos)
 		}
 
 		// Testen, ob dort nicht schon ein Item liegt
-		if (!fixblock && m_drop_item_locations->find(i) == m_drop_item_locations->end())
+		if (!fixblock && m_drop_item_locations.find(i) == m_drop_item_locations.end())
 		{
 			DEBUGX("field is free");
 			// Stelle ist frei
@@ -2695,8 +2746,8 @@ bool  Region::dropItem(Item* item, Vector pos)
 			di->setPosition(Vector(sx/2.0f, sy/2.0f));
 			DEBUGX("dropped item %i", sx*10000+sy);
 			
-			m_drop_items->insert(std::make_pair(di->getId(),di));
-			m_drop_item_locations->insert(std::make_pair(i,di));
+			m_drop_items.insert(std::make_pair(di->getId(),di));
+			m_drop_item_locations.insert(std::make_pair(i,di));
 			m_game_objects.insert(std::make_pair(di->getId(),di));
 
 			DEBUGX("items dropped at %f %f locID %i %p",sx/2.0f,sy/2.0f, di->getLocationId(),item);
@@ -2794,8 +2845,8 @@ Item*  Region::getItemAt(Vector pos)
 	short sy = (int) (pos.m_y*2 + 0.5);
 	int id = sx*10000 + sy;
 
-	it = m_drop_item_locations->find(id);
-	if (it == m_drop_items->end())
+	it = m_drop_item_locations.find(id);
+	if (it == m_drop_items.end())
 	{
 		return 0;
 	}
@@ -2808,8 +2859,8 @@ Item*  Region::getItemAt(Vector pos)
 Item* Region::getItem(int id)
 {
 	DropItemMap::iterator it;
-	it = m_drop_items->find(id);
-	if (it == m_drop_items->end())
+	it = m_drop_items.find(id);
+	if (it == m_drop_items.end())
 	{
 		return 0;
 	}
@@ -2822,8 +2873,8 @@ Item* Region::getItem(int id)
 DropItem* Region::getDropItem(int id)
 {
 	DropItemMap::iterator it;
-	it = m_drop_items->find(id);
-	if (it == m_drop_items->end())
+	it = m_drop_items.find(id);
+	if (it == m_drop_items.end())
 	{
 		return 0;
 	}
@@ -2839,8 +2890,8 @@ bool Region::deleteItem(int id, bool delitem)
 
 	DropItemMap::iterator it;
 	DropItemMap::iterator it2;
-	it = m_drop_items->find(id);
-	if (it == m_drop_items->end())
+	it = m_drop_items.find(id);
+	if (it == m_drop_items.end())
 	{
 		return false;
 	}
@@ -2848,7 +2899,7 @@ bool Region::deleteItem(int id, bool delitem)
 	{
 		// Item Wrapper loeschen
 		int pos = it->second->getLocationId();
-		it2 = m_drop_item_locations->find(pos);
+		it2 = m_drop_item_locations.find(pos);
 
 		
 		NetEvent event;
@@ -2862,10 +2913,10 @@ bool Region::deleteItem(int id, bool delitem)
 		}
 		delete (it->second);
 
-		m_drop_items->erase(it);
-		if (it2 != m_drop_item_locations->end())
+		m_drop_items.erase(it);
+		if (it2 != m_drop_item_locations.end())
 		{
-			m_drop_item_locations->erase(it2);
+			m_drop_item_locations.erase(it2);
 		}
 		m_game_objects.erase(id);
 
@@ -2881,7 +2932,7 @@ EnvironmentName Region::getEnvironment(Vector pos)
 		ERRORMSG("no environments defined");
 	}
 	// Hoehe an der angegebenen Stelle
-	float height = *(m_height->ind(int(pos.m_x/4),int(pos.m_y/4)));
+	float height = *(m_height.ind(int(pos.m_x/4),int(pos.m_y/4)));
 
 	std::map<float, EnvironmentName>::iterator it;
 
@@ -3090,8 +3141,15 @@ void Region::playSound(std::string soundname, Vector position, float volume , bo
 
 void Region::addMusicTrack(MusicTrack track)
 {
-	m_music_tracks.push_back(track);
+	SW_DEBUG ("Region: adding music track: %s", track.c_str ());
+	//
+	MusicTrack copiedName = track;
+	copiedName = SoundHelper::getNameWithPathForMusicTrack (copiedName);
+	m_music_tracks.push_back(copiedName);
 	
+	// Now also affect the music player. Add the track to the playlist with the name of this region.
+	SoundManager::getPtr ()->addPlaylistTrack (getName (), copiedName);
+
 	NetEvent event;
 	event.m_type = NetEvent::MUSIC_CHANGED;
 	event.m_id = getId();
@@ -3104,7 +3162,8 @@ void Region::clearMusicTracks()
 	if (World::getWorld()->getLocalPlayer() !=0
 		&& World::getWorld()->getLocalPlayer()->getRegion() == this)
 	{
-		MusicManager::instance().stop();
+		//MusicManager::instance().stop();
+		SoundManager::getPtr ()->getMusicPlayer ()->stop ();
 	}
 	
 	NetEvent event;

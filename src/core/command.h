@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef COMMAND_H
-#define COMMAND_H
+#ifndef __SUMWARS_CORE_COMMAND_H__
+#define __SUMWARS_CORE_COMMAND_H__
 
 
 
@@ -24,7 +24,7 @@
 
 /**
  * \class Command
- * \brief Beschreibt ein Kommando, welches eine Figur erhalten kann. Zur Ausf&uuml;hrung des Kommandos wird die Anweisung in mehrere Aktionen unterteilt, die hintereinander ausgefuehrt werden.
+ * \brief Describes an action which an actor can receive. The execution will be split into multiple actions which will be executed sequentially
  */
 class Command {
 /**
@@ -44,11 +44,11 @@ public:
 	 */
 	/**
 	 * \fn Command(Action::ActionType type, Vector goal, int goal_object_id)
-	 * \brief Konstruktor
-	 * \param type initialisiert den Typ des Kommandos
-	 * \param goal Zielpunkt der Aktion
-	 * \param goal_object_id initialisiert ID des Zielobjekts
-	 * Legt ein neues Command Objekt an
+     * \brief Constructor
+     * \param type Initializes the type of the command
+     * \param goal Goal of the command
+     * \param goal_object_id Initializes the ID of the goal object
+     * Creates a new command object
 	 */
 	Command(Action::ActionType type, Vector goal, int goal_object_id)
 	{
@@ -62,7 +62,7 @@ public:
 
 	/**
 	 * \fn Command()
-	 * \brief Konstruktor
+     * \brief Constructor
 	 */
 	Command()
 	{
@@ -76,27 +76,27 @@ public:
 
 	/**
 	 * \fn void toString(CharConv* cv)
-	 * \brief Konvertiert das Objekt in einen String und schreibt ihn in der Puffer
-	 * \param cv Eingabepuffer
+     * \brief Converts the object into a string and writes it to the buffer
+     * \param cv output buffer
 	 */
 	void toString(CharConv* cv);
 
 	/**
 	 * \fn void fromString(CharConv* cv)
-	 * \brief Erzeugt das Objekt aus einem String
-	 * \param cv Ausgabepuffer
+     * \brief Creates the object from a string
+     * \param cv input buffer
 	 */
 	void fromString(CharConv* cv);
 
 	/**
 	 * \fn bool operator!=(Command& other)
-	 * \brief Vergleichsoperator auf Ungleichheit
+     * \brief not equals operator
 	 */
 	bool operator!=(Command& other);
 
 	/**
 	 * \fn void operator=(Command& other)
-	 * \brief Zuweisungsoperator
+     * \brief assignment operator
 	 */
 	void operator=(Command& other);
 
@@ -105,37 +105,37 @@ public:
 	 */
 	/**
 	 * \var m_type
-	 * \brief Typ des Kommandos
+     * \brief Type of the command
 	 */
 	 Action::ActionType m_type;
 
 	/**
 	 * \var Vector m_goal
-	 * \brief Ziel des Kommandos
+     * \brief Goald of the command
 	 */
 	Vector m_goal;
 
 	/**
 	 * \var m_goal_object_id
-	 * \brief ID des Zielobjekts
+     * \brief ID of the goal object
 	 */
 	int  m_goal_object_id;
 
 	/**
 	 * \var float m_range
-	 * \brief Reichweite der Aktion
+     * \brief Range of the action
 	 */
 	float m_range;
 
 	/**
 	 * \var m_damage_mult;
-	 * \brief Multiplikator auf den Schaden der die Aktion abschließt
+     * \brief Multiplyer to the damage resulting from this action
 	 */
 	float m_damage_mult;
 
 	/**
 	 * \var char m_flags
-	 * \brief bitkodierte Flags
+     * \brief bit encoded flags
 	 */
 	char m_flags;
 	/**
@@ -148,4 +148,4 @@ public:
 	 * Operations
 	 */
 };
-#endif //COMMAND_H
+#endif // __SUMWARS_CORE_COMMAND_H__

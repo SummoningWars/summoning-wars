@@ -13,28 +13,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 #include "textfileeditwindow.h"
 #include "CEGUI/CEGUI.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <fstream>
 
-#include "Poco/String.h"
+#include <boost/filesystem.hpp>
+#include <boost/algorithm/string/replace.hpp>
 
 #define TAB "\267\267\267"
 
+using namespace boost;
 using namespace CEGUI;
 
 CEGUI::String TextFileEditWindow::WidgetTypeName = "TextFileEditWindow";
 
-TextFileEditWindow::TextFileEditWindow(const CEGUI::String& type, const CEGUI::String& name): Window(type, name)
+TextFileEditWindow::TextFileEditWindow (const CEGUI::String& type, const CEGUI::String& name)
+	: Window (type, name)
+	, m_ceguiSkinName ("TaharezLook")
 {
-	m_textEditBox = static_cast<MultiLineEditbox*>(WindowManager::getSingleton().createWindow("TaharezLook/MultiLineEditbox", name + "EditBox"));
+	std::stringstream ss;
+	ss << m_ceguiSkinName << "/MultiLineEditbox";
+	m_textEditBox = static_cast<MultiLineEditbox*>(WindowManager::getSingleton().createWindow(ss.str ().c_str (), name + "EditBox"));
 	m_textEditBox->setPosition(UVector2(UDim(0.0f, 0.0f), UDim(0.0f, 0.0f)));
-	m_textEditBox->setSize(UVector2(UDim(1.0f, 0.0f), UDim(1.0f, 0.0f)));
-	addChildWindow(m_textEditBox);
+  CEGUIUtility::setWidgetSizeRel(m_textEditBox, 1.0f, 1.0f);
+  CEGUIUtility::addChildWidget (this, m_textEditBox);
+
 	m_isDirty = false;
-	m_file = Poco::File();
 	m_fb = 0;
 	
 	m_textEditBox->subscribeEvent(MultiLineEditbox::EventCharacterKey, Event::Subscriber(&TextFileEditWindow::handleCharacterKey, this));
@@ -48,7 +58,7 @@ void TextFileEditWindow::close()
 void TextFileEditWindow::getNewFileName()
 {
 	m_fb = new FileBrowser();
-	m_fb->init("/home/stefan/Dev/s07c/sumwars", FileBrowser::FB_TYPE_SAVE_FILE, true);
+	m_fb->init ("/home/stefan/Dev/s07c/sumwars", FileBrowser::FB_TYPE_SAVE_FILE, true, m_ceguiSkinName);
 	m_fb->m_acceptBtn->subscribeEvent(PushButton::EventClicked, CEGUI::Event::Subscriber(&TextFileEditWindow::handleFileBrowserSaveClicked, this));
 	m_fb->m_cancelBtn->subscribeEvent(PushButton::EventClicked, CEGUI::Event::Subscriber(&TextFileEditWindow::handleFileBrowserCancelClicked, this));
 
@@ -62,7 +72,7 @@ bool TextFileEditWindow::load(const String &fileName)
 {
 	setFilepath(fileName.c_str());
 
-	if(m_file.exists())
+    if(boost::filesystem::is_regular_file(m_file))
 	{
 		std::string s;
 		std::string line;
@@ -111,7 +121,7 @@ bool TextFileEditWindow::load(const String &fileName)
 
 void TextFileEditWindow::save()
 {
-	if(m_file.path() == "")
+    if(m_file.string() == "")
 	{
 		getNewFileName();
 		return;
@@ -123,11 +133,8 @@ void TextFileEditWindow::save()
 	{
 		CEGUI::String s = m_textEditBox->getText();
 
-		if (!m_file.exists())
-			m_file.createFile();
-		
 		std::ofstream myfile;
-		myfile.open(m_file.path().c_str());
+        myfile.open(m_file.string().c_str());
 		myfile.clear();
 		int pos =  s.find(TAB);
 		while(pos != s.npos)
@@ -139,7 +146,8 @@ void TextFileEditWindow::save()
 		myfile << s.c_str();
 		myfile.close();
 		std::string temp = getText().c_str();
-		setText(Poco::replace(temp, " *", ""));
+        algorithm::replace_all_copy(temp, " *", "");
+        setText(temp);
 	}
 }
 
@@ -165,23 +173,23 @@ bool TextFileEditWindow::handleCharacterKey(const CEGUI::EventArgs& ee)
 		int pos = m_textEditBox->getSelectionStartIndex();
 		s = s.insert(pos, TAB);
 		m_textEditBox->setText(s);
-		m_textEditBox->setCaratIndex(pos+3);
+		m_textEditBox->setCaretIndex(pos+3);
 		return true;
 	}
 	else if(e.codepoint == 40)
 	{
 		// Handle (
-		m_textEditBox->insertText(")", m_textEditBox->getCaratIndex());
+		m_textEditBox->insertText(")", m_textEditBox->getCaretIndex());
 	}
 	else if(e.codepoint == 91)
 	{
 		// Handle [
-		m_textEditBox->insertText("]", m_textEditBox->getCaratIndex());
+		m_textEditBox->insertText("]", m_textEditBox->getCaretIndex());
 	}
 	else if(e.codepoint == 123)
 	{
 		// Handle {
-		m_textEditBox->insertText("}", m_textEditBox->getCaratIndex());
+		m_textEditBox->insertText("}", m_textEditBox->getCaretIndex());
 	}
 	
 	return false;
@@ -190,15 +198,15 @@ bool TextFileEditWindow::handleCharacterKey(const CEGUI::EventArgs& ee)
 
 void TextFileEditWindow::setFilepath(String path)
 {
-	m_file = Poco::File(path.c_str());
+    m_file = filesystem::path(path.c_str());
 
 #ifdef WIN32
-	String::size_type pos = m_file.path().find_last_of("\\");
+    String::size_type pos = m_file.string().find_last_of("\\");
 #else
-	String::size_type pos = m_file.path().find_last_of("/");
+    String::size_type pos = m_file.string().find_last_of("/");
 #endif
 
-	String name = m_file.path().substr(pos+1);
+    String name = m_file.string().substr(pos+1);
 	setText(name);
 }
 

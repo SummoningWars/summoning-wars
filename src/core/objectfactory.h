@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef OBJECTFACTORY_H
-#define OBJECTFACTORY_H
+#ifndef __SUMWARS_CORE_OBJECTFACTORY_H__
+#define __SUMWARS_CORE_OBJECTFACTORY_H__
 
 
 
@@ -243,49 +243,49 @@ class ObjectGroup
 	public:
 		/**
 	 * \struct GroupObject
-	 * \brief Objekt das Bestandteil der Gruppe ist
+     * \brief Object, which is member of a group
 		 */
 		struct GroupObject
 		{
 			/**
 			 * \var ObjectTemplateType m_type
-			 * \brief Typ des Objektes. Beginnt mit $ fuer generische Objekte
+             * \brief Type of the object. Starts with $ for generic objects.
 			 */
 			ObjectTemplateType m_type;
 			
 			/**
 			 * \var std::string m_name
-			 * \brief Name des Objektes. Der Name wird nur registriert, wenn er nicht leer ist
+             * \brief Name of the object. Will not be registered if empty.
 			 */
 			std::string m_name;
 			
 			/**
 			 * \var Vector m_center
-			 * \brief Ortsvektor des Mittelpunktes relativ zum Mittelpunkt des Templates
+             * \brief Position of the object, relative to the center of the object group
 			 */
 			Vector m_center;
 			
 			/**
 			 * \var float m_angle
-			 * \brief Drehwinkel
+             * \brief Angle
 			 */
 			float m_angle;
 			
 			/**
 			 * \var float m_probability
-			 * \brief Chance, dass das Objekt eingesetzt wird
+             * \brief Chance that this object will be placed
 			 */
 			float m_probability;
 			
 			/**
 			 * \var bool m_prob_angle
-			 * \brief Wenn auf true gesetzt, wird der winkel zufaellig gesetzt
+             * \brief If true, object will be placed at a random angle
 			 */
 			bool m_prob_angle;
 			
 			/**
 			 * \var float m_height
-			 * \brief Hoehe, in der das Objekt platziert wird
+             * \brief Placement heigth of the object
 			 */
 			float m_height;
 		};
@@ -757,5 +757,5 @@ class ObjectFactory
 
 
 
-#endif
+#endif // __SUMWARS_CORE_OBJECTFACTORY_H__
 

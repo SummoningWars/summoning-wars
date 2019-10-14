@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MATHHELPER_H
-#define MATHHELPER_H
+#ifndef __SUMWARS_CORE_MATHHELPER_H__
+#define __SUMWARS_CORE_MATHHELPER_H__
 
 #ifdef WIN32
 	#include <math.h>
@@ -35,4 +35,4 @@ namespace MathHelper
 	static inline unsigned int Max(unsigned int x, unsigned int y) { return x > y ? x : y; }
 	static inline unsigned int Min(unsigned int x, unsigned int y) { return x < y ? x : y; }
 }
-#endif
+#endif // __SUMWARS_CORE_MATHHELPER_H__

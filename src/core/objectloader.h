@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef OBJECTLOADER_H
-#define OBJECTLOADER_H
+#ifndef __SUMWARS_CORE_OBJECTLOADER_H__
+#define __SUMWARS_CORE_OBJECTLOADER_H__
 
 
 #include <map>
@@ -135,5 +135,5 @@ class ObjectLoader
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_OBJECTLOADER_H__
 

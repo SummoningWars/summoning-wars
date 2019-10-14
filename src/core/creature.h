@@ -13,9 +13,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef __SUMWARS_CORE_CREATURE_H__
+#define __SUMWARS_CORE_CREATURE_H__
 
-#ifndef CREATURE_H
-#define CREATURE_H
 #include <string>
 #include <list>
 #include <algorithm>
@@ -850,5 +850,5 @@ private:
 		float m_pathfind_counter;
 };
 
-#endif //CREATURE_H
+#endif // __SUMWARS_CORE_CREATURE_H__
 

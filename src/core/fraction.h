@@ -13,7 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef __SUMWARS_CORE_FRACTION_H__
+#define __SUMWARS_CORE_FRACTION_H__
 
 #include "debug.h"
 #include "charconv.h"
@@ -144,3 +145,5 @@ class Fraction
 		 */
 		std::map<Id, Relation> m_relations;
 };
+
+#endif // __SUMWARS_CORE_FRACTION_H__

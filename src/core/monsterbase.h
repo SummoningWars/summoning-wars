@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MONSTER_BASE_H
-#define MONSTER_BASE_H
+#ifndef __SUMWARS_CORE_MONSTERBASE_H__
+#define __SUMWARS_CORE_MONSTERBASE_H__
 
 #include "dropslot.h"
 #include "worldobject.h"
@@ -216,5 +216,5 @@ public:
 		std::list<SubGroup> m_monsters;
 };
 
-#endif
+#endif // __SUMWARS_CORE_MONSTERBASE_H__
 

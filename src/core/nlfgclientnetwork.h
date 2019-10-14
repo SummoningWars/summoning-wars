@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef NLFGCLIENTNETWORK_H
-#define NLFGCLIENTNETWORK_H
+#ifndef __SUMWARS_CORE_NLFGCLIENTNETWORK_H__
+#define __SUMWARS_CORE_NLFGCLIENTNETWORK_H__
 
 #include "clientnetwork.h"
 #include "nlfgnetworkpacket.h"
@@ -105,5 +105,5 @@ class NLFGClientNetwork : public ClientNetwork
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_NLFGCLIENTNETWORK_H__
 

@@ -1,0 +1,292 @@
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="ControlPanel" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="InheritsAlpha" value="False" />
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="BackgroundEnabled" value="False" />
+        <Property name="MousePassThroughEnabled" value="True" />
+
+        <Window type="SWB/ProgressBar" name="ExperienceProgressBar" >
+            <Property name="StepSize" value="0.01" />
+            <Property name="CurrentProgress" value="0" />
+            <Property name="Area" value="{{0.0,0},{0.9,0},{1.0,0},{1.0,0}}" />
+        </Window>
+
+        <Window type="SWB/StaticImage" name="CPContainer" >
+            <Property name="FrameEnabled" value="False" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.02,0},{0.0,0},{0.98,0},{0.91,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="MousePassThroughEnabled" value="True" />
+
+            <Window type="SWB/StaticImage" name="CP_Btns" >
+                <Property name="Image" value="ControlPanel/Belt" />
+                <Property name="FrameEnabled" value="False" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Area" value="{{0.0,0},{0.4,0},{1.0,0},{1.0,0}}" />
+                <Property name="BackgroundEnabled" value="False" />
+                <Property name="MousePassThroughEnabled" value="True" />
+        
+                <Window type="SWB/StaticImage" name="CP_SysBtns" >
+                    <Property name="Area" value="{{0.85,0},{0.15,0},{0.98,0},{0.85,0}}" />
+                    <Property name="FrameEnabled" value="False" />
+                    
+                    <Window type="SWB/ImageButton" name="CharInfoButton" >
+                        <Property name="HoverImage" value="ControlPanel/CharInfoButton_Hover" />
+                        <Property name="NormalImage" value="ControlPanel/CharInfoButton" />
+                        <Property name="PushedImage" value="ControlPanel/CharInfoButton_Hover" />
+                        <Property name="DisabledImage" value="ControlPanel/CharInfoButton" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{0.29,0},{0.45,0}}" />
+                    </Window>
+                    <Window type="SWB/ImageButton" name="QuestInfoButton" >
+                        <Property name="HoverImage" value="ControlPanel/QuestInfoButton_Hover" />
+                        <Property name="NormalImage" value="ControlPanel/QuestInfoButton" />
+                        <Property name="PushedImage" value="ControlPanel/QuestInfoButton_Hover" />
+                        <Property name="DisabledImage" value="ControlPanel/QuestInfoButton" />
+                        <Property name="Area" value="{{0.33,0},{0.0,0},{0.62,0},{0.45,0}}" />
+                    </Window>
+                    <Window type="SWB/ImageButton" name="ChatOpenButton" >
+                        <Property name="HoverImage" value="ControlPanel/ChatOpenButton_Hover" />
+                        <Property name="NormalImage" value="ControlPanel/ChatOpenButton" />
+                        <Property name="PushedImage" value="ControlPanel/ChatOpenButton_Hover" />
+                        <Property name="DisabledImage" value="ControlPanel/ChatOpenButton" />
+                        <Property name="Area" value="{{0.66,0},{0.0,0},{0.95,0},{0.45,0}}" />
+                    </Window>
+                    <Window type="SWB/ImageButton" name="SkillTreeButton" >
+                        <Property name="HoverImage" value="ControlPanel/SkillTreeButton_Hover" />
+                        <Property name="NormalImage" value="ControlPanel/SkillTreeButton" />
+                        <Property name="PushedImage" value="ControlPanel/SkillTreeButton_Hover" />
+                        <Property name="DisabledImage" value="ControlPanel/SkillTreeButton" />
+                        <Property name="Area" value="{{0.0,0},{0.5,0},{0.29,0},{0.95,0}}" />
+                    </Window>
+                    <Window type="SWB/ImageButton" name="InventoryButton" >
+                        <Property name="HoverImage" value="ControlPanel/InventoryButton_Hover" />
+                        <Property name="NormalImage" value="ControlPanel/InventoryButton" />
+                        <Property name="PushedImage" value="ControlPanel/InventoryButton_Hover" />
+                        <Property name="DisabledImage" value="ControlPanel/InventoryButton" />
+                        <Property name="Area" value="{{0.33,0},{0.5,0},{0.62,0},{0.95,0}}" />
+                    </Window>
+                    <Window type="SWB/ImageButton" name="PartyButton" >
+                        <Property name="HoverImage" value="ControlPanel/PartyButton_Hover" />
+                        <Property name="NormalImage" value="ControlPanel/PartyButton" />
+                        <Property name="PushedImage" value="ControlPanel/PartyButton_Hover" />
+                        <Property name="DisabledImage" value="ControlPanel/PartyButton" />
+                        <Property name="Area" value="{{0.66,0},{0.5,0},{0.95,0},{0.95,0}}" />
+                    </Window>
+                </Window>
+                
+                <Window type="SWB/StaticImage" name="CP_SkillBtns" >
+                    <Property name="Area" value="{{0.62,0},{0.15,0},{0.84,0},{0.85,0}}" />
+                    <Property name="FrameEnabled" value="False" />
+                    
+                    <Window type="SWB/StaticImage" name="LeftClickAbilityImage" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{0.38,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                    </Window>
+                    <Window type="SWB/StaticImage" name="RightClickAbilityImage" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.38,0},{0.0,0},{0.76,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                    </Window>
+                    <Window type="SWB/StaticImage" name="AlternateRightClickAbilityImage" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.76,0},{0.4,0},{1.0,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                    </Window>
+                    
+                    <Window type="SWB/TimerProgressBar" name="LeftClickAbilityProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{0.38,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="RightClickAbilityProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.38,0},{0.0,0},{0.76,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="AlternateRightClickAbilityProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.76,0},{0.4,0},{1.0,0},{1.0,0}}" />
+                    </Window>
+                </Window>
+                
+                
+                <!-- Inventory items -->
+                <Window type="SWB/StaticImage" name="PotionHolder">
+                    <Property name="Area" value="{{0.02,0},{0.12,0},{0.35,0},{0.88,0}}" />
+                    <Property name="FrameEnabled" value="False" />
+
+                    <!-- First item -->
+                    <Window type="SWB/BackgroundButton" name="InventoryItem0" >
+                        <Property name="Area" value="{{0.0,0},{0.29,0},{0.2,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="InventoryItem0ProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.0,0},{0.29,0},{0.2,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="InventoryShortcutLabel0" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{0.08,0},{0.30,0}}" />
+                        <Property name="BackgroundEnabled" value="True" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="BeltPotionCounter0" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.08,0},{0.6,0},{0.2,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+    
+                    <!-- Second item -->                
+                    <Window type="SWB/BackgroundButton" name="InventoryItem1" >
+                        <Property name="Area" value="{{0.2,0},{0.29,0},{0.4,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="InventoryItem1ProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.2,0},{0.29,0},{0.4,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="InventoryShortcutLabel1" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.2,0},{0.0,0},{0.28,0},{0.30,0}}" />
+                        <Property name="BackgroundEnabled" value="True" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="BeltPotionCounter1" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.28,0},{0.6,0},{0.4,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+
+                    
+                    <!-- Third item -->
+                    <Window type="SWB/BackgroundButton" name="InventoryItem2" >
+                        <Property name="Area" value="{{0.4,0},{0.29,0},{0.6,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="InventoryItem2ProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.4,0},{0.29,0},{0.6,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="InventoryShortcutLabel2" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.4,0},{0.0,0},{0.48,0},{0.30,0}}" />
+                        <Property name="BackgroundEnabled" value="True" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="BeltPotionCounter2" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.48,0},{0.6,0},{0.6,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+
+                    <!-- Fourth item -->
+                    <Window type="SWB/BackgroundButton" name="InventoryItem3" >
+                        <Property name="Area" value="{{0.6,0},{0.29,0},{0.8,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="InventoryItem3ProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.6,0},{0.29,0},{0.8,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="InventoryShortcutLabel3" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.6,0},{0.0,0},{0.68,0},{0.30,0}}" />
+                        <Property name="BackgroundEnabled" value="True" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="BeltPotionCounter3" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.68,0},{0.6,0},{0.8,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+
+
+                    <!-- Fifth item -->
+                    <Window type="SWB/BackgroundButton" name="InventoryItem4" >
+                        <Property name="Area" value="{{0.8,0},{0.29,0},{1.0,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/TimerProgressBar" name="InventoryItem4ProgressBar" >
+                        <Property name="StepSize" value="0.01" />
+                        <Property name="MousePassThroughEnabled" value="True" />
+                        <Property name="CurrentProgress" value="0" />
+                        <Property name="VerticalProgress" value="True" />
+                        <Property name="Area" value="{{0.8,0},{0.29,0},{1.0,0},{1.0,0}}" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="InventoryShortcutLabel4" >
+                        <Property name="FrameEnabled" value="True" />
+                        <Property name="Area" value="{{0.8,0},{0.0,0},{0.88,0},{0.30,0}}" />
+                        <Property name="BackgroundEnabled" value="True" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+                    <Window type="SWB/StaticText" name="BeltPotionCounter4" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.88,0},{0.6,0},{1.0,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        <Property name="Font" value="SWB-S" />
+                    </Window>
+                    <!--
+                    <Window type="SWB/StaticImage" name="SlotNumbers" >
+                        <Property name="Image" value="ControlPanel/SlotNumbers" />
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.058003,0},{0.730578,0},{0.345531,0},{0.855198,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                    </Window>-->
+                </Window>
+            </Window>
+            
+            <Window type="SWB/StaticImage" name="GlobeAndSysBtnsHolder">
+                <Property name="Area" value="{{0.37,0},{0,0},{0.6,0},{1.0,0}}" />
+                <Property name="FrameEnabled" value="False" />
+                <Property name="AlwaysOnTop" value="True" />
+                <Property name="Alpha" value="0" />
+                
+                <Window type="SumWarsExtras/HPProgressBar" name="HealthProgressBar" >
+                    <Property name="StepSize" value="0.01" />
+                    <!--<Property name="RiseOnClick" value="False" />-->
+                    <Property name="CurrentProgress" value="0" />
+                    <Property name="Area" value="{{0.1,0},{0,0},{0.9,0},{0.99,0}}" />
+                    <Property name="VerticalProgress" value="True" />
+                    <Property name="InheritsAlpha" value="False" />
+                </Window>
+                <Window type="SWB/ImageButton" name="SaveExitButton" >
+                    <Property name="HoverImage" value="ControlPanel/SaveExitButton_Hover" />
+                    <Property name="NormalImage" value="ControlPanel/SaveExitButton" />
+                    <Property name="PushedImage" value="ControlPanel/SaveExitButton_Hover" />
+                    <Property name="DisabledImage" value="ControlPanel/SaveExitButton" />
+                    <Property name="Area" value="{{0.0,0},{0.77,0},{0.19,0},{0.97,0}}" />
+                    <Property name="InheritsAlpha" value="False" />
+                </Window>
+                <Window type="SWB/ImageButton" name="OptionsButton" >
+                    <Property name="HoverImage" value="ControlPanel/OptionsButton_Hover" />
+                    <Property name="NormalImage" value="ControlPanel/OptionsButton" />
+                    <Property name="PushedImage" value="ControlPanel/OptionsButton_Hover" />
+                    <Property name="DisabledImage" value="ControlPanel/OptionsButton" />
+                    <Property name="Area" value="{{0.81,0},{0.77,0},{1.0,0},{0.97,0}}" />
+                    <Property name="InheritsAlpha" value="False" />
+                </Window>
+            </Window>
+            
+        </Window>
+    </Window>
+</GUILayout>

@@ -1,0 +1,25 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="SaveExitWindow" >
+        <Property name="Area" value="{{0.3,0},{0.25,0},{0.7,0},{0.55,0}}" />
+        <Property name="Text" value="Save and Exit" />
+        <Property name="TitlebarFont" value="SWB-L" />
+        <Property name="CloseButtonAlignment" value="1" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+
+        <!-- The OK button -->
+        <Window type="SWB/Button" name="GameExitConfirmButton" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.1,0},{0.45,0},{0.4,0},{0.75,0}}" />
+        </Window>
+        
+        <!-- The Cancel button -->
+        <Window type="SWB/Button" name="GameExitAbortButton" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.6,0},{0.45,0},{0.9,0},{0.75,0}}" />
+        </Window>
+        
+    </Window>
+</GUILayout>

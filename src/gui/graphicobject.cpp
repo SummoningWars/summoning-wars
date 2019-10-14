@@ -31,10 +31,11 @@ GraphicObject::GraphicObject(Type type, GraphicRenderInfo* render_info, std::str
 	m_top_node = GraphicManager::getSceneManager()->getRootSceneNode()->createChildSceneNode();
 	
 	m_render_info_valid = true;
-	initContent();
 	
 	m_highlight = false;
 	m_exact_animations = false; // as default ?
+
+	initContent();
 }
 
 void GraphicObject::initContent()
@@ -313,16 +314,23 @@ void GraphicObject::addMovableObject(MovableObjectInfo& object)
 		std::string name = sname.str();
 		counter++;
 		
+		std::map <std::string, SoundObject>::iterator it = m_soundobjects.find (object.m_objectname.c_str ());
+		if (it != m_soundobjects.end ())
+		{
+			SW_DEBUG ("WARNING:  %s: subobject %s already exists", m_name.c_str(), object.m_objectname.c_str());
+		}
 		if (m_soundobjects.count(object.m_objectname) >0)
 		{
 			WARNING("soundobject %s: subobject %s already exists",m_name.c_str(), object.m_objectname.c_str());
 			return;
 		}
 		
-		SoundObject* obj = SoundSystem::createSoundObject(name);
-		
-		m_soundobjects[object.m_objectname] = obj;
-		DEBUGX("adding soundobject with name %s (%s)",object.m_objectname.c_str(),name.c_str());
+		//SoundObject* obj = SoundSystem::createSoundObject(name);
+		//m_soundobjects[object.m_objectname] = obj;
+
+		m_soundobjects[object.m_objectname] = SoundObject (name);
+		//m_soundobjects[object.m_objectname] = name;
+		SW_DEBUG ("setting soundobject with name [%s] to: (%s)", object.m_objectname.c_str (), name.c_str ());
 	}
 	else 
 	{
@@ -498,7 +506,8 @@ void GraphicObject::removeMovableObject(std::string name)
 	}
 	else if (m_soundobjects.find(name) != m_soundobjects.end())
 	{
-		SoundSystem::deleteSoundObject(m_soundobjects[name]);
+		//SoundSystem::deleteSoundObject(m_soundobjects[name]);
+		// should be deleted automatically by the sound manager
 		m_soundobjects.erase(name);
 		DEBUGX("removing Soundobject %s",name.c_str());
 	}
@@ -683,7 +692,7 @@ void GraphicObject::updateAttachedAction(AttachedAction& attchaction, std::strin
 			{
 				relpercent = (percent - (*jt)->m_start_time) / ( (*jt)->m_end_time -(*jt)->m_start_time);
 				updateRenderPart(*jt, relpercent);
-				jt++;
+				++jt;
 			}
 		}
 		
@@ -919,12 +928,23 @@ void GraphicObject::update(float time)
 	// update Soundobjects
 	Ogre::Vector3 opos = getTopNode()->_getDerivedPosition();
 	Vector pos(opos.x/GraphicManager::g_global_scale, opos.z / GraphicManager::g_global_scale);
-	std::map<std::string, SoundObject* >::iterator st;
-	for (st = m_soundobjects.begin(); st != m_soundobjects.end(); ++st)
+
+	//std::map<std::string, SoundObject* >::iterator st;
+	for (std::map<std::string, SoundObject>::iterator st = m_soundobjects.begin(); st != m_soundobjects.end(); ++st)
+	//for (std::map<std::string, std::string>::iterator st = m_soundobjects.begin(); st != m_soundobjects.end(); ++st)
 	{
-		st->second->setPosition(pos);
-		st->second->update();
-		DEBUGX("setting sound %s position to %f %f",st->first.c_str(),pos.m_x, pos.m_y);
+		// Note: sounds should be updated automatically by the sound manager.
+		// But they need to be configured correctly as relative or absolute play in order to allow correct updating
+		// when the listener (player) moves and sounds are supposed to move with various actors.
+
+		// TODO: XXX: this is a location where it would make sense to update the position of a 3d sound.
+		// requires to connect a sound adapter instead of a sound name.
+
+		st->second.setPosition (pos);
+		//st->second->setPosition(pos);
+		//st->second->update();
+
+		DEBUGX ("setting sound [%s] position to: %f, %f", st->first.c_str (), pos.m_x, pos.m_y);
 	}
 }
 
@@ -972,12 +992,20 @@ void GraphicObject::addActiveRenderPart(ActionRenderpart* part)
 	}
 	else if (part->m_type == ActionRenderpart::SOUND)
 	{
-		std::map<std::string, SoundObject* >::iterator it;
+		//std::map<std::string, SoundObject* >::iterator it;
+		std::map<std::string, SoundObject>::iterator it;
+		//std::map<std::string, std::string>::iterator it;
 		it = m_soundobjects.find(part->m_objectname);
 		if (it != m_soundobjects.end())
 		{
-			it->second->setSound(part->m_animation);
-			DEBUGX("setting sound object %s to sound %s",it->first.c_str(), part->m_animation.c_str());
+			//it->second->setSound(part->m_animation);
+			it->second.setSoundData (part->m_animation);
+			//it->second = part->m_animation;
+
+			// TODO:XXX: This is where a play command should be triggered.
+			it->second.play ();
+
+			SW_DEBUG ("setting sound object [%s] to sound [%s]", it->first.c_str (), part->m_animation.c_str ());
 		}
 	}
 }

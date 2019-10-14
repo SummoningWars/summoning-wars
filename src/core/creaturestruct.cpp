@@ -505,9 +505,10 @@ void CreatureBaseAttrMod::operator=(CreatureBaseAttrMod other)
 	m_dwalk_speed =other.m_dwalk_speed;
 	m_dattack_speed=other.m_dattack_speed;
 	m_xspecial_flags=other.m_xspecial_flags;
-	m_time =other.m_time;
-	m_xabilities = other.m_xabilities;
-	m_ximmunity =other.m_ximmunity;
+	m_time = other.m_time;
+	m_xabilities= other.m_xabilities;
+	m_flag = other.m_flag;
+	m_ximmunity = other.m_ximmunity;
 }
 
 void CreatureBaseAttrMod::writeToXML(TiXmlNode* node)
@@ -917,6 +918,7 @@ void CreatureDynAttr::operator=(CreatureDynAttr other)
 {
 	m_health = other.m_health;
 	m_experience = other.m_experience;
+	m_last_attacker_id = other.m_experience;
 	for (int i=0; i<NR_EFFECTS; i++)
 		m_effect_time[i] = other.m_effect_time[i];
 	for (int i=0; i<NR_STATUS_MODS; i++)
@@ -1071,8 +1073,10 @@ void CreatureSpeakText::operator=(const CreatureSpeakText& other)
 {
 	m_text = other.m_text;
 	m_time = other.m_time;
+	m_displayed_time = other.m_displayed_time;
 	m_in_dialogue = other.m_in_dialogue;
 	m_emotion = other.m_emotion;
+	m_script_action = other.m_script_action;
 }
 
 bool CreatureSpeakText::empty()

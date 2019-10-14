@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ITEMFACTORY_H
-#define ITEMFACTORY_H
+#ifndef __SUMWARS_CORE_ITEMFACTORY_H__
+#define __SUMWARS_CORE_ITEMFACTORY_H__
 
 
 #include "item.h"
@@ -198,5 +198,5 @@ public:
 
 #include "world.h"
 
-#endif //ITEMFACTORY_H
+#endif // __SUMWARS_CORE_ITEMFACTORY_H__
 

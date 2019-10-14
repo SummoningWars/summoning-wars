@@ -1,0 +1,45 @@
+<GUILayout version="4" >
+    <Window type="SWB/Button" name="SaveItemRoot" >
+        <Property name="Alpha" value="0.5" />
+        <Property name="InheritsAlpha" value="False" />
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{0.2,0}}" />
+
+        <Window type="SWB/StaticText" name="SaveItemRoot_Name" >
+            <Property name="Text" value="SaveItemRoot_Name" />
+            <!--<Property name="HorzExtent" value="165" />-->
+            <!--<Property name="VertExtent" value="23.8451" />-->
+            <Property name="FrameEnabled" value="False" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="HorzFormatting" value="HorzCentred" />
+            <Property name="Area" value="{{0.293234,0},{0.0861111,0},{0.814916,0},{0.544444,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="MousePassThroughEnabled" value="True" />
+        </Window>
+
+        <Window type="SWB/StaticText" name="SaveItemRoot_DecriptionLabel" >
+            <Property name="Text" value="Level 5 Fencer" />
+            <!--<Property name="HorzExtent" value="140" />-->
+            <!--<Property name="VertExtent" value="24.0283" />-->
+            <Property name="FrameEnabled" value="False" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="HorzFormatting" value="HorzCentred" />
+            <Property name="Area" value="{{0.26,0},{0.559288,0},{0.83,0},{0.864844,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="MousePassThroughEnabled" value="True" />
+        </Window>
+
+        <Window type="SWB/StaticImage" name="SaveItemRoot_Avatar" >
+            <Property name="Image" value="MainMenu/Logo" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.041435,0},{0.102552,0},{0.239047,0},{0.924156,0}}" />
+        </Window>
+
+        <Window type="SWB/ImageButton" name="SaveItemRoot_DelChar" >
+            <Property name="HoverImage" value="MainMenu/DelCharBtnHover" />
+            <Property name="NormalImage" value="MainMenu/DelCharBtnNormal" />
+            <Property name="PushedImage" value="MainMenu/DelCharBtnPushed" />
+            <Property name="Area" value="{{0.891602,0},{0.265625,0},{0.983398,0},{0.736981,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

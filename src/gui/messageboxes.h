@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MESSAGEBOXES_H
-#define MESSAGEBOXES_H
+#ifndef __SUMWARS_GUI_MESSAGEBOXES_H__
+#define __SUMWARS_GUI_MESSAGEBOXES_H__
 
 
 #include "window.h"
@@ -47,6 +47,12 @@ class SaveExitWindow : public Window
 	
 	private:
 		/**
+		 * \fn bool onGUIItemHover(const CEGUI::EventArgs& evt)
+		 * \brief Handle the hovering of gui items.
+		 */
+		bool onGUIItemHover (const CEGUI::EventArgs& evt);
+
+		/**
 		 * \fn bool onExitGameConfirmed(const CEGUI::EventArgs& evt)
 		 * \brief Behandelt Klick auf Button Spiel beenden
 		 */
@@ -59,20 +65,37 @@ class SaveExitWindow : public Window
 		bool onExitGameAborted(const CEGUI::EventArgs& evt);
 };
 
+
+
 /**
  * \class MessageQuestion
- * \brief Fenster fuer eine Ja / Nein Frage
+ * \brief Custom window for a Yes/No question
  */
-class MessageQuestionWindow : public Window
+class MessageQuestionWindow
+	: public Window
 {
 
 	public:
 		/**
-		 * \fn MessageQuestionWindow (Document* doc
-		* \brief Konstruktor
-		*/
-		MessageQuestionWindow (Document* doc, std::string name, std::string question, std::string button1,CEGUI::Event::Subscriber subscriber1,  std::string button2, CEGUI::Event::Subscriber subscriber2);
+		 * \fn MessageQuestionWindow (Document* doc)
+		 * \param layoutName The name of the layout file to load.
+		 * \param qurstionText The text to use as a question.
+		 * \param button1Text The text to use for the first answer button.
+		 * \param subscriberButton1Callback The callback function to use for the button 1 click event.
+		 * \param button2Text The text to use for the second answer button.
+		 * \param subscriberButton2Callback The callback function to use for the button 2 click event.
+		 * \brief Constructor
+		 */
+		MessageQuestionWindow (Document* doc
+							, const std::string& layoutName
+							, const std::string& question
+							, const std::string& button1Text
+							, CEGUI::Event::Subscriber subscriberButton1Callback
+							, const std::string& button2Text
+							, CEGUI::Event::Subscriber subscriberButton2Callback);
 	
+		virtual ~MessageQuestionWindow ();
+
 		/**
 		 * \fn virtual void update()
 		 * \brief aktualisiert den Inhalt des Fensters
@@ -99,7 +122,7 @@ class MessageQuestionWindow : public Window
 		 * \var std::string m_name
 		 * \brief Name des Fensters
 		 */
-		std::string m_name;
+		std::string m_layoutName;
 		
 		/**
 		 * \var std::string m_question
@@ -206,5 +229,5 @@ private:
 };
 
 
-#endif
+#endif // __SUMWARS_GUI_MESSAGEBOXES_H__
 

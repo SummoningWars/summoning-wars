@@ -1,0 +1,145 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#: testquest.xml:2
+msgid "Fenor Marken"
+msgstr "Фенор Маркен"
+
+#: testquest.xml:2
+msgid "testquest"
+msgstr "Тестовий Квест"
+
+#: testquest.xml:3
+msgid "Test"
+msgstr "Тест"
+
+#: testquest.xml:9
+msgid "This is a Test"
+msgstr "Це Тест"
+
+#: testquest.xml:11
+msgid "surprised"
+msgstr "здивований"
+
+#: testquest.xml:13
+msgid "thoughtful"
+msgstr "вдумливий"
+
+#: testquest.xml:16
+msgid "happy"
+msgstr "щасливий"
+
+#: testquest.xml:19
+msgid "amused"
+msgstr "потішений"
+
+#: testquest.xml:21
+msgid "excited"
+msgstr "збуджений"
+
+#: testquest.xml:23
+msgid "in love"
+msgstr "закоханий"
+
+#: testquest.xml:25
+msgid "bored"
+msgstr "нудьгуючий"
+
+#: testquest.xml:27
+msgid "unhappy"
+msgstr "нещасний"
+
+#: testquest.xml:29
+msgid "sad"
+msgstr "сумний"
+
+#: testquest.xml:31
+msgid "pain"
+msgstr "біль"
+
+#: testquest.xml:33
+msgid "sneer"
+msgstr "глумиться"
+
+#: testquest.xml:35
+msgid "grin"
+msgstr "оскал"
+
+#: testquest.xml:37
+msgid "offended"
+msgstr "ображений"
+
+#: testquest.xml:39
+msgid "threatening"
+msgstr "загрозливий"
+
+#: testquest.xml:41
+msgid "angry"
+msgstr "сердитий"
+
+#: testquest.xml:43
+msgid "shouting a warcry"
+msgstr "вигукує бойовий клич"
+
+#: testquest.xml:45
+msgid "exhausted"
+msgstr "змучений"
+
+#: testquest.xml:47
+msgid "injured"
+msgstr "поранений"
+
+#: testquest.xml:49
+msgid "deadly injured"
+msgstr "смертельно поранений"
+
+#: testquest.xml:50
+msgid "afraid"
+msgstr "боїться"
+
+#: testquest.xml:51
+msgid "in panic"
+msgstr "в паніці"
+
+#: testquest.xml:52
+msgid "putting up a distance"
+msgstr "виставляє відстань"
+
+#: testquest.xml:53
+msgid "being disgusted"
+msgstr "відчуває огиду"
+
+#: testquest.xml:54
+msgid "and yet another Test"
+msgstr "і ще одна Перевірка"
+
+#: testquest.xml:55
+msgid "again a test"
+msgstr "знову тест"
+
+#~ msgid "I am the first guard"
+#~ msgstr "я перший охоронець"
+
+#~ msgid "I am the second guard"
+#~ msgstr "я другий охоронець"
+
+#~ msgid "I am Fenor Marken"
+#~ msgstr "а я Фенор Маркен"

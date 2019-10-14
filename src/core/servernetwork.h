@@ -13,9 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifdef SERVERNETWORK_H
-#else
-#define SERVERNETWORK_H
+#ifndef __SUMWARS_CORE_SERVERNETWORK_H__
+#define __SUMWARS_CORE_SERVERNETWORK_H__
 
 #include "network.h"
 #include <queue>
@@ -38,8 +37,10 @@ class NetworkSlot
 		 * \param server_network pointer to the parent ServerNetwork object
 		 */
 		NetworkSlot(ServerNetwork* server_network)
+		:	m_status(NET_OK),
+			m_server_network(server_network)
 		{
-			m_server_network = server_network;
+			
 		}
 
 		/**
@@ -202,6 +203,20 @@ class ServerNetwork: public Network
 		}
 		
 		/**
+		 * \brief Sets the status of a NetworkSlot
+		 * \param slot ID of a slot
+		 * \param status status of a slot
+		 *
+		 */
+		virtual void setSlotStatus(NetStatus status, int slot=0 )
+		{
+			if (isConnectedSlot(slot))
+			{
+				m_slots[slot]->setStatus(status);
+			}
+		}
+		
+		/**
 		 * \brief Returns the first element from the new login slot queue
 		 */
 		int popNewLoginSlot();
@@ -241,6 +256,4 @@ class ServerNetwork: public Network
 		
 };
 
-
-#endif
-
+#endif // __SUMWARS_CORE_SERVERNETWORK_H__

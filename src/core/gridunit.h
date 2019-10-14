@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GRIDUNIT_H
-#define GRIDUNIT_H
+#ifndef __SUMWARS_CORE_GRIDUNIT_H__
+#define __SUMWARS_CORE_GRIDUNIT_H__
 
 #include "worldobject.h"
 #include <list>
@@ -120,4 +120,4 @@ struct Gridunit
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_GRIDUNIT_H__

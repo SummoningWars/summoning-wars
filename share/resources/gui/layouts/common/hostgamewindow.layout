@@ -1,0 +1,50 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="HostGameWindow" >
+        <Property Name="FrameEnabled" Value="True" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="Text" Value="Host game" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="True" />
+        <Property Name="RollUpEnabled" Value="False" />
+
+        <Window Type="SWB/Button" Name="HostGameStartButton" >
+            <Property Name="UnifiedAreaRect" Value="{{0.2,0},{0.84,0},{0.45,0},{0.95,0}}" />
+            <Property Name="Text" Value="Start" />
+        </Window>
+
+        <Window Type="SWB/Button" Name="HostGameCancelButton" >
+            <Property Name="UnifiedAreaRect" Value="{{0.55,0},{0.84,0},{0.8,0},{0.95,0}}" />
+            <Property Name="Text" Value="Cancel" />
+        </Window>
+
+        <Window Type="SWB/StaticText" Name="PlayerNumberLabel" >
+            <Property Name="Text" Value="Armor" />
+            <Property Name="HorzExtent" Value="50" />
+            <Property Name="VertExtent" Value="25.5702" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.07,0},{0.32,0},{0.51,0},{0.39,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="SWB/Editbox" Name="PlayerNumberBox" >
+            <Property Name="Text" Value="Armor" />
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.53,0},{0.32,0},{0.87,0},{0.39,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+        <Window Type="SWB/StaticText" Name="HostPortLabel" >
+            <Property Name="Text" Value="Armor" />
+            <Property Name="HorzExtent" Value="50" />
+            <Property Name="VertExtent" Value="25.5702" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.07,0},{0.5,0},{0.51,0},{0.57,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+        <Window Type="SWB/Editbox" Name="HostPortBox" >
+            <Property Name="Text" Value="Armor" />
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.53,0},{0.5,0},{0.87,0},{0.57,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+    </Window>
+</GUILayout>

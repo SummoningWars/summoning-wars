@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef _EVENT_H
-#define _EVENT_H
+#ifndef __SUMWARS_CORE_EVENT_H__
+#define __SUMWARS_CORE_EVENT_H__
 
 #include <string>
 #include <map>
@@ -299,5 +299,5 @@ class Event
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_EVENT_H__
 

@@ -17,7 +17,12 @@
 #define GUIDEBUGTAB_H
 
 #include "debugtab.h"
-#include "CEGUI/CEGUIWindow.h"
+
+#ifdef CEGUI_07
+#include <CEGUI/CEGUIWindow.h>
+#else
+#include "CEGUI/Window.h"
+#endif
 
 class GuiDebugTab : public CEGUI::Window, public DebugTab
 {
@@ -29,7 +34,7 @@ public:
 	virtual void initialiseComponents(void );
 
 protected:
-	virtual void onSized(CEGUI::WindowEventArgs& e);
+	virtual void onSized(CEGUI::ElementEventArgs& e);
 
 private:
 	CEGUI::Window *m_tabLayout;

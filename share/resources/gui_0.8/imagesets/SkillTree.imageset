@@ -1,0 +1,6 @@
+<Imageset version="2" autoScaled="true" imagefile="SkillTree.png" name="SkillTree" nativeHorzRes="304" nativeVertRes="424">
+	<Image height="826" name="SkillTreeBg" width="538" xPos="0" yPos="0" />
+	<Image height="69" name="SkillBg" width="69" xPos="550" yPos="156" />
+	<Image height="33" name="TabButtonNormal" width="163" xPos="546" yPos="27" />
+	<Image height="33" name="TabButtonSelected" width="163" xPos="546" yPos="88" />
+</Imageset>

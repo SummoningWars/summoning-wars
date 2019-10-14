@@ -74,7 +74,7 @@ bool Treasure::reactOnUse(int id)
 	{
 		addToNetEventMask(NetEvent::DATA_FLAGS);
 		
-		DEBUG("treasure opened");
+		SW_DEBUG("treasure opened");
 		m_open = true;
 		m_open_timer = 0;
 		

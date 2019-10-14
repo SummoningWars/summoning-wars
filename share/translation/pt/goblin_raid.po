@@ -1,0 +1,133 @@
+# Portuguese translations for sumwars package
+# Copyright (C) 2011
+# This file is distributed under the same license as the PACKAGE package
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-04-07 21:09+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: goblin_raid.xml:2
+msgid "goblin_raid"
+msgstr ""
+
+#: goblin_raid.xml:4
+msgid ""
+"Well, I got a little money for killing some goblins I would have wasted "
+"anyway. Not a bad day."
+msgstr ""
+
+#: goblin_raid.xml:6
+msgid ""
+"It seems the sergeant from Joringsbridge is willing to pay, but he wants me "
+"to help those peasants first. There's no trust in this world anymore."
+msgstr ""
+
+#: goblin_raid.xml:8
+msgid ""
+"I discovered plans of a goblin raid set for a village called Joringsbridge. "
+"They were found amongst the remains of some goblin tribe. Guess I busted "
+"that party prematurely. Maybe someone official will appreciate not having "
+"hordes of goblins kicking in their doors."
+msgstr ""
+
+#: goblin_raid.xml:11
+msgid "aisDarkClearing"
+msgstr ""
+
+#: goblin_raid.xml:35
+msgid "Sergeant Lutterer"
+msgstr ""
+
+#: goblin_raid.xml:36 goblin_raid.xml:55
+msgid "Crude battle plans"
+msgstr ""
+
+#: goblin_raid.xml:43
+msgid "Hey, sergeant, I found these in the woods with some goblins."
+msgstr ""
+
+#: goblin_raid.xml:44
+msgid "This looks like it could be Joringsbridge. Are you sure it's reliable?"
+msgstr ""
+
+#: goblin_raid.xml:45
+msgid "Some kind of head honcho shaman had them, so I figure they mean it."
+msgstr ""
+
+#: goblin_raid.xml:46
+msgid "Meant it. Whatever."
+msgstr ""
+
+#: goblin_raid.xml:62
+msgid "Hey, sergeant, ready to pay for the pre-emptive rescue of the village?"
+msgstr ""
+
+#: goblin_raid.xml:73
+msgid "I guess you can be trusted."
+msgstr ""
+
+#: goblin_raid.xml:74
+msgid "Let me thank you on behalf of the whole village."
+msgstr ""
+
+#: goblin_raid.xml:81
+msgid "It's always a pleasure when a good deed goes rewarded."
+msgstr ""
+
+#: goblin_raid.xml:87
+msgid "Sorry, but I don't know you."
+msgstr ""
+
+#: goblin_raid.xml:88
+msgid "Maybe I will show some gratitude after you help Michel's family."
+msgstr ""
+
+#: goblin_raid.xml:89
+msgid "As they say: One hand washes the other."
+msgstr ""
+
+#: goblin_raid.xml:91
+msgid "Do you want to help the peasant?"
+msgstr ""
+
+#: goblin_raid.xml:92
+msgid "Yes"
+msgstr ""
+
+#: goblin_raid.xml:93
+msgid "No"
+msgstr ""
+
+#: goblin_raid.xml:95
+msgid "Then I better get back to saving helpless peasants, no?"
+msgstr ""
+
+#: goblin_raid.xml:101
+msgid "Fine, I'll wipe out those goblins for you."
+msgstr ""
+
+#: goblin_raid.xml:102
+msgid "You do realise there's plenty more where they came from?"
+msgstr ""
+
+#: goblin_raid.xml:103
+msgid "Just go already."
+msgstr ""
+
+#: goblin_raid.xml:109
+msgid "Whatever. It's not like I need the money or anything."
+msgstr ""
+
+#: goblin_raid.xml:110
+msgid "And I could care less what happens to some peasant family."
+msgstr ""

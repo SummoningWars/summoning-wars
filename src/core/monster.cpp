@@ -145,7 +145,7 @@ Monster::Monster( int id) : Creature( id)
 	bool tmp=Monster::init();
 	if(!tmp)
 	{
-		DEBUG("Initialisierung des Monsters fehlgeschlagen!");
+		SW_DEBUG("Initialisierung des Monsters fehlgeschlagen!");
 	}
 }
 
@@ -605,16 +605,13 @@ void Monster::evalCommand(Action::ActionType act)
 	WorldObjectValueList self;
 	self.push_back(std::make_pair(this,0) );
 
-	float dist;
-	float value;
-
 	// true, wenn sich Monster bewegen muss um Fernangriff auszufuehren
 	bool ranged_move = false;
 
 	Action::ActionInfo* aci = Action::getActionInfo(act);
 	if (aci == 0)
 	{
-		DEBUG("unknown action %s",act.c_str());
+		SW_DEBUG("unknown action %s",act.c_str());
 		return;
 	}
 
@@ -670,8 +667,8 @@ void Monster::evalCommand(Action::ActionType act)
 		for (it = goal_list->begin(); it !=goal_list->end(); ++it)
 		{
 			// moegliches Ziel
-			cgoal = (Creature*) it->first;
-			dist = it->second;
+			cgoal = static_cast<Creature*>(it->first);
+			float dist = it->second;
 
 			// bei Befehl guard nur, wenn nicht zu weit vom zu beschuetzenden Ort
 			if (m_ai.m_guard && (aci->m_target_type == Action::MELEE || aci->m_target_type == Action::CIRCLE || ranged_move) &&  m_ai.m_guard_pos.distanceTo(cgoal->getShape()->m_center) > m_ai.m_guard_range)
@@ -685,7 +682,7 @@ void Monster::evalCommand(Action::ActionType act)
 			*/
 
 			// Bewertung:
-			value = abltinfo.m_rating;
+			float value = abltinfo.m_rating;
 			value += Random::randf(abltinfo.m_random_rating);
 
 			// all_target_rating
@@ -765,9 +762,10 @@ bool Monster::takeDamage(Damage* damage)
 
 	if (atk)
 	{
+		// exception: monsters chasing a player due to taunt wont alarm others
 		if (m_ai.m_mod_time[TAUNT]<=0 || m_ai.m_chase_player_id==0)
 		{
-			// umliegende Monster alarmieren
+			// alarm surrounding monsters
 			if (m_ai.m_chase_player_id ==0)
 			{
 				Shape shape = *(getShape());
@@ -865,7 +863,7 @@ void Monster::die()
 					std::set<int>& members = party->getMembers();
 					std::set<int>::iterator i;
 
-					for (i=members.begin();i!=members.end();i++)
+					for (i=members.begin();i!=members.end();++i)
 					{
 						pl2 = dynamic_cast<Player*>(getRegion()->getObject(*i));
 
@@ -955,7 +953,7 @@ int Monster::getValue(std::string valname)
 		if (valname.find("ai_ability_rating:") == 0)
 		{
 			std::string ablt = valname.substr(18); // ai_ability_rating: abschneiden
-			DEBUG("ability %s",ablt.c_str());
+			SW_DEBUG("ability %s",ablt.c_str());
 
 			std::map<std::string, AbilityInfo>::iterator at;
 			at = getBaseAttrMod()->m_abilities.find(ablt);
@@ -985,7 +983,7 @@ bool Monster::setValue(std::string valname)
 		if (valname.find("ai_ability_rating:") == 0)
 		{
 			std::string ablt = valname.substr(18); // ai_ability_rating: abschneiden
-			DEBUG("ability %s",ablt.c_str());
+			SW_DEBUG("ability %s",ablt.c_str());
 
 			std::map<std::string, AbilityInfo>::iterator at;
 			at = getBaseAttrMod()->m_abilities.find(ablt);

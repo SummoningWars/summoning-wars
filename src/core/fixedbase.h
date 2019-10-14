@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef FIXEDBASE_H
-#define FIXEDBASE_H
+#ifndef __SUMWARS_CORE_FIXEDBASE_H__
+#define __SUMWARS_CORE_FIXEDBASE_H__
 
 #include "geometry.h"
 #include <tinyxml.h>
@@ -51,5 +51,5 @@ struct FixedObjectData
 	void operator=(const FixedObjectData& other);
 };
 
-#endif
+#endif // __SUMWARS_CORE_FIXEDBASE_H__
 

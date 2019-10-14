@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SPAWNPOINT_H
-#define SPAWNPOINT_H
+#ifndef __SUMWARS_CORE_SPAWNPOINT_H__
+#define __SUMWARS_CORE_SPAWNPOINT_H__
 #include <string>
 
 #include "worldobject.h"
@@ -86,5 +86,5 @@ class Spawnpoint : public WorldObject {
 		float m_respawn_time;
 	
 };
-#endif
+#endif // __SUMWARS_CORE_SPAWNPOINT_H__
 

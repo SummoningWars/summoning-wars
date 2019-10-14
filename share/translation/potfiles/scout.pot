@@ -1,0 +1,219 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#: scout.xml:71
+msgid  "..."
+msgstr ""
+
+#: scout.xml:90
+msgid  "A blue potion?"
+msgstr ""
+
+#: scout.xml:104
+msgid  "Allright. Now that this is done, I will be on my way."
+msgstr ""
+
+#: scout.xml:24
+msgid  "Are you alive?"
+msgstr ""
+
+#: scout.xml:102
+msgid  "Because I seriously do NOT want to rummage through your happy collection of identical looking special-purpose-potions."
+msgstr ""
+
+#: scout.xml:49
+msgid  "But since I don't have to carry you to safety, I guess it is allright."
+msgstr ""
+
+#: scout.xml:39
+msgid  "But spying on the undead... evading... those blasted goblins..."
+msgstr ""
+
+#: scout.xml:66
+#: scout.xml:81
+msgid  "Do you... have my gear?"
+msgstr ""
+
+#: scout.xml:31
+msgid  "Does it look... 'alright' to you?"
+msgstr ""
+
+#: scout.xml:98
+msgid  "Finally!"
+msgstr ""
+
+#: scout.xml:100
+msgid  "Gladly. Really, thank you for saving my hide."
+msgstr ""
+
+#: scout.xml:82
+msgid  "Here it is."
+msgstr ""
+
+#: scout.xml:30
+msgid  "Hey, are you alright?"
+msgstr ""
+
+#: scout.xml:37
+msgid  "I can... watch my own back..."
+msgstr ""
+
+#: scout.xml:41
+msgid  "I got a little... careless."
+msgstr ""
+
+#: scout.xml:35
+msgid  "I guess I could patch you up, but I can't carry you out of here."
+msgstr ""
+
+#: scout.xml:7
+msgid  "I really stumbled across a scout in the goblin infested caves west of Dwarfenwall. He is wounded, lost his gear to some spiders and asked me to fix it for him. I really wonder if I should do this... then again it would be an excuse to venture deeper into the caves that are obviously not under control by the undead."
+msgstr ""
+
+#: scout.xml:5
+msgid  "I rescued a scout and hopefully gained some goodwill from the local militia. Whatever good that will do."
+msgstr ""
+
+#: scout.xml:105
+msgid  "I will rest a little more and then be on my way too, but in the other direction."
+msgstr ""
+
+#: scout.xml:47
+msgid  "If you're... not afraid... that is."
+msgstr ""
+
+#: scout.xml:43
+msgid  "Lot's of wolves... but a nest of spiders, too... thought I had... it under control"
+msgstr ""
+
+#: scout.xml:38
+msgid  "Most of the time... at least."
+msgstr ""
+
+#: scout.xml:94
+msgid  "No... too... light blue"
+msgstr ""
+
+#: scout.xml:67
+msgid  "Not yet, no."
+msgstr ""
+
+#: scout.xml:32
+msgid  "Pretty much, yes."
+msgstr ""
+
+#: scout.xml:99
+msgid  "Remember me not to kill you after all the trouble I went through."
+msgstr ""
+
+#: scout.xml:68
+msgid  "Shame. It seems I'm already capable of... being paralyzed... without your help."
+msgstr ""
+
+#: scout.xml:46
+msgid  "So... if you could get... me my gear, I... would be good to go again..."
+msgstr ""
+
+#: scout.xml:103
+msgid  "Sorry about that. Normally I'm the only one who has to keep them apart."
+msgstr ""
+
+#: scout.xml:60
+#: scout.xml:75
+msgid  "Still alive?"
+msgstr ""
+
+#: scout.xml:69
+msgid  "Thanks for... checking back on me though. I'll be here... if you need me."
+msgstr ""
+
+#: scout.xml:55
+msgid  "Thanks..."
+msgstr ""
+
+#: scout.xml:96
+msgid  "That's... it"
+msgstr ""
+
+#: scout.xml:45
+msgid  "The venom... can't move at all... anymore... I had an antidote in my pack..."
+msgstr ""
+
+#: scout.xml:2
+msgid  "The wounded scout"
+msgstr ""
+
+#: scout.xml:92
+msgid  "They just... turn out that... way everytime... it's the one... with the light shade of turquoise."
+msgstr ""
+
+#: scout.xml:51
+msgid  "This wouldn't happen to be your stuff, would it?"
+msgstr ""
+
+#: scout.xml:42
+msgid  "West of here... there's a cave... pretty deep inside..."
+msgstr ""
+
+#: scout.xml:36
+msgid  "Where I'm headed you will most certainly die a quick and meaningless death."
+msgstr ""
+
+#: scout.xml:23
+msgid  "Wounded Scout"
+msgstr ""
+
+#: scout.xml:34
+msgid  "Yeah, right... now, when you're done laughing... maybe you could help me?"
+msgstr ""
+
+#: scout.xml:52
+msgid  "You already... found it?"
+msgstr ""
+
+#: scout.xml:70
+msgid  "You are kind of messed up, you know that?"
+msgstr ""
+
+#: scout.xml:101
+msgid  "You best stay out of trouble."
+msgstr ""
+
+#: scout.xml:33
+msgid  "You can still talk, right?"
+msgstr ""
+
+#: scout.xml:91
+msgid  "You do realize there is at least a score of 'blue' potions here?"
+msgstr ""
+
+#: scout.xml:48
+msgid  "You have a strange manner of asking for favors."
+msgstr ""
+
+#: scout.xml:89
+msgid  "good... now, blue potion"
+msgstr ""
+
+#: scout.xml:11
+msgid  "greyCurseCave"
+msgstr ""
+
+#: scout.xml:118
+msgid  "greyWolfcave"
+msgstr ""
+
+#: scout.xml:44
+msgid  "really big one... there. Spider, I mean... got me good... lost my gear... but got away... somehow"
+msgstr ""
+

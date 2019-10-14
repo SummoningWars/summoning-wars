@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ITEMWINDOW_H
-#define ITEMWINDOW_H
+#ifndef __SUMWARS_GUI_ITEMWINDOW_H__
+#define __SUMWARS_GUI_ITEMWINDOW_H__
 
 #include "window.h"
 #include "item.h"
@@ -118,6 +118,11 @@ class ItemWindow : public Window
 		 * \brief if set, this window may not play sounds
 		 */
 		bool m_silent;
+		
+		/**
+		 * \brief if set, this window may not play sounds during current update
+		 */
+		bool m_silent_current_update;
 };
 
-#endif
+#endif // __SUMWARS_GUI_ITEMWINDOW_H__

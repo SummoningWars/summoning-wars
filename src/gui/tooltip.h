@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TOOLTIP_H
-#define TOOLTIP_H
+#ifndef __SUMWARS_GUI_TOOLTIP_H__
+#define __SUMWARS_GUI_TOOLTIP_H__
 
 #include "CEGUI/CEGUI.h"
 
@@ -73,5 +73,5 @@ private:
 	float m_Alpha;
     TooltipType m_Type;
 };
-#endif
+#endif // __SUMWARS_GUI_TOOLTIP_H__
 

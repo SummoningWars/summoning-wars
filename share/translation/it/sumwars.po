@@ -1,0 +1,3863 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-28 16:59+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: aisen.xml:6
+msgid "aisMeadow"
+msgstr "Campagne di Aisen"
+
+#: aisen.xml:52
+msgid "aisPlains"
+msgstr "Pianura di Aisen"
+
+#: aisen.xml:100
+msgid "aisMaylonsGraveEntry"
+msgstr "Ingresso della Tomba di Maylons, Aisen"
+
+#: aisen.xml:133
+msgid "aisMaylonsGraveL1"
+msgstr "Primo livello della tomba di Maylons, Aisen"
+
+#: aisen.xml:173
+msgid "aisMaylonsGraveL2"
+msgstr "Cripta della tomba di Maylons, Aisen"
+
+#: aisen.xml:213
+msgid "aisHeath"
+msgstr "Brughiere Silenziose, Aisen"
+
+#: aisen.xml:253
+msgid "aisStonePlains"
+msgstr "Pianure Rocciose, Aisen"
+
+#: aisen.xml:300
+msgid "aisDarkClearing"
+msgstr "La Tetra Radura, Aisen"
+
+#: aisen.xml:341
+msgid "aisWideHeath"
+msgstr "La Vasta Spianata, Aisen"
+
+#: aisen.xml:386
+msgid "joringsbridge"
+msgstr "Ponte Joring, Aisen"
+
+#: aisen.xml:453
+msgid "aisNorthMeadow"
+msgstr "Campi a Nord di Aisen"
+
+#: aisen.xml:502
+msgid "aisJoringsforest"
+msgstr "Foresta di Joring, Aisen"
+
+#: aisen.xml:540
+msgid "aisFairyforest"
+msgstr "Foresta Fatata, Aisen"
+
+#: aisen.xml:586
+msgid "aisDarkFairyforest"
+msgstr "Tetra Foresta Fatata, Aisen"
+
+#: aisen.xml:629
+msgid "aisWolfstones"
+msgstr "Pietre Dei Lupi, Aisen"
+
+#: aisen.xml:677
+msgid "aisWestwoods"
+msgstr "Boschi Occidentali, Aisen"
+
+#: aisen.xml:720
+msgid "aisMounPath"
+msgstr "Sentiero Di Montagna, Aisen"
+
+#: aisen.xml:750
+msgid "aisMistslope"
+msgstr "Pendii Nebbiosi, Aisen"
+
+#: aisen.xml:796
+msgid "aisEastslope"
+msgstr "Pendio Orientale, Aisen"
+
+#: aisen.xml:846
+msgid "Watch out! Monsters from the mine! Help me!"
+msgstr "Attenzione! Mostri dalla miniera! Aiutatemi!"
+
+#: aisen.xml:862
+msgid "Let me tell you I'm no monster. I'm worse."
+msgstr "Lasciatelo dire, non sono un mostro. Sono peggio."
+
+#: aisen.xml:869
+msgid "aisBoulderGrounds"
+msgstr "Terreni Pietrosi di Aisen"
+
+#: aisen.xml:908
+msgid "aisMounMeadows"
+msgstr "Altipiani, Aisen"
+
+#: aisen.xml:950
+msgid "aisOldDwarfRuins"
+msgstr "Antiche Rovine dei Nani, Aisen"
+
+#: aisen.xml:986
+msgid "aisOldCellar"
+msgstr "aisOldCellar"
+
+#: aisen.xml:1021
+msgid "aisBaelensRift"
+msgstr "aisBaelensRift"
+
+#: aisen.xml:1059
+msgid "aisHillRoad"
+msgstr "aisHillRoad"
+
+#: aisen.xml:1100
+msgid "copperRock"
+msgstr "copperRock"
+
+#: aisen.xml:1138
+msgid "aisCopperFields"
+msgstr "aisCopperFields"
+
+#: aisen.xml:1176
+msgid "aisMineEntry"
+msgstr "La Tomba di Maylons - L'ingresso"
+
+#: aisenMonsterStats.xml:3
+msgid "Bloodbeak"
+msgstr "BeccoSanguisuga"
+
+#: aisenMonsterStats.xml:52
+msgid "Giant wolf"
+msgstr "Lupo gigante"
+
+#: aisenMonsterStats.xml:96
+msgid "wolf"
+msgstr "Lupo"
+
+#: aisenMonsterStats.xml:151
+msgid "Psychotic Spider"
+msgstr "Ragno Psicotico"
+
+#: aisenMonsterStats.xml:199
+msgid "Cave Spider"
+msgstr "Ragno delle grotte"
+
+#: aisenMonsterStats.xml:251
+msgid "Spider"
+msgstr "Aracnide"
+
+#: aisenMonsterStats.xml:293
+msgid "Giant Bat"
+msgstr "Pipistrello Gigante"
+
+#: aisenNPCStats.xml:3 aisenNPCStats.xml:526 npc.xml:10
+msgid "Guard"
+msgstr "Guardia"
+
+#: aisenNPCStats.xml:46 aisenNPCStats.xml:88 npc.xml:25
+msgid "General Greif"
+msgstr "Generale Greif"
+
+#: aisenNPCStats.xml:133 npc.xml:31
+msgid "Prince Karlen"
+msgstr "Principe Karlen"
+
+#: aisenNPCStats.xml:176 npc.xml:19
+msgid "Leonard von Robenforst"
+msgstr "Leonard di Robenforst"
+
+#: aisenNPCStats.xml:219
+msgid "Scout"
+msgstr "Esploratore"
+
+#: aisenNPCStats.xml:257 monster_ablt.xml:70
+msgid "Healer"
+msgstr "Guaritore"
+
+#: aisenNPCStats.xml:301 aisenNPCStats.xml:345
+msgid "Trader"
+msgstr "Mercante"
+
+#: aisenNPCStats.xml:391 aisenNPCStats.xml:569
+msgid "Bowman"
+msgstr "Venditore di archi"
+
+#: aisenNPCStats.xml:430 aisenNPCStats.xml:479
+msgid "Avaeras Order, Firemage"
+msgstr "Avaeras Order, Mago del Fuoco"
+
+#: aisenNPCStats.xml:608
+msgid "Elite Swordsman"
+msgstr "Spadaccino elite"
+
+#: amulet.xml:5
+msgid "feather amulet"
+msgstr "Amuleto della piuma"
+
+#: amulet.xml:34
+msgid "amber amulet"
+msgstr "Amuleto d'ambra"
+
+#: amulet.xml:63
+msgid "silver amulet"
+msgstr "Amuleto d'argento"
+
+#: amulet.xml:92
+msgid "coral amulet"
+msgstr "Amuleto di corallo"
+
+#: amulet.xml:121
+msgid "gold amulet"
+msgstr "Amuleto d'oro"
+
+#: archer_ablt.xml:2
+msgid "Snipe"
+msgstr "Colpo di Precisione"
+
+#: archer_ablt.xml:2
+msgid ""
+"The archers deadly precision causes his shots to deal more damage than "
+"normal."
+msgstr ""
+"La precisione letale degli arcieri fa si che i loro colpi infliggano più "
+"danni del normale."
+
+#: archer_ablt.xml:22
+msgid "Blind Rage"
+msgstr "Furia Cieca"
+
+#: archer_ablt.xml:22
+msgid ""
+"The archer attacks the enemies eyes, causing him to go berserk, but be "
+"blinded at the same time."
+msgstr ""
+"L'arcere attacca i gli occhi dei nemici, causandogli frenesia e cecità "
+"contemporaneamente."
+
+#: archer_ablt.xml:45
+msgid "Bow Spirit"
+msgstr "Arco Spirituale"
+
+#: archer_ablt.xml:45
+msgid ""
+"The archer becomes one with his weapon, dealing more damage over a longer "
+"time. Additionally his critical strike chance is increased. This effect "
+"stacks with Elfeyes."
+msgstr ""
+"L'arcere diviene un tutt'uno con la sua arma, infligge più danni per un "
+"lungo periodo, in più la probabilità di infliggere critici aumenta. Questo "
+"effetto è cumulativo all'abilità Occhi da Elfo"
+
+#: archer_ablt.xml:67
+msgid "Concentration"
+msgstr "Concentrazione"
+
+#: archer_ablt.xml:67
+msgid "The archers steady mind can no longer be confused."
+msgstr "La mente salda dell'arcere non può più essere confusa."
+
+#: archer_ablt.xml:78
+msgid "Elfeyes"
+msgstr "Occhi da Elfo"
+
+#: archer_ablt.xml:78
+msgid ""
+"The archer shoots with deadly precision, leading to an increased critical "
+"hit rate."
+msgstr ""
+"L'arcere spara con precisione mortale, con un risultante aumento della "
+"frequenza di colpi critici."
+
+#: archer_ablt.xml:88
+msgid "Deadly Roulette"
+msgstr "Roulette Mortale"
+
+#: archer_ablt.xml:88
+msgid ""
+"The projectile has a fifty percent probability to attack another target, if "
+"it hits someone. Be careful not to stand in its way, for it distinguishes "
+"not between friend and foe."
+msgstr ""
+"Il colpo mortale ha la metà delle possibilità di colpire un'altro bersaglio. "
+"I compagni faranno meglio a non piazzarsi davanti al bersaglio iniziale, "
+"questo colpo micidiale non fa distinzione tra amici e nemici."
+
+#: archer_ablt.xml:112
+msgid "Catlike Reflexes"
+msgstr "Riflessi Felini"
+
+#: archer_ablt.xml:112
+msgid "The archers nimble mind allows him to avoid damage better."
+msgstr ""
+"L'agilità dell'arcere gli permette di evitare il danno più efficacemente."
+
+#: archer_ablt.xml:122
+msgid "Explosion Arrow"
+msgstr "Freccia Esplosiva"
+
+#: archer_ablt.xml:122
+msgid ""
+"The projectile is imbued with the power of a weak firespirit. It will deal "
+"damage in a small area, if it hits."
+msgstr ""
+"La freccia viene imbevuta nella polvere di uno spiritello del fuoco. Se "
+"colpisce farà danno in una piccola area."
+
+#: archer_ablt.xml:150
+msgid "Blast Cascade"
+msgstr "Pioggia di Esplosioni"
+
+#: archer_ablt.xml:150
+msgid ""
+"The projectile is imbued with the power of a firespirit. It will explode "
+"with areadamage on hitting. Additionally four more explosions will go of in "
+"every direction."
+msgstr ""
+"La freccia viene intinta dell'energia di un Elementale del fuoco. Esploderà "
+"nell'area colpita dalla quale partiranno altre quattro esplosioni."
+
+#: archer_ablt.xml:179
+msgid "Frost Arrows"
+msgstr "Frecce Gelate"
+
+#: archer_ablt.xml:179
+msgid ""
+"The archer summons a spirit of ice into his weapon, causing his shots to "
+"deal icedamage over a greater amount of time. There is a chance that his "
+"enemies will be frozen solid if they are hit."
+msgstr ""
+"L'arcere evoca uno spirito del ghiaccio nella sua arma. I suoi colpi faranno "
+"danno da ghiaccio per un lungo periodo. C'è la possibilità di rendere i "
+"nemici colpiti cubetti di ghiaccio."
+
+#: archer_ablt.xml:200
+msgid "Deadly Swarm"
+msgstr "Lo Sciame Mortale"
+
+#: archer_ablt.xml:200
+msgid ""
+"The archer shoots four consecutive projectiles that are imbued with vengeful "
+"spirits. They will pursue the enemy, even if he tries to run."
+msgstr ""
+"L'arcere lancia quattro freccie una dopo l'altra imbevute dell'energia di "
+"uno spirito vendicativo. Inseguiranno il nemico anche se cerca di scappare."
+
+#: archer_ablt.xml:219
+msgid "Ice Arrows"
+msgstr "Frecce di Ghiaccio"
+
+#: archer_ablt.xml:219
+msgid ""
+"The archer calls upon the spirits of ice to imbue his projectiles with "
+"icedamage."
+msgstr "L'arcere evoca gli spiriti di ghiaccio per infliggere danno da freddo."
+
+#: archer_ablt.xml:240
+msgid "Mind Wall"
+msgstr "Muro Mentale"
+
+#: archer_ablt.xml:240
+msgid "The archer has become immune to anger. He will never go berserk again."
+msgstr ""
+"L'arcere ha raggiunto la pace dello spirito, non potrà più andare in "
+"frenesia."
+
+#: archer_ablt.xml:250
+msgid "Fanshot"
+msgstr "Lancio a Ventaglio"
+
+#: archer_ablt.xml:250
+msgid ""
+"The archer shoots five projectiles at a time, aimed at enemies in front of "
+"him. The damage dealt by each projectile suffers a little."
+msgstr ""
+"l'arcere lancia cinque proiettili alla volta, mirati ai nemici davanti a "
+"lui. Il danno inflitto da ogni proiettile ne risente un po'. Utile contro "
+"molti nemici o contro un nemico molto vicino."
+
+#: archer_ablt.xml:273
+msgid "Elfwanderer"
+msgstr "Colpo dell' Elfo Girovago"
+
+#: archer_ablt.xml:273
+msgid ""
+"The archer unleashes a mighty shot that pierces right through an enemy and "
+"might hit another enemy behind him."
+msgstr ""
+"L'arcere scocca una freccia potentissima che trapassa un nemico e potrebbe "
+"colpire e trapassare anche quelli dietro."
+
+#: archer_ablt.xml:298
+msgid "North Hunter"
+msgstr "Cacciatore delle Terre del Nord"
+
+#: archer_ablt.xml:298
+msgid ""
+"The archers good longterm relations with the spirits of wind and ice has "
+"caused his resistence and his maximum resistance of these elements to rise "
+"by 10 percent."
+msgstr ""
+"Le relazioni positive dell'arcere con gli spiriti di vento e ghiaccio gli "
+"hanno conferito una resistenza bonus del 10% da quegli elementi."
+
+#: archer_ablt.xml:308
+msgid "North Roamer"
+msgstr "Viandante del Nord"
+
+#: archer_ablt.xml:308
+msgid ""
+"The archer has made a pact with the spirits of wind and ice. His resistance "
+"against wind- and icedamage is increased by 20 percent."
+msgstr ""
+"L'arcere ha fatto un patto con gli spiriti di vento e ghiaccio. La sua "
+"resistenza contro il danno da vento e da ghiaccio aumenta di un 20%"
+
+#: archer_ablt.xml:318
+msgid "Storm Arrows"
+msgstr "Freccie Porta Tempesta"
+
+#: archer_ablt.xml:318
+msgid ""
+"The mighty spirits of wind themselfes help the archer by imbuing his "
+"projectiles with their power, causing them to deal more winddamage for a "
+"longer time."
+msgstr ""
+"I potenti spiriti del vento aiutano l'arcere imbevendo le sue frecce con i "
+"loro poteri. I danni da vento vengono aumentati per un lungo lasso di tempo."
+
+#: archer_ablt.xml:339
+msgid ""
+"The archers mastery of ranged weapons allows him to shoot three projectiles "
+"in a short amount of time."
+msgstr ""
+"La maestria dell' arcere nell'uso delle armi a distanza, permette di "
+"lanciare tre proiettili molto rapidamente."
+
+#: archer_ablt.xml:339
+msgid "Tripple Shot"
+msgstr "Colpo Triplo"
+
+#: archer_ablt.xml:358
+msgid ""
+"The archer attacks with an arrow imbued with a weaker windspirit, that "
+"causes an enemy hit by it to be stunned."
+msgstr ""
+"L'arcere attacca con una freccia intinta in uno spirito del vento, causando "
+"stordimento nei nemici colpiti."
+
+#: archer_ablt.xml:358
+msgid "Vacuum"
+msgstr "Fischio tra le orecchie"
+
+#: archer_ablt.xml:385
+msgid "Iron Hail"
+msgstr "Posizione dell'acciaio"
+
+#: archer_ablt.xml:385
+msgid ""
+"The archer handles his weapons with elflike precision, attacking up to seven "
+"enemys in front of him. The damage dealt by each projectile suffers a little."
+msgstr ""
+"L'arcere maneggia la sua arma con una precisione da elfo, attaccando fino a "
+"sette nemici davanti a lui. Il danno inflitto da ogni proiettile ne risente "
+"un po'."
+
+#: archer_ablt.xml:405
+msgid ""
+"The archer attacks a weak point of his enemy, causing the victim to go "
+"berserk."
+msgstr ""
+"L'arcere attacca il nemico in un punto molto doloroso, solitamente "
+"l'apparato riproduttivo, causandogli frenesia."
+
+#: archer_ablt.xml:405
+msgid "Weak Spot"
+msgstr "Li ti fa male"
+
+#: archer_ablt.xml:427
+msgid ""
+"The archer has been grantet the power to imbue his projectiles with "
+"winddamage by the spirits of wind."
+msgstr ""
+"Gli spiriti del vento hanno concesso all'arcere di infondere nei suoi "
+"proiettili il loro tipo di danno."
+
+#: archer_ablt.xml:427
+msgid "Wind Arrows"
+msgstr "Freccie di Vento"
+
+#: archer_ablt.xml:448
+msgid ""
+"The spirits of wind help the archer to move faster than normal and avoid "
+"damage."
+msgstr ""
+"Gli spiriti del vento sospingono l'arcere rendendolo più veloce e più "
+"incline a evitare i danni."
+
+#: archer_ablt.xml:448
+msgid "Windwalk"
+msgstr "Camminata nel Vento"
+
+#: armor.xml:3
+msgid "cloth armor"
+msgstr "Armatura di stoffa"
+
+#: armor.xml:35
+msgid "leather armor"
+msgstr "Armatura di cuoio"
+
+#: armor.xml:67
+msgid "rivet armor"
+msgstr "Armatura di cuoio borchiato"
+
+#: armor.xml:99
+msgid "bandit armor"
+msgstr "Armatura del bandito"
+
+#: armor.xml:131
+msgid "novice armor"
+msgstr "Armatura del novizio"
+
+#: armor.xml:163
+msgid "mercenary armor"
+msgstr "Armatura del mercenario"
+
+#: armor.xml:195
+msgid "ranger shirt"
+msgstr "Casacca da esploratore"
+
+#: armor.xml:227
+msgid "assassin armor"
+msgstr "Armatura dell'assassino"
+
+#: armor.xml:260
+msgid "temple armor"
+msgstr "Armatura del tempio"
+
+#: armor.xml:292
+msgid "council armor"
+msgstr "Armatura del consiglio"
+
+#: axes1h.xml:4
+msgid "hatchet"
+msgstr "Accetta"
+
+#: axes1h.xml:41
+msgid "bronze axe"
+msgstr "Ascia di bronzo"
+
+#: axes1h.xml:78
+msgid "iron hatchet"
+msgstr "Accetta di ferro"
+
+#: axes1h.xml:115
+msgid "cleaver"
+msgstr "Mannaia"
+
+#: axes1h.xml:152
+msgid "iron axe"
+msgstr "Ascia di ferro"
+
+#: axes1h.xml:189
+msgid "mercenary axe"
+msgstr "Ascia del mercenario"
+
+#: axes1h.xml:226
+msgid "steel axe"
+msgstr "Ascia di acciao"
+
+#: axes1h.xml:263
+msgid "battle axe"
+msgstr "Ascia da battaglia"
+
+#: axes1h.xml:300
+msgid "guard axe"
+msgstr "Ascia della guardia"
+
+#: axes1h.xml:337
+msgid "minotaur axe"
+msgstr "Ascia del minotauro"
+
+#: axes1h.xml:374
+msgid "thunder axe"
+msgstr "Ascia del tuono"
+
+#: axes1h.xml:413
+msgid "demon axe"
+msgstr "Ascia del demone"
+
+#: axes1h.xml:450
+msgid "obsidian axe"
+msgstr "Ascia di ossidiana"
+
+#: axes1h.xml:487
+msgid "vulcano axe"
+msgstr "Ascia del vulcano"
+
+#: axes1h.xml:526
+msgid "berserker axe"
+msgstr "Ascia della furia"
+
+#: axes1h.xml:563
+msgid "diamont axe"
+msgstr "Ascia di diamanti"
+
+#: axes1h.xml:600
+msgid "dwarfen axe"
+msgstr "Ascia nanica"
+
+#: axes1h.xml:637
+msgid "hell axe"
+msgstr "Ascia dell'inferno"
+
+#: axes2h.xml:4
+msgid "lumberjack axe"
+msgstr "Ascia del taglialegna"
+
+#: axes2h.xml:42
+msgid "great axe"
+msgstr "Ascia grande"
+
+#: axes2h.xml:80
+msgid "ripping axe"
+msgstr "Ascia affilata"
+
+#: axes2h.xml:118
+msgid "executioner axe"
+msgstr "Ascia del boia"
+
+#: axes2h.xml:156
+msgid "smashing axe"
+msgstr "Ascia del massacro"
+
+#: axes2h.xml:194
+msgid "ogre hatchet"
+msgstr "Accetta dell'orco"
+
+#: axes2h.xml:232
+msgid "scythe axe"
+msgstr "Falce"
+
+#: axes2h.xml:270
+msgid "barbarian axe"
+msgstr "Ascia barbarica"
+
+#: axes2h.xml:308
+msgid "bonebreaker axe"
+msgstr "Ascia spaccaossa"
+
+#: axes2h.xml:346
+msgid "giant axe"
+msgstr "Ascia gigante"
+
+#: axes2h.xml:384
+msgid "slaughter axe"
+msgstr "Ascia delle stragi"
+
+#: axes2h.xml:422
+msgid "ogretearer"
+msgstr "Flagello degli orchi"
+
+#: axes2h.xml:460
+msgid "dwarfensteel axe"
+msgstr "Ascia in acciaio nanico"
+
+#: axes2h.xml:498
+msgid "star axe"
+msgstr "Ascia delle stelle"
+
+#: axes2h.xml:536
+msgid "kings axe"
+msgstr "Ascia dei re"
+
+#: axes2h.xml:574
+msgid "torture axe"
+msgstr "Ascia della tortura"
+
+#: axes2h.xml:612
+msgid "iceland axe"
+msgstr "Ascia dei ghiacci"
+
+#: axes2h.xml:652
+msgid "death axe"
+msgstr "Ascia della morte"
+
+#: base_abilities.xml:2
+msgid "dead"
+msgstr "morto/a"
+
+#: base_abilities.xml:10
+msgid "die"
+msgstr "muori"
+
+#: base_abilities.xml:19
+msgid "first action that is performed by a summoned monster"
+msgstr "la prima azione che viene compiuta da un mostro evocato"
+
+#: base_abilities.xml:19
+msgid "summoned"
+msgstr "evocato"
+
+#: base_abilities.xml:28
+msgid "no action"
+msgstr "nessuna azione"
+
+#: base_abilities.xml:37
+msgid "speak"
+msgstr "parla"
+
+#: base_abilities.xml:37
+msgid "speak with someone"
+msgstr "parla con qualcuno"
+
+#: base_abilities.xml:51
+msgid "take item"
+msgstr "prendi l'oggetto"
+
+#: base_abilities.xml:51
+msgid "take up item"
+msgstr "prendi su l'oggetto"
+
+#: base_abilities.xml:65
+msgid "use"
+msgstr "usa"
+
+#: base_abilities.xml:79
+msgid "walk"
+msgstr "cammina"
+
+#: base_abilities.xml:89
+msgid "guard"
+msgstr "fai la guardia"
+
+#: base_abilities.xml:100 dwarfcastle.xml:178 dwarfcastle.xml:181
+msgid "Attack"
+msgstr "Attacca"
+
+#: base_abilities.xml:100
+msgid "Basic melee attack"
+msgstr "Attacco in mischia base"
+
+#: base_abilities.xml:119
+msgid "Basic holy melee attack"
+msgstr "Attacco base in mischia Sacro"
+
+#: base_abilities.xml:119
+msgid "Holy attack"
+msgstr "Attacco Sacro"
+
+#: base_abilities.xml:137 monster_air_ablt.xml:49 monster_fire_ablt.xml:49
+#: monster_ice_ablt.xml:49 monster_shadow_ablt.xml:2
+msgid "Basic magic attack"
+msgstr "attacco magico base"
+
+#: base_abilities.xml:137 monster_air_ablt.xml:49 monster_fire_ablt.xml:49
+#: monster_ice_ablt.xml:49 monster_shadow_ablt.xml:2
+msgid "Magic attack"
+msgstr "attacco magico"
+
+#: base_abilities.xml:156 monster_ablt.xml:445 monster_ablt.xml:490
+#: monster_ablt.xml:670 monster_air_ablt.xml:25 monster_fire_ablt.xml:25
+#: monster_ice_ablt.xml:68
+msgid "Basic ranged attack"
+msgstr "attacco a distanza"
+
+#: base_abilities.xml:156
+msgid "Ranged attack"
+msgstr "Attacco a distanza"
+
+#: copperrock.xml:2
+msgid "Thomas"
+msgstr ""
+
+#: councilNPCStats.xml:4
+msgid "Tolec"
+msgstr "Tolec"
+
+#: councilNPCStats.xml:47
+msgid "Derred"
+msgstr "Derred"
+
+#: councilNPCStats.xml:90 councilNPCStats.xml:290 npc.xml:16
+msgid "Soren Windclaw"
+msgstr "Soren Artigliodivento"
+
+#: councilNPCStats.xml:133 councilNPCStats.xml:172 councilNPCStats.xml:211
+msgid "Worker"
+msgstr "Lavoratore"
+
+#: councilNPCStats.xml:250 tutorial.xml
+msgid "Overseer"
+msgstr "Supervisore"
+
+#: councilNPCStats.xml:330 councilNPCStats.xml:459 councilNPCStats.xml:593
+msgid "Council Guard"
+msgstr "Guardia del Consiglio"
+
+#: councilNPCStats.xml:373 councilNPCStats.xml:545
+msgid "Council Mage"
+msgstr "Mago del Consiglio"
+
+#: councilNPCStats.xml:416
+msgid "Ireana von Nordenburg"
+msgstr "Ireana di Nordburg"
+
+#: councilNPCStats.xml:502
+msgid "Council Guard Captain"
+msgstr "Capitano della Guardia del Consiglio"
+
+#: councilNPCStats.xml:638
+msgid "Fireguardian"
+msgstr "Guardiano del fuoco"
+
+#: council_monsters.xml:6 council_monsters.xml:50
+msgid "Fire Slug"
+msgstr "Lumaca del fuoco"
+
+#: council_monsters.xml:97 council_monsters.xml:141
+msgid "Mutant Slug"
+msgstr "Lumaca mutante"
+
+#: council_monsters.xml:189
+msgid "Fire Louse"
+msgstr "Insetto del fuoco"
+
+#: council_monsters.xml:236
+msgid "Firefletchling"
+msgstr "Firefletchling"
+
+#: council_monsters.xml:281 council_monsters.xml:331
+msgid "Inferno Behemoth"
+msgstr "Behemoth infernale"
+
+#: cursedCaves.xml:5
+msgid "greyCurseCave"
+msgstr "La grotta sotterranea"
+
+#: cursedCaves.xml:53
+msgid "greyCurseGrotto"
+msgstr "La caverna sotterranea"
+
+#: cursedCaves.xml:96
+msgid "greyWolfcave"
+msgstr "La cava del lupo"
+
+#: cursedCaves.xml:135
+msgid "greyCurseGrotDep"
+msgstr "La caverna sotterranea - Profondita'"
+
+#: cursedCaves.xml:169
+msgid "greyCursedCavern"
+msgstr "Il tunnel sotterraneo"
+
+#: cursedCaves.xml:209
+msgid "greyCurseCaveDep"
+msgstr "La grotta sotterranea - Profondita'"
+
+#: cursedCaves.xml:251
+msgid "greyCurseCaveFis"
+msgstr "La grotta sotterranea - Il crepaccio"
+
+#: cursedCaves.xml:280
+msgid "greyCurseCaveEast"
+msgstr "La grotta sotterranea - Parte Est"
+
+#: cursedCaves.xml:325
+msgid "greyCurseLake"
+msgstr "La grotta sotterranea - Il lago nascosto"
+
+#: dwarfcastle.xml:2
+msgid "Eric"
+msgstr ""
+
+#: dwarfcastle.xml:6
+msgid "Haffgar"
+msgstr "Haffgar"
+
+#: dwarfcastle.xml:38 dwarfcastle.xml:58 dwarfcastle.xml:142 medairnpc.xml:41
+#: medairnpc.xml:64 medairnpc.xml:73
+msgid "Trade"
+msgstr "Commercio"
+
+#: dwarfcastle.xml:41
+msgid "Amelia"
+msgstr "Amelia"
+
+#: dwarfcastle.xml:61
+msgid "Drago"
+msgstr "Drago"
+
+#: dwarfcastle.xml:70 joringsbridge_npc.xml:7
+msgid "Potions"
+msgstr "Pozioni"
+
+#: dwarfcastle.xml:80
+msgid "Flynn"
+msgstr "Flynn"
+
+#: dwarfcastle.xml:144
+msgid "What is all this?"
+msgstr "Cos'e' tutto questo casino?"
+
+#: dwarfcastle.xml:146
+msgid "Quite a lot of boxes..."
+msgstr "Tante, tante casse..."
+
+#: dwarfcastle.xml:147
+msgid "My predecessor left me with that chaos."
+msgstr "Il mio predessore mi ha lasciato in questo caos."
+
+#: dwarfcastle.xml:148
+msgid "These are all old army supplies."
+msgstr "Questi sono tutti i rifornimenti del vecchio esercito."
+
+#: dwarfcastle.xml:149
+msgid "If you like something just point it out and I'll tell you a price."
+msgstr "Dimmi se ti interessa qualcosa e ti diro' il prezzo."
+
+#: dwarfcastle.xml:154
+msgid "Enchanter Fazhir"
+msgstr "Fazhir l'incantatore"
+
+#: dwarfcastle.xml:155 npc.xml:80
+msgid "Enchant Items"
+msgstr "Incanta Oggetti"
+
+#: dwarfcastle.xml:168 dwarfcastle.xml:189 joringsbridge_npc.xml:238
+#: npc.xml:93 npc.xml:108
+msgid "Armor"
+msgstr "Armatura"
+
+#: dwarfcastle.xml:171 npc.xml:96
+msgid "Armor class"
+msgstr "Valore di Armatura"
+
+#: dwarfcastle.xml:171 npc.xml:96
+msgid "Health Bonus"
+msgstr "Aumento Salute"
+
+#: dwarfcastle.xml:171
+msgid "Magic power"
+msgstr "Potere Magico"
+
+#: dwarfcastle.xml:171
+msgid "Willpower"
+msgstr "Forza Di Volontà"
+
+#: dwarfcastle.xml:174 joringsbridge_npc.xml:244 npc.xml:99
+msgid "Weapon"
+msgstr "Arma"
+
+#: dwarfcastle.xml:178 joringsbridge_npc.xml:247 npc.xml:102
+msgid "Air damage"
+msgstr "Danno da vento"
+
+#: dwarfcastle.xml:178 dwarfcastle.xml:181
+msgid "Attack speed"
+msgstr "Velocità di attacco"
+
+#: dwarfcastle.xml:178 dwarfcastle.xml:181 joringsbridge_npc.xml:247
+#: npc.xml:102
+msgid "Fire damage"
+msgstr "Danno da fuoco"
+
+#: dwarfcastle.xml:178 npc.xml:102
+msgid "Ice damage"
+msgstr "Danno da freddo"
+
+#: dwarfcastle.xml:178 dwarfcastle.xml:181
+msgid "Power"
+msgstr "Potere"
+
+#: dwarfcastle.xml:185 npc.xml:105
+msgid "Gloves"
+msgstr "Guanti"
+
+#: dwarfcastle.xml:189 npc.xml:108 warrior_ablt.xml:85
+msgid "Block"
+msgstr "Parata Migliorata"
+
+#: dwarfcastle.xml:189 dwarfcastle.xml:192 npc.xml:108
+msgid "Dexterity"
+msgstr "Destrezza"
+
+#: dwarfcastle.xml:189 dwarfcastle.xml:192
+msgid "Strength"
+msgstr "Forza"
+
+#: dwarfcastle.xml:197 joringsbridge_npc.xml:250 npc.xml:111
+msgid "Which part of your equipment should be enchanted?"
+msgstr "Che parte del tuo equipaggiamento vuoi che ti incanti?"
+
+#: dwarfcastle.xml:215 npc.xml:129
+msgid "Hey you have no item equiped there"
+msgstr "Guarda che non hai nulla di equipaggiato!"
+
+#: dwarfcastle.xml:218 joringsbridge_npc.xml:271 npc.xml:132
+msgid "Which Enchantment do you want?"
+msgstr "Che incantamento vuoi?"
+
+#: dwarfcastle.xml:239 npc.xml:153
+msgid "You dont have enough gold to pay the price of $1"
+msgstr "Non hai abbastanza soldi per arrivare a pagarmi $1"
+
+#: dwarfcastle.xml:241 joringsbridge_npc.xml:297 npc.xml:155
+msgid "The price is $1"
+msgstr "Il prezzo è 1$"
+
+#: dwarfcastle.xml:260 npc.xml:174
+msgid "It seems that this item already has such an enchantment."
+msgstr "Pare che questo oggetto abbia già quel tipo di incantamento"
+
+#: dwarfenwall.lua:308 npc.xml:47 undeadStats.xml:2252
+msgid "Nar'Asoroth"
+msgstr "Nar'Asoroth"
+
+#: dwarfenwall.lua:313
+msgid "Skinny Necromancer"
+msgstr "Necromante Magrolino"
+
+#: dwarfenwall.lua:316
+msgid "Scarfaced Necromancer"
+msgstr "Necromante Sfigurato"
+
+#: dwarfenwall.xml:6
+msgid "dwarfenwall"
+msgstr "Dwarfenwall"
+
+#: dwarfenwall.xml:250
+msgid "dwarfenwallCommand"
+msgstr "Al Centro di Comando di Dwarfenwall"
+
+#: dwarfenwall.xml:299
+msgid "dwarfenwallRampart"
+msgstr "Il Bastione di Dwarfenwall"
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Reverse this at once or every guard of Aisen will be on your trail, Cursed "
+"One! ##female"
+msgstr ""
+"Maledetta! Smettila subito o ogni guardia di Aisen ti starà alle costole!"
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Reverse this at once or every guard of Aisen will be on your trail, Cursed "
+"One! ##male"
+msgstr ""
+"Maledetto! Smettila subito o ogni guardia di Aisen ti starà alle costole!"
+
+#: fortify_dwarfenwall.xml
+msgid "You are better prepared to suffer the consequences, wretched creature."
+msgstr ""
+"Misera creatura, sarà meglio che sia pronta ad affrontarne le conseguenze."
+
+#: glove.xml:4
+msgid "leather gloves"
+msgstr "Guanti di cuoio"
+
+#: glove.xml:36
+msgid "snakehide gloves"
+msgstr "Guanti in pelle di serpente"
+
+#: glove.xml:68
+msgid "chain gloves"
+msgstr "Guanti di maglia"
+
+#: glove.xml:100
+msgid "buckskin gloves"
+msgstr "Guanti in pelle di daino"
+
+#: glove.xml:132
+msgid "spidersilk gloves"
+msgstr "Guanti in tela di ragno"
+
+#: glove.xml:164
+msgid "marksman gloves"
+msgstr "Guanti del tiratore scelto"
+
+#: glove.xml:196
+msgid "assassin gloves"
+msgstr "Guanti dell'assassino"
+
+#: glove.xml:228
+msgid "shark gloves"
+msgstr "Guanti dello squalo"
+
+#: goblinEqu.xml:5
+msgid "goblin armor"
+msgstr "Armatura goblin"
+
+#: goblinEqu.xml:37
+msgid "goblin bracer"
+msgstr "Bracciale goblin"
+
+#: goblinEqu.xml:68
+msgid "shaman mask"
+msgstr "Maschera dello sciamano"
+
+#: goblinEqu.xml:101
+msgid "goblin club"
+msgstr "Mazza goblin"
+
+#: goblinEqu.xml:138
+msgid "rusty dagger"
+msgstr "Pugnale arrugginito"
+
+#: goblinEqu.xml:174
+msgid "shaman staff"
+msgstr "Staffa dello sciamano"
+
+#: goblinEqu.xml:207
+msgid "nail club"
+msgstr "Mazza chiodata"
+
+#: goblinEqu.xml:244
+msgid "goblin bow"
+msgstr "Arco goblin"
+
+#: goblinEqu.xml:280
+msgid "goblin spear"
+msgstr "Lancia goblin"
+
+#: goblinStats.xml:6
+msgid "goblin brawler"
+msgstr "Goblin attaccabrighe"
+
+#: goblinStats.xml:52
+msgid "goblin hunter"
+msgstr "Goblin cacciatore"
+
+#: goblinStats.xml:98
+msgid "goblin robber"
+msgstr "Goblin rapinatore"
+
+#: goblinStats.xml:143
+msgid "Drakrazz"
+msgstr "Drakrazz"
+
+#: goblinStats.xml:192
+msgid "Roruz"
+msgstr "Roruz"
+
+#: goblinStats.xml:239
+msgid "Nubreck"
+msgstr "Nubreck"
+
+#: goblinStats.xml:290
+msgid "goblin dog"
+msgstr "Cane goblin"
+
+#: goblinStats.xml:334
+msgid "boneshaker"
+msgstr "Squotiossa"
+
+#: goblinStats.xml:380
+msgid "Gobrusch"
+msgstr "Gobrusch"
+
+#: goblinStats.xml:428
+msgid "Dobrusch"
+msgstr "Dobrusch"
+
+#: goblinStats.xml:476
+msgid "Lurdrak with the Hammer"
+msgstr "Lurdrak e il suo Martelllo"
+
+#: goblinStats.xml:525
+msgid "goblin fighter"
+msgstr "Goblin combattente"
+
+#: goblinStats.xml:571
+msgid "goblin poacher"
+msgstr "Goblin bracconiere"
+
+#: goblinStats.xml:617
+msgid "goblin rider"
+msgstr "Goblin bandito"
+
+#: goblinStats.xml:662
+msgid "snowcaller"
+msgstr "Evocatore delle Nevi"
+
+#: goblinStats.xml:707
+msgid "reg'resh"
+msgstr "Reg'Resh"
+
+#: goblinStats.xml:755
+msgid "goblin temple guard"
+msgstr "Goblin guardia del tempio"
+
+#: goblinStats.xml:801
+msgid "goblin apprentice"
+msgstr "Goblin apprendista"
+
+#: goblinStats.xml:850
+msgid "Marblak"
+msgstr "Marblak"
+
+#: goblinStats.xml:897
+msgid "goblin youngling"
+msgstr "Cucciolo di goblin"
+
+#: goblinStats.xml:943
+msgid "Gab'Resh"
+msgstr "Gab'Resh"
+
+#: goblinStats.xml:993 goblinStats.xml:1038
+msgid "Gab Clan Goblin"
+msgstr "Gab Clan Goblin"
+
+#: goblinStats.xml:1245
+msgid "goblin warrior"
+msgstr "Goblin guerriero"
+
+#: goblinStats.xml:1288
+msgid "goblin rocklobber"
+msgstr "Goblin fromboliere"
+
+#: goblinStats.xml:1333
+msgid "goblin shaman"
+msgstr "Goblin sciamano"
+
+#: goblinStats.xml:1381
+msgid "goblin slayer"
+msgstr "Goblin mietitore"
+
+#: goblinStats.xml:1426
+msgid "goblin assassin"
+msgstr "Goblin assassino"
+
+#: greySkyladder.xml:4
+msgid "greySnowNose"
+msgstr "greySnowNose"
+
+#: greySkyladder.xml:38
+msgid "greyOldMine"
+msgstr "Vecchia Miniera"
+
+#: greySkyladder.xml:75
+msgid "greyOldMineL2"
+msgstr "Sotterranei Vecchia Miniera"
+
+#: greySkyladder.xml:112
+msgid "greyOldMineDeep"
+msgstr "Profondità Vecchia Miniera"
+
+#: hammer1h.xml:5
+msgid "hammer"
+msgstr "Martello"
+
+#: hammer1h.xml:42
+msgid "cermeonial hammer"
+msgstr "Martello cerimoniale"
+
+#: hammer1h.xml:79
+msgid "iron hammer"
+msgstr "Martello di ferro"
+
+#: hammer1h.xml:116
+msgid "iron club"
+msgstr "Mazza di ferro"
+
+#: hammer1h.xml:153
+msgid "maul"
+msgstr "Maglio"
+
+#: hammer1h.xml:190
+msgid "morning star"
+msgstr "Morning star"
+
+#: hammer1h.xml:227
+msgid "crowhead"
+msgstr "Elmo del corvo"
+
+#: hammer1h.xml:264
+msgid "rider hammer"
+msgstr "Martello del cavaliere"
+
+#: hammer1h.xml:301
+msgid "mace"
+msgstr "Mazza"
+
+#: hammer1h.xml:338
+msgid "steel hammer"
+msgstr "Martello di acciaio"
+
+#: hammer1h.xml:375
+msgid "battle hammer"
+msgstr "Martello da battaglia"
+
+#: hammer1h.xml:412
+msgid "smashhead"
+msgstr "Spaccateste"
+
+#: hammer1h.xml:449
+msgid "steel mace"
+msgstr "Mazza di acciaio"
+
+#: hammer1h.xml:486
+msgid "steel maul"
+msgstr "Maglio di acciaio"
+
+#: hammer1h.xml:523
+msgid "sixedged mace"
+msgstr "Mazza d'arme"
+
+#: hammer1h.xml:560
+msgid "silver hammer"
+msgstr "Martello d'argento"
+
+#: hammer1h.xml:597
+msgid "diamont hammer"
+msgstr "Martello di diamanti"
+
+#: hammer1h.xml:634
+msgid "priest mace"
+msgstr "Mazza del chierico"
+
+#: hammer1h.xml:671
+msgid "holy hammer"
+msgstr "Martello sacro"
+
+#: hammer2h.xml:4
+msgid "sledgehammer"
+msgstr "Martello"
+
+#: hammer2h.xml:42
+msgid "bronze hammer"
+msgstr "Martello di bronzo"
+
+#: hammer2h.xml:80
+msgid "longshaft"
+msgstr "Bastone lungo"
+
+#: hammer2h.xml:119
+msgid "guard hammer"
+msgstr "Martello della guardia"
+
+#: hammer2h.xml:158
+msgid "silverterror"
+msgstr "Terrore d'argento"
+
+#: hammer2h.xml:197
+msgid "glow hammer"
+msgstr "Martello splendente"
+
+#: hammer2h.xml:238
+msgid "bonebreaker"
+msgstr "Frantumaossa"
+
+#: hammer2h.xml:276
+#, fuzzy
+msgid "crashhead"
+msgstr "Spaccateste"
+
+#: hammer2h.xml:314
+msgid "aisener warhammer"
+msgstr "Martello da guerra di Aisen"
+
+#: hammer2h.xml:353
+msgid "judgement hammer"
+msgstr "Martello del giudizio"
+
+#: hammer2h.xml:392
+msgid "priest hammer"
+msgstr "Martello del sacerdote"
+
+#: hammer2h.xml:431
+msgid "obsidian hammer"
+msgstr "Martello di ossidiana"
+
+#: hammer2h.xml:470
+msgid "judge hammer"
+msgstr "Martello del giudice"
+
+#: hammer2h.xml:509
+msgid "cyclops hammer"
+msgstr "Martello dei ciclopi"
+
+#: hammer2h.xml:547
+msgid "dwarfensteel hammer"
+msgstr "Martello in acciaio nanico"
+
+#: hammer2h.xml:586
+msgid "elementhunter"
+msgstr "Cacciatore di elementali"
+
+#: hammer2h.xml:625
+msgid "exorcists hammer"
+msgstr "Martello dell'esorcista"
+
+#: hammer2h.xml:664
+msgid "worldshaker"
+msgstr "Terratremor"
+
+#: hat.xml:5
+msgid "vagabond hat"
+msgstr "Cappello del fuorilegge"
+
+#: hat.xml:37
+msgid "apprentice cap"
+msgstr "Cappuccio dell'apprendista"
+
+#: hat.xml:70
+msgid "novice hat"
+msgstr "Cappello del novizio"
+
+#: hat.xml:103
+msgid "alchemist cap"
+msgstr "Cappuccio dell'alchimista"
+
+#: hat.xml:137
+msgid "beret"
+msgstr "Cappello"
+
+#: hat.xml:170
+msgid "magus hat"
+msgstr "Cappello da mago"
+
+#: hat.xml:204
+msgid "turban"
+msgstr "Turbante"
+
+#: helmet.xml:4
+msgid "cap"
+msgstr "Cappuccio"
+
+#: helmet.xml:35
+msgid "leather cap"
+msgstr "Cappuccio di cuoio"
+
+#: helmet.xml:66
+msgid "leather helmet"
+msgstr "Elmo di cuoio"
+
+#: helmet.xml:97
+msgid "mercenary head"
+msgstr "Copricapo del mercenario"
+
+#: helmet.xml:128
+msgid "novice headgear"
+msgstr "Copricapo del novizio"
+
+#: helmet.xml:159
+msgid "mercenary helmet"
+msgstr "Elmo del mercenario"
+
+#: helmet.xml:190
+msgid "ranger bandana"
+msgstr "Bandana del ranger"
+
+#: helmet.xml:221
+msgid "assassin hood"
+msgstr "Cappuccio dell'assassino"
+
+#: helmet.xml:252
+msgid "biretta"
+msgstr "Cappa sacerdotale"
+
+#: helmet.xml:283
+msgid "chain turban"
+msgstr "Turbante"
+
+#: humans.xml:3
+msgid "Bandit"
+msgstr "Bandito"
+
+#: humans.xml:47
+msgid "Thug"
+msgstr "Teppista"
+
+#: humans.xml:91
+msgid "Rogue"
+msgstr "Furfante"
+
+#: humans.xml:135
+msgid "Brigand"
+msgstr "Brigante"
+
+#: humans.xml:178
+msgid "Poacher"
+msgstr "Bracconiere"
+
+#: humans.xml:222
+msgid "Alwin"
+msgstr "Alwin"
+
+#: humans.xml:268
+msgid "Thief"
+msgstr "Ladro"
+
+#: humans.xml:313
+msgid "Raider"
+msgstr "Rapinatore"
+
+#: humans.xml:356
+msgid "Highwayman"
+msgstr "Delinquente"
+
+#: humans.xml:400
+msgid "Buck"
+msgstr "Buck"
+
+#: humans.xml:446
+msgid "Deserter"
+msgstr "Disertore"
+
+#: humans.xml:490
+msgid "Saboteur"
+msgstr "Sabotatore"
+
+#: humans.xml:534
+msgid "Todd"
+msgstr "Todd"
+
+#: humans.xml:582
+msgid "Rob the Robber"
+msgstr "Rob il Ladrone"
+
+#: humans.xml:707
+msgid "Ronny the Rat"
+msgstr "Ronny il Ratto"
+
+#: joringsbridge.xml
+msgid "Who is that?"
+msgstr "E chi è questo?"
+
+#: joringsbridge_npc.xml:2
+msgid "Gertlinde Kampfer"
+msgstr "Gertlinde Kampfer"
+
+#: joringsbridge_npc.xml:18
+msgid "Reba"
+msgstr ""
+
+#: joringsbridge_npc.xml:21
+msgid "Sybill"
+msgstr "Sybill"
+
+#: joringsbridge_npc.xml:56
+msgid "Weapons"
+msgstr "Armi"
+
+#: joringsbridge_npc.xml:59
+msgid "Halgor"
+msgstr "Halgor"
+
+#: joringsbridge_npc.xml:84
+msgid "Armors"
+msgstr "Armature"
+
+#: joringsbridge_npc.xml:87
+msgid "Marco"
+msgstr "Marco"
+
+#: joringsbridge_npc.xml:145
+msgid "Objects found"
+msgstr "Oggetti trovati"
+
+#: joringsbridge_npc.xml:147
+msgid "What are these Items?"
+msgstr "Cosa sono questi oggetti?"
+
+#: joringsbridge_npc.xml:152
+msgid "Ah, you noticed my lost and found?"
+msgstr "Hei, sai qualcosa dei miei oggetti smarriti?"
+
+#: joringsbridge_npc.xml:153
+msgid "Everything I find in and around Joringsbridge is stored here."
+msgstr "Tutto quello che ho trovato a Ponte Joring e nei dintorni ora e' qui."
+
+#: joringsbridge_npc.xml:154
+msgid ""
+"If something is your's just say the word. For a small finder's fee you can "
+"have it back."
+msgstr ""
+"Se qualcosa e' tuo dillo. Potrai riaverlo indietro per una minima somma."
+
+#: joringsbridge_npc.xml:160
+msgid "Sergeant Lutterer"
+msgstr "Sergente Lutterer"
+
+#: joringsbridge_npc.xml:161 joringsbridge_npc.xml:186
+msgid "Joringsbridge"
+msgstr "Ponte Joring"
+
+#: joringsbridge_npc.xml:164
+msgid ""
+"Having the responsibility for Joringsbridge is never easy, not even when I "
+"had enough soldiers."
+msgstr ""
+"Avere la responsabilita' di tutta Ponte Joring non e' mai stato facile, "
+"nemmeno quando avevo abbastanza soldati."
+
+#: joringsbridge_npc.xml:165
+msgid ""
+"Lately, someone in the guard has been appropriating confiscated magical "
+"items."
+msgstr ""
+"Ultimamente, qualcuno all'interno del corpo delle guardie si sta "
+"appropriando di oggetti magici confiscati."
+
+#: joringsbridge_npc.xml:166
+msgid ""
+"And I'm not even one step closer to find out who, than when I first noticed!"
+msgstr ""
+"E non son riuscito ancora a scoprire chi sia, sono ancora al punto di "
+"partenza!"
+
+#: joringsbridge_npc.xml:167
+msgid ""
+"((A guard is diverting items? Surely not for hard times. I should take a "
+"look around.))"
+msgstr ""
+"(Una guardia sta spostando gli oggetti? Non penso faccia scorte per periodi "
+"difficili. Andro' a dare un'occhiata in giro.)"
+
+#: joringsbridge_npc.xml:171
+msgid "The surroundings of Joringsbridge"
+msgstr "I dintorni di Ponte Joring"
+
+#: joringsbridge_npc.xml:174
+msgid "You better be careful when leaving the village."
+msgstr "Dovresti stare attento quando ti allontanti dal villaggio."
+
+#: joringsbridge_npc.xml:175
+msgid ""
+"Now, with almost all troops standing at the borders, we have to deal with an "
+"unmanageable flood of goblins."
+msgstr ""
+"Ora, con quasi tutte le truppe a guardia delle frontiere, ci troviamo ad "
+"affrontare orde incontrollate di goblin."
+
+#: joringsbridge_npc.xml:176
+msgid ""
+"And everyone not drafted for the army seems to have discovered the happy "
+"bandit life for themselves."
+msgstr ""
+"Inoltre sembra che tutti i non arruolati abbiano scoperto le gioie del "
+"brigantaggio."
+
+#: joringsbridge_npc.xml:177
+msgid "Thanks for the warning, sergeant."
+msgstr "Grazie per l'avvertimento, sergente."
+
+#: joringsbridge_npc.xml:182
+msgid "Michel Bron"
+msgstr "Michel Bron"
+
+#: joringsbridge_npc.xml:185
+msgid "Magus Convocatis Relau Fireweaver"
+msgstr "Magus Convocatis Relau Fireweaver"
+
+#: joringsbridge_npc.xml:189
+msgid "You are the backup sent by Lord Master Windclaw, arn't you?"
+msgstr "Sei tu il rimpiazzo inviato dal Signore e Maestro Artigliodivento?"
+
+#: joringsbridge_npc.xml:190
+msgid ""
+"I suggest you quickly journey on. There have been people dying by boredom in "
+"this village. "
+msgstr ""
+"Vi suggerisco di rimettervi subito in viaggio. Buona parte delle persone "
+"muore di noia in questo villaggio. "
+
+#: joringsbridge_npc.xml:191
+msgid "Who knows if your physique will help you against that, too?"
+msgstr "Chissa' se il tuo fisico ti aiutera' anche con quello?"
+
+#: joringsbridge_npc.xml:207
+msgid "Welcome to the humble... village, they call it... of Joringsbridge."
+msgstr ""
+"Benvenuto nel nostro umile... villaggio, viene chiamato... Ponte Joring"
+
+#: joringsbridge_npc.xml:208
+msgid ""
+"I have been stationed here due to the unfathomable wisdom of the Council."
+msgstr ""
+"Sono stato piazzato qua a causa dell'imperscrutabile volontà del Consiglio"
+
+#: joringsbridge_npc.xml:209
+msgid "If you want, I can add a certain something to your weapons."
+msgstr "Se vuoi posso aggiungere qualcosa alle tue armi"
+
+#: joringsbridge_npc.xml:210
+msgid ""
+"I am also quite adept at imbuing clothes with extra protection against the "
+"elements."
+msgstr ""
+"Sono anche abbastanza bravo a infondere nei vestiti incantesimi di "
+"protezione dagli elementi."
+
+#: joringsbridge_npc.xml:211
+msgid "Nothing more to do anyway."
+msgstr "Non è che sia rimasto molto da fare."
+
+#: joringsbridge_npc.xml:215
+msgid "Why can't you use ice?"
+msgstr "Non sai usare il ghiaccio?"
+
+#: joringsbridge_npc.xml:218
+msgid "Of course I know how to conjure ice..."
+msgstr "Certo che so come incanalare il ghiaccio..."
+
+#: joringsbridge_npc.xml:219
+msgid ""
+"but, as you are no doubt unaware, casting and enchanting are two utterly "
+"different activities."
+msgstr ""
+"Ma come senza dubbio saprai, lanciare magie e incantare oggetti sono due "
+"attività molto diverse."
+
+#: joringsbridge_npc.xml:220
+msgid "Be grateful I am able to enchant two elements."
+msgstr "E' già tanto se so incantare due elementi."
+
+#: joringsbridge_npc.xml:221
+msgid "That's a rare talent, just so you know. "
+msgstr "E' un'abilità non comune, tanto per capirci."
+
+#: joringsbridge_npc.xml:225
+msgid "Enchant Equipment"
+msgstr "Incanta Equipaggiamento"
+
+#: joringsbridge_npc.xml:241 npc.xml:96
+msgid "Air resistance"
+msgstr "Resistenza all'aria"
+
+#: joringsbridge_npc.xml:241 npc.xml:96
+msgid "Fire resistance"
+msgstr "Resistenza al fuoco"
+
+#: joringsbridge_npc.xml:247
+msgid "Increase Firemagic"
+msgstr "Aumenta danno da fuoco"
+
+#: joringsbridge_npc.xml:268
+msgid "It may be helpful if you would equip something first."
+msgstr "Sarebbe meglio che tu equipaggiassi qualcosa prima di cominciare."
+
+#: joringsbridge_npc.xml:295
+msgid "I may work for the Council, but I don't run a charity. The price is $1."
+msgstr ""
+"Io potrò anche lavorare per il Consiglio, ma non lo faccio mica per "
+"beneficenza. Il prezzo è $1"
+
+#: joringsbridge_npc.xml:316
+msgid "As I always say: No enchantment should be applied a second time."
+msgstr ""
+"Come dico sempre, nessun incantesimo dovrebbe essere applicato una seconda "
+"volta."
+
+#: longbow.xml:5
+msgid "tourney bow"
+msgstr "Arco da torneo"
+
+#: longbow.xml:42
+msgid "orc bow"
+msgstr "Arco dell'orco"
+
+#: longbow.xml:79
+msgid "yew bow"
+msgstr "Arco in tasso"
+
+#: longbow.xml:116
+msgid "longbow"
+msgstr "Arco lungo"
+
+#: longbow.xml:153
+msgid "soldier bow"
+msgstr "Arco del soldato"
+
+#: longbow.xml:190
+msgid "horn bow"
+msgstr "Arco in avorio"
+
+#: longbow.xml:227
+msgid "maple bow"
+msgstr "Arco in acero"
+
+#: longbow.xml:264
+msgid "battle bow"
+msgstr "Arco da battaglia"
+
+#: longbow.xml:301
+msgid "composite longbow"
+msgstr "Arco lungo composito"
+
+#: longbow.xml:338
+msgid "stormsinger"
+msgstr "Tempesta tuonante"
+
+#: longbow.xml:377
+msgid "oak bow"
+msgstr "Arco in quercia"
+
+#: longbow.xml:414
+msgid "demonhorn bow"
+msgstr "Arco demoniaco in corno"
+
+#: longbow.xml:451
+msgid "ranger bow"
+msgstr "Arco del ranger"
+
+#: longbow.xml:489
+msgid "ash longbow"
+msgstr "Arco delle ceneri"
+
+#: longbow.xml:527 shortbow.xml:513
+msgid "soul bow"
+msgstr "Arco delle anime"
+
+#: longbow.xml:564
+msgid "demon compositebow"
+msgstr "Arco demoniaco composito"
+
+#: longbow.xml:601
+msgid "hero bow"
+msgstr "Arco degli eroi"
+
+#: longbow.xml:638
+msgid "elf bow"
+msgstr "Arco elfico"
+
+#: mage_ablt.xml:2 monster_ablt.xml:361
+msgid "Blizzard"
+msgstr "Tormenta di Neve"
+
+#: mage_ablt.xml:2 monster_ablt.xml:361
+msgid ""
+"The mage summons a leathal cold blizzard that freezes every enemy caught in "
+"it to death."
+msgstr ""
+"Il mago evoca una letale tormenta di neve, che congela fino alla morte ogni "
+"nemico intrappolatovi."
+
+#: mage_ablt.xml:28 monster_ablt.xml:293 npc_abilities.xml:102
+msgid "Chainlightning"
+msgstr "Fulmine a Catena"
+
+#: mage_ablt.xml:28
+msgid ""
+"The mage unleashes a ball of lightning, that may jump from one enemy to "
+"another. It hits a maximum of five enemies and the damage is reduced "
+"everytime it jumps."
+msgstr ""
+"Il mago rilascia una palla di fulmini che saltella da un nemico all'altro. "
+"Colpisce un massimo di cinque nemici e il danno si riduce tra un salto e "
+"l'altro."
+
+#: mage_ablt.xml:54
+msgid "Ball lightning"
+msgstr "Fulmine Rimbalzante"
+
+#: mage_ablt.xml:54
+msgid ""
+"The mage unleashes a mighty ball lightning, that can jump over to nearby "
+"enemies. A maximum of nine enemies is hit and the damage is reduced with "
+"every jump."
+msgstr ""
+"Il mago rilascia una palla di fulmini che saltella da un nemico all'altro. "
+"Colpisce un massimo di nove nemici e il danno si riduce tra un salto e "
+"l'altro."
+
+#: mage_ablt.xml:80
+msgid "Chilling cold"
+msgstr "Freddo Assiderante"
+
+#: mage_ablt.xml:80
+msgid ""
+"The mage has understood everything about ice and snow, allowing him to "
+"increase the effectiveness of his icespells by 20%."
+msgstr ""
+"Il mago ha pienamente compreso la magia del ghiaccio e della neve, le sue "
+"magie di freddo sono più letali del 20%"
+
+#: mage_ablt.xml:90 monster_ablt.xml:19 monster_ablt.xml:146
+#: npc_abilities.xml:51
+msgid "Fireball"
+msgstr "Esplosione di fuoco"
+
+#: mage_ablt.xml:90 monster_ablt.xml:146 npc_abilities.xml:51
+msgid ""
+"The mage casts a bolt of fire, that explodes upon hitting an enemy. Other "
+"enemies nearby the victim are also caught in the explosion."
+msgstr ""
+"Il mago lancia una sfera incendiaria che esplode colpito un nemico. Tutti "
+"gli avversari nei paraggi dell'esplosione ne vengono coinvolti."
+
+#: mage_ablt.xml:116
+msgid "Firebolt"
+msgstr "Meteora"
+
+#: mage_ablt.xml:116
+msgid "The mage unleashes a small bolt of fire, that damages a single enemy."
+msgstr "Il mago sprigiona una piccola meteora che danneggia ogni nemico."
+
+#: mage_ablt.xml:142 monster_ablt.xml:93 monster_ablt.xml:119
+#: npc_abilities.xml:238
+msgid "Firestorm"
+msgstr "Tempesta di Fuoco"
+
+#: mage_ablt.xml:142
+msgid ""
+"The mage conjures a deadly wave of fire, that burns every enemy in a circle "
+"around him."
+msgstr ""
+"Il mago sprigiona una mortale ondata di fuoco, che brucia ogni nemico "
+"attorno a lui."
+
+#: mage_ablt.xml:168 npc_abilities.xml:26
+msgid "Fireblow"
+msgstr "Dardo Infuocato"
+
+#: mage_ablt.xml:168 npc_abilities.xml:26
+msgid "The mage casts a strong bolt of fire, that damages one enemy."
+msgstr "Il mago lancia un potente dardo di fuoco che danneggia un nemico."
+
+#: mage_ablt.xml:194 monster_ablt.xml:172 npc_abilities.xml:76
+msgid "Firecolumn"
+msgstr "Colonna di Fuoco"
+
+#: mage_ablt.xml:194 npc_abilities.xml:76
+msgid ""
+"The mage conjurs a column made of hellfire, that will stay for 5 seconds and "
+"turn every enemy stupid enough to stay in there to ashes."
+msgstr ""
+"Il mago evoca una colonna di fuoco infernale che rimarrà per cinque secondi, "
+"e trasformerà in cenere ogni nemico così stupido da passarci dentro."
+
+#: mage_ablt.xml:220
+msgid "Flame wave"
+msgstr "Ondata di Fiamme"
+
+#: mage_ablt.xml:220
+msgid ""
+"The mage conjures a wave of flames, that damages enemies in a circle around "
+"him."
+msgstr ""
+"Il mago sprigiona una mortale ondata di fuoco, che brucia ogni nemico "
+"attorno a lui."
+
+#: mage_ablt.xml:246 monster_ice_ablt.xml:138
+msgid "Freeze"
+msgstr "Congelati!"
+
+#: mage_ablt.xml:246 monster_ice_ablt.xml:138
+msgid ""
+"The mage catches an enemy in a block of pure ice, instantly sealing his "
+"movements."
+msgstr "Il mago fa diventare il nemico una statuetta di ghiaccio."
+
+#: mage_ablt.xml:271
+msgid "Frost ring"
+msgstr "Anello Congelante"
+
+#: mage_ablt.xml:271
+msgid "The mage calls upon a deadlier version of the icering."
+msgstr "Il mago sprigiona una versione più letale dell'anello di gelo"
+
+#: mage_ablt.xml:298 monster_ablt.xml:247 monster_ablt.xml:270
+msgid "Icicle"
+msgstr "Ghiacciolo"
+
+#: mage_ablt.xml:298 monster_ablt.xml:247 monster_ablt.xml:270
+msgid "The mage casts a shard of pure ice, that damages his foes."
+msgstr "Il mago lancia un pezzo di puro ghiaccio che danneggia i nemici"
+
+#: mage_ablt.xml:324
+msgid "Ice ring"
+msgstr "Anello di Gelo"
+
+#: mage_ablt.xml:324
+msgid ""
+"The mage casts a ring of ice around himself that will damage enemies in "
+"range."
+msgstr ""
+"Il mago sprigiona un anello di ghiaccio attorno a lui che danneggia i nemici "
+"nell'area."
+
+#: mage_ablt.xml:350
+msgid "Spear of ice"
+msgstr "Lancia di Ghiaccio"
+
+#: mage_ablt.xml:350
+msgid "The mage attacks one enemy with a powerful spear of magical ice."
+msgstr "Il mago attacca un nemico con una potente lancia di ghiaccio magico."
+
+#: mage_ablt.xml:376
+msgid "Infernoball"
+msgstr "Sfera Infernale"
+
+#: mage_ablt.xml:376
+msgid "The mage casts an even more powerful fireball."
+msgstr "Una versione migliorata dei precedenti proiettili di fuoco."
+
+#: mage_ablt.xml:402
+msgid "Ignite"
+msgstr "Incendiare"
+
+#: mage_ablt.xml:402
+msgid ""
+"The mage embraces the heat of fire, so that victims of his firespells will "
+"likely suffer burn."
+msgstr ""
+"Il mago si avvale del cuore delle fiamme, da ora in poi le vittime delle sue "
+"magie di fuoco, molto probabilmente si incendieranno."
+
+#: mage_ablt.xml:412
+msgid "Ionisation"
+msgstr "Ionizzazione"
+
+#: mage_ablt.xml:412
+msgid ""
+"The mage has become one with the storm and can cast lightning spells 25% "
+"faster."
+msgstr ""
+"Il mago è diventato un tutt'uno con la tempesta e lancia le magie di fulmine "
+"un quarto più velocemente."
+
+#: mage_ablt.xml:421
+msgid "Lightning"
+msgstr "Fulmine"
+
+#: mage_ablt.xml:421
+msgid "The mage summons a lightning to attack one foe."
+msgstr "Il mago fulmina un nemico."
+
+#: mage_ablt.xml:447
+msgid "Lightning strike"
+msgstr "Elettrocuzione"
+
+#: mage_ablt.xml:447
+msgid "The mage calls upon a mighty lightning to kill an enemy."
+msgstr "Il mago scaglia una potente scarica elettrica per uccidere un nemico."
+
+#: mage_ablt.xml:472
+msgid "Snow storm"
+msgstr "Tempesta di Neve"
+
+#: mage_ablt.xml:472
+msgid "The mage calls upon a snow storm to kill every enemy in a circle."
+msgstr ""
+"Il mago evoca una tempesta di neve per uccidere tutti i nemici attorno a lui."
+
+#: mage_ablt.xml:498
+msgid "Static shield"
+msgstr "Scudo Elettrostatico"
+
+#: mage_ablt.xml:498
+msgid ""
+"The mage surrounds himself with an armor of lightning, that will stun and "
+"damage enemies who are bold enough to attack in close combat."
+msgstr ""
+"Il mago si circonda di scariche elettriche che potrebbero stordire e "
+"danneggiare i folli che gli si avvicinano."
+
+#: mage_ablt.xml:520
+msgid ""
+"The mage summons a thunderstorm that will assault enemies in its range with "
+"lightnings."
+msgstr "Il mago evoca una tempesta di tuoni che assalterà i nemici con lampi. "
+
+#: mage_ablt.xml:520
+msgid "Thunderstorm"
+msgstr "Tempesta di Tuoni"
+
+#: mage_ablt.xml:552
+msgid "Tempest"
+msgstr "Tempesta"
+
+#: mage_ablt.xml:552
+msgid ""
+"The mage summons a ferocious tempest that bombards enemies in its wake with "
+"lightnings."
+msgstr "Il mago evoca una feroce tempesta che bombarda i nemici di fulmini"
+
+#: medair.xml:4
+msgid "elCnlLobby"
+msgstr "Consiglio degli Elementalisti, Dungeon sotterraneo"
+
+#: medair.xml:37 tutorial.xml
+msgid "elCnlLowerCaves"
+msgstr "elCnlLowerCaves"
+
+#: medair.xml:89
+msgid "medBackalley"
+msgstr "Vicolo interno"
+
+#: medair.xml:119
+msgid "medMercCamp"
+msgstr "Campo dei Mercenari di Medair"
+
+#: medairnpc.xml:2
+msgid "Robert"
+msgstr "Robert"
+
+#: medairnpc.xml:44
+msgid "Elgor"
+msgstr "Elgor"
+
+#: medairnpc.xml:67
+msgid "Cain"
+msgstr "Cain"
+
+#: medairnpc.xml:83
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: monster_ablt.xml:2
+msgid "Steals gold"
+msgstr "Ruba l'oro"
+
+#: monster_ablt.xml:2
+msgid "steal"
+msgstr "rubare"
+
+#: monster_ablt.xml:19
+msgid "Alternativer Feuerball."
+msgstr "Palla di fuoco alternativa"
+
+#: monster_ablt.xml:47
+msgid "Booster"
+msgstr "Manigoldo"
+
+#: monster_ablt.xml:47
+msgid "completely overpowered Booster"
+msgstr "Manigoldo completamente sopraffatto"
+
+#: monster_ablt.xml:70
+msgid "Heilt alles"
+msgstr "Cura tutti"
+
+#: monster_ablt.xml:93 monster_ablt.xml:119
+msgid "Firestorm with increased range."
+msgstr "Tempesta di Fiamme a portata incrementata"
+
+#: monster_ablt.xml:198 monster_shadow_ablt.xml:48 priest_ablt.xml:228
+msgid "Magic Shield"
+msgstr "Scudo Magico"
+
+#: monster_ablt.xml:223 npc_abilities.xml:126
+msgid "Goblin Lightning"
+msgstr "Fulmine Goblin"
+
+#: monster_ablt.xml:317
+msgid "goblin curse"
+msgstr "maledizione goblin"
+
+#: monster_ablt.xml:341 priest_ablt.xml:412
+msgid "Grand Cure"
+msgstr "Guarigione Suprema"
+
+#: monster_ablt.xml:384 warrior_ablt.xml:47
+msgid "Attacks one enemy for serious damage."
+msgstr "Attacca un nemico infliggendo ingenti danni."
+
+#: monster_ablt.xml:384
+msgid "monster Bash"
+msgstr "Mazza mostruosa"
+
+#: monster_ablt.xml:404
+msgid "poison_attack"
+msgstr "attacco_velenoso"
+
+#: monster_ablt.xml:423
+msgid "Attacks every enemy in weapon range with slightly reduced damage."
+msgstr "Attacca ogni nemico nel raggio dell'arma con danno lievemente ridotto"
+
+#: monster_ablt.xml:423 warrior_ablt.xml:24
+msgid "Sweeping blow"
+msgstr "Colpo Turbinante"
+
+#: monster_ablt.xml:445 monster_ablt.xml:490
+msgid "Fire arrow"
+msgstr "Freccia di fuoco"
+
+#: monster_ablt.xml:468
+msgid "Poison arrow"
+msgstr "Freccia avvelenata"
+
+#: monster_ablt.xml:468
+msgid "Poisonous ranged attack"
+msgstr "Attacco a distanza avvelenante"
+
+#: monster_ablt.xml:513
+msgid "Throw a dagger"
+msgstr "Lancia un pugnale"
+
+#: monster_ablt.xml:513
+msgid "throw dagger"
+msgstr "lanciare pugnale"
+
+#: monster_ablt.xml:532 monster_ablt.xml:551
+msgid "Throw a berry"
+msgstr "Lancia una ciliegia"
+
+#: monster_ablt.xml:532
+msgid "throw berry"
+msgstr "lanciare ciliegia"
+
+#: monster_ablt.xml:551
+msgid "throw rock"
+msgstr "lanciare roccia"
+
+#: monster_ablt.xml:571 monster_fire_ablt.xml:68 monster_fire_ablt.xml:93
+msgid "Throw a bomb"
+msgstr "Lanciare una bomba"
+
+#: monster_ablt.xml:571 monster_fire_ablt.xml:68
+msgid "throw bomb"
+msgstr "lanciare bomba"
+
+#: monster_ablt.xml:596
+msgid "Flee from enemy"
+msgstr "Scappare dal nemico"
+
+#: monster_ablt.xml:596
+msgid "saboteur_move"
+msgstr "mossa_del_sabotatore"
+
+#: monster_ablt.xml:625
+msgid "Flame Throw"
+msgstr "Lanciare Fiamme"
+
+#: monster_ablt.xml:625
+msgid "The basic attack of a flaming skeleton."
+msgstr "L'attacco base di uno scheletro fiammeggiante"
+
+#: monster_ablt.xml:648
+msgid "Blind ranged attack"
+msgstr "Attacco accecante a distanza"
+
+#: monster_ablt.xml:648
+msgid "dark arrow"
+msgstr "freccia oscura"
+
+#: monster_ablt.xml:670 monster_ice_ablt.xml:68 unique_ablt.xml:27
+#: unique_ablt.xml:49 unique_ablt.xml:95
+msgid "Ice arrow"
+msgstr "Freccia di ghiaccio"
+
+#: monster_ablt.xml:693
+msgid "Decrease block-value"
+msgstr "Valore di blocco abbassato"
+
+#: monster_ablt.xml:693
+msgid "Stats Down"
+msgstr "Caratteristica Abbassata"
+
+#: monster_ablt.xml:709
+msgid "stun_attack"
+msgstr "attacco_stordente"
+
+#: monster_air_ablt.xml:2
+msgid "air attack"
+msgstr "attaco aereo"
+
+#: monster_air_ablt.xml:2
+msgid "attack with ice damage"
+msgstr "attacco gelido"
+
+#: monster_fire_ablt.xml:2
+msgid "attack with fire damage"
+msgstr "attacco con danni da fuoco"
+
+#: monster_fire_ablt.xml:2
+msgid "fire attack"
+msgstr "attacco di fuoco"
+
+#: monster_fire_ablt.xml:93
+msgid "throw grenade"
+msgstr "lancia granata"
+
+#: monster_ice_ablt.xml:2 unique_ablt.xml:3
+msgid "ice attack"
+msgstr "Attacco di Ghiaccio"
+
+#: monster_ice_ablt.xml:2
+msgid "melee attack with ice damage"
+msgstr "Attacco in mischia che infligge danno da freddo."
+
+#: monster_ice_ablt.xml:25
+msgid "basic ranged attack with ice damage"
+msgstr "Attacco a distanza che infligge danno da ghiaccio"
+
+#: monster_ice_ablt.xml:89
+msgid "Ice Arrow"
+msgstr "Freccia di Ghiaccio"
+
+#: monster_ice_ablt.xml:89
+msgid "an arrow of ice that will hunt it's prey"
+msgstr "Una freccia di ghiaccio che andrà a caccia della sua preda"
+
+#: monster_ice_ablt.xml:113
+msgid "Iceball"
+msgstr "Palla di Neve a Sorpresa"
+
+#: monster_ice_ablt.xml:113
+msgid ""
+"The mage casts a bolt of ice that explodes in a ring upon hitting an enemy. "
+"Other enemies nearby the victim are also caught in the explosion."
+msgstr ""
+"Il mago lancia una sfera di ghiaccio che esplode ad anello dopo aver colpito "
+"un nemico."
+
+#: monster_ice_ablt.xml:163 unique_ablt.xml:117
+msgid "Frost Wave"
+msgstr "Ondata di Gelo"
+
+#: monster_ice_ablt.xml:163
+msgid ""
+"The mage conjures a wave of ice, that damages enemies in a circle around him."
+msgstr ""
+"Il mago evoca un'onda di ghiaccio che danneggia tutti i nemici attorno a lui."
+
+#: monster_shadow_ablt.xml:20 unique_ablt.xml:204
+msgid "Cloud of Despair"
+msgstr "Nube della Disperazione"
+
+#: monster_shadow_ablt.xml:20 unique_ablt.xml:204
+msgid "The mage calls forth a black cloud that stuns and blinds his foes."
+msgstr "Il mago evoca una nube nera che stordisce e acceca i suoi nemici."
+
+#: monsters.xml:237
+msgid "small mandragora"
+msgstr "Mandragora piccola"
+
+#: monsters.xml:289
+msgid "mandragora"
+msgstr "Mandragora"
+
+#: necrotia.xml:6
+msgid "necFieldcamp"
+msgstr "Il Campo base dei non-morti"
+
+# Bron's door
+#: npc.xml:4
+msgid "Brons Tuer"
+msgstr "Brons Tuer"
+
+#: npc.xml:7
+msgid "Sergeant Wober"
+msgstr "Sergente Wober"
+
+#: npc.xml:13 undeadStats.xml:158
+msgid "Maylons Ghost"
+msgstr "Fantasma di Maylons"
+
+#: npc.xml:22
+msgid "Gab Resh"
+msgstr "La Tomba di Maylons - Gab Resh"
+
+#: npc.xml:28
+msgid "Maga Convocatis Darna Eistaucher"
+msgstr "Maga Convocatis Darna Icediver"
+
+#: npc.xml:35
+msgid "Erzmaga Ireana von Nordenburg"
+msgstr "Arcimaga Ireana di Nordburg"
+
+#: npc.xml:38
+msgid "Guardcaptain"
+msgstr "Capitano delle guardie"
+
+#: npc.xml:41
+msgid "Elementaristenwaechter"
+msgstr "La Guardia del Consiglio"
+
+#: npc.xml:44
+msgid "Overlooker Necromancer"
+msgstr "Necromante Supervisore"
+
+#: npc.xml:50 npcStats.xml:473
+msgid "The Trader"
+msgstr "Il Mercante"
+
+#: npc.xml:55 npc.xml:66
+msgid "Buy empty scrolls"
+msgstr "Compra pergamene vuote"
+
+#: npc.xml:56
+msgid "Access stash"
+msgstr "Accesso allo scrigno"
+
+#: npc.xml:59
+msgid "The Lost Trader"
+msgstr "Il mercante disperso"
+
+#: npc.xml:76
+msgid "Wounded Scout"
+msgstr "L'esploratore Ferito"
+
+#: npc.xml:79
+msgid "Enchanter"
+msgstr "L'incantatore"
+
+#: npc.xml:96
+msgid "Ice resistance"
+msgstr "Resistenza al ghiaccio"
+
+#: npcStats.xml:320 npcStats.xml:358
+msgid "Peasant"
+msgstr "Contadino"
+
+#: npcStats.xml:397 npcStats.xml:435
+msgid "Peasant Woman"
+msgstr "Contadina"
+
+#: npc_abilities.xml:2
+msgid "Freezing Death"
+msgstr "Morte Assiderante"
+
+#: npc_abilities.xml:2
+msgid ""
+"The mage conjures a devastating ring of ice, that damages enemies in a "
+"circle around him."
+msgstr ""
+"Il mago evoca un devastante anello di ghiaccio, che danneggia i nemici."
+
+#: npc_abilities.xml:150 warrior_ablt.xml:241
+msgid ""
+"Attacks one enemy with a brutal blow and damages nearby enemies as well."
+msgstr ""
+"Attacca un nemico con un colo brutale e infligge danni ai nemici nell'area."
+
+#: npc_abilities.xml:150 warrior_ablt.xml:241
+msgid "Hammer blow"
+msgstr "La Martellata"
+
+#: npc_abilities.xml:172 warrior_ablt.xml:24
+msgid "Attacks every enemy in weapon range."
+msgstr "Attacca ogni nemico nel raggio d'azione dell'arma."
+
+#: npc_abilities.xml:172 warrior_ablt.xml:446
+msgid "Whirl blow"
+msgstr "Colpo Trottola"
+
+#: npc_abilities.xml:192 warrior_ablt.xml:356
+msgid "Attacks an enemy with an unblockable, armor piercing blow."
+msgstr "Attacca un nemico con un colpo inbloccabile che penetra l'armatura."
+
+#: npc_abilities.xml:192 warrior_ablt.xml:356
+msgid "Smash blow"
+msgstr "Attacco Perforante"
+
+#: npc_abilities.xml:215 warrior_ablt.xml:172
+msgid "Flame armor"
+msgstr "Armatura Di Fiamme"
+
+#: npc_abilities.xml:215 warrior_ablt.xml:172
+msgid ""
+"The warrior surrounds himself with angry spirits of fire, who will burn his "
+"enemies to ashes, if they dare to come to close."
+msgstr ""
+"Il guerriero viene circondato da spiriti del fuoco adirati. Chi oserà "
+"avvicinarsi verrà ridotto in cenere."
+
+#: npc_abilities.xml:238
+msgid ""
+"The mage conjures a deadly wave of fire on the verge of death, that burns "
+"every enemy in a circle around him to a crisp."
+msgstr ""
+"Il mago in punto di morte, sprigiona una letale ondata di fuoco, che brucia "
+"ogni nemico attorno a lui, fino a renderlo bello croccante."
+
+#: polearms.xml:3
+msgid "pike"
+msgstr "Picca"
+
+#: potion.xml:3
+msgid "scroll of town portal"
+msgstr "Pergamena del Portale Magico"
+
+#: potion.xml:17
+msgid "small potion"
+msgstr "Pozione piccola"
+
+#: potion.xml:37
+msgid "medium potion"
+msgstr "Pozione Media"
+
+#: potion.xml:57
+msgid "eyedrops"
+msgstr "Collirio"
+
+#: potion.xml:77
+msgid "antidot"
+msgstr "Antidoto"
+
+#: potion.xml:97
+msgid "calming salve"
+msgstr "Unguento calmante"
+
+#: potion.xml:117
+msgid "potion of determination"
+msgstr "Pozione della determinazione"
+
+#: potion.xml:137
+msgid "echo potion"
+msgstr "Pozione dell'eco"
+
+#: potion.xml:157
+msgid "muscle salve"
+msgstr "Unguento muscolare"
+
+#: potion.xml:177
+msgid "potion of melting"
+msgstr "Pozione della fusione"
+
+#: potion.xml:197
+msgid "spike oil"
+msgstr "Olio essenziale di lavanda"
+
+#: priest_ablt.xml:2
+msgid "Acid"
+msgstr "Acido"
+
+#: priest_ablt.xml:2
+msgid "The priest turns normal water into deadly acid, poisoning one enemy."
+msgstr ""
+"Per quanto possa sembrare allettante, questa abilità non fa altro che "
+"trasformare l'acqua in acido, sciogliendo lentamente un nemico, i danni "
+"inflitti sono considerati da veleno."
+
+#: priest_ablt.xml:27
+msgid "Bladestorm"
+msgstr "Tempesta Di Lame"
+
+#: priest_ablt.xml:27
+msgid ""
+"The priest strengthens the weaponarms of his comrades, leading to increased "
+"attackspeed for everyone."
+msgstr ""
+"Il chierico rafforza gli attacchi dei compagni, facendoli attaccare più "
+"frequentemente."
+
+#: priest_ablt.xml:50
+msgid "Blazing Shield"
+msgstr "Scudo Sacro"
+
+#: priest_ablt.xml:50
+msgid ""
+"The party is surrounded by holy energy. Everyones defense is increased. With "
+"increasing willpower the effect improves."
+msgstr ""
+"Il gruppo è circondato da energia sacra. La difesa di tutti viene aumentata. "
+"Questo effetto migliora aumentando la forza di volontà."
+
+#: priest_ablt.xml:74
+msgid "Breaking Blow"
+msgstr "Colpo Spezza Legami"
+
+#: priest_ablt.xml:74
+msgid ""
+"The priest attacks an enemy with energy that causes elementals to be blown "
+"back where they come from."
+msgstr ""
+"Con la sua energia, il chierico attacca un nemico, obbligando gli elementali "
+"a tornarsene da dove provengono."
+
+#: priest_ablt.xml:103
+msgid "Glaring Sun"
+msgstr "Sole Sanguinario"
+
+#: priest_ablt.xml:103
+msgid ""
+"The priest calls forth a mighty explosion of light that can blind every "
+"enemy in an area."
+msgstr ""
+"Il chierico prega affinchè una forte esplosione di luce accechi tutti i "
+"nemici nell'area."
+
+#: priest_ablt.xml:130
+msgid "Gentle Glow"
+msgstr "Gentile Brillio"
+
+#: priest_ablt.xml:130
+msgid ""
+"The priest bathes a partymember in a mild light, releaving him of blindness "
+"and silence."
+msgstr ""
+"Il chierico benedice un membro del gruppo con una luce soffusa, "
+"rimuovendogli cecità e mutismo."
+
+#: priest_ablt.xml:150
+msgid "Omniscent Eye"
+msgstr "Onniscenza"
+
+#: priest_ablt.xml:150
+msgid ""
+"The party will be immune to blind and mute for some time. Those ailments "
+"will also be healed."
+msgstr ""
+"Il gruppo diviene immune da mutismo e cecità per un breve lasso di tempo. "
+"Viene anche curato lievemente."
+
+#: priest_ablt.xml:178
+msgid "Restore Concentration"
+msgstr "Riottenere Concentrazione"
+
+#: priest_ablt.xml:178
+msgid ""
+"The priest heals one friend from confusion and berserk. Those ailments will "
+"also be healed."
+msgstr ""
+"Il chierico rimuove a un amico confusione e frenesia e lo cura lievemente."
+
+#: priest_ablt.xml:199
+msgid "Spirit Shield"
+msgstr "Scudo Spirituale"
+
+#: priest_ablt.xml:199
+msgid ""
+"The priest grants immunity to berserk and confuse to all his partymembers "
+"for a small amount of time. Those ailments will also be healed."
+msgstr ""
+"Il chierico fornisce a tutti i compagni di squadra: cure, immunità alla "
+"frenesia, alla confusione. L'effetto persiste per un breve lasso di tempo."
+
+#: priest_ablt.xml:228
+msgid ""
+"The priest conjures a magic shield for all partymembers thats reduces the "
+"damage dealt by elemental attacks."
+msgstr ""
+"Il chierico piazza uno scudo magico su tutti i membri della squadra in "
+"questo modo riduce i danni inflitti dagli attacchi elementali."
+
+#: priest_ablt.xml:256
+msgid "Ease Pain"
+msgstr "Alleviare Sofferenza"
+
+#: priest_ablt.xml:256
+msgid ""
+"The priest treats a partymemener with healing water that washes away every "
+"poison and stops burns."
+msgstr ""
+"Il chierico cosparge un membro della squadra con acqua guaritrice che lava "
+"via ogni veleno e ferma la bruciatura."
+
+#: priest_ablt.xml:277
+msgid "Remedial Water"
+msgstr "Acqua Medicatrice"
+
+#: priest_ablt.xml:277
+msgid ""
+"The priests grants every partymember immunity to poison and burn for a small "
+"amount of time while healing these effects."
+msgstr ""
+"Il chierico cura veleno e bruciature a tutto il gruppo, e fornisce "
+"protezione dagli stessi per un breve lasso di tempo."
+
+#: priest_ablt.xml:306
+msgid "Dismissing Strike"
+msgstr "Mazzata Extramondo"
+
+#: priest_ablt.xml:306
+msgid ""
+"The priest strikes with all his might. While normal monsters have little to "
+"fear from this attack elementals will be easily destroyed by it."
+msgstr ""
+"Il chierico colpisce con tutta la sua forza divina. Mentre i mostri normali "
+"non avranno molto da temere da questo attacco, gli elementali ne saranno "
+"facilmente spazzati via."
+
+#: priest_ablt.xml:335
+msgid "God Strike"
+msgstr "Mazzata Divina"
+
+#: priest_ablt.xml:335
+msgid ""
+"Only strong and durable demons will be able to resist the priests sacred "
+"strike."
+msgstr ""
+"Solo i demoni più forti e robusti potranno resistere a questo colpo "
+"benedetto."
+
+#: priest_ablt.xml:364
+msgid ""
+"The priest creates a vortex with his attack, that can suck a demonic "
+"creature right back to hell."
+msgstr ""
+"L'attaccho del chierico genera un vortice che risucchia una creatura "
+"demoniacha direttamente all'inferno."
+
+#: priest_ablt.xml:364
+msgid "Windstrike"
+msgstr "Colpo Vortice"
+
+#: priest_ablt.xml:392
+msgid "Cure"
+msgstr "Guarigione"
+
+#: priest_ablt.xml:392
+msgid "The priest restores the hitpoints of one partymember."
+msgstr "Il chierico cura la vita di un membro della squadra"
+
+#: priest_ablt.xml:412
+msgid "The priest restores hitpoints for every partymember."
+msgstr "Il chierico cura la vita di tutta la squadra"
+
+#: priest_ablt.xml:433
+msgid "Sanctified Strike"
+msgstr "Mazzata Benedetta"
+
+#: priest_ablt.xml:433
+msgid ""
+"The priest attacks with godly power, easily sending undead creatures back to "
+"their graves."
+msgstr ""
+"Il prete attacca con potere divino, con ottime probabilità di rispedire i "
+"non morti alla tomba."
+
+#: priest_ablt.xml:463
+msgid "Bright Blow"
+msgstr "Colpo Luminescente"
+
+#: priest_ablt.xml:463
+msgid ""
+"The priest attacks an enemy with a blow imbued with holy power. Undead will "
+"be severely damaged by the sacred energies."
+msgstr ""
+"Il chierico attacca un nemico con un colpo infuso di forza sacra, le "
+"creature dell'oltretomba ne saranno danneggiate pesantemente."
+
+#: priest_ablt.xml:493
+msgid "Hypnosis"
+msgstr "Ipnosi"
+
+#: priest_ablt.xml:493
+msgid "The priest confuses a monster, causing it to attack at random."
+msgstr ""
+"Il chierico manda in tilt il cervello di un mostro, facendolo attaccare a "
+"caso."
+
+#: priest_ablt.xml:519
+msgid "Hypnotic Vortex"
+msgstr "Vortice di ipnosi"
+
+#: priest_ablt.xml:519
+msgid ""
+"The priest creates a distracting vortex with the ability to confuse every "
+"enemy caught in it."
+msgstr ""
+"Il chierico crea un vortice instupidente con la possibilità di rincitrullire "
+"tutti i nemici che vi incappano."
+
+#: priest_ablt.xml:545
+msgid "Keen Mind"
+msgstr "Mente Ligia"
+
+#: priest_ablt.xml:545
+msgid ""
+"The priest increases everyones spellpower for a short time making spells "
+"more effective. The effect becomes stronger with increasing willpower of the "
+"priest."
+msgstr ""
+"Il chierico aumenta il potere magico di tutti i membri della squadra. "
+"L'effetto diventa più forte con l'aumentare della forza di volontà del "
+"chierico."
+
+#: priest_ablt.xml:568
+msgid "Glistening Glare"
+msgstr "Occhiataccia Abbagliante"
+
+#: priest_ablt.xml:568
+msgid ""
+"The priest casts a dazzling light, that can cause an enemy to be affected by "
+"blind."
+msgstr "Gli occhi del chierico lanciano un lampo che causa cecità ai nemici."
+
+#: priest_ablt.xml:594
+msgid "Divine Will"
+msgstr "Volontà Divina"
+
+#: priest_ablt.xml:594
+msgid ""
+"The priests protecting influence raises the willpower of all partymembers "
+"temporarily. The effect becomes stronger with increasing willpower of the "
+"priest."
+msgstr ""
+"Per un breve periodo, l'influenza protettiva del chierico alza la forza di "
+"volontà dei suoi compagni di squadra. Questa abilità diviene più potente "
+"alzando la forza di volontà del chierico."
+
+#: priest_ablt.xml:617
+msgid "Holy Shield"
+msgstr "Scudo Benedetto"
+
+#: priest_ablt.xml:617
+msgid ""
+"The priest is surrounded by a shimmering light that repells undead attacks. "
+"Damage from undead beings is reduced by one third."
+msgstr ""
+"Il chierico viene circondato da una luce abbagliante che respinge gli "
+"attacchi dei non morti. Il danno fatto da questi si riduce di un terzo."
+
+#: priest_ablt.xml:627
+msgid "Banishing Aura"
+msgstr "Aura dell'Esilio"
+
+#: priest_ablt.xml:627
+msgid ""
+"The priests powers allow him to surround himself with an aura that immitates "
+"a banishment. While it holds no real power over demons, demonic beings will "
+"be frightened, thus leading to their damage being reduced by one third."
+msgstr ""
+"Il chierico viene circondato da un'aura che mette a disagio le creature "
+"extraplanari. Anche se non avrà effetto sui veri e propri demoni, le "
+"creature demoniache ne saranno spaventate e i loro danni verranno ridotti di "
+"un terzo."
+
+#: priest_ablt.xml:637
+msgid "Elemental Vortex"
+msgstr "Vortice degli Elementali"
+
+#: priest_ablt.xml:637
+msgid ""
+"The priest can unconsciously create an elemental vortex that will drain one "
+"third of incoming damage from elemental beings."
+msgstr ""
+"Il chierico può creare inconsciamente un vortice di elementali attorno a "
+"lui. Questi subiranno un terzo dei danni al suo posto se provenienti da "
+"creature elementali."
+
+#: rescue_willard.xml
+msgid "Willard"
+msgstr "Willard"
+
+#: ring.xml:5
+msgid "bronze ring"
+msgstr "Anello di bronzo"
+
+#: ring.xml:34
+msgid "amber ring"
+msgstr "Anello d'ambra"
+
+#: ring.xml:63
+msgid "silver ring"
+msgstr "Anello d'argento"
+
+#: ring.xml:92
+msgid "jet ring"
+msgstr "Anello in lignite"
+
+#: ring.xml:121
+msgid "gold ring"
+msgstr "Anello d'oro"
+
+#: robes.xml:5
+msgid "ragged robe"
+msgstr "Tunica logora"
+
+#: robes.xml:39
+msgid "apprentice robe"
+msgstr "Tunica dell'apprendista"
+
+#: robes.xml:73
+msgid "novice robe"
+msgstr "Tunica del novizio"
+
+#: robes.xml:107
+msgid "alchemist robe"
+msgstr "Tunica dell'alchimista"
+
+#: robes.xml:141
+msgid "scholar robe"
+msgstr "Tunica dell'allievo"
+
+#: robes.xml:175
+msgid "magus robe"
+msgstr "Tunica del mago"
+
+#: robes.xml:209
+msgid "council robe"
+msgstr "Tunica del consiglio"
+
+#: sarkophagusMaylon.xml:29
+msgid " received an item from Maylons Grave."
+msgstr ""
+
+#: shields.xml:5
+msgid "targe"
+msgstr "Scudo targa"
+
+#: shields.xml:35
+msgid "buckler"
+msgstr "Scudo buckler"
+
+#: shields.xml:65
+msgid "wood shield"
+msgstr "Scudo di legno"
+
+#: shields.xml:95
+msgid "bronze shield"
+msgstr "Scudo di bronzo"
+
+#: shields.xml:125
+msgid "iron shield"
+msgstr "Scudo di ferro"
+
+#: shields.xml:155
+msgid "steel shield"
+msgstr "Scudo di acciaio"
+
+#: shortbow.xml:4
+msgid "practice bow"
+msgstr "Arco dell'addestramento"
+
+#: shortbow.xml:40
+msgid "yew shortbow"
+msgstr "Arco corto in tasso"
+
+#: shortbow.xml:76
+msgid "shortbow"
+msgstr "Arco corto"
+
+#: shortbow.xml:112
+msgid "hunting bow"
+msgstr "Arco da caccia"
+
+#: shortbow.xml:149
+msgid "rattan bow"
+msgstr "Arco in rattan"
+
+#: shortbow.xml:185
+msgid "bandit bow"
+msgstr "Arco del brigante"
+
+#: shortbow.xml:221
+msgid "northeye"
+msgstr "Occhio del nord"
+
+#: shortbow.xml:259
+msgid "battle shortbow"
+msgstr "Arco corto da battaglia"
+
+#: shortbow.xml:295
+msgid "composite shortbow"
+msgstr "Arco corto composito"
+
+#: shortbow.xml:331
+msgid "rider bow"
+msgstr "Arco del cavaliere"
+
+#: shortbow.xml:367
+msgid "coal bow"
+msgstr "Arco della brace"
+
+#: shortbow.xml:403
+msgid "ash bow"
+msgstr "Arco delle ceneri"
+
+#: shortbow.xml:440
+msgid "bane bow"
+msgstr "Arco della rovina"
+
+#: shortbow.xml:477
+msgid "oak shortbow"
+msgstr "Arco corto in quercia"
+
+#: shortbow.xml:549
+msgid "seeker"
+msgstr "Cercatore"
+
+#: shortbow.xml:585
+msgid "chaos shortbow"
+msgstr "Arco corto del caos"
+
+#: shortbow.xml:621
+msgid "fairy bow"
+msgstr "Arco fatato"
+
+#: staff.xml:5 staff.xml:36 staff.xml:67
+msgid "spruce staff"
+msgstr "Bastone in abete"
+
+#: staff.xml:100 staff.xml:131 staff.xml:162
+msgid "apprentice staff"
+msgstr "Bastone dell'apprendista"
+
+#: staff.xml:195 staff.xml:225 staff.xml:256
+msgid "novice staff"
+msgstr "Bastone del novizio"
+
+#: staff.xml:289 staff.xml:320 staff.xml:351
+msgid "hermit staff"
+msgstr "Bastone dell'eremita"
+
+#: staff.xml:383
+msgid "rock staff"
+msgstr "Bastone di pietra"
+
+#: staff.xml:420 staff.xml:451 staff.xml:482
+msgid "alder staff"
+msgstr "Bastone in ontano"
+
+#: staff.xml:515 staff.xml:546 staff.xml:577
+msgid "bard's staff"
+msgstr "Bastone del bardo"
+
+#: staff.xml:610 staff.xml:640 staff.xml:671
+msgid "magus staff"
+msgstr "Bastone del mago"
+
+#: staff.xml:704 staff.xml:735 staff.xml:766
+msgid "silver staff"
+msgstr "Bastone d'argento"
+
+#: staff.xml:798
+msgid "inferno staff"
+msgstr "Bastone degli inferi"
+
+#: staff.xml:830
+msgid "oak staff"
+msgstr "Bastone in quercia"
+
+#: staff.xml:862
+msgid "phenix staff"
+msgstr "Bastone della fenice"
+
+#: staff.xml:894
+msgid "frost staff"
+msgstr "Bastone dei ghiacci"
+
+#: staff.xml:926
+msgid "thunder staff"
+msgstr "Bastone del tuono"
+
+#: staff.xml:958
+msgid "ash staff"
+msgstr "Bastone delle ceneri"
+
+#: staff.xml:990
+msgid "summoner staff"
+msgstr "Bastone dell'evocatore"
+
+#: staff.xml:1022
+msgid "master staff"
+msgstr "Bastone del maestro"
+
+#: staff.xml:1054
+msgid "necromancer staff"
+msgstr "Bastone del necromante"
+
+#: staff.xml:1086
+msgid "demon staff"
+msgstr "Bastone del demonio"
+
+#: staff.xml:1118
+msgid "fairy staff"
+msgstr "Bastone fatato"
+
+#: staff.xml:1154
+msgid "ifreet staff"
+msgstr "Bastone dell'Ifrit"
+
+#: staff.xml:1186
+msgid "icewitch staff"
+msgstr "Bastone della strega dei ghiacci"
+
+#: staff.xml:1218
+msgid "sylph staff"
+msgstr "Bastone delle Silfidi"
+
+#: staff.xml:1251
+msgid "archmage staff"
+msgstr "Bastone dell'arcimago"
+
+#: swords1h.xml:4
+msgid "dagger"
+msgstr "Pugnale"
+
+#: swords1h.xml:40
+msgid "shortsword"
+msgstr "Spada corta"
+
+#: swords1h.xml:76
+msgid "bronzesword"
+msgstr "Spada di bronzo"
+
+#: swords1h.xml:112
+msgid "sabre"
+msgstr "Sciabola"
+
+#: swords1h.xml:150
+msgid "legion blade"
+msgstr "Daga"
+
+#: swords1h.xml:186
+msgid "long sword"
+msgstr "Spada lunga"
+
+#: swords1h.xml:222
+msgid "sword of the coast"
+msgstr "Spada della costa"
+
+#: swords1h.xml:258
+msgid "council sabre"
+msgstr "Sciabola del consiglio"
+
+#: swords1h.xml:294
+msgid "scimitar"
+msgstr "Scimitarra"
+
+#: swords1h.xml:330
+msgid "barbarian sword"
+msgstr "Spada barbarica"
+
+#: swords1h.xml:366
+msgid "northlings blade"
+msgstr "Lama delle terre del nord"
+
+#: swords1h.xml:404
+msgid "steel sword"
+msgstr "Spada in acciao"
+
+#: swords1h.xml:440
+msgid "assassins blade"
+msgstr "Lama dell'assassinio"
+
+#: swords1h.xml:476
+msgid "diamont sword"
+msgstr "Spada di diamanti"
+
+#: swords1h.xml:512
+msgid "dwarfsteel sword"
+msgstr "Spada in acciaio nanico"
+
+#: swords1h.xml:548
+msgid "demon blade"
+msgstr "Lama demoniaca"
+
+#: swords1h.xml:586
+msgid "hero blade"
+msgstr "Lama dell' eroe"
+
+#: swords1h.xml:622
+msgid "angel blade"
+msgstr "Lama dell'angelo"
+
+#: swords1h.xml:658
+msgid "gods blade"
+msgstr "Lama degli dei"
+
+#: swords2h.xml:4
+msgid "farmer sword"
+msgstr "Spada del contadino"
+
+#: swords2h.xml:42
+msgid "mercenary blade"
+msgstr "Lama del mercenario"
+
+#: swords2h.xml:80
+msgid "two handed steel sword"
+msgstr "Spada a due mani in acciaio"
+
+#: swords2h.xml:118
+msgid "smash sword"
+msgstr "Spada della distruzione"
+
+#: swords2h.xml:156
+msgid "horse killer"
+msgstr "Ammazza-cavalli"
+
+#: swords2h.xml:194
+msgid "bastard sword"
+msgstr "Spada bastarda"
+
+#: swords2h.xml:232
+msgid "ogre dagger"
+msgstr "Pugnale da orco"
+
+#: swords2h.xml:270
+msgid "goblinkiller"
+msgstr "Ammazza-goblin"
+
+#: swords2h.xml:308
+msgid "executioner's sword"
+msgstr "Spada dell'esecutore"
+
+#: swords2h.xml:346
+msgid "two handed guardsman sword"
+msgstr "Spada a due mani della guardia"
+
+#: swords2h.xml:384
+msgid "flamberg"
+msgstr "Flamberga"
+
+#: swords2h.xml:424
+msgid "aisener battle sword"
+msgstr "Spada di battaglia di Aisen"
+
+#: swords2h.xml:462
+msgid "monster sword"
+msgstr "Spada mostruosa"
+
+#: swords2h.xml:500
+msgid "tear sword"
+msgstr "Spada delle lacrime"
+
+#: swords2h.xml:538
+msgid "deathwind"
+msgstr "Vento Mortale"
+
+#: swords2h.xml:578
+msgid "dread sword"
+msgstr "Spada del terrore"
+
+#: swords2h.xml:616
+msgid "great sword"
+msgstr "Spada grande"
+
+#: swords2h.xml:654
+msgid "angel sword"
+msgstr "Spada dell'angelo"
+
+#: testregions.xml:47
+msgid "maptest"
+msgstr "maptest"
+
+#: testregions.xml:67
+msgid "sandbox"
+msgstr "sandbox"
+
+#: testregions.xml:199
+msgid "spawnAbyss"
+msgstr "spawnAbyss"
+
+#: testregions.xml:217
+msgid "benchmarkBox"
+msgstr "benchmarkBox"
+
+#: testregions.xml:435
+msgid "region0"
+msgstr "region0"
+
+#: testregions.xml:611
+msgid "testregion"
+msgstr "testregion"
+
+#: testregions.xml:624
+msgid "region1"
+msgstr "Regione 1"
+
+#: theFissure.xml
+msgid "Unknown Lich"
+msgstr "Lich Sconosciuto"
+
+#: tutorial.xml
+msgid ""
+"I have to find an energy source and a cog before that thing will work again."
+msgstr ""
+"Devo trovare una fonte di energia e un ingranaggio per far funzionare di "
+"nuovo quell'affare"
+
+#: undeadEqu.xml:3
+msgid "broken shield"
+msgstr "Scudo spezzato"
+
+#: undeadEqu.xml:33
+msgid "old sword"
+msgstr "Spada vecchia"
+
+#: undeadStats.xml:5
+msgid "Guardian Skeleton"
+msgstr "Scheletro guardiano"
+
+#: undeadStats.xml:57
+msgid "Zombie"
+msgstr "Zombie"
+
+#: undeadStats.xml:112
+msgid "Maylon"
+msgstr "Maylon"
+
+#: undeadStats.xml:205 undeadStats.xml:364 undeadStats.xml:416
+#: undeadStats.xml:982 undeadStats.xml:1030 undeadStats.xml:1082
+#: undeadStats.xml:1133 undeadStats.xml:1184
+msgid "Skeleton"
+msgstr "Scheletro"
+
+#: undeadStats.xml:258
+msgid "Giant Skeleton"
+msgstr "Scheletro gigante"
+
+#: undeadStats.xml:312
+msgid "Skeleton Archer"
+msgstr "Scheletro arcere"
+
+#: undeadStats.xml:469 undeadStats.xml:1553
+msgid "Skeleton Shadow Archer"
+msgstr "Scheletro arcere oscuro"
+
+#: undeadStats.xml:522
+msgid "Frostbone"
+msgstr "Ossa di Ghiaccio"
+
+#: undeadStats.xml:577 undeadStats.xml:837 undeadStats.xml:1291
+#: undeadStats.xml:1342 undeadStats.xml:1394
+msgid "Burning Skeleton"
+msgstr "Scheletro infuocato"
+
+#: undeadStats.xml:685
+msgid "Undead Scythe"
+msgstr "Falciatore di anime"
+
+#: undeadStats.xml:738 undeadStats.xml:939
+msgid "Necromancer"
+msgstr "Necromante"
+
+#: undeadStats.xml:785
+msgid "Worker Skeleton"
+msgstr "Scheletro lavoratore"
+
+#: undeadStats.xml:889
+msgid "Lich"
+msgstr "Lich"
+
+#: undeadStats.xml:1236
+msgid "Huge Skeleton"
+msgstr "Scheletro enorme"
+
+#: undeadStats.xml:1446
+msgid "Frost Skeleton"
+msgstr "Scheletro del gelo"
+
+#: undeadStats.xml:1499
+msgid "Frost Skeleton Archer"
+msgstr "Scheletro del gelo arcere"
+
+#: undeadStats.xml:1605
+msgid "Chilling Death"
+msgstr "Morte Congelante"
+
+#: undeadStats.xml:1660
+msgid "Savage Skeleton"
+msgstr "Scheletro selvaggio"
+
+#: undeadStats.xml:1715
+msgid "Boney Brothers"
+msgstr "Fratelli Boney"
+
+#: undeadStats.xml:1771
+msgid "Icemage"
+msgstr "Mago del ghiaccio"
+
+#: undeadStats.xml:1817
+msgid "Frostmage"
+msgstr "Mago del gelo"
+
+#: undeadStats.xml:1865
+msgid "Neivan the Frostbringer"
+msgstr "Neivan il Gelido"
+
+#: undeadStats.xml:1917 undeadStats.xml:2317
+msgid "Blackmage"
+msgstr "Mago oscuro"
+
+#: undeadStats.xml:1963
+msgid "Black Raven"
+msgstr "Corvo Nero"
+
+#: undeadStats.xml:2366
+msgid "Ice Obelisk"
+msgstr "Obelisco di Ghiaccio"
+
+#: undead_ablt.xml:2 undead_ablt.xml:20 undead_ablt.xml:39 undead_ablt.xml:58
+#: undead_ablt.xml:78 unique_ablt.xml:70
+msgid "Creates a skeleton."
+msgstr "Crea uno scheletro"
+
+#: undead_ablt.xml:2 undead_ablt.xml:20 undead_ablt.xml:39 undead_ablt.xml:58
+#: undead_ablt.xml:78 unique_ablt.xml:70
+msgid "Summon Skeleton"
+msgstr "Evoca Scheletro"
+
+#: unique_ablt.xml:3
+msgid "melee attack with ice damage of Nar'Asoroth"
+msgstr "attacco in mischia con danno da ghiaccio di Nar'Asoroth"
+
+#: unique_ablt.xml:27 unique_ablt.xml:49
+msgid "An icicle hunting the nearest target. The Nar'Asoroth-version."
+msgstr ""
+"Un ghiacciolo che perseguita il suo bersaglio più vicino. La versione di "
+"Nar'Asoroth"
+
+#: unique_ablt.xml:95
+msgid "a ball of ice that will hunt it's victim and explode"
+msgstr "una palla di ghiaccio caccerà i nemici e esploderà"
+
+#: unique_ablt.xml:117
+msgid ""
+"Nar'Asoroth conjures a wave of ice, that damages enemies in a circle around "
+"him."
+msgstr ""
+"Nar'Asoroth evoca un'onda di ghiaccio che danneggia i nemici attorno a lui."
+
+#: unique_ablt.xml:144
+msgid "Creates a obelisk of ice."
+msgstr "Si crea un'obelisco di ghiaccio."
+
+#: unique_ablt.xml:144
+msgid "Summon Ice Obelisk"
+msgstr "Evoca Obelisco Di Ghiaccio"
+
+#: unique_ablt.xml:163
+msgid "Summon meteor"
+msgstr "Evoca Meteora"
+
+#: unique_ablt.xml:185
+msgid "Army of Darkness"
+msgstr "L'Armata Delle Tenebre"
+
+#: unique_ablt.xml:185
+msgid "Nar'Asoroth raises a group of skeletons."
+msgstr "Nar'Asoroth fa emergere dal suolo un gruppo di scheletri"
+
+#: wands.xml:4 wands.xml:35 wands.xml:66
+msgid "spruce wand"
+msgstr "Bacchetta in abete"
+
+#: wands.xml:99 wands.xml:130 wands.xml:161
+msgid "apprentice wand"
+msgstr "Bacchetta dell'apprendista"
+
+#: wands.xml:194 wands.xml:224 wands.xml:255
+msgid "novice wand"
+msgstr "Bacchetta del novizio"
+
+#: wands.xml:288 wands.xml:317 wands.xml:346
+msgid "hermit wand"
+msgstr "Bacchetta dell'eremita"
+
+#: wands.xml:376
+msgid "rock wand"
+msgstr "Bacchetta di pietra"
+
+#: wands.xml:411 wands.xml:440 wands.xml:469
+msgid "alder wand"
+msgstr "Bacchetta in ontano"
+
+#: wands.xml:499 wands.xml:530 wands.xml:561
+msgid "bard's wand"
+msgstr "Bacchetta del bardo"
+
+#: wands.xml:594 wands.xml:622 wands.xml:651
+msgid "magus wand"
+msgstr "Bacchetta del mago"
+
+#: wands.xml:681 wands.xml:709 wands.xml:738 wands.xml:768
+msgid "silver wand"
+msgstr "Bacchetta d'argento"
+
+#: wands.xml:798
+msgid "oak wand"
+msgstr "Bacchetta in quercia"
+
+#: wands.xml:828
+msgid "phenix wand"
+msgstr "Bacchetta della fenice"
+
+#: wands.xml:858
+msgid "frost wand"
+msgstr "Bacchetta dei ghiacci"
+
+#: wands.xml:888
+msgid "thunder wand"
+msgstr "Bacchetta del tuono"
+
+#: wands.xml:918
+msgid "ash wand"
+msgstr "Bacchetta delle ceneri"
+
+#: wands.xml:948
+msgid "summoner wand"
+msgstr "Bacchetta dell'evocatore"
+
+#: wands.xml:978
+msgid "master wand"
+msgstr "Bacchetta del maestro"
+
+#: wands.xml:1008
+msgid "necromancer wand"
+msgstr "Bacchetta del necromante"
+
+#: wands.xml:1038
+msgid "demon wand"
+msgstr "Bacchetta dei demoni"
+
+#: wands.xml:1068
+msgid "fairy wand"
+msgstr "Bacchetta fatata"
+
+#: wands.xml:1101
+msgid "archmage wand"
+msgstr "Bacchetta dell'arcimago"
+
+#: warrior_ablt.xml:2
+msgid "Barbarian anger"
+msgstr "Ira Del Barbaro"
+
+#: warrior_ablt.xml:2
+msgid ""
+"The warrior sets himself in the state of berserk, attacking his enemies with "
+"vicious blows, while completely neglecting his defence."
+msgstr ""
+"Il guerriero entra in frenesia attaccando i suoi nemici con colpi letali ed "
+"evitando di difendersi."
+
+#: warrior_ablt.xml:47
+msgid "Bash"
+msgstr "Mazzata"
+
+#: warrior_ablt.xml:69
+msgid "Battlecry"
+msgstr "Grido Di Battaglia"
+
+#: warrior_ablt.xml:69
+msgid ""
+"The warrior releases a mighty cry that causes his enemies to lose "
+"concentration, ultimatly reducing their defence and slowing them down."
+msgstr ""
+"Il guerriero lancia un possente urlo che fa perdere la concentrazione ai "
+"nemici, riducendone la loro difesa e rallentandoli."
+
+#: warrior_ablt.xml:85
+msgid ""
+"The warriors mastery of shields and weapons allows him to block damage at an "
+"increased rate."
+msgstr ""
+"Il guerriero migliora le sue tecniche difensive, bloccherà spesso i danni."
+
+#: warrior_ablt.xml:94
+msgid "Charge"
+msgstr "Carica"
+
+#: warrior_ablt.xml:94
+msgid ""
+"Launches an assault at an enemy with increasing speed. The faster the "
+"warrior is, the more damage a charge inflicts."
+msgstr ""
+"Si lancia all'assalto di un nemico con velocità pazzesca. Più il guerriero è "
+"veloce, più danno farà."
+
+#: warrior_ablt.xml:117
+msgid "Causes surrounding monsters to attack the warrior more likely."
+msgstr ""
+"Provoca i nemici facendo si che preferiscano attaccare lui anzichè i "
+"compagni."
+
+#: warrior_ablt.xml:117
+msgid "Taunt"
+msgstr "Sbeffeggiare"
+
+#: warrior_ablt.xml:141
+msgid ""
+"The warrior has become used to the ways of the battlefield to a point, where "
+"he can regenerate his abilities faster than normal."
+msgstr ""
+"Il guerriero è così abituato ai campi di battaglia che rigenera le abilità "
+"più velocemente."
+
+#: warrior_ablt.xml:141
+msgid "Warmaster"
+msgstr "Mastro Guerrafondaio"
+
+#: warrior_ablt.xml:151
+msgid "Fire and sword"
+msgstr "Spada Incendiaria"
+
+#: warrior_ablt.xml:151
+msgid ""
+"The warrior calls the spirits of fire upon his weapon, causing it to deal "
+"firedamage. The damage depends on the warriors spellpower."
+msgstr ""
+"Il guerriero evoca gli spiriti del fuoco sulla sua arma facendole fare danno "
+"fiammeggiante. Il danno dipende dal potere magico del guerriero."
+
+#: warrior_ablt.xml:196
+msgid "Pact of flames"
+msgstr "Patto Delle Fiamme"
+
+#: warrior_ablt.xml:196
+msgid ""
+"The warrior calls upon the fires of hell, causing his weapon to deal "
+"firedamage for a significant time. His enemies might catch fire when hit."
+msgstr ""
+"Il guerriero evoca fuoco infernale sulla sua arma, facendole infliggere "
+"danno di fuoco per un buon lasso di tempo. I suoi nemici potrebbero prendere "
+"fuoco se colpiti."
+
+#: warrior_ablt.xml:217
+msgid ""
+"The warrior becomes even more bloodthirsty, launching at his enemies with "
+"increased attackspeed and damage in a berserk state. Even while neglecting "
+"his defence, the impact is not as big as with the barbarian anger."
+msgstr ""
+"Il guerriero diventa ancor più assetato di sangue. Si scaglia sui suoi "
+"nemici percorso da ira barbarica, con velocità di attacco e danni aumentati."
+
+#: warrior_ablt.xml:217
+msgid "barbarian power"
+msgstr "Potere Barbarico"
+
+#: warrior_ablt.xml:264
+msgid "Attacks an enemy with a chance to inflict silence."
+msgstr "Attacca un nemico con la possibilità di renderlo muto."
+
+#: warrior_ablt.xml:264
+msgid "Silencer"
+msgstr "Tagliare Le Corde Vocali"
+
+#: warrior_ablt.xml:285
+msgid ""
+"For each monster the warrior kills, his strength increases for a short "
+"amount of time."
+msgstr ""
+"Per ogni mostro che il guerriero uccide la sua forza incrementa per un breve "
+"lasso di tempo."
+
+#: warrior_ablt.xml:285
+msgid "Monster hunter"
+msgstr "Cacciatore Di Mostri"
+
+#: warrior_ablt.xml:295
+msgid "Monster slayer"
+msgstr "Sventratore Di Mostri"
+
+#: warrior_ablt.xml:295
+msgid ""
+"The warrior has become the worst nightmare of monsters, with every one of "
+"them falling at his feet increasing his strength and attackspeed for a short "
+"amount of time."
+msgstr ""
+"Il guerriero è diventato il peggiore incubo dei mostri. Ogni volta che uno "
+"di loro cade sotto i suoi colpi, la sua forza e la velocità di attacco "
+"aumentano."
+
+#: warrior_ablt.xml:305
+msgid "Regeneration"
+msgstr "Rigenerazione"
+
+#: warrior_ablt.xml:305
+msgid ""
+"The warrior regains up to 50 percent hitpoints of his total hitpoints "
+"through the sheer power of his will."
+msgstr ""
+"Il guerriero riguadagna metà della sua vita, solo con il potere della sua "
+"volontà."
+
+#: warrior_ablt.xml:324
+msgid "Defiances"
+msgstr "Aura Mefitica"
+
+#: warrior_ablt.xml:324
+msgid ""
+"Nearby monsters will attack the warrior, if they are able to. Some will run "
+"away in fear. The warriors defence is increased. "
+msgstr ""
+"I mostri che possono attaccheranno il guerriero, alcuni scapperanno "
+"terrorizzati. La difesa del guerriero è aumentata."
+
+#: warrior_ablt.xml:379
+msgid "Perseverance"
+msgstr "Perseveranza"
+
+#: warrior_ablt.xml:379
+msgid ""
+"The warriors defence increases proportional to the cuts and bruises he "
+"receives in combat. The more serious the wounds, the more difficult he is to "
+"kill."
+msgstr ""
+"La difesa del guerriero incrementa proporzionalmente ai tagli e alle ferite "
+"che ha. Peggio sta più è difficile da uccidere."
+
+#: warrior_ablt.xml:389
+msgid "Charge scythe"
+msgstr "Falciata"
+
+#: warrior_ablt.xml:389
+msgid "Launches an even stronger charge attack, that may inflict stun."
+msgstr "Lancia un attacco ancora più potente che potrebbe stordire."
+
+#: warrior_ablt.xml:412
+msgid ""
+"The battle hardened warrior's scream slows down his opponents, sometimes "
+"confusing them as well."
+msgstr ""
+"Grido di battaglia migliorato, rallenta i nemici e a volte li confonde."
+
+#: warrior_ablt.xml:412
+msgid "Warcry"
+msgstr "All'Assalto!"
+
+#: warrior_ablt.xml:436
+msgid ""
+"The warriors mastery of weapons increases the damage of his basic attacks by "
+"20%."
+msgstr ""
+"La maestria nelle armi del guerriero aumenta il suo danno base di un quinto"
+
+#: warrior_ablt.xml:436
+msgid "Weaponmaster"
+msgstr "Mastro Armigero"
+
+#: warrior_ablt.xml:446
+msgid "Attacks every enemy in weapon range with a triple sweeping strike."
+msgstr ""
+"Attacca ogni nemico nel raggio d'azione dell'arma con un triplo colpo "
+"turbinante"
+
+#, fuzzy
+#~ msgid "A blue potion?"
+#~ msgstr "Pozione dell'eco"
+
+#~ msgid "Fundgegenstaende"
+#~ msgstr "Oggetti smarriti"
+
+#, fuzzy
+#~ msgid "goblin_raid"
+#~ msgstr "Goblin bandito"
+
+#~ msgid "Vorarbeiter Nekromant"
+#~ msgstr "Sorveglianza del Necromante"
+
+#~ msgid "Hauptmann der Wache"
+#~ msgstr "Capitano delle Guardie"
+
+#, fuzzy
+#~ msgid "Magician"
+#~ msgstr "attacco magico"
+
+#, fuzzy
+#~ msgid "Archer"
+#~ msgstr "Bracconiere"
+
+#, fuzzy
+#~ msgid "armor"
+#~ msgstr "Armatura"
+
+#, fuzzy
+#~ msgid "peasant"
+#~ msgstr "Contadino"
+
+#, fuzzy
+#~ msgid "LichLocation"
+#~ msgstr "Pozione dell'eco"
+
+#, fuzzy
+#~ msgid "start_benchmark"
+#~ msgstr "benchmarkBox"
+
+#, fuzzy
+#~ msgid "init_benchmark"
+#~ msgstr "benchmarkBox"
+
+#, fuzzy
+#~ msgid "GuardLocation"
+#~ msgstr "Capitano delle guardie"
+
+#, fuzzy
+#~ msgid "sabre_sw"
+#~ msgstr "Sciabola"
+
+#, fuzzy
+#~ msgid "rock_stf"
+#~ msgstr "Bastone di pietra"
+
+#, fuzzy
+#~ msgid "power"
+#~ msgstr "Potere"
+
+#, fuzzy
+#~ msgid "willpower"
+#~ msgstr "Forza Di Volontà"
+
+#, fuzzy
+#~ msgid "blind"
+#~ msgstr "Cane goblin"
+
+#, fuzzy
+#~ msgid "poisoned"
+#~ msgstr "evocato"
+
+#, fuzzy
+#~ msgid "fraction"
+#~ msgstr "nessuna azione"
+
+#, fuzzy
+#~ msgid "slave_overseer"
+#~ msgstr "Supervisore"
+
+#~ msgid "Better not."
+#~ msgstr "Meglio di no."
+
+#, fuzzy
+#~ msgid "necromancer_siegeDefense"
+#~ msgstr "Bastone del necromante"
+
+#, fuzzy
+#~ msgid "catapult_skeleton"
+#~ msgstr "Crea uno scheletro"
+
+#, fuzzy
+#~ msgid "location"
+#~ msgstr "nessuna azione"
+
+#~ msgid "Nah to expensive"
+#~ msgstr "Meglio di no, troppo costoso."
+
+#, fuzzy
+#~ msgid "string"
+#~ msgstr "Anello Congelante"
+
+#, fuzzy
+#~ msgid "lockdown"
+#~ msgstr "Parata Migliorata"
+
+#, fuzzy
+#~ msgid "gold"
+#~ msgstr "Anello d'oro"
+
+#, fuzzy
+#~ msgid "position"
+#~ msgstr "Pozioni"
+
+#, fuzzy
+#~ msgid "red"
+#~ msgstr "Derred"
+
+#, fuzzy
+#~ msgid "block"
+#~ msgstr "Parata Migliorata"
+
+#, fuzzy
+#~ msgid "goblins_l13_2"
+#~ msgstr "Goblin mietitore"
+
+#, fuzzy
+#~ msgid "locSergeant"
+#~ msgstr "Sergente Wober"
+
+#~ msgid "Leere Schriftrollen kaufen"
+#~ msgstr "Compra pergamene vuote"

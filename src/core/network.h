@@ -13,9 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifdef NETWORK_H
-#else
-#define NETWORK_H
+#ifndef __SUMWARS_CORE_NETWORK_H__
+#define __SUMWARS_CORE_NETWORK_H__
 
 #define ID_USER_PACKET_ENUM  100
 
@@ -78,6 +77,7 @@ class Network
 		 * \brief Constructor
 		 */
 		Network()
+		:	m_packet_version(0)
 		{
 			
 		}
@@ -155,6 +155,14 @@ class Network
 		 */
 		virtual NetStatus getSlotStatus( int slot=0 ) =0;
 		
+		/**
+		 * \brief Sets the status of a NetworkSlot
+		 * \param slot ID of a slot
+		 * \param status status of a slot
+		 *
+		 */
+		virtual void setSlotStatus(NetStatus status, int slot=0 )=0;
+		
 			
 		/**
 		 * \brief Sets the version number, that is written to the packets
@@ -185,5 +193,4 @@ class Network
  */
 typedef std::queue<NetworkPacket*> PacketQueue;
 
-#endif
-
+#endif // __SUMWARS_CORE_NETWORK_H__

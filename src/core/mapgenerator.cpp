@@ -16,6 +16,9 @@
 #include "mapgenerator.h"
 #include "world.h"
 
+// Helper for sound operations
+#include "soundhelper.h"
+
 
 bool operator<(WeightedLocation first, WeightedLocation second)
 {
@@ -136,7 +139,8 @@ void TemplateMap::setMapElement(int i, int j, int template_max_size)
 			m_template_index_map[lastx][lasty] = oldindex;
 		}
 		
-		m_template_places[oldval].resize(vecsize-1);
+		//m_template_places[oldval].resize(vecsize-1);
+		m_template_places[oldval].pop_back ();
 	}
 	
 	m_template_map[i][j] = template_max_size;
@@ -278,6 +282,7 @@ bool TemplateMap::getTemplatePlace(Shape* shape, Vector & place)
 	return true;
 }
 
+
 void TemplateMap::print()
 {
 	for (int i=0; i< m_dimx; i++)
@@ -296,12 +301,23 @@ void TemplateMap::print()
 	std::map< int, std::vector< std::pair<int, int> > >::iterator it;
 	for (it = m_template_places.begin(); it != m_template_places.end(); ++it)
 	{
-		DEBUG("places of size %i : %i",it->first, it->second.size());
+		SW_DEBUG("places of size %i : %i",it->first, it->second.size());
 	}
 }
 
+
 Region* MapGenerator::createRegion(RegionData* rdata)
 {
+	// TODO: remove timer.
+	static Timer timer;
+	timer.start ();
+
+	// set Random seed based on the region information
+	// surely, we need a better hash funcion
+	unsigned int seed = World::getWorld()->getBaseRandomSeed() + rdata->m_id*84859;
+	unsigned int oldseed = Random::randi(INT_MAX);
+	Random::setRandomSeed(seed);
+	
 	// temporaere Daten fuer die Erzeugung der Region
 	MapGenerator::MapData mdata;
 
@@ -315,7 +331,8 @@ Region* MapGenerator::createRegion(RegionData* rdata)
 		
 		// Speicher anfordern
 		MapGenerator::createMapData(&mdata,rdata);
-		
+
+		SoundHelper::signalSoundManager ();
 
 		// grundlegende Karte anfertigen
 		if (rdata->m_region_template =="")
@@ -329,9 +346,9 @@ Region* MapGenerator::createRegion(RegionData* rdata)
 		{
 			mdata.m_region->insertEnvironment(et->first,et->second);
 		}
-		
+
 		// Umgebungskarte generieren
-		createPerlinNoise(mdata.m_region->getHeight(), rdata->m_dimx, rdata->m_dimy,MathHelper::Min(rdata->m_dimx,rdata->m_dimy)/4 , 0.4,false);
+		createPerlinNoise(&mdata.m_region->getHeight(), rdata->m_dimx, rdata->m_dimy,MathHelper::Min(rdata->m_dimx,rdata->m_dimy)/4 , 0.4,false);
 
 		if (rdata->m_region_template =="")
 		{
@@ -365,7 +382,7 @@ Region* MapGenerator::createRegion(RegionData* rdata)
 		// Wenn der Versuch nicht erfolgreich war alles loeschen und von vorn beginnen
 		if (!success)
 		{
-			DEBUG("not successful");
+			SW_DEBUG("not successful");
 
 			delete mdata.m_base_map;
 			delete mdata.m_region;
@@ -389,8 +406,15 @@ Region* MapGenerator::createRegion(RegionData* rdata)
 
 	// Speicher freigeben
 	delete mdata.m_base_map;
+	
+	// Zufallszahlengenerator zuruecksetzen
+	Random::setRandomSeed(oldseed);
+	
+	float duration = timer.getTime ();
+	SW_DEBUG ("Map generator created region in %.2f millis", duration);
 	return mdata.m_region;
 }
+
 
 void MapGenerator::createMapData(MapData* mdata, RegionData* rdata)
 {
@@ -400,11 +424,9 @@ void MapGenerator::createMapData(MapData* mdata, RegionData* rdata)
 	mdata->m_border.clear();
 }
 
+
 void MapGenerator::createBaseMap(MapData* mdata, RegionData* rdata)
 {
-
-	
-
 	float size = rdata->m_area_percent;
 
 	// Karte wird in 8x8 Felder erzeugt, Region rechnet aber in 4x4 Gridunits
@@ -630,7 +652,7 @@ bool MapGenerator::insertGroupTemplates(MapData* mdata, RegionData* rdata)
 	Shape s;
 	Vector pos;
 	bool succ;
-	LocationName locname, areaname;
+	
 	for (it = rdata->m_named_object_groups.rbegin(); it != rdata->m_named_object_groups.rend(); ++it)
 	{
 		// Objektgruppe anhand des Namens suchen
@@ -648,7 +670,7 @@ bool MapGenerator::insertGroupTemplates(MapData* mdata, RegionData* rdata)
 		if (succ == false)
 		{
 			// Obligatorisches Template konnte nicht platziert werden
-			DEBUG("could not place template %s",it->second.m_group_name.c_str());
+			SW_DEBUG("could not place template %s",it->second.m_group_name.c_str());
 			/*
 			int hdimx = rdata->m_dimx/2;
 			int hdimy = rdata->m_dimy/2;
@@ -692,7 +714,7 @@ bool MapGenerator::insertGroupTemplates(MapData* mdata, RegionData* rdata)
 		if (succ == false)
 		{
 			// Wegpunkt konnte nicht platziert werden
-			DEBUG("could not place waypoint");
+			SW_DEBUG("could not place waypoint");
 			return false;
 		}
 		mdata->m_region->createObjectGroup("waypoint_templ",pos,0);
@@ -781,8 +803,6 @@ void MapGenerator::createBorder(MapData* mdata, RegionData* rdata)
 	{
 		for (int j=0; j< hdimy;j++)
 		{
-
-			int rnd;
 			if (*(mdata->m_base_map->ind(i,j)) >=1 )
 			{
 				// Testen ob das Feld als Ausgang in Frage kommt
@@ -798,7 +818,7 @@ void MapGenerator::createBorder(MapData* mdata, RegionData* rdata)
 					
 					if (exit[k][0]*nb[k][0] + exit[k][1]*nb[k][1] == i*nb[k][0] + j*nb[k][1])
 					{
-						rnd = Random::randi(exitcount[k]);
+						int rnd = Random::randi(exitcount[k]);
 						if (rnd ==0)
 						{
 							exit[k][0] =i;
@@ -1052,7 +1072,7 @@ void MapGenerator::insertSpawnpoints(MapData* mdata, RegionData* rdata)
 			
 			points[r] = points.back();
 			points.resize(points.size() -1);
-			if (points.size() ==0)
+			if (points.empty())
 			{
 				stop = true;
 				break;

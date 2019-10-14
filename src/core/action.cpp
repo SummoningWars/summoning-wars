@@ -62,7 +62,7 @@ bool Action::loadAbilityData(const char* pFilename)
 	}
 	else
 	{
-		DEBUG("Failed to load file %s", pFilename);
+		SW_DEBUG("Failed to load file %s", pFilename);
 		return false;
 	}
 }
@@ -216,7 +216,7 @@ void Action::loadAbility(TiXmlNode* node)
 			}
 			else if (child->Type()!=TiXmlNode::TINYXML_COMMENT)
 			{
-				DEBUG("unexpected element of <Ability>: %s",child->Value());
+				SW_DEBUG("unexpected element of <Ability>: %s",child->Value());
 			}
 		}
 	}

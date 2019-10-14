@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="cabinet2" layer="NORMAL">
+        <Mesh file="cabinet2.mesh" />
+        <Geometry shape=""/>
+</Object>

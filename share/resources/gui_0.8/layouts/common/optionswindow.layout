@@ -1,0 +1,365 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="OptionsWindow" >
+
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="Alpha" value="1.0" />
+        <!--<Property name="TitleText" value="Options" />-->
+        <Property name="Text" value="Options" />
+        <Property name="TitlebarFont" value="SWB-L" />
+        <Property name="CloseButtonAlignment" value="1" />
+        <Property name="Visible" value="True" />
+        <Property name="InheritsAlpha" value="False" />
+        <Property name="TitlebarEnabled" value="True" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        
+        <Window type="SWB/TabControl" name="OptionsWindowTab" >
+            <Property name="Alpha" value="1.0" />
+            <Property name="TabHeight" value="{0.13,0.0}" />
+            <Property name="TabPanePosition" value="Top" />
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{0.92,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="TooltipText" value="Options for the game are set here" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="MousePassThroughEnabled" value="True" />
+            
+             <!-- tab 1-->
+            <Window type="SWB/TabContentPane" name="OptionsShortkeys" >
+                <Property name="Text" value="Shortkeys" />
+                <Property name="Alpha" value="1.0" />
+                <Property name="Visible" value="True" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                
+                <Window type="SWB/StaticText" name="ShortkeyLabel0" >
+                    <Property name="Text" value="Inventory" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0,0},{0.35,0},{0.1,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel0" >
+                    <Property name="Text" value="I" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0,0},{0.55,0},{0.1,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel1" >
+                    <Property name="Text" value="Character screen" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.1,0},{0.35,0},{0.2,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel1" >
+                    <Property name="Text" value="C" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.1,0},{0.55,0},{0.2,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel2" >
+                    <Property name="Text" value="Skilltree" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.2,0},{0.35,0},{0.3,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel2" >
+                    <Property name="Text" value="T" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.2,0},{0.55,0},{0.3,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel3" >
+                    <Property name="Text" value="Party screen" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.3,0},{0.35,0},{0.4,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel3" >
+                    <Property name="Text" value="P" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.3,0},{0.55,0},{0.4,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel4" >
+                    <Property name="Text" value="Chatbox" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.4,0},{0.35,0},{0.5,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel4" >
+                    <Property name="Text" value="M" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.4,0},{0.55,0},{0.5,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel5" >
+                    <Property name="Text" value="Quests" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.5,0},{0.35,0},{0.6,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel5" >
+                    <Property name="Text" value="Q" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.5,0},{0.55,0},{0.6,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel6" >
+                    <Property name="Text" value="Minimap" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.6,0},{0.35,0},{0.7,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel6" >
+                    <Property name="Text" value="Tab" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.6,0},{0.55,0},{0.7,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel7" >
+                    <Property name="Text" value="Swap equipement" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.7,0},{0.35,0},{0.8,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel7" >
+                    <Property name="Text" value="W" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.4,0},{0.7,0},{0.55,0},{0.8,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyLabel8" >
+                    <Property name="Text" value="Item Labels" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.8,0},{0.35,0},{0.9,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/StaticText" name="ShortkeyValueLabel8" >
+                    <Property name="Text" value="Alt" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="HorzFormatting" value="HorzCentred" />
+                    <Property name="Area" value="{{0.403203,0},{0.8,0},{0.55,0},{0.9,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+            </Window>
+            
+             <!-- tab 2-->
+            <Window type="SWB/TabContentPane" name="OptionsGameplay" >
+                <Property name="Text" value="Gameplay" />
+                <Property name="Alpha" value="1.0" />
+                <Property name="Visible" value="True" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                
+                <Window type="SWB/StaticText" name="GameplayDifficultyLabel" >
+                    <Property name="Text" value="Difficulty" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.0183985,0},{0.148522,0},{0.348398,0},{0.248522,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="DifficultyBox" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.4,0},{0.146047,0},{0.8,0},{0.246047,0}}" />
+                    <Property name="Size" value="{{0.4,0},{0.3,0}}" />
+                    <Property name="MaxTextLength" value="1073741823" />
+                </Window>
+                <Window type="SWB/StaticText" name="TextSpeedLabel" >
+                    <Property name="Text" value="Text Speed" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.015548,0},{0.475763,0},{0.345548,0},{0.575763,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/HorizontalScrollbar" name="TextSpeedSlider" >
+                    <Property name="PageSize" value="0" />
+                    <Property name="StepSize" value="1" />
+                    <Property name="OverlapSize" value="0" />
+                    <Property name="DocumentSize" value="1" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="ScrollPosition" value="0" />
+                    <Property name="Area" value="{{0.390391,0},{0.482696,0},{0.823861,0},{0.582697,0}}" />
+                </Window>
+            </Window>
+            
+             <!-- tab 3-->
+            <Window type="SWB/TabContentPane" name="OptionsSound" >
+                <Property name="Text" value="Sound" />
+                <Property name="Alpha" value="1.0" />
+                <Property name="Visible" value="True" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                
+                <Window type="SWB/StaticText" name="MusicVolumeLabel" >
+                    <Property name="Text" value="Music" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.015548,0},{0.475763,0},{0.345548,0},{0.575763,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/HorizontalScrollbar" name="MusicVolumeSlider" >
+                    <Property name="PageSize" value="0" />
+                    <Property name="StepSize" value="1" />
+                    <Property name="OverlapSize" value="0" />
+                    <Property name="DocumentSize" value="1" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="ScrollPosition" value="0" />
+                    <Property name="Area" value="{{0.4,0},{0.482696,0},{0.8,0},{0.582696,0}}" />
+                </Window>
+                <Window type="SWB/StaticText" name="SoundVolumeLabel" >
+                    <Property name="Text" value="Sound" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.015548,0},{0.12587,0},{0.345548,0},{0.225869,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/HorizontalScrollbar" name="SoundVolumeSlider" >
+                    <Property name="PageSize" value="0" />
+                    <Property name="StepSize" value="1" />
+                    <Property name="OverlapSize" value="0" />
+                    <Property name="DocumentSize" value="1" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="ScrollPosition" value="0" />
+                    <Property name="Area" value="{{0.4,0},{0.12536,0},{0.8,0},{0.22536,0}}" />
+                </Window>
+            </Window>
+            
+             <!-- tab 4-->
+            <Window type="SWB/TabContentPane" name="OptionsGraphic" >
+                <Property name="Text" value="Graphic" />
+                <Property name="Alpha" value="1.0" />
+                <Property name="Visible" value="True" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                
+                <Window type="SWB/Checkbox" name="GrabMouseInWindowedModeBox" >
+                    <Property name="Text" value="Grab mouse in windowed mode (needs restart)" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.02,0},{0.78,0},{0.125,0}}" />
+                </Window>
+                <Window type="SWB/StaticText" name="VideoDriver" >
+                    <Property name="Text" value="Video Driver" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.15,0},{0.34,0},{0.25,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="VideoDriverBox" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.35,0},{0.15,0},{0.98,0},{0.25,0}}" />
+                    <Property name="Size" value="{{0.5,0},{0.25,0}}" />
+                    <Property name="MaxTextLength" value="256" />
+                </Window>
+                <Window type="SWB/StaticText" name="DisplayMode" >
+                    <Property name="Text" value="Display Mode" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.26,0},{0.34,0},{0.36,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="DisplayModeBox" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.35,0},{0.26,0},{0.98,0},{0.36,0}}" />
+                    <Property name="Size" value="{{0.5,0},{0.3,0}}" />
+                    <Property name="MaxTextLength" value="256" />
+                </Window>
+                <Window type="SWB/StaticText" name="Resolution" >
+                    <Property name="Text" value="Resolution" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.37,0},{0.34,0},{0.47,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="ResolutionBox" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.35,0},{0.37,0},{0.98,0},{0.47,0}}" />
+                    <Property name="Size" value="{{0.5,0},{0.5,0}}" />
+                    <Property name="MaxTextLength" value="256" />
+                </Window>
+                <Window type="SWB/StaticText" name="EnemyHighlightLabel" >
+                    <Property name="Text" value="Enemy Highlight Color" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.50,0},{0.34,0},{0.60,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="EHColorBox" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.35,0},{0.50,0},{0.98,0},{0.60,0}}" />
+                    <Property name="Size" value="{{0.5,0},{0.39,0}}" />
+                    <Property name="MaxTextLength" value="256" />
+                </Window>
+
+                <Window type="SWB/StaticText" name="ShadowsLabel" >
+                    <Property name="Text" value="Shadows" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.02,0},{0.62,0},{0.34,0},{0.72,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="ShadowsDropDownList" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.35,0},{0.62,0},{0.98,0},{0.72,0}}" />
+                    <Property name="Size" value="{{0.5,0},{0.35,0}}" />
+                    <Property name="MaxTextLength" value="256" />
+                </Window>
+            </Window>
+            
+             <!-- tab 5-->
+            <Window type="SWB/TabContentPane" name="OptionsMisc" >
+                <Property name="Text" value="Misc" />
+                <Property name="Alpha" value="1.0" />
+                <Property name="Visible" value="True" />
+                <Property name="InheritsAlpha" value="False" />
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                
+                <Window type="SWB/StaticText" name="LanguageLabel" >
+                    <Property name="Text" value="Language" />
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.08,0},{0.33,0},{0.31,0},{0.43,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                </Window>
+                <Window type="SWB/Combobox" name="LanguageBox" >
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.4,0},{0.351176,0},{0.8,0},{0.451176,0}}" />
+                    <Property name="Size" value="{{0.4,0},{0.5,0}}" />
+                    <Property name="MaxTextLength" value="1073741823" />
+                </Window>
+            </Window>
+        </Window>
+
+        <Window type="SWB/Button" name="OptionsCloseButton" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.4,0},{0.93,0},{0.6,0},{0.99,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

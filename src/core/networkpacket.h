@@ -13,9 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef NETWORKPACKET_H
-
-#define NETWORKPACKET_H
+#ifndef __SUMWARS_CORE_NETWORKPACKET_H__
+#define __SUMWARS_CORE_NETWORKPACKET_H__
 
 #include "charconv.h"
 
@@ -37,5 +36,5 @@ class NetworkPacket : public CharConv
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_NETWORKPACKET_H__
 

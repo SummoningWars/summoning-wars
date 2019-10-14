@@ -15,132 +15,67 @@
 
 #include "dialoguewindow.h"
 #include "ceguiutility.h"
+#include "debug.h"
 
-DialogueWindow::DialogueWindow(Document* doc, Scene* scene)
-	: Window(doc)
+DialogueWindow::DialogueWindow(Document* doc, Scene* scene, const std::string& ceguiSkinName)
+	: Window (doc)
+	, m_ceguiSkinName (ceguiSkinName)
 {
 	m_scene = scene;
 	CEGUI::Window* label;
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Window* game_screen =  win_mgr.getWindow("GameScreen");
+
+	// The CharInfo window and holder
+	CEGUI::FrameWindow* dialog_wnd = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::loadLayoutFromFile ("dialogwindow.layout"));
+	if (!dialog_wnd)
+	{
+		SW_DEBUG ("WARNING: Failed to load [%s]", "dialogwindow.layout");
+	}
+
+	CEGUI::Window* dialog_wnd_holder = CEGUIUtility::loadLayoutFromFile ("dialogwindow_holder.layout");
+	if (!dialog_wnd_holder)
+	{
+		SW_DEBUG ("WARNING: Failed to load [%s]", "dialogwindow_holder.layout");
+	}
+	
+	CEGUI::Window* wndHolder = CEGUIUtility::getWindowForLoadedLayoutEx (dialog_wnd_holder, "DialogWindow_Holder");
+	CEGUI::Window* wndDialogWindow = CEGUIUtility::getWindowForLoadedLayoutEx (dialog_wnd, "DialogWindow");
+	if (wndHolder && wndDialogWindow)
+	{
+		CEGUIUtility::addChildWidget (wndHolder, wndDialogWindow);
+	}
+	else
+	{
+		if (!wndHolder) SW_DEBUG ("ERROR: Unable to get the window holder for dialog screen.");
+		if (!wndDialogWindow) SW_DEBUG ("ERROR: Unable to get the window for dialog screen.");
+	}
+
+	m_window = dialog_wnd_holder;
+
+	CEGUI::FrameWindow* frame_widget = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar"));
+	frame_widget->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
+
+	frame_widget = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueUpperBar"));
+	frame_widget->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
+
 	CEGUI::ScrollablePane* pane;
-	
-	// Oberer und Unterer Balken
-	CEGUI::FrameWindow* lower_bar = (CEGUI::FrameWindow*) win_mgr.createWindow("TaharezLook/FrameWindow", "DialogueLowerBar");
-	lower_bar->setProperty("FrameEnabled","false");
-	lower_bar->setProperty("TitlebarEnabled","false");
-	lower_bar->setProperty("CloseButtonEnabled","false");
-	lower_bar->setPosition(CEGUI::UVector2(cegui_reldim(0.0f), cegui_reldim( 0.85f)));
-	lower_bar->setSize(CEGUI::UVector2(cegui_reldim(1.0f), cegui_reldim( 0.15f)));
-	lower_bar->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
-	lower_bar->setAlwaysOnTop(true);
-	lower_bar->setVisible(false);
-	lower_bar->setWantsMultiClickEvents(false);
-	
-	game_screen->addChildWindow(lower_bar);
-	
-	CEGUI::FrameWindow* upper_bar = (CEGUI::FrameWindow*) win_mgr.createWindow("TaharezLook/FrameWindow", "DialogueUpperBar");
-	upper_bar->setProperty("FrameEnabled","false");
-	upper_bar->setProperty("SizingEnabled","false");
-	upper_bar->setProperty("TitlebarEnabled","false");
-	upper_bar->setProperty("CloseButtonEnabled","false");
-	upper_bar->setPosition(CEGUI::UVector2(cegui_reldim(0.0f), cegui_reldim( 0.0f)));
-	upper_bar->setSize(CEGUI::UVector2(cegui_reldim(1.0f), cegui_reldim( 0.15f)));
-	upper_bar->setAlwaysOnTop(true);
-	upper_bar->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
-	upper_bar->setVisible(false);
-	upper_bar->setWantsMultiClickEvents(false);
-	
-	game_screen->addChildWindow(upper_bar);
-	
-	label = win_mgr.createWindow("TaharezLook/StaticImage", "UpperBarBackground");
-	upper_bar->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setProperty("MousePassThroughEnabled", "true");
-	label->moveToBack ();
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.00f), cegui_reldim( 0.00f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(1.0f), cegui_reldim( 0.95f)));
-	
-	label = win_mgr.createWindow("TaharezLook/StaticImage", "LowerBarBackground");
-	lower_bar->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setProperty("MousePassThroughEnabled", "true");
-	label->moveToBack ();
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.00f), cegui_reldim( 0.05f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(1.0f), cegui_reldim( 0.95f)));
-	
-	
-	label = win_mgr.createWindow("TaharezLook/StaticImage", "SpeakerEmotionImage0");
-	lower_bar->addChildWindow(label);
-	label->setProperty("FrameEnabled", "true");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.01f), cegui_reldim( 0.05f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.10f), cegui_reldim( 0.9f)));
-	
-	label = win_mgr.createWindow("TaharezLook/StaticImage", "SpeakerEmotionImage1");
-	lower_bar->addChildWindow(label);
-	label->setProperty("FrameEnabled", "true");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.89f), cegui_reldim( 0.05f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.10f), cegui_reldim( 0.9f)));
-	
-	label = win_mgr.createWindow("TaharezLook/StaticText", "SpeakerNameLabel0");
-	lower_bar->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.12f), cegui_reldim(0.05f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.3f), cegui_reldim( 0.22f)));
-	
-	
-	label = win_mgr.createWindow("TaharezLook/StaticText", "SpeakerNameLabel1");
-	lower_bar->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.58f), cegui_reldim(0.05f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.3f), cegui_reldim( 0.22f)));
-	
-	
-	pane = static_cast<CEGUI::ScrollablePane*> (win_mgr.createWindow("TaharezLook/ScrollablePaneNoBar", "SpeakerTextPane0"));
-	lower_bar->addChildWindow(pane);
-	pane->setPosition(CEGUI::UVector2(cegui_reldim(0.12f), cegui_reldim(0.27f)));
+	pane = static_cast<CEGUI::ScrollablePane*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/SpeakerTextPane0"));
 	pane->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
-	pane->setSize(CEGUI::UVector2(cegui_reldim(0.38f), cegui_reldim( 0.66f)));
-	
-	label = win_mgr.createWindow("TaharezLook/StaticText", "SpeakerTextLabel0");
-	pane->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setFont("DejaVuSerif-10");
-	//label->setProperty("HorzFormatting", "WordWrapLeftAligned");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.0f), cegui_reldim(0.0f)));
-	label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.99f), cegui_reldim( 0.99f)));
-	label->setWantsMultiClickEvents(false);
-	
-	pane = static_cast<CEGUI::ScrollablePane*> (win_mgr.createWindow("TaharezLook/ScrollablePaneNoBar", "SpeakerTextPane1"));
-	lower_bar->addChildWindow(pane);
-	pane->setPosition(CEGUI::UVector2(cegui_reldim(0.5f), cegui_reldim(0.27f)));
+
+	pane = static_cast<CEGUI::ScrollablePane*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/SpeakerTextPane1"));
 	pane->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
-	pane->setSize(CEGUI::UVector2(cegui_reldim(0.38f), cegui_reldim( 0.66f)));
-	
-	label = win_mgr.createWindow("TaharezLook/StaticText", "SpeakerTextLabel1");
-	pane->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setFont("DejaVuSerif-10");
-	//label->setProperty("HorzFormatting", "WordWrapLeftAligned");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.0f), cegui_reldim(0.0f)));
+
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/SpeakerTextPane0/SpeakerTextLabel0");
 	label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.99f), cegui_reldim( 0.99f)));
-	label->setWantsMultiClickEvents(false);
+
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/SpeakerTextPane1/SpeakerTextLabel1");
+	label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onTextClicked, this));
+
+	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/DialogueSkipAllButton"));
+	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&DialogueWindow ::onTextClicked, this));
 }
 
 void DialogueWindow::update()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	
 	Player* player = m_document->getLocalPlayer();
 	Region* reg = player->getRegion();
 	Dialogue* dia =  reg->getDialogue( player->getDialogueId() );
@@ -156,16 +91,37 @@ void DialogueWindow::update()
 		bar_vis = false;
 	}
 	
-	CEGUI::FrameWindow* upper_bar = static_cast<CEGUI::FrameWindow*>( win_mgr.getWindow("DialogueUpperBar"));
-	CEGUI::FrameWindow* lower_bar = static_cast<CEGUI::FrameWindow*>( win_mgr.getWindow("DialogueLowerBar"));
+	CEGUI::FrameWindow* upper_bar = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueUpperBar"));
+	CEGUI::FrameWindow* lower_bar = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar"));
 	if (upper_bar->isVisible() != bar_vis)
 	{
 		upper_bar->setVisible(bar_vis);
 		lower_bar->setVisible(bar_vis);
+		m_window->setVisible (bar_vis);
+		SW_DEBUG ("Set both lower and upper bar visibility to %d", bar_vis);
+		
+		// note: remove this (only debug)
+		if (bar_vis)
+		{
+			SW_DEBUG ("object visibility set to true: %s", upper_bar->getNamePath ().c_str ());
+			CEGUI::Window *tmp;
+			tmp = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow");
+			SW_DEBUG ("object visibility of %s is %d", tmp->getNamePath ().c_str (), tmp->isVisible ());
+			tmp = CEGUIUtility::getWindow ("GameScreen/DialogWindow_Holder");
+			SW_DEBUG ("object visibility of %s is %d", tmp->getNamePath ().c_str (), tmp->isVisible ());
+			if (! tmp->isVisible ())
+			{
+				tmp->setVisible (true);
+			}
+			tmp = CEGUIUtility::getWindow ("GameScreen");
+			SW_DEBUG ("object visibility of %s is %d", tmp->getNamePath ().c_str (), tmp->isVisible ());
+		}
 	}
 	
 	if (bar_vis)
 	{
+		CEGUI::Window* skipButton = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/DialogueSkipAllButton");
+		
 		CEGUI::Window* wimage;
 		CEGUI::Window* wname;
 		CEGUI::Window* wtext;
@@ -173,6 +129,7 @@ void DialogueWindow::update()
 		
 		if (dia != 0)
 		{
+			skipButton->setVisible(true);
 			// Schleife fuer die moeglichen Sprecher eines Dialogs
 			std::string image, name, text;
 			
@@ -185,25 +142,22 @@ void DialogueWindow::update()
 			for (int i=0; i<Dialogue::NR_POSITIONS; i++)
 			{
 				stream.str("");
-				stream << "SpeakerEmotionImage";
-				stream << i;
-				wimage = win_mgr.getWindow(stream.str());
+				stream << "DialogWindow/DialogueLowerBar/SpeakerEmotionImage" << i;
+				wimage = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 						
 				stream.str("");
-				stream << "SpeakerNameLabel";
-				stream << i;
-				wname = win_mgr.getWindow(stream.str());
+				stream << "DialogWindow/DialogueLowerBar/SpeakerNameLabel" << i;
+				wname = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 				
 				stream.str("");
-				stream << "SpeakerTextLabel";
-				stream << i;
-				wtext = win_mgr.getWindow(stream.str());
+				stream << "DialogWindow/DialogueLowerBar/SpeakerTextPane" << i << "/SpeakerTextLabel" << i;
+				wtext = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 				
 				
 				stream.str("");
-				stream << "SpeakerTextPane";
+				stream << "DialogWindow/DialogueLowerBar/SpeakerTextPane";
 				stream << i;
-				wpane = static_cast<CEGUI::ScrollablePane*> (win_mgr.getWindow(stream.str()));
+				wpane = static_cast<CEGUI::ScrollablePane*> (CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str()));
 				
 				
 				spstate = dia->getSpeakerState((Dialogue::Position) i);
@@ -222,6 +176,7 @@ void DialogueWindow::update()
 					if (wname->getText() != (CEGUI::utf8*) name.c_str())
 					{
 						wname->setText((CEGUI::utf8*) name.c_str());
+						SW_DEBUG ("Set text of widget (a) [%s] to [%s]", wname->getNamePath ().c_str (), wname->getText ().c_str ());
 					}
 					
 					if (!wname->isVisible())
@@ -243,22 +198,29 @@ void DialogueWindow::update()
 						{
 							text.erase(pos);
 						}
-						CEGUI::Font* fnt = wtext->getFont();
+						const CEGUI::Font* fnt = wtext->getFont();
 						
 						if (wtext->getText() != (CEGUI::utf8*) text.c_str())
 						{
-							CEGUI::UVector2 size = wtext->getSize();
-							CEGUI::Rect isize = wtext->getUnclippedInnerRect ();
+							// TODO: investigate need to adjust size
+#if 0
+							CEGUI::UVector2 size = CEGUIUtility::getWidgetSize (wtext);
+							
+							CEGUIUtility::Rectf isize = wtext->getUnclippedInnerRect ();
 							FormatedText txt = CEGUIUtility::fitTextToWindow((CEGUI::utf8*)text.c_str(), isize.getWidth(), CEGUIUtility::WordWrapCentred, fnt);
 							float height = PixelAligned(txt.lines * fnt->getLineSpacing());
 							size.d_y = CEGUI::UDim(0.0, height);
-							wtext->setSize(size);
+							CEGUIUtility::setWidgetSize (wtext, size);
 							wtext->setText((CEGUI::utf8*)txt.text.c_str());
+#else
+							wtext->setText((CEGUI::utf8*)text.c_str());
+							SW_DEBUG ("Set text of widget (b) [%s] to [%s]", wname->getNamePath ().c_str (), wname->getText ().c_str ());
+#endif
 						}
 						wtext->setVisible(true);
 						
 						// Scrolling des Texts
-						float height = wtext->getSize().d_y.d_offset;
+						float height = CEGUIUtility::getWidgetSize (wtext).d_y.d_offset;
 						if (height > 4*fnt->getLineSpacing())
 						{
 							int initiallines = 2;
@@ -309,28 +271,25 @@ void DialogueWindow::update()
 			{
 				std::stringstream stream;
 				stream.str("");
-				stream << "SpeakerEmotionImage";
-				stream << i;
-				wimage = win_mgr.getWindow(stream.str());
+				stream << "DialogWindow/DialogueLowerBar/SpeakerEmotionImage" << i;
+				wimage = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 						
 				stream.str("");
-				stream << "SpeakerNameLabel";
-				stream << i;
-				wname = win_mgr.getWindow(stream.str());
+				stream << "DialogWindow/DialogueLowerBar/SpeakerNameLabel" << i;
+				wname = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 				
 				stream.str("");
-				stream << "SpeakerTextLabel";
-				stream << i;
-				wtext = win_mgr.getWindow(stream.str());
+				stream << "DialogWindow/DialogueLowerBar/SpeakerTextPane" << i << "/SpeakerTextLabel" << i;
+				wtext = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 				
 				stream.str("");
-				stream << "SpeakerTextPane";
-				stream << i;
+				stream << "DialogWindow/DialogueLowerBar/SpeakerTextPane" << i;
 				
 				wimage->setVisible(false);
 				wname->setVisible(false);
 				wtext->setVisible(false);
 			}
+			skipButton->setVisible(false);
 		}
 	}
 
@@ -344,10 +303,8 @@ void DialogueWindow::updateTranslation()
 
 void DialogueWindow::updateSpeechBubbles()
 {
-
-	
 	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Window* game_screen =  win_mgr.getWindow("GameScreen");
+	CEGUI::Window* game_screen =  CEGUIUtility::getWindow ("GameScreen");
 	
 	int picsize = 50;
 	
@@ -430,60 +387,55 @@ void DialogueWindow::updateSpeechBubbles()
 			lcount ++;
 			
 			stream.str("");
-			stream << "SpeechFrame";
-			stream << nr;
+			stream << "SpeechFrame" << nr;
 			
 			
-			speakframe = (CEGUI::FrameWindow*) win_mgr.createWindow("TaharezLook/FrameWindow", stream.str());
+			speakframe = (CEGUI::FrameWindow*) win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "FrameWindow"), stream.str());
 			speakframe->setProperty("FrameEnabled","false");
 			speakframe->setProperty("TitlebarEnabled","false");
 			speakframe->setProperty("CloseButtonEnabled","false");
-			game_screen->addChildWindow(speakframe);
+			CEGUIUtility::addChildWidget (game_screen, speakframe);
 			speakframe->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&Window::consumeEvent, (Window*) this));
 			speakframe->setVisible(false);
-			speakframe->setSize(CEGUI::UVector2(CEGUI::UDim(0,200), CEGUI::UDim(0,picsize+10)));
+			CEGUIUtility::setWidgetSize (speakframe, CEGUI::UVector2(CEGUI::UDim(0,200), CEGUI::UDim(0,picsize+10)));
 			
 			stream.str("");
-			stream << "SpeechLabel";
-			stream << nr;
+			stream << "SpeechLabel" << nr;
 			
-			label = win_mgr.createWindow("TaharezLook/StaticText", stream.str());
-			speakframe->addChildWindow(label);
+			label = win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "StaticText"), stream.str());
+			CEGUIUtility::addChildWidget (speakframe, label);
 			label->setProperty("FrameEnabled", "true");
 			label->setProperty("BackgroundEnabled", "true");
-			label->setSize(CEGUI::UVector2(CEGUI::UDim(0,80), CEGUI::UDim(0,picsize)));
+			CEGUIUtility::setWidgetSize (label, CEGUI::UVector2(CEGUI::UDim(0,80), CEGUI::UDim(0,picsize)));
 			label->setPosition(CEGUI::UVector2(CEGUI::UDim(0,picsize+10), CEGUI::UDim(0,5)));
 			
 			label->setText("");
+			SW_DEBUG ("Set text of widget (c) [%s] to [%s]", label->getNamePath ().c_str (), label->getText ().c_str ());
 			label->setAlpha(0.9);
 			
 			stream.str("");
-			stream << "SpeechIamge";
-			stream << nr;
+			stream << "SpeechIamge" << nr;
 			
-			image = win_mgr.createWindow("TaharezLook/StaticImage", stream.str());
-			speakframe->addChildWindow(image);
+			image = win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "StaticImage"), stream.str());
+			CEGUIUtility::addChildWidget (speakframe, image);
 			image->setProperty("BackgroundEnabled", "true");
-			image->setSize(CEGUI::UVector2(CEGUI::UDim(0,picsize), CEGUI::UDim(0,picsize)));
+			CEGUIUtility::setWidgetSize (image, CEGUI::UVector2(CEGUI::UDim(0,picsize), CEGUI::UDim(0,picsize)));
 			image->setPosition(CEGUI::UVector2(CEGUI::UDim(0,5), CEGUI::UDim(0,5)));
 		}
 		else
 		{
 			stream.str("");
-			stream << "SpeechFrame";
-			stream << nr;
+			stream << "GameScreen/SpeechFrame" << nr;
 			
-			speakframe = static_cast<CEGUI::FrameWindow*>( win_mgr.getWindow(stream.str()) );
-			
-			stream.str("");
-			stream << "SpeechLabel";
-			stream << nr;
-			label = win_mgr.getWindow(stream.str());
+			speakframe = static_cast<CEGUI::FrameWindow*>( CEGUIUtility::getWindow (stream.str()) );
 			
 			stream.str("");
-			stream << "SpeechIamge";
-			stream << nr;
-			image = win_mgr.getWindow(stream.str());
+			stream << "GameScreen/SpeechFrame" << nr << "/SpeechLabel" << nr;
+			label = CEGUIUtility::getWindow (stream.str());
+			
+			stream.str("");
+			stream << "GameScreen/SpeechFrame" << nr << "/SpeechIamge" << nr;
+			image = CEGUIUtility::getWindow (stream.str());
 			
 		}
 		
@@ -491,48 +443,45 @@ void DialogueWindow::updateSpeechBubbles()
 			
 		if (label->getText() != (CEGUI::utf8*) text.c_str())
 		{
+			SW_DEBUG ("diff label [%s], [%s]", label->getText ().c_str (), text.c_str ());
 
-			CEGUI::Font* font = label->getFont();
-
-			
+			const CEGUI::Font* font = label->getFont();
 			
 			float width = font->getTextExtent((CEGUI::utf8*) text.c_str())+15;
 			float height = font->getFontHeight() +15;
-			CEGUI::Rect rect = game_screen->getInnerRectClipper();
+			CEGUIUtility::Rectf rect = game_screen->getInnerRectClipper();
 
 			float maxwidth = rect.getWidth()/4;
-                        //CEGUI::Rect maxWidthRect;
-                        //maxWidthRect.setWidth(maxwidth);
-			
-                        FormatedText txt = CEGUIUtility::fitTextToWindow((CEGUI::utf8*) text.c_str(), maxwidth, CEGUIUtility::WordWrapLeftAligned, font);
+			FormatedText txt = CEGUIUtility::fitTextToWindow((CEGUI::utf8*) text.c_str(), maxwidth, CEGUIUtility::WordWrapLeftAligned, font);
 			size_t lines = txt.lines;
 			label->setText((CEGUI::utf8*) txt.text.c_str());
-			
-			// Testen ob der Text auf eine Zeile passt
-			if (!txt.lines > 1)
+			SW_DEBUG ("Set text of widget (d) [%s] to [%s]", label->getNamePath ().c_str (), label->getText ().c_str ());
+
+			// Test to see whether the text can fit a single line
+			if (txt.lines <= 1)
 			{
-				// einzelne Zeile
-				label->setSize(CEGUI::UVector2(CEGUI::UDim(0,width),  CEGUI::UDim(0,picsize)));
-				speakframe->setSize(CEGUI::UVector2(CEGUI::UDim(0,picsize+15+width), CEGUI::UDim(0,picsize+10)));
+				// Single line
+				CEGUIUtility::setWidgetSize (label, CEGUI::UVector2(CEGUI::UDim(0,width),  CEGUI::UDim(0,picsize)));
+				CEGUIUtility::setWidgetSize (speakframe, CEGUI::UVector2(CEGUI::UDim(0,picsize+15+width), CEGUI::UDim(0,picsize+10)));
 				image->setPosition(CEGUI::UVector2(CEGUI::UDim(0,5), CEGUI::UDim(0,5)));
 			}
 			else
 			{
-				// mehrere Zeilen
+				// Multi-line
 				rect.setWidth(maxwidth-15);
 				
 				height = lines * font->getFontHeight() +15;
 				
 				if (height < picsize)
 				{
-					label->setSize(CEGUI::UVector2(CEGUI::UDim(0,maxwidth),  CEGUI::UDim(0,picsize)));
-					speakframe->setSize(CEGUI::UVector2(CEGUI::UDim(0,picsize+15+maxwidth), CEGUI::UDim(0,picsize+10)));
+					CEGUIUtility::setWidgetSize (label, CEGUI::UVector2(CEGUI::UDim(0,maxwidth),  CEGUI::UDim(0,picsize)));
+					CEGUIUtility::setWidgetSize (speakframe, CEGUI::UVector2(CEGUI::UDim(0,picsize+15+maxwidth), CEGUI::UDim(0,picsize+10)));
 					image->setPosition(CEGUI::UVector2(CEGUI::UDim(0,5), CEGUI::UDim(0,5)));
 				}
 				else
 				{
-					label->setSize(CEGUI::UVector2(CEGUI::UDim(0,maxwidth),  CEGUI::UDim(0,height)));
-					speakframe->setSize(CEGUI::UVector2(CEGUI::UDim(0,picsize+15+maxwidth), CEGUI::UDim(0,height+10)));
+					CEGUIUtility::setWidgetSize (label, CEGUI::UVector2(CEGUI::UDim(0,maxwidth),  CEGUI::UDim(0,height)));
+					CEGUIUtility::setWidgetSize (speakframe, CEGUI::UVector2(CEGUI::UDim(0,picsize+15+maxwidth), CEGUI::UDim(0,height+10)));
 					image->setPosition(CEGUI::UVector2(CEGUI::UDim(0,5), CEGUI::UDim(0,(height-picsize)/2 + 5)));
 				}
 			}
@@ -559,9 +508,8 @@ void DialogueWindow::updateSpeechBubbles()
 	for (; nr<lcount; nr++)
 	{
 		stream.str("");
-		stream << "SpeechFrame";
-		stream << nr;
-		speakframe = static_cast<CEGUI::FrameWindow*>(win_mgr.getWindow(stream.str()));
+		stream << "GameScreen/SpeechFrame" << nr;
+		speakframe = static_cast<CEGUI::FrameWindow*>(CEGUIUtility::getWindow (stream.str()));
 			
 		speakframe->setVisible(false);
 	}
@@ -587,23 +535,23 @@ void DialogueWindow::updateSpeechBubbles()
 		
 		if (acount ==0)
 		{
-			ques = (CEGUI::FrameWindow*) win_mgr.createWindow("TaharezLook/FrameWindow", "QuestionWindow");
+			ques = (CEGUI::FrameWindow*) win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "FrameWindow"), "QuestionWindow");
 			ques->setProperty("FrameEnabled","false");
 			ques->setProperty("TitlebarEnabled","false");
 			ques->setProperty("CloseButtonEnabled","false");
-			game_screen->addChildWindow(ques);
+			CEGUIUtility::addChildWidget (game_screen, ques);
 			ques->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&Window::consumeEvent, (Window*) this));
 			ques->setVisible(false);
 			
-			label = win_mgr.createWindow("TaharezLook/StaticText", "QuestionLabel");
-			ques->addChildWindow(label);
+			label = win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "StaticText"), "QuestionLabel");
+			CEGUIUtility::addChildWidget (ques, label);
 			label->setProperty("FrameEnabled", "false");
 			label->setProperty("BackgroundEnabled", "false");
 		}
 		else
 		{
-			ques = (CEGUI::FrameWindow*)win_mgr.getWindow("QuestionWindow");
-			label = (CEGUI::Window*) win_mgr.getWindow("QuestionLabel");
+			ques = (CEGUI::FrameWindow*)CEGUIUtility::getWindow ("GameScreen/QuestionWindow");
+			label = (CEGUI::Window*) CEGUIUtility::getWindow ("GameScreen/QuestionWindow/QuestionLabel");
 			label->setProperty("HorzFormatting", "WordWrapLeftAligned");
 		}
 		
@@ -615,11 +563,11 @@ void DialogueWindow::updateSpeechBubbles()
 		int lines;
 		float horzoffset = 10;
 		
-		CEGUI::Rect rect = game_screen->getInnerRectClipper();
+		CEGUIUtility::Rectf rect = game_screen->getInnerRectClipper();
 		float maxwidth = rect.getWidth()/4;
 		rect.setWidth(maxwidth-15);
 		
-		CEGUI::Font* font = label->getFont();
+		const CEGUI::Font* font = label->getFont();
 		float lineheight = font->getFontHeight();
 		
 		CEGUI::utf8* ctext;
@@ -638,35 +586,44 @@ void DialogueWindow::updateSpeechBubbles()
 		if (label->getText() != ctext)
 		{
 			label->setText((CEGUI::utf8*)ctext);
+			SW_DEBUG ("Set text of widget (e) [%s] to [%s]", label->getNamePath ().c_str (), label->getText ().c_str ());
 		}
 		
 		label->setPosition(CEGUI::UVector2(CEGUI::UDim(0,horzoffset), CEGUI::UDim(0,height)));
-		label->setSize(CEGUI::UVector2(cegui_reldim(1.0f), CEGUI::UDim(0,elemheight)));
-		
+		CEGUIUtility::setWidgetSize (label, CEGUI::UVector2(cegui_reldim(1.0f), CEGUI::UDim(0,elemheight)));
 		height += elemheight + 20;
 		
-		// Antworten einfuegen
+		// Insert answers
 		std::list < std::pair<TranslatableString, std::string> >::iterator it;
 		for (it = question->m_answers.begin(); it != question->m_answers.end(); ++it)
 		{
 			stream.str("");
-			stream << "AnswerLabel";
-			stream << nr;
+			stream << "AnswerLabel" << nr;
 			
 			if (nr >= acount)
 			{
 				acount ++;
-				label = win_mgr.createWindow("TaharezLook/StaticText", stream.str());
-				ques->addChildWindow(label);
+				label = win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "StaticText"), stream.str());
+				CEGUIUtility::addChildWidget (ques, label);
 				label->setProperty("FrameEnabled", "false");
 				label->setProperty("BackgroundEnabled", "false");
-				//label->setProperty("HorzFormatting", "WordWrapLeftAligned");
+				label->setMousePassThroughEnabled (false);
 				label->setID(nr);
+//				label->setAlwaysOnTop (true);
 				label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&DialogueWindow::onAnswerClicked, this));
+				label->subscribeEvent(CEGUI::Window::EventMouseEntersArea, CEGUI::Event::Subscriber(&DialogueWindow::onAnswerEnterArea, this));
+				label->subscribeEvent(CEGUI::Window::EventMouseLeavesArea, CEGUI::Event::Subscriber(&DialogueWindow::onAnswerLeaveArea, this));
 			}
 			else
 			{
-				label = win_mgr.getWindow(stream.str());
+				stream.str ("");
+				stream << "GameScreen/QuestionWindow/AnswerLabel" << nr;
+				//DEBUG ("Inserting (existing) answer label [%s]", stream.str ().c_str ());
+				label = CEGUIUtility::getWindow (stream.str());
+				// Augustin Preda, 2014.01.19: for some reason, there are several always on top windows, and not all can be at the front.
+				// These options however must be :-)
+
+				label->moveToFront ();
 			}
 			
 			CEGUI::String cstring = (CEGUI::utf8*) it->first.getTranslation().c_str();
@@ -690,14 +647,23 @@ void DialogueWindow::updateSpeechBubbles()
 			}
 			width = MathHelper::Max(width,elemwidth);
 
-
-			if (label->getText() != cstring)
+			CEGUI::String selectionColour ("");
+			if (label->isUserStringDefined ("selcol"))
 			{
-				label->setText((CEGUI::utf8*)cstring.c_str());
+				selectionColour = label->getUserString ("selcol");
+			}
+			CEGUI::String expectedString;
+			expectedString.append (selectionColour);
+			expectedString.append (cstring);
+
+			if (label->getText() != expectedString)
+			{
+				SW_DEBUG ("Updating text of widget (f) [%s] to [%s] (prev [%s])", label->getNamePath ().c_str (), expectedString.c_str (), label->getText ().c_str ());
+				label->setText((CEGUI::utf8*)expectedString.c_str());
 			}
 			
 			label->setPosition(CEGUI::UVector2(CEGUI::UDim(0,horzoffset), CEGUI::UDim(0,height)));
-			label->setSize(CEGUI::UVector2(cegui_reldim(1.0f), CEGUI::UDim(0,elemheight)));
+			CEGUIUtility::setWidgetSize (label, CEGUI::UVector2(cegui_reldim(1.0f), CEGUI::UDim(0,elemheight)));
 
 			label->setVisible(true);
 
@@ -717,8 +683,10 @@ void DialogueWindow::updateSpeechBubbles()
 		
 		width += 2* horzoffset;
 		
+		//DEBUG ("Setting position of question window: (%.2f, %.2f), %.2f", 0.5f, -width/2, 0.2);
 		ques->setPosition(CEGUI::UVector2(CEGUI::UDim(0.5f,-width/2), cegui_reldim(0.2)));
-		ques->setSize(CEGUI::UVector2(CEGUI::UDim(0,width), CEGUI::UDim(0,height)));
+		//DEBUG ("Setting size of question window: (%.2f, %.2f)", width, height);
+		CEGUIUtility::setWidgetSizeAbs (ques, width, height);
 		
 		ques->setVisible(true);
 
@@ -726,17 +694,16 @@ void DialogueWindow::updateSpeechBubbles()
 		for (; nr<acount; nr++)
 		{
 			stream.str("");
-			stream << "AnswerLabel";
-			stream << nr;
+			stream << "GameScreen/QuestionWindow/AnswerLabel" << nr;
 			
-			label = win_mgr.getWindow(stream.str());
+			label = CEGUIUtility::getWindow (stream.str());
 			label->setVisible(false);
 		}
 	}
 	else if (acount !=0)
 	{
 		m_document->getGUIState()->m_shown_windows &= ~Document::QUESTIONBOX;
-		ques = (CEGUI::FrameWindow*) win_mgr.getWindow("QuestionWindow");
+		ques = (CEGUI::FrameWindow*) CEGUIUtility::getWindow ("GameScreen/QuestionWindow");
 		ques->setVisible(false);
 		
 	}
@@ -744,6 +711,7 @@ void DialogueWindow::updateSpeechBubbles()
 
 bool DialogueWindow::onAnswerClicked(const CEGUI::EventArgs& evt)
 {
+	SW_DEBUG ("DialogueWindow::onAnswerClicked");
 	const CEGUI::MouseEventArgs& we =
 			static_cast<const CEGUI::MouseEventArgs&>(evt);
 	unsigned int id = we.window->getID();
@@ -752,10 +720,52 @@ bool DialogueWindow::onAnswerClicked(const CEGUI::EventArgs& evt)
 	return true;
 }
 
+bool DialogueWindow::onAnswerEnterArea(const CEGUI::EventArgs& evt)
+{
+	//DEBUG ("DialogueWindow::onAnswerEnterArea");
+	const CEGUI::MouseEventArgs& we =
+			static_cast<const CEGUI::MouseEventArgs&>(evt);
+	CEGUI::String lineText = "[colour='FFFFDD66']";
+	SW_DEBUG ("Entered area for: %s (%s)", we.window->getNamePath ().c_str (), we.window->getTextVisual ().c_str ());
+//	we.window->setTextParsingEnabled (true);
+	we.window->setText ("-");
+	we.window->invalidate (true);
+	we.window->setUserString ("selcol", lineText);
+	
+	//CEGUI::System::getSingletonPtr ()->getDefaultGUIContext ().markAsDirty ();
+	//DEBUG ("Entered area for: %s", we.window->getTextVisual ().c_str ());
+	//XXX, TODO
+	return true;
+}
+
+bool DialogueWindow::onAnswerLeaveArea(const CEGUI::EventArgs& evt)
+{
+	//DEBUG ("DialogueWindow::onAnswerLeaveArea");
+	const CEGUI::MouseEventArgs& we =
+			static_cast<const CEGUI::MouseEventArgs&>(evt);
+	//DEBUG ("Left area for: %s", we.window->getText ().c_str ());
+	SW_DEBUG ("Left area for: %s (%s)", we.window->getNamePath ().c_str (), we.window->getTextVisual ().c_str ());
+	CEGUI::String lineText = "[colour='FFFFFFFF']";
+	we.window->setText ("-");
+	we.window->invalidate (true);
+	we.window->setUserString ("selcol", lineText);
+	return true;
+}
 
 bool DialogueWindow::onTextClicked(const CEGUI::EventArgs& evt)
 {
-	m_document->onSkipDialogueTextClicked();
+	SW_DEBUG ("DialogueWindow::onTextClicked");
+
+  const CEGUI::MouseEventArgs& we =
+			static_cast<const CEGUI::MouseEventArgs&>(evt);
+	CEGUI::Window* btn = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "DialogWindow/DialogueLowerBar/DialogueSkipAllButton");
+	bool skipAll = false;
+	if (we.window == btn)
+	{
+		skipAll = true;
+	}
+	
+	m_document->onSkipDialogueTextClicked(skipAll);
 	return true;
 }
 

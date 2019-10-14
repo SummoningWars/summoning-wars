@@ -35,6 +35,7 @@ class ContentEditorTab
 		virtual void init(CEGUI::Window* parent)
 		{
 			m_no_cegui_events = false;
+      m_rootWindow = parent;
 		}
 		
 		/**
@@ -134,6 +135,13 @@ class ContentEditorTab
 		 * \brief marks that underlying game data should be reloaded
 		 */
 		bool m_update_base_content;
+
+	  /**
+	  * \var 	CEGUI::Window *m_rootWindow;
+	  * \brief  Pointer to the root window of this panel
+	  */
+	  CEGUI::Window* m_rootWindow;
+
 		
 };
 

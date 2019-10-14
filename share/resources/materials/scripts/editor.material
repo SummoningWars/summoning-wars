@@ -1,0 +1,34 @@
+material editor_area
+{
+	technique
+    {
+		pass
+		{
+			lighting off
+			cull_hardware none
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 0 0 1
+			}
+		} 
+    }
+}
+
+material editor_exit
+{
+	technique
+    {
+		pass
+		{
+			lighting off
+			cull_hardware none
+
+			texture_unit
+			{
+				colour_op_ex source1 src_manual src_current 1 0 0
+			}
+		} 
+    }
+}
+

@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef HYBRIDIMPLEMENTATION_H
-#define HYBRIDIMPLEMENTATION_H
+#ifndef __SUMWARS_CORE_HYBRIDIMPLEMENTATION_H__
+#define __SUMWARS_CORE_HYBRIDIMPLEMENTATION_H__
 
 
 extern "C"
@@ -59,5 +59,5 @@ struct HybridImplementation
 	}
 };
 
-#endif
+#endif // __SUMWARS_CORE_HYBRIDIMPLEMENTATION_H__
 

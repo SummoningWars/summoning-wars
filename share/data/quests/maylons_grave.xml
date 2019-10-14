@@ -1,0 +1,454 @@
+<Quest name="Maylons Grave" table_name="maylons_grave" domain="maylons_grave">
+	
+	<Description>
+		if (maylons_grave.finished) then
+			return _("Some necromancer really resurrected an old council mage. Probably to cause confusion behind the lines. At least one problem that is solved.")
+		elseif(maylons_grave.goblins_killed==true)then
+			return _("I came across some goblins in Maylon's Grave who babbled some nonsense and were chased by a zombie. Something is going on in this grave. Maybe I should have a look at it.");
+		elseif(maylons_grave.listened_to_goblins==true)then
+			return _("I came across some goblins in Maylon's Grave. According to their shaman a necromancer animated some undead down in the crypt. I should take a look at it.");
+		else
+			return _("I came across some goblins in Maylon's Grave who were chased by a zombie. Something is going on in this grave. Maybe I should take a look at it.");
+		end
+	</Description>
+
+<!-- ausloesen des Gespraeches mit den Goblins -->	
+	<Region name="aisMaylonsGraveEntry">
+		<Event trigger ="create_region" once = "true">
+			<Condition>
+				if((maylons_grave.goblins_killed ~= true) and (maylons_grave.let_goblins_go~=true))then
+					return true;
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				maylons_grave_tmp.Goblin1 = createObject("goblin_gabclan_sword", "cryptGoblins");
+				maylons_grave_tmp.Goblin2 = createObject("goblin_gabclan_sword", "cryptGoblins");
+				maylons_grave_tmp.Goblin3 = createObject("goblin_gabclan_bow", "cryptGoblins");
+				maylons_grave_tmp.GabResh = createObject("goblin_gabresh", "cryptGoblins");
+				maylons_grave_tmp.Goblin4 = createObject("goblin_gabclan_bow", "cryptGoblins");
+				setRefName(maylons_grave_tmp.GabResh, "Gab Resh");
+			</Effect>
+		</Event>
+		
+		<Event trigger = "player_moved" once="true">
+			<Condition>
+				if((maylons_grave.started ~= true)and(maylons_grave.let_goblins_go~=true)and(maylons_grave.goblins_killed ~= true))then
+					return(unitIsInArea(trigger.player,"goblinArea"))
+				else
+					return false
+				end;
+			</Condition>
+			<Effect>
+				maylons_grave_tmp.phase="goblinsFlee";
+				maylons_grave_tmp.player = trigger.player;
+				
+				addArea("areaCryptQuest",{"circle","locParty",20});
+				maylons_grave_tmp.players = getPlayersInArea("areaCryptQuest");
+				groupObjectsArc(maylons_grave_tmp.players,"locParty","locGabResh",nil, 120);
+				
+				maylons_grave_tmp.zombie = createObject("zombie_crypt","locZombie");
+				lookAtObject(maylons_grave_tmp.GabResh,maylons_grave_tmp.zombie);
+				set(maylons_grave_tmp.zombie,"willpower",0);
+				setCutsceneMode(true);
+				--addCameraPosition(0,"cryptGoblins", -90,60, 25);
+				addCameraPosition(0,"cryptGoblins", -90,10, 15);
+				addCameraPosition(1000,"locZombie", -85,10, 14);
+				addCameraPosition(2000,"locZombie", -85,10, 14);
+				maylons_grave_tmp.door = getObjectByNameRef("entryDoor");
+				door_setopen(maylons_grave_tmp.door,true);
+				addUnitCommand(maylons_grave_tmp.zombie,"walk","cryptGoblins");
+				unitSpeak(maylons_grave_tmp.Goblin2,"Rakthr mootrick!","panic");
+				addUnitCommand(maylons_grave_tmp.Goblin1,"walk","locGoblin1");
+				addUnitCommand(maylons_grave_tmp.Goblin2,"walk","locGoblin2");
+				addUnitCommand(maylons_grave_tmp.Goblin3,"walk","locGoblin3");
+				addUnitCommand(maylons_grave_tmp.Goblin4,"walk","locGoblin4");
+				timedExecute('addUnitCommand('..maylons_grave_tmp.GabResh..',"freeze",'..maylons_grave_tmp.zombie..');',1400);
+				timedExecute('addUnitCommand('..maylons_grave_tmp.GabResh..',"walk","locShutDoor");',1400);
+				--Gab'Resh zu einer Location neben der Tuer schicken und das abfangen
+				timedExecute('addCameraPosition(4000,"cryptGoblins",-90,10,25)',2000);
+				timedExecute('addCameraPosition(3000,"locGabResh",-90,60,20)',6000);
+			</Effect>
+		</Event>
+		
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				if(get(trigger.unit,"subtype")=="goblin_gabresh")then
+					return(maylons_grave_tmp.phase=="goblinsFlee")and (unitIsInArea(maylons_grave_tmp.GabResh,"areaDoor"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				lookAtObject(maylons_grave_tmp.GabResh,maylons_grave_tmp.door);
+				door_setopen(maylons_grave_tmp.door,false);
+				timedExecute('addUnitCommand('..maylons_grave_tmp.GabResh..',"walk","locGabResh");',500);
+			</Effect>
+		</Event>
+		
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				if(get(trigger.unit,"subtype")=="goblin_gabclan_sword")then
+					return(maylons_grave_tmp.phase=="goblinsFlee")and (unitIsInArea(trigger.unit,"areaGoblin1"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				lookAt(trigger.unit,"locParty");
+			</Effect>
+		</Event>
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				if(get(trigger.unit,"subtype")=="goblin_gabclan_sword")then
+					return(maylons_grave_tmp.phase=="goblinsFlee")and (unitIsInArea(trigger.unit,"areaGoblin2"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				lookAt(trigger.unit,"locParty");
+			</Effect>
+		</Event>
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				if(get(trigger.unit,"subtype")=="goblin_gabclan_Bow")then
+					return(maylons_grave_tmp.phase=="goblinsFlee")and (unitIsInArea(trigger.unit,"areaGoblin3"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				lookAt(trigger.unit,"locParty");
+			</Effect>
+		</Event>
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				if(get(trigger.unit,"subtype")=="goblin_gabclan_bow")then
+					return(maylons_grave_tmp.phase=="goblinsFlee")and (unitIsInArea(trigger.unit,"areaGoblin4"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				lookAt(trigger.unit,"locParty");
+				unitSpeak(trigger.unit,"Mar! Nom Togubri!");
+				--auf Spieler zeigen
+			</Effect>
+		</Event>
+		
+		
+		<Event trigger = "command_complete" once="true">
+			<Condition>
+				if(get(trigger.unit,"subtype")=="goblin_gabresh")then
+					return(maylons_grave_tmp.phase=="goblinsFlee")and (unitIsInArea(maylons_grave_tmp.GabResh,"areaTalk"));
+				else
+					return false;
+				end;
+			</Condition>
+			<Effect>
+				createDialogue();
+				addPlayersToDialog(maylons_grave_tmp.players);
+				addStandardRoles();
+				addSpeaker(maylons_grave_tmp.GabResh,"GabResh");
+				addSpeaker(maylons_grave_tmp.player,"player");
+				setTopicBase("Gab Resh");
+				lookAt(maylons_grave_tmp.GabResh,"locParty");
+				speak("GabResh","Wait, great human warriors. Do not kill!","fear", 3000);
+				addQuestion(_("Talk with the goblins?"));
+				addAnswer(_("Yes"),'talk_with_goblins');
+				addAnswer(_("No"),'kill_goblins_immediately');
+				
+			</Effect>
+		</Event>
+	</Region>
+	
+	<NPC refname="Gab Resh">
+		<Topic name="talk_with_goblins">
+			<Effect>
+				speak("player",_("A goblin who wants to talk?"),"surprised");
+				speak("GabResh",_("Yes. No hurt, no kill."),"panic");
+				speak("GabResh",_("Gab'Resh and his only harmless rustlers. No bandits."),"fear");
+				speak("GabResh",_("You listen, yes?"),"fear");
+				addQuestion(_("What will you do?"));
+				addAnswer(_("Listen to the goblins"),"keep_on_talking");
+				addAnswer(_("Chase the goblins away"),"let_goblins_go");
+				addAnswer(_("Slay the goblins"),"kill_goblins");
+			</Effect>
+		</Topic>
+		
+		<Topic name="keep_on_talking" >
+			<Effect>
+				set(maylons_grave_tmp.Goblin1,"fraction","human");
+				set(maylons_grave_tmp.Goblin2,"fraction","human");
+				set(maylons_grave_tmp.Goblin3,"fraction","human");
+				set(maylons_grave_tmp.Goblin4,"fraction","human");
+				set(maylons_grave_tmp.GabResh,"fraction","human");
+				speak("magopt",_("What could a goblin possibly have to say?"),"sneer");
+				speak("GabResh",_("We often hide here."),"normal");
+				speak("GabResh",_("No humans coming, and if do, they never return from depth of cave."),"amused");
+				speak("GabResh",_("But last moon black human came."),"unhappy");
+				speak("GabResh",_("Now horror of the depth wandering to surface, too and being after poor goblins who never not wants to steal anything."),"fear");
+				speak("priopt",_("That almost sounds as if a necromancer came by."),"thoughtful");
+				if(solo())then
+					speak("player",_("I cannot leave such a problem amidst this under-guarded region."),"normal");
+				else
+					speak("priopt",_("We cannot leave such a problem amidst this under-guarded region."),"normal");
+				end;
+				speak("priopt",_("Who knows what could happen?"),"normal");
+				if(solo())then
+					speak("arcopt", _("Really, I should free those poor bound souls and send them off to a short brake in Harad's Hell."),"sneer");
+				else
+					speak("arcopt", _("Really, we should free those poor bound souls and send them off to a short brake in Harad's Hell."),"sneer");
+					if(getSpeaker("waropt")~=getSpeaker(arcopt))then
+						speak("waropt",_("Better them than us."),"unhappy");
+					end;
+				end;
+				speak("GabResh",_("Good warning, yes? Mighty warrior-humans let us live, no?"),"happy");
+				if(solo())then
+					speak("player",_("Get lost. I have better things to do than killing a band of pathetic goblins."),"unhappy");
+				else
+					speak("player",_("Get lost. we have better things to do than killing a band of pathetic goblins."),"unhappy");
+				end;
+				executeInDialog('insertTrigger("goblinsWalkAway")');
+				maylons_grave.started=true;
+				
+				--fuert zu weiterem quest
+				maylons_grave.let_goblins_go=true;
+				maylons_grave.listened_to_goblins=true;
+				changeTopic("finishTalk")
+			</Effect>	
+		</Topic>
+		
+		<Topic name="kill_goblins_immediately" >
+			<Effect>
+				if(solo())then
+					speak("PL",_("Miserable brood! Die!"));
+				else
+					speak("PL",_("Miserable brood! Slay them all!"));
+				end;
+				changeTopic("kill_goblins");
+			</Effect>	
+		</Topic>
+		
+		<Topic name="finishTalk" >
+			<Effect>
+				setCutsceneMode(false);
+			</Effect>	
+		</Topic>
+		
+		<Topic name="let_goblins_go" >
+			<Effect>
+				set(maylons_grave_tmp.Goblin1,"fraction","human");
+				set(maylons_grave_tmp.Goblin2,"fraction","human");
+				set(maylons_grave_tmp.Goblin3,"fraction","human");
+				set(maylons_grave_tmp.Goblin4,"fraction","human");
+				set(maylons_grave_tmp.GabResh,"fraction","human");
+				maylons_grave.started=true;
+				maylons_grave.let_goblins_go = true;
+				speak("player",_("Get lost, before I change my mind!"));
+				executeInDialog('insertTrigger("goblinsWalkAway")');
+				setCutsceneMode(false);
+			</Effect>	
+		</Topic>
+		
+		<Topic name="kill_goblins" >
+			<Effect>
+				maylons_grave.started=true;
+				setCutsceneMode(false);
+			</Effect>	
+		</Topic>
+	</NPC>
+	
+	<Region name="aisMaylonsGraveEntry">
+		<Event trigger="goblinsWalkAway" once ="true">
+			<Effect>
+				addUnitCommand(maylons_grave_tmp.Goblin1,"walk","entry_south")
+				addUnitCommand(maylons_grave_tmp.Goblin2,"walk","entry_south")
+				addUnitCommand(maylons_grave_tmp.Goblin3,"walk","entry_south")
+				addUnitCommand(maylons_grave_tmp.Goblin4,"walk","entry_south")
+				addUnitCommand(maylons_grave_tmp.GabResh,"walk","entry_south") --areaGoblinsAway
+			</Effect>
+		</Event>
+		<Event trigger="unit_moved">
+			<Condition>
+				local unit = get(trigger.unit,"subtype");
+				if((unit == "goblin_gabresh")or(unit == "goblin_gabclan_bow")or(unit == "goblin_gabclan_sword"))then
+					return (unitIsInArea(trigger.unit,"areaGoblinsAway"));
+				end;
+				return false;
+			</Condition>
+			<Effect>
+				deleteObject(trigger.unit);
+			</Effect>
+		</Event>
+		
+		<Event trigger="unit_die" once="true">
+			<Condition>
+				return(get(trigger.unit,"subtype")=="goblin_gabresh")
+			</Condition>
+			<Effect>
+				maylons_grave.goblins_killed=true;
+			</Effect>
+		</Event>
+	</Region>
+<!-- Ende des Goblingespraeches -->		
+	<Region name="aisMaylonsGraveL1">
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				addArea("areaGathering",{"circle",{0,0},10000});
+			</Effect>
+		</Event>
+		
+		<Event trigger="create_template">
+			<Condition>
+				return (maylons_grave.finished~=true);
+			</Condition>
+			<Effect>
+				if(trigger.templname=="randomLoc4_4")then
+					createMonsterGroup("zombies_maylon",trigger.locCenter,4);
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger="enter_region" once="true">
+			<Condition>
+				return maylons_grave.finished==true;
+			</Condition>
+			<Effect>
+				local monsters = getMonstersInArea("areaGathering");
+				for i,monster in ipairs(monsters) do
+					set(monster, "health",0);
+				end;
+			</Effect>
+		</Event>
+	</Region>	
+<!-- Maylons Geist, Maylons Mumie-->
+	<Region name="aisMaylonsGraveL2">
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				addArea("areaGathering",{"circle",{0,0},10000});
+				if (maylons_grave.freed ~= true) then
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger="object_use" once="true">
+			<Condition>
+				return ((trigger.used_object == getObjectByNameRef("doorGrave"))and (maylons_grave.freed~=true));
+			</Condition>
+			<Effect>
+				-- when opening the door to maylons grave chamber, his mummy will appear
+				setCutsceneMode(true);
+				
+				local door = getObjectByNameRef("doorGrave");
+				scriptobjectvar[door]["locked"] = true;
+				door_toggle(door);
+				local doorPos=get(door,"position");
+				
+				addCameraPosition(0,doorPos,-90,45,10);
+				addCameraPosition(2000,doorPos,-90,10,10);
+				addCameraPosition(2000,"graveChamber:locMaylon",-90,10,10);
+				
+				startTimer("camera_complete",4000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="camera_complete">
+			<Effect>
+				maylons_grave_tmp.maylon=createObject("maylonMummy","graveChamber:locMaylon",90);
+				timedExecute('createObject("skel_maylon","graveChamber:locMaylonGuard1",90)',800);
+				timedExecute('createObject("skel_maylon","graveChamber:locMaylonGuard2",90)',200);
+				startTimer("maylon_fight",4000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="maylon_fight">
+			<Effect>
+				timedExecute('setCutsceneMode(false)',1000);
+			</Effect>
+		</Event>
+	
+		<Event trigger="create_template">
+			<Condition>
+				return (maylons_grave.finished~=true);
+			</Condition>
+			<Effect>
+				if(trigger.templname=="randomLoc4_4")then
+					createMonsterGroup("zombies_maylon",trigger.locCenter,4);
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_hit">
+			<Condition>
+				return(trigger.defender==maylons_grave_tmp.maylon);
+			</Condition>
+			<Effect>
+				if(trigger.attacker~=nil)then
+					maylons_grave_tmp.lastAttacker = trigger.attacker;
+				end;
+			</Effect>
+		</Event>
+		
+		<Event trigger ="unit_dead" once="true">
+			<Condition>
+				return(trigger.unit == maylons_grave_tmp.maylon);
+			</Condition>
+			<Effect>
+				maylons_grave.freed = true;
+				local monsters = getMonstersInArea("areaGathering");
+				for i,monster in ipairs(monsters) do
+					local timeout = math.random(1000,15000);
+					timedExecute('set('..monster..', "health",0)',timeout);
+				end;
+				local position = get(trigger.unit,"position");
+				setCutsceneMode(true);
+				addCameraPosition(0,position,-90,45,10);
+				addUnitCommand(maylons_grave_tmp.lastAttacker,"walk",position,3);
+				timedExecute('maylons_grave_tmp.maylon=createObject("maylon",{'..position[1]..','..position[2]..'})',1000);
+			</Effect>
+		</Event>
+		
+		<Event trigger="create_unit">
+			<Condition>
+				return(maylons_grave.freed == true);
+			</Condition>
+			<Effect>
+				startTimer("maylon_talk",1500)
+			</Effect>
+		</Event>
+		
+		<Event trigger="maylon_talk" once="true">
+			<Effect>
+				lookAtObject(maylons_grave_tmp.lastAttacker,maylons_grave_tmp.maylon);
+				lookAtObject(maylons_grave_tmp.maylon,maylons_grave_tmp.lastAttacker);
+				createDialog();
+				setTopicBase("global");
+				addSpeaker(maylons_grave_tmp.lastAttacker,"player");
+				addSpeaker(maylons_grave_tmp.maylon,"maylon");
+				speak("maylon",_("Thank you very much for liberating my soul."),"happy");
+				speak("maylon",_("May you do many other great deeds."),"happy");
+				speak("maylon",_("Akerans blessing to you."),"happy");
+				speak("maylon",_("My sarcophagus contains many remains of my mortal life."),"normal");
+				speak("maylon",_("For a long time now I have no use for it anymore. Choose yourself a weapon you like."),"normal");
+				speak("maylon",_("The same holds true for your friends."),"normal");
+				speak("maylon",_("But now I have to return into the bliss of Akerans eternal oasis."),"excited");
+				executeInDialog("set("..maylons_grave_tmp.maylon..",'health',0)");
+				speakPause(1000);
+				speak("player",_("I wander if he would have said that if he had known that he will make a detour to Harad's Hell first?"),"sad")
+				changeTopic("maylon_rip");
+			</Effect>
+		</Event>
+		<Event trigger="maylon_rip" once="true">
+			<Effect>
+				maylons_grave.finished=true;
+				addPlayersExperience(500,"rescued_maylon");
+				scriptobjectvar[getObjectByNameRef("doorGrave")]["locked"] = false;
+				setCutsceneMode(false);
+			</Effect>
+		</Event>
+	</Region>	
+</Quest>
+

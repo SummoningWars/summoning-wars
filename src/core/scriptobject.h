@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SCRIPTOBJECT_H
-#define SCRIPTOBJECT_H
+#ifndef __SUMWARS_CORE_SCRIPTOBJECT_H__
+#define __SUMWARS_CORE_SCRIPTOBJECT_H__
 
 #include "worldobject.h"
 #include "event.h"
@@ -145,5 +145,5 @@ class ScriptObject: public WorldObject
 		std::multimap<TriggerType, Event*> m_events;
 		
 };
-#endif
+#endif // __SUMWARS_CORE_SCRIPTOBJECT_H__
 

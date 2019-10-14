@@ -16,14 +16,6 @@
 #include "translatablestring.h"
 #include "debug.h"
 
-TranslatableString::TranslatableString()
-{
-	m_text = "";
-	m_domain = "";
-	m_locale = "";
-	m_translation = "";
-}
-
 void TranslatableString::setText(std::string text, std::vector<std::string> substrings)
 {
 	m_text = text;

@@ -17,7 +17,13 @@
 #define BENCHMARKTAB_H
 
 #include <debugtab.h>
+
+#ifdef CEGUI_07
 #include <CEGUI/CEGUIWindow.h>
+#else
+#include "CEGUI/Window.h"
+#endif
+
 #include "OgreLog.h"
 
 namespace Ogre
@@ -35,7 +41,14 @@ public:
 	
 	virtual void update(OIS::Keyboard *keyboard, OIS::Mouse *mouse);
 
-	virtual void messageLogged (const Ogre::String &message, Ogre::LogMessageLevel lml, bool maskDebug, const Ogre::String &logName);
+#if OGRE_VERSION_MAJOR == 1
+#if OGRE_VERSION_MINOR == 7
+	virtual void messageLogged(const Ogre::String& message, Ogre::LogMessageLevel lml, bool maskDebug, const Ogre::String& logName);
+#endif
+#if OGRE_VERSION_MINOR >= 8
+	virtual void messageLogged(const Ogre::String& message, Ogre::LogMessageLevel lml, bool maskDebug, const Ogre::String& logName, bool& skipThisMessage);
+#endif
+#endif
 
 	virtual bool handleStartBenchmark(const CEGUI::EventArgs& e);
 private:

@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROJECTILE_H
-#define PROJECTILE_H
+#ifndef __SUMWARS_CORE_PROJECTILE_H__
+#define __SUMWARS_CORE_PROJECTILE_H__
 
 #include "debug.h"
 #include "charconv.h"
@@ -386,4 +386,4 @@ typedef std::map<int,Projectile*> ProjectileMap;
 
 
 
-#endif
+#endif // __SUMWARS_CORE_PROJECTILE_H__

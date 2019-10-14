@@ -1,0 +1,44 @@
+<World>
+	<!-- Aisen, Westwaelder [Wald und Gebirge]; ungefähr 30 Min, eher verwinkelt; Level 15 - 18 -->
+	<!-- Goblins, Goblinhunde, Blutschnaebel-->	
+	<Region id="2140" name="aisWestwoods">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="48" dimy="48" area_percent="0.4" complexity="0.3" granularity="8"  ground="wood"/>
+		<WorldPosition world_x="0.66" world_y ="0.49"/>
+		
+		<ExitDirections north="false" south="false" west="true" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="aisWolfstones" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_west" destination_region="aisMounPath" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="trees1" priority="1" number="50" probability="0.8"/>
+			<ObjectGroup object_group="trees2" priority="1" number="50" probability="0.8"/>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="bandits_l12_1" number="10"/>
+			<SpawnGroup group_name="bandits_l12_2" number="10"/>
+			<SpawnGroup group_name="bandits_l12_3" number="10"/>
+			<SpawnGroup group_name="bloodbeaks" number="10"/>
+			<SpawnGroup group_name="bandits_l12_todd" number="1"/>
+		</SpawnGroups>
+	</Region>
+</World>

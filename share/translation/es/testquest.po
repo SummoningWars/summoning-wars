@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2013-05-29 15:54+0200\n"
+"Last-Translator: Rubén Viguera <vyproyects@gmail.com>\n"
+"Language-Team: Spanish "
+"<http://hosted.weblate.org/projects/sumwars/testquest/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.6-dev\n"
+
+#: testquest.xml:2
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: testquest.xml:3
+msgid "Test"
+msgstr "Prueba"
+
+#: testquest.xml:9
+msgid "This is a Test"
+msgstr "Esto es una Prueba"
+
+#: testquest.xml:50
+msgid "afraid"
+msgstr "asustado"
+
+#: testquest.xml:55
+msgid "again a test"
+msgstr "otra vez una prueba"
+
+#: testquest.xml:19
+msgid "amused"
+msgstr "divertido"
+
+#: testquest.xml:54
+msgid "and yet another Test"
+msgstr "y otra Prueba más"
+
+#: testquest.xml:41
+msgid "angry"
+msgstr "enfadado"
+
+#: testquest.xml:53
+msgid "being disgusted"
+msgstr "estando disgustado"
+
+#: testquest.xml:25
+msgid "bored"
+msgstr "aburrido"
+
+#: testquest.xml:49
+msgid "deadly injured"
+msgstr "herida mortal"
+
+#: testquest.xml:21
+msgid "excited"
+msgstr "excitado"
+
+#: testquest.xml:45
+msgid "exhausted"
+msgstr "exausto"
+
+#: testquest.xml:35
+msgid "grin"
+msgstr "sonrisa"
+
+#: testquest.xml:16
+msgid "happy"
+msgstr "feliz"
+
+#: testquest.xml:23
+msgid "in love"
+msgstr "enamorado"
+
+#: testquest.xml:51
+msgid "in panic"
+msgstr "temeroso"
+
+#: testquest.xml:47
+msgid "injured"
+msgstr "herido"
+
+#: testquest.xml:37
+msgid "offended"
+msgstr "ofendido"
+
+#: testquest.xml:31
+msgid "pain"
+msgstr "dolor"
+
+#: testquest.xml:52
+msgid "putting up a distance"
+msgstr "dejando distancia"
+
+#: testquest.xml:29
+msgid "sad"
+msgstr "triste"
+
+#: testquest.xml:43
+msgid "shouting a warcry"
+msgstr "soltando grito de guerra"
+
+#: testquest.xml:33
+msgid "sneer"
+msgstr "burla"
+
+#: testquest.xml:11
+msgid "surprised"
+msgstr "sorprendido"
+
+#: testquest.xml:2
+msgid "testquest"
+msgstr "misión de prueba"
+
+#: testquest.xml:13
+msgid "thoughtful"
+msgstr "pensativo"
+
+#: testquest.xml:39
+msgid "threatening"
+msgstr "amenazante"
+
+#: testquest.xml:27
+msgid "unhappy"
+msgstr "infeliz"

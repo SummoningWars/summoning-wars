@@ -1,0 +1,383 @@
+<?xml version="1.0" ?>
+
+<!--
+HINWEISE:
+
+* Moegliche Werte fuer type:
+NONE
+PLAYER
+MONSTER
+TRADER
+
+* Moegliche Werte fuer fraction:
+NOFRACTION
+HUMAN
+DEMON
+UNDEAD
+DWARF
+SUMMONER
+MONSTER
+HOSTILE_TO_ALL
+PLAYER_PARTY
+
+* Moegliche Werte fuer race:
+NOCATEGORY
+HUMAN
+DEMON
+UNDEAD
+DWARF
+DRAKE
+FAIRY
+GOBLIN
+ANIMAL
+SUMMONED
+
+* Moegliche Werte fuer layer:
+NORMAL
+BASE
+AIR
+
+* Moegliche Flags fuer SpecialFlag:
+	noflags
+	unblockable
+	ignore_armor
+	extra_human_dmg
+	extra_demon_dmg
+	extra_undead_dmg
+	extra_dwarf_dmg
+	extra_drake_dmg
+	extra_fairy_dmg
+	extra_goblin_dmg
+	extra_animal_dmg
+	extra_summoned_dmg
+
+* Moegliche Flags fuer Immunity:
+	blind
+	poisoned
+	berserk
+	confused
+	mute
+	paralyzed
+	frozen
+	burning
+
+* Moegliche Flags fuer Ability:
+	noaction
+	walk
+	use
+	trade
+	attack
+	range_attack
+	magic_attack
+	holy_attack
+	defend
+	wait
+	die
+	dead
+	take_item
+	bash
+	hammer_bash
+	around_blow
+	whirl_blow
+	smash
+	hate_mage
+	charge
+	storm_charge
+	block
+	steadfast
+	monster_hunter
+	monster_slayer
+	endurance
+	weaponmaster
+	firesword
+	flamesword
+	flamearmor
+	berserk
+	warcry
+	regenerate
+	decoy
+	scare
+	anger
+	fury
+	triple_shot
+	guided_triple_shot
+	multishot
+	volley_shot
+	pierce
+	weak_point
+	blind_rage
+	vacuum
+	death_roulette
+	exploding_arrow
+	explosion_cascade
+	evade
+	critical_strike
+	concentration
+	mental_wall
+	resist_ice
+	resist_air
+	aimed_shot
+	bow_spirit
+	ice_arrows
+	freezing_arrows
+	wind_arrows
+	storm_arrows
+	wind_walk
+	fire_bolt
+	fire_strike
+	fire_wave
+	fire_storm
+	fire_ball
+	inferno_ball
+	fire_wall
+	inflame
+	ice_bolt
+	ice_spike
+	snow_storm
+	blizzard
+	ice_ring
+	frost_ring
+	freeze
+	chill
+	lightning
+	lightning_strike
+	thunderstorm
+	thunderstorm2
+	chain_lightning
+	chain_lightning2
+	static_shield
+	ionisation
+	holy_light
+	holy_fire
+	burning_rage
+	cure_blind_mute
+	cure_blind_mute_party
+	blazing_shield
+	light_beam
+	burning_sun
+	break_binding
+	disrupt_binding
+	magic_shield
+	cure_pois_burn
+	cure_pois_burn_party
+	acid
+	heal
+	heal_party
+	divine_wind
+	divine_storm
+	blade_storm
+	cure_conf_bsrk
+	cure_conf_bsrk_party
+	hypnosis
+	hypnosis2
+	keen_mind
+-->
+
+
+<!--
+<Monster type="MONSTER" subtype="goblin" fraction="monster" race="goblin" layer="NORMAL">
+	<RenderInfo name="goblin.mesh" />
+	<Dropslots pbig="0.1" pmedium="0.2" psmall="0.2" pgold="0.2">
+		<Dropslot min_level="0" max_level="20" magic_prob="0.3" magic_power="500" />
+		<Dropslot min_level="0" max_level="10" magic_prob="0.3" magic_power="1000" />
+		<Dropslot min_level="0" max_level="0" magic_prob="0" magic_power="0" />
+		<Dropslot min_level="0" max_level="0" magic_prob="0" magic_power="0" />
+	</Dropslots>
+	<BasicAttributes
+		experience="10"
+		level="1"
+		max_health="55"
+		armor="10"
+		block="0"
+		attack="10"
+		strength="15"
+		dexterity="10"
+		magic_power="5"
+		willpower="10"
+		resistances_physical="0"
+		resistances_air="0"
+		resistances_ice="0"
+		resistances_fire="0"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="50"
+		walk_speed="2000"
+		attack_speed="1500"
+		step_length="0.5"
+		abilities="moegliche Flags: siehe oben"
+		attack_range="1"
+		special_flags="moegliche Flags: siehe oben"
+		immunity="moegliche Flags: siehe oben"
+	>
+		<Ability type="" time="" timer_nr="" timer_value="" rating="" all_target_rating="" all_target_rating_radius="" random_rating=""/>
+		...
+		<SpecialFlag type=""/>
+		...
+		<Immunity type=""/>
+		...
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="8" />
+</Monster>
+-->
+
+
+<!--
+<MonsterGroup name="lich_goblins" >
+	<SubGroup subtype="lich" />
+	<SubGroup subtype="goblin" number="int" prob="float" />
+</MonsterGroup>
+-->
+
+<!-- Kleine Alraune -->
+<!-- hat noch kein Mesh, nicht fuer die Demo vorgesehen -->
+<Monster type="MONSTER" subtype="mandrake_s" name="small mandragora" fraction="monster" race="ANIMAL" layer="NORMAL">
+	<RenderInfo name="goblin" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="100" min_level="0" max_level="10" magic_prob="0.1" magic_power="1000" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="50" min_level="0" max_level="20" magic_prob="0.2" magic_power="1000" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="10"
+		level="6"
+		max_health="100"
+		armor="48"
+		block="10"
+		attack="37"
+		power="25"
+		strength="25"
+		dexterity="15"
+		magic_power="0"
+		willpower="10"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="0"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk"/>		
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- Alraune -->
+<!-- hat noch kein Mesh, nicht fuer die Demo vorgesehen-->
+<Monster type="MONSTER" subtype="mandrake_m" name="mandragora" fraction="monster" race="animal" layer="NORMAL">
+	<RenderInfo name="goblin" />
+	<Dropslots >
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="100" min_level="0" max_level="10" magic_prob="0.1" magic_power="1000" />
+		<Dropslot pbig="0.03" pmedium="0.08" psmall="0.08" pgold="0.05" max_gold="50" min_level="0" max_level="20" magic_prob="0.2" magic_power="1000" />
+	</Dropslots>
+	
+	<BasicAttributes
+		experience="10"
+		level="11"
+		max_health="100"
+		armor="48"
+		block="10"
+		attack="37"
+		power="25"
+		strength="25"
+		dexterity="15"
+		magic_power="0"
+		willpower="10"
+		resistances_physical="20"
+		resistances_air="0"
+		resistances_ice="0"
+		resistances_fire="-50"
+		resistances_cap_physical="50"
+		resistances_cap_air="50"
+		resistances_cap_ice="50"
+		resistances_cap_fire="0"
+		walk_speed="3000"
+		attack_speed="1500"
+		step_length="1.0"
+		attack_range="1"
+	>
+		<Ability type="walk"/>		
+		<Ability type="attack" rating="1"/>
+		<Ability type="die" />
+		<Ability type="noaction" />
+
+		
+		<Immunity type="blind"/>
+		<Immunity type="poisoned"/>
+		<Immunity type="berserk"/>
+		<Immunity type="confused"/>
+		<Immunity type="mute"/>
+		
+	</BasicAttributes>
+	
+	<Geometry radius="0.5" />
+	
+	<AI ai_sight_range="12" />
+</Monster>
+
+<!-- ====MONSTER GROUPS==== -->
+
+<!-- undead -->
+
+<MonsterGroup name="skeletons" >
+	<SubGroup subtype="sword_skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe_skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe2_skel" number="2" prob="0.7" />
+</MonsterGroup>
+
+<!-- nur damit wir etwas variationsmoeglichkeiten haben-->
+<MonsterGroup name="skeletons2" >
+	<SubGroup subtype="sword_skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe_skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe2_skel" number="2" prob="0.7" />
+</MonsterGroup>
+
+
+
+<MonsterGroup name="undead_weak" >
+	<SubGroup subtype="sword skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe_skel" number="2" prob="0.7" />
+	<SubGroup subtype="axe2_skel" number="1" prob="0.7" />
+	<SubGroup subtype="zombie" number="7" prob="0.7" />
+</MonsterGroup>
+
+<MonsterGroup name="lich_skeletons" >
+	<SubGroup subtype="lich" number="1" prob="1.0" />
+	<SubGroup subtype="sword_skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe_skel" number="3" prob="0.7" />
+	<SubGroup subtype="axe2_skel" number="2" prob="0.7" />
+</MonsterGroup>
+
+<MonsterGroup name="mandrake_field" >
+	<SubGroup subtype="mandrake_s" number="3" prob="0.7" />
+</MonsterGroup>
+
+<MonsterGroup name="mandrake_forest" >
+	<SubGroup subtype="mandrake_m" number="3" prob="0.7" />
+</MonsterGroup>
+
+
+<MonsterGroup name="nothing" >
+</MonsterGroup>

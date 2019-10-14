@@ -1,0 +1,51 @@
+<World>
+	<!-- Aisen, Offene Ebene [Feld und Wiesen]; ungefaehr 20 Min, eher offen; Level 2 - 6 -->
+	<!-- Goblinschlaeger, Goblinraeuber, Goblinjaeger, Goblinhunde, Feldalraunen?(falls wir welche bekommen) -->
+	<!-- Orte: entry_Crypt, exit_Crypt => Maylons Grab(Template) -->
+	<Region id="5" name="aisPlains">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Settings dimx="48" dimy="48" area_percent="0.3" complexity="0.4" granularity="6"  ground="grass1" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<WorldPosition world_x="0.60" world_y ="0.61" waypoint="true"/>
+		<ExitDirections north="false" south="true" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="aisMeadow" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_east" destination_region="aisHeath" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="maylonsGrave:entry_crypt" destination_region="aisMaylonsGraveEntry" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="1.0" extent_y="1.0" />
+			</Exit>
+		</Exits>
+
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="maylonsGrave" object_group="maylonsGrave" priority="4"/>
+		</NamedObjectGroups>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="treePatch_med" priority="1" number="3" probability="1"/>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_bow_l3" number="20" />
+			<SpawnGroup group_name="goblins_l3" number="15" />
+			<SpawnGroup group_name="goblins_dogs_l3" number="15"/>
+			<SpawnGroup group_name="goblins_roruz" number="1"/>
+			<SpawnGroup group_name="goblins_nubreck" number="1"/>
+		</SpawnGroups>
+	</Region>
+</World>

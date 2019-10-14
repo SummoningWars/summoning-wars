@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Resummoned is a free theme for CEGUI, based on the Taharez Look theme.
+Resummoned is licensed under the terms of the MIT license.
+
+Copyright (c) 2012 Augustin Preda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!--
+version:      0.1
+Last change:	$LastChangedDate: 2012-11-15 00:31:48 +0200 (J, 15 nov. 2012) $
+-->
+<Imageset Name="ResummonedCursors" Imagefile="ResummonedCursors.png" NativeHorzRes="1366" NativeVertRes="768" AutoScaled="false" >
+
+  <!-- Mouse Cursors -->
+	<Image Name="MouseArrow" XPos="5" YPos="5" Width="32" Height="32" XOffset="-1" YOffset="-1" />
+
+	<Image Name="MouseMoveCursor" XPos="50" YPos="5" Width="32" Height="32" XOffset="-16" YOffset="-16" />
+
+	<Image Name="MouseEsWeCursor" XPos="150" YPos="5" Width="32" Height="32" XOffset="-16" YOffset="-16" />
+	<Image Name="MouseNoSoCursor" XPos="200" YPos="5" Width="32" Height="32" XOffset="-16" YOffset="-16" />
+	<Image Name="MouseNeSwCursor" XPos="250" YPos="5" Width="32" Height="32" XOffset="-16" YOffset="-16" />
+	<Image Name="MouseNwSeCursor" XPos="300" YPos="5" Width="32" Height="32" XOffset="-16" YOffset="-16" />
+  
+  <!-- TODO: set to different content; duplicated at the moment -->
+
+	<Image Name="MouseTextBar" XPos="5" YPos="5" Width="32" Height="32" XOffset="-1" YOffset="-1" />
+  
+</Imageset>

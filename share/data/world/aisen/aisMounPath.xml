@@ -1,0 +1,31 @@
+<World>
+	<!-- Aisen, Gebirgspfad [Wald und Gebirge]; Template -->
+	<!-- Ort von Szene 5 -->
+	<Region id="2150" name="aisMounPath">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="20" dimy="20" region_template="meetIreana"  ground="grass1"/>
+		<WorldPosition world_x="0.65" world_y ="0.48"/>
+		
+		<ExitDirections north="true" south="false" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="aisWestwoods" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="aisMistslope" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>
+	</Region>
+</World>

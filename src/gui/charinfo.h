@@ -14,8 +14,8 @@
  */
 
 
-#ifndef CHARINFO_H
-#define CHARINFO_H
+#ifndef __SUMWARS_GUI_CHARINFO_H__
+#define __SUMWARS_GUI_CHARINFO_H__
 
 #include "window.h"
 
@@ -57,6 +57,6 @@ class CharInfo : public Window
 		bool onCloseButtonClicked(const CEGUI::EventArgs& evt);
 };
 
-#endif
+#endif // __SUMWARS_GUI_CHARINFO_H__
 
 

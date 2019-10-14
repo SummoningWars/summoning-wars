@@ -17,25 +17,26 @@
 
 
 
-void StdStreamConv::toBuffer(std::string s)
+void StdStreamConv::toBuffer(const std::string& s)
 {
 	// empty string and strings with spaces must be modified to be able to retrieve correctly
 	// empty string -> "#empty#"
 	// space -> "#~#"
 	// Lets hope nobody tries to send a string with #~# inside
-	if (s=="")
+	if (s.empty())
 	{
 		(*m_stream) << "#empty# ";
 	}
 	else
 	{
-		int pos = s.find(' ');
+		std::string cpy(s);
+		int pos = cpy.find(' ');
 		while (pos != std::string::npos)
 		{
-			s.replace(pos,1,"#~#");
-			pos = s.find(' ',pos+1);
+			cpy.replace(pos,1,"#~#");
+			pos = cpy.find(' ',pos+1);
 		}
-		(*m_stream) << s << " ";
+		(*m_stream) << cpy << " ";
 	}
 }
 
@@ -44,7 +45,7 @@ void StdStreamConv::fromBuffer(std::string& s)
 	(*m_stream) >> s ;
 	if (s == "#empty#")
 	{
-		s="";
+		s.clear();
 	}
 		
 	int pos = s.find("#~#");

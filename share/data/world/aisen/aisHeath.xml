@@ -1,0 +1,43 @@
+<World>
+	<!-- Aisen, Stille Heide [Feld und Wiesen]; ungefaehr 20 Min, eher offen; Level 5-6 -->
+	<!-- Goblinschlaeger, Goblinraeuber, Goblinjaeger, Goblinhunde, Goblinkrieger, Goblinschamanen? -->
+	<Region id="6" name="aisHeath">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="48" dimy="48" area_percent="0.4" complexity="0.3" granularity="6"  ground="grass1"/>
+		<WorldPosition world_x="0.61" world_y ="0.6"/>
+
+		<ExitDirections north="true" south="false" west="true" east="false" />
+		
+		<Exits>
+			<Exit name="exit_west" destination_region="aisPlains" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="aisStonePlains" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="treePatch_med" priority="1" number="5" probability="1"/>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_bow_l5" number="10" />
+			<SpawnGroup group_name="goblins_l5" number="20" />
+			<SpawnGroup group_name="goblins_dogs_l5" number="15"/>
+			<SpawnGroup group_name="bandits_l6" number="5" />
+			<SpawnGroup group_name="goblins_gobrusch" number="1"/>
+		</SpawnGroups>
+	</Region>
+</World>

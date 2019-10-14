@@ -140,6 +140,12 @@ class ItemEditor : public ContentEditorTab
 		 * \brief unique ID for items
 		 */
 		int m_unique_id;
+
+    /**
+     * \brief The root window to use when accessing the widgets.
+     */
+    CEGUI::Window* m_rootWindow;
+
 };
 
 

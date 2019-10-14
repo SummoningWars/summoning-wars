@@ -1,0 +1,40 @@
+<World>
+	<!-- Aisen, Joringsforst [Wald und Wiesen]; ungefaehr 30 Min, halbwegs offen; Level 7 - 12 -->	
+	<!-- Goblinschlaeger, Goblinraeuber, Goblinjaeger, Goblinhunde, Goblinkrieger, Goblinschamanen, Waldalraunen? -->
+	<Region id="9" name="aisJoringsforest">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="48" dimy="48" area_percent="0.3" complexity="0.5" granularity="6"  ground="wood"/>
+		<WorldPosition world_x="0.65" world_y ="0.53"/>
+		<ExitDirections north="false" south="true" west="true" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="joringsbridge" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_west" destination_region="aisFairyforest" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="trees1" priority="1" number="25" probability="0.8"/>
+			<ObjectGroup object_group="trees2" priority="1" number="25" probability="0.8"/>
+		</ObjectGroups>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="bandits_l10_1" number="25"/>
+			<SpawnGroup group_name="bandits_l10_2" number="15"/>
+		</SpawnGroups>
+	</Region>
+</World>

@@ -1,0 +1,46 @@
+<World>
+	<Region id="2070" name="aisStonePlains">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="48" dimy="48" area_percent="0.5" complexity="0.3" granularity="8"  ground="grass1"/>
+		<WorldPosition world_x="0.61" world_y ="0.59" waypoint="true"/>
+		
+		<ExitDirections north="true" south="true" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="aisDarkClearing" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="aisWideHeath" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_south" destination_region="aisHeath" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="stones1" priority="1" number="30" probability="0.8"/>
+			<ObjectGroup object_group="stones2" priority="1" number="30" probability="0.8"/>
+			<ObjectGroup object_group="stonesLarge1" priority="1" number="10" probability="0.8"/>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_lurdrak" number="1"/>
+			<SpawnGroup group_name="goblins_l6" number="10"/>
+			<SpawnGroup group_name="goblins_l7" number="15"/>
+			<SpawnGroup group_name="goblins_club_l7" number="10"/>
+			<SpawnGroup group_name="bandits_l6" number="10" />
+		</SpawnGroups>
+	</Region>
+</World>

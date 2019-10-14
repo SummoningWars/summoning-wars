@@ -1,0 +1,283 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2013-10-30 15:50+0200\n"
+"Last-Translator: Marcel H <hi84@live.at>\n"
+"Language-Team: German "
+"<http://hosted.weblate.org/projects/sumwars/rob_the_robber/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.8-dev\n"
+
+#: rob_the_robber.xml:2
+msgid "Rob the robber"
+msgstr "Rob der Räuber"
+
+#: rob_the_robber.xml:4
+msgid ""
+"Rob the robber breathed his last and provided a downright windfall while he "
+"was on it."
+msgstr ""
+"Rob der Räuber hat seinen letzten Atemzug getan und dabei noch für einen "
+"regelrechten Geldsegen gesorgt."
+
+#: rob_the_robber.xml:6
+msgid ""
+"Rob the robber is dead and will soon be forgotten. I have his neckband and "
+"I'm on my way to Dwarfenwall to show it to this sergeant Wober. I have no "
+"idea why everyone was so afraid of this guy."
+msgstr ""
+"Rob der Räuber ist tot und wird bald vergessen sein. Ich habe sein Halsband "
+"und bin schon auf dem Weg nach Zwergentrutz, um es diesem Sergeant Wober zu "
+"zeigen. Keine Ahnung, warum die alle solche Angst vor dem Kerl hatten."
+
+#: rob_the_robber.xml:8
+msgid ""
+"Rob the robber supposedly hides in the depth of the Fairywoods. Find him, "
+"dispose of him and take his neckband. At least it spares me the unsavory "
+"task of carrying a head around."
+msgstr ""
+"Rob der Räuber versteckt sich angeblich in den Tiefen des Feenwaldes. Finde "
+"ihn, mach ihn unschädlich und nimm sein Halsband mit. Wenigstens erspart mir "
+"das die unappetitliche Aufgabe, einen Kopf mit mir rumzuschleppen."
+
+#: rob_the_robber.xml:12
+msgid "Sergeant Lutterer"
+msgstr "Sergeant Lutterer"
+
+#: rob_the_robber.xml:13 rob_the_robber.xml:84
+msgid "Wanted poster"
+msgstr "Steckbrief"
+
+#: rob_the_robber.xml:23
+msgid ""
+"I really should pay this guy a visit. 10000 gold pieces are not chickenfeed."
+msgstr ""
+"Ich sollte diesen Kerl wirklich mal besuchen. 10000 Goldstücke sind kein "
+"Pappenstiel."
+
+#: rob_the_robber.xml:24
+msgid "Watch your back."
+msgstr "Passt auf Euren Rücken auf."
+
+#: rob_the_robber.xml:26 rob_the_robber.xml:97
+msgid "Excuse me, sergeant, but I noticed this wanted poster."
+msgstr "Verzeiht, Sergeant, aber mir ist dieser Steckbrief aufgefallen."
+
+#: rob_the_robber.xml:27 rob_the_robber.xml:98
+msgid ""
+"Isn't a bounty of 10000 gold pieces a little bit over the top for one man?"
+msgstr ""
+"Ist ein Kopfgeld von 10000 Goldstücken nicht ein wenig übertrieben für einen "
+"Mann?"
+
+#: rob_the_robber.xml:29 rob_the_robber.xml:100
+msgid "Oh, him."
+msgstr "Ach, der."
+
+#: rob_the_robber.xml:30 rob_the_robber.xml:101
+msgid "The bounty hunters keep their fingers off him."
+msgstr "Von dem lassen alle Kopfgeldjäger die Finger."
+
+#: rob_the_robber.xml:31 rob_the_robber.xml:102
+msgid ""
+"Every time someone wants to have killed him, he winds up dead a short time "
+"later himself."
+msgstr ""
+"Immer, wenn einer ihn umgebracht haben will, ist er kurze Zeit sp�ter selber "
+"tot."
+
+#: rob_the_robber.xml:32 rob_the_robber.xml:103
+msgid "And Rob is plundering and murdering on."
+msgstr "Und Rob plündert und mordet weiter."
+
+#: rob_the_robber.xml:33 rob_the_robber.xml:104
+msgid "It seems he has oodles of luck, that villain."
+msgstr "Hat anscheinend Unmengen an Glück, der Kerl."
+
+#: rob_the_robber.xml:34 rob_the_robber.xml:105
+msgid "Are you interested?"
+msgstr "Seid ihr interessiert?"
+
+#: rob_the_robber.xml:35 rob_the_robber.xml:106
+msgid "Accept the quest?"
+msgstr "Den Quest annehmen?"
+
+#: rob_the_robber.xml:36 rob_the_robber.xml:107
+msgid "Yes"
+msgstr "Ja"
+
+#: rob_the_robber.xml:37 rob_the_robber.xml:108
+msgid "No"
+msgstr "Nein"
+
+#: rob_the_robber.xml:44 rob_the_robber.xml:115
+msgid "Indeed."
+msgstr "Allerdings."
+
+#: rob_the_robber.xml:45 rob_the_robber.xml:116
+msgid "10000 gold pieces are quite interesting for the traveling fund."
+msgstr "10000 Goldstücke für die Reisekasse sind durchaus interessant."
+
+#: rob_the_robber.xml:46 rob_the_robber.xml:117
+msgid "And I'm pretty lucky myself."
+msgstr "Und ich habe selbst auch recht viel Glück."
+
+#: rob_the_robber.xml:48 rob_the_robber.xml:119
+msgid "Then take his necklace."
+msgstr "Dann nehmt ihm sein Halsband ab."
+
+#: rob_the_robber.xml:49 rob_the_robber.xml:120
+msgid "Word is, he treasures it quite a lot."
+msgstr "Daran hängt er angeblich sehr."
+
+#: rob_the_robber.xml:50
+msgid ""
+"If you can take it to sergeant Wober in Dwarfenwall he will believe you that "
+"Rob is dead."
+msgstr ""
+"Wenn ihr es bis zu Sergeant Wober in Zwergentrutz bringen könnt, wird man "
+"euch glauben, dass Rob tot ist."
+
+#: rob_the_robber.xml:51
+msgid ""
+"Right now we suspect him to be in the Fairywoods between here and "
+"Dwarvenwall."
+msgstr "Momentan vermuten wir ihn ihm Feenwald zwischen hier und Zwergentrutz."
+
+#: rob_the_robber.xml:58 rob_the_robber.xml:129
+msgid "Just curious."
+msgstr "Nur neugierig."
+
+#: rob_the_robber.xml:62
+msgid "Rob the Robber killed"
+msgstr "Rob der Räuber ist tot"
+
+#: rob_the_robber.xml:72 rob_the_robber.xml:143
+msgid "Here is the necklace of Rob the robber."
+msgstr "Hier ist das Halsband von Rob, dem Räuber."
+
+#: rob_the_robber.xml:73
+msgid "I'll be damned!"
+msgstr "Ich will verdammt sein!"
+
+#: rob_the_robber.xml:74
+msgid "You really got him?"
+msgstr "Habt Ihr ihn tatsächlich erwischt?"
+
+#: rob_the_robber.xml:75
+msgid ""
+"Better hope that the stories about him rising from his grave are just "
+"fairytales."
+msgstr ""
+"Hofft besser, dass die Geschichten über seine Auferstehungen aus dem Grab "
+"nur Märchen sind."
+
+#: rob_the_robber.xml:76
+msgid "What about my reward?"
+msgstr "Was ist mit meiner Belohnung?"
+
+#: rob_the_robber.xml:77
+msgid "Sergeant Wober in Dwarfenwall has it."
+msgstr "Sergeant Wober in Zwergentrutz hat sie."
+
+#: rob_the_robber.xml:83
+msgid "Sergeant Wober"
+msgstr "Sergeant Wober"
+
+#: rob_the_robber.xml:94
+msgid "Bring me his necklace and I give you the 10000 gold pieces."
+msgstr "Bringt mir sein Halsband und ich gebe Euch die 10000 Goldstücke."
+
+#: rob_the_robber.xml:95
+msgid "Not a second earlier!"
+msgstr "Keine Sekunde früher!"
+
+#: rob_the_robber.xml:121
+msgid "If you can bring it to me I will believe you that Rob is dead."
+msgstr ""
+"Wenn ihr es zu mir bringen könnt, werde ich Euch glauben, dass Rob tot ist."
+
+#: rob_the_robber.xml:122
+msgid ""
+"Right now we suspect him to be in the Fairywoods between here and "
+"Joringsbridge."
+msgstr "Momentan vermuten wir ihn ihm Feenwald zwischen hier und Joringsbrück."
+
+#: rob_the_robber.xml:133
+msgid "Rob the Robber (Reward)"
+msgstr "Rob der Räuber (Belohnung)"
+
+#: rob_the_robber.xml:144
+msgid "By all devils!"
+msgstr "Bei allen Teufeln!"
+
+#: rob_the_robber.xml:145
+msgid "Someone really got him?"
+msgstr "Hat ihn tatsächlich jemand erwischt?"
+
+#: rob_the_robber.xml:146
+msgid "Well, I wish you luck."
+msgstr "Na, ich wünsch euch Glück."
+
+#: rob_the_robber.xml:147
+msgid "His vengeful spirit will supposedly hunt all those who hurt him."
+msgstr ""
+"Angeblich wird sein rachsüchtiger Geist alle verfolgen, die ihn verletzen."
+
+#: rob_the_robber.xml:148
+msgid "But that shall not be my problem."
+msgstr "Aber das soll nicht mein Problem sein."
+
+#: rob_the_robber.xml:149
+msgid "Here are the 10000 gold pieces."
+msgstr "Hier sind die 10000 Goldstücke."
+
+#: rob_the_robber.xml:167
+msgid "aisDarkFairyforest"
+msgstr "Dunkler Feenwald"
+
+#: rob_the_robber.xml:221
+msgid "I will quarter and skin you, before I throw you to the wolves!"
+msgstr ""
+"Ich werde dich vierteilen und Häuten, ehe ich dich den Wölfen zum Fraß "
+"vorwerfe!"
+
+#: rob_the_robber.xml:223 rob_the_robber.xml:228
+msgid "You talk too much!"
+msgstr "Du redest zu viel!"
+
+#: rob_the_robber.xml:226
+msgid ""
+"I will quarter and skin everyone of you, before I throw you to the wolves!"
+msgstr ""
+"Ich werde euch alle vierteilen und Häuten, ehe ich euch den Wölfen zum Fraß "
+"vorwerfe!"
+
+#: rob_the_robber.xml:248 rob_the_robber.xml:250
+msgid "You will die! I will destroy you!!"
+msgstr "Ihr werdet sterben! Ihr werdet alle sterben!"
+
+#: rob_the_robber.xml:270 rob_the_robber.xml:273
+msgid ""
+"My soul will crawl out of it's grave and hunt you to the ends of the world!"
+msgstr ""
+"Meine Seele wird aus dem Grab kriechen und euch bis ans Ende der Welt "
+"verfolgen!"
+
+#: rob_the_robber.xml:281
+msgid "Have fun with that. If you escape hell, that is."
+msgstr "Viel Spass dabei. Wenn du aus der Hölle entkommst."
+
+#, fuzzy
+#~ msgid "rob_the_robber_reward"
+#~ msgstr "Rob der Räuber (Belohnung)"

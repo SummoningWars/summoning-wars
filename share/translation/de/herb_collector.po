@@ -1,0 +1,220 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2010-12-07 \n"
+"Last-Translator: kalimgard <kalimgard@users.sourceforge.net>\n"
+"Language-Team: german <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: herbalist.xml:2
+msgid "Herb collector"
+msgstr "Kräutersammler"
+
+#: herbalist.xml:9
+msgid "And another good deed done. I could get used to this."
+msgstr "Und wieder eine gute Tat mehr. Ich könnte mich fast daran gewöhnen."
+
+#: herbalist.xml:11
+#, fuzzy
+msgid ""
+"The herbalist of Joringsbridge wants to have the berries of 10 bushes. "
+"Berries from "
+msgstr ""
+"Die Kräuterfrau aus Joringsbück will die Beeren von 10 Büschen haben. \".."
+"(10 - herbalist.bushes)..\" Beeren sind schon gesammelt worden."
+
+#: herbalist.xml:15 herbalist.xml:197
+msgid "joringsbridge"
+msgstr "Joringsbrück"
+
+#: herbalist.xml:74
+msgid "Gertlinde Kampfer"
+msgstr "Gertlinde Kampfer"
+
+#: herbalist.xml:75
+msgid "Herb gathering"
+msgstr "Kräutersammeln"
+
+#: herbalist.xml:86
+msgid "Here, old women. Your berries."
+msgstr "Hier, alte Frau. Eure Kräuter."
+
+#: herbalist.xml:87
+msgid "Ah, well done, young one."
+msgstr "Ah, gut gemacht, Jungvolk."
+
+#: herbalist.xml:88
+msgid "Here, let me give you something in return."
+msgstr "Hier, lass dir als Gegenleistung etwas geben."
+
+#: herbalist.xml:91
+msgid "I need more berries, if I am to do something useful with them."
+msgstr ""
+"Ich brauche mehr Beeren, damit ich damit etwas sinnvolles anfangen kann."
+
+#: herbalist.xml:94
+msgid "Do you want to collect some berries after all?"
+msgstr "Wollt ihr doch noch Beeren sammeln?"
+
+#: herbalist.xml:95 herbalist.xml:121
+msgid "Accept Quest?"
+msgstr "Quest annehmen?"
+
+#: herbalist.xml:96 herbalist.xml:122
+msgid "Yes"
+msgstr "Ja"
+
+#: herbalist.xml:97 herbalist.xml:123
+msgid "No"
+msgstr "Nein"
+
+#: herbalist.xml:100
+msgid "Hey there, young one!"
+msgstr "He da, Jungvolk!"
+
+#: herbalist.xml:101
+msgid "I see you are going to the Northern Meadow."
+msgstr "Ich sehe, dass ihr in die Nördlichen Wiesen wollt."
+
+#: herbalist.xml:102
+msgid "That's right."
+msgstr "Das Stimmt."
+
+#: herbalist.xml:104
+msgid "Quite a trick."
+msgstr "Kunststück."
+
+#: herbalist.xml:105
+msgid "We were only walking through the gate."
+msgstr "Immerhin wollten wir nur gerade durch das Tor."
+
+#: herbalist.xml:106
+msgid "Peace."
+msgstr "Frieden."
+
+#: herbalist.xml:108
+msgid ""
+"If you are roaming around there anyway, why don't you collect some berries "
+"for me?"
+msgstr ""
+"Wenn ihr sowieso da umher stiefelt und tut was ihr so eben tut, könntet ihr "
+"mir nicht gleich noch ein paar Beeren sammeln?"
+
+#: herbalist.xml:109
+msgid ""
+"With all those goblins about an old woman can't even set a foot out of the "
+"village."
+msgstr ""
+"Mit den ganzen Goblins kann sich eine alte Frau wie ich ja nicht mal mehr "
+"vor die Tür wagen."
+
+#: herbalist.xml:111
+msgid "Plants are not really my forte..."
+msgstr "Pflanzen sind nicht unbedingt meine Spezialität..."
+
+#: herbalist.xml:112
+msgid "Fiddlesticks!"
+msgstr "Ach papperlapapp!"
+
+#: herbalist.xml:114
+msgid "It's not like I want you to collect something exotic, you know."
+msgstr "Ich will ja nicht, dass ihr was exotisches sammelt."
+
+#: herbalist.xml:115
+msgid "Just rilfberries."
+msgstr "Nur Rilfbeeren."
+
+#: herbalist.xml:116
+msgid "Look for big bushes with fancy red fruits."
+msgstr "Das sind große Büsche mit auffälligen roten Früchten."
+
+#: herbalist.xml:117
+msgid "You will find them for sure."
+msgstr "Die findet ihr bestimmt."
+
+#: herbalist.xml:118
+msgid "I need the berries of at least ten bushes."
+msgstr ""
+"Damit es sich lohnt müsstet ihr mir die Beeren von wenigstens zehn Büschen "
+"bringen."
+
+#: herbalist.xml:119
+msgid "But only the red berries."
+msgstr "Aber nur die roten Beeren."
+
+#: herbalist.xml:120
+msgid "The rest is of no use at all."
+msgstr "Der Rest ist völlig uninteressant."
+
+#: herbalist.xml:131
+msgid "Very well, if I find some, I'll bring them."
+msgstr "Na schön, wenn ich welche finde, bringe ich sie mit."
+
+#: herbalist.xml:133 herbalist.xml:156
+msgid "Very well, if we find some, we'll bring them."
+msgstr "Na schön, wenn wir welche finden, bringen wir sie mit."
+
+#: herbalist.xml:135 herbalist.xml:158
+msgid "Thanks, sweety."
+msgstr "Danke  Herzchen."
+
+#: herbalist.xml:143
+msgid "Forget it, herb woman."
+msgstr "Vergiss es, Kräuterhexe."
+
+#: herbalist.xml:144
+msgid ""
+"I'm not going to crawl through the meadows just to search for some stupid "
+"bushes."
+msgstr ""
+"Ich werde bestimmt nicht durch die Wiesen kriechen und nach irgendwelchen "
+"Büschen suchen."
+
+#: herbalist.xml:145
+msgid "Have it your way."
+msgstr "Wie du meinst."
+
+#: herbalist.xml:146
+msgid "But if you change your mind, I'm not running away from here."
+msgstr ""
+"Aber wenn du es dir noch mal anders überlegst, ich werde hier nicht "
+"weglaufen."
+
+#: herbalist.xml:154
+msgid "Very well, if I find some, I'll bring them along."
+msgstr "Na schön, wenn ich welche finde, bringe ich sie mit."
+
+#: herbalist.xml:165
+msgid "Still no."
+msgstr "Nein, immer noch nicht."
+
+#: herbalist.xml:166
+msgid "Tell me when you're not too mighty for simple work anymore, sweety."
+msgstr ""
+"Sag Bescheid, wenn du nicht mehr zu mächtig für einfache Arbeiten bist, "
+"Herzchen."
+
+#: herbalist.xml:167
+msgid "Watch your tongue, hag!"
+msgstr "Hütet Eure Zunge, Weib!"
+
+#: herbalist.xml:214
+msgid "aisNorthMeadow"
+msgstr "Nördliche Wiese"
+
+#: herbalist.xml:223
+msgid "Collect"
+msgstr ""
+
+#~ msgid "Collect\"..bushes_left..\" more herbs."
+#~ msgstr "Sammle noch\"..bushes_left..\" Beeren."

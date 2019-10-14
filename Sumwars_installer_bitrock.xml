@@ -1,11 +1,11 @@
 <project>
     <shortName>Sumwars</shortName>
     <fullName>Summoning Wars</fullName>
-    <version>0.5.5</version>
+    <version>0.5.7</version>
     <readmeFile>README</readmeFile>
-    <licenseFile>gpl-3.0.txt</licenseFile>
-    <logoImage>resources/gui/imagesets/startscreen.png</logoImage>
-    <splashImage>resources/gui/imagesets/startscreen.png</splashImage>
+    <licenseFile>LICENSE</licenseFile>
+    <logoImage>share/resources/gui/imagesets/startscreen.png</logoImage>
+    <splashImage>share/resources/gui/imagesets/startscreen.png</splashImage>
     <allowLanguageSelection>1</allowLanguageSelection>
     <componentList>
         <component>
@@ -88,6 +88,104 @@
                     <destination>${installdir}</destination>
                     <name>programfiles</name>
                     <platforms>all</platforms>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>inst/share</origin>
+                        </distributionDirectory>
+                        <distributionFile>
+                            <origin>inst/alut.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/AUTHORS</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/boost_filesystem-vc110-mt-1_52.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/boost_system-vc110-mt-1_52.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/boost_thread-vc110-mt-1_52.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/CEGUIBase-0.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/CEGUIOgreRenderer-0.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/cg.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/COPYING</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/expat.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/freetype.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/libcharset1.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/libgettextlib.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/libgettextpo.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/libgettextsrc.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/libiconv2.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/libintl3.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/lua.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/OgreMain.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/OgreRTShaderSystem.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/OIS.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/pcre.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/Plugin_CgProgramManager.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/Plugin_OctreeSceneManager.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/Plugin_OctreeZone.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/Plugin_ParticleFX.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/README</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/RenderSystem_Direct3D9.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/RenderSystem_GL.dll</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/sumwars.exe</origin>
+                        </distributionFile>
+                        <distributionFile>
+                            <origin>inst/zlib.dll</origin>
+                        </distributionFile>
+                    </distributionFileList>
                     <shortcutList>
                         <shortcut>
                             <comment>Uninstall</comment>
@@ -116,134 +214,6 @@
                     <destination>${installdir}</destination>
                     <name>programfileswindows</name>
                     <platforms>all</platforms>
-                    <distributionFileList>
-                        <distributionDirectory>
-                            <origin>resources</origin>
-                        </distributionDirectory>
-                        <distributionDirectory>
-                            <origin>data</origin>
-                        </distributionDirectory>
-                        <distributionDirectory>
-                            <origin>translation</origin>
-                        </distributionDirectory>
-                        <distributionFile>
-                            <origin>build/Release/sumwars.exe</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>resources.cfg</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>authors.txt</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>README</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>AUTHORS</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>COPYING</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>gpl-3.0.txt</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>INSTALL</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/sumwars.exe</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/alut.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/CEGUIBase.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/CEGUIExpatParser.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/CEGUIFalagardWRBase.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/CEGUILuaScriptModule.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/CEGUIOgreRenderer.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/CEGUISILLYImageCodec.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/cg.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/libgettextlib.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/libgettextpo.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/libgettextsrc.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/libiconv2.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/libintl3.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/lua51.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/OgreMain.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/OgrePaging.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/OgreRTShaderSystem.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/OgreTerrain.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/OIS.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/physfs.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/Plugin_CgProgramManager.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/Plugin_OctreeSceneManager.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/Plugin_OctreeZone.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/Plugin_ParticleFX.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/Plugin_PCZSceneManager.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/plugins_win.cfg</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/PocoFoundation.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/RenderSystem_Direct3D9.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/RenderSystem_GL.dll</origin>
-                        </distributionFile>
-                        <distributionFile>
-                            <origin>build/Release/alut.dll</origin>
-                        </distributionFile>
-                    </distributionFileList>
                 </folder>
                 <folder>
                     <description>Program Files</description>
@@ -290,6 +260,22 @@
             </startMenuShortcutList>
         </component>
     </componentList>
+    <preInstallationActionList>
+        <renameFile>
+            <destination>${env(USERPROFILE)}/.sumwars/plugins.old</destination>
+            <origin>${env(USERPROFILE)}/.sumwars/plugins.cfg</origin>
+            <ruleList>
+                <fileExists path="${env(USERPROFILE)}/.sumwars/plugins.cfg"/>
+            </ruleList>
+        </renameFile>
+        <renameFile>
+            <destination>${env(USERPROFILE)}/.sumwars/resources.old</destination>
+            <origin>${env(USERPROFILE)}/.sumwars/resources.cfg</origin>
+            <ruleList>
+                <fileExists path="${env(USERPROFILE)}/.sumwars/resources.cfg"/>
+            </ruleList>
+        </renameFile>
+    </preInstallationActionList>
     <readyToInstallActionList>
         <componentSelection>
             <deselect>oalruntime</deselect>
@@ -308,7 +294,7 @@
     </readyToInstallActionList>
     <preUninstallationActionList>
         <showQuestion text="Do you want the uninstallation to also remove your saved games?" variable="remove_mysql">
-            <default>yes</default>
+            <default>no</default>
         </showQuestion>
         <deleteFile>
             <path>${env(USERPROFILE)}/.sumwars</path>
@@ -317,6 +303,7 @@
             </ruleList>
         </deleteFile>
     </preUninstallationActionList>
+    <compressionAlgorithm>lzma</compressionAlgorithm>
     <enableRollback>1</enableRollback>
     <enableTimestamp>1</enableTimestamp>
     <saveRelativePaths>1</saveRelativePaths>
@@ -337,4 +324,3 @@
         </directoryParameter>
     </parameterList>
 </project>
-

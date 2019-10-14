@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2013-11-05 01:12+0200\n"
+"Last-Translator: Rubén Viguera <vyproyects@gmail.com>\n"
+"Language-Team: Spanish "
+"<http://hosted.weblate.org/projects/sumwars/the_poolmonster/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.8-dev\n"
+
+#: scene7.xml:53
+msgid "*Roar!*"
+msgstr "*¡Roar!*"
+
+#: scene7.xml:29
+msgid "..."
+msgstr "..."
+
+#: scene7.xml:23
+msgid "... Der Anblick hat mich nur an mein Leben"
+msgstr ""
+
+#: scene7.xml:25
+msgid "... only dimly"
+msgstr "...sólo débilmente"
+
+#: scene7.xml:28
+msgid "... only externally."
+msgstr "... sólo externamente."
+
+#: scene7.xml:22
+msgid "Are you getting sentimental now?"
+msgstr "¿Te estás poniendo sentimental ahora?"
+
+#: scene7.xml:33
+msgid "Do you really think that it"
+msgstr ""
+
+#: scene7.xml:24
+msgid "Du kannst dich an dein Leben vor der"
+msgstr ""
+
+#: scene7.xml:34
+msgid "Even the great"
+msgstr "Even el grande"
+
+#: scene7.xml:35
+msgid "I hope you have"
+msgstr "Espero que tengas"
+
+#: scene7.xml:27
+msgid "I know enough people,"
+msgstr "Conozco a suficiente gente,"
+
+#: scene7.xml:41
+msgid "Just a moment please."
+msgstr "Un momento, por favor."
+
+#: scene7.xml:43
+msgid "Looks like a..."
+msgstr "Se parece a..."
+
+#: scene7.xml:11
+msgid "Quest description"
+msgstr "Descripción de la misión"
+
+#: scene7.xml:9
+msgid "Quest finished"
+msgstr "Misión finalizada"
+
+#: scene7.xml:26
+msgid "Sometimes I wish,"
+msgstr "A veces me gustaría,"
+
+#: scene7.xml:15
+msgid "Soren Windclaw"
+msgstr ""
+
+#: scene7.xml:2
+msgid "The Poolmonster"
+msgstr ""
+
+#: scene7.xml:40
+msgid "We have to go now."
+msgstr "Tenemos que irnos ahora."
+
+#: scene7.xml:42
+msgid "Whats that on the water over there?"
+msgstr "¿Qué es eso de ahí en el agua?"
+
+#: scene7.xml:36
+msgid "Why has it really"
+msgstr ""
+
+#: scene7.xml:21
+msgid "Wow, thats beautiful."
+msgstr "Wow, eso es hermoso."
+
+#: scene7.xml:59
+#, fuzzy
+msgid "greyCurseLake"
+msgstr "greyCurseLake"

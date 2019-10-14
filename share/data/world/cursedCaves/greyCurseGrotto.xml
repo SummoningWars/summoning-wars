@@ -1,0 +1,44 @@
+<World>
+	<!-- Graue Himmelsleiter, Verfluchte Grotte; [Hoehle]; ca. 25 Min; Level 17 - 19 -->
+	<!-- Goblins, Goblinhunde -->
+	<Region id="22" name="greyCurseGrotto">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="44" dimy="44" area_percent="0.4" complexity="0.4" granularity="6"  ground="cave_ground"/>
+		<WorldPosition world_x="0.65" world_y ="0.41"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+			<Track source="ambience_1.ogg" />
+			<Track source="ambience_2.ogg" />
+		</Music>
+		
+		<ExitDirections north="true" south="false" west="true" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="greyCurseCave" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="greyCurseGrotDep" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_west" destination_region="greyWolfcave" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_l14_1" number="20" />
+			<SpawnGroup group_name="goblins_l13_2" number="10" />
+			<SpawnGroup group_name="goblins_l13_3" number="10" />
+			<SpawnGroup group_name="wolves" number="5" />
+		</SpawnGroups>
+	</Region>
+</World>

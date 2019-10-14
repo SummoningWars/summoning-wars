@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ITEMLOADER_H
-#define ITEMLOADER_H
+#ifndef __SUMWARS_CORE_ITEMLOADER_H__
+#define __SUMWARS_CORE_ITEMLOADER_H__
 
 #include "item.h"
 #include "itemfactory.h"
@@ -68,5 +68,5 @@ class ItemLoader
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_ITEMLOADER_H__
 

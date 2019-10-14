@@ -1,0 +1,36 @@
+<!-- Pike -->
+<Item type="weapon" subtype="pike_pol" name="pike" size="big">
+	<Image image="axe2H.png" />
+	<Mesh file="pike_pol.mesh" />
+	<Attribute
+		level_requirement="8"
+		character_requirement="warrior"
+		min_enchant="35"
+		max_enchant="70"
+		modchance_strength_mod="0.1"
+		modchance_dexterity_mod="0.1"
+		modchance_magic_power_mod="0.05"
+		modchance_damage_phys_mod="0.15"
+		modchance_damage_fire_mod="0.10"
+		modchance_damage_ice_mod="0.10"
+		modchance_damage_air_mod="0.10"
+		modchance_damage_mult_phys_mod="0.1"
+		modchance_attack_mod="0.1"
+		modchance_power_mod="0.1"
+	/>
+	<EquipEffect />
+	<WeaponAttribute
+		weapon_type="pole"
+		damage_min_physical="22"
+		damage_max_physical="61"
+		damage_attack="28"
+		damage_power="74"
+		attack_range="3.2"
+		two_handed="yes"
+		dattack_speed="-1000"
+	/>
+	<DropChance
+		level="8"
+		probability="0.0"
+	/>
+</Item>

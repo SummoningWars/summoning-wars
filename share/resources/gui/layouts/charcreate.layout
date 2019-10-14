@@ -1,0 +1,43 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="CharCreate" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0.0,0},{1,0},{1.0,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Window Type="SWB/StaticText" Name="CharNameLabel" >
+            <Property Name="Text" Value="Name" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.03,0},{0.04,0},{0.14,0},{0.096,0}}" />
+        </Window>
+        <Window Type="SWB/Editbox" Name="NameBox" >
+            <Property Name="MaxTextLength" Value="1073741823" />
+            <Property Name="UnifiedAreaRect" Value="{{0.16,0},{0.044,0},{0.31,0},{0.098,0}}" />
+            <Property Name="TextParsingEnabled" Value="False" />
+        </Window>
+        <Window Type="SWB/StaticText" Name="CharClassLabel" >
+            <Property Name="Text" Value="Class" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.111,0},{0.14,0},{0.25,0},{0.194,0}}" />
+        </Window>
+        <Window Type="SWB/Listbox" Name="ClassList" >
+            <Property Name="Text" Value="Options" />
+            <Property Name="UnifiedAreaRect" Value="{{0.054,0},{0.2,0},{0.3,0},{0.33,0}}" />
+        </Window>
+        <Window Type="SWB/Listbox" Name="LookList" >
+            <Property Name="Text" Value="Options" />
+            <Property Name="UnifiedAreaRect" Value="{{0.054,0},{0.37,0},{0.3,0},{0.50,0}}" />
+        </Window>
+        <Window Type="SWB/Button" Name="AbortButton" >
+            <Property Name="Text" Value="Cancel" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0755,0},{0.63,0},{0.265,0},{0.69,0}}" />
+        </Window>
+        <Window Type="SWB/Button" Name="CharCreateButton" >
+            <Property Name="Text" Value="Create" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0755,0},{0.53,0},{0.265,0},{0.59,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

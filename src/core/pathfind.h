@@ -14,8 +14,8 @@
  */
 
 
-#ifndef PATH2_H
-#define PATH2_H
+#ifndef __SUMWARS_CORE_PATHFIND_H__
+#define __SUMWARS_CORE_PATHFIND_H__
 
 #include "matrix2d.h"
 #include "geometry.h"
@@ -291,5 +291,5 @@ class SearchField
 		
 };
 
-#endif
+#endif // __SUMWARS_CORE_PATHFIND_H__
 

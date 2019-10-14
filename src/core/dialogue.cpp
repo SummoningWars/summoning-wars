@@ -37,18 +37,18 @@ void TopicList::addTopic(std::string topic, Event* speech)
 {
 	if (m_topics.count(topic) != 0)
 	{
-			WARNING("duplicate topic %s",topic.c_str());
+			WARNING("duplicate topic %s", topic.c_str());
 			delete m_topics[topic];
 			m_topics.erase(topic);
 	}
 	
-	m_topics.insert(std::make_pair(topic,speech));
+	m_topics.insert(std::make_pair(topic, speech));
 
 }
 
 void TopicList::addStartTopic(TranslatableString text, std::string topic)
 {
-	m_start_topics.push_back(std::make_pair(text,topic));
+	m_start_topics.push_back(std::make_pair(text, topic));
 }
 
 Event* TopicList::getSpeakTopic(std::string topic)
@@ -57,11 +57,12 @@ Event* TopicList::getSpeakTopic(std::string topic)
 
 	it = m_topics.find(topic);
 	if (it == m_topics.end())
+  {
 		return 0;
+  }
 
 	return it->second;
 }
-
 
 
 void NPCTrade::TradeObject::operator=(TradeObject& other)
@@ -75,68 +76,73 @@ void NPCTrade::TradeObject::operator=(TradeObject& other)
 }
 
 NPCTrade::NPCTrade()
-	:	m_trade_objects()
+	:	m_trade_objects(),
+		m_cost_multiplier(1.0),
+		m_pay_multiplier(1.0),
+		m_refresh_time(36000000) // 10 min
 {
-	m_cost_multiplier= 1.0;
-	m_refresh_time = 36000000; // 10 min
 	m_refresh_timer.start();
 }
 
 bool NPCTrade::checkRefresh(Equipement* &equ)
 {
 	// update, wenn das Inventar noch garnicht existiert oder zu alt ist
-	if (equ ==0 || m_refresh_timer.getTime() > m_refresh_time)
+	if (equ == 0 || m_refresh_timer.getTime() > m_refresh_time)
 	{
 		if (equ == 0)
 		{
-			equ = new Equipement(100,100,100);
+			equ = new Equipement(100, 100, 100);
 		}
 		equ->clear();
 
-		Item* itm=0;
+		Item* itm = 0;
 		Item::Type type;
 		std::list<TradeObject>::iterator it;
 		// Schleife ueber alle handelbaren Objekte
 		for (it = m_trade_objects.begin(); it != m_trade_objects.end(); ++it)
 		{
 			// nicht magische Objekte erzeugen
-			for (int i=0; i< it->m_number; ++i)
+			for (int i = 0; i < it->m_number; ++i)
 			{
 				if (Random::random() > it->m_probability)
+        {
 					continue;
-				
+        }
+
 				type = ItemFactory::getBaseType(it->m_subtype);
-				itm = ItemFactory::createItem(type,it->m_subtype);
+				itm = ItemFactory::createItem(type, it->m_subtype);
 				if (itm != 0)
 				{
 					itm->m_price = (int) (itm->m_price * m_cost_multiplier);
 	
 					// einfuegen und erfolg testen
-					if (equ->insertItem(itm,false,false) == Equipement::NONE)
+					if (equ->insertItem(itm, false, false) == Equipement::NONE)
 					{
 						delete itm;
 					}
 				}
 				else
 				{
-					ERRORMSG("could not create Item %s",it->m_subtype.c_str());
+					ERRORMSG("could not create Item %s", it->m_subtype.c_str());
 				}
 			}
 
 			// magische Objekte erzeugen
 			float magic;
-			for (int i=0; i< it->m_number_magical; ++i)
+			for (int i = 0; i < it->m_number_magical; ++i)
 			{
 				if (Random::random() > it->m_probability)
+        {
 					continue;
-				
+        }
+
 				type = ItemFactory::getBaseType(it->m_subtype);
 				magic = Random::randrangef(it->m_min_enchant, it->m_max_enchant);
-				itm = ItemFactory::createItem(type,it->m_subtype,0,magic,Item::MAGICAL);
+				itm = ItemFactory::createItem(type, it->m_subtype, 0, magic, Item::MAGICAL);
 				itm->m_price = (int) (itm->m_price * m_cost_multiplier);
 
 				// einfuegen und erfolg testen
-				if (equ->insertItem(itm,false,false) == Equipement::NONE)
+				if (equ->insertItem(itm, false, false) == Equipement::NONE)
 				{
 					delete itm;
 				}
@@ -149,10 +155,9 @@ bool NPCTrade::checkRefresh(Equipement* &equ)
 }
 
 
-
-Dialogue::Dialogue(Region* region, std::string topic_base,int id)
+Dialogue::Dialogue(Region* region, std::string topic_base, int id)
 {
-	if (id ==0)
+	if (id == 0)
 	{
 		m_id = World::getWorld()->getValidId();
 	}
@@ -168,8 +173,9 @@ Dialogue::Dialogue(Region* region, std::string topic_base,int id)
 	m_started = true;
 	m_trade = false;
 	m_nr_players =0;
+	m_event_mask = 0;
 	
-	for (int i=0; i<4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		m_active_speaker[i] =0;
 	}
@@ -186,7 +192,7 @@ Dialogue::~Dialogue()
 	for (it = m_speaker.begin(); it != m_speaker.end(); ++it)
 	{
 		wo = m_region->getObject(it->second);
-		if (wo !=0 && wo->isCreature())
+		if (wo != 0 && wo->isCreature())
 		{
 			cr = static_cast<Creature*>(wo);
 			cr ->clearSpeakText();
@@ -212,13 +218,15 @@ void Dialogue::cleanup()
 
 void Dialogue::addSpeaker(int id, std::string refname, bool force)
 {
-	if (id ==0)
+	if (id == 0)
+  {
 		return;
-	
+  }
+
 	// Pruefen, ob die Kreatur existiert
 	WorldObject* wo =0;
 	wo = m_region->getObject(id);
-	if (wo ==0 || !wo->isCreature())
+	if (wo == 0 || !wo->isCreature())
 	{
 		ERRORMSG("cant add %i: %s to dialogue: not a creature", id, refname.c_str());
 		return;
@@ -242,7 +250,10 @@ void Dialogue::addSpeaker(int id, std::string refname, bool force)
 			}
 			else
 			{
-				cr->getDialogue()->removeSpeaker(cr->getId());
+				if (cr->getDialogue() != 0)
+				{
+					cr->getDialogue()->removeSpeaker(cr->getId());
+				}
 				cr->setDialogue(m_id);
 			}
 		}
@@ -674,7 +685,7 @@ Dialogue::Position Dialogue::calcSpeakerPosition(int id)
 {
 	WorldObject* wo =0;
 	wo = m_region->getObject(id);
-	if (wo ==0 || !wo->isCreature())
+	if (wo == 0 || !wo->isCreature())
 	{
 		ERRORMSG("Speaker %i is not a creature", id);
 		return Dialogue::UNKNOWN;
@@ -692,13 +703,24 @@ Dialogue::Position Dialogue::calcSpeakerPosition(int id)
 
 void Dialogue::setSpeakerPosition(int id, Position pos)
 {
-	if (pos<NONE || pos>AUTOMATIC || pos == UNKNOWN || m_speaker_state.count(id) == 0)
+  // Check for invalid input.
+	if (pos < NONE || pos > AUTOMATIC || pos == UNKNOWN || m_speaker_state.count(id) == 0)
+  {
 		return;
+  }
 	
-	m_event_mask =1;
+	m_event_mask = 1;
 	
 	if (pos == AUTOMATIC)
+  {
 		pos = calcSpeakerPosition(id);
+
+    // After calculation, re-check the output for validity, as it may be set to invalid by the called function.
+    if (pos <= NONE || pos == UNKNOWN)
+    {
+      return;
+    }
+  }
 	
 	// Spieler entfernen
 	// bisherige Position ermitteln:
@@ -763,7 +785,7 @@ void Dialogue::update(float time)
 
 		// Fragen bleiben generell stehen
 		// Handel ebenso
-		if (!m_started && m_question != 0 && m_question->m_active || m_trade)
+		if ((!m_started && m_question != 0 && m_question->m_active) || m_trade)
 		{
 			stime =0;
 			break;
@@ -781,19 +803,22 @@ void Dialogue::update(float time)
 			if (!m_active)
 				return;
 			
-			m_player_skips.clear();
+			// initialize with IDs of players who want to skip all
+			m_player_skips = m_player_all_skips;
 			
 			// Aenderung eingetreten
 			WorldObject* wo=0;
 			Creature* cr=0;
+			
 			if (!m_started)
 			{
+				// Clear the last spoken text
 				stime -= cst->m_time;
 
-				// aktuellen Sprecher ermitteln
+				// get the speaker
 				wo = m_region->getObject( getSpeaker(m_speech.front().first));
 
-				// fuer diesen Specher aktuellen Text zuruecksetzen
+				// clear the text
 				if (wo !=0 && wo->isCreature())
 				{
 					cr = static_cast<Creature*>(wo);
@@ -804,9 +829,9 @@ void Dialogue::update(float time)
 			}
 			m_started = false;
 
-			// Naechsten zulaessigen Text suchen
+			// search for the next valid text
 			cst =0;
-			int id;
+			int id = 0;
 			Position pos=UNKNOWN;
 			while (cst==0 && !m_speech.empty())
 			{
@@ -928,8 +953,13 @@ void Dialogue::update(float time)
 					continue;
 				}
 				
-				
-
+				// skip the current text, if required
+				if (checkSkipCurrentText())
+				{
+					m_speech.pop_front();
+					cst =0;
+					continue;
+				}
 				
 				// Falls die Position des Spielers im Dialog noch unbekannt: Position berechnen
 				pos = m_speaker_state[id].m_position;
@@ -942,12 +972,13 @@ void Dialogue::update(float time)
 				{
 					continue;
 				}
-				
-				
 			}
 
 			if (cst ==0 || m_speech.empty())
 			{
+				// no further text found
+				// if there is a question remaining, activate it, 
+				// else, end dialogue
 				if (m_question != 0)
 				{
 					if (m_question->m_active == false)
@@ -1169,23 +1200,40 @@ void Dialogue::fromString(CharConv* cv)
 	}
 }
 
-void Dialogue::skipText(int id)
+void Dialogue::skipText(int id, bool skipAll)
 {
 	m_player_skips.insert(id);
+	if (skipAll)
+	{
+		m_player_all_skips.insert(id);
+	}
+	
+	checkSkipCurrentText();
+}
+
+
+bool Dialogue::checkSkipCurrentText()
+{
 	DEBUGX("players %i skips %i",m_nr_players, m_player_skips.size());
 	if ((int) m_player_skips.size() == m_nr_players)
 	{
-		// aktuellen Text ueberspringen
+		// skip current text
 		CreatureSpeakText* cst;
 		if (!m_speech.empty())
 		{
 			cst = &(m_speech.front().second);
-			// Fragen und Handel kann nicht so uebersprungen werden
-			if (m_question !=0 && m_question->m_active || m_trade)
-				return;
+			// do not skip questions or trade
+			if ((m_question !=0 && m_question->m_active) || m_trade)
+			{
+				// also reset the skiplist
+				m_player_all_skips.clear();
+				m_player_skips.clear();
+				return false;
+			}
 			
 			cst->m_time =0;
+			return true;
 		}
 	}
+	return false;
 }
-

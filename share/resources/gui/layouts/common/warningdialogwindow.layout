@@ -1,0 +1,24 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="WarningDialogWindow" >
+        <Property Name="UnifiedAreaRect" Value="{{0.3,0},{0.25,0},{0.7,0},{0.60,0}}" />
+        
+        <Property Name="Text" Value="Warning" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="True" />
+        <Property Name="RollUpEnabled" Value="False" />
+        <Property Name="FrameEnabled" Value="True" />
+
+        <Window Type="SWB/Button" Name="WarningDialogConfirmButton" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.3,0},{0.82,0},{0.7,0},{1.0,0}}" />
+        </Window>
+        
+        <Window Type="SWB/StaticText" Name="WarningDialogLabel" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.1,0},{0.05,0},{0.9,0},{0.8,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+    </Window>
+</GUILayout>

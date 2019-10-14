@@ -16,7 +16,12 @@
 #ifndef CONTENTTAB_H
 #define CONTENTTAB_H
 
+#ifdef CEGUI_07
 #include <CEGUI/CEGUIString.h>
+#else
+#include "CEGUI/String.h"
+#endif
+
 
 class ContentTab
 {

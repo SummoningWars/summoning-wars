@@ -240,7 +240,6 @@ bool TemplateLoader::loadObjectGroup(TiXmlNode* node)
 			if (child->Type()==TiXmlNode::TINYXML_ELEMENT)
 			{
 				attr.parseElement(child->ToElement());
-				std::string env,defstr,objname;
 				
 				if (!strcmp(child->Value(), "Shape"))
 				{

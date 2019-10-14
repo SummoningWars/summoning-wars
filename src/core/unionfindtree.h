@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef UNIONFINDTREE_H
-#define UNIONFINDTREE_H
+#ifndef __SUMWARS_CORE_UNIONFINDTREE_H__
+#define __SUMWARS_CORE_UNIONFINDTREE_H__
 
 #include <list>
 #include <vector>
@@ -111,5 +111,5 @@ class UnionFindTree
 
 
 
-#endif
+#endif // __SUMWARS_CORE_UNIONFINDTREE_H__
 

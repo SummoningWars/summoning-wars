@@ -1,0 +1,29 @@
+<World>
+	<!-- Graue Himmelsleiter, Verfluchte Hoehle, Spalt; Szene 6 -->
+	<Region id="29" name="greyCurseCaveFis">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="16" dimy="20" region_template="cursedFissure"  ground="cave_ground"/>
+		<WorldPosition world_x="0.72" world_y ="0.42"/>
+		
+		<Music>
+			<Track source="treacherous_paths.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="true" west="false" east="false" />
+		
+		<ReviveLocation  location="locParty" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="greyCurseCaveDep" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+	</Region>
+</World>

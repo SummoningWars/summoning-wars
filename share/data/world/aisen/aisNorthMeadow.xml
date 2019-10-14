@@ -1,0 +1,52 @@
+<World>
+	<!-- Aisen, Noerdliche Wiese [Feld und Wiesen]; ungefaehr 20 Min, eher offen; Level 7 - 12; Sidequests aus Joringsbrueck -->
+	<!-- Der Bauernhof(Template) -->
+	<!-- Kraeuterbuesche -->
+	<!-- Goblinschlaeger, Goblinraeuber, Goblinjaeger, Goblinhunde, Goblinkrieger, Goblinschamanen -->
+	<Region id="8" name="aisNorthMeadow">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="tread_lightly.ogg" />
+		</Music>
+		
+		<Settings dimx="48" dimy="48" area_percent="0.4" complexity="0.3" granularity="6"  ground="grass1"/>
+		<WorldPosition world_x="0.58" world_y ="0.53"/>
+
+		<ExitDirections north="false" south="false" west="false" east="true" />
+		
+		<Exits>
+			<Exit name="exit_east" destination_region="joringsbridge" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="bronsFarm" object_group="bronsFarm" priority="4"/>
+		</NamedObjectGroups>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="berryBush" priority="4" number="11" probability="1.0" decoration="false"/>
+			<ObjectGroup object_group="berryBush" priority="3" number="10" probability="0.7" decoration="false"/>
+			<ObjectGroup object_group="treePatch_med" priority="1" number="4" probability="0.3"/>
+		</ObjectGroups>
+		
+		<Event trigger="create_template">
+			<Effect>
+				if(trigger.templname=="berryBush")then
+					createMonsterGroup("goblins_younglings",trigger.locCenter,4);
+				end;
+			</Effect>
+		</Event>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_l8_2" number="15"/>
+		</SpawnGroups>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+	</Region>
+</World>

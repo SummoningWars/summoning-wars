@@ -27,20 +27,26 @@ INCLUDE(DetermineVersion)
 INCLUDE(FindPackageHandleAdvancedArgs)
 INCLUDE(HandleLibraryTypes)
 
-FIND_PATH(CEGUIOGRE_INCLUDE_DIRS CEGUIOgreRenderer.h
-  PATHS $ENV{CEGUIDIR}
-  PATH_SUFFIXES include/RendererModules/Ogre cegui/include/RendererModules/Ogre include/CEGUI/RendererModules/Ogre CEGUI.framework/Headers
+FIND_PATH(CEGUIOGRE_INCLUDE_DIRS
+  NAMES CEGUIOgreRenderer.h Renderer.h
+  PATHS $ENV{CEGUIDIR} /usr /usr/local 
+  PATH_SUFFIXES include/RendererModules/Ogre 
+    cegui-0/CEGUI/RendererModules/Ogre 
+    cegui/include/RendererModules/Ogre 
+    include/CEGUI/RendererModules/Ogre 
+    CEGUI.framework/Headers 
+    cegui/include/cegui/RendererModules/Ogre 
 )
 FIND_LIBRARY(CEGUIOGRE_LIBRARY_OPTIMIZED
-  NAMES CEGUIOgreRenderer CEGUI
+  NAMES CEGUIOgreRenderer CEGUIOgreRenderer-0 CEGUI
   PATHS $ENV{CEGUIDIR}
-  PATH_SUFFIXES lib bin
+  PATH_SUFFIXES lib lib64 bin
 )
 FIND_LIBRARY(CEGUIOGRE_LIBRARY_DEBUG
   NAMES
-  CEGUIOgreRendererd CEGUIOgreRenderer_d CEGUIOgreRendererD CEGUIOgreRenderer_D
+  CEGUIOgreRendererd CEGUIOgreRenderer_d CEGUIOgreRendererD CEGUIOgreRenderer_D CEGUIOgreRenderer-0_d
   PATHS $ENV{CEGUIDIR}
-  PATH_SUFFIXES lib bin
+  PATH_SUFFIXES lib lib64 bin
 )
 
 # Collect optimized and debug libraries

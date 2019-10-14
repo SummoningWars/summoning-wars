@@ -1,0 +1,70 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="TradeWindow" >
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="Alpha" value="1" />
+        <Property name="Text" value="Trade" />
+        <Property name="TitlebarFont" value="SWB-L" />
+        <Property name="CloseButtonAlignment" value="1" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+
+        <!-- dummy holder to allow easier later updates -->
+        <!-- Note: additional sub-items will be added to this widget from code (if it's found) -->
+        <Window type="SWB/StaticImage" name="tradewindow_aux" >
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+        
+        
+            <Window type="SWB/ImageButton" name="TradeBigPrevButton" >
+                <Property name="HoverImage" value="TradeWindow/BtnUpHover" />
+                <Property name="NormalImage" value="TradeWindow/BtnUp" />
+                <Property name="PushedImage" value="TradeWindow/BtnUp" />
+                <Property name="DisabledImage" value="TradeWindow/BtnUp" />
+                <Property name="Area" value="{{0.95,0},{0.25823,0},{1.0,0},{0.30823,0}}" />
+            </Window>
+            <Window type="SWB/ImageButton" name="TradeBigNextButton" >
+                <Property name="HoverImage" value="TradeWindow/BtnDownHover" />
+                <Property name="NormalImage" value="TradeWindow/BtnDown" />
+                <Property name="PushedImage" value="TradeWindow/BtnDown" />
+                <Property name="DisabledImage" value="TradeWindow/BtnDown" />
+                <Property name="Area" value="{{0.95,0},{0.341058,0},{1.0,0},{0.391058,0}}" />
+            </Window>
+            <Window type="SWB/ImageButton" name="TradeMediumPrevButton" >
+                <Property name="HoverImage" value="TradeWindow/BtnUpHover" />
+                <Property name="NormalImage" value="TradeWindow/BtnUp" />
+                <Property name="PushedImage" value="TradeWindow/BtnUp" />
+                <Property name="DisabledImage" value="TradeWindow/BtnUp" />
+                <Property name="Area" value="{{0.95,0},{0.547517,0},{1.0,0},{0.597517,0}}" />
+            </Window>
+            <Window type="SWB/ImageButton" name="TradeMediumNextButton" >
+                <Property name="HoverImage" value="TradeWindow/BtnDownHover" />
+                <Property name="NormalImage" value="TradeWindow/BtnDown" />
+                <Property name="PushedImage" value="TradeWindow/BtnDown" />
+                <Property name="DisabledImage" value="TradeWindow/BtnDown" />
+                <Property name="Area" value="{{0.95,0},{0.627538,0},{1.0,0},{0.677538,0}}" />
+            </Window>
+            <Window type="SWB/ImageButton" name="TradeSmallPrevButton" >
+                <Property name="HoverImage" value="TradeWindow/BtnUpHover" />
+                <Property name="NormalImage" value="TradeWindow/BtnUp" />
+                <Property name="PushedImage" value="TradeWindow/BtnUp" />
+                <Property name="DisabledImage" value="TradeWindow/BtnUp" />
+                <Property name="Area" value="{{0.95,0},{0.778209,0},{1.0,0},{0.828209,0}}" />
+            </Window>
+            <Window type="SWB/ImageButton" name="TradeSmallNextButton" >
+                <Property name="HoverImage" value="TradeWindow/BtnDownHover" />
+                <Property name="NormalImage" value="TradeWindow/BtnDown" />
+                <Property name="PushedImage" value="TradeWindow/BtnDown" />
+                <Property name="DisabledImage" value="TradeWindow/BtnDown" />
+                <Property name="Area" value="{{0.95,0},{0.855422,0},{1.0,0},{0.905422,0}}" />
+            </Window>
+            
+            <Window type="SWB/Button" name="TradeCloseButton" >
+                <Property name="Area" value="{{0.33,0},{0.95,0},{0.66,0},{1.0,0}}" />
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

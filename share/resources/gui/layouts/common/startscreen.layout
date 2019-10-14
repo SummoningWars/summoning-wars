@@ -1,0 +1,30 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="StartScreenRoot" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        
+        <Window Type="SWB/StaticImage" Name="StartScreenImage" >
+            <Property Name="InheritsAlpha" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.33,0},{0.33,0},{0.67,0},{0.67,0}}" />
+            <Property Name="Image" Value="set:SumWarsLogo.png image:full_image" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="MousePassThroughEnabled" Value="True" />
+            <Property Name="BackgroundColours" Value="tl:00000000 tr:00000000 bl:00000000 br:00000000" />
+            <Property Name="MousePassThroughEnabled" Value="True" />
+        </Window>
+        
+        <Window Type="SWB/ProgressBar" Name="LoadRessourcesProgressBar" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.15,0},{0.58,0},{0.85,0},{0.61,0}}" />
+            <Property Name="Text" Value="Loading" />
+<!--            <Property Name="GS_DarkerThemeColour" Value="60005464" />
+            <Property Name="GS_LighterThemeColour" Value="6013C6BC" />
+            <Property Name="GS_MainThemeColour" Value="6013868B" />
+            <Property Name="GS_ShineColour" Value="60FFFFFF" />
+            <Property Name="GS_MainThemeGradientLeftToRight" Value="tl:00FFFFFF tr:AA13C6BC bl:00FFFFFF br:AA13C6BC" />-->
+            <Property Name="MousePassThroughEnabled" Value="True" />
+        </Window>
+    </Window>
+</GUILayout>

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+cppcheck -j `cat /proc/cpuinfo | grep processor | wc -l` --enable=all -f \
+src/ 2> cppcheck-output
+

@@ -35,7 +35,7 @@ Following libraries are required to build Summoning Wars:
 * lua5.1
 * ogg, vorbis, vorbisfile
 * physfs
-* POCO (for debug build only)
+* boost components: filesystem system date_time chrono thread)
 
 If you are lucky, all libs may be installed via package manager (apt-get, yum, emerge, pacman, ...).
 Have a look at the "OS dependant install" section below.

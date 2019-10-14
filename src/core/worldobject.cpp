@@ -22,21 +22,19 @@
 
 
 WorldObject::WorldObject( int id)
-	: GameObject(id)
+:	GameObject(id),
+	m_race(),
+	m_fraction(Fraction::NOFRACTION),
+	m_interaction_flags(0),
+	m_name(),
+	m_grid_location(),
+	m_animation(),
+	m_animation_time(1.0),
+	m_animation_elapsed_time(0.0),
+	m_animation_repeat(false)
 {
 	setBaseType(WORLDOBJECT);
 	init();
-	
-	m_fraction = Fraction::NOFRACTION;
-	m_race = "";
-	m_interaction_flags =0;
-	
-	m_animation ="";
-	m_animation_time =1;
-	m_animation_elapsed_time = 0;
-	m_animation_repeat =false;
-	
-	m_name = "";
 }
 
 bool WorldObject::isCreature()
@@ -229,14 +227,14 @@ bool WorldObject::setValue(std::string valname)
 	{
 		if (getType() == "PLAYER")
 		{
-			DEBUG("You cant change the fraction of a player");
+			SW_DEBUG("You cant change the fraction of a player");
 			return false;
 		}
 		std::string fraction  = lua_tostring(EventSystem::getLuaState() ,-1);
 		lua_pop(EventSystem::getLuaState(), 1);
 		Fraction::Id id = World::getWorld()->getFractionId(fraction);
 		setFraction(id);
-		DEBUG("fraction is now %i",getFraction());
+		SW_DEBUG("fraction is now %i",getFraction());
 		return true;
 	}
 	else if (valname == "position")

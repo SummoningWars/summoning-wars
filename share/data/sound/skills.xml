@@ -1,0 +1,7 @@
+<!-- Cure sound -->
+<Sound name="priest_cure">
+  <!-- Augustin Preda, 2011.11.14: added trial sounds to use for heal/cure effects -->
+	<Soundfile source="skill_sound_effects/cure_1.wav"/>
+	<Soundfile source="skill_sound_effects/cure_2.wav"/>
+  <!--<Soundfile source="Mulchsound.wav" />-->
+</Sound>

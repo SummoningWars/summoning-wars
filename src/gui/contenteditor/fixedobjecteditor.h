@@ -130,6 +130,11 @@ class FixedObjectEditor : public ContentEditorTab
 		 * The first integer is the region ID, the second is the object ID
 		 */
 		std::list< std::pair<int,int> > m_created_objects;
+
+    /**
+     * \brief The root window to use when accessing the widgets.
+     */
+    CEGUI::Window* m_rootWindow;
 };
 
 

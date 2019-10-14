@@ -1,0 +1,8 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="CharInfo_Holder" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{0.50,0},{0.86,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="Alpha" Value="1" />
+    </Window>
+</GUILayout>

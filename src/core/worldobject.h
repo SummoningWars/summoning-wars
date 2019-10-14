@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WORLDOBJECT_H
-#define WORLDOBJECT_H
+#ifndef __SUMWARS_CORE_WORLDOBJECT_H__
+#define __SUMWARS_CORE_WORLDOBJECT_H__
 
 #include <string>
 #include <cstring>
@@ -497,4 +497,4 @@ typedef std::map<int,WorldObject*> WorldObjectMap;
  */
 typedef std::list<WorldObject*> WorldObjectList;
 
-#endif //WORLDOBJECT_H
+#endif // __SUMWARS_CORE_WORLDOBJECT_H__

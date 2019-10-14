@@ -1,0 +1,26 @@
+<!--
+SWB - SumWarsBase
+SWB is licensed under the terms of the LGPL license.
+-->
+<!--
+version:      0.1
+Last change:	$LastChangedDate: 2012-11-15 00:31:48 +0200 (J, 15 nov. 2012) $
+-->
+<Imageset version="2" name="SWBCursors" imagefile="SWBCursors.png" nativeHorzRes="1920" nativeVertRes="1080" autoScaled="false" >
+
+  <!-- Mouse Cursors -->
+	<Image name="MouseArrow" xPos="5" yPos="5" width="32" height="32" XOffset="-1" YOffset="-1" />
+	<Image name="MouseArrowLarge" xPos="0" yPos="150" width="64" height="64" XOffset="-1" YOffset="-1" />
+
+	<Image name="MouseMoveCursor" xPos="50" yPos="5" width="32" height="32" XOffset="-16" YOffset="-16" />
+
+	<Image name="MouseEsWeCursor" xPos="150" yPos="5" width="32" height="32" XOffset="-16" YOffset="-16" />
+	<Image name="MouseNoSoCursor" xPos="200" yPos="5" width="32" height="32" XOffset="-16" YOffset="-16" />
+	<Image name="MouseNeSwCursor" xPos="250" yPos="5" width="32" height="32" XOffset="-16" YOffset="-16" />
+	<Image name="MouseNwSeCursor" xPos="300" yPos="5" width="32" height="32" XOffset="-16" YOffset="-16" />
+  
+  <!-- TODO: set to different content; duplicated at the moment -->
+
+	<Image name="MouseTextBar" xPos="5" yPos="5" width="32" height="32" XOffset="-1" YOffset="-1" />
+  
+</Imageset>

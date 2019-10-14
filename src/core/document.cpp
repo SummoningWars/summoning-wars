@@ -13,11 +13,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifdef SUMWARS_BUILD_TOOLS
+#include "contenteditor.h"
+#include "gameinfotab.h"
+#endif
+
 #include "fstream"
 #include "document.h"
 
-#include "sound.h"
-#include "music.h"
+// TODO: remove when no longer needed.
+//#include "sound.h"
+//#include "music.h"
 
 #include "networkstruct.h"
 #include "projectile.h"
@@ -37,10 +43,22 @@
 #include "gettext.h"
 #include "stdstreamconv.h"
 
-
 #include "CEGUI/CEGUI.h"
 
 #include <physfs.h>
+
+// Sound operations helper.
+#include "soundhelper.h"
+
+#include "ceguiutility.h"
+
+#ifdef SUMWARS_BUILD_WITH_ONLINE_SERVICES
+#include "onlineservicesmanager.h"
+#include "OgreResourceGroupManager.h"
+#include "OgreTextureManager.h"
+#include "OgreTexture.h"
+#include "OgreImage.h"
+#endif
 
 // Constructors/Destructors
 // Initialisiert Document zu Testzwecken
@@ -77,6 +95,8 @@ Document::Document()
 
 	// Status setzen
 	m_state = INACTIVE;
+	m_server = false;
+	m_shutdown_timer = 0;
 
 	m_modified =GUISHEET_MODIFIED | WINDOWS_MODIFIED;
 
@@ -115,19 +135,19 @@ void Document::startGame(bool server)
 	m_state = LOAD_SAVEGAME;
 }
 
-void Document::setSaveFile(std::string s)
+void Document::setSaveFile(std::string saveFile)
 {
-	std::string userPath = SumwarsHelper::userPath();
-	userPath.append("/save/").append(s);
+	// we are using std::streams here, not PHYSFS, therefore we also have to use absolute paths
+	std::string savePath = SumwarsHelper::getStorageBasePath() + "/" + SumwarsHelper::savePath() + "/" + saveFile;
 
-	std::fstream file(userPath.c_str(),std::ios::in| std::ios::binary);
+	std::fstream file(savePath.c_str(),std::ios::in| std::ios::binary);
 	if (file.is_open())
 	{
 		char bin;
 		unsigned char* data=0;
-		m_save_file = userPath;
+		m_save_file = savePath;
 
-		DEBUG ("Loaded save file %s", s.c_str());
+		SW_DEBUG ("Loaded save file %s", saveFile.c_str());
 
 		file.get(bin);
 
@@ -153,8 +173,8 @@ void Document::setSaveFile(std::string s)
 		delete save;
 		if (data)
 			delete[] data;
-
-
+		
+		Options::getInstance()->setDefaultSavegame (saveFile);
 	}
 	else
 	{
@@ -163,7 +183,7 @@ void Document::setSaveFile(std::string s)
 			delete m_temp_player;
 			m_temp_player =0;
 		}
-		m_save_file ="";
+		WARNING("Could not load file [%s]", saveFile.c_str());
 	}
 	m_modified |= SAVEGAME_MODIFIED;
 	file.close();
@@ -173,7 +193,7 @@ void Document::loadSavegame()
 {
 	// read savegame
 	std::string fname = m_save_file;
-	DEBUG("savegame is %s",fname.c_str());
+	SW_DEBUG("savegame is %s",fname.c_str());
 
 	std::fstream file(fname.c_str(),std::ios::in| std::ios::binary);
 	if (file.is_open())
@@ -215,7 +235,7 @@ void Document::loadSavegame()
 		}
 
 		m_temp_player->toSavegame(&cv2);
-		DEBUG("sending savegame");
+		SW_DEBUG("sending savegame");
 		World::getWorld()->handleSavegame(&cv2);
 		DEBUGX("sent savegame");
 
@@ -237,7 +257,7 @@ void Document::loadSavegame()
 		// update state to running
 		// show main game screen
 		m_state =RUNNING;
-		m_gui_state.m_shown_windows = NO_WINDOWS;
+		m_gui_state.m_shown_windows = CONTROL_PANEL;
 		m_gui_state.m_sheet = GAME_SCREEN;
 		m_modified = WINDOWS_MODIFIED | GUISHEET_MODIFIED;
 		m_save_timer.start();
@@ -303,22 +323,11 @@ bool Document::createNewCharacter(std::string name)
 {
 	if (m_temp_player)
 	{
-		std::string storagePath (SumwarsHelper::getSingletonPtr ()->userPath ());
-		storagePath.append ("/save/");
-        std::string path;
-
-#ifndef __APPLE__
-		// Windows & Linux
-		path = storagePath;
-#else
-		path = PHYSFS_getUserDir();
-        path.append("/Library/Application Support/Sumwars/save/");
-#endif
-        m_save_file = path;
+        m_save_file = SumwarsHelper::getStorageBasePath() + "/" + SumwarsHelper::savePath() + "/";
 		m_save_file += name;
 		m_save_file += ".sav";
 
-		m_temp_player ->setName(TranslatableString(name,""));
+		m_temp_player->setName(TranslatableString(name,""));
 
 		DEBUGX("savefile %s",m_save_file.c_str());
 
@@ -387,6 +396,8 @@ void Document::onButtonSaveExitClicked ( )
 	getGUIState()->m_shown_windows = SAVE_EXIT;
 	m_modified |= WINDOWS_MODIFIED;
 
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
 	if (m_state == INACTIVE)
 	{
 		saveSettings();
@@ -397,7 +408,7 @@ void Document::onButtonSaveExitClicked ( )
 
 void Document::onButtonSaveExitConfirm()
 {
-
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
 
 	if (m_state!=SHUTDOWN_REQUEST)
 	{
@@ -422,20 +433,24 @@ void Document::onButtonSaveExitConfirm()
 	// Paket an den Server senden
 	sendCommand(&command);
 
-	getGUIState()->m_shown_windows = NO_WINDOWS;
+	getGUIState()->m_shown_windows = CONTROL_PANEL;
 	m_modified |= WINDOWS_MODIFIED;
 }
 
 void Document::onButtonSaveExitAbort()
 {
-	getGUIState()->m_shown_windows = NO_WINDOWS;
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
+	getGUIState()->m_shown_windows = CONTROL_PANEL;
 	m_modified |= WINDOWS_MODIFIED;
 }
 
 void Document::onButtonCredits()
 {
-	getGUIState()->m_shown_windows =CREDITS;
-	m_modified =WINDOWS_MODIFIED;
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
+	getGUIState ()->m_shown_windows = CREDITS;
+	m_modified = WINDOWS_MODIFIED;
 }
 
 void Document::onRightMouseButtonClick(Vector pos)
@@ -531,6 +546,11 @@ void Document::onLeftMouseButtonClick(Vector pos)
 	if (getGUIState()->m_cursor_object_id != 0)
 	{
 		id = getGUIState()->m_cursor_object_id;
+
+#ifdef SUMWARS_BUILD_TOOLS
+		GameInfoTab *gitab = (GameInfoTab*)ContentEditor::getSingleton().getComponent("GameInfoTab");
+		gitab->setClickedObjectID(id);
+#endif
 	}
 
 	m_gui_state.m_clicked_object_id = id;
@@ -814,6 +834,13 @@ bool Document::checkSubwindowsAllowed()
 
 void Document::onButtonStartSinglePlayer ()
 {
+	if (m_temp_player == 0)
+	{
+		showWarning (gettext("Please select a character first!"));
+		SW_DEBUG ("Warning: Tried to start a game without a selected char!");
+		return;
+	}
+	
 	// The player is a host himself (or herself)
 	setServer (true);
 	m_single_player = true;
@@ -826,18 +853,17 @@ void Document::onButtonStartSinglePlayer ()
 
 void Document::onButtonHostGame()
 {
-	DEBUG("Host Game");
-	if (m_save_file == "")
+	SW_DEBUG("Host Game");
+	if (m_temp_player == 0)
 	{
 		// Show a notification.
-		CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-		CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) win_mgr.getWindow("WarningDialogWindow");
+		CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) CEGUIUtility::getWindow("WarningDialogWindow");
 		message->setInheritsAlpha(false);
 		message->setVisible(true);
 		message->setModalState(true);
-		win_mgr.getWindow( "WarningDialogLabel")->setText((CEGUI::utf8*) gettext("Please select a character first!"));
+		CEGUIUtility::getWindow ("WarningDialogWindow/WarningDialogLabel")->setText((CEGUI::utf8*) gettext ("Please select a character first!"));
 
-		DEBUG ("Warning: Tried to host a game without a selected char!");
+		SW_DEBUG ("Warning: Tried to host a game without a selected char!");
 		return;
 	}
 	getGUIState()->m_shown_windows |= HOST_GAME;
@@ -848,17 +874,16 @@ void Document::onButtonHostGame()
 
 void Document::onButtonJoinGame()
 {
-	if (m_save_file == "")
+	if (m_temp_player == 0)
 	{
 		// Show a notification.
-		CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-		CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) win_mgr.getWindow("WarningDialogWindow");
+		CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) CEGUIUtility::getWindow("WarningDialogWindow");
 		message->setInheritsAlpha(false);
 		message->setVisible(true);
 		message->setModalState(true);
-		win_mgr.getWindow( "WarningDialogLabel")->setText((CEGUI::utf8*) gettext("Please select a character first!"));
+		CEGUIUtility::getWindow ("WarningDialogWindow/WarningDialogLabel")->setText((CEGUI::utf8*) gettext("Please select a character first!"));
 
-		DEBUG ("Warning: Tried to join a game without a selected char!");
+		SW_DEBUG ("Warning: Tried to join a game without a selected char!");
 		return;
 	}
 	getGUIState()->m_shown_windows |= JOIN_GAME;
@@ -868,7 +893,7 @@ void Document::onButtonJoinGame()
 
 void Document::onButtonStartHostGame()
 {
-	DEBUG("start multiplayer game");
+	SW_DEBUG("start multiplayer game");
 	// Spieler ist selbst der Host
 	setServer(true);
 	m_single_player = false;
@@ -893,12 +918,17 @@ void Document::onButtonInventoryClicked()
 	if (!checkSubwindowsAllowed())
 		return;
 
-	// Inventar oeffnen wenn es gerade geschlossen ist und schliessen, wenn es geoeffnet ist
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+	
+	getGUIState()->m_shown_windows ^= INVENTORY;
 	if (getGUIState()->m_shown_windows & INVENTORY)
 	{
-
-		getGUIState()->m_shown_windows &= ~INVENTORY;
-
+	// wenn Inventar geoeffnet wird, dann Skilltree schliessen
+		getGUIState()->m_shown_windows &= ~SKILLTREE;
+		m_gui_state.m_pressed_key = 0;
+	}
+	else
+	{
 		// der lokale Spieler
 		Player* pl = static_cast<Player*>( World::getWorld()->getLocalPlayer());
 		if (pl==0)
@@ -910,21 +940,9 @@ void Document::onButtonInventoryClicked()
 			dropCursorItem();
 		}
 	}
-	else
-	{
-		// wenn Inventar geoeffnet wird, dann Skilltree schliessen
-		getGUIState()->m_shown_windows &= ~SKILLTREE;
-		m_gui_state.m_pressed_key = 0;
-
-		getGUIState()->m_shown_windows |= INVENTORY;
-
-
-
-	}
 
 	// Geoeffnete Fenster haben sich geaendert
 	m_modified |= WINDOWS_MODIFIED;
-
 }
 
 void Document::onButtonCharInfoClicked()
@@ -932,16 +950,12 @@ void Document::onButtonCharInfoClicked()
 	if (!checkSubwindowsAllowed())
 		return;
 
-	// Charakterinfo oeffnen wenn es gerade geschlossen ist und schliessen, wenn es geoeffnet ist
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+	
+	getGUIState()->m_shown_windows ^= CHARINFO;
 	if (getGUIState()->m_shown_windows & CHARINFO)
 	{
-		getGUIState()->m_shown_windows &= ~CHARINFO;
-	}
-	else
-	{
 		getGUIState()->m_shown_windows &= ~(PARTY | QUEST_INFO);
-
-		getGUIState()->m_shown_windows |= CHARINFO;
 	}
 
 	// Geoeffnete Fenster haben sich geaendert
@@ -953,17 +967,14 @@ void Document::onButtonPartyInfoClicked()
 	if (!checkSubwindowsAllowed())
 		return;
 
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
+	getGUIState()->m_shown_windows ^= PARTY;
 	// PartyInfo oeffnen wenn es gerade geschlossen ist und schliessen, wenn er geoeffnet ist
 	if (getGUIState()->m_shown_windows & PARTY)
 	{
-		getGUIState()->m_shown_windows &= ~PARTY;
-	}
-	else
-	{
 		// wenn PartyInfo geoeffnet wird, dann CharInfo schliessen
 		getGUIState()->m_shown_windows &= ~(CHARINFO | QUEST_INFO);
-
-		getGUIState()->m_shown_windows |= PARTY;
 	}
 
 	m_gui_state.m_pressed_key = 0;
@@ -977,21 +988,21 @@ void Document::onButtonSkilltreeClicked(bool skill_right, bool use_alternate)
 	if (!checkSubwindowsAllowed())
 		return;
 
-	// Skilltree oeffnen wenn er gerade geschlossen ist und schliessen, wenn er geoeffnet ist
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
+	getGUIState()->m_shown_windows ^= SKILLTREE;
 	if (getGUIState()->m_shown_windows & SKILLTREE)
-	{
-		getGUIState()->m_prefer_right_skill = false;
-		getGUIState()->m_set_right_skill_alternate = false;
-		getGUIState()->m_shown_windows &= ~SKILLTREE;
-	}
-	else
 	{
 		// wenn Skilltree geoeffnet wird, dann Inventar schliessen
 		getGUIState()->m_shown_windows &= ~INVENTORY;
 
-		getGUIState()->m_shown_windows |= SKILLTREE;
 		getGUIState()->m_set_right_skill_alternate = use_alternate;
 		getGUIState()->m_prefer_right_skill =skill_right;
+	}
+	else
+	{
+		getGUIState()->m_prefer_right_skill = false;
+		getGUIState()->m_set_right_skill_alternate = false;
 	}
 
 	m_gui_state.m_pressed_key = 0;
@@ -1002,19 +1013,13 @@ void Document::onButtonSkilltreeClicked(bool skill_right, bool use_alternate)
 
 void Document::onButtonOpenChatClicked()
 {
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
 	// fuer Debugging sehr nuetzlich, das zuzulassen
 	//if (!checkSubwindowsAllowed())
 	//		return;
 
-	// Cchatfenster oeffnen wenn es gerade geschlossen ist und schliessen, wenn es geoeffnet ist
-	if (getGUIState()->m_shown_windows & CHAT)
-	{
-		getGUIState()->m_shown_windows &= ~CHAT;
-	}
-	else
-	{
-		getGUIState()->m_shown_windows |= CHAT;
-	}
+	getGUIState()->m_shown_windows ^= CHAT;
 
 	// Geoeffnete Fenster haben sich geaendert
 	m_modified |= WINDOWS_MODIFIED;
@@ -1025,16 +1030,13 @@ void Document::onButtonQuestInfoClicked()
 	if (!checkSubwindowsAllowed())
 		return;
 
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
+	getGUIState()->m_shown_windows ^= QUEST_INFO;
 	// Charakterinfo oeffnen wenn es gerade geschlossen ist und schliessen, wenn es geoeffnet ist
 	if (getGUIState()->m_shown_windows & QUEST_INFO)
 	{
-		getGUIState()->m_shown_windows &= ~QUEST_INFO;
-	}
-	else
-	{
 		getGUIState()->m_shown_windows &= ~(PARTY | CHARINFO);
-
-		getGUIState()->m_shown_windows |= QUEST_INFO;
 	}
 
 	// Geoeffnete Fenster haben sich geaendert
@@ -1046,16 +1048,7 @@ void Document::onButtonMinimapClicked()
 	if (!checkSubwindowsAllowed())
 		return;
 
-	if (getGUIState()->m_shown_windows & MINIMAP)
-	{
-		getGUIState()->m_shown_windows &= ~MINIMAP;
-	}
-	else
-	{
-		//getGUIState()->m_shown_windows &= ~(PARTY | CHARINFO);
-
-		getGUIState()->m_shown_windows |= MINIMAP;
-	}
+	getGUIState()->m_shown_windows ^= MINIMAP;
 
 	// Geoeffnete Fenster haben sich geaendert
 	m_modified |= WINDOWS_MODIFIED;
@@ -1064,20 +1057,19 @@ void Document::onButtonMinimapClicked()
 
 void Document::onButtonOptionsClicked()
 {
+	SoundHelper::playAmbientSoundGroup ("main_menu_click_item");
+
 	if (!checkSubwindowsAllowed() && getGUIState()->m_sheet ==  Document::GAME_SCREEN)
+	{
+		SW_DEBUG ("Subwindows are allowed, and Current state: GAME_SCREEN; so you're not allowed to toggle this window... for some reason");
 		return;
-
-	if (getGUIState()->m_shown_windows & OPTIONS)
-	{
-		getGUIState()->m_shown_windows &= ~OPTIONS;
-	}
-	else
-	{
-		getGUIState()->m_shown_windows |= OPTIONS;
 	}
 
+	getGUIState()->m_shown_windows ^= OPTIONS;
 	// Opened windows have changed.
 	m_modified |= WINDOWS_MODIFIED;
+
+	SW_DEBUG ("Set internal state data for options button toggle");
 }
 
 
@@ -1126,10 +1118,16 @@ void Document::onButtonErrorDialogConfirm()
     setState(SHUTDOWN_REQUEST);
 }
 
-void Document::onSkipDialogueTextClicked()
+void Document::onSkipDialogueTextClicked(bool skipAll)
 {
 	ClientCommand command;
 	command.m_button = BUTTON_SKIP_DIALOGUE_TEXT;
+	command.m_id = 0;
+	// send id == -1 for skip all
+	if (skipAll)
+	{
+		command.m_id = -1;
+	}
 	sendCommand(&command);
 }
 
@@ -1207,6 +1205,11 @@ void Document::setLeftAction(Action::ActionType act)
 
 void Document::setRightAction(Action::ActionType act)
 {
+	// Make sure that the world pointer is not a null.
+	if (! World::getWorld ())
+	{
+		return;
+	}
 
 	// wenn kein Spieler gesetzt ist, dann keine Faehigkeit setzen
 	// der lokale Spieler
@@ -1272,13 +1275,8 @@ std::string Document::getAbilityDescription(Action::ActionType ability)
 		// Beschreibung
 		out_stream << "\n" << Action::getDescription(ability);
 
-		// Gibt an, ob der Spieler die Faehigkeit besitzt
-		bool avlb = true;
 		if (!player->checkAbility(ability))
 		{
-			// Spieler besitzt Faehigkeit nicht
-			avlb = false;
-
 			PlayerBasicData* pdata = ObjectFactory::getPlayerData(player->getSubtype());
 			if (pdata !=0)
 			{
@@ -1465,36 +1463,36 @@ bool Document::onKeyPress(KeyCode key)
 			onButtonOpenChatClicked();
 
 		}
-		else if (dest == SHOW_MINIMAP)
+		else if(dest == SHOW_CHATBOX_NO_TOGGLE)
 		{
-			if (getGUIState()->m_shown_windows & MINIMAP)
+			// If the enter key is pressed when the "Save & Exit" window is displayed, treat it as an 'accept'.
+			if (m_gui_state.m_shown_windows & SAVE_EXIT)
 			{
-				getGUIState()->m_shown_windows &= ~MINIMAP;
+				onButtonSaveExitConfirm ();
+			}
+			else if (m_gui_state.m_shown_windows & MESSAGE)
+			{
+				// Close the message
+				hideWarning ();
 			}
 			else
 			{
-				//getGUIState()->m_shown_windows &= ~(PARTY | QUEST_INFO);
+				// Toggle the chat window open status.
+				if (!(getGUIState()->m_shown_windows & CHAT))
+				{
+					getGUIState()->m_shown_windows |= CHAT;
 
-				getGUIState()->m_shown_windows |= MINIMAP;
+					// Signal that the opened windows changed.
+					m_modified |= WINDOWS_MODIFIED;
+				}
 			}
-			m_modified |= WINDOWS_MODIFIED;
-		}
-		else if(dest == SHOW_CHATBOX_NO_TOGGLE)
-		{
-			// Chatfenster oeffnen wenn es gerade geschlossen ist
-			if (!(getGUIState()->m_shown_windows & CHAT))
-			{
-				getGUIState()->m_shown_windows |= CHAT;
-
-				// Geoeffnete Fenster haben sich geaendert
-				m_modified |= WINDOWS_MODIFIED;
-
-			}
-
 		}
 		else if (dest == CLOSE_ALL)
 		{
-			if (m_gui_state.m_shown_windows == NO_WINDOWS)
+			if (m_gui_state.m_shown_windows == NO_WINDOWS 
+				|| m_gui_state.m_shown_windows == CONTROL_PANEL
+				|| m_gui_state.m_shown_windows == START_MENU
+			)
 			{
 				onButtonSaveExitClicked();
 			}
@@ -1508,7 +1506,7 @@ bool Document::onKeyPress(KeyCode key)
 			}
 			else if (m_gui_state.m_shown_windows & QUESTIONBOX)
 			{
-				// Versuch, aktuelles Gespraech abzubrechen
+				// Try to break the current speech.
 				onAnswerClick(-1);
 			}
 			else if (m_gui_state.m_shown_windows & (HOST_GAME | JOIN_GAME | CHAR_CREATE ))
@@ -1516,10 +1514,27 @@ bool Document::onKeyPress(KeyCode key)
 				m_gui_state.m_shown_windows = Document::START_MENU;
 				m_modified |= WINDOWS_MODIFIED;
 			}
+			else if (m_gui_state.m_shown_windows & OPTIONS)
+			{
+				onButtonOptionsClicked ();
+			}
+			else if (m_gui_state.m_shown_windows & 	MESSAGE)
+			{
+				hideWarning ();
+			}
+			else if (m_gui_state.m_shown_windows & 	QUESTION_DIALOG)
+			{
+				hideQuestionDialog ();
+			}
+			else if (m_gui_state.m_shown_windows & CREDITS)
+			{
+				// If the user presses [ESC] during the credits section, leave the credits.
+				onStartScreenClicked ();
+			}
 			else
 			{
-				m_gui_state.m_shown_windows =  NO_WINDOWS;
-			// Geoeffnete Fenster haben sich geaendert
+				m_gui_state.m_shown_windows =  CONTROL_PANEL;
+				// Notify that the displayed windows changed.
 				m_modified |= WINDOWS_MODIFIED;
 			}
 		}
@@ -1558,7 +1573,7 @@ bool  Document::onKeyRelease(KeyCode key)
 
 void Document::update(float time)
 {
-	// Welt eine Zeitscheibe weiter laufen lassen
+	// Let the world run for another time unit.
 	if (World::getWorld() != 0)
 	{
 		// game is paused for single player if save and exit window is shown
@@ -1619,8 +1634,10 @@ void Document::update(float time)
 
 			if (!m_server)
 			{
-				if (World::getWorld()->getNetwork()->getSlotStatus() == NET_TIMEOUT)
+				if (World::getWorld()->getNetwork()->getSlotStatus() == NET_TIMEOUT
+					|| World::getWorld()->getNetwork()->getSlotStatus() == NET_SLOTS_FULL)
 				{
+					// TODO: Display a different message for rejected Savegames
 					setState(INACTIVE);
                     getGUIState()->m_shown_windows = MESSAGE;
                     m_modified |= WINDOWS_MODIFIED;
@@ -1691,13 +1708,23 @@ void Document::updateContent(float time)
 			m_modified |= WINDOWS_MODIFIED;
 		}
 	}
-	else if (player->getDialogueId() != 0
-				|| (player->getRegion() !=0 && player->getRegion()->getCutsceneMode () == true))
+	
+	if ((player->getDialogueId() != 0 && player->getTradeInfo().m_trade_partner == 0)
+		|| (player->getRegion() !=0 && player->getRegion()->getCutsceneMode () == true))
 	{
 		// Chat ist fuer Debugging zugeschaltet
 		if ((getGUIState()->m_shown_windows & (~(QUESTIONBOX | SAVE_EXIT | CHAT))) != 0)
 		{
 			getGUIState()->m_shown_windows &= (QUESTIONBOX  | SAVE_EXIT | CHAT);
+			m_modified |= WINDOWS_MODIFIED;
+		}
+	}
+	else
+	{
+		// always open control panel except in cutscene mode
+		if ((getGUIState()->m_shown_windows & CONTROL_PANEL) == 0)
+		{
+			getGUIState()->m_shown_windows |= CONTROL_PANEL;
 			m_modified |= WINDOWS_MODIFIED;
 		}
 	}
@@ -1855,7 +1882,7 @@ void Document::writeSavegame(bool writeShortkeys)
 	}
 
 	// Savegame schreiben (ansynchron)
-	std::pair<Document*, CharConv*>* param = new std::pair<Document*, CharConv*>(this,save);
+	// std::pair<Document*, CharConv*>* param = new std::pair<Document*, CharConv*>(this,save);
 	
 	// Savegame schreiben
 	std::stringstream* stream = dynamic_cast<std::stringstream*> (static_cast<StdStreamConv*>(save)->getStream());
@@ -1888,6 +1915,33 @@ void Document::writeSavegame(bool writeShortkeys)
 		{
 			file << stream->str();
 			DEBUGX("save: \n %s",stream->str().c_str());
+
+
+#ifdef SUMWARS_BUILD_WITH_ONLINE_SERVICES
+            if(OnlineServicesManager::getSingletonPtr() && OnlineServicesManager::getSingleton().userLoggedIn())
+            {
+                std::string name = getLocalPlayer()->getName().getRawText();
+                std::string rsgrp = OnlineServicesManager::getSingleton().getUserDataResGroupId();
+                /*std::stringstream* imgStream;
+                if(Ogre::ResourceGroupManager::getSingleton().resourceExists(rsgrp, name + ".png"))
+                {
+                    Ogre::Image img;
+                    Ogre::TexturePtr tex = Ogre::TextureManager::getSingleton().load(name + ".png", rsgrp);
+                    tex.get()->convertToImage(img);
+					Ogre::DataStreamPtr dstr = img.encode("png");
+					std::string read_buffer_str = "";
+					while(dstr->isReadable())
+					{
+						char read_buffer[1024]; 
+						std::size_t len_read = dstr->read(read_buffer, 1024); 
+						read_buffer_str += len_read;
+					}
+                }*/
+
+				std::string strm = "0" + stream->str();
+                OnlineServicesManager::getSingleton().syncCharacterData(name, strm);
+            }
+#endif
 		}
 		
 		file.close();
@@ -1895,6 +1949,7 @@ void Document::writeSavegame(bool writeShortkeys)
 	else
 	{
 		ERRORMSG("cannot open save file: %s",m_save_file.c_str());
+		m_save_file = "";
 	}
 	if (stream != 0)
 	{
@@ -1907,12 +1962,18 @@ void Document::writeSavegame(bool writeShortkeys)
 
 void Document::saveSettings()
 {
-    Options::getInstance()->writeToFile(SumwarsHelper::userPath() + "/options.xml");
+	// Get the path to use for storing data.
+	// This will be relative to the user directory on the user OS.
+	Ogre::String operationalPath = SumwarsHelper::getStorageBasePath() + "/" + SumwarsHelper::userPath();
+	Options::getInstance()->writeToFile (operationalPath + "/options.xml");
 }
 
 void Document::loadSettings()
 {
-    Options::getInstance()->readFromFile(SumwarsHelper::userPath() + "/options.xml");
+	// Get the path to use for storing data.
+	// This will be relative to the user directory on the user OS.
+    Ogre::String operationalPath = SumwarsHelper::getStorageBasePath() + "/" + SumwarsHelper::userPath();
+	Options::getInstance()->readFromFile (operationalPath + "/options.xml");
 }
 
 Player*  Document::getLocalPlayer()
@@ -1921,4 +1982,91 @@ Player*  Document::getLocalPlayer()
 		return m_temp_player;
 
 	return static_cast<Player*>(World::getWorld()->getLocalPlayer());
+}
+
+
+
+void Document::showWarning (const std::string& textMessage)
+{
+	// Show a notification.
+	if (! CEGUIUtility::isWindowPresent ("WarningDialogWindow"))
+	{
+		SW_DEBUG ("Could not display the warning widget: [WarningDialogWindow]");
+		return;
+	}
+
+	CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) CEGUIUtility::getWindow("WarningDialogWindow");
+	message->setInheritsAlpha(false);
+	message->setVisible(true);
+	message->setModalState(true);
+	CEGUIUtility::getWindow ("WarningDialogWindow/WarningDialogLabel")->setText((CEGUI::utf8*) textMessage.c_str ());
+
+	getGUIState()->m_shown_windows |= MESSAGE;
+	m_modified |= WINDOWS_MODIFIED;
+
+}
+
+
+void Document::hideWarning ()
+{
+	// Show a notification.
+	if (CEGUIUtility::isWindowPresent ("WarningDialogWindow"))
+	{
+		CEGUI::Window* widget = CEGUIUtility::getWindow("WarningDialogWindow");
+		if (widget->isVisible ())
+		{
+			widget->setVisible (false);
+			widget->setModalState (false);
+		}
+	}
+
+	// If a MESSAGE is displayed, remove the status from the shown windows. XOR it.
+	if (getGUIState()->m_shown_windows & MESSAGE)
+	{
+		getGUIState()->m_shown_windows ^= MESSAGE;
+		m_modified |= WINDOWS_MODIFIED;
+	}
+}
+
+void Document::showQuestionDialog ()
+{
+	// Show a notification.
+	CEGUI::String widgetName = CEGUIUtility::getNameForWidget ("MainMenu/MainMenuRoot/QuestionInfoRoot");
+	if (! CEGUIUtility::isWindowPresent (widgetName))
+	{
+		SW_DEBUG ("Could not display the warning widget: [%s]", widgetName.c_str ());
+		return;
+	}
+
+	CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) CEGUIUtility::getWindow (widgetName);
+	message->setInheritsAlpha(false);
+	message->setVisible(true);
+	message->setModalState(true);
+
+	getGUIState()->m_shown_windows |= QUESTION_DIALOG;
+	m_modified |= WINDOWS_MODIFIED;
+
+}
+
+
+void Document::hideQuestionDialog ()
+{
+	// Show a notification.
+	CEGUI::String widgetName = CEGUIUtility::getNameForWidget ("MainMenu/MainMenuRoot/QuestionInfoRoot");
+	if (CEGUIUtility::isWindowPresent (widgetName))
+	{
+		CEGUI::Window* widget = CEGUIUtility::getWindow (widgetName);
+		if (widget && widget->isVisible ())
+		{
+			widget->setVisible (false);
+			widget->setModalState (false);
+		}
+	}
+
+	// If a MESSAGE is displayed, remove the status from the shown windows. XOR it.
+	if (getGUIState()->m_shown_windows & QUESTION_DIALOG)
+	{
+		getGUIState()->m_shown_windows ^= QUESTION_DIALOG;
+		m_modified |= WINDOWS_MODIFIED;
+	}
 }

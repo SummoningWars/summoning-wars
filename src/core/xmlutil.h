@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef XMLUTIL_H
-#define XMLUTIL_H
+#ifndef __SUMWARS_CORE_XMLUTIL_H__
+#define __SUMWARS_CORE_XMLUTIL_H__
 
 #include <tinyxml.h>
 #include <string>
@@ -56,6 +56,29 @@ class XMLUtil
 			if (value != def)
 			{
 				elem->SetAttribute(name.c_str(), value);
+			}
+			else
+			{
+				elem->RemoveAttribute(name.c_str());
+			}
+		}
+		
+		/**
+		 * \brief Sets an bool attribute for an XML Element
+		 * \param name name of the attribute
+		 * \param value value of the attribute
+		 * \param def default value
+		 * If the value is equal to the default value, the attribute is not written but deleted instead.
+		 */
+		static void setBoolAttribute(TiXmlElement* elem, std::string name, bool value, bool def=true)
+		{
+			std::string val = "true";
+			if (value == false)
+				val = "false";
+			
+			if (value != def)
+			{
+				elem->SetAttribute(name.c_str(), val.c_str());
 			}
 			else
 			{
@@ -118,4 +141,4 @@ class XMLUtil
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_XMLUTIL_H__

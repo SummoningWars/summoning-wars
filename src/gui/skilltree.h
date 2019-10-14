@@ -13,11 +13,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SKILLTREE_H
-#define SKILLTREE_H
+#ifndef __SUMWARS_GUI_SKILLTREE_H__
+#define __SUMWARS_GUI_SKILLTREE_H__
 
 #include "window.h"
 #include "OISKeyboard.h"
+
+#include <map>
+
 /**
  * \class SkillTree
  * \brief Fenster Faehigkeitenbaum
@@ -30,7 +33,7 @@ class SkillTree : public Window
 		 * \param keyboard OIS keyboard
 		 * \brief Konstruktor
 		 */
-		SkillTree (Document* doc, OIS::Keyboard *keyboard);
+		SkillTree (Document* doc, OIS::Keyboard *keyboard, const std::string& ceguiSkinName);
 	
 		/**
 		 * \fn virtual void update()
@@ -113,6 +116,21 @@ class SkillTree : public Window
 		 * \brief number of shortkey labels
 		 */
 		int m_shortkey_labels;
+
+		/**
+		 * \brief The name of the CEGUI skin to use.
+		 */
+		std::string m_ceguiSkinName;
+
+		/**
+		 * \brief Holds the skill widgets.
+		 */
+		std::map<int, std::string> m_skill_widgets_pics;
+		std::map<int, std::string> m_skill_widgets_btns;
+
+		std::map<int, std::string> m_skill_widgets_connections;
+		std::map<int, std::string> m_skill_widgets_shortcuts;
+
 };
 
-#endif
+#endif // __SUMWARS_GUI_SKILLTREE_H__

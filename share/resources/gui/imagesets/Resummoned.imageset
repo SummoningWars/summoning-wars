@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Resummoned is a free theme for CEGUI, based on the Taharez Look theme.
+Resummoned is licensed under the terms of the MIT license.
+
+Copyright (c) 2012 Augustin Preda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!--
+version:      0.1
+Last change:  $LastChangedDate: 2013-01-26 01:26:14 +0200 (S, 26 ian. 2013) $
+-->
+<Imageset Name="Resummoned" Imagefile="Resummoned.png" NativeHorzRes="1920" NativeVertRes="1080" AutoScaled="true" >
+
+  <!-- Suffix Legend: 
+    TL = top left; L = left; BL = bottom left; 
+    T = top; M = middle; B = bottom; 
+    TR = top right; R = right; BR = bottom right
+  -->
+
+  <!-- Simple Panel border --> <!-- note: shared with WindowTopLeft -->
+  <Image Name="SimplePanelBorder_TL" XPos="140" YPos="265" Width="20" Height="20" />
+  <Image Name="SimplePanelBorder_L" XPos="140" YPos="285" Width="20" Height="88" />
+  <Image Name="SimplePanelBorder_BL" XPos="140" YPos="373" Width="20" Height="20" />
+  <Image Name="SimplePanelBorder_T" XPos="160" YPos="265" Width="88" Height="20" />
+  <Image Name="SimplePanelBorder_M" XPos="160" YPos="285" Width="88" Height="88" />
+  <Image Name="SimplePanelBorder_B" XPos="160" YPos="373" Width="88" Height="20" />
+  <Image Name="SimplePanelBorder_TR" XPos="244" YPos="265" Width="20" Height="20" />
+  <Image Name="SimplePanelBorder_R" XPos="244" YPos="285" Width="20" Height="88" />
+  <Image Name="SimplePanelBorder_BR" XPos="244" YPos="373" Width="20" Height="20" />
+  
+  <Image Name="SimplePanelBck_TL" XPos="5" YPos="540" Width="16" Height="16" />
+  <Image Name="SimplePanelBck_L" XPos="5" YPos="556" Width="16" Height="96" />
+  <Image Name="SimplePanelBck_BL" XPos="5" YPos="652" Width="16" Height="16" />
+  <Image Name="SimplePanelBck_T" XPos="19" YPos="540" Width="96" Height="16" />
+  <Image Name="SimplePanelBck_M" XPos="19" YPos="556" Width="96" Height="96" />
+  <Image Name="SimplePanelBck_B" XPos="19" YPos="652" Width="96" Height="16" />
+  <Image Name="SimplePanelBck_TR" XPos="115" YPos="540" Width="16" Height="16" />
+  <Image Name="SimplePanelBck_R" XPos="115" YPos="556" Width="16" Height="96" />
+  <Image Name="SimplePanelBck_BR" XPos="115" YPos="652" Width="16" Height="16" />
+
+  <!-- Generic 4 corner button border -->
+  <Image Name="Button32_4D_TL" XPos="300" YPos="400" Width="30" Height="26" />
+  <Image Name="Button32_4D_L" XPos="300" YPos="426" Width="30" Height="14" />
+  <Image Name="Button32_4D_BL" XPos="300" YPos="440" Width="30" Height="24" />
+  <Image Name="Button32_4D_T" XPos="330" YPos="400" Width="68" Height="26" />
+  <Image Name="Button32_4D_M" XPos="330" YPos="426" Width="68" Height="14" />
+  <Image Name="Button32_4D_B" XPos="330" YPos="440" Width="68" Height="24" />
+  <Image Name="Button32_4D_TR" XPos="398" YPos="400" Width="30" Height="26" />
+  <Image Name="Button32_4D_R" XPos="398" YPos="426" Width="30" Height="14" />
+  <Image Name="Button32_4D_BR" XPos="398" YPos="440" Width="30" Height="24" />
+  
+  <!-- Generic button background -->
+  <Image Name="Button32_4D_Background" XPos="310" YPos="474" Width="108" Height="56" />
+  <Image Name="Button32_4D_BackgHighlight" XPos="310" YPos="544" Width="108" Height="56" />
+
+  <!-- Generic 2 corner button border -->
+  <Image Name="Button32_2C_TL" XPos="300" YPos="325" Width="30" Height="26" />
+  <Image Name="Button32_2C_L" XPos="300" YPos="351" Width="30" Height="14" />
+  <Image Name="Button32_2C_BL" XPos="300" YPos="365" Width="30" Height="24" />
+  <Image Name="Button32_2C_T" XPos="330" YPos="325" Width="68" Height="26" />
+  <Image Name="Button32_2C_M" XPos="330" YPos="351" Width="68" Height="14" />
+  <Image Name="Button32_2C_B" XPos="330" YPos="365" Width="68" Height="24" />
+  <Image Name="Button32_2C_TR" XPos="398" YPos="325" Width="30" Height="26" />
+  <Image Name="Button32_2C_R" XPos="398" YPos="351" Width="30" Height="14" />
+  <Image Name="Button32_2C_BR" XPos="398" YPos="365" Width="30" Height="24" />
+
+  
+  <Image Name="Button_BackgroundOnly" XPos="135" YPos="680" Width="128" Height="128" />
+   
+  <Image Name="Button_Background_TL" XPos="135" YPos="680" Width="15" Height="15" /> 
+  <Image Name="Button_Background_L" XPos="135" YPos="695" Width="15" Height="98" /> 
+  <Image Name="Button_Background_BL" XPos="135" YPos="793" Width="15" Height="15" /> 
+  <Image Name="Button_Background_T" XPos="150" YPos="680" Width="98" Height="15" /> 
+  <Image Name="Button_Background_M" XPos="150" YPos="695" Width="98" Height="98" /> 
+  <Image Name="Button_Background_B" XPos="150" YPos="793" Width="98" Height="15" /> 
+  <Image Name="Button_Background_TR" XPos="248" YPos="680" Width="15" Height="15" /> 
+  <Image Name="Button_Background_R" XPos="248" YPos="695" Width="15" Height="98" /> 
+  <Image Name="Button_Background_BR" XPos="248" YPos="793" Width="15" Height="15" /> 
+
+  <!-- Thick -->
+  <!--  
+  <Image Name="Rounded_Square_Small_TL" XPos="440" YPos="325" Width="16" Height="16" /> 
+  <Image Name="Rounded_Square_Small_L" XPos="440" YPos="341" Width="16" Height="32" /> 
+  <Image Name="Rounded_Square_Small_BL" XPos="440" YPos="373" Width="16" Height="16" /> 
+  <Image Name="Rounded_Square_Small_T" XPos="456" YPos="325" Width="32" Height="16" /> 
+  <Image Name="Rounded_Square_Small_M" XPos="456" YPos="341" Width="32" Height="32" /> 
+  <Image Name="Rounded_Square_Small_B" XPos="456" YPos="373" Width="32" Height="16" /> 
+  <Image Name="Rounded_Square_Small_TR" XPos="488" YPos="325" Width="16" Height="16" /> 
+  <Image Name="Rounded_Square_Small_R" XPos="488" YPos="341" Width="16" Height="32" /> 
+  <Image Name="Rounded_Square_Small_BR" XPos="488" YPos="373" Width="16" Height="16" /> 
+  
+  <Image Name="Rounded_Square_Small_Calc_L" XPos="440" YPos="325" Width="8" Height="8" />
+  <Image Name="Rounded_Square_Small_Calc_T" XPos="456" YPos="325" Width="8" Height="8" /> 
+-->
+
+  <!-- Thin -->
+  <Image Name="Rounded_Square_Small_TL" XPos="505" YPos="325" Width="16" Height="16" /> 
+  <Image Name="Rounded_Square_Small_L" XPos="505" YPos="341" Width="16" Height="32" /> 
+  <Image Name="Rounded_Square_Small_BL" XPos="505" YPos="373" Width="16" Height="16" /> 
+  <Image Name="Rounded_Square_Small_T" XPos="521" YPos="325" Width="32" Height="16" /> 
+  <Image Name="Rounded_Square_Small_M" XPos="521" YPos="341" Width="32" Height="32" /> 
+  <Image Name="Rounded_Square_Small_B" XPos="521" YPos="373" Width="32" Height="16" /> 
+  <Image Name="Rounded_Square_Small_TR" XPos="553" YPos="325" Width="16" Height="16" /> 
+  <Image Name="Rounded_Square_Small_R" XPos="553" YPos="341" Width="16" Height="32" /> 
+  <Image Name="Rounded_Square_Small_BR" XPos="553" YPos="373" Width="16" Height="16" /> 
+  
+  <Image Name="Rounded_Square_Small_Calc_L" XPos="505" YPos="325" Width="6" Height="6" />
+  <Image Name="Rounded_Square_Small_Calc_T" XPos="521" YPos="325" Width="6" Height="6" /> 
+
+  
+  <!-- Mini button border -->
+  <Image Name="MiniButton_TL" XPos="440" YPos="400" Width="4" Height="4" /> 
+  <Image Name="MiniButton_L" XPos="440" YPos="404" Width="4" Height="34" /> 
+  <Image Name="MiniButton_BL" XPos="440" YPos="438" Width="4" Height="4" /> 
+  <Image Name="MiniButton_T" XPos="444" YPos="400" Width="34" Height="4" /> 
+  <Image Name="MiniButton_M" XPos="444" YPos="404" Width="34" Height="34" />
+  <Image Name="MiniButton_B" XPos="444" YPos="438" Width="34" Height="4" /> 
+  <Image Name="MiniButton_TR" XPos="478" YPos="400" Width="4" Height="4" /> 
+  <Image Name="MiniButton_R" XPos="478" YPos="404" Width="4" Height="34" /> 
+  <Image Name="MiniButton_BR" XPos="478" YPos="438" Width="4" Height="4" /> 
+  
+  <!-- Generic button background -->
+  <Image Name="MiniButton_Background" XPos="444" YPos="454" Width="34" Height="34" />
+  <Image Name="MiniButton_BackgHighlight" XPos="444" YPos="504" Width="34" Height="34" />
+
+
+  <!-- Show the empty adaptation of a button using the 64 pixels width and 32 pixels height -->
+  <!-- the button is optimized for a 32 pixels height. Minimum recommended height = 15*2 = 30 pixels-->
+  <!-- images start at (x, y coords) 5x5, end at 68x36 (inclusive)-->
+  <!-- TODO: 5x5 => 120x80 => add 115, 75-->
+  <Image Name="ButtonEmpty32_UpL" XPos="120" YPos="80" Width="15" Height="2" />
+  <Image Name="ButtonEmpty32_UpM" XPos="120" YPos="80" Width="34" Height="2" />
+  <Image Name="ButtonEmpty32_UpR" XPos="120" YPos="80" Width="15" Height="2" />
+  <Image Name="ButtonEmpty32_UpT" XPos="120" YPos="80" Width="34" Height="15" />
+  <Image Name="ButtonEmpty32_UpB" XPos="120" YPos="80" Width="34" Height="15" />
+  <Image Name="ButtonEmpty32_UpBL" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_UpBR" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_UpTL" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_UpTR" XPos="120" YPos="80" Width="15" Height="15" />
+
+  <Image Name="ButtonEmpty32_OverL" XPos="120" YPos="80" Width="15" Height="2" />
+  <Image Name="ButtonEmpty32_OverM" XPos="120" YPos="80" Width="34" Height="2" />
+  <Image Name="ButtonEmpty32_OverR" XPos="120" YPos="80" Width="15" Height="2" />
+  <Image Name="ButtonEmpty32_OverT" XPos="120" YPos="80" Width="34" Height="15" />
+  <Image Name="ButtonEmpty32_OverB" XPos="120" YPos="80" Width="34" Height="15" />
+  <Image Name="ButtonEmpty32_OverBL" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_OverBR" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_OverTL" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_OverTR" XPos="120" YPos="80" Width="15" Height="15" />
+
+  <Image Name="ButtonEmpty32_DownL" XPos="120" YPos="80" Width="15" Height="2" />
+  <Image Name="ButtonEmpty32_DownM" XPos="120" YPos="80" Width="34" Height="2" />
+  <Image Name="ButtonEmpty32_DownR" XPos="120" YPos="80" Width="15" Height="2" />
+  <Image Name="ButtonEmpty32_DownT" XPos="120" YPos="80" Width="34" Height="15" />
+  <Image Name="ButtonEmpty32_DownB" XPos="120" YPos="80" Width="34" Height="15" />
+  <Image Name="ButtonEmpty32_DownBL" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_DownBR" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_DownTL" XPos="120" YPos="80" Width="15" Height="15" />
+  <Image Name="ButtonEmpty32_DownTR" XPos="120" YPos="80" Width="15" Height="15" />
+
+  <!-- Static text borders --> <!-- TODO: bring to standardized suffix format -->
+  <Image Name="StaticTopLeft" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="StaticLeft" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="StaticBottomLeft" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="StaticTop" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="StaticBackdrop" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="StaticBottom" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="StaticTopRight" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="StaticRight" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="StaticBottomRight" XPos="123" YPos="518" Width="10" Height="10" />
+
+  <Image Name="Static_TL" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="Static_L" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="Static_BL" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="Static_T" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="Static_M" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="Static_B" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="Static_TR" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="Static_R" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="Static_BR" XPos="123" YPos="518" Width="10" Height="10" />
+
+  <!-- Combobox/Drop-down list -->
+  <Image Name="ComboboxEditLeft" XPos="300" YPos="10" Width="16" Height="64" />
+  <Image Name="ComboboxEditMiddle" XPos="316" YPos="10" Width="52" Height="64" />
+  <Image Name="ComboboxEditRight" XPos="368" YPos="10" Width="16" Height="64" />
+
+  <!-- Combo-box button borders -->
+  <Image Name="ComboboxButtonBorder_TL" XPos="300" YPos="600" Width="20" Height="10" />
+  <Image Name="ComboboxButtonBorder_L" XPos="300" YPos="610" Width="20" Height="18" />
+  <Image Name="ComboboxButtonBorder_BL" XPos="300" YPos="628" Width="20" Height="20" />
+  <Image Name="ComboboxButtonBorder_T" XPos="320" YPos="600" Width="20" Height="10" />
+  <Image Name="ComboboxButtonBorder_M" XPos="320" YPos="610" Width="20" Height="18" /> 
+  <Image Name="ComboboxButtonBorder_B" XPos="320" YPos="628" Width="20" Height="20" />
+  <Image Name="ComboboxButtonBorder_TR" XPos="340" YPos="600" Width="26" Height="10" />
+  <Image Name="ComboboxButtonBorder_R" XPos="340" YPos="610" Width="26" Height="18" /> 
+  <Image Name="ComboboxButtonBorder_BR" XPos="340" YPos="628" Width="26" Height="20" />
+
+  <Image Name="ComboboxButtonBackground" XPos="300" YPos="650" Width="65" Height="48" />
+  <Image Name="ComboboxButtonBackgHighlight" XPos="300" YPos="700" Width="65" Height="48" />
+  <Image Name="ComboboxButtonGlyph" XPos="370" YPos="600" Width="65" Height="48" />
+
+  <!-- TODO: bring to standardized suffix format --> <!-- TODO: check if removal is recommended (static duplicate) -->
+  <Image Name="ComboboxListTopLeft" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="ComboboxListLeft" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="ComboboxListBottomLeft" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="ComboboxListTop" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="ComboboxListBackdrop" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="ComboboxListBottom" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="ComboboxListTopRight" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="ComboboxListRight" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="ComboboxListBottomRight" XPos="123" YPos="518" Width="10" Height="10" />
+
+  <Image Name="ComboboxSelectionBrush" XPos="300" YPos="270" Width="192" Height="48" /> <!-- shared -->
+
+  <!-- multilist header; mostly shared images -->
+  <Image Name="HeaderBarSplitterNormal" XPos="474" YPos="10" Width="3" Height="32" /> <!-- shared -->
+  <Image Name="HeaderBarSplitterHover" XPos="487" YPos="10" Width="7" Height="32" /> <!-- shared -->
+  <Image Name="HeaderBarSortUp" XPos="968" YPos="162" Width="48" Height="48" /> <!-- shared -->
+  <Image Name="HeaderBarSortDown" XPos="968" YPos="210" Width="48" Height="48" /> <!-- shared -->
+
+  <!-- multilist borders - shared -->
+  <!-- TODO: bring to standardized suffix format --> <!-- TODO: check if removal is recommended (static duplicate) -->
+  <Image Name="MultiListTopLeft" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="MultiListLeft" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="MultiListBottomLeft" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="MultiListTop" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="MultiListBackdrop" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="MultiListBottom" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="MultiListTopRight" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="MultiListRight" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="MultiListBottomRight" XPos="123" YPos="518" Width="10" Height="10" />
+
+  <Image Name="MultiListSelectionBrush" XPos="300" YPos="270" Width="192" Height="48" /> <!-- shared -->
+  
+  <Image Name="TextSelectionBrush" XPos="300" YPos="270" Width="192" Height="48" /> <!-- shared -->
+
+  <!-- Edit Box --> <!-- same as combo-edit box-->
+  <Image Name="EditBox_TL" XPos="300" YPos="10" Width="8" Height="8" />
+  <Image Name="EditBox_L" XPos="300" YPos="18" Width="8" Height="48" />
+  <Image Name="EditBox_BL" XPos="300" YPos="66" Width="8" Height="8" />
+  <Image Name="EditBox_T" XPos="308" YPos="10" Width="74" Height="8" />
+  <Image Name="EditBox_M" XPos="308" YPos="18" Width="74" Height="48" />
+  <Image Name="EditBox_B" XPos="308" YPos="66" Width="74" Height="8" />
+  <Image Name="EditBox_TR" XPos="382" YPos="10" Width="8" Height="8" />
+  <Image Name="EditBox_R" XPos="382" YPos="18" Width="8" Height="48" />
+  <Image Name="EditBox_BR" XPos="382" YPos="66" Width="8" Height="8" />
+
+  <Image Name="EditBoxCarat" XPos="480" YPos="10" Width="3" Height="60" />
+
+  <!-- Check Box -->
+  <Image Name="CheckboxMark" XPos="692" YPos="236" Width="64" Height="64" />
+  <!-- generic checkbox border -->
+  <Image Name="CheckboxBorder_TL" XPos="510" YPos="400" Width="8" Height="8" />
+  <Image Name="CheckboxBorder_L" XPos="510" YPos="408" Width="8" Height="48" />
+  <Image Name="CheckboxBorder_BL" XPos="510" YPos="456" Width="8" Height="8" />
+  <Image Name="CheckboxBorder_T" XPos="518" YPos="400" Width="48" Height="8" />
+  <Image Name="CheckboxBorder_M" XPos="518" YPos="408" Width="48" Height="48" />
+  <Image Name="CheckboxBorder_B" XPos="518" YPos="456" Width="48" Height="8" />
+  <Image Name="CheckboxBorder_TR" XPos="566" YPos="400" Width="8" Height="8" />
+  <Image Name="CheckboxBorder_R" XPos="566" YPos="408" Width="8" Height="48" />
+  <Image Name="CheckboxBorder_BR" XPos="566" YPos="456" Width="8" Height="8" />
+  <!-- generic checkbox background -->
+  <Image Name="CheckboxBackground" XPos="514" YPos="474" Width="56" Height="56" />
+  <!-- generic checkbox background highlight -->
+  <Image Name="CheckboxBackgroundHighlight" XPos="514" YPos="544" Width="56" Height="56" />
+
+
+  <!-- Scrolling items -->
+  <Image Name="MiniVertScrollBarSegment" XPos="634" YPos="10" Width="14" Height="60" />
+  
+  <!-- EMPTY PICTURES ATM -->
+  <Image Name="MiniHorzScrollBarSegment" XPos="560" YPos="150" Width="60" Height="14" /> 
+
+  <!-- scrolls - 16 pixels sized-->
+  <Image Name="MiniHorzScrollLeftNormal" XPos="280" YPos="40" Width="16" Height="16" />
+  <Image Name="MiniHorzScrollRightNormal" XPos="296" YPos="40" Width="16" Height="16" />
+
+
+  <!--Horizontal scrollbar thumb border -->
+  <Image Name="HorzScrollThumbBorder_TL" XPos="780" YPos="380" Width="8" Height="8" />
+  <Image Name="HorzScrollThumbBorder_L" XPos="780" YPos="388" Width="8" Height="24" />
+  <Image Name="HorzScrollThumbBorder_BL" XPos="780" YPos="412" Width="8" Height="8" />
+  <Image Name="HorzScrollThumbBorder_T" XPos="788" YPos="380" Width="64" Height="8" />
+  <Image Name="HorzScrollThumbBorder_M" XPos="788" YPos="388" Width="64" Height="24" />
+  <Image Name="HorzScrollThumbBorder_B" XPos="788" YPos="412" Width="64" Height="8" /> 
+  <Image Name="HorzScrollThumbBorder_TR" XPos="852" YPos="380" Width="8" Height="8" /> 
+  <Image Name="HorzScrollThumbBorder_R" XPos="852" YPos="388" Width="8" Height="24" /> 
+  <Image Name="HorzScrollThumbBorder_BR" XPos="852" YPos="412" Width="8" Height="8" /> 
+
+  <Image Name="HorzScrollThumb_Background" XPos="786" YPos="426" Width="68" Height="28" />
+  <Image Name="HorzScrollThumb_BackgHighlight" XPos="786" YPos="466" Width="68" Height="28" />
+
+  <!-- Vertical scrollbar thumb border -->  
+  <Image Name="VertScrollThumbBorder_TL" XPos="880" YPos="290" Width="8" Height="8" /> 
+  <Image Name="VertScrollThumbBorder_L" XPos="880" YPos="298" Width="8" Height="64" /> 
+  <Image Name="VertScrollThumbBorder_BL" XPos="880" YPos="362" Width="8" Height="8" /> 
+  <Image Name="VertScrollThumbBorder_T" XPos="888" YPos="290" Width="24" Height="8" /> 
+  <Image Name="VertScrollThumbBorder_M" XPos="888" YPos="298" Width="24" Height="64" />
+  <Image Name="VertScrollThumbBorder_B" XPos="888" YPos="362" Width="24" Height="8" /> 
+  <Image Name="VertScrollThumbBorder_TR" XPos="912" YPos="290" Width="8" Height="8" /> 
+  <Image Name="VertScrollThumbBorder_R" XPos="912" YPos="298" Width="8" Height="64" /> 
+  <Image Name="VertScrollThumbBorder_BR" XPos="912" YPos="362" Width="8" Height="8" /> 
+
+  <Image Name="VertScrollThumb_Background" XPos="926" YPos="296" Width="28" Height="68" />
+  <Image Name="VertScrollThumb_BackgHighlight" XPos="966" YPos="296" Width="28" Height="68" />
+
+
+  <!-- Shared pictures at the moment -->
+  <!-- TODO: bring to standardized suffix format --> <!-- TODO: check if removal is recommended (static duplicate) -->
+  <Image Name="ListboxTopLeft" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="ListboxLeft" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="ListboxBottomLeft" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="ListboxTop" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="ListboxBackdrop" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="ListboxBottom" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="ListboxTopRight" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="ListboxRight" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="ListboxBottomRight" XPos="123" YPos="518" Width="10" Height="10" />
+  
+  
+  <!-- selections -->
+  <Image Name="ListboxSelectionBrush" XPos="300" YPos="270" Width="192" Height="48" /> <!-- shared -->
+  
+  <!-- Tool-tip images -->
+  <Image Name="TooltipTopLeft" XPos="5" YPos="680" Width="10" Height="10" />
+  <Image Name="TooltipLeftEdge" XPos="5" YPos="690" Width="10" Height="108" />
+  <Image Name="TooltipBottomLeft" XPos="5" YPos="798" Width="10" Height="10" />
+  <Image Name="TooltipTopEdge" XPos="15" YPos="680" Width="108" Height="10" />
+  <Image Name="TooltipMiddle" XPos="15" YPos="690" Width="108" Height="108" />
+  <Image Name="TooltipBottomEdge" XPos="15" YPos="798" Width="108" Height="10" />
+  <Image Name="TooltipTopRight" XPos="123" YPos="680" Width="10" Height="10" />
+  <Image Name="TooltipRightEdge" XPos="123" YPos="690" Width="10" Height="108" />
+  <Image Name="TooltipBottomRight" XPos="123" YPos="798" Width="10" Height="10" />
+
+  <!-- Multi-line edit-box content borders; same as static text borders -->
+  <!-- TODO: bring to standardized suffix format --> <!-- TODO: check if removal is recommended (static duplicate) -->
+  <Image Name="MultiLineEditboxTopLeft" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="MultiLineEditboxLeft" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="MultiLineEditboxBottomLeft" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="MultiLineEditboxTop" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="MultiLineEditboxBackdrop" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="MultiLineEditboxBottom" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="MultiLineEditboxTopRight" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="MultiLineEditboxRight" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="MultiLineEditboxBottomRight" XPos="123" YPos="518" Width="10" Height="10" />
+
+  <Image Name="MultiLineEditboxSelectionBrush" XPos="300" YPos="270" Width="192" Height="48" /> <!-- shared -->
+
+  <!-- A generic Tab button border -->
+  <Image Name="TabButtonBorder_TL" XPos="300" YPos="120" Width="10" Height="10" />
+  <Image Name="TabButtonBorder_L" XPos="300" YPos="130" Width="10" Height="44" />
+  <Image Name="TabButtonBorder_BL" XPos="300" YPos="174" Width="10" Height="10" />
+  <Image Name="TabButtonBorder_T" XPos="310" YPos="120" Width="44" Height="10" />
+  <Image Name="TabButtonBorder_M" XPos="310" YPos="130" Width="44" Height="44" />
+  <Image Name="TabButtonBorder_B" XPos="310" YPos="174" Width="44" Height="10" />
+  <Image Name="TabButtonBorder_TR" XPos="354" YPos="120" Width="10" Height="10" />
+  <Image Name="TabButtonBorder_R" XPos="354" YPos="130" Width="10" Height="44" />
+  <Image Name="TabButtonBorder_BR" XPos="354" YPos="174" Width="10" Height="10" />
+  
+  <Image Name="TabButton_Background" XPos="386" YPos="126" Width="52" Height="52" />
+  <Image Name="TabButton_Backghighlight" XPos="466" YPos="126" Width="52" Height="52" />
+
+  <!-- Tab content borders; same as static text borders -->
+  <!-- TODO: bring to standardized suffix format --> <!-- TODO: check if removal is recommended (static duplicate) -->
+  <Image Name="TabContentPaneUpperLeft" XPos="5" YPos="400" Width="10" Height="10" />
+  <Image Name="TabContentPaneLeft" XPos="5" YPos="410" Width="10" Height="108" />
+  <Image Name="TabContentPaneLowerLeft" XPos="5" YPos="518" Width="10" Height="10" />
+  <Image Name="TabContentPaneUpper" XPos="15" YPos="400" Width="108" Height="10" />
+  <Image Name="TabContentPaneMiddle" XPos="15" YPos="410" Width="108" Height="108" />
+  <Image Name="TabContentPaneLower" XPos="15" YPos="518" Width="108" Height="10" />
+  <Image Name="TabContentPaneUpperRight" XPos="123" YPos="400" Width="10" Height="10" />
+  <Image Name="TabContentPaneRight" XPos="123" YPos="410" Width="10" Height="108" />
+  <Image Name="TabContentPaneLowerRight" XPos="123" YPos="518" Width="10" Height="10" />
+
+
+  <!-- Titlebar border -->
+  <Image Name="TitlebarBorder_TL" XPos="5" YPos="820" Width="8" Height="8" />
+  <Image Name="TitlebarBorder_L" XPos="5" YPos="828" Width="8" Height="48" />
+  <Image Name="TitlebarBorder_BL" XPos="5" YPos="876" Width="8" Height="8" />
+  <Image Name="TitlebarBorder_T" XPos="13" YPos="820" Width="240" Height="8" />
+  <Image Name="TitlebarBorder_M" XPos="13" YPos="828" Width="240" Height="48" />
+  <Image Name="TitlebarBorder_B" XPos="13" YPos="876" Width="240" Height="8" /> 
+  <Image Name="TitlebarBorder_TR" XPos="253" YPos="820" Width="8" Height="8" /> 
+  <Image Name="TitlebarBorder_R" XPos="253" YPos="828" Width="8" Height="48" /> 
+  <Image Name="TitlebarBorder_BR" XPos="253" YPos="876" Width="8" Height="8" /> 
+
+  <Image Name="TitlebarBackground" XPos="273" YPos="828" Width="240" Height="48" /> 
+  <Image Name="TitlebarBackghighlight" XPos="533" YPos="828" Width="240" Height="48" /> 
+  
+  <!-- Same as Anonymous panel with transparency -->
+  <Image Name="WindowTopLeft" XPos="140" YPos="265" Width="16" Height="16" />
+  <Image Name="WindowLeftEdge" XPos="140" YPos="281" Width="16" Height="96" />
+  <Image Name="WindowBottomLeft" XPos="140" YPos="377" Width="16" Height="16" />
+  <Image Name="WindowTopEdge" XPos="156" YPos="265" Width="96" Height="16" />
+  <Image Name="WindowMid" XPos="156" YPos="281" Width="96" Height="96" />
+  <Image Name="WindowBottomEdge" XPos="156" YPos="377" Width="96" Height="16" />
+  <Image Name="WindowTopRight" XPos="252" YPos="265" Width="16" Height="16" />
+  <Image Name="WindowRightEdge" XPos="252" YPos="281" Width="16" Height="96" />
+  <Image Name="WindowBottomRight" XPos="252" YPos="377" Width="16" Height="16" />
+
+  <!-- Duplicate of SimplePanelBck -->
+  <Image Name="WindowBck_TL" XPos="5" YPos="540" Width="16" Height="16" />
+  <Image Name="WindowBck_L" XPos="5" YPos="556" Width="16" Height="96" />
+  <Image Name="WindowBck_BL" XPos="5" YPos="652" Width="16" Height="16" />
+  <Image Name="WindowBck_T" XPos="21" YPos="540" Width="96" Height="16" />
+  <Image Name="WindowBck_M" XPos="21" YPos="556" Width="96" Height="96" />
+  <Image Name="WindowBck_B" XPos="21" YPos="652" Width="96" Height="16" />
+  <Image Name="WindowBck_TR" XPos="117" YPos="540" Width="16" Height="16" />
+  <Image Name="WindowBck_R" XPos="117" YPos="556" Width="16" Height="96" />
+  <Image Name="WindowBck_BR" XPos="117" YPos="652" Width="16" Height="16" />
+
+  <!-- Embelished panel border -->
+  <Image Name="EmbelishedPanel_TL" XPos="5" YPos="5" Width="85" Height="85" />
+  <Image Name="EmbelishedPanel_L" XPos="5" YPos="90" Width="85" Height="84" />
+  <Image Name="EmbelishedPanel_BL" XPos="5" YPos="174" Width="85" Height="85" />
+  <Image Name="EmbelishedPanel_T" XPos="90" YPos="5" Width="84" Height="85" />
+  <Image Name="EmbelishedPanel_M" XPos="90" YPos="90" Width="84" Height="84" />
+  <Image Name="EmbelishedPanel_B" XPos="90" YPos="174" Width="84" Height="85" />
+  <Image Name="EmbelishedPanel_TR" XPos="174" YPos="5" Width="85" Height="85" />
+  <Image Name="EmbelishedPanel_R" XPos="174" YPos="90" Width="85" Height="84" />
+  <Image Name="EmbelishedPanel_BR" XPos="174" YPos="174" Width="85" Height="85" />
+
+  <!-- background for panels -->
+  <Image Name="PanelBackground_TL" XPos="135" YPos="540" Width="10" Height="10" />
+  <Image Name="PanelBackground_L" XPos="135" YPos="550" Width="10" Height="108" />
+  <Image Name="PanelBackground_BL" XPos="135" YPos="658" Width="10" Height="10" />
+  <Image Name="PanelBackground_T" XPos="145" YPos="540" Width="108" Height="10" />
+  <Image Name="PanelBackground_M" XPos="145" YPos="550" Width="108" Height="108" />
+  <Image Name="PanelBackground_B" XPos="145" YPos="658" Width="108" Height="10" />
+  <Image Name="PanelBackground_TR" XPos="253" YPos="540" Width="10" Height="10" />
+  <Image Name="PanelBackground_R" XPos="253" YPos="550" Width="10" Height="108" />
+  <Image Name="PanelBackground_BR" XPos="253" YPos="658" Width="10" Height="10" />
+
+  <!-- Progress bar frame -->
+  <Image Name="ProgressBar_HD_TL" XPos="770" YPos="130" Width="30" Height="28" />
+  <Image Name="ProgressBar_HD_L" XPos="770" YPos="158" Width="30" Height="10" />
+  <Image Name="ProgressBar_HD_BL" XPos="770" YPos="168" Width="30" Height="26" />
+  <Image Name="ProgressBar_HD_T" XPos="800" YPos="130" Width="68" Height="28" />
+  <Image Name="ProgressBar_HD_M" XPos="800" YPos="158" Width="68" Height="10" />
+  <Image Name="ProgressBar_HD_B" XPos="800" YPos="168" Width="68" Height="26" />
+  <Image Name="ProgressBar_HD_TR" XPos="868" YPos="130" Width="30" Height="28" />
+  <Image Name="ProgressBar_HD_R" XPos="868" YPos="158" Width="30" Height="10" />
+  <Image Name="ProgressBar_HD_BR" XPos="868" YPos="168" Width="30" Height="26" />
+  
+  <!-- A progress bar with cut edges -->
+  <Image Name="ProgressBar_HD_TL_Redux" XPos="776" YPos="130" Width="24" Height="28" />
+  <Image Name="ProgressBar_HD_L_Redux" XPos="776" YPos="158" Width="24" Height="10" />
+  <Image Name="ProgressBar_HD_BL_Redux" XPos="776" YPos="168" Width="24" Height="26" />
+  <Image Name="ProgressBar_HD_TR_Redux" XPos="868" YPos="130" Width="24" Height="28" />
+  <Image Name="ProgressBar_HD_R_Redux" XPos="868" YPos="158" Width="24" Height="10" />
+  <Image Name="ProgressBar_HD_BR_Redux" XPos="868" YPos="168" Width="24" Height="26" />
+
+  <!-- Progress bar - the sections for Dim and Lit filling. Only 1 used ATM -->
+  <Image Name="ProgressBarLitSegment" XPos="770" YPos="60" Width="128" Height="32" />
+  <Image Name="ProgressBarGraySegment" XPos="770" YPos="26" Width="128" Height="32" />
+
+  <Image Name="ProgressBar_BackgHighlight" XPos="780" YPos="208" Width="108" Height="48" />
+
+  <!-- Empty glyphs -->
+  <Image Name="EmptyGlyph24" XPos="40" YPos="40" Width="24" Height="24" />
+  <Image Name="EmptyGlyph32" XPos="40" YPos="40" Width="32" Height="32" />
+  <Image Name="EmptyGlyph48" XPos="40" YPos="40" Width="48" Height="48" />
+
+  <!-- Other glyphs -->
+  <Image Name="GlyphBlack" XPos="960" YPos="10" Width="48" Height="48" />
+  <Image Name="GlyphArrowRight" XPos="960" YPos="58" Width="48" Height="48" />
+  <Image Name="GlyphArrowLeft" XPos="960" YPos="106" Width="48" Height="48" />
+  <Image Name="GlyphArrowUp" XPos="960" YPos="154" Width="48" Height="48" />
+  <Image Name="GlyphArrowDown" XPos="960" YPos="202" Width="48" Height="48" />
+  <Image Name="GlyphX" XPos="702" YPos="176" Width="48" Height="48" />
+  
+  <Image Name="GlyphShield" XPos="900" YPos="10" Width="48" Height="48" />
+  <Image Name="GlyphExit" XPos="976" YPos="928" Width="48" Height="48" />
+  <Image Name="GlyphBack" XPos="976" YPos="976" Width="48" Height="48" />
+  
+</Imageset>

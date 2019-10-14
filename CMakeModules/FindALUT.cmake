@@ -23,14 +23,31 @@
 INCLUDE(FindPackageHandleStandardArgs)
 INCLUDE(HandleLibraryTypes)
 
+SET (ALUT_SEARCH_PATH ${PROJECT_SOURCE_DIR}/dependencies/freealut ${PROJECT_SOURCE_DIR}/dependencies/alut 
+        ${PROJECT_SOURCE_DIR}/../dependencies/freealut ${PROJECT_SOURCE_DIR}/../dependencies/alut
+        $ENV{ALUTDIR})
 FIND_PATH(ALUT_INCLUDE_DIR AL/alut.h
-  PATHS
-  $ENV{ALUTDIR}
+  PATHS  ${ALUT_SEARCH_PATH}
   ~/Library/Frameworks/OpenAL.framework
   /Library/Frameworks/OpenAL.framework
   /System/Library/Frameworks/OpenAL.framework # Tiger
   PATH_SUFFIXES include include/OpenAL include/AL Headers
 )
+
+IF (NOT ALUT_STATIC)
+  FIND_FILE (ALUT_BINARY_REL 
+      NAMES "alut.dll" "freealut.dll" 
+      HINTS ${ALUT_SEARCH_PATH}
+      PATH_SUFFIXES "" Release relwithdebinfo minsizerel
+  )
+        
+  FIND_FILE (ALUT_BINARY_DBG 
+      NAMES "alut.dll" "freealut.dll" "alutd.dll" "freealutd.dll" 
+      HINTS ${ALUT_SEARCH_PATH}
+      PATH_SUFFIXES "" debug
+  )
+ENDIF ()
+
 
 # I'm not sure if I should do a special casing for Apple. It is
 # unlikely that other Unix systems will find the framework path.
@@ -54,12 +71,12 @@ IF(${ALUT_INCLUDE_DIR} MATCHES ".framework")
 ELSE()
   FIND_LIBRARY(ALUT_LIBRARY_OPTIMIZED
     NAMES alut
-    PATHS $ENV{ALUTDIR}
+    PATHS ${ALUT_SEARCH_PATH}
     PATH_SUFFIXES lib libs
   )
   FIND_LIBRARY(ALUT_LIBRARY_DEBUG
     NAMES alutd alut_d alutD alut_D
-    PATHS $ENV{ALUTDIR}
+    PATHS ${ALUT_SEARCH_PATH}
     PATH_SUFFIXES lib libs
   )
 ENDIF()

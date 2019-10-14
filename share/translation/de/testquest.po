@@ -1,0 +1,139 @@
+# German translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# kalimgard <kalimgard@users.sourceforge.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2013-10-30 15:49+0200\n"
+"Last-Translator: Marcel H <hi84@live.at>\n"
+"Language-Team: German "
+"<http://hosted.weblate.org/projects/sumwars/testquest/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.8-dev\n"
+
+#: testquest.xml:2
+msgid "Fenor Marken"
+msgstr "Fenor Marken"
+
+#: testquest.xml:2
+msgid "testquest"
+msgstr "Testquest"
+
+#: testquest.xml:3
+msgid "Test"
+msgstr "Test"
+
+#: testquest.xml:9
+msgid "This is a Test"
+msgstr "Das ist ein Test"
+
+#: testquest.xml:11
+msgid "surprised"
+msgstr "überrascht"
+
+#: testquest.xml:13
+msgid "thoughtful"
+msgstr "nachdenklich"
+
+#: testquest.xml:16
+msgid "happy"
+msgstr "glücklich"
+
+#: testquest.xml:19
+msgid "amused"
+msgstr "amüsiert"
+
+#: testquest.xml:21
+msgid "excited"
+msgstr "angespannt"
+
+#: testquest.xml:23
+msgid "in love"
+msgstr "verliebt"
+
+#: testquest.xml:25
+msgid "bored"
+msgstr "gelangweilt"
+
+#: testquest.xml:27
+msgid "unhappy"
+msgstr "unglücklich"
+
+#: testquest.xml:29
+msgid "sad"
+msgstr "traurig"
+
+#: testquest.xml:31
+msgid "pain"
+msgstr "schmerzen"
+
+#: testquest.xml:33
+msgid "sneer"
+msgstr "spotten"
+
+#: testquest.xml:35
+msgid "grin"
+msgstr "grinsen"
+
+#: testquest.xml:37
+msgid "offended"
+msgstr "beleidigt"
+
+#: testquest.xml:39
+msgid "threatening"
+msgstr "bedrohlich"
+
+#: testquest.xml:41
+msgid "angry"
+msgstr "wütend"
+
+#: testquest.xml:43
+msgid "shouting a warcry"
+msgstr "einen Schlachtruf schreien"
+
+#: testquest.xml:45
+msgid "exhausted"
+msgstr "exausted"
+
+#: testquest.xml:47
+msgid "injured"
+msgstr "verletzt"
+
+#: testquest.xml:49
+msgid "deadly injured"
+msgstr "tödlich verletzt"
+
+#: testquest.xml:50
+msgid "afraid"
+msgstr "verängstigt"
+
+#: testquest.xml:51
+msgid "in panic"
+msgstr "in Panik"
+
+#: testquest.xml:52
+msgid "putting up a distance"
+msgstr "eine Distanz aufbauen"
+
+#: testquest.xml:53
+msgid "being disgusted"
+msgstr "angeekelt werden"
+
+#: testquest.xml:54
+msgid "and yet another Test"
+msgstr "und noch ein Test"
+
+#: testquest.xml:55
+msgid "again a test"
+msgstr "wieder ein Test"
+
+#, fuzzy
+#~ msgid "I am Fenor Marken"
+#~ msgstr "Fenor Marken"

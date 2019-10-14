@@ -1,0 +1,3803 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-09-10 15:32+0300\n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#: aisen.xml:6
+msgid "aisMeadow"
+msgstr "Левада"
+
+#: aisen.xml:52
+msgid "aisPlains"
+msgstr "Рівнина"
+
+#: aisen.xml:100
+msgid "aisMaylonsGraveEntry"
+msgstr "Могила Мейлона"
+
+#: aisen.xml:133
+msgid "aisMaylonsGraveL1"
+msgstr "Могила Мейлона, рівень 1"
+
+#: aisen.xml:173
+msgid "aisMaylonsGraveL2"
+msgstr "Могила Мейлона, склеп"
+
+#: aisen.xml:213
+msgid "aisHeath"
+msgstr "Пустище"
+
+#: aisen.xml:253
+msgid "aisStonePlains"
+msgstr "Кам'яні рівнини"
+
+#: aisen.xml:300
+msgid "aisDarkClearing"
+msgstr "Темна поляна"
+
+#: aisen.xml:341
+msgid "aisWideHeath"
+msgstr "Широке пустище"
+
+#: aisen.xml:386
+msgid "joringsbridge"
+msgstr "Джорінгсбрідж"
+
+#: aisen.xml:453
+msgid "aisNorthMeadow"
+msgstr "Північний луг"
+
+#: aisen.xml:502
+msgid "aisJoringsforest"
+msgstr "Джорінгсфорест"
+
+#: aisen.xml:540
+msgid "aisFairyforest"
+msgstr "Казковий ліс"
+
+#: aisen.xml:586
+msgid "aisDarkFairyforest"
+msgstr "Темний Казковий ліс"
+
+#: aisen.xml:629
+msgid "aisWolfstones"
+msgstr "Вовчі камені"
+
+#: aisen.xml:677
+msgid "aisWestwoods"
+msgstr "Західний ліс"
+
+#: aisen.xml:720
+msgid "aisMounPath"
+msgstr "Гірска стежка"
+
+#: aisen.xml:750
+msgid "aisMistslope"
+msgstr "Туманний схил"
+
+#: aisen.xml:796
+msgid "aisEastslope"
+msgstr "Східний схил"
+
+#: aisen.xml:846
+msgid "Watch out! Monsters from the mine! Help me!"
+msgstr "Обережно! Чудовиська з шахти! Допоможіть мені!"
+
+#: aisen.xml:862
+msgid "Let me tell you I'm no monster. I'm worse."
+msgstr "Дозволь мені сказати, що я не чудовисько. Я гірше."
+
+#: aisen.xml:869
+msgid "aisBoulderGrounds"
+msgstr "Схил зі щебеню"
+
+#: aisen.xml:908
+msgid "aisMounMeadows"
+msgstr "Полонина"
+
+#: aisen.xml:950
+msgid "aisOldDwarfRuins"
+msgstr "Старі руїни гномів"
+
+#: aisen.xml:986
+msgid "aisOldCellar"
+msgstr "Старий льох"
+
+#: aisen.xml:1021
+msgid "aisBaelensRift"
+msgstr "Ушелина Баелена"
+
+#: aisen.xml:1059
+msgid "aisHillRoad"
+msgstr "Гірська дорога"
+
+#: aisen.xml:1100
+msgid "copperRock"
+msgstr "Мідна скеля"
+
+#: aisen.xml:1138
+msgid "aisCopperFields"
+msgstr "Мідні поля"
+
+#: aisen.xml:1176
+msgid "aisMineEntry"
+msgstr "Вхід в шахту"
+
+#: aisenMonsterStats.xml:3
+msgid "Bloodbeak"
+msgstr "Кривавий дзьоб"
+
+#: aisenMonsterStats.xml:52
+msgid "Giant wolf"
+msgstr "Гігантський вовк"
+
+#: aisenMonsterStats.xml:96
+msgid "wolf"
+msgstr "вовк"
+
+#: aisenMonsterStats.xml:151
+msgid "Psychotic Spider"
+msgstr "Психотичний Павук"
+
+#: aisenMonsterStats.xml:199
+msgid "Cave Spider"
+msgstr "Печерний Павук"
+
+#: aisenMonsterStats.xml:251
+msgid "Spider"
+msgstr "Павук"
+
+#: aisenMonsterStats.xml:293
+msgid "Giant Bat"
+msgstr "Гігантська Летюча миша"
+
+#: aisenNPCStats.xml:3 aisenNPCStats.xml:526 npc.xml:10
+msgid "Guard"
+msgstr "Охорона"
+
+#: aisenNPCStats.xml:46 aisenNPCStats.xml:88 npc.xml:25
+msgid "General Greif"
+msgstr "Генерал Журба"
+
+#: aisenNPCStats.xml:133 npc.xml:31
+msgid "Prince Karlen"
+msgstr "Принц Карлен"
+
+#: aisenNPCStats.xml:176 npc.xml:19
+msgid "Leonard von Robenforst"
+msgstr "Леонард з Робенфорсту"
+
+#: aisenNPCStats.xml:219
+msgid "Scout"
+msgstr "Розвідник"
+
+#: aisenNPCStats.xml:257 monster_ablt.xml:70
+msgid "Healer"
+msgstr "Цілитель"
+
+#: aisenNPCStats.xml:301 aisenNPCStats.xml:345
+msgid "Trader"
+msgstr "Торговець"
+
+#: aisenNPCStats.xml:391 aisenNPCStats.xml:569
+msgid "Bowman"
+msgstr "Лучник"
+
+#: aisenNPCStats.xml:430 aisenNPCStats.xml:479
+msgid "Avaeras Order, Firemage"
+msgstr "Аваерас Лад, Вогняний маг"
+
+#: aisenNPCStats.xml:608
+msgid "Elite Swordsman"
+msgstr "Елітний Мечник"
+
+#: amulet.xml:5
+msgid "feather amulet"
+msgstr "пір'яний амулет"
+
+#: amulet.xml:34
+msgid "amber amulet"
+msgstr "бурштиновий амулет"
+
+#: amulet.xml:63
+msgid "silver amulet"
+msgstr "срібний амулет"
+
+#: amulet.xml:92
+msgid "coral amulet"
+msgstr "кораловий амулет"
+
+#: amulet.xml:121
+msgid "gold amulet"
+msgstr "золотий амулет"
+
+#: archer_ablt.xml:2
+msgid "Snipe"
+msgstr "Бекас"
+
+#: archer_ablt.xml:2
+msgid ""
+"The archers deadly precision causes his shots to deal more damage than "
+"normal."
+msgstr ""
+"Смертельна точність лучника робить його постріли більше шкідливими, ніж "
+"зазвичай."
+
+#: archer_ablt.xml:22
+msgid "Blind Rage"
+msgstr "Сліпа Лють"
+
+#: archer_ablt.xml:22
+msgid ""
+"The archer attacks the enemies eyes, causing him to go berserk, but be "
+"blinded at the same time."
+msgstr "Лучник атакує очі ворога, змушуючи його сходити з розуму та осліпнути."
+
+#: archer_ablt.xml:45
+msgid "Bow Spirit"
+msgstr "Духа Лука"
+
+#: archer_ablt.xml:45
+msgid ""
+"The archer becomes one with his weapon, dealing more damage over a longer "
+"time. Additionally his critical strike chance is increased. This effect "
+"stacks with Elfeyes."
+msgstr ""
+"Лучник стає одним з його зброєю, завдаючи більше шкоди протягом більш "
+"тривалого часу. Крім того збільшується шанс критичного удару. Цей ефект йде "
+"разом з Ельфійськими очима."
+
+#: archer_ablt.xml:67
+msgid "Concentration"
+msgstr "Концентрація"
+
+#: archer_ablt.xml:67
+msgid "The archers steady mind can no longer be confused."
+msgstr "Cтійкий розум лучника вже не може бути попутаний."
+
+#: archer_ablt.xml:78
+msgid "Elfeyes"
+msgstr "Ельфійські очі"
+
+#: archer_ablt.xml:78
+msgid ""
+"The archer shoots with deadly precision, leading to an increased critical "
+"hit rate."
+msgstr ""
+"Лучник стріляє зі смертельною точністю, що призводить до збільшення "
+"критичної шкоди."
+
+#: archer_ablt.xml:88
+msgid "Deadly Roulette"
+msgstr "Смертельна Рулетка"
+
+#: archer_ablt.xml:88
+msgid ""
+"The projectile has a fifty percent probability to attack another target, if "
+"it hits someone. Be careful not to stand in its way, for it distinguishes "
+"not between friend and foe."
+msgstr ""
+"Є ймовірність в п'ятдесят відсотків, що снаряд атакуватиме іншу ціль, якщо "
+"він в когось попаде. Не стійте на його шляху, бо він не розрізняє де друг а "
+"де ворог."
+
+#: archer_ablt.xml:112
+msgid "Catlike Reflexes"
+msgstr "Котячі Рефлекси"
+
+#: archer_ablt.xml:112
+msgid "The archers nimble mind allows him to avoid damage better."
+msgstr "Кмітливий розум дозволяє лучнику краще уникати пошкоджень."
+
+#: archer_ablt.xml:122
+msgid "Explosion Arrow"
+msgstr "Вибухова Стріла"
+
+#: archer_ablt.xml:122
+msgid ""
+"The projectile is imbued with the power of a weak firespirit. It will deal "
+"damage in a small area, if it hits."
+msgstr ""
+"Снаряд пройнятий силою слабкого духа вогню. При попаданні він нанесе шкоду "
+"на невеликій площі."
+
+#: archer_ablt.xml:150
+msgid "Blast Cascade"
+msgstr "Каскад Вибухів"
+
+#: archer_ablt.xml:150
+msgid ""
+"The projectile is imbued with the power of a firespirit. It will explode "
+"with areadamage on hitting. Additionally four more explosions will go of in "
+"every direction."
+msgstr ""
+"Снаряд пройнятий силою духу вогню. Він вибухне при ударі. Крім того, ще "
+"стануться чотири вибухи в кожному напрямку."
+
+#: archer_ablt.xml:179
+msgid "Frost Arrows"
+msgstr "Морозні Стріли"
+
+#: archer_ablt.xml:179
+msgid ""
+"The archer summons a spirit of ice into his weapon, causing his shots to "
+"deal icedamage over a greater amount of time. There is a chance that his "
+"enemies will be frozen solid if they are hit."
+msgstr ""
+"Лучник закликає в свою зброю дух льоду, внаслідок чого його постріли "
+"наносять шкоду льодом протягом довшого проміжку часу. Є ймовірність, що "
+"вороги будуть заморожені після попадання."
+
+#: archer_ablt.xml:200
+msgid "Deadly Swarm"
+msgstr "Смертоносний Рій"
+
+#: archer_ablt.xml:200
+msgid ""
+"The archer shoots four consecutive projectiles that are imbued with vengeful "
+"spirits. They will pursue the enemy, even if he tries to run."
+msgstr ""
+"Лучник вистрілює чотири послідовних снаряди, пройнятих мстивими духами. Вони "
+"будуть переслідувати ворога, навіть якщо він спробує втекти."
+
+#: archer_ablt.xml:219
+msgid "Ice Arrows"
+msgstr "Льодяні Стріли"
+
+#: archer_ablt.xml:219
+msgid ""
+"The archer calls upon the spirits of ice to imbue his projectiles with "
+"icedamage."
+msgstr ""
+"Лучник викликає духів льоду щоб наповнити його снаряди льодовою шкодою."
+
+#: archer_ablt.xml:240
+msgid "Mind Wall"
+msgstr "Розумова Стіна"
+
+#: archer_ablt.xml:240
+msgid "The archer has become immune to anger. He will never go berserk again."
+msgstr ""
+"Лучник став несприйнятливим до гніву. Він більше ніколи не зійде з розуму."
+
+#: archer_ablt.xml:250
+msgid "Fanshot"
+msgstr "Постріл Віялом"
+
+#: archer_ablt.xml:250
+msgid ""
+"The archer shoots five projectiles at a time, aimed at enemies in front of "
+"him. The damage dealt by each projectile suffers a little."
+msgstr ""
+"Лучник вистрілює п'ять снарядів за раз, спрямованих на ворогів перед ним. "
+"Шкода від кожного снаряда трохи зменшується."
+
+#: archer_ablt.xml:273
+msgid "Elfwanderer"
+msgstr "Ельф мандрівник"
+
+#: archer_ablt.xml:273
+msgid ""
+"The archer unleashes a mighty shot that pierces right through an enemy and "
+"might hit another enemy behind him."
+msgstr ""
+"Лучник здійснює могутній постріл який пробиває ворога наскрізь і може "
+"вдарити іншого ворога за його спиною."
+
+#: archer_ablt.xml:298
+msgid "North Hunter"
+msgstr "Північний Мисливець"
+
+#: archer_ablt.xml:298
+msgid ""
+"The archers good longterm relations with the spirits of wind and ice has "
+"caused his resistence and his maximum resistance of these elements to rise "
+"by 10 percent."
+msgstr ""
+"Тривалі добрі відносини лучника з духами вітру і льоду привели до збільшення "
+"опору та максимального опору цим елементам на 10 відсотків."
+
+#: archer_ablt.xml:308
+msgid "North Roamer"
+msgstr "Північний Бродяга"
+
+#: archer_ablt.xml:308
+msgid ""
+"The archer has made a pact with the spirits of wind and ice. His resistance "
+"against wind- and icedamage is increased by 20 percent."
+msgstr ""
+"Лучник уклав договір з духами вітру і льоду. Його опір вітру і льоду "
+"збільшився на 20 відсотків."
+
+#: archer_ablt.xml:318
+msgid "Storm Arrows"
+msgstr "Штормові Стріли"
+
+#: archer_ablt.xml:318
+msgid ""
+"The mighty spirits of wind themselfes help the archer by imbuing his "
+"projectiles with their power, causing them to deal more winddamage for a "
+"longer time."
+msgstr ""
+"Могутні духи вітру особисто допомагають лучнику наповнюючи його снаряди їх "
+"силою, дозволяючи нанести більше шкоди вітром протягом більш тривалого часу."
+
+#: archer_ablt.xml:339
+msgid ""
+"The archers mastery of ranged weapons allows him to shoot three projectiles "
+"in a short amount of time."
+msgstr ""
+"Майстерність лучника в зброї дальнього бою дозволяє йому вистрелити три "
+"снаряди в короткий проміжок часу."
+
+#: archer_ablt.xml:339
+msgid "Tripple Shot"
+msgstr "Потрійний Постріл"
+
+#: archer_ablt.xml:358
+msgid ""
+"The archer attacks with an arrow imbued with a weaker windspirit, that "
+"causes an enemy hit by it to be stunned."
+msgstr ""
+"Лучник атакує стрілою, пройнятою слабким духом вітру, яка оглушує ворога."
+
+#: archer_ablt.xml:358
+msgid "Vacuum"
+msgstr "Вакуум"
+
+#: archer_ablt.xml:385
+msgid "Iron Hail"
+msgstr "Залізний Град"
+
+#: archer_ablt.xml:385
+msgid ""
+"The archer handles his weapons with elflike precision, attacking up to seven "
+"enemys in front of him. The damage dealt by each projectile suffers a little."
+msgstr ""
+"Лучник тримає зброю з ельфійською точністю, атакуючи до семи ворогів перед "
+"ним. Шкода від кожного наступного снаряду трохи зменшується."
+
+#: archer_ablt.xml:405
+msgid ""
+"The archer attacks a weak point of his enemy, causing the victim to go "
+"berserk."
+msgstr ""
+"Лучник атакує слабке місце ворога, в результаті чого жертва сходить з розуму."
+
+#: archer_ablt.xml:405
+msgid "Weak Spot"
+msgstr "Слабке Місце"
+
+#: archer_ablt.xml:427
+msgid ""
+"The archer has been grantet the power to imbue his projectiles with "
+"winddamage by the spirits of wind."
+msgstr ""
+"Лучник наділяється силою наповнити його снаряди силою вітру від духів вітру."
+
+#: archer_ablt.xml:427
+msgid "Wind Arrows"
+msgstr "Вітрові Стріли"
+
+#: archer_ablt.xml:448
+msgid ""
+"The spirits of wind help the archer to move faster than normal and avoid "
+"damage."
+msgstr ""
+"Духи вітру допомагають лучнику рухатися швидше ніж зазвичай і уникати "
+"пошкоджень."
+
+#: archer_ablt.xml:448
+msgid "Windwalk"
+msgstr "Вітряна ходьба"
+
+#: armor.xml:3
+msgid "cloth armor"
+msgstr "тканиновий панцир"
+
+#: armor.xml:35
+msgid "leather armor"
+msgstr "шкіряні обладунки"
+
+#: armor.xml:67
+msgid "rivet armor"
+msgstr "пластинчасті лати"
+
+#: armor.xml:99
+msgid "bandit armor"
+msgstr "обладунки бандита"
+
+#: armor.xml:131
+msgid "novice armor"
+msgstr "обладунки новачка"
+
+#: armor.xml:163
+msgid "mercenary armor"
+msgstr "обладунки найманця"
+
+#: armor.xml:195
+msgid "ranger shirt"
+msgstr "сорочка лісничого"
+
+#: armor.xml:227
+msgid "assassin armor"
+msgstr "броня вбивці"
+
+#: armor.xml:260
+msgid "temple armor"
+msgstr "храмова броня"
+
+#: armor.xml:292
+msgid "council armor"
+msgstr "броня радника"
+
+#: axes1h.xml:4
+msgid "hatchet"
+msgstr "томагавк"
+
+#: axes1h.xml:41
+msgid "bronze axe"
+msgstr "бронзова сокира"
+
+#: axes1h.xml:78
+msgid "iron hatchet"
+msgstr "залізний томагавк"
+
+#: axes1h.xml:115
+msgid "cleaver"
+msgstr "дровокол"
+
+#: axes1h.xml:152
+msgid "iron axe"
+msgstr "залізна сокира"
+
+#: axes1h.xml:189
+msgid "mercenary axe"
+msgstr "сокира найманця"
+
+#: axes1h.xml:226
+msgid "steel axe"
+msgstr "сталева сокира"
+
+#: axes1h.xml:263
+msgid "battle axe"
+msgstr "бойова сокира"
+
+#: axes1h.xml:300
+msgid "guard axe"
+msgstr "сокира охоронця"
+
+#: axes1h.xml:337
+msgid "minotaur axe"
+msgstr "сокира мінотавра"
+
+#: axes1h.xml:374
+msgid "thunder axe"
+msgstr "громова сокира"
+
+#: axes1h.xml:413
+msgid "demon axe"
+msgstr "сокира демона"
+
+#: axes1h.xml:450
+msgid "obsidian axe"
+msgstr "обсидіанова сокира"
+
+#: axes1h.xml:487
+msgid "vulcano axe"
+msgstr "вулканічна сокира"
+
+#: axes1h.xml:526
+msgid "berserker axe"
+msgstr "сокира берсерка"
+
+#: axes1h.xml:563
+msgid "diamont axe"
+msgstr "алмазна сокира"
+
+#: axes1h.xml:600
+msgid "dwarfen axe"
+msgstr "сокира гнома"
+
+#: axes1h.xml:637
+msgid "hell axe"
+msgstr "пекельна сокира"
+
+#: axes2h.xml:4
+msgid "lumberjack axe"
+msgstr "сокира лісоруба"
+
+#: axes2h.xml:42
+msgid "great axe"
+msgstr "велика сокира"
+
+#: axes2h.xml:80
+msgid "ripping axe"
+msgstr "надзвичайна сокира"
+
+#: axes2h.xml:118
+msgid "executioner axe"
+msgstr "сокира ката"
+
+#: axes2h.xml:156
+msgid "smashing axe"
+msgstr "нищівна сокира"
+
+#: axes2h.xml:194
+msgid "ogre hatchet"
+msgstr "томагавк людожера"
+
+#: axes2h.xml:232
+msgid "scythe axe"
+msgstr "коса сокира"
+
+#: axes2h.xml:270
+msgid "barbarian axe"
+msgstr "варварська сокира"
+
+#: axes2h.xml:308
+msgid "bonebreaker axe"
+msgstr "кісткодробильна  сокира"
+
+#: axes2h.xml:346
+msgid "giant axe"
+msgstr "гігантська сокира"
+
+#: axes2h.xml:384
+msgid "slaughter axe"
+msgstr "сокира різника"
+
+#: axes2h.xml:422
+msgid "ogretearer"
+msgstr "шторм людожера"
+
+#: axes2h.xml:460
+msgid "dwarfensteel axe"
+msgstr "стальна сокира гнома"
+
+#: axes2h.xml:498
+msgid "star axe"
+msgstr "зіркова сокира"
+
+#: axes2h.xml:536
+msgid "kings axe"
+msgstr "королівська сокира"
+
+#: axes2h.xml:574
+msgid "torture axe"
+msgstr "тортурна сокира"
+
+#: axes2h.xml:612
+msgid "iceland axe"
+msgstr "сокира з льодового краю"
+
+#: axes2h.xml:652
+msgid "death axe"
+msgstr "сокира смерті"
+
+#: base_abilities.xml:2
+msgid "dead"
+msgstr "мертвий"
+
+#: base_abilities.xml:10
+msgid "die"
+msgstr "померти"
+
+#: base_abilities.xml:19
+msgid "first action that is performed by a summoned monster"
+msgstr "перша дія, що виконується викликаним монстром"
+
+#: base_abilities.xml:19
+msgid "summoned"
+msgstr "викликано"
+
+#: base_abilities.xml:28
+msgid "no action"
+msgstr "ніяких дій"
+
+#: base_abilities.xml:37
+msgid "speak"
+msgstr "говорити"
+
+#: base_abilities.xml:37
+msgid "speak with someone"
+msgstr "говорити з кимось"
+
+#: base_abilities.xml:51
+msgid "take item"
+msgstr "взяти предмет"
+
+#: base_abilities.xml:51
+msgid "take up item"
+msgstr "підняти предмет"
+
+#: base_abilities.xml:65
+msgid "use"
+msgstr "використати"
+
+#: base_abilities.xml:79
+msgid "walk"
+msgstr "йти"
+
+#: base_abilities.xml:89
+msgid "guard"
+msgstr "охороняти"
+
+#: base_abilities.xml:100 dwarfcastle.xml:178 dwarfcastle.xml:181
+msgid "Attack"
+msgstr "Атака"
+
+#: base_abilities.xml:100
+msgid "Basic melee attack"
+msgstr "Основна атака в ближньому бою"
+
+#: base_abilities.xml:119
+msgid "Basic holy melee attack"
+msgstr "Основня свята атака в ближньому бою"
+
+#: base_abilities.xml:119
+msgid "Holy attack"
+msgstr "Свята атака"
+
+#: base_abilities.xml:137 monster_air_ablt.xml:49 monster_fire_ablt.xml:49
+#: monster_ice_ablt.xml:49 monster_shadow_ablt.xml:2
+msgid "Basic magic attack"
+msgstr "Основна магічна атака"
+
+#: base_abilities.xml:137 monster_air_ablt.xml:49 monster_fire_ablt.xml:49
+#: monster_ice_ablt.xml:49 monster_shadow_ablt.xml:2
+msgid "Magic attack"
+msgstr "Магічна атака"
+
+#: base_abilities.xml:156 monster_ablt.xml:445 monster_ablt.xml:490
+#: monster_ablt.xml:670 monster_air_ablt.xml:25 monster_fire_ablt.xml:25
+#: monster_ice_ablt.xml:68
+msgid "Basic ranged attack"
+msgstr "Основна атака в дальньому бою"
+
+#: base_abilities.xml:156
+msgid "Ranged attack"
+msgstr "Атака дального бою"
+
+#: copperrock.xml:2
+msgid "Thomas"
+msgstr ""
+
+#: councilNPCStats.xml:4
+msgid "Tolec"
+msgstr "Толік"
+
+#: councilNPCStats.xml:47
+msgid "Derred"
+msgstr "Дерред"
+
+#: councilNPCStats.xml:90 councilNPCStats.xml:290 npc.xml:16
+msgid "Soren Windclaw"
+msgstr "Сорен Віндклав"
+
+#: councilNPCStats.xml:133 councilNPCStats.xml:172 councilNPCStats.xml:211
+msgid "Worker"
+msgstr "Робітник"
+
+#: councilNPCStats.xml:250 tutorial.xml
+msgid "Overseer"
+msgstr "Наглядач"
+
+#: councilNPCStats.xml:330 councilNPCStats.xml:459 councilNPCStats.xml:593
+msgid "Council Guard"
+msgstr "Охоронець Ради"
+
+#: councilNPCStats.xml:373 councilNPCStats.xml:545
+msgid "Council Mage"
+msgstr "Маг Ради"
+
+#: councilNPCStats.xml:416
+msgid "Ireana von Nordenburg"
+msgstr "Іреана з Нортборо"
+
+#: councilNPCStats.xml:502
+msgid "Council Guard Captain"
+msgstr "Еапітан Охорони Ради"
+
+#: councilNPCStats.xml:638
+msgid "Fireguardian"
+msgstr "Вогняний охоронець"
+
+#: council_monsters.xml:6 council_monsters.xml:50
+msgid "Fire Slug"
+msgstr "Вогняний Слимак"
+
+#: council_monsters.xml:97 council_monsters.xml:141
+msgid "Mutant Slug"
+msgstr "Слимак Мутант"
+
+#: council_monsters.xml:189
+msgid "Fire Louse"
+msgstr "Вогняна Воша"
+
+#: council_monsters.xml:236
+msgid "Firefletchling"
+msgstr "Вогняна Приманка"
+
+#: council_monsters.xml:281 council_monsters.xml:331
+msgid "Inferno Behemoth"
+msgstr "Пекельний Бегемот"
+
+#: cursedCaves.xml:5
+msgid "greyCurseCave"
+msgstr "Проклята печера"
+
+#: cursedCaves.xml:53
+msgid "greyCurseGrotto"
+msgstr "Проклятий грот"
+
+#: cursedCaves.xml:96
+msgid "greyWolfcave"
+msgstr "Вовча печера"
+
+#: cursedCaves.xml:135
+msgid "greyCurseGrotDep"
+msgstr "Проклятий грот, глибина"
+
+#: cursedCaves.xml:169
+msgid "greyCursedCavern"
+msgstr "Проклята каверна"
+
+#: cursedCaves.xml:209
+msgid "greyCurseCaveDep"
+msgstr "Проклята печера, глибина"
+
+#: cursedCaves.xml:251
+msgid "greyCurseCaveFis"
+msgstr "Розколина"
+
+#: cursedCaves.xml:280
+msgid "greyCurseCaveEast"
+msgstr "Проклята Східна печера"
+
+#: cursedCaves.xml:325
+msgid "greyCurseLake"
+msgstr "Прокляте озеро"
+
+#: dwarfcastle.xml:2
+msgid "Eric"
+msgstr ""
+
+#: dwarfcastle.xml:6
+msgid "Haffgar"
+msgstr "Гаффгар"
+
+#: dwarfcastle.xml:38 dwarfcastle.xml:58 dwarfcastle.xml:142 medairnpc.xml:41
+#: medairnpc.xml:64 medairnpc.xml:73
+msgid "Trade"
+msgstr "Торгувати"
+
+#: dwarfcastle.xml:41
+msgid "Amelia"
+msgstr "Амелія"
+
+#: dwarfcastle.xml:61
+msgid "Drago"
+msgstr "Драго"
+
+#: dwarfcastle.xml:70 joringsbridge_npc.xml:7
+msgid "Potions"
+msgstr "Зілля"
+
+#: dwarfcastle.xml:80
+msgid "Flynn"
+msgstr "Флінн"
+
+#: dwarfcastle.xml:144
+msgid "What is all this?"
+msgstr "Що все це означає?"
+
+#: dwarfcastle.xml:146
+msgid "Quite a lot of boxes..."
+msgstr "Досить багато ящиків..."
+
+#: dwarfcastle.xml:147
+msgid "My predecessor left me with that chaos."
+msgstr "Мій попередник залишив мене з цим хаосом."
+
+#: dwarfcastle.xml:148
+msgid "These are all old army supplies."
+msgstr "Це всі старі запаси армії."
+
+#: dwarfcastle.xml:149
+msgid "If you like something just point it out and I'll tell you a price."
+msgstr "Якщо щось сподобалось просто вкажіть на це і я скажу вам ціну."
+
+#: dwarfcastle.xml:154
+msgid "Enchanter Fazhir"
+msgstr "Чаклун Фазір"
+
+#: dwarfcastle.xml:155 npc.xml:80
+msgid "Enchant Items"
+msgstr "Зачарувати Об'єкти"
+
+#: dwarfcastle.xml:168 dwarfcastle.xml:189 joringsbridge_npc.xml:238
+#: npc.xml:93 npc.xml:108
+msgid "Armor"
+msgstr "Збруя"
+
+#: dwarfcastle.xml:171 npc.xml:96
+msgid "Armor class"
+msgstr "Клас броні"
+
+#: dwarfcastle.xml:171 npc.xml:96
+msgid "Health Bonus"
+msgstr "Бонус Здоров'я"
+
+#: dwarfcastle.xml:171
+msgid "Magic power"
+msgstr "Магічна сила"
+
+#: dwarfcastle.xml:171
+msgid "Willpower"
+msgstr "Сила волі"
+
+#: dwarfcastle.xml:174 joringsbridge_npc.xml:244 npc.xml:99
+msgid "Weapon"
+msgstr "Зброя"
+
+#: dwarfcastle.xml:178 joringsbridge_npc.xml:247 npc.xml:102
+msgid "Air damage"
+msgstr "Шкода від повітря"
+
+#: dwarfcastle.xml:178 dwarfcastle.xml:181
+msgid "Attack speed"
+msgstr "Швидкість атаки"
+
+#: dwarfcastle.xml:178 dwarfcastle.xml:181 joringsbridge_npc.xml:247
+#: npc.xml:102
+msgid "Fire damage"
+msgstr "Шкода від вогню"
+
+#: dwarfcastle.xml:178 npc.xml:102
+msgid "Ice damage"
+msgstr "Шкода від льоду"
+
+#: dwarfcastle.xml:178 dwarfcastle.xml:181
+msgid "Power"
+msgstr "Сила"
+
+#: dwarfcastle.xml:185 npc.xml:105
+msgid "Gloves"
+msgstr "Рукавиці"
+
+#: dwarfcastle.xml:189 npc.xml:108 warrior_ablt.xml:85
+msgid "Block"
+msgstr "Блок"
+
+#: dwarfcastle.xml:189 dwarfcastle.xml:192 npc.xml:108
+msgid "Dexterity"
+msgstr "Спритність"
+
+#: dwarfcastle.xml:189 dwarfcastle.xml:192
+msgid "Strength"
+msgstr "Сила"
+
+#: dwarfcastle.xml:197 joringsbridge_npc.xml:250 npc.xml:111
+msgid "Which part of your equipment should be enchanted?"
+msgstr "Яка частина вашого спорядження повинна бути зачарована?"
+
+#: dwarfcastle.xml:215 npc.xml:129
+msgid "Hey you have no item equiped there"
+msgstr "Гей, там у вас немає екіпіровки"
+
+#: dwarfcastle.xml:218 joringsbridge_npc.xml:271 npc.xml:132
+msgid "Which Enchantment do you want?"
+msgstr "Які Чари ви хочете?"
+
+#: dwarfcastle.xml:239 npc.xml:153
+msgid "You dont have enough gold to pay the price of $1"
+msgstr "Ви не маєте достатньо золота, щоб заплатити $1"
+
+#: dwarfcastle.xml:241 joringsbridge_npc.xml:297 npc.xml:155
+msgid "The price is $1"
+msgstr "Ціна рівна $1"
+
+#: dwarfcastle.xml:260 npc.xml:174
+msgid "It seems that this item already has such an enchantment."
+msgstr "Здається що цей об'єкт вже має такі чари."
+
+#: dwarfenwall.lua:308 npc.xml:47 undeadStats.xml:2252
+msgid "Nar'Asoroth"
+msgstr "Нар'Асорос"
+
+#: dwarfenwall.lua:313
+msgid "Skinny Necromancer"
+msgstr "Худющий Некромант"
+
+#: dwarfenwall.lua:316
+msgid "Scarfaced Necromancer"
+msgstr "Некромант зі шрамом на лиці"
+
+#: dwarfenwall.xml:6
+msgid "dwarfenwall"
+msgstr "Дорфенваль"
+
+#: dwarfenwall.xml:250
+msgid "dwarfenwallCommand"
+msgstr "Командний центр"
+
+#: dwarfenwall.xml:299
+msgid "dwarfenwallRampart"
+msgstr "Оборонний вал Дорфенваля"
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Reverse this at once or every guard of Aisen will be on your trail, Cursed "
+"One! ##female"
+msgstr ""
+"Зразу ж поверни це або кожен страж Айзена стане на твоєму шляху, Проклята!"
+
+#: fortify_dwarfenwall.xml
+msgid ""
+"Reverse this at once or every guard of Aisen will be on your trail, Cursed "
+"One! ##male"
+msgstr ""
+"Зразу ж поверни це або кожен страж Айзена стане на твоєму шляху, Проклятий!"
+
+#: fortify_dwarfenwall.xml
+msgid "You are better prepared to suffer the consequences, wretched creature."
+msgstr "Краще підготуйся страждати    від наслідків, нещасна істота."
+
+#: glove.xml:4
+msgid "leather gloves"
+msgstr "шкіряні рукавиці"
+
+#: glove.xml:36
+msgid "snakehide gloves"
+msgstr "рукавиці з зміїної шкіри"
+
+#: glove.xml:68
+msgid "chain gloves"
+msgstr "кольчужні рукавиці"
+
+#: glove.xml:100
+msgid "buckskin gloves"
+msgstr "рукавиці з оленячої шкіри"
+
+#: glove.xml:132
+msgid "spidersilk gloves"
+msgstr "рукавиці з павукового шовку"
+
+#: glove.xml:164
+msgid "marksman gloves"
+msgstr "рукавиці влучного стрілка"
+
+#: glove.xml:196
+msgid "assassin gloves"
+msgstr "рукавиці вбивці"
+
+#: glove.xml:228
+msgid "shark gloves"
+msgstr "акулячі рукавиці"
+
+#: goblinEqu.xml:5
+msgid "goblin armor"
+msgstr "обладунки гобліна"
+
+#: goblinEqu.xml:37
+msgid "goblin bracer"
+msgstr "нарукавники гобліна"
+
+#: goblinEqu.xml:68
+msgid "shaman mask"
+msgstr "маска шамана"
+
+#: goblinEqu.xml:101
+msgid "goblin club"
+msgstr "ціпок гобліна"
+
+#: goblinEqu.xml:138
+msgid "rusty dagger"
+msgstr "іржавий кинджал"
+
+#: goblinEqu.xml:174
+msgid "shaman staff"
+msgstr "посох шамана"
+
+#: goblinEqu.xml:207
+msgid "nail club"
+msgstr "ціпок з цвяхами"
+
+#: goblinEqu.xml:244
+msgid "goblin bow"
+msgstr "лук гобліна"
+
+#: goblinEqu.xml:280
+msgid "goblin spear"
+msgstr "спис гобліна"
+
+#: goblinStats.xml:6
+msgid "goblin brawler"
+msgstr "гоблін забіяка"
+
+#: goblinStats.xml:52
+msgid "goblin hunter"
+msgstr "гоблін мисливець"
+
+#: goblinStats.xml:98
+msgid "goblin robber"
+msgstr "гоблін грабіжник"
+
+#: goblinStats.xml:143
+msgid "Drakrazz"
+msgstr "Дракраз"
+
+#: goblinStats.xml:192
+msgid "Roruz"
+msgstr "Роруз"
+
+#: goblinStats.xml:239
+msgid "Nubreck"
+msgstr "Нурбек"
+
+#: goblinStats.xml:290
+msgid "goblin dog"
+msgstr "собака гобліна"
+
+#: goblinStats.xml:334
+msgid "boneshaker"
+msgstr "кісткотряс"
+
+#: goblinStats.xml:380
+msgid "Gobrusch"
+msgstr "Гобруш"
+
+#: goblinStats.xml:428
+msgid "Dobrusch"
+msgstr "Добруш"
+
+#: goblinStats.xml:476
+msgid "Lurdrak with the Hammer"
+msgstr "Лурдак з Молотом"
+
+#: goblinStats.xml:525
+msgid "goblin fighter"
+msgstr "гоблін боєць"
+
+#: goblinStats.xml:571
+msgid "goblin poacher"
+msgstr "гоблін браконьєр"
+
+#: goblinStats.xml:617
+msgid "goblin rider"
+msgstr "гоблін вершник"
+
+#: goblinStats.xml:662
+msgid "snowcaller"
+msgstr "викликач снігу"
+
+#: goblinStats.xml:707
+msgid "reg'resh"
+msgstr "рег'реш"
+
+#: goblinStats.xml:755
+msgid "goblin temple guard"
+msgstr "гоблін храмової варти"
+
+#: goblinStats.xml:801
+msgid "goblin apprentice"
+msgstr "гоблін учень"
+
+#: goblinStats.xml:850
+msgid "Marblak"
+msgstr "Марблак"
+
+#: goblinStats.xml:897
+msgid "goblin youngling"
+msgstr "гоблін дитинча"
+
+#: goblinStats.xml:943
+msgid "Gab'Resh"
+msgstr "Габ'Реш"
+
+#: goblinStats.xml:993 goblinStats.xml:1038
+msgid "Gab Clan Goblin"
+msgstr "Гоблін Клану Габ"
+
+#: goblinStats.xml:1245
+msgid "goblin warrior"
+msgstr "гоблін воїн"
+
+#: goblinStats.xml:1288
+msgid "goblin rocklobber"
+msgstr "незграбний гоблін"
+
+#: goblinStats.xml:1333
+msgid "goblin shaman"
+msgstr "гоблін шаман"
+
+#: goblinStats.xml:1381
+msgid "goblin slayer"
+msgstr "гоблін вбивця"
+
+#: goblinStats.xml:1426
+msgid "goblin assassin"
+msgstr "гоблін найманець"
+
+#: greySkyladder.xml:4
+msgid "greySnowNose"
+msgstr "Сніговий ніс"
+
+#: greySkyladder.xml:38
+msgid "greyOldMine"
+msgstr "Стара шахта"
+
+#: greySkyladder.xml:75
+msgid "greyOldMineL2"
+msgstr "Стара шахта, рівень 2"
+
+#: greySkyladder.xml:112
+msgid "greyOldMineDeep"
+msgstr "Стара шахта, глибина"
+
+#: hammer1h.xml:5
+msgid "hammer"
+msgstr "молот"
+
+#: hammer1h.xml:42
+msgid "cermeonial hammer"
+msgstr "ритуальний молот"
+
+#: hammer1h.xml:79
+msgid "iron hammer"
+msgstr "залізний молот"
+
+#: hammer1h.xml:116
+msgid "iron club"
+msgstr "залізний ціпок"
+
+#: hammer1h.xml:153
+msgid "maul"
+msgstr "кувалда"
+
+#: hammer1h.xml:190
+msgid "morning star"
+msgstr "ранкова зірка"
+
+#: hammer1h.xml:227
+msgid "crowhead"
+msgstr "голова ворони"
+
+#: hammer1h.xml:264
+msgid "rider hammer"
+msgstr "молот вершника"
+
+#: hammer1h.xml:301
+msgid "mace"
+msgstr "булава"
+
+#: hammer1h.xml:338
+msgid "steel hammer"
+msgstr "сталевий молоток"
+
+#: hammer1h.xml:375
+msgid "battle hammer"
+msgstr "бойовий молот"
+
+#: hammer1h.xml:412
+msgid "smashhead"
+msgstr "розламник голів"
+
+#: hammer1h.xml:449
+msgid "steel mace"
+msgstr "сталева булава"
+
+#: hammer1h.xml:486
+msgid "steel maul"
+msgstr "сталева кувалда"
+
+#: hammer1h.xml:523
+msgid "sixedged mace"
+msgstr "кесшикутна булава"
+
+#: hammer1h.xml:560
+msgid "silver hammer"
+msgstr "срібний молот"
+
+#: hammer1h.xml:597
+msgid "diamont hammer"
+msgstr "алмазний молот"
+
+#: hammer1h.xml:634
+msgid "priest mace"
+msgstr "булава священника"
+
+#: hammer1h.xml:671
+msgid "holy hammer"
+msgstr "святий молот"
+
+#: hammer2h.xml:4
+msgid "sledgehammer"
+msgstr "кувалда"
+
+#: hammer2h.xml:42
+msgid "bronze hammer"
+msgstr "бронзовий молот"
+
+#: hammer2h.xml:80
+msgid "longshaft"
+msgstr "довгий стовбур"
+
+#: hammer2h.xml:119
+msgid "guard hammer"
+msgstr "молот охоронця"
+
+#: hammer2h.xml:158
+msgid "silverterror"
+msgstr "срібний жах"
+
+#: hammer2h.xml:197
+msgid "glow hammer"
+msgstr "розпечений молот"
+
+#: hammer2h.xml:238
+msgid "bonebreaker"
+msgstr "кісткодробилка"
+
+#: hammer2h.xml:276
+#, fuzzy
+msgid "crashhead"
+msgstr "розламник голів"
+
+#: hammer2h.xml:314
+msgid "aisener warhammer"
+msgstr "льодовий молот"
+
+#: hammer2h.xml:353
+msgid "judgement hammer"
+msgstr "каральний молот"
+
+#: hammer2h.xml:392
+msgid "priest hammer"
+msgstr "священний молот"
+
+#: hammer2h.xml:431
+msgid "obsidian hammer"
+msgstr "обсидіановий молот"
+
+#: hammer2h.xml:470
+msgid "judge hammer"
+msgstr "судний молот"
+
+#: hammer2h.xml:509
+msgid "cyclops hammer"
+msgstr "молот циклопа"
+
+#: hammer2h.xml:547
+msgid "dwarfensteel hammer"
+msgstr "сталевий молот гнома"
+
+#: hammer2h.xml:586
+msgid "elementhunter"
+msgstr "мисливець за стихіями"
+
+#: hammer2h.xml:625
+msgid "exorcists hammer"
+msgstr "молот екзорциста"
+
+#: hammer2h.xml:664
+msgid "worldshaker"
+msgstr "землетрус"
+
+#: hat.xml:5
+msgid "vagabond hat"
+msgstr "шапка бродяги"
+
+#: hat.xml:37
+msgid "apprentice cap"
+msgstr "картуз учня"
+
+#: hat.xml:70
+msgid "novice hat"
+msgstr "шапка новачка"
+
+#: hat.xml:103
+msgid "alchemist cap"
+msgstr "картуз алхіміка"
+
+#: hat.xml:137
+msgid "beret"
+msgstr "берет"
+
+#: hat.xml:170
+msgid "magus hat"
+msgstr "шапка мага"
+
+#: hat.xml:204
+msgid "turban"
+msgstr "тюрбан"
+
+#: helmet.xml:4
+msgid "cap"
+msgstr "шапка"
+
+#: helmet.xml:35
+msgid "leather cap"
+msgstr "шкіряна шапка"
+
+#: helmet.xml:66
+msgid "leather helmet"
+msgstr "шкіряний шолом"
+
+#: helmet.xml:97
+msgid "mercenary head"
+msgstr "голова найманця"
+
+#: helmet.xml:128
+msgid "novice headgear"
+msgstr "головний убір новачка"
+
+#: helmet.xml:159
+msgid "mercenary helmet"
+msgstr "шолом найманця"
+
+#: helmet.xml:190
+msgid "ranger bandana"
+msgstr "бандана лісничого"
+
+#: helmet.xml:221
+msgid "assassin hood"
+msgstr "капюшон вбивці"
+
+#: helmet.xml:252
+msgid "biretta"
+msgstr "головний убір"
+
+#: helmet.xml:283
+msgid "chain turban"
+msgstr "кольчужний тюрбан"
+
+#: humans.xml:3
+msgid "Bandit"
+msgstr "Бандит"
+
+#: humans.xml:47
+msgid "Thug"
+msgstr "Головоріз"
+
+#: humans.xml:91
+msgid "Rogue"
+msgstr "Шахрай"
+
+#: humans.xml:135
+msgid "Brigand"
+msgstr "Розбійник"
+
+#: humans.xml:178
+msgid "Poacher"
+msgstr "Браконьєр"
+
+#: humans.xml:222
+msgid "Alwin"
+msgstr "Альвін"
+
+#: humans.xml:268
+msgid "Thief"
+msgstr "Злодій"
+
+#: humans.xml:313
+msgid "Raider"
+msgstr "Рейдер"
+
+#: humans.xml:356
+msgid "Highwayman"
+msgstr "Розбійник з великої дороги"
+
+#: humans.xml:400
+msgid "Buck"
+msgstr "Долар"
+
+#: humans.xml:446
+msgid "Deserter"
+msgstr "Дезертир"
+
+#: humans.xml:490
+msgid "Saboteur"
+msgstr "Диверсант"
+
+#: humans.xml:534
+msgid "Todd"
+msgstr "Тодд"
+
+#: humans.xml:582
+msgid "Rob the Robber"
+msgstr "Роб Розбійник"
+
+#: humans.xml:707
+msgid "Ronny the Rat"
+msgstr "Ронні Щур"
+
+#: joringsbridge.xml
+msgid "Who is that?"
+msgstr "Хто це?"
+
+#: joringsbridge_npc.xml:2
+msgid "Gertlinde Kampfer"
+msgstr "Гертлінде Полуничка"
+
+#: joringsbridge_npc.xml:18
+msgid "Reba"
+msgstr ""
+
+#: joringsbridge_npc.xml:21
+msgid "Sybill"
+msgstr "Сибіл"
+
+#: joringsbridge_npc.xml:56
+msgid "Weapons"
+msgstr "Зброя"
+
+#: joringsbridge_npc.xml:59
+msgid "Halgor"
+msgstr "Халгор"
+
+#: joringsbridge_npc.xml:84
+msgid "Armors"
+msgstr "Броня"
+
+#: joringsbridge_npc.xml:87
+msgid "Marco"
+msgstr "Марко"
+
+#: joringsbridge_npc.xml:145
+msgid "Objects found"
+msgstr "Знайдені предмети"
+
+#: joringsbridge_npc.xml:147
+msgid "What are these Items?"
+msgstr "Що це за предмети?"
+
+#: joringsbridge_npc.xml:152
+msgid "Ah, you noticed my lost and found?"
+msgstr "Ах, ви помітили мою знахідку?"
+
+#: joringsbridge_npc.xml:153
+msgid "Everything I find in and around Joringsbridge is stored here."
+msgstr "Все, що я знаходжу в і поблизу Джорінгсбріджа зберігається тут."
+
+#: joringsbridge_npc.xml:154
+msgid ""
+"If something is your's just say the word. For a small finder's fee you can "
+"have it back."
+msgstr ""
+"Якщо щось є вашим, лише розпорядіться. За невеликий гонорар знайшовшому ви "
+"можете отримати це назад."
+
+#: joringsbridge_npc.xml:160
+msgid "Sergeant Lutterer"
+msgstr "Сержант Люттерер"
+
+#: joringsbridge_npc.xml:161 joringsbridge_npc.xml:186
+msgid "Joringsbridge"
+msgstr "Джорінгсбрідж"
+
+#: joringsbridge_npc.xml:164
+msgid ""
+"Having the responsibility for Joringsbridge is never easy, not even when I "
+"had enough soldiers."
+msgstr ""
+"Відповідати за весь Джорінгсбрідж не просто, навіть якщо б у мене було "
+"достатньо солдатів."
+
+#: joringsbridge_npc.xml:165
+msgid ""
+"Lately, someone in the guard has been appropriating confiscated magical "
+"items."
+msgstr ""
+"Останнім часом хтось з охорони привласнює собі конфісковані магічні предмети."
+
+#: joringsbridge_npc.xml:166
+msgid ""
+"And I'm not even one step closer to find out who, than when I first noticed!"
+msgstr "І я не дізнався нічого нового з моменту, коли я вперше це помітив!"
+
+#: joringsbridge_npc.xml:167
+msgid ""
+"((A guard is diverting items? Surely not for hard times. I should take a "
+"look around.))"
+msgstr ""
+"((Охоронець краде речі? Звичайно не через важкі часи. Я повинен оглянутись.))"
+
+#: joringsbridge_npc.xml:171
+msgid "The surroundings of Joringsbridge"
+msgstr "Околиці Джорінгсбріджа"
+
+#: joringsbridge_npc.xml:174
+msgid "You better be careful when leaving the village."
+msgstr "Краще будьте обережним при виході з села."
+
+#: joringsbridge_npc.xml:175
+msgid ""
+"Now, with almost all troops standing at the borders, we have to deal with an "
+"unmanageable flood of goblins."
+msgstr ""
+"Тепер, коли майже всі війська стоять на кордонах, ми маємо розібратись з "
+"некерованим потоком гоблінів."
+
+#: joringsbridge_npc.xml:176
+msgid ""
+"And everyone not drafted for the army seems to have discovered the happy "
+"bandit life for themselves."
+msgstr ""
+"І всі, кого не призвали в армію, здається з задоволенням влились в щасливе "
+"бандитське життя."
+
+#: joringsbridge_npc.xml:177
+msgid "Thanks for the warning, sergeant."
+msgstr "Спасибі за попередження, сержант."
+
+#: joringsbridge_npc.xml:182
+msgid "Michel Bron"
+msgstr "Мішель Брон"
+
+#: joringsbridge_npc.xml:185
+msgid "Magus Convocatis Relau Fireweaver"
+msgstr "Маг Конвокатіс Релау Вогнягий Ткач"
+
+#: joringsbridge_npc.xml:189
+msgid "You are the backup sent by Lord Master Windclaw, arn't you?"
+msgstr "Ви послані з резерву Лордом Магістром Віндклавом, хіба ні?"
+
+#: joringsbridge_npc.xml:190
+msgid ""
+"I suggest you quickly journey on. There have been people dying by boredom in "
+"this village. "
+msgstr ""
+"Я пропоную Вам швидку подорож. В тому селі були люди, що вмирали від нудьги. "
+
+#: joringsbridge_npc.xml:191
+msgid "Who knows if your physique will help you against that, too?"
+msgstr "Хто знає, чи ваші фізичні дані допоможуть вам і проти цього?"
+
+#: joringsbridge_npc.xml:207
+msgid "Welcome to the humble... village, they call it... of Joringsbridge."
+msgstr ""
+"Ласкаво просимо до скромного ... села, вони називають його... Джорінгсбрідж."
+
+#: joringsbridge_npc.xml:208
+msgid ""
+"I have been stationed here due to the unfathomable wisdom of the Council."
+msgstr "Я був поставлений тут завдяки скромній неосяжній мудрості Ради."
+
+#: joringsbridge_npc.xml:209
+msgid "If you want, I can add a certain something to your weapons."
+msgstr "Якщо ви хочете, я можу додати дещо до вашої зброї."
+
+#: joringsbridge_npc.xml:210
+msgid ""
+"I am also quite adept at imbuing clothes with extra protection against the "
+"elements."
+msgstr "Я також знавець в наповненні одягу додатковим захистом від стихій."
+
+#: joringsbridge_npc.xml:211
+msgid "Nothing more to do anyway."
+msgstr "Все одно більше нічого робити."
+
+#: joringsbridge_npc.xml:215
+msgid "Why can't you use ice?"
+msgstr "Чому ви не можете використати лід?"
+
+#: joringsbridge_npc.xml:218
+msgid "Of course I know how to conjure ice..."
+msgstr "Звичайно, я знаю як заклинати лід ..."
+
+#: joringsbridge_npc.xml:219
+msgid ""
+"but, as you are no doubt unaware, casting and enchanting are two utterly "
+"different activities."
+msgstr ""
+"але, як ви без сумніву знаєте, метання і чаклування це дві абсолютно різні "
+"види діяльності."
+
+#: joringsbridge_npc.xml:220
+msgid "Be grateful I am able to enchant two elements."
+msgstr "Подякуй, що я можу заклинати дві стихії."
+
+#: joringsbridge_npc.xml:221
+msgid "That's a rare talent, just so you know. "
+msgstr "Це рідкісний талант, щоб ви знали."
+
+#: joringsbridge_npc.xml:225
+msgid "Enchant Equipment"
+msgstr "Зачарувати Спорядження"
+
+#: joringsbridge_npc.xml:241 npc.xml:96
+msgid "Air resistance"
+msgstr "Опір повітрю"
+
+#: joringsbridge_npc.xml:241 npc.xml:96
+msgid "Fire resistance"
+msgstr "Вогнестійкість"
+
+#: joringsbridge_npc.xml:247
+msgid "Increase Firemagic"
+msgstr "Збільшити Вогняну Магію"
+
+#: joringsbridge_npc.xml:268
+msgid "It may be helpful if you would equip something first."
+msgstr "Було б корисно для почтаку екіпіруватись."
+
+#: joringsbridge_npc.xml:295
+msgid "I may work for the Council, but I don't run a charity. The price is $1."
+msgstr ""
+"Я можу працювати на Раду, але я не займаюсь благодійністю. Ціна буде $1."
+
+#: joringsbridge_npc.xml:316
+msgid "As I always say: No enchantment should be applied a second time."
+msgstr "Як я завжди кажу: зачаровування не слід застосовувати двічі."
+
+#: longbow.xml:5
+msgid "tourney bow"
+msgstr "турнірний лук"
+
+#: longbow.xml:42
+msgid "orc bow"
+msgstr "лук орка"
+
+#: longbow.xml:79
+msgid "yew bow"
+msgstr "тисовий лук"
+
+#: longbow.xml:116
+msgid "longbow"
+msgstr "великий лук"
+
+#: longbow.xml:153
+msgid "soldier bow"
+msgstr "солдатський лук"
+
+#: longbow.xml:190
+msgid "horn bow"
+msgstr "лук з рогів"
+
+#: longbow.xml:227
+msgid "maple bow"
+msgstr "кленовий лук"
+
+#: longbow.xml:264
+msgid "battle bow"
+msgstr "бойовий лук"
+
+#: longbow.xml:301
+msgid "composite longbow"
+msgstr "складений лук"
+
+#: longbow.xml:338
+msgid "stormsinger"
+msgstr "співаюча буря"
+
+#: longbow.xml:377
+msgid "oak bow"
+msgstr "дубовий лук"
+
+#: longbow.xml:414
+msgid "demonhorn bow"
+msgstr "лук з рогів демона"
+
+#: longbow.xml:451
+msgid "ranger bow"
+msgstr "лук лісничого"
+
+#: longbow.xml:489
+msgid "ash longbow"
+msgstr "ясеневий великий лук"
+
+#: longbow.xml:527 shortbow.xml:513
+msgid "soul bow"
+msgstr "лук душі"
+
+#: longbow.xml:564
+msgid "demon compositebow"
+msgstr "складний лук демона"
+
+#: longbow.xml:601
+msgid "hero bow"
+msgstr "лук героя"
+
+#: longbow.xml:638
+msgid "elf bow"
+msgstr "ельфійський лук"
+
+#: mage_ablt.xml:2 monster_ablt.xml:361
+msgid "Blizzard"
+msgstr "Завірюха"
+
+#: mage_ablt.xml:2 monster_ablt.xml:361
+msgid ""
+"The mage summons a leathal cold blizzard that freezes every enemy caught in "
+"it to death."
+msgstr ""
+"Маг викликає смертельну холодну завірюху, що заморожує кожного ворога, який "
+"в неї попав, до смерті."
+
+#: mage_ablt.xml:28 monster_ablt.xml:293 npc_abilities.xml:102
+msgid "Chainlightning"
+msgstr "Ланцюгова Блискавка"
+
+#: mage_ablt.xml:28
+msgid ""
+"The mage unleashes a ball of lightning, that may jump from one enemy to "
+"another. It hits a maximum of five enemies and the damage is reduced "
+"everytime it jumps."
+msgstr ""
+"Маг випускає кульову блискавку, що може перекидатись з одного ворога на "
+"іншого. Вона вражає до п'яти ворогів і пошкодження після кожного стрибка "
+"зменшуються."
+
+#: mage_ablt.xml:54
+msgid "Ball lightning"
+msgstr "Кульова блискавка"
+
+#: mage_ablt.xml:54
+msgid ""
+"The mage unleashes a mighty ball lightning, that can jump over to nearby "
+"enemies. A maximum of nine enemies is hit and the damage is reduced with "
+"every jump."
+msgstr ""
+"Маг випускає могутню кульову блискавку, яка може перестрибнути на найближчих "
+"ворогів. Вона вражає до дев'яти ворогів і пошкодження після кожного стрибка "
+"зменшуються."
+
+#: mage_ablt.xml:80
+msgid "Chilling cold"
+msgstr "Льодовий холод"
+
+#: mage_ablt.xml:80
+msgid ""
+"The mage has understood everything about ice and snow, allowing him to "
+"increase the effectiveness of his icespells by 20%."
+msgstr ""
+"Маг зрозумів усе, що стосується льоду і снігу, що дозволило йому підвищити "
+"ефективність заклять льоду на 20%."
+
+#: mage_ablt.xml:90 monster_ablt.xml:19 monster_ablt.xml:146
+#: npc_abilities.xml:51
+msgid "Fireball"
+msgstr "Вогняна куля"
+
+#: mage_ablt.xml:90 monster_ablt.xml:146 npc_abilities.xml:51
+msgid ""
+"The mage casts a bolt of fire, that explodes upon hitting an enemy. Other "
+"enemies nearby the victim are also caught in the explosion."
+msgstr ""
+"Маг кидає вогняну кулю, яка вибухає від удару до ворога. Інші вороги поблизу "
+"жертви також втягуються в вибух."
+
+#: mage_ablt.xml:116
+msgid "Firebolt"
+msgstr "Вогняна блискавка"
+
+#: mage_ablt.xml:116
+msgid "The mage unleashes a small bolt of fire, that damages a single enemy."
+msgstr "Маг кидає невелику вогняну блискавку, що пошкоджує одного ворога."
+
+#: mage_ablt.xml:142 monster_ablt.xml:93 monster_ablt.xml:119
+#: npc_abilities.xml:238
+msgid "Firestorm"
+msgstr "Вогняна буря"
+
+#: mage_ablt.xml:142
+msgid ""
+"The mage conjures a deadly wave of fire, that burns every enemy in a circle "
+"around him."
+msgstr ""
+"Маг викликає смертельну хвилю вогню, яка спалює всіх ворогів в радіусі дії "
+"хвилі."
+
+#: mage_ablt.xml:168 npc_abilities.xml:26
+msgid "Fireblow"
+msgstr "Хвиля вогню"
+
+#: mage_ablt.xml:168 npc_abilities.xml:26
+msgid "The mage casts a strong bolt of fire, that damages one enemy."
+msgstr "Маг кидає велику вогняну блискавку, що пошкоджує одного ворога."
+
+#: mage_ablt.xml:194 monster_ablt.xml:172 npc_abilities.xml:76
+msgid "Firecolumn"
+msgstr "Стовп вогню"
+
+#: mage_ablt.xml:194 npc_abilities.xml:76
+msgid ""
+"The mage conjurs a column made of hellfire, that will stay for 5 seconds and "
+"turn every enemy stupid enough to stay in there to ashes."
+msgstr ""
+"Маг заклинає стовп з пекельного вогню, який буде стояти 5 секунд, і "
+"перетворить кожного досить дурного ворога, який туди стане,  на попіл."
+
+#: mage_ablt.xml:220
+msgid "Flame wave"
+msgstr "Хвиля полум'я"
+
+#: mage_ablt.xml:220
+msgid ""
+"The mage conjures a wave of flames, that damages enemies in a circle around "
+"him."
+msgstr "Маг викликає хвилю полум'я, яке пошкоджує ворогів навколо нього."
+
+#: mage_ablt.xml:246 monster_ice_ablt.xml:138
+msgid "Freeze"
+msgstr "Заморозка"
+
+#: mage_ablt.xml:246 monster_ice_ablt.xml:138
+msgid ""
+"The mage catches an enemy in a block of pure ice, instantly sealing his "
+"movements."
+msgstr "Маг ловить ворога в блоці з чистого льоду, миттєво зупиняючи його рух."
+
+#: mage_ablt.xml:271
+msgid "Frost ring"
+msgstr "Морозне кільце"
+
+#: mage_ablt.xml:271
+msgid "The mage calls upon a deadlier version of the icering."
+msgstr "Маг викликає смертоносну версію льодяного кільця."
+
+#: mage_ablt.xml:298 monster_ablt.xml:247 monster_ablt.xml:270
+msgid "Icicle"
+msgstr "Бурулька"
+
+#: mage_ablt.xml:298 monster_ablt.xml:247 monster_ablt.xml:270
+msgid "The mage casts a shard of pure ice, that damages his foes."
+msgstr "Маг кидає осколок чистого льоду, що шкодить його ворогам."
+
+#: mage_ablt.xml:324
+msgid "Ice ring"
+msgstr "Льодяне кільце"
+
+#: mage_ablt.xml:324
+msgid ""
+"The mage casts a ring of ice around himself that will damage enemies in "
+"range."
+msgstr ""
+"Маг створює навколо себе льодяне кільце, яке нашкодить ворогам в радіусі дії."
+
+#: mage_ablt.xml:350
+msgid "Spear of ice"
+msgstr "Льодяний спис"
+
+#: mage_ablt.xml:350
+msgid "The mage attacks one enemy with a powerful spear of magical ice."
+msgstr "Маг атакує одного ворога потужним списом з магічного льоду."
+
+#: mage_ablt.xml:376
+msgid "Infernoball"
+msgstr "Пекельна куля"
+
+#: mage_ablt.xml:376
+msgid "The mage casts an even more powerful fireball."
+msgstr "Маг кидає ще потужнішу вогняну кулю."
+
+#: mage_ablt.xml:402
+msgid "Ignite"
+msgstr "Підпал"
+
+#: mage_ablt.xml:402
+msgid ""
+"The mage embraces the heat of fire, so that victims of his firespells will "
+"likely suffer burn."
+msgstr ""
+"Маг викликає тепло вогню, так що швидше за все жертви його чар згорять "
+"живцем."
+
+#: mage_ablt.xml:412
+msgid "Ionisation"
+msgstr "Іонізація"
+
+#: mage_ablt.xml:412
+msgid ""
+"The mage has become one with the storm and can cast lightning spells 25% "
+"faster."
+msgstr ""
+"Маг став одним із бурею і тепер може заклинати блискавки на 25% швидше."
+
+#: mage_ablt.xml:421
+msgid "Lightning"
+msgstr "Блискавка"
+
+#: mage_ablt.xml:421
+msgid "The mage summons a lightning to attack one foe."
+msgstr "Маг викликає блискавку для атаки одного ворога."
+
+#: mage_ablt.xml:447
+msgid "Lightning strike"
+msgstr "Удар блискавки"
+
+#: mage_ablt.xml:447
+msgid "The mage calls upon a mighty lightning to kill an enemy."
+msgstr "Маг викликає могутню блискавку, щоб вбити ворога."
+
+#: mage_ablt.xml:472
+msgid "Snow storm"
+msgstr "Снігова буря"
+
+#: mage_ablt.xml:472
+msgid "The mage calls upon a snow storm to kill every enemy in a circle."
+msgstr "Маг викликає снігову бурю, щоб вбити всіх ворогів в колі."
+
+#: mage_ablt.xml:498
+msgid "Static shield"
+msgstr "Статичний щит"
+
+#: mage_ablt.xml:498
+msgid ""
+"The mage surrounds himself with an armor of lightning, that will stun and "
+"damage enemies who are bold enough to attack in close combat."
+msgstr ""
+"Маг оточує себе захистом зблискавки, яка оглушить і пошкодить кожного досить "
+"зухвалого ворога, що атакуватиме в ближньому бою."
+
+#: mage_ablt.xml:520
+msgid ""
+"The mage summons a thunderstorm that will assault enemies in its range with "
+"lightnings."
+msgstr "Маг викликає грозу, що нападе блискавками на ворогів в радіусі дії."
+
+#: mage_ablt.xml:520
+msgid "Thunderstorm"
+msgstr "Гроза"
+
+#: mage_ablt.xml:552
+msgid "Tempest"
+msgstr "Буря"
+
+#: mage_ablt.xml:552
+msgid ""
+"The mage summons a ferocious tempest that bombards enemies in its wake with "
+"lightnings."
+msgstr ""
+"Маг викликає люту бурю, що бомбардує ворогів на своєму шляху блискавками."
+
+#: medair.xml:4
+msgid "elCnlLobby"
+msgstr "Рада Елементів, Підземелля"
+
+#: medair.xml:37 tutorial.xml
+msgid "elCnlLowerCaves"
+msgstr "Печери Ради"
+
+#: medair.xml:89
+msgid "medBackalley"
+msgstr "Закутки"
+
+#: medair.xml:119
+msgid "medMercCamp"
+msgstr "Табір Найманців Медайру"
+
+#: medairnpc.xml:2
+msgid "Robert"
+msgstr "Роберт"
+
+#: medairnpc.xml:44
+msgid "Elgor"
+msgstr "Елгор"
+
+#: medairnpc.xml:67
+msgid "Cain"
+msgstr "Каїн"
+
+#: medairnpc.xml:83
+msgid "Fenor Marken"
+msgstr "Ферон Маркен"
+
+#: monster_ablt.xml:2
+msgid "Steals gold"
+msgstr "Краде золото"
+
+#: monster_ablt.xml:2
+msgid "steal"
+msgstr "красти"
+
+#: monster_ablt.xml:19
+msgid "Alternativer Feuerball."
+msgstr "Альтернативна Вогняна куля."
+
+#: monster_ablt.xml:47
+msgid "Booster"
+msgstr "Підсилення"
+
+#: monster_ablt.xml:47
+msgid "completely overpowered Booster"
+msgstr "переповнений енергією Підсилювач"
+
+#: monster_ablt.xml:70
+msgid "Heilt alles"
+msgstr "Лікує всіх"
+
+#: monster_ablt.xml:93 monster_ablt.xml:119
+msgid "Firestorm with increased range."
+msgstr "Вогняна буря зі збільшеною дальністю."
+
+#: monster_ablt.xml:198 monster_shadow_ablt.xml:48 priest_ablt.xml:228
+msgid "Magic Shield"
+msgstr "Магічний Щит"
+
+#: monster_ablt.xml:223 npc_abilities.xml:126
+msgid "Goblin Lightning"
+msgstr "Блискавка Гобліна"
+
+#: monster_ablt.xml:317
+msgid "goblin curse"
+msgstr "прокляття гобліна"
+
+#: monster_ablt.xml:341 priest_ablt.xml:412
+msgid "Grand Cure"
+msgstr "Велике Зцілення"
+
+#: monster_ablt.xml:384 warrior_ablt.xml:47
+msgid "Attacks one enemy for serious damage."
+msgstr "Атакує одного ворога для серйозних пошкоджень."
+
+#: monster_ablt.xml:384
+msgid "monster Bash"
+msgstr "Удар чудовиська"
+
+#: monster_ablt.xml:404
+msgid "poison_attack"
+msgstr "атака_отрутою"
+
+#: monster_ablt.xml:423
+msgid "Attacks every enemy in weapon range with slightly reduced damage."
+msgstr "Атакує кожного ворога в радіусі дії з трохи зменшеною шкодою."
+
+#: monster_ablt.xml:423 warrior_ablt.xml:24
+msgid "Sweeping blow"
+msgstr "Підмітальний удар"
+
+#: monster_ablt.xml:445 monster_ablt.xml:490
+msgid "Fire arrow"
+msgstr "Вогняна стріла"
+
+#: monster_ablt.xml:468
+msgid "Poison arrow"
+msgstr "Отруєна стріла"
+
+#: monster_ablt.xml:468
+msgid "Poisonous ranged attack"
+msgstr "Отруйна атака в дальньому бою"
+
+#: monster_ablt.xml:513
+msgid "Throw a dagger"
+msgstr "Киньте кинджал"
+
+#: monster_ablt.xml:513
+msgid "throw dagger"
+msgstr "кинути кинджал"
+
+#: monster_ablt.xml:532 monster_ablt.xml:551
+msgid "Throw a berry"
+msgstr "Киньте ягоду"
+
+#: monster_ablt.xml:532
+msgid "throw berry"
+msgstr "кинути ягоди"
+
+#: monster_ablt.xml:551
+msgid "throw rock"
+msgstr "кинути камінь"
+
+#: monster_ablt.xml:571 monster_fire_ablt.xml:68 monster_fire_ablt.xml:93
+msgid "Throw a bomb"
+msgstr "Киньте бомбу"
+
+#: monster_ablt.xml:571 monster_fire_ablt.xml:68
+msgid "throw bomb"
+msgstr "кинути бомбу"
+
+#: monster_ablt.xml:596
+msgid "Flee from enemy"
+msgstr "Тікати від ворога"
+
+#: monster_ablt.xml:596
+msgid "saboteur_move"
+msgstr "ходьба_диверсанта"
+
+#: monster_ablt.xml:625
+msgid "Flame Throw"
+msgstr "Кидок Полум'я"
+
+#: monster_ablt.xml:625
+msgid "The basic attack of a flaming skeleton."
+msgstr "Основна атака палаючого скелета."
+
+#: monster_ablt.xml:648
+msgid "Blind ranged attack"
+msgstr "Сліпа атака в дальньому бою"
+
+#: monster_ablt.xml:648
+msgid "dark arrow"
+msgstr "темна стріла"
+
+#: monster_ablt.xml:670 monster_ice_ablt.xml:68 unique_ablt.xml:27
+#: unique_ablt.xml:49 unique_ablt.xml:95
+msgid "Ice arrow"
+msgstr "льодяна стріла"
+
+#: monster_ablt.xml:693
+msgid "Decrease block-value"
+msgstr "Зниження значення блоку"
+
+#: monster_ablt.xml:693
+msgid "Stats Down"
+msgstr "Статистика Вниз"
+
+#: monster_ablt.xml:709
+msgid "stun_attack"
+msgstr "оглушаюча_атака"
+
+#: monster_air_ablt.xml:2
+msgid "air attack"
+msgstr "напад з повітря"
+
+#: monster_air_ablt.xml:2
+msgid "attack with ice damage"
+msgstr "напад з пошкодженням льодом"
+
+#: monster_fire_ablt.xml:2
+msgid "attack with fire damage"
+msgstr "атака з пошкодженням від вогню"
+
+#: monster_fire_ablt.xml:2
+msgid "fire attack"
+msgstr "вогняна атака"
+
+#: monster_fire_ablt.xml:93
+msgid "throw grenade"
+msgstr "кинути гранату"
+
+#: monster_ice_ablt.xml:2 unique_ablt.xml:3
+msgid "ice attack"
+msgstr "льодяна атака"
+
+#: monster_ice_ablt.xml:2
+msgid "melee attack with ice damage"
+msgstr "ближня атака з ушкодженням льодом"
+
+#: monster_ice_ablt.xml:25
+msgid "basic ranged attack with ice damage"
+msgstr "основна атака в дальньому бою з ушкодженням льодом"
+
+#: monster_ice_ablt.xml:89
+msgid "Ice Arrow"
+msgstr "Льодяна Стріла"
+
+#: monster_ice_ablt.xml:89
+msgid "an arrow of ice that will hunt it's prey"
+msgstr "льодяна стріла, який вполює жертву"
+
+#: monster_ice_ablt.xml:113
+msgid "Iceball"
+msgstr "Льодяна куля"
+
+#: monster_ice_ablt.xml:113
+msgid ""
+"The mage casts a bolt of ice that explodes in a ring upon hitting an enemy. "
+"Other enemies nearby the victim are also caught in the explosion."
+msgstr ""
+"Маг кидає льодову блискавку яка вибухає в кільце при досягненні ворога. Інші "
+"вороги поблизу жертви також зачіпаються вибухом."
+
+#: monster_ice_ablt.xml:163 unique_ablt.xml:117
+msgid "Frost Wave"
+msgstr "Хвиля Морозу"
+
+#: monster_ice_ablt.xml:163
+msgid ""
+"The mage conjures a wave of ice, that damages enemies in a circle around him."
+msgstr "Маг викликає хвилю льоду, яка пошкоджує ворогів навколо нього."
+
+#: monster_shadow_ablt.xml:20 unique_ablt.xml:204
+msgid "Cloud of Despair"
+msgstr "Хмара Розпачу"
+
+#: monster_shadow_ablt.xml:20 unique_ablt.xml:204
+msgid "The mage calls forth a black cloud that stuns and blinds his foes."
+msgstr "Маг викликає чорну хмару, що оглушує і сліпить його ворогів."
+
+#: monsters.xml:237
+msgid "small mandragora"
+msgstr "невелика мандрагора"
+
+#: monsters.xml:289
+msgid "mandragora"
+msgstr "мандрагора"
+
+#: necrotia.xml:6
+msgid "necFieldcamp"
+msgstr "Табір нежиті"
+
+# Bron's door
+#: npc.xml:4
+msgid "Brons Tuer"
+msgstr "Двері Бронса"
+
+#: npc.xml:7
+msgid "Sergeant Wober"
+msgstr "Сержант Вобер"
+
+#: npc.xml:13 undeadStats.xml:158
+msgid "Maylons Ghost"
+msgstr "Душа Мейлона"
+
+#: npc.xml:22
+msgid "Gab Resh"
+msgstr "Габ Реш"
+
+#: npc.xml:28
+msgid "Maga Convocatis Darna Eistaucher"
+msgstr "Мага Конвокатіс Дарна Гагара"
+
+#: npc.xml:35
+msgid "Erzmaga Ireana von Nordenburg"
+msgstr "Мага землі Іреана з Нортборо"
+
+#: npc.xml:38
+msgid "Guardcaptain"
+msgstr "Капітан Охорони"
+
+#: npc.xml:41
+msgid "Elementaristenwaechter"
+msgstr "Зберігач Стихій"
+
+#: npc.xml:44
+msgid "Overlooker Necromancer"
+msgstr "Прораб Некромант"
+
+#: npc.xml:50 npcStats.xml:473
+msgid "The Trader"
+msgstr "Торговець"
+
+#: npc.xml:55 npc.xml:66
+msgid "Buy empty scrolls"
+msgstr "Купити порожні згортки"
+
+#: npc.xml:56
+msgid "Access stash"
+msgstr "Зайти в тайник"
+
+#: npc.xml:59
+msgid "The Lost Trader"
+msgstr "Загублений Торговець"
+
+#: npc.xml:76
+msgid "Wounded Scout"
+msgstr "Поранений Розвідник"
+
+#: npc.xml:79
+msgid "Enchanter"
+msgstr "Чародій"
+
+#: npc.xml:96
+msgid "Ice resistance"
+msgstr "Опір до льоду"
+
+#: npcStats.xml:320 npcStats.xml:358
+msgid "Peasant"
+msgstr "Селянин"
+
+#: npcStats.xml:397 npcStats.xml:435
+msgid "Peasant Woman"
+msgstr "Селянка"
+
+#: npc_abilities.xml:2
+msgid "Freezing Death"
+msgstr "Заморожувальна Смерть"
+
+#: npc_abilities.xml:2
+msgid ""
+"The mage conjures a devastating ring of ice, that damages enemies in a "
+"circle around him."
+msgstr ""
+"Маг викликає руйнівне льодове кільце, який пошкоджує ворогів навколо нього."
+
+#: npc_abilities.xml:150 warrior_ablt.xml:241
+msgid ""
+"Attacks one enemy with a brutal blow and damages nearby enemies as well."
+msgstr "Атакує одного ворога жорстоким ударом і пошкоджує сусідніх ворогів."
+
+#: npc_abilities.xml:150 warrior_ablt.xml:241
+msgid "Hammer blow"
+msgstr "Подих молота"
+
+#: npc_abilities.xml:172 warrior_ablt.xml:24
+msgid "Attacks every enemy in weapon range."
+msgstr "Атакує кожного ворога в радіусі дії зброї."
+
+#: npc_abilities.xml:172 warrior_ablt.xml:446
+msgid "Whirl blow"
+msgstr "Подих Вихору"
+
+#: npc_abilities.xml:192 warrior_ablt.xml:356
+msgid "Attacks an enemy with an unblockable, armor piercing blow."
+msgstr "Атакує ворога бронебійним ударом, який неможливо заблокувати."
+
+#: npc_abilities.xml:192 warrior_ablt.xml:356
+msgid "Smash blow"
+msgstr "Розгромний Удар"
+
+#: npc_abilities.xml:215 warrior_ablt.xml:172
+msgid "Flame armor"
+msgstr "Полум'яна броня"
+
+#: npc_abilities.xml:215 warrior_ablt.xml:172
+msgid ""
+"The warrior surrounds himself with angry spirits of fire, who will burn his "
+"enemies to ashes, if they dare to come to close."
+msgstr ""
+"Воїн оточує себе злими духами вогню, які спалять ворогів на попіл, якщо вони "
+"насміляться близько підійти."
+
+#: npc_abilities.xml:238
+msgid ""
+"The mage conjures a deadly wave of fire on the verge of death, that burns "
+"every enemy in a circle around him to a crisp."
+msgstr ""
+"Маг викликає смертельну хвилю вогню на межі смерті, що засмажує ворогів в "
+"радіусі дії до хрусткої скоринки."
+
+#: polearms.xml:3
+msgid "pike"
+msgstr "наконечник"
+
+#: potion.xml:3
+msgid "scroll of town portal"
+msgstr "згорток міського порталу"
+
+#: potion.xml:17
+msgid "small potion"
+msgstr "мале зілля"
+
+#: potion.xml:37
+msgid "medium potion"
+msgstr "середнє зілля"
+
+#: potion.xml:57
+msgid "eyedrops"
+msgstr "очні краплі"
+
+#: potion.xml:77
+msgid "antidot"
+msgstr "протиотрута"
+
+#: potion.xml:97
+msgid "calming salve"
+msgstr "заспокійливий бальзам"
+
+#: potion.xml:117
+msgid "potion of determination"
+msgstr "зілля визначення"
+
+#: potion.xml:137
+msgid "echo potion"
+msgstr "зілля відголосу"
+
+#: potion.xml:157
+msgid "muscle salve"
+msgstr "мазь для м'язів"
+
+#: potion.xml:177
+msgid "potion of melting"
+msgstr "зілля плавлення"
+
+#: potion.xml:197
+msgid "spike oil"
+msgstr "лавандова олія"
+
+#: priest_ablt.xml:2
+msgid "Acid"
+msgstr "Кислота"
+
+#: priest_ablt.xml:2
+msgid "The priest turns normal water into deadly acid, poisoning one enemy."
+msgstr ""
+"Священик перетворює просту воду в смертоносну кислоту, що отруює одного "
+"ворога."
+
+#: priest_ablt.xml:27
+msgid "Bladestorm"
+msgstr "Злива з клинків"
+
+#: priest_ablt.xml:27
+msgid ""
+"The priest strengthens the weaponarms of his comrades, leading to increased "
+"attackspeed for everyone."
+msgstr ""
+"Священик зміцнює руки своїх товаришів, що призводить до збільшення швидкості "
+"атаки кожного."
+
+#: priest_ablt.xml:50
+msgid "Blazing Shield"
+msgstr "Вогняний щит"
+
+#: priest_ablt.xml:50
+msgid ""
+"The party is surrounded by holy energy. Everyones defense is increased. With "
+"increasing willpower the effect improves."
+msgstr ""
+"Команда оточується святою енергією. Збільшується захист кожного члена. Зі "
+"збільшенням сили волі ефект підсилюється."
+
+#: priest_ablt.xml:74
+msgid "Breaking Blow"
+msgstr "Ламаючий Удар"
+
+#: priest_ablt.xml:74
+msgid ""
+"The priest attacks an enemy with energy that causes elementals to be blown "
+"back where they come from."
+msgstr ""
+"Священик атакує ворога енергією, яка повертає елементалів туди, звідки вони "
+"взялись."
+
+#: priest_ablt.xml:103
+msgid "Glaring Sun"
+msgstr "Сліпуче Сонце"
+
+#: priest_ablt.xml:103
+msgid ""
+"The priest calls forth a mighty explosion of light that can blind every "
+"enemy in an area."
+msgstr ""
+"Священик викликає потужний вибух світла, який може осліпити кожного ворога в "
+"радіусі дії."
+
+#: priest_ablt.xml:130
+msgid "Gentle Glow"
+msgstr "Ніжне Світло"
+
+#: priest_ablt.xml:130
+msgid ""
+"The priest bathes a partymember in a mild light, releaving him of blindness "
+"and silence."
+msgstr ""
+"Священик окунає члена команди в м'яке світло, зцілюючи його від сліпоти і "
+"оніміння."
+
+#: priest_ablt.xml:150
+msgid "Omniscent Eye"
+msgstr "Всевідаюче Око"
+
+#: priest_ablt.xml:150
+msgid ""
+"The party will be immune to blind and mute for some time. Those ailments "
+"will also be healed."
+msgstr ""
+"Команда буде несприйнятна до сліпоти і оніміння на деякий час. Ці "
+"захворювання також будуть вилікувані."
+
+#: priest_ablt.xml:178
+msgid "Restore Concentration"
+msgstr "Відновлення Концентрації"
+
+#: priest_ablt.xml:178
+msgid ""
+"The priest heals one friend from confusion and berserk. Those ailments will "
+"also be healed."
+msgstr ""
+"Священик лікує одного друга від плутанини і шаленства. Ці захворювання також "
+"будуть вилікувані."
+
+#: priest_ablt.xml:199
+msgid "Spirit Shield"
+msgstr "Духовний Щит"
+
+#: priest_ablt.xml:199
+msgid ""
+"The priest grants immunity to berserk and confuse to all his partymembers "
+"for a small amount of time. Those ailments will also be healed."
+msgstr ""
+"Священик дає імунітет до оскаженіння і збентеження всім членам команди на "
+"короткий час. Ці захворювання також будуть вилікувані."
+
+#: priest_ablt.xml:228
+msgid ""
+"The priest conjures a magic shield for all partymembers thats reduces the "
+"damage dealt by elemental attacks."
+msgstr ""
+"Священик викликає магічний щит для всіх членів команди, що зменшує шкоду від "
+"атак стихіями."
+
+#: priest_ablt.xml:256
+msgid "Ease Pain"
+msgstr "Зменшення Болю"
+
+#: priest_ablt.xml:256
+msgid ""
+"The priest treats a partymemener with healing water that washes away every "
+"poison and stops burns."
+msgstr ""
+"Священик дає члену команди цілющу воду, яка змиває будь-яку отруту і зупиняє "
+"горіння."
+
+#: priest_ablt.xml:277
+msgid "Remedial Water"
+msgstr "Лікувальна Вода"
+
+#: priest_ablt.xml:277
+msgid ""
+"The priests grants every partymember immunity to poison and burn for a small "
+"amount of time while healing these effects."
+msgstr ""
+"Священики дає кожному члену команди імунітет до отрути і горіння на "
+"невеликий проміжок часу поки лікує ці ефекти."
+
+#: priest_ablt.xml:306
+msgid "Dismissing Strike"
+msgstr "Відкидаючий Удар"
+
+#: priest_ablt.xml:306
+msgid ""
+"The priest strikes with all his might. While normal monsters have little to "
+"fear from this attack elementals will be easily destroyed by it."
+msgstr ""
+"Священик ударяє з усіх сил. Хоча звичайні монстри не сильно бояться цієї "
+"атаки, елементалі будуть легко нею вбиті."
+
+#: priest_ablt.xml:335
+msgid "God Strike"
+msgstr "Удар Бога"
+
+#: priest_ablt.xml:335
+msgid ""
+"Only strong and durable demons will be able to resist the priests sacred "
+"strike."
+msgstr ""
+"Лише міцні і витривалі демони зможуть протистояти священному нападу "
+"священика."
+
+#: priest_ablt.xml:364
+msgid ""
+"The priest creates a vortex with his attack, that can suck a demonic "
+"creature right back to hell."
+msgstr ""
+"Священик створює вихор, який може засмоктати демонічних істот назад у пекло."
+
+#: priest_ablt.xml:364
+msgid "Windstrike"
+msgstr "Удар Вітру"
+
+#: priest_ablt.xml:392
+msgid "Cure"
+msgstr "Зцілення"
+
+#: priest_ablt.xml:392
+msgid "The priest restores the hitpoints of one partymember."
+msgstr "Священик відновлює очки здоров'я одного члена команди."
+
+#: priest_ablt.xml:412
+msgid "The priest restores hitpoints for every partymember."
+msgstr "Священик відновлює очки здоров'я кожного члена команди."
+
+#: priest_ablt.xml:433
+msgid "Sanctified Strike"
+msgstr "Освячений Удар"
+
+#: priest_ablt.xml:433
+msgid ""
+"The priest attacks with godly power, easily sending undead creatures back to "
+"their graves."
+msgstr ""
+"Священик атакує божественною силою, легко відправляючи нежить назад у могили."
+
+#: priest_ablt.xml:463
+msgid "Bright Blow"
+msgstr "Подих Світла"
+
+#: priest_ablt.xml:463
+msgid ""
+"The priest attacks an enemy with a blow imbued with holy power. Undead will "
+"be severely damaged by the sacred energies."
+msgstr ""
+"Священик атакує ворога ударом, наповненим святою силою. Нежить буде сильно "
+"пошкоджена священною енергією."
+
+#: priest_ablt.xml:493
+msgid "Hypnosis"
+msgstr "Гіпноз"
+
+#: priest_ablt.xml:493
+msgid "The priest confuses a monster, causing it to attack at random."
+msgstr "Священик спутує монстра, який стає наносити атаки навмання."
+
+#: priest_ablt.xml:519
+msgid "Hypnotic Vortex"
+msgstr "Гіпнотичний Вихор"
+
+#: priest_ablt.xml:519
+msgid ""
+"The priest creates a distracting vortex with the ability to confuse every "
+"enemy caught in it."
+msgstr ""
+"Священик створює відволікаючий вихор з можливістю запутати кожного "
+"спійманого в ньому ворога."
+
+#: priest_ablt.xml:545
+msgid "Keen Mind"
+msgstr "Гострий Розум"
+
+#: priest_ablt.xml:545
+msgid ""
+"The priest increases everyones spellpower for a short time making spells "
+"more effective. The effect becomes stronger with increasing willpower of the "
+"priest."
+msgstr ""
+"Священик збільшує силу заклинань кожного на короткий час, збільшуючи їх "
+"ефективність. Зі збільшенням сили волі священика ефект стає сильнішим."
+
+#: priest_ablt.xml:568
+msgid "Glistening Glare"
+msgstr "Яскраве Світло"
+
+#: priest_ablt.xml:568
+msgid ""
+"The priest casts a dazzling light, that can cause an enemy to be affected by "
+"blind."
+msgstr "Священик кидає сліпуче світло, що може призвести до сліпоти ворога."
+
+#: priest_ablt.xml:594
+msgid "Divine Will"
+msgstr "Божественна Воля"
+
+#: priest_ablt.xml:594
+msgid ""
+"The priests protecting influence raises the willpower of all partymembers "
+"temporarily. The effect becomes stronger with increasing willpower of the "
+"priest."
+msgstr ""
+"Захисний вплив священика тимчасово збільшує силу волі всіх членів команди. "
+"Зі збільшенням сили волі священика ефект підсилюється."
+
+#: priest_ablt.xml:617
+msgid "Holy Shield"
+msgstr "Святий Щит"
+
+#: priest_ablt.xml:617
+msgid ""
+"The priest is surrounded by a shimmering light that repells undead attacks. "
+"Damage from undead beings is reduced by one third."
+msgstr ""
+"Священник оточує себе мерехтливим світлом, яке відбиває атаки нежиті. Збиток "
+"від  нежиті зменшується на одну третину."
+
+#: priest_ablt.xml:627
+msgid "Banishing Aura"
+msgstr "Аура Вигнання"
+
+#: priest_ablt.xml:627
+msgid ""
+"The priests powers allow him to surround himself with an aura that immitates "
+"a banishment. While it holds no real power over demons, demonic beings will "
+"be frightened, thus leading to their damage being reduced by one third."
+msgstr ""
+"Сила священика дозволяє йому оточити себе аурою, що імітує вигнання. Хоча "
+"вона не має ніякої реальної влади над демонами, демонічні істоти будуть "
+"налякані, що призведе до зменшення нанесеної ними шкоди на одну третину."
+
+#: priest_ablt.xml:637
+msgid "Elemental Vortex"
+msgstr "Стихійний Вихор"
+
+#: priest_ablt.xml:637
+msgid ""
+"The priest can unconsciously create an elemental vortex that will drain one "
+"third of incoming damage from elemental beings."
+msgstr ""
+"Священик може неусвідомлено створити стихійний вихор, який впитає в себе "
+"третину нанесеної стихійними істотами шкоди."
+
+#: rescue_willard.xml
+msgid "Willard"
+msgstr "Віллард"
+
+#: ring.xml:5
+msgid "bronze ring"
+msgstr "бронзове кільце"
+
+#: ring.xml:34
+msgid "amber ring"
+msgstr "бурштинове кільце"
+
+#: ring.xml:63
+msgid "silver ring"
+msgstr "срібне кільце"
+
+#: ring.xml:92
+msgid "jet ring"
+msgstr "гагатове кільце"
+
+#: ring.xml:121
+msgid "gold ring"
+msgstr "золоте кільце"
+
+#: robes.xml:5
+msgid "ragged robe"
+msgstr "рваний халат"
+
+#: robes.xml:39
+msgid "apprentice robe"
+msgstr "халат учня"
+
+#: robes.xml:73
+msgid "novice robe"
+msgstr "мантія новачка"
+
+#: robes.xml:107
+msgid "alchemist robe"
+msgstr "мантія алхіміка"
+
+#: robes.xml:141
+msgid "scholar robe"
+msgstr "мантія вченого"
+
+#: robes.xml:175
+msgid "magus robe"
+msgstr "мантія мага"
+
+#: robes.xml:209
+msgid "council robe"
+msgstr "мантія ради"
+
+#: sarkophagusMaylon.xml:29
+msgid " received an item from Maylons Grave."
+msgstr ""
+
+#: shields.xml:5
+msgid "targe"
+msgstr "маленький круглий щит"
+
+#: shields.xml:35
+msgid "buckler"
+msgstr "щит"
+
+#: shields.xml:65
+msgid "wood shield"
+msgstr "дерев'яний щит"
+
+#: shields.xml:95
+msgid "bronze shield"
+msgstr "бронзовий щит"
+
+#: shields.xml:125
+msgid "iron shield"
+msgstr "залізний щит"
+
+#: shields.xml:155
+msgid "steel shield"
+msgstr "сталевий щит"
+
+#: shortbow.xml:4
+msgid "practice bow"
+msgstr "тренувальний лук"
+
+#: shortbow.xml:40
+msgid "yew shortbow"
+msgstr "тисовий короткий лук"
+
+#: shortbow.xml:76
+msgid "shortbow"
+msgstr "короткий лук"
+
+#: shortbow.xml:112
+msgid "hunting bow"
+msgstr "мисливський лук"
+
+#: shortbow.xml:149
+msgid "rattan bow"
+msgstr "ротанговий лук"
+
+#: shortbow.xml:185
+msgid "bandit bow"
+msgstr "бандитський лук"
+
+#: shortbow.xml:221
+msgid "northeye"
+msgstr "північне око"
+
+#: shortbow.xml:259
+msgid "battle shortbow"
+msgstr "бойовий короткий лук"
+
+#: shortbow.xml:295
+msgid "composite shortbow"
+msgstr "складений короткий лук"
+
+#: shortbow.xml:331
+msgid "rider bow"
+msgstr "лук вершника"
+
+#: shortbow.xml:367
+msgid "coal bow"
+msgstr "обвуглений лук"
+
+#: shortbow.xml:403
+msgid "ash bow"
+msgstr "ясеневий лук"
+
+#: shortbow.xml:440
+msgid "bane bow"
+msgstr "отруйний лук"
+
+#: shortbow.xml:477
+msgid "oak shortbow"
+msgstr "дубовий короткий лук"
+
+#: shortbow.xml:549
+msgid "seeker"
+msgstr "шукач"
+
+#: shortbow.xml:585
+msgid "chaos shortbow"
+msgstr "короткий лук хаосу"
+
+#: shortbow.xml:621
+msgid "fairy bow"
+msgstr "чарівний лук"
+
+#: staff.xml:5 staff.xml:36 staff.xml:67
+msgid "spruce staff"
+msgstr "смерековий посох"
+
+#: staff.xml:100 staff.xml:131 staff.xml:162
+msgid "apprentice staff"
+msgstr "посох учня"
+
+#: staff.xml:195 staff.xml:225 staff.xml:256
+msgid "novice staff"
+msgstr "посох новачка"
+
+#: staff.xml:289 staff.xml:320 staff.xml:351
+msgid "hermit staff"
+msgstr "посох відлюдника"
+
+#: staff.xml:383
+msgid "rock staff"
+msgstr "кам'яний посох"
+
+#: staff.xml:420 staff.xml:451 staff.xml:482
+msgid "alder staff"
+msgstr "вільховий посох"
+
+#: staff.xml:515 staff.xml:546 staff.xml:577
+msgid "bard's staff"
+msgstr "посох барда"
+
+#: staff.xml:610 staff.xml:640 staff.xml:671
+msgid "magus staff"
+msgstr "посох мага"
+
+#: staff.xml:704 staff.xml:735 staff.xml:766
+msgid "silver staff"
+msgstr "срібний посох"
+
+#: staff.xml:798
+msgid "inferno staff"
+msgstr "пекельний посох"
+
+#: staff.xml:830
+msgid "oak staff"
+msgstr "дубовий посох"
+
+#: staff.xml:862
+msgid "phenix staff"
+msgstr "бездоганний посох"
+
+#: staff.xml:894
+msgid "frost staff"
+msgstr "морозний посох"
+
+#: staff.xml:926
+msgid "thunder staff"
+msgstr "громовий посох"
+
+#: staff.xml:958
+msgid "ash staff"
+msgstr "ясеневий посох"
+
+#: staff.xml:990
+msgid "summoner staff"
+msgstr "посох викликача"
+
+#: staff.xml:1022
+msgid "master staff"
+msgstr "магістерський посох"
+
+#: staff.xml:1054
+msgid "necromancer staff"
+msgstr "посох некроманта"
+
+#: staff.xml:1086
+msgid "demon staff"
+msgstr "посох демона"
+
+#: staff.xml:1118
+msgid "fairy staff"
+msgstr "казковий посох"
+
+#: staff.xml:1154
+msgid "ifreet staff"
+msgstr "посох іфрита"
+
+#: staff.xml:1186
+msgid "icewitch staff"
+msgstr "посох крижаної відьми"
+
+#: staff.xml:1218
+msgid "sylph staff"
+msgstr "посох сильфа"
+
+#: staff.xml:1251
+msgid "archmage staff"
+msgstr "посох архимага"
+
+#: swords1h.xml:4
+msgid "dagger"
+msgstr "кинджал"
+
+#: swords1h.xml:40
+msgid "shortsword"
+msgstr "короткий меч"
+
+#: swords1h.xml:76
+msgid "bronzesword"
+msgstr "бронзовий меч"
+
+#: swords1h.xml:112
+msgid "sabre"
+msgstr "шабля"
+
+#: swords1h.xml:150
+msgid "legion blade"
+msgstr "клинок легіону"
+
+#: swords1h.xml:186
+msgid "long sword"
+msgstr "довгий меч"
+
+#: swords1h.xml:222
+msgid "sword of the coast"
+msgstr "меч з узбережжя"
+
+#: swords1h.xml:258
+msgid "council sabre"
+msgstr "шабля радника"
+
+#: swords1h.xml:294
+msgid "scimitar"
+msgstr "ятаган"
+
+#: swords1h.xml:330
+msgid "barbarian sword"
+msgstr "меч варвара"
+
+#: swords1h.xml:366
+msgid "northlings blade"
+msgstr "клинок північної щуки"
+
+#: swords1h.xml:404
+msgid "steel sword"
+msgstr "сталевий меч"
+
+#: swords1h.xml:440
+msgid "assassins blade"
+msgstr "клинок вбивці"
+
+#: swords1h.xml:476
+msgid "diamont sword"
+msgstr "алмазний меч"
+
+#: swords1h.xml:512
+msgid "dwarfsteel sword"
+msgstr "сталевий меч гнома"
+
+#: swords1h.xml:548
+msgid "demon blade"
+msgstr "клинок демона"
+
+#: swords1h.xml:586
+msgid "hero blade"
+msgstr "клинок героя"
+
+#: swords1h.xml:622
+msgid "angel blade"
+msgstr "клинок ангела"
+
+#: swords1h.xml:658
+msgid "gods blade"
+msgstr "клинок бога"
+
+#: swords2h.xml:4
+msgid "farmer sword"
+msgstr "фермерьский меч"
+
+#: swords2h.xml:42
+msgid "mercenary blade"
+msgstr "клинок найманця"
+
+#: swords2h.xml:80
+msgid "two handed steel sword"
+msgstr "дворучний сталевий меч"
+
+#: swords2h.xml:118
+msgid "smash sword"
+msgstr "ламаючий меч"
+
+#: swords2h.xml:156
+msgid "horse killer"
+msgstr "вбивця коней"
+
+#: swords2h.xml:194
+msgid "bastard sword"
+msgstr "полуторний меч"
+
+#: swords2h.xml:232
+msgid "ogre dagger"
+msgstr "кинджал людожера"
+
+#: swords2h.xml:270
+msgid "goblinkiller"
+msgstr "вбивця гоблінів"
+
+#: swords2h.xml:308
+msgid "executioner's sword"
+msgstr "меч ката"
+
+#: swords2h.xml:346
+msgid "two handed guardsman sword"
+msgstr "дворучний меч караульного"
+
+#: swords2h.xml:384
+msgid "flamberg"
+msgstr "фламберг"
+
+#: swords2h.xml:424
+msgid "aisener battle sword"
+msgstr "бойовий меч айзенера"
+
+#: swords2h.xml:462
+msgid "monster sword"
+msgstr "меч чудовиська"
+
+#: swords2h.xml:500
+msgid "tear sword"
+msgstr "слізний меч"
+
+#: swords2h.xml:538
+msgid "deathwind"
+msgstr "вітер смерті"
+
+#: swords2h.xml:578
+msgid "dread sword"
+msgstr "меч страху"
+
+#: swords2h.xml:616
+msgid "great sword"
+msgstr "великий меч"
+
+#: swords2h.xml:654
+msgid "angel sword"
+msgstr "ангельський меч"
+
+#: testregions.xml:47
+msgid "maptest"
+msgstr "тест мапи"
+
+#: testregions.xml:67
+msgid "sandbox"
+msgstr "пісочниця"
+
+#: testregions.xml:199
+msgid "spawnAbyss"
+msgstr "зароджена Безодня"
+
+#: testregions.xml:217
+msgid "benchmarkBox"
+msgstr "Панель Бенчмарку"
+
+#: testregions.xml:435
+msgid "region0"
+msgstr "регіон0"
+
+#: testregions.xml:611
+msgid "testregion"
+msgstr "тестовий регіон"
+
+#: testregions.xml:624
+msgid "region1"
+msgstr "регіон1"
+
+#: theFissure.xml
+msgid "Unknown Lich"
+msgstr "Невідомий Ліч"
+
+#: tutorial.xml
+msgid ""
+"I have to find an energy source and a cog before that thing will work again."
+msgstr "Ця штука не запрацює без джерела енергії та шестерні."
+
+#: undeadEqu.xml:3
+msgid "broken shield"
+msgstr "зламаний щит"
+
+#: undeadEqu.xml:33
+msgid "old sword"
+msgstr "старий меч"
+
+#: undeadStats.xml:5
+msgid "Guardian Skeleton"
+msgstr "Скелет Охоронець"
+
+#: undeadStats.xml:57
+msgid "Zombie"
+msgstr "Зомбі"
+
+#: undeadStats.xml:112
+msgid "Maylon"
+msgstr "Мейлон"
+
+#: undeadStats.xml:205 undeadStats.xml:364 undeadStats.xml:416
+#: undeadStats.xml:982 undeadStats.xml:1030 undeadStats.xml:1082
+#: undeadStats.xml:1133 undeadStats.xml:1184
+msgid "Skeleton"
+msgstr "Скелет"
+
+#: undeadStats.xml:258
+msgid "Giant Skeleton"
+msgstr "Гігантський скелет"
+
+#: undeadStats.xml:312
+msgid "Skeleton Archer"
+msgstr "Скелет Лучник"
+
+#: undeadStats.xml:469 undeadStats.xml:1553
+msgid "Skeleton Shadow Archer"
+msgstr "Скелет Лучник Тінь"
+
+#: undeadStats.xml:522
+msgid "Frostbone"
+msgstr "Замерзлий кістяк"
+
+#: undeadStats.xml:577 undeadStats.xml:837 undeadStats.xml:1291
+#: undeadStats.xml:1342 undeadStats.xml:1394
+msgid "Burning Skeleton"
+msgstr "Палаючий Скелет"
+
+#: undeadStats.xml:685
+msgid "Undead Scythe"
+msgstr "Коса Нежиті"
+
+#: undeadStats.xml:738 undeadStats.xml:939
+msgid "Necromancer"
+msgstr "Некромант"
+
+#: undeadStats.xml:785
+msgid "Worker Skeleton"
+msgstr "Скелет Робітник"
+
+#: undeadStats.xml:889
+msgid "Lich"
+msgstr "Ліч"
+
+#: undeadStats.xml:1236
+msgid "Huge Skeleton"
+msgstr "Величезний Скелет"
+
+#: undeadStats.xml:1446
+msgid "Frost Skeleton"
+msgstr "Морозний Скелет"
+
+#: undeadStats.xml:1499
+msgid "Frost Skeleton Archer"
+msgstr "Морозний Скелет Лучник"
+
+#: undeadStats.xml:1605
+msgid "Chilling Death"
+msgstr "Охолоджуюча Смерть"
+
+#: undeadStats.xml:1660
+msgid "Savage Skeleton"
+msgstr "Лютий Скелет"
+
+#: undeadStats.xml:1715
+msgid "Boney Brothers"
+msgstr "Брати Боні"
+
+#: undeadStats.xml:1771
+msgid "Icemage"
+msgstr "Льодяний маг"
+
+#: undeadStats.xml:1817
+msgid "Frostmage"
+msgstr "Морозний маг"
+
+#: undeadStats.xml:1865
+msgid "Neivan the Frostbringer"
+msgstr "Нейван, що несе мороз"
+
+#: undeadStats.xml:1917 undeadStats.xml:2317
+msgid "Blackmage"
+msgstr "Чорний маг"
+
+#: undeadStats.xml:1963
+msgid "Black Raven"
+msgstr "Чорний Ворон"
+
+#: undeadStats.xml:2366
+msgid "Ice Obelisk"
+msgstr "Льодяний Обеліск"
+
+#: undead_ablt.xml:2 undead_ablt.xml:20 undead_ablt.xml:39 undead_ablt.xml:58
+#: undead_ablt.xml:78 unique_ablt.xml:70
+msgid "Creates a skeleton."
+msgstr "Створює скелета."
+
+#: undead_ablt.xml:2 undead_ablt.xml:20 undead_ablt.xml:39 undead_ablt.xml:58
+#: undead_ablt.xml:78 unique_ablt.xml:70
+msgid "Summon Skeleton"
+msgstr "Виклик Скелета"
+
+#: unique_ablt.xml:3
+msgid "melee attack with ice damage of Nar'Asoroth"
+msgstr "ближня атака з пошкодженням льодом Нар'Асороса"
+
+#: unique_ablt.xml:27 unique_ablt.xml:49
+msgid "An icicle hunting the nearest target. The Nar'Asoroth-version."
+msgstr "Бурулька, що шукає найближчу ціль. Версія Нар'Асороса."
+
+#: unique_ablt.xml:95
+msgid "a ball of ice that will hunt it's victim and explode"
+msgstr "льодяна куля, яка знайде свою жертву і вибухне"
+
+#: unique_ablt.xml:117
+msgid ""
+"Nar'Asoroth conjures a wave of ice, that damages enemies in a circle around "
+"him."
+msgstr ""
+"Нар'Асорос викликає хвилю льоду, яка пошкоджує ворогів в колі навколо неї."
+
+#: unique_ablt.xml:144
+msgid "Creates a obelisk of ice."
+msgstr "Створює льодяний обеліск."
+
+#: unique_ablt.xml:144
+msgid "Summon Ice Obelisk"
+msgstr "Виклик Льодяного Обеліска"
+
+#: unique_ablt.xml:163
+msgid "Summon meteor"
+msgstr "Виклик метеора"
+
+#: unique_ablt.xml:185
+msgid "Army of Darkness"
+msgstr "Армія Пітьми"
+
+#: unique_ablt.xml:185
+msgid "Nar'Asoroth raises a group of skeletons."
+msgstr "Нар'Асорос піднімає групу скелетів."
+
+#: wands.xml:4 wands.xml:35 wands.xml:66
+msgid "spruce wand"
+msgstr "ялинова палиця"
+
+#: wands.xml:99 wands.xml:130 wands.xml:161
+msgid "apprentice wand"
+msgstr "палиця учня"
+
+#: wands.xml:194 wands.xml:224 wands.xml:255
+msgid "novice wand"
+msgstr "палиця новачка"
+
+#: wands.xml:288 wands.xml:317 wands.xml:346
+msgid "hermit wand"
+msgstr "палиця відлюдника"
+
+#: wands.xml:376
+msgid "rock wand"
+msgstr "кам'яна палиця"
+
+#: wands.xml:411 wands.xml:440 wands.xml:469
+msgid "alder wand"
+msgstr "вільхова палиця"
+
+#: wands.xml:499 wands.xml:530 wands.xml:561
+msgid "bard's wand"
+msgstr "палиця барда"
+
+#: wands.xml:594 wands.xml:622 wands.xml:651
+msgid "magus wand"
+msgstr "палиця мага"
+
+#: wands.xml:681 wands.xml:709 wands.xml:738 wands.xml:768
+msgid "silver wand"
+msgstr "срібна палиця"
+
+#: wands.xml:798
+msgid "oak wand"
+msgstr "дубова палиця"
+
+#: wands.xml:828
+msgid "phenix wand"
+msgstr "бездоганна ралиця"
+
+#: wands.xml:858
+msgid "frost wand"
+msgstr "морозна палиця"
+
+#: wands.xml:888
+msgid "thunder wand"
+msgstr "громова палиця"
+
+#: wands.xml:918
+msgid "ash wand"
+msgstr "ясенева палиця"
+
+#: wands.xml:948
+msgid "summoner wand"
+msgstr "палиця викликача"
+
+#: wands.xml:978
+msgid "master wand"
+msgstr "палиця магістра"
+
+#: wands.xml:1008
+msgid "necromancer wand"
+msgstr "палиця некроманта"
+
+#: wands.xml:1038
+msgid "demon wand"
+msgstr "палиця демона"
+
+#: wands.xml:1068
+msgid "fairy wand"
+msgstr "казкова палиця"
+
+#: wands.xml:1101
+msgid "archmage wand"
+msgstr "палиця архимага"
+
+#: warrior_ablt.xml:2
+msgid "Barbarian anger"
+msgstr "Гнів Варвара"
+
+#: warrior_ablt.xml:2
+msgid ""
+"The warrior sets himself in the state of berserk, attacking his enemies with "
+"vicious blows, while completely neglecting his defence."
+msgstr ""
+"Воїн перетворюється в берсерка, нападаючи на своїх ворогів зі злісними "
+"ударами, але повністю анулює свій захист."
+
+#: warrior_ablt.xml:47
+msgid "Bash"
+msgstr "Сильний удар"
+
+#: warrior_ablt.xml:69
+msgid "Battlecry"
+msgstr "Бойовий клич"
+
+#: warrior_ablt.xml:69
+msgid ""
+"The warrior releases a mighty cry that causes his enemies to lose "
+"concentration, ultimatly reducing their defence and slowing them down."
+msgstr ""
+"Воїн видає могутній крик, який змушує його ворогів втратити концентрацію "
+"сильно знижує їх захист та уповільнює їх."
+
+#: warrior_ablt.xml:85
+msgid ""
+"The warriors mastery of shields and weapons allows him to block damage at an "
+"increased rate."
+msgstr ""
+"Майстерність воїна в володінні щитом  і зброєю дозволяє йому в більшій мірі "
+"блокувати шкоду."
+
+#: warrior_ablt.xml:94
+msgid "Charge"
+msgstr "Заряд"
+
+#: warrior_ablt.xml:94
+msgid ""
+"Launches an assault at an enemy with increasing speed. The faster the "
+"warrior is, the more damage a charge inflicts."
+msgstr ""
+"Здійснює напад на ворога зі збільшеною швидкістю. Чим швидший воїн, тим "
+"більше шкоди завдає атака."
+
+#: warrior_ablt.xml:117
+msgid "Causes surrounding monsters to attack the warrior more likely."
+msgstr "Збільшує бажання нападу на воїна навколишніх монстрів."
+
+#: warrior_ablt.xml:117
+msgid "Taunt"
+msgstr "Насмішка"
+
+#: warrior_ablt.xml:141
+msgid ""
+"The warrior has become used to the ways of the battlefield to a point, where "
+"he can regenerate his abilities faster than normal."
+msgstr ""
+"Воїн настільки привик до різних способів бою, що він може відновлювати свої "
+"здібності швидше, ніж зазвичай."
+
+#: warrior_ablt.xml:141
+msgid "Warmaster"
+msgstr "Воїн"
+
+#: warrior_ablt.xml:151
+msgid "Fire and sword"
+msgstr "Вогонь і меч"
+
+#: warrior_ablt.xml:151
+msgid ""
+"The warrior calls the spirits of fire upon his weapon, causing it to deal "
+"firedamage. The damage depends on the warriors spellpower."
+msgstr ""
+"Воїн викликає духів вогню до його зброї, внаслідок чого вона наносить шкоду "
+"вогнем. Пошкодження залежать від сили заклинаня воїна."
+
+#: warrior_ablt.xml:196
+msgid "Pact of flames"
+msgstr "Пакт полум'я"
+
+#: warrior_ablt.xml:196
+msgid ""
+"The warrior calls upon the fires of hell, causing his weapon to deal "
+"firedamage for a significant time. His enemies might catch fire when hit."
+msgstr ""
+"Воїн викликає пекельний вогонь, внаслідок чого його зброя наносить шкоду "
+"вогнем на значний час. Його вороги можуть загорітися від удару."
+
+#: warrior_ablt.xml:217
+msgid ""
+"The warrior becomes even more bloodthirsty, launching at his enemies with "
+"increased attackspeed and damage in a berserk state. Even while neglecting "
+"his defence, the impact is not as big as with the barbarian anger."
+msgstr ""
+"Воїн стає ще більш кровожерливим, нападаючи на ворогів в стані берсерка з "
+"підвищеною швидкістю атаки і шкодою. Хоча анулюється його захист, вплив не "
+"настільки великий, як з гнівом варвара."
+
+#: warrior_ablt.xml:217
+msgid "barbarian power"
+msgstr "варварська сила"
+
+#: warrior_ablt.xml:264
+msgid "Attacks an enemy with a chance to inflict silence."
+msgstr "Атакує ворога з шансом нанести мовчання."
+
+#: warrior_ablt.xml:264
+msgid "Silencer"
+msgstr "Глушник"
+
+#: warrior_ablt.xml:285
+msgid ""
+"For each monster the warrior kills, his strength increases for a short "
+"amount of time."
+msgstr ""
+"За кожного вбитого воїном монстра воїн отримує зростання сили на короткий "
+"проміжок часу."
+
+#: warrior_ablt.xml:285
+msgid "Monster hunter"
+msgstr "Мисливець за чудовиськами"
+
+#: warrior_ablt.xml:295
+msgid "Monster slayer"
+msgstr "Вбивця чудовиськ"
+
+#: warrior_ablt.xml:295
+msgid ""
+"The warrior has become the worst nightmare of monsters, with every one of "
+"them falling at his feet increasing his strength and attackspeed for a short "
+"amount of time."
+msgstr ""
+"Воїн стає найгіршим кошмаром для монстрів, смерть кожного ворога збільшує "
+"його силу і швидкість атаки на короткий проміжок часу."
+
+#: warrior_ablt.xml:305
+msgid "Regeneration"
+msgstr "Регенерація"
+
+#: warrior_ablt.xml:305
+msgid ""
+"The warrior regains up to 50 percent hitpoints of his total hitpoints "
+"through the sheer power of his will."
+msgstr "Воїн повертає до 50 відсотків очків здоров'я через міць його волі."
+
+#: warrior_ablt.xml:324
+msgid "Defiances"
+msgstr "Непокора"
+
+#: warrior_ablt.xml:324
+msgid ""
+"Nearby monsters will attack the warrior, if they are able to. Some will run "
+"away in fear. The warriors defence is increased. "
+msgstr ""
+"Близько розміщені монстри атакуватимуть воїна, якщо вони зможуть. Декотрі з "
+"них втечуть від страху. У воїна підсилена оборона. "
+
+#: warrior_ablt.xml:379
+msgid "Perseverance"
+msgstr "Наполегливість"
+
+#: warrior_ablt.xml:379
+msgid ""
+"The warriors defence increases proportional to the cuts and bruises he "
+"receives in combat. The more serious the wounds, the more difficult he is to "
+"kill."
+msgstr ""
+"Захист воїна збільшується пропорційно порізам і забоям, які він отримує в "
+"бою. Чим серйозніші рани, тим важче його вбити."
+
+#: warrior_ablt.xml:389
+msgid "Charge scythe"
+msgstr "Заряджена коса"
+
+#: warrior_ablt.xml:389
+msgid "Launches an even stronger charge attack, that may inflict stun."
+msgstr "Здійснює ще сильніше заряджену атаку, яка може оглушити ворога."
+
+#: warrior_ablt.xml:412
+msgid ""
+"The battle hardened warrior's scream slows down his opponents, sometimes "
+"confusing them as well."
+msgstr ""
+"Крик загартованого боями воїна сповільнює його противників, іноді також "
+"збаламучуючи їх."
+
+#: warrior_ablt.xml:412
+msgid "Warcry"
+msgstr "Бойовий клич"
+
+#: warrior_ablt.xml:436
+msgid ""
+"The warriors mastery of weapons increases the damage of his basic attacks by "
+"20%."
+msgstr ""
+"Майстерність воїна в володінні зброєю збільшує втрати від його базових атак "
+"на 20%."
+
+#: warrior_ablt.xml:436
+msgid "Weaponmaster"
+msgstr "Магістр зброї"
+
+#: warrior_ablt.xml:446
+msgid "Attacks every enemy in weapon range with a triple sweeping strike."
+msgstr "Атакує кожного ворога в радіусі дії зброї потрійним змітальним ударом."
+
+#, fuzzy
+#~ msgid "locSergeant"
+#~ msgstr "Сержант Вобер"
+
+#, fuzzy
+#~ msgid "goblins_l13_2"
+#~ msgstr "гоблін вбивця"
+
+#, fuzzy
+#~ msgid "block"
+#~ msgstr "Блок"
+
+#, fuzzy
+#~ msgid "red"
+#~ msgstr "Дерред"
+
+#, fuzzy
+#~ msgid "position"
+#~ msgstr "Зілля"
+
+#, fuzzy
+#~ msgid "gold"
+#~ msgstr "золоте кільце"
+
+#, fuzzy
+#~ msgid "lockdown"
+#~ msgstr "Блок"
+
+#, fuzzy
+#~ msgid "string"
+#~ msgstr "Морозне кільце"
+
+#~ msgid "Nah to expensive"
+#~ msgstr "Ні, це надто дорого"
+
+#, fuzzy
+#~ msgid "location"
+#~ msgstr "ніяких дій"
+
+#, fuzzy
+#~ msgid "catapult_skeleton"
+#~ msgstr "Створює скелета."
+
+#, fuzzy
+#~ msgid "necromancer_siegeDefense"
+#~ msgstr "посох некроманта"
+
+#~ msgid "Better not."
+#~ msgstr "Ні, не треба."
+
+#, fuzzy
+#~ msgid "slave_overseer"
+#~ msgstr "Наглядач"
+
+#, fuzzy
+#~ msgid "fraction"
+#~ msgstr "ніяких дій"
+
+#, fuzzy
+#~ msgid "poisoned"
+#~ msgstr "викликано"
+
+#, fuzzy
+#~ msgid "blind"
+#~ msgstr "собака гобліна"
+
+#, fuzzy
+#~ msgid "willpower"
+#~ msgstr "Сила волі"
+
+#, fuzzy
+#~ msgid "power"
+#~ msgstr "Сила"
+
+#, fuzzy
+#~ msgid "rock_stf"
+#~ msgstr "кам'яний посох"
+
+#, fuzzy
+#~ msgid "sabre_sw"
+#~ msgstr "шабля"
+
+#, fuzzy
+#~ msgid "GuardLocation"
+#~ msgstr "Капітан Охорони"
+
+#, fuzzy
+#~ msgid "init_benchmark"
+#~ msgstr "Панель Бенчмарку"
+
+#, fuzzy
+#~ msgid "start_benchmark"
+#~ msgstr "Панель Бенчмарку"
+
+#, fuzzy
+#~ msgid "LichLocation"
+#~ msgstr "зілля відголосу"
+
+#, fuzzy
+#~ msgid "peasant"
+#~ msgstr "Селянин"
+
+#, fuzzy
+#~ msgid "armor"
+#~ msgstr "Збруя"
+
+#, fuzzy
+#~ msgid "Archer"
+#~ msgstr "Браконьєр"
+
+#, fuzzy
+#~ msgid "Magician"
+#~ msgstr "Магічна атака"
+
+#~ msgid "Leere Schriftrollen kaufen"
+#~ msgstr "Купити порожні згортки"

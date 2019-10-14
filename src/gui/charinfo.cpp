@@ -17,16 +17,44 @@
 #include "player.h"
 #include "damage.h"
 
+#include "ceguiutility.h"
 
 CharInfo::CharInfo (Document* doc)
 	: Window(doc)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
+	// The CharInfo window and holder
+	CEGUI::FrameWindow* char_info = (CEGUI::FrameWindow*) (CEGUIUtility::loadLayoutFromFile ("characterscreen.layout"));
+	if (!char_info)
+	{
+		SW_DEBUG("WARNING: Failed to load [%s]", "characterscreen.layout");
+	}
+
+	CEGUI::Window* char_info_holder = CEGUIUtility::loadLayoutFromFile ("characterscreen_holder.layout");
+	if (!char_info_holder)
+	{
+		SW_DEBUG("WARNING: Failed to load [%s]", "characterscreen_holder.layout");
+	}
 	
-	// Rahmen fuer CharInfo Fenster
-	CEGUI::FrameWindow* char_info = (CEGUI::FrameWindow*) win_mgr.loadWindowLayout( "CharacterScreen.layout" );
-	m_window = char_info;
-	
+	CEGUI::Window* wndHolder = CEGUIUtility::getWindowForLoadedLayoutEx (char_info_holder, "CharInfo_Holder");
+	CEGUI::Window* wndCharInfo = CEGUIUtility::getWindowForLoadedLayoutEx (char_info, "CharInfo");
+	if (wndHolder && wndCharInfo)
+	{
+		CEGUIUtility::addChildWidget (wndHolder, wndCharInfo);
+	}
+	else
+	{
+		if (!wndHolder)
+    {
+      SW_DEBUG ("ERROR: Unable to get the window holder for char screen.");
+    }
+
+		if (!wndCharInfo) 
+    {
+      SW_DEBUG ("ERROR: Unable to get the window for char screen.");
+    }
+	}
+
+	m_window = char_info_holder;
 	
 	char_info->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&Window::consumeEvent, (Window*) this));
 	char_info->setWantsMultiClickEvents(false);
@@ -38,127 +66,131 @@ CharInfo::CharInfo (Document* doc)
 
 	
 	// Label Level
-	label = win_mgr.getWindow("LevelValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/LevelValueLabel");
 	label->setText("1");
 
 	// Label Staerke (Wert)
-	label = win_mgr.getWindow("StrengthValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/StrengthValueLabel");
 	label->setText("20");
 
 	// Button Staerke erhoehen
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("StrengthAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/StrengthAddButton"));
 	btn->setID(CreatureBaseAttr::STRENGTH);
 	btn->setWantsMultiClickEvents(false);
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&CharInfo::onIncreaseAttributeButtonClicked, this));
 	
 	// Label Geschick (Wert)
-	label = win_mgr.getWindow("DexterityValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/DexterityValueLabel");
 	label->setText("20");
 
 	// Button Geschick erhoehen
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("DexterityAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/DexterityAddButton"));
 	btn->setID(CreatureBaseAttr::DEXTERITY);
 	btn->setWantsMultiClickEvents(false);
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&CharInfo::onIncreaseAttributeButtonClicked, this));
 	
 	// Label Willenskraft (Wert)
-	label = win_mgr.getWindow("WillpowerValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/WillpowerValueLabel");
 	label->setText("20");
 
 	// Button Willenskraft erhoehen
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("WillpowerAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/WillpowerAddButton"));
 	btn->setID(CreatureBaseAttr::WILLPOWER);
 	btn->setWantsMultiClickEvents(false);
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&CharInfo::onIncreaseAttributeButtonClicked, this));
 
 	// Label Zauberkraft (Wert)
-	label = win_mgr.getWindow("MagicpowerValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/MagicpowerValueLabel");
 	label->setText("20");
 
 	// Button Zauberkraft erhoehen
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("MagicpowerAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/MagicpowerAddButton"));
 	btn->setID(CreatureBaseAttr::MAGIC_POWER);
 	btn->setWantsMultiClickEvents(false);
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&CharInfo::onIncreaseAttributeButtonClicked, this));
 	
 	// Label  Attributpunkte (Wert)
-	label = win_mgr.getWindow("AttrPointsValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/AttrPointsValueLabel");
 	label->setText("5");
 
 	// Label Exp (Wert)
-	label = win_mgr.getWindow("ExperienceValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/ExperienceValueLabel");
 	label->setText("0/100");
 
 	// Label HP (Wert)
-	label = win_mgr.getWindow("HitpointsValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/HitpointsValueLabel");
 	label->setText("0/100");
 
 	// Label Attacke (Wert)
-	label = win_mgr.getWindow("AttackValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/AttackValueLabel");
 	label->setText("20");
 
 	// Label Attacke (Wert)
-	label = win_mgr.getWindow("AttackSpeedValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/AttackSpeedValueLabel");
 	label->setText("20");
 
 	// Label Reichweite (Wert)
-	label = win_mgr.getWindow("RangeValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/RangeValueLabel");
 	label->setText("2");
 
 	// Label Durchschlagskraft
-	label = win_mgr.getWindow("PowerValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/PowerValueLabel");
 	label->setText("30");
 
 	// Label Ruestung
-	label = win_mgr.getWindow("ArmorValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ArmorValueLabel");
 	label->setText("40");
 
 	// Label Block
-	label = win_mgr.getWindow("BlockValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/BlockValueLabel");
 	label->setText("20");
 
 	// Label Basisschaden
-	label = win_mgr.getWindow("BaseDmgLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/BaseDmgLabel");
 	label->setText((CEGUI::utf8*) gettext("Base damage"));
 
 	// Label Basisschaden (Wert)
-	label = win_mgr.getWindow("BaseDmgValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/BaseDmgValueLabel");
 	label->setText("5-10");
 
 	// Label Skill1 Schaden
-	label = win_mgr.getWindow("Skill1DmgLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill1DmgLabel");
 	label->setText("Skill1");
 
 	// Label Skill1 Schaden (Wert)
-	label = win_mgr.getWindow("Skill1DmgValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill1DmgValueLabel");
 	label->setText("10-20");
 
 	// Label Skill2 Schaden
-	label = win_mgr.getWindow("Skill2DmgLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill2DmgLabel");
 	label->setText("Skill2");
 
 	// Label Skill2 Schaden (Wert)
-	label = win_mgr.getWindow("Skill2DmgValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill2DmgValueLabel");
 	label->setText("20-30");
 
 	// Label physische Resistenz (Wert)
-	label = win_mgr.getWindow("ResistPhysValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistPhysValueLabel");
 	label->setText("0");
 
 	// Label Feuerresistenz (Wert)
-	label = win_mgr.getWindow("ResistFireValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistFireValueLabel");
 	label->setText("0");
 
 	// Label Feuerresistenz (Wert)
-	label = win_mgr.getWindow("ResistAirValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistAirValueLabel");
 	label->setText("0");
 
 	// Label Eisresistenz (Wert)
-	label = win_mgr.getWindow("ResistIceValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistIceValueLabel");
 	label->setText("0");
 	
-	label = win_mgr.getWindow("CharInfoCloseButton");
-	label->subscribeEvent(CEGUI::Window::EventMouseClick, CEGUI::Event::Subscriber(&CharInfo::onCloseButtonClicked, this));
+	// If the panel also has an auto-close button, connect it to the Cancel/Abort event.
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/__auto_closebutton__");
+	if (label)
+	{
+		label->subscribeEvent(CEGUI::Window::EventMouseClick, CEGUI::Event::Subscriber(&CharInfo::onCloseButtonClicked, this));
+	}
 
 	updateTranslation();
 }
@@ -174,23 +206,23 @@ CharInfo::CharInfo (Document* doc)
 	CEGUI::String ttext="";
 
 	// Fenstermanager
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-
 	CEGUI::PushButton* btn;
 	CEGUI::Window* label;
 	std::ostringstream out_stream;
 
 	// Label Name
-	label =  win_mgr.getWindow("NameLabel");
+	// Prepare the name
 	out_stream.str("");
 	out_stream.str(player->getName().getRawText());
-	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo");
+	if (label->isPropertyPresent ("Text"))
 	{
-		label->setText((CEGUI::utf8*) out_stream.str().c_str());
+		label->setProperty ("Text", (CEGUI::utf8*) out_stream.str().c_str());
 	}
 
+
 	// Label Klasse
-	label =  win_mgr.getWindow("ClassValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/ClassValueLabel");
 	PlayerBasicData* pdata = ObjectFactory::getPlayerData(player->getSubtype());
 	if (pdata != 0)
 	{
@@ -201,14 +233,14 @@ CharInfo::CharInfo (Document* doc)
 		out_stream.str("");
 	}
 	
-	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
+	if (label->getText() != (CEGUI::utf8*) out_stream.str().c_str())
 	{
-		DEBUG("set class label");
+		SW_DEBUG("set class label");
 		label->setText((CEGUI::utf8*) out_stream.str().c_str());
 	}
 
 	// Label Level
-	label =  win_mgr.getWindow("LevelValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/LevelValueLabel");
 	out_stream.str("");
 	out_stream << (int) player->getBaseAttr()->m_level;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -217,7 +249,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Staerke
-	label =  win_mgr.getWindow("StrengthValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/StrengthValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_strength;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -226,7 +258,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Zauberkraft
-	label =  win_mgr.getWindow("MagicpowerValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/MagicpowerValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_magic_power;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -235,7 +267,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Willenskraft
-	label =  win_mgr.getWindow("WillpowerValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/WillpowerValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_willpower;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -244,7 +276,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Geschick
-	label =  win_mgr.getWindow("DexterityValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/DexterityValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_dexterity;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -260,17 +292,17 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Sichtbarkeit der Buttons setzen
-	btn =   static_cast<CEGUI::PushButton*>(win_mgr.getWindow("StrengthAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/StrengthAddButton"));
 	btn->setVisible(add_but_vis);
-	btn =  static_cast<CEGUI::PushButton*>(win_mgr.getWindow("DexterityAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/DexterityAddButton"));
 	btn->setVisible(add_but_vis);
-	btn =  static_cast<CEGUI::PushButton*>(win_mgr.getWindow("WillpowerAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/WillpowerAddButton"));
 	btn->setVisible(add_but_vis);
-	btn =  static_cast<CEGUI::PushButton*>(win_mgr.getWindow("MagicpowerAddButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/MagicpowerAddButton"));
 	btn->setVisible(add_but_vis);
 
 	// Label freie Attributspunkte
-	label =  win_mgr.getWindow("AttrPointsValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/AttrPointsValueLabel");
 	out_stream.str("");
 	out_stream << gettext("You have") << " " << player->getAttributePoints() << " " << gettext("attribute points to spend");
 	//label->setVisible(add_but_vis);
@@ -280,7 +312,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Ruestung
-	label =  win_mgr.getWindow("ArmorValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ArmorValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_armor;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -299,7 +331,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Attacke
-	label =  win_mgr.getWindow("AttackValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/AttackValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseDamage().m_attack;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -318,7 +350,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Block
-	label = win_mgr.getWindow("BlockLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/BlockLabel" );
 	CEGUI::utf8* blocktext;
 	if (player->getShield() != 0)
 	{	
@@ -333,7 +365,7 @@ CharInfo::CharInfo (Document* doc)
 		label->setText(blocktext);
 	}
 	
-	label =  win_mgr.getWindow("BlockValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/BlockValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_block;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -352,7 +384,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label HP
-	label =  win_mgr.getWindow("HitpointsValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/HitpointsValueLabel");
 	out_stream.str("");
 	out_stream << (int) player->getDynAttr()->m_health <<"/" <<(int) player->getBaseAttrMod()->m_max_health;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -361,7 +393,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Exp
-	label =  win_mgr.getWindow("ExperienceValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/ExperienceValueLabel");
 	out_stream.str("");
 	out_stream << (unsigned int) player->getDynAttr()->m_experience <<"/" <<(unsigned int) player->getBaseAttr()->m_max_experience;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -370,7 +402,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Phys Resistenz
-	label =  win_mgr.getWindow("ResistPhysValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistPhysValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_resistances[Damage::PHYSICAL];
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -379,7 +411,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Feuer Resistenz
-	label =  win_mgr.getWindow("ResistFireValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistFireValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_resistances[Damage::FIRE];
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -388,7 +420,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Eis Resistenz
-	label =  win_mgr.getWindow("ResistIceValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistIceValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_resistances[Damage::ICE];
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -397,7 +429,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Luft Resistenz
-	label =  win_mgr.getWindow("ResistAirValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistAirValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_resistances[Damage::AIR];
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -406,7 +438,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Angriffsgeschwindigkeit
-	label =  win_mgr.getWindow("AttackSpeedValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/AttackSpeedValueLabel");
 	out_stream.str("");
 	out_stream << 0.001*MathHelper::Min((short) 5000, player->getBaseAttrMod()->m_attack_speed);
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -415,7 +447,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Reichweite
-	label =  win_mgr.getWindow("RangeValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/RangeValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseAttrMod()->m_attack_range;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -424,7 +456,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Durchschlagskraft
-	label =  win_mgr.getWindow("PowerValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/PowerValueLabel");
 	out_stream.str("");
 	out_stream << player->getBaseDamage().m_power;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -464,7 +496,7 @@ CharInfo::CharInfo (Document* doc)
 
 
 	// Label Schaden Basisattacke
-	label =  win_mgr.getWindow( "BaseDmgLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window,  "CharInfo/charinfo_aux/Offense/__auto_contentpane__/BaseDmgLabel");
 	out_stream.str("");
 	if (pdata != 0)
 	{
@@ -487,7 +519,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Basisschaden
-	label =  win_mgr.getWindow("BaseDmgValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/BaseDmgValueLabel");
 	out_stream.str("");
 	out_stream << (int) minb << "-" << (int) maxb;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -501,7 +533,7 @@ CharInfo::CharInfo (Document* doc)
 	}
 
 	// Label Attacke links
-	label =  win_mgr.getWindow( "Skill1DmgLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill1DmgLabel");
 	out_stream.str("");
 	out_stream << Action::getName(player->getLeftAction());
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -520,7 +552,7 @@ CharInfo::CharInfo (Document* doc)
 
 	
 	// Label Schaden Attacke links
-	label =  win_mgr.getWindow( "Skill1DmgValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill1DmgValueLabel");
 	out_stream.str("");
 	out_stream << (int) minl << "-" << (int) maxl;
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -537,7 +569,7 @@ CharInfo::CharInfo (Document* doc)
 
 
 	// Label Attacke rechts
-	label =  win_mgr.getWindow( "Skill2DmgLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill2DmgLabel");
 	out_stream.str("");
 	out_stream << Action::getName(player->getRightAction());
 	if (label->getText()!= (CEGUI::utf8*) out_stream.str().c_str())
@@ -556,7 +588,7 @@ CharInfo::CharInfo (Document* doc)
 
 	// Label Schaden Attacke rechts
 	Action::TargetType dist = Action::getActionInfo(player->getRightAction())->m_target_type;
-	label =  win_mgr.getWindow( "Skill2DmgValueLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/Skill2DmgValueLabel");
 	if (dist == Action::MELEE || dist == Action::RANGED || dist == Action::CIRCLE)
 	{	
 		out_stream.str("");
@@ -579,7 +611,7 @@ CharInfo::CharInfo (Document* doc)
 			label->setTooltipText("");
 	}
 	
-	label = win_mgr.getWindow("Portrait");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/Portrait");
 	std::string portraitname = player->getEmotionImage("normal");
 	if (label->getProperty("Image") != portraitname)
 	{
@@ -590,95 +622,97 @@ CharInfo::CharInfo (Document* doc)
 
 void CharInfo::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::Window* label;
 
-	label = win_mgr.getWindow("NameLabel");
-	label->setText((CEGUI::utf8*) gettext("Name"));
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo");
+	if (label->isPropertyPresent ("Text"))
+	{
+		label->setProperty ("Text", (CEGUI::utf8*) gettext("Name"));
+	}
 	
-	label = win_mgr.getWindow("Playerinfo");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo");
 	label->setText((CEGUI::utf8*) gettext("Player info"));
 	
-	label = win_mgr.getWindow("Attributes");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes");
 	label->setText((CEGUI::utf8*) gettext("Attributes"));
 	
-	label = win_mgr.getWindow("Offense");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense");
 	label->setText((CEGUI::utf8*) gettext("Offense"));
 	
-	label = win_mgr.getWindow("Defense");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense");
 	label->setText((CEGUI::utf8*) gettext("Defense"));
 
-	label = win_mgr.getWindow("LevelLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/LevelLabel");
 	label->setText((CEGUI::utf8*) gettext("Level"));
 
-	label = win_mgr.getWindow("ClassLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/ClassLabel");
 	label->setText((CEGUI::utf8*) gettext("Class"));
 	
 	
-	label = win_mgr.getWindow("StrengthLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/StrengthLabel");
 	label->setText((CEGUI::utf8*) gettext("Strength"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Strength increases hitpoints, melee damage and attack power."));
 	
-	label = win_mgr.getWindow("DexterityLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/DexterityLabel");
 	label->setText((CEGUI::utf8*) gettext("Dexterity"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Dexterity increases ranged damage, attack accuracy and attack speed"));
 	
-	label = win_mgr.getWindow("WillpowerLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/WillpowerLabel");
 	label->setText((CEGUI::utf8*) gettext("Willpower"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Willpower decreases the duration and the impact of status changes \n and increases magical melee damage."));
 	
-	label = win_mgr.getWindow("MagicpowerLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Attributes/__auto_contentpane__/MagicpowerLabel");
 	label->setText((CEGUI::utf8*) gettext("Magic power"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Magic power increases the damage of magical attacks."));
 
-	label = win_mgr.getWindow("ExperienceLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/ExperienceLabel" );
  	label->setText((CEGUI::utf8*) gettext("Experience"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Current experience and experience necessary for next level-up."));
 	
-	label = win_mgr.getWindow("HitpointsLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Playerinfo/__auto_contentpane__/HitpointsLabel");
 	label->setText((CEGUI::utf8*) gettext("Hitpoints"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Current and maximal hitpoints."));
 	
 	
-	label = win_mgr.getWindow("AttackLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/AttackLabel" );
 	label->setText((CEGUI::utf8*) gettext("Attack"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Attack value determines the chance to hit enemies that can block or evade."));
 	
 	
-	label = win_mgr.getWindow("AttackSpeedLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/AttackSpeedLabel" );
 	label->setText((CEGUI::utf8*) gettext("Attacks/s"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Number of attacks per second."));
 	
 	
-	label = win_mgr.getWindow( "RangeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window,  "CharInfo/charinfo_aux/Offense/__auto_contentpane__/RangeLabel");
 	label->setText((CEGUI::utf8*) gettext("Range"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Weapon Range in meters."));
 	
 	
-	label = win_mgr.getWindow("PowerLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Offense/__auto_contentpane__/PowerLabel" );
 	label->setText((CEGUI::utf8*) gettext("Power"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Attack power influences the damage dealt to armored enemies."));
 	
 	
-	label = win_mgr.getWindow( "ArmorLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window,  "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ArmorLabel");
 	label->setText((CEGUI::utf8*) gettext("Armor"));
 	label->setTooltipText((CEGUI::utf8*) gettext("Armor reduces the damage of physical attacks."));
 	
 	
-	label = win_mgr.getWindow("BlockLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/BlockLabel" );
 	label->setTooltipText((CEGUI::utf8*) gettext("Block value determines the chance to avoid damage from physical attacks."));
 	
 	
-	label = win_mgr.getWindow( "ResistPhysLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window,  "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistPhysLabel");
 	label->setText((CEGUI::utf8*) gettext("Physical"));
 	
-	label = win_mgr.getWindow("ResistAirLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistAirLabel" );
 	label->setText((CEGUI::utf8*) gettext("Air"));
 	
-	label = win_mgr.getWindow("ResistIceLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistIceLabel" );
 	label->setText((CEGUI::utf8*) gettext("Ice"));
 	
-	label = win_mgr.getWindow("ResistFireLabel" );
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "CharInfo/charinfo_aux/Defense/__auto_contentpane__/ResistFireLabel" );
 	label->setText((CEGUI::utf8*) gettext("Fire"));
 	
 	

@@ -1,0 +1,29 @@
+<Imageset AutoScaled="false" Imagefile="ControlPanel.png" Name="ControlPanel" NativeHorzRes="1024" NativeVertRes="768">
+	<Image Name="Belt" XPos="10" YPos="10" Width="1010" Height="123" />
+	<Image Height="27" Name="SlotNumbers" Width="290" XPos="68" YPos="378" />
+
+	<Image Name="OptionsButton" XPos="951" YPos="185" Width="37" Height="37" />
+	<Image Name="SaveExitButton" XPos="993" YPos="145" Width="37" Height="37" />
+	<Image Name="OptionsButton_Hover" XPos="951" YPos="364" Width="37" Height="37" />
+	<Image Name="SaveExitButton_Hover" XPos="993" YPos="324" Width="37" Height="37" />
+
+	<Image Name="CharInfoButton_Hover" XPos="866" YPos="324" Width="37" Height="37" />
+	<Image Name="ChatOpenButton_Hover" XPos="866" YPos="364" Width="37" Height="37" />
+	<Image Name="QuestInfoButton_Hover" XPos="909" YPos="324" Width="37" Height="37" />
+	<Image Name="SkillTreeButton_Hover" XPos="909" YPos="364" Width="37" Height="37" />
+	<Image Name="InventoryButton_Hover" XPos="951" YPos="324" Width="37" Height="37" />
+	<Image Name="PartyButton_Hover" XPos="993" YPos="364" Width="37" Height="37" />
+
+	<Image Name="CharInfoButton" XPos="866" YPos="145" Width="37" Height="37" />
+	<Image Name="ChatOpenButton" XPos="866" YPos="185" Width="37" Height="37" />
+	<Image Name="QuestInfoButton" XPos="909" YPos="145" Width="37" Height="37" />
+	<Image Name="SkillTreeButton" XPos="909" YPos="185" Width="37" Height="37" />
+	<Image Name="InventoryButton" XPos="951" YPos="145" Width="37" Height="37" />
+	<Image Name="PartyButton" XPos="993" YPos="185" Width="37" Height="37" />
+  
+	<Image Name="HPHighlight" XPos="164" YPos="146" Width="185" Height="184" />
+	<Image Name="HPBackground" XPos="608" YPos="149" Width="185" Height="184" />
+	<Image Name="HPForeground" XPos="397" YPos="227" Width="185" Height="184" />
+  
+	<Image Name="ProgressBarDimSegment" XPos="220" YPos="409" Width="21" Height="42" />
+</Imageset>

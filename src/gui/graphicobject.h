@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GRAPHIC_OBJECT_H
-#define GRAPHIC_OBJECT_H
+#ifndef __SUMWARS_GUI_GRAPHICOBJECT_H__
+#define __SUMWARS_GUI_GRAPHICOBJECT_H__
 
 #include "OgreMovableObject.h"
 #include "OgreSceneNode.h"
@@ -24,7 +24,7 @@
 
 #include <string>
 #include "graphicobjectrenderinfo.h"
-#include "sound.h"
+#include "soundobject.h"
 
 class GraphicObject;
 
@@ -122,10 +122,12 @@ struct AttachedAction
 	/**
 	 * \brief Constructor
 	 */
-	AttachedAction()
-	{
-		m_arinfo =0;
-	}
+	AttachedAction():
+		m_arinfo(0),
+		m_current_percent(0),
+		m_time(0),
+		m_inherited(false)
+	{}
 	
 	/**
 	 * \brief Pointer to data structure that contains information how to visualize this action
@@ -447,7 +449,9 @@ class GraphicObject
 		/**
 		 * \brief List of attached Soundobjects
 		 */
-		std::map<std::string, SoundObject* > m_soundobjects;
+		//std::map <std::string, SoundObject*> m_soundobjects;
+		std::map <std::string, SoundObject> m_soundobjects;
+		//std::map<std::string, std::string> m_soundobjects;
 		
 		/**
 		 * \brief Dependency for all Subobjects
@@ -518,4 +522,4 @@ class GraphicObject
 };
 
 
-#endif
+#endif // __SUMWARS_GUI_GRAPHICOBJECT_H__

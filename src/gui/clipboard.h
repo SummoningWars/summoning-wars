@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CLIPBOARD_H
-#define CLIPBOARD_H
+#ifndef __SUMWARS_GUI_CLIPBOARD_H__
+#define __SUMWARS_GUI_CLIPBOARD_H__
 
 // The used singleton manager.
 #include "OgreSingleton.h"
@@ -83,4 +83,5 @@ namespace SWUtil
 
 
 }
-#endif //CLIPBOARD_H
+
+#endif // __SUMWARS_GUI_CLIPBOARD_H__

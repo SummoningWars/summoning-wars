@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DIALOGUEWINDOW_H
-#define DIALOGUEWINDOW_H
+#ifndef __SUMWARS_GUI_DIALOGUEWINDOW_H__
+#define __SUMWARS_GUI_DIALOGUEWINDOW_H__
 
 #include "scene.h"
 
@@ -29,10 +29,11 @@ class DialogueWindow : public Window
 		
 		/**
 		 * \fn Window(Document* doc)
-		 * \brief Konstruktor
-		 * \param doc Zeiger auf das Dokument
+		 * \brief Constructor.
+		 * \param doc Pointer to the document object.
+		 * \param ceguiSkinName The name of the CEGUI skin to use for this window
 		 */
-		DialogueWindow(Document* doc, Scene* scene);
+		DialogueWindow(Document* doc, Scene* scene, const std::string& ceguiSkinName);
 		
 		/**
 		 * \fn virtual ~DialogueWindow()
@@ -63,10 +64,24 @@ class DialogueWindow : public Window
 		
 		/**
 		 * \fn bool onAnswerClicked(const CEGUI::EventArgs& evt);
-		 * \brief Behandelt das Klick auf eine Antwort in einem Gespraech
+		 * \brief Handles the click on one of the answers in a Dialogue
 		 * \param evt CEGUI Event Parameter
 		 */
 		bool onAnswerClicked(const CEGUI::EventArgs& evt);
+		
+		/**
+		 * \fn bool onAnswerEnterArea(const CEGUI::EventArgs& evt);
+		 * \brief Handles the hovering with the mouse on one of the answers in a Dialogue
+		 * \param evt CEGUI Event Parameter
+		 */
+		bool onAnswerEnterArea(const CEGUI::EventArgs& evt);
+		
+		/**
+		 * \fn bool onAnswerLeaveArea(const CEGUI::EventArgs& evt);
+		 * \brief Handles the stopping of hovering with the mouse on one of the answers in a Dialogue
+		 * \param evt CEGUI Event Parameter
+		 */
+		bool onAnswerLeaveArea(const CEGUI::EventArgs& evt);
 		
 		/**
 		 * \fn bool bool onTextClicked(const CEGUI::EventArgs& evt)
@@ -77,10 +92,16 @@ class DialogueWindow : public Window
 	private:
 		/**
 		 * \var Scene* m_scene
-		 * \brief  Zeiger auf die dargestellt Szene
+		 * \brief  Pointer to the currently presented scene
 		 */
 		Scene* m_scene;
+
+		/**
+		 * \brief The name of the CEGUI skin to use.
+		 */
+		std::string m_ceguiSkinName;
+
 };
 
-#endif
+#endif // __SUMWARS_GUI_DIALOGUEWINDOW_H__
 

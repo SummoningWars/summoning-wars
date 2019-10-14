@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef INVENTORY_H
-#define INVENTORY_H
+#ifndef __SUMWARS_GUI_INVENTORY_H__
+#define __SUMWARS_GUI_INVENTORY_H__
 
 #include "itemwindow.h"
 
@@ -38,7 +38,7 @@ class Inventory : public ItemWindow
 	 * \brief Konstruktor
 		 */
 		Inventory (Document* doc);
-	
+
 		/**
 		 * \fn virtual void update()
 		 * \brief Updates the window contents
@@ -88,5 +88,5 @@ class Inventory : public ItemWindow
 		void createAnimations();
 };
 
-#endif
+#endif // __SUMWARS_GUI_INVENTORY_H__
 

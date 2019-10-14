@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CHARCONV_H
-#define CHARCONV_H
+#ifndef __SUMWARS_CORE_CHARCONV_H__
+#define __SUMWARS_CORE_CHARCONV_H__
 
 #include <algorithm>
 #include <string>
@@ -32,6 +32,7 @@ class CharConv
 		* \brief Standard Constructor, creates an empty object
 		*/
 		CharConv()
+		:	m_version(0)
 		{
 			
 		}
@@ -65,7 +66,7 @@ class CharConv
 		* \brief writes a string to the buffer
 		* \param s String
 		*/
-		virtual void toBuffer(const std::string s)=0;
+		virtual void toBuffer(const std::string & s)=0;
 		
 		
 		/**
@@ -249,4 +250,4 @@ class CharConv
 
 
 
-#endif // CHARCONV_H
+#endif // __SUMWARS_CORE_CHARCONV_H__

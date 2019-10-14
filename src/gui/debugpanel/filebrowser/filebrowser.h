@@ -20,7 +20,7 @@
 #include "CEGUI/CEGUI.h"
 #include "debugtab.h"
 #include "OISKeyboard.h"
-#include "Poco/Path.h"
+#include "boost/filesystem/path.hpp"
 
 #include <map>
 
@@ -45,8 +45,9 @@ public:
 	* \param dir The directory that will be opened when initialzing
 	* \param type The FileBrowser type
 	* \param visible Whether the panel is visible or not at the begining
+	* \param ceguiSkinName The name of the CEGUI skin to use for the file browser.
 	*/
-	void init(CEGUI::String defaultDir, FileBrowserType type, bool visible);
+	void init(CEGUI::String defaultDir, FileBrowserType type, bool visible, const std::string& ceguiSkinName);
 	
 	/**
 	* \fn void destroy();
@@ -119,6 +120,7 @@ protected:
 	* \brief Creates the window layout
 	*/
 	void createLayout();
+
 private:
 	/**
 	* \var 	CEGUI::System *m_guiSystem;
@@ -172,19 +174,25 @@ private:
 	* \var 	std::list<std::string> m_dirs;
 	* \brief  Holds the directorys currently shown
 	*/
-	std::list<std::string> m_dirs;
+    std::list<std::string> m_dirs;
 	
 	/**
 	* \var 	std::list<std::string> m_files;
 	* \brief  Holds the files currently shown
 	*/
-	std::list<std::string> m_files;
+    std::list<std::string> m_files;
 
 	/**
-	* \var 	Poco::Path p;
+    * \var 	boost::filesystem::path m_currentPath;
 	* \brief  Holds the path currently viewed
 	*/
-	Poco::Path m_currentPath;
+    boost::filesystem::path m_currentPath;
+
+	/**
+	 * \brief The name of the CEGUI skin to use.
+	 */
+	std::string m_ceguiSkinName;
+
 };
 
 #endif // DEBUGPANEL_H

@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef QUEST_H
-#define QUEST_H
+#ifndef __SUMWARS_CORE_QUEST_H__
+#define __SUMWARS_CORE_QUEST_H__
 
 #include "debug.h"
 #include "eventsystem.h"
@@ -154,4 +154,4 @@ class Quest
 		
 };
 
-#endif
+#endif // __SUMWARS_CORE_QUEST_H__

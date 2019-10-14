@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TREASUREBASE_H
-#define TREASUREBASE_H
+#ifndef __SUMWARS_CORE_TREASUREBASE_H__
+#define __SUMWARS_CORE_TREASUREBASE_H__
 
 #include "dropslot.h"
 #include "worldobject.h"
@@ -51,5 +51,5 @@ struct TreasureBasicData
 	FixedObjectData m_fixed_data;
 };
 
-#endif
+#endif // __SUMWARS_CORE_TREASUREBASE_H__
 

@@ -22,3 +22,5 @@ cmake-build-release
 cmake-build-debug
 /.vs
 build/
+src/gui/version.h
+libs/

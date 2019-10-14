@@ -1,0 +1,9 @@
+<Imageset version="2" autoScaled="false" imagefile="main_menu.png" name="MainMenu" nativeHorzRes="800" nativeVertRes="600">
+    <Image height="234" name="Logo" width="631" xPos="260" yPos="0" />
+    <Image height="49" name="SPBtnNormal" width="255" xPos="2" yPos="1" />
+    <Image height="49" name="SPBtnHover" width="255" xPos="3" yPos="52" />
+    <Image height="49" name="SPBtnPushed" width="255" xPos="3" yPos="102" />
+    <Image height="67" name="DelCharBtnNormal" width="64" xPos="915" yPos="0" />
+    <Image height="67" name="DelCharBtnHover" width="62" xPos="916" yPos="73" />
+    <Image height="67" name="DelCharBtnPushed" width="62" xPos="916" yPos="150" />
+</Imageset>

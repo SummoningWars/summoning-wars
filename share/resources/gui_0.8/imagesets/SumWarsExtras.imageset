@@ -1,0 +1,51 @@
+<!--
+SWB - SumWarsBase
+SWB is licensed under the terms of the LGPL license.
+-->
+<!--
+version:      0.1
+Last change:  $LastChangedDate: 2013-01-26 01:26:14 +0200 (S, 26 ian. 2013) $
+-->
+<Imageset version="2" name="SumWarsExtras" imagefile="SumWarsExtras.png" nativeHorzRes="1920" nativeVertRes="1080" autoScaled="false" >
+
+  <!-- Suffix Legend: 
+    TL = top left; L = left; BL = bottom left; 
+    T = top; M = middle; B = bottom; 
+    TR = top right; R = right; BR = bottom right
+  -->
+
+  <!-- Empty picture -->
+	<Image name="EmptyPicture10px" xPos="64" yPos="64" width="10" height="10" />
+
+  <!-- The symbol to be used for a Town Portal -->
+  <Image name="TownPortalSymbol" xPos="0" yPos="0" width="48" height="48" />
+
+  <!-- The symbol to be used for a waypoint -->
+	<Image name="WaypointMark" xPos="0" yPos="48" width="48" height="48" />
+
+  <!-- The symbol to be used for the skill tree connectors-->
+  <Image name="SkilltreeVertConnection" xPos="48" yPos="0" width="48" height="48" />
+  <!-- Backslash like -->
+	<Image name="SkilltreeDiagConnection" xPos="96" yPos="0" width="48" height="48" />
+  <!-- Forward slash like -->
+	<Image name="SkilltreeDiag2Connection" xPos="144" yPos="0" width="48" height="48" />
+
+  <!-- Additional empty pics -->
+	<Image name="MiniHorzScrollThumbLeftNormal" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniHorzScrollThumbRightNormal" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniHorzScrollThumbMiddleNormal" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniHorzScrollThumbLeftHover" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniHorzScrollThumbRightHover" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniHorzScrollThumbMiddleHover" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniHorzScrollBarSegment" xPos="64" yPos="64" width="10" height="10" />
+  
+	<Image name="MiniVertScrollThumbTopNormal" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniVertScrollThumbBottomNormal" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniVertScrollThumbMiddleNormal" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniVertScrollThumbTopHover" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniVertScrollThumbBottomHover" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniVertScrollThumbMiddleHover" xPos="64" yPos="64" width="10" height="10" />
+	<Image name="MiniVertScrollBarSegment" xPos="64" yPos="64" width="10" height="10" />
+
+</Imageset>
+

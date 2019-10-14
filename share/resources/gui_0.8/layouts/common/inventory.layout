@@ -1,0 +1,499 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="Inventory" >
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="Alpha" value="1" />
+        <Property name="Text" value="Inventory" />
+        <Property name="TitlebarFont" value="SWB-L" />
+        <Property name="CloseButtonAlignment" value="0" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+
+        <!-- dummy holder to allow easier later updates -->
+        <Window type="SWB/StaticImage" name="inventory_aux" >
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+        
+            <!-- The gold coins icon -->
+            <Window type="SWB/StaticImage" name="GoldStaticImage" >
+                <Property name="Image" value="Inventory/GoldPile" />
+                <Property name="FrameEnabled" value="False" />
+                <Property name="Area" value="{{0.05,0},{0.575,0},{0.104,0},{0.597,0}}" />
+                <Property name="BackgroundEnabled" value="False" />
+                <Window type="SWB/Button" name="GoldDropButton" >
+                    <Property name="Alpha" value="0" />
+                    <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                </Window>
+            </Window>
+            
+            <!-- The amount of gold -->
+            <Window type="SWB/StaticText" name="GoldValueLabel" >
+                <Property name="Text" value="0" />
+                <Property name="FrameEnabled" value="False" />
+                <Property name="Area" value="{{0.110,0},{0.575,0},{0.4,0},{0.607,0}}" />
+                <Property name="BackgroundEnabled" value="False" />
+            </Window>
+    
+            <Window type="SWB/Editbox" name="GoldDropValueBox" >
+                <Property name="MaxTextLength" value="1073741823" />
+                <Property name="Area" value="{{0.41,0},{0.565,0},{0.6,0},{0.612,0}}" />
+                <Property name="TextParsingEnabled" value="False" />
+            </Window>
+            
+    
+    
+            <!-- Top area, containing the hero picture and his/her gear -->
+            <Window type="SWB/RoundedPanelFrame" name="GearHolder">
+                <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{0.56,0}}" />
+    
+                <Window type="SWB/RoundedPanelFrame" name="CharImageHolder">
+                    <Property name="Area" value="{{0.25,0},{0.03,0},{0.75,0},{0.85,0}}" />
+                    <Window type="SWB/StaticImage" name="CharacterImage" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.02,0},{0.02,0},{0.98,0},{0.98,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                    </Window>
+                </Window>
+                
+                <Window type="SWB/DoubleImageButton" name="SwapEquipButton" >
+                    <Property name="MainStateImage" value="SWB/WeaponSwitchState1" />
+                    <Property name="AltStateImage" value="SWB/WeaponSwitchState2" />
+                    <Property name="Area" value="{{0.40,0},{0.89,0},{0.60,0},{0.96,0}}" />
+                </Window>
+                
+                
+                <!-- The gear items -->
+                <Window type="SWB/BackgroundButton" name="AmuletItemLabel" >
+                    <Property name="Area" value="{{0.12,0},{0.03,0},{0.24,0},{0.17,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="ArmorItemLabel" >
+                    <Property name="Area" value="{{0.02,0},{0.19,0},{0.24,0},{0.55,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="WeaponItemLabel" >
+                    <Property name="Area" value="{{0.02,0},{0.56,0},{0.24,0},{0.97,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="RingRightItemLabel" >
+                    <Property name="Area" value="{{0.25,0},{0.86,0},{0.37,0},{0.98,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="RingLeftItemLabel" >
+                    <Property name="Area" value="{{0.63,0},{0.86,0},{0.75,0},{0.98,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="HelmetItemLabel" >
+                    <Property name="Area" value="{{0.76,0},{0.03,0},{0.98,0},{0.26,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="GlovesItemLabel" >
+                    <Property name="Area" value="{{0.76,0},{0.27,0},{0.98,0},{0.55,0}}" />
+                </Window>
+                <Window type="SWB/BackgroundButton" name="ShieldItemLabel" >
+                    <Property name="Area" value="{{0.76,0},{0.56,0},{0.98,0},{0.97,0}}" />
+                </Window>
+            </Window>
+    
+            <!-- The lower side location containing the stash -->
+            <Window type="SWB/RoundedPanelFrame" name="StashHolder">
+                <Property name="Area" value="{{0.0,0},{0.6240544,0},{1.0,0},{1.0,0}}" />
+                <Window type="SWB/TabButton" name="SmallTabButton" >
+                    <Property name="Text" >Small</Property>
+                    <Property name="Area" value="{{0.03,0},{0.01,0},{0.33,0},{0.15,0}}" />
+                </Window>
+                <Window type="SWB/TabButton" name="MediumTabButton" >
+                    <Property name="Text" >Medium</Property>
+                    <Property name="Area" value="{{0.35,0},{0.01,0},{0.65,0},{0.15,0}}" />
+                </Window>
+                <Window type="SWB/TabButton" name="BigTabButton" >
+                    <Property name="Text" >Big</Property>
+                    <Property name="Area" value="{{0.67,0},{0.01,0},{0.97,0},{0.15,0}}" />
+                </Window>
+            
+                <!-- The lower side location containing the stash -->
+                <Window type="SWB/StaticImage" name="StashItemArea">
+                    <Property name="FrameEnabled" value="False" />
+                    <Property name="Area" value="{{0.01,0},{0.15,0},{0.99,0},{0.99,0}}" />
+                    <Property name="BackgroundEnabled" value="False" />
+                    
+                    <!-- The tab containing the small items -->
+                    <Window type="SWB/StaticImage" name="SmallTabMain" >
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        
+                        <Window type="SWB/BackgroundButton" name="SmallItem0Label" >
+                            <Property name="Area" value="{{0.0,0},{0.0,0},{0.1,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem1Label" >
+                            <Property name="Area" value="{{0.1,0},{0.0,0},{0.2,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem2Label" >
+                            <Property name="Area" value="{{0.2,0},{0.0,0},{0.3,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem3Label" >
+                            <Property name="Area" value="{{0.3,0},{0.0,0},{0.4,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem4Label" >
+                            <Property name="Area" value="{{0.4,0},{0.0,0},{0.5,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem5Label" >
+                            <Property name="Area" value="{{0.5,0},{0.0,0},{0.6,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem6Label" >
+                            <Property name="Area" value="{{0.6,0},{0.0,0},{0.7,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem7Label" >
+                            <Property name="Area" value="{{0.7,0},{0.0,0},{0.8,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem8Label" >
+                            <Property name="Area" value="{{0.8,0},{0.0,0},{0.9,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem9Label" >
+                            <Property name="Area" value="{{0.9,0},{0.0,0},{1.0,0},{0.33,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem10Label" >
+                            <Property name="Area" value="{{0.0,0},{0.33,0},{0.1,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem11Label" >
+                            <Property name="Area" value="{{0.1,0},{0.33,0},{0.2,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem12Label" >
+                            <Property name="Area" value="{{0.2,0},{0.33,0},{0.3,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem13Label" >
+                            <Property name="Area" value="{{0.3,0},{0.33,0},{0.4,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem14Label" >
+                            <Property name="Area" value="{{0.4,0},{0.33,0},{0.5,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem15Label" >
+                            <Property name="Area" value="{{0.5,0},{0.33,0},{0.6,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem16Label" >
+                            <Property name="Area" value="{{0.6,0},{0.33,0},{0.7,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem17Label" >
+                            <Property name="Area" value="{{0.7,0},{0.33,0},{0.8,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem18Label" >
+                            <Property name="Area" value="{{0.8,0},{0.33,0},{0.9,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem19Label" >
+                            <Property name="Area" value="{{0.9,0},{0.33,0},{1.0,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem20Label" >
+                            <Property name="Area" value="{{0.0,0},{0.66,0},{0.1,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem21Label" >
+                            <Property name="Area" value="{{0.1,0},{0.66,0},{0.2,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem22Label" >
+                            <Property name="Area" value="{{0.2,0},{0.66,0},{0.3,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem23Label" >
+                            <Property name="Area" value="{{0.3,0},{0.66,0},{0.4,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem24Label" >
+                            <Property name="Area" value="{{0.4,0},{0.66,0},{0.5,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem25Label" >
+                            <Property name="Area" value="{{0.5,0},{0.66,0},{0.6,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem26Label" >
+                            <Property name="Area" value="{{0.6,0},{0.66,0},{0.7,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem27Label" >
+                            <Property name="Area" value="{{0.7,0},{0.66,0},{0.8,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem28Label" >
+                            <Property name="Area" value="{{0.8,0},{0.66,0},{0.9,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="SmallItem29Label" >
+                            <Property name="Area" value="{{0.9,0},{0.66,0},{1.0,0},{1.0,0}}" />
+                        </Window>
+                        
+                        <Window type="SWB/TimerProgressBar" name="SmallItem0ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.0103128,0},{0.0257146,0},{0.0795478,0},{0.275714,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem1ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.110313,0},{0.0266671,0},{0.179548,0},{0.276667,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem2ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.216141,0},{0.0304011,0},{0.280533,0},{0.258096,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem3ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.317126,0},{0.0196327,0},{0.381518,0},{0.254763,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem4ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.419733,0},{0.0296325,0},{0.484125,0},{0.257327,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem5ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.515875,0},{0.011429,0},{0.58511,0},{0.261429,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem6ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.62613,0},{0.000476723,0},{0.695365,0},{0.250477,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem7ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.717845,0},{0.00476246,0},{0.78708,0},{0.254762,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem8ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.823465,0},{0.0166673,0},{0.8927,0},{0.266667,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem9ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.920452,0},{0.00809576,0},{0.989687,0},{0.258096,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem10ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.00932784,0},{0.365238,0},{0.0785629,0},{0.615238,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem11ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.107995,0},{0.361905,0},{0.177231,0},{0.611905,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem12ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.215933,0},{0.366191,0},{0.285168,0},{0.616191,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem13ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.307648,0},{0.370476,0},{0.376883,0},{0.620476,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem14ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.417207,0},{0.365238,0},{0.486443,0},{0.615238,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem15ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.52051,0},{0.377143,0},{0.589745,0},{0.627143,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem16ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.621495,0},{0.358572,0},{0.69073,0},{0.608572,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem17ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.72248,0},{0.362857,0},{0.791715,0},{0.612857,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem18ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.821148,0},{0.374762,0},{0.890383,0},{0.624762,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem19ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.920452,0},{0.358572,0},{0.989687,0},{0.608572,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem20ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.00637324,0},{0.720952,0},{0.0756084,0},{0.970952,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem21ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.118946,0},{0.71,0},{0.188181,0},{0.96,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem22ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.214948,0},{0.728571,0},{0.284183,0},{0.978571,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem23ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.315585,0},{0.709047,0},{0.38482,0},{0.959048,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem24ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.416223,0},{0.727619,0},{0.485458,0},{0.977619,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem25ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.50686,0},{0.715714,0},{0.586095,0},{0.965714,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem26ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.61051,0},{0.728571,0},{0.689745,0},{0.978571,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem27ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.704195,0},{0.716666,0},{0.78343,0},{0.966666,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem28ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.809467,0},{0.742857,0},{0.888702,0},{0.969999,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                        <Window type="SWB/TimerProgressBar" name="SmallItem29ProgressBar" >
+                            <Property name="StepSize" value="0.01" />
+                            <Property name="MousePassThroughEnabled" value="True" />
+                            <Property name="CurrentProgress" value="0" />
+                            <Property name="Area" value="{{0.911089,0},{0.719047,0},{0.990324,0},{0.969047,0}}" />
+                            <Property name="VerticalProgress" value="True" />
+                        </Window>
+                    </Window>
+                    
+                    <!-- The tab containing the medium items -->
+                    <Window type="SWB/StaticImage" name="MediumTabMain" >
+                        <Property name="Visible" value="False" />
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        
+                        <Window type="SWB/BackgroundButton" name="MediumItem0Label" >
+                            <Property name="Area" value="{{0.0,0},{0.0,0},{0.166,0},{0.5,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem1Label" >
+                            <Property name="Area" value="{{0.166,0},{0.0,0},{0.333,0},{0.5,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem2Label" >
+                            <Property name="Area" value="{{0.333,0},{0.0,0},{0.5,0},{0.5,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem3Label" >
+                            <Property name="Area" value="{{0.5,0},{0.0,0},{0.666,0},{0.5,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem4Label" >
+                            <Property name="Area" value="{{0.666,0},{0.0,0},{0.833,0},{0.5,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem5Label" >
+                            <Property name="Area" value="{{0.833,0},{0.0,0},{1.0,0},{0.5,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem6Label" >
+                            <Property name="Area" value="{{0.0,0},{0.5,0},{0.166,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem7Label" >
+                            <Property name="Area" value="{{0.166,0},{0.5,0},{0.333,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem8Label" >
+                            <Property name="Area" value="{{0.333,0},{0.5,0},{0.5,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem9Label" >
+                            <Property name="Area" value="{{0.5,0},{0.5,0},{0.666,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem10Label" >
+                            <Property name="Area" value="{{0.666,0},{0.5,0},{0.833,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="MediumItem11Label" >
+                            <Property name="Area" value="{{0.833,0},{0.5,0},{1.0,0},{1.0,0}}" />
+                        </Window>
+                    </Window>
+                    
+                    <!-- The tab containing the large items -->
+                    <Window type="SWB/StaticImage" name="BigTabMain" >
+                        <Property name="Visible" value="False" />
+                        <Property name="AlwaysOnTop" value="True" />
+                        <Property name="FrameEnabled" value="False" />
+                        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+                        <Property name="BackgroundEnabled" value="False" />
+                        
+                        <Window type="SWB/BackgroundButton" name="BigItem0Label" >
+                            <Property name="Area" value="{{0.0,0},{0.0,0},{0.199,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="BigItem1Label" >
+                            <Property name="Area" value="{{0.2,0},{0.0,0},{0.399,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="BigItem2Label" >
+                            <Property name="Area" value="{{0.4,0},{0.0,0},{0.599,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="BigItem3Label" >
+                            <Property name="Area" value="{{0.6,0},{0.0,0},{0.799,0},{1.0,0}}" />
+                        </Window>
+                        <Window type="SWB/BackgroundButton" name="BigItem4Label" >
+                            <Property name="Area" value="{{0.8,0},{0.0,0},{0.999,0},{1.0,0}}" />
+                        </Window>
+                    </Window>
+                </Window>
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

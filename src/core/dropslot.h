@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DROPSLOT_H
-#define DROPSLOT_H
+#ifndef __SUMWARS_CORE_DROPSLOT_H__
+#define __SUMWARS_CORE_DROPSLOT_H__
 
 #include "item.h"
 
@@ -73,23 +73,24 @@ struct DropSlot
 	 * \brief Konstruktor. Belegt die Daten so, dass nie ein Gegenstand erzeugt wird
 	 */
 	DropSlot()
+	:	m_min_level(-1),
+		m_max_level(-1),
+		m_min_gold(-1),
+		m_max_gold(-1),
+		m_magic_probability(0),
+		m_magic_power(1)
 	{
 		for (int i=0;i<5;i++)
 		{
 			m_size_probability[i]=0;
 		}
-		
-		m_min_level =-1;
-		m_max_level =-1;
-		m_magic_probability =0;
-		m_magic_power =1;
 	};
 	
 	/**
-	 * \fn void operator=(DropSlot& other)
+	 * \fn DropSlot& operator=(DropSlot& other)
 	 * \brief Kopieroperator
 	 */
-	void operator=(DropSlot& other)
+	DropSlot& operator=(DropSlot& other)
 	{
 		for (int i=0; i<5; i++)
 			m_size_probability[i]= other.m_size_probability[i];
@@ -99,6 +100,7 @@ struct DropSlot
 		m_min_gold = other.m_min_gold;
 		m_min_level = other.m_min_level;
 		m_max_level = other.m_max_level;
+		return *this;
 	}
 	
 	/**
@@ -167,6 +169,6 @@ struct DropChance
 	}
 };
 
-#endif
+#endif // __SUMWARS_CORE_DROPSLOT_H__
 
 

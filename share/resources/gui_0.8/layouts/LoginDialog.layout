@@ -1,0 +1,41 @@
+<GUILayout>
+    <Window name="LoginDialog" type="TaharezLook/FrameWindow">
+        <Property name="Area" value="{{0,268},{0,108},{0,728},{0,476}}" />
+        <Window name="LoginDialog/StaticText" type="TaharezLook/StaticText">
+            <Property name="Area" value="{{-0.0720721,1.5},{0.00882872,37},{0.927928,-319.5},{1.00883,-262}}" />
+            <Property name="Text" value="Login" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+        <Window name="LoginDialog/PasswordEditbox" type="TaharezLook/Editbox">
+            <Property name="Area" value="{{0.268734,9.87598},{0.50618,-2},{0.268734,300.682},{0.50618,48}}" />
+            <Property name="MaskText" value="True" />
+        </Window>
+        <Window name="LoginDialog/StaticText2" type="TaharezLook/StaticText">
+            <Property name="Area" value="{{-0.0416667,-136},{0,110},{0.829955,-408},{1,-189}}" />
+            <Property name="Text" value="Username:" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+        <Window name="LoginDialog/StaticText22" type="TaharezLook/StaticText">
+            <Property name="Area" value="{{-0.0641892,-126},{0,175},{0.807432,-398},{1,-124}}" />
+            <Property name="Text" value="Password:" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="BackgroundEnabled" value="False" />
+            <Property name="HorizontalAlignment" value="Centre" />
+        </Window>
+        <Window name="LoginDialog/LoginButton" type="TaharezLook/Button">
+            <Property name="Area" value="{{0,20},{0,265},{0,190},{0,320}}" />
+            <Property name="Text" value="Login" />
+        </Window>
+        <Window name="LoginDialog/UsernameEditbox" type="TaharezLook/Editbox">
+            <Property name="Area" value="{{0.271318,9.53488},{0.332549,-8},{0.271318,300.349},{0.332549,42}}" />
+        </Window>
+        <Window name="LoginDialog/CancelButton" type="TaharezLook/Button">
+            <Property name="Area" value="{{0,245},{0,265},{0,420},{0,320}}" />
+            <Property name="Text" value="Cancel" />
+        </Window>
+    </Window>
+</GUILayout>

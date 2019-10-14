@@ -1,0 +1,369 @@
+# English translations for 0.5 package.
+# Copyright (C) 2012 THE 0.5'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 0.5 package.
+#  <kalimgard@users.sourceforge.net>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-25 17:52+0200\n"
+"PO-Revision-Date: 2013-05-30 09:58+0200\n"
+"Last-Translator: Rubén Viguera <vyproyects@gmail.com>\n"
+"Language-Team: English "
+"<http://hosted.weblate.org/projects/sumwars/tools/en/>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.6-dev\n"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:205
+msgid "Render Info"
+msgstr "Render Info"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:208
+msgid "Mesh"
+msgstr "Mesh"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:211
+msgid "Select main mesh:"
+msgstr "Select main mesh:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:214
+msgid "Submeshes"
+msgstr "Submeshes"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:217
+msgid "Add Submesh"
+msgstr "Add Submesh"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:220
+msgid "New submesh:"
+msgstr "New submesh:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:223
+msgid "submesh name:"
+msgstr "submesh name:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:226
+msgid "Edit submesh:"
+msgstr "Edit submesh:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:229
+msgid "Attach to:"
+msgstr "Attach to:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:232
+msgid "at bone:"
+msgstr "at bone:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:235
+msgid "Rotate(x,y,z):"
+msgstr "Rotate(x,y,z):"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:238
+msgid "Scale:"
+msgstr "Scale:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:241
+msgid "Offset (x,y,z):"
+msgstr "Offset (x,y,z):"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:244
+msgid "Delete Submesh"
+msgstr "Delete Submesh"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:247
+msgid "Animations"
+msgstr "Animations"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:250
+#: ../../src/gui/contenteditor/contenteditor.cpp:313
+#: ../../src/gui/contenteditor/contenteditor.cpp:508
+msgid "XML"
+msgstr "XML"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:253
+#: ../../src/gui/contenteditor/contenteditor.cpp:316
+#: ../../src/gui/contenteditor/contenteditor.cpp:511
+msgid "Submit XML"
+msgstr "Submit XML"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:256
+msgid "FixedObject"
+msgstr "FixedObject"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:259
+msgid "Properties"
+msgstr "Properties"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:262
+msgid "Shape:"
+msgstr "Shape:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:265
+msgid "Circle"
+msgstr "Circle"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:268
+msgid "Radius:"
+msgstr "Radius:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:271
+#: ../../src/gui/contenteditor/contenteditor.cpp:283
+msgid "Autodetect"
+msgstr "Autodetect"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:274
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:277
+msgid "Width:"
+msgstr "Width:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:280
+msgid "Depth:"
+msgstr "Depth:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:286
+msgid "Collision type"
+msgstr "Collision type"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:289
+#: ../../src/gui/contenteditor/contenteditor.cpp:331
+msgid "Copy data from:"
+msgstr "Copy data from:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:292
+#: ../../src/gui/contenteditor/contenteditor.cpp:334
+msgid "Copy"
+msgstr "Copy"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:295
+#: ../../src/gui/contenteditor/contenteditor.cpp:298
+msgid "Create Object"
+msgstr "Create Object"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:301
+msgid "Position:"
+msgstr "Position:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:304
+msgid "Get Player Position"
+msgstr "Get Player Position"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:307
+msgid "Angle:"
+msgstr "Angle:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:310
+msgid "Delete all objects"
+msgstr "Delete all objects"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:319
+msgid "Item"
+msgstr "Item"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:322
+msgid "General"
+msgstr "General"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:325
+#: ../../src/gui/contenteditor/contenteditor.cpp:403
+msgid "Type:"
+msgstr "Type:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:328
+msgid "Size:"
+msgstr "Size:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:337
+msgid "Name:"
+msgstr "Name:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:340
+msgid "Value:"
+msgstr "Value:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:343
+msgid "Enchant min:"
+msgstr "Enchant min:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:346
+msgid "max:"
+msgstr "max:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:349
+msgid "Equip"
+msgstr "Equip"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:352
+#: ../../src/gui/contenteditor/contenteditor.cpp:466
+msgid "Health:"
+msgstr "Health:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:355
+msgid "Attribute:"
+msgstr "Attribute:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:358
+msgid "Strength:"
+msgstr "Strength:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:361
+msgid "Dexterity:"
+msgstr "Dexterity:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:364
+msgid "Magic Power:"
+msgstr "Magic Power:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:367
+msgid "Willpower:"
+msgstr "Willpower:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:370
+msgid "Resistances:"
+msgstr "Resistances:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:373
+#: ../../src/gui/contenteditor/contenteditor.cpp:409
+msgid "Physical:"
+msgstr "Physical:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:376
+#: ../../src/gui/contenteditor/contenteditor.cpp:418
+msgid "Fire:"
+msgstr "Fire:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:379
+#: ../../src/gui/contenteditor/contenteditor.cpp:427
+msgid "Ice:"
+msgstr "Ice:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:382
+#: ../../src/gui/contenteditor/contenteditor.cpp:436
+msgid "Air:"
+msgstr "Air:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:385
+msgid "Other:"
+msgstr "Other:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:388
+msgid "Armor:"
+msgstr "Armor:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:391
+msgid "Block:"
+msgstr "Block:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:394
+#: ../../src/gui/contenteditor/contenteditor.cpp:445
+msgid "Precision:"
+msgstr "Precision:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:397
+#: ../../src/gui/contenteditor/contenteditor.cpp:448
+msgid "Power:"
+msgstr "Power:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:400
+msgid "Weapon"
+msgstr "Weapon"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:406
+msgid "Damage:"
+msgstr "Damage:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:412
+#: ../../src/gui/contenteditor/contenteditor.cpp:421
+#: ../../src/gui/contenteditor/contenteditor.cpp:430
+#: ../../src/gui/contenteditor/contenteditor.cpp:439
+msgid "-"
+msgstr "-"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:415
+#: ../../src/gui/contenteditor/contenteditor.cpp:424
+#: ../../src/gui/contenteditor/contenteditor.cpp:433
+#: ../../src/gui/contenteditor/contenteditor.cpp:442
+msgid "x"
+msgstr "x"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:451
+msgid "Range:"
+msgstr "Range:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:454
+msgid "Speed:"
+msgstr "Speed:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:457
+msgid "Twohanded weapon"
+msgstr "Twohanded weapon"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:460
+msgid "Crit. Hits:"
+msgstr "Crit. Hits:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:463
+msgid "Consume"
+msgstr "Consume"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:469
+msgid "Status heal and immunity time:"
+msgstr "Status heal and immunity time:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:472
+msgid "Blind:"
+msgstr "Blind:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:475
+msgid "Poisoned:"
+msgstr "Poisoned:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:478
+msgid "Berserk:"
+msgstr "Berserk:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:481
+msgid "Confused:"
+msgstr "Confused:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:484
+msgid "Mute:"
+msgstr "Mute:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:487
+msgid "Paralyzed:"
+msgstr "Paralyzed:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:490
+msgid "Frozen:"
+msgstr "Frozen:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:493
+msgid "Burning:"
+msgstr "Burning:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:496
+msgid "Create Item"
+msgstr "Create Item"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:499
+msgid "Enchant:"
+msgstr "Enchant:"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:502
+msgid "Create in inventory"
+msgstr "Create in inventory"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:505
+msgid "Create an drop"
+msgstr "Create an drop"
+
+#: ../../src/gui/contenteditor/contenteditor.cpp:514
+msgid "Close"
+msgstr "Close"

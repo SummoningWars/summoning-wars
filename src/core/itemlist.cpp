@@ -737,7 +737,7 @@ void Equipement::fromString(CharConv* cv)
 	short pos;
 	Item* it;
 
-	std::string subtype;
+	std::string subtype ("");
 	char type;
 	int id;
 
@@ -845,7 +845,7 @@ void Equipement::fromStringComplete(CharConv* cv)
 	int i;
 	short pos;
 	Item* it;
-	std::string subtype;
+	std::string subtype ("");
 	char type;
 	int id;
 

@@ -1,0 +1,49 @@
+<GUILayout version="4" >
+    <Window type="SWB/FrameWindow" name="JoinGameWindow" >
+        <Property name="FrameEnabled" value="True" />
+        <Property name="Area" value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="True" />
+        <Property name="RollUpEnabled" value="False" />
+
+        <Window type="SWB/Button" name="JoinGameStartButton" >
+            <Property name="Area" value="{{0.2,0},{0.84,0},{0.45,0},{0.95,0}}" />
+            <Property name="Text" value="Start" />
+        </Window>
+
+        <Window type="SWB/Button" name="JoinGameCancelButton" >
+            <Property name="Area" value="{{0.55,0},{0.84,0},{0.8,0},{0.95,0}}" />
+            <Property name="Text" value="Cancel" />
+        </Window>
+        
+        <Window type="SWB/StaticText" name="HostnameLabel" >
+            <Property name="Text" value="Armor" />
+            <!--<Property name="HorzExtent" value="50" />-->
+            <!--<Property name="VertExtent" value="25.5702" />-->
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.07,0},{0.32,0},{0.51,0},{0.39,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+        </Window>
+        <Window type="SWB/Editbox" name="HostnameBox" >
+            <Property name="Text" value="Armor" />
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.53,0},{0.32,0},{0.87,0},{0.39,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+        <Window type="SWB/StaticText" name="PortLabel" >
+            <Property name="Text" value="Armor" />
+            <!--<Property name="HorzExtent" value="50" />-->
+            <!--<Property name="VertExtent" value="25.5702" />-->
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.07,0},{0.5,0},{0.51,0},{0.57,0}}" />
+            <Property name="BackgroundEnabled" value="False" />
+        </Window>
+        <Window type="SWB/Editbox" name="PortBox" >
+            <Property name="Text" value="Armor" />
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.53,0},{0.5,0},{0.87,0},{0.57,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+    </Window>
+</GUILayout>

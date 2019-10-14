@@ -16,7 +16,11 @@
 #ifndef DEBUGTAB_H
 #define DEBUGTAB_H
 
+#ifdef CEGUI_07
 #include <CEGUI/CEGUIString.h>
+#else
+#include "CEGUI/String.h"
+#endif
 
 namespace OIS
 {

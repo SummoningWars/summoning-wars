@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="buttress_wall_m2_r" layer="NORMAL">
+	<Mesh file="buttress_wall_m2_r.mesh" />
+	<Geometry shape="RECT" extent_x="3" extent_y="2"/>
+</Object>

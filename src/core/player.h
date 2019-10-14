@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef __SUMWARS_CORE_PLAYER_H__
+#define __SUMWARS_CORE_PLAYER_H__
 #include <string>
 #include "creature.h"
 #include "itemlist.h"
@@ -833,4 +833,4 @@ protected:
 	//Accessor Methods
 	//Operations
 };
-#endif //PLAYER_H
+#endif // __SUMWARS_CORE_PLAYER_H__

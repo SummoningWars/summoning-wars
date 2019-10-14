@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DROP_ITEM_H
-#define DROP_ITEM_H
+#ifndef __SUMWARS_CORE_DROPITEM_H__
+#define __SUMWARS_CORE_DROPITEM_H__
 
 #include "item.h"
 #include "itemlist.h"
@@ -156,4 +156,4 @@ class DropItem : public GameObject
 
 typedef std::map<int,DropItem*> DropItemMap;
 
-#endif
+#endif // __SUMWARS_CORE_DROPITEM_H__

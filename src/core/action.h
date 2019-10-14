@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ACTION_H
-#define ACTION_H
+#ifndef __SUMWARS_CORE_ACTION_H__
+#define __SUMWARS_CORE_ACTION_H__
 
 #include <string>
 #include "gettext.h"
@@ -30,7 +30,7 @@
 
 /**
  * \struct Action
- * \brief Beschreibt eine Aktion, welche eine Figur ausf&uuml;hren kann. Eine Aktion ist dabei die kleinste Einheit einer Handlung.
+ * \brief Describes an action which an actor can perform. An action is the smallest unit of an act.
  */
 struct Action {
 //Public stuff
@@ -39,14 +39,14 @@ public:
 
 	/**
 	 * \enum ActionType
-	 * \brief Aufzaehlung verschiedener Aktionen
+     * \brief Enum of different actions
 	 */
 
 	typedef  std::string ActionType;
 
 	/**
 	 * \enum TargetType
-	 * \brief Aufzaehlung verschiedener Zieltypen fuer Aktionen
+     * \brief Enum of different target types for actions
 	 */
 	enum TargetType
 	{
@@ -62,7 +62,7 @@ public:
 
 	/**
 	 * \enum Flags
-	 * \brief Aufzaehlung von Sondereigenschaften von Aktionen
+     * \brief Enum of special properties of actions
 	 */
 	enum Flags
 	{
@@ -71,129 +71,129 @@ public:
 
 	/**
 	 * \struct ActionInfo
-	 * \brief Enthaelt einige grundlegende Informationen zu einer Aktion
+     * \brief Holds basic information for an action
 	 */
 	struct ActionInfo
 	{
 		/**
 		 * \var int m_timer_nr
-		 * \brief Nummer des Timers, der bei benutzen der Aktion gestartet wird. Moegliche Werte sind 0,1,2
+         * \brief Number of the timer which will be started with the action. Prossible values are 1, 2 ,3
 		 */
 		int m_timer_nr;
 
 		/**
 		 * \var float m_standard_time
-		 * \brief Zeit in ms, die die Aktion ohne Modifikatoren in Anspruch nimmt
+         * \brief Time the action lasts in ms, not affected by any modifications
 		 */
 		float m_standard_time;
 
 		/**
 		 * \var float m_timer
-		 * \brief Gibt die Zeitdauer in ms an, die der Timer laeuft, der beim Benutzen dieser Aktion gestartet wird.
+         * \brief Current running time since start of the action
 		 */
 		float m_timer;
 
 		/**
 		 * \var ActionType m_base_action
-		 * \brief Gibt die Aktion an, die stattdessen ausgefuehrt wird, wenn die Aktion selbst nicht benutzt werden kann weil der Timer noch lauft
+         * \brief Holds the action that will be performed instead when the timer is running
 		 */
 		ActionType m_base_action;
 
 		/**
 		 * \var float m_critial_perc
-		 * \brief Prozentsatz zu dem die Aktion abgeschlossen ist, wenn der eigentliche Effekt der Aktion ausgeloest wird
+         * \brief Percentage of completion when the actual effect will be executed
 		 */
 		float m_critical_perc;
 
 		/**
 		 * \var TargetType m_target_type
-		 * \brief Gibt die Art des Zielobjekts an
+         * \brief Type of the target object
 		 */
 		TargetType m_target_type;
 
 		/**
 		 * \var char m_flags
-		 * \brief verschiedene Eigenschaften der Aktion in Bitkodierung
+         * \brief different properties of the action in bit encoded
 		 */
 		char m_flags;
 
 		/**
 		 * \var std::string m_name
-		 * \brief Name der Aktion
+         * \brief Name of the action
 		 */
 		std::string m_name;
 
 		/**
 		 * \var std::string m_description
-		 * \brief Abkuerzung der Beschreibung als String
+         * \brief Shortcut of the description as a string
 		 **/
 		std::string m_description;
 
 		/**
 		 * \var float m_radius
-		 * \brief Wirkungsradius der Aktion. Genaue Verwendung des Wertes haengt von der Implementation der Aktion ab
+         * \brief Effective radius of the action. Exact value is dependand of the implementation.
 		 */
 		float m_radius;
 
 
 		/**
 		 * \var std::string m_projectile_type
-		 * \brief Typ eines erzeugten Geschosses
+         * \brief Type of the created projectile.
 		 */
 		std::string m_projectile_type;
 
 		/**
 		 * \var float m_projectile_speed
-		 * \brief Geschwindigkeit des Geschosses
+         * \brief Speed of the projectile
 		 */
 		float m_projectile_speed;
 
 		/**
 		 * \var char m_projectile_flags
-		 * \brief Flags des Geschosses
+         * \brief Flags of the projectile
 		 */
 		char m_projectile_flags;
 
 		/**
 		 * \var int m_projectile_counter
-		 * \brief Zaehler fuer das Geschoss. Genaue Verwendung haengt vom Geschosstyp ab
+         * \brief Counter of the projectile. Exact usage is dependand on the implementation.
 		 */
 		int m_projectile_counter;
 
 		/**
 		 * \var float m_projectile_radius
-		 * \brief Radius eines Geschosses
+         * \brief Radius of the projectile
 		 */
 		float m_projectile_radius;
 
 		/**
 		 * \var HybridImplementation m_effect
-		 * \brief Effekt der Aktion
+         * \brief Effect of the action
 		 */
 		HybridImplementation m_effect;
 
 		/**
 		 * \var HybridImplementation m_damage
-		 * \brief Schaden der Aktion
+         * \brief Damage of the action
 		 */
 		HybridImplementation m_damage;
 
 		/**
 		 * \var HybridImplementation m_base_mod
-		 * \brief BasisModifikation der Aktion
+         * \brief Base modifications of the action
 		 */
 		HybridImplementation m_base_mod;
 
 		/**
 		 * \var HybridImplementation m_dyn_mod
-		 * \brief Modifikation dynamischer Attribute durch die Aktion
+         * \brief Modification of dynamic attributes through this action.
 		 */
 		HybridImplementation m_dyn_mod;
 	};
 
 	/**
 	 * \fn enum ActionEquip
-	 * \brief Aufzaehlung, welche Ausruestungsgegenstaende fuer die Aktion verwendet werden
+     * \brief Enum which equipment items will be used for the action.
 	 */
 	enum ActionEquip
 	{
@@ -206,45 +206,34 @@ public:
 	//Constructors
 	/**
 	 * \fn Action(ActionType type)
-	 * \brief Legt ein neues Action Objekt an
-	 * \param type initialisiert den Typ der Aktion
+     * \brief Constructs a new action object
+     * \param type Initializes the action type
 	 */
-	Action(ActionType type)
-	{
-		m_type = type;
-		m_time =0;
-		m_elapsed_time =0;
-	}
-
-
-	/**
-	 * \fn Action()
-	 * \brief Legt eine leere Aktion an
-	 */
-	Action()
-	{
-		m_type = "noaction";
-		m_time =0;
-		m_elapsed_time =0;
-	}
+	Action(ActionType type = "noaction"):
+		m_elapsed_time(0),
+		m_time(0),
+		m_action_equip(NO_WEAPON),
+		m_goal(0, 0),
+		m_goal_object_id(0)
+	{}
 
 	/**
 	 * \fn static void init()
-	 * \brief initialisiert die statischen Variablen
+     * \brief Initializes the static variables
 	 */
 	static void init();
 
 	/**
 	 * \fn static void cleanup()
-	 * \brief loescht alle Daten
+     * \brief Deletes all data
 	 */
 	static void cleanup();
 
 	/**
 	 * \fn static ActionInfo* getActionInfo(ActionType type)
-	 * \brief Gibt zu einer Aktion die Basisinformationen aus
-	 * \param type die Aktion
-	 * \return Zeiger auf die Daten
+     * \brief Returns the base information of an action
+     * \param type Type of the action
+     * \return Pointer to the action
 	 */
 	static ActionInfo* getActionInfo(ActionType type)
 	{
@@ -258,68 +247,68 @@ public:
 
 	/**
 	 * \fn static std::string getName(ActionType type)
-	 * \brief Gibt zu einer Aktion den Namen aus
-	 * \param type die Aktion
-	 * \return Name der Aktion
+     * \brief Returns the name of the action
+     * \param type Type of the action
+     * \return Name of the action
 	 */
 	static std::string getName(ActionType type);
 
 	/**
 	 * \fn static std::string getDescription(ActionType type)
-	 * \brief Gibt zu einer Aktion die Beschreibung aus
-	 * \param type die Aktion
-	 * \return Beschreibung der Aktion
+     * \brief Returns the description of an action
+     * \param type Type of the action
+     * \return Description of the action
 	 */
 	static std::string getDescription(ActionType type);
 
 	/**
 	 * \fn static ActionType getType(std::string name)
-	 * \brief Gibt zu einem Name einer Aktion den enum Wert aus
-	 * \param name Name der Aktion
+     * \brief Returns the enum value to an action name
+     * \param name Name of the action
 	 */
 	static ActionType getActionType(std::string name);
 
 	/**
 	 * \fn void toString(CharConv* cv)
-	 * \brief Konvertiert das Objekt in einen String und schreibt ihn in der Puffer
-	 * \param cvAusgabepuffer
+     * \brief Converts the object into a string and writes it to the buffer
+     * \param cv Output buffer
 	 */
 	void toString(CharConv* cv);
 
 
 	/**
 	 * \fn void fromString(CharConv* cv)
-	 * \brief Erzeugt das Objekt aus einem String
-	 * \param cv Eingabepuffer
+     * \brief Creates the object from a string
+     * \param cv input buffer
 	 */
 	void fromString(CharConv* cv);
 
 	/**
 	 * \fn static void loadAbilities(TiXmlNode* node)
-	 * \brief Laedt die Faehigkeiten aus dem angegebenen XML Dokument
-	 * \param node XML Dokument
+     * \brief Loads the abilities for an action for an XML document
+     * \param node XML document
 	 */
 	static void loadAbilities(TiXmlNode* node);
 
 	/**
 	 * \fn 	static void loadAbility(TiXmlNode* node)
-	 * \brief Laedt eine Faehigkeit aus dem angegebenen XML Knoten
-	 * \param node XML Knoten
+     * \brief Loads the abilities from an XML node
+     * \param node XML node
 	 */
 	static void loadAbility(TiXmlNode* node);
 
 	/**
 	 * \fn loadAbilityData(const char* pFilename);
-	 * \brief Liest die Daten zu einer Faehigkeit aus einer XML Datei
-	 * \param pFilename Name der XML Datei
+     * \brief Loads data for an ability from an XML file
+     * \param pFilename Name of the XML file
 	 */
 	static bool loadAbilityData(const char* pFilename);
 
 	/**
 	 * \fn static bool loadHybridImplementation(TiXmlNode* node, HybridImplementation& impl)
-	 * \brief laedt Daten fuer eine hybride Implementation
-	 * \param node XML Knoten
-	 * \param impl Struktur in die die Daten geladen werden
+     * \brief Loads data for a hybrid implementation
+     * \param node XML node
+     * \param impl Input structure in which the data will be loaded
 	 */
 	static bool loadHybridImplementation(TiXmlNode* node, HybridImplementation& impl);
 
@@ -328,44 +317,44 @@ public:
 	//Fields
 	/**
 	 * \var m_type;
-	 * \brief Typ der Aktion
+     * \brief Type of the action
 	 */
 	ActionType m_type;
 
 	/**
 	 * \var m_elapsed_time;
-	 * \brief bereits vergangene Zeit der Aktion
+     * \brief Elapsed time
 	*/
 	float m_elapsed_time;
 
 	/**
 	 * \var m_time;
-	 * \brief Gesamtdauer der Aktion
+     * \brief Finish time of the action
 	 */
 	float m_time;
 
 	/**
 	 * \var ActionEquip m_action_equip
-	 * \brief Ausruestung mit der die Aktion ausgefuehrt wird
+     * \brief Equipment type with which the action will be executed
 	 */
 	ActionEquip m_action_equip;
 
 
 	/**
 	 * \var Vector m_goal
-	 * \brief Ziel der Aktion
+     * \brief Goal of the action
 	 */
 	Vector m_goal;
 
 	/**
 	 * \var m_goal_object_id;
-	 * \brief ID des Zielobjekts
+     * \brief ID of the target object
 	 */
 	int  m_goal_object_id;
 
 	/**
 	 * \var static std::map<ActionType,ActionInfo> m_action_info
-	 * \brief Enthaelt Basisinformationen fuer alle Aktionen
+     * \brief Holds base information for all actions
 	 */
 	static std::map<ActionType,ActionInfo> m_action_info;
 
@@ -373,4 +362,4 @@ public:
 
 
 
-#endif //ACTION_H
+#endif // __SUMWARS_CORE_ACTION_H__

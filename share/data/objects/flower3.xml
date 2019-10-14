@@ -1,0 +1,4 @@
+<Object type="FIXED_OBJECT" subtype="flower3" layer="NOCOLLISION">
+	<Mesh file="flower3.mesh" />
+	<Geometry shape=""/>
+</Object>

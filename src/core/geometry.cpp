@@ -72,7 +72,10 @@ bool Shape::intersects(Line& line)
 		Vector dir = tl.getDirection();
 		
 		// testen ob Linie rechteck garantiert verfehlt
-		if (tl.m_start.m_x < -m_extent.m_x && tl.m_end.m_x < -m_extent.m_x || tl.m_start.m_x > m_extent.m_x && tl.m_end.m_x > m_extent.m_x || tl.m_start.m_y < -m_extent.m_y && tl.m_end.m_y < -m_extent.m_y || tl.m_start.m_y > m_extent.m_y && tl.m_end.m_y > m_extent.m_y)
+		if ((tl.m_start.m_x < -m_extent.m_x && tl.m_end.m_x < -m_extent.m_x) || 
+		    (tl.m_start.m_x > m_extent.m_x && tl.m_end.m_x > m_extent.m_x) || 
+		    (tl.m_start.m_y < -m_extent.m_y && tl.m_end.m_y < -m_extent.m_y) || 
+		    (tl.m_start.m_y > m_extent.m_y && tl.m_end.m_y > m_extent.m_y))
 		{
 			return false;
 		}

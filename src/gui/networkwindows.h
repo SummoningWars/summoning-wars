@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef NETWORKWINDOW_H
-#define NETWORKWINDOW_H
+#ifndef __SUMWARS_GUI_NETWORKWINDOWS_H__
+#define __SUMWARS_GUI_NETWORKWINDOWS_H__
 
 
 #include "window.h"
@@ -22,69 +22,82 @@
 
 /**
  * \class HostGameWindow
- * \brief Fenster Spiel hosten
+ * \brief Window for game hosting
  */
 class HostGameWindow : public Window
 {
 	public:
-	/**
-	 * \fn HostGameWindow (Document* doc
-	 * \brief Konstruktor
-	 */
+		/**
+		 * \fn HostGameWindow (Document* doc)
+		 * \brief Konstruktor
+		 */
 		HostGameWindow (Document* doc);
 	
 		/**
 		 * \fn virtual void update()
-		 * \brief aktualisiert den Inhalt des Fensters
+		 * \brief updates the content of the window.
 		 */
 		virtual void update();
 		
 		/**
 		 * \fn virtual void updateTranslation
-		 * \brief aktualisiert die Uebersetzungen
+		 * \brief updates the translations
 		 */
 		virtual void updateTranslation();
 	
 	private:
 		/**
 		 * \fn bool onStartHostGame(const CEGUI::EventArgs& evt)
-		 * \brief Behandelt Start eines Multiplayer Spiels als Host
+		 * \brief Handle the start of a multiplayer game (the command to start it via a button) as host.
 		 */
 		bool onStartHostGame(const CEGUI::EventArgs& evt);
+
+		/**
+		 * \fn bool onCancelHostGame(const CEGUI::EventArgs& evt)
+		 * \brief Handle the cancel of a multiplayer game host command.
+		 */
+		bool onCancelHostGame(const CEGUI::EventArgs& evt);
 };
 
 
 /**
  * \class JoinGameWindow
- * \brief Fenster Spiel hosten
+ * \brief Window for game joining
  */
 class JoinGameWindow : public Window
 {
 	public:
-	/**
-	 * \fn JoinGameWindow (Document* doc
-	 * \brief Konstruktor
-	 */
+		/**
+		 * \fn JoinGameWindow (Document* doc)
+		 * \brief Konstruktor
+		 */
 		JoinGameWindow (Document* doc);
 	
 		/**
 		 * \fn virtual void update()
-		 * \brief aktualisiert den Inhalt des Fensters
+		 * \brief updates the content of the window.
 		 */
 		virtual void update();
 		
 		/**
 		 * \fn virtual void updateTranslation
-		 * \brief aktualisiert die Uebersetzungen
+		 * \brief updates the translations
 		 */
 		virtual void updateTranslation();
 	
 	private:
 		/**
-	 * \fn bool onStartJoinGame(const CEGUI::EventArgs& evt)
-	 * \brief Behandelt Start eines Multiplayer Spiels als Host
+		 * \fn bool onStartJoinGame(const CEGUI::EventArgs& evt)
+		 * \brief Handle the start of a multiplayer game (the command to start it via a button) as a client.
 		 */
 		bool onStartJoinGame(const CEGUI::EventArgs& evt);
+
+		/**
+		 * \fn bool onCancelJoinGame(const CEGUI::EventArgs& evt)
+		 * \brief Handle the cancel of a multiplayer game join command.
+		 */
+		bool onCancelJoinGame(const CEGUI::EventArgs& evt);
+
 };
-#endif
+#endif // __SUMWARS_GUI_NETWORKWINDOWS_H__
 

@@ -1,0 +1,17 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="WorldmapWindow_Holder" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="Alpha" Value="0.33" />
+        <Property Name="Image" Value="set:SWB image:PlainGray" />
+        <Property Name="Visible" Value="True" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="OverlayColour" Value="FF000000" />
+
+        <Window Type="SWB/StaticImage" Name="WorldmapWindow_Holder_aux" >
+            <Property Name="FrameEnabled" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.113,0},{0.05,0},{0.887,0},{0.95,0}}" />
+            <Property Name="BackgroundEnabled" Value="True" />
+        </Window>
+    </Window>
+</GUILayout>

@@ -15,39 +15,41 @@
 
 #include "worldmap.h"
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
 
-Worldmap::Worldmap(Document* doc)
-	:Window(doc)
+
+Worldmap::Worldmap (Document* doc, const std::string& ceguiSkinName)
+	: Window (doc)
+	, m_ceguiSkinName (ceguiSkinName)
 {
-	
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	
+	// The World map window and holder
+	CEGUI::Window* worldmap = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile ("worldmapwindow.layout");
+	if (!worldmap)
+	{
+		SW_DEBUG ("WARNING: Failed to load [%s]", "worldmapwindow.layout");
+	}
 
-	// Rahmen fuer das Menue Savegame auswaehlen
+	CEGUI::Window* worldmap_holder = CEGUIUtility::loadLayoutFromFile ("worldmapwindow_holder.layout");
+	if (!worldmap_holder)
+	{
+		SW_DEBUG ("WARNING: Failed to load [%s]", "worldmapwindow_holder.layout");
+	}
 	
-	
-	CEGUI::FrameWindow* worldmap = (CEGUI::FrameWindow*) win_mgr.createWindow("TaharezLook/FrameWindow", "WorldmapWindow");
-	m_window = worldmap;
-	
-	worldmap->setPosition(CEGUI::UVector2(cegui_reldim(0.15f), cegui_reldim( 0.05f))); //0.0/0.8
-	worldmap->setSize(CEGUI::UVector2(cegui_reldim(0.7f), cegui_reldim( 0.8f))); //1.0/0.2
-	worldmap->setProperty("FrameEnabled","false");
-	worldmap->setProperty("TitlebarEnabled","false");
-	worldmap->setProperty("CloseButtonEnabled","false");
-	worldmap->setAlpha (0.0);
-	
-	CEGUI::Window* label;
-	label = win_mgr.createWindow("TaharezLook/StaticImage", "WorldmapImage");
-	worldmap->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "true");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.00f), cegui_reldim( 0.00)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(1.0f), cegui_reldim( 1.0f)));
-	label->setMousePassThroughEnabled(true);
-	label->setInheritsAlpha (false);
-	label->setAlpha(1.0);
-	label->setProperty("Image", "set:worldMap.png image:full_image");
-	
+	CEGUI::Window* wndHolder = CEGUIUtility::getWindowForLoadedLayoutEx (worldmap_holder, "WorldmapWindow_Holder");
+	CEGUI::Window* wndHolderAux = CEGUIUtility::getWindowForLoadedLayoutEx (worldmap_holder, "WorldmapWindow_Holder_aux");
+	CEGUI::Window* wndHeldWindow = CEGUIUtility::getWindowForLoadedLayoutEx (worldmap, "WorldmapWindow");
+	if (wndHolder && wndHeldWindow && wndHolderAux)
+	{
+		CEGUIUtility::addChildWidget (wndHolderAux, wndHeldWindow);
+	}
+	else
+	{
+		if (!wndHolder) SW_DEBUG ("ERROR: Unable to get the window holder for char screen.");
+		if (!wndHeldWindow) SW_DEBUG ("ERROR: Unable to get the window for the worldmap screen.");
+	}
+
+	m_window = worldmap_holder;
 }
 
 void Worldmap::update()
@@ -55,38 +57,43 @@ void Worldmap::update()
 	Player* player = m_document->getLocalPlayer();
 	
 	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::FrameWindow* worldmap = (CEGUI::FrameWindow*) win_mgr.getWindow("WorldmapWindow");
+	CEGUI::FrameWindow* worldmap = (CEGUI::FrameWindow*) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "WorldmapWindow_Holder_aux/WorldmapWindow");
 	
 	static int ncount =0;
+	static bool tpset = false;
 	
 	std::map<short,WaypointInfo>& winfos = World::getWorld()->getWaypointData();
 	std::map<short,WaypointInfo>::iterator it;
 	
+  // TODO(Augustin Preda, 2014.03.29): revie the way in which this stringstream is used.
+  // From the looks of it, it could be easily removed and regular strings be used instead.
 	std::ostringstream stream;
 	int cnt =0;
 	
 	CEGUI::Window* label;
 	Vector pos;
 	
-	// Schleife ueber alle Wegpunkte
+	// Run through all waypoints.
 	for (it = winfos.begin(); it != winfos.end(); ++it)
 	{
-		// nur Wegpunkte die der Spieler schon gefunden hat
+		// Skip any WayPoints that the player did not find (yet)
 		if (!player->checkWaypoint(it->first))
+    {
 			continue;
+    }
 		
 		stream.str("");
 		stream << "WaypointImage"<<cnt;
 		
 		if (cnt >= ncount)
 		{
-			label = win_mgr.createWindow("TaharezLook/StaticImage", stream.str());
-			worldmap->addChildWindow(label);
+			label = win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "StaticImage"), stream.str());
+			CEGUIUtility::addChildWidget (worldmap, label);
+
 			label->setProperty("FrameEnabled", "false");
 			label->setProperty("BackgroundEnabled", "false");
-			//label->setProperty("BackgroundColours", "tl:00000000 tr:00000000 bl:00000000 br:00000000"); 
-			label->setSize(CEGUI::UVector2(cegui_reldim(0.02f), cegui_reldim( 0.02f)));
-			label->setProperty("Image", "set:TaharezLook image:WaypointMark"); 
+			CEGUIUtility::setWidgetSizeRel (label, 0.02f, 0.02f);
+			label->setProperty("Image", CEGUIUtility::getImageNameWithSkin ("SumWarsExtras", "WaypointMark")); 
 			label->setInheritsAlpha (false);
 			label->setAlwaysOnTop(true);
 			label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&Worldmap::onWaypointClicked, this));
@@ -95,7 +102,9 @@ void Worldmap::update()
 		}
 		else
 		{
-			label = win_mgr.getWindow(stream.str());
+			stream.str("");
+			stream << "WorldmapWindow_Holder_aux/WorldmapWindow/WaypointImage"<<cnt;
+			label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 		}
 		
 		pos = it->second.m_world_coord;
@@ -107,6 +116,16 @@ void Worldmap::update()
 		cnt++;
 	}
 	
+	
+	// Hide the rest of the labels
+	for (; cnt <ncount; cnt++)
+	{
+		stream.str("");
+		stream << "WorldmapWindow_Holder_aux/WorldmapWindow/WaypointImage"<<cnt;
+			
+		label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
+		label->setVisible(false);
+	}
 	RegionLocation& portal = player->getPortalPosition();
 	if (portal.first != "")
 	{
@@ -117,26 +136,38 @@ void Worldmap::update()
 		{
 		
 			stream.str("");
-			stream << "WaypointImage"<<cnt;
+			stream << "TownPortalImage";
 			
-			if (cnt >= ncount)
+			if (tpset==false)
 			{
-				label = win_mgr.createWindow("TaharezLook/StaticImage", stream.str());
-				worldmap->addChildWindow(label);
+				label = win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "StaticImage"), stream.str());
+				CEGUIUtility::addChildWidget (worldmap, label);
+
 				label->setProperty("FrameEnabled", "false");
 				label->setProperty("BackgroundEnabled", "true");
-				label->setProperty("BackgroundColours", "tl:00000000 tr:00000000 bl:00000000 br:00000000"); 
-				label->setSize(CEGUI::UVector2(cegui_reldim(0.03f), cegui_reldim( 0.03f)));
-				label->setProperty("Image", "set:TaharezLook image:RadioButtonMark"); 
+
+				if (label->isPropertyPresent ("BackgroundColours"))
+				{
+					label->setProperty("BackgroundColours", "tl:00000000 tr:00000000 bl:00000000 br:00000000"); 
+				}
+				else if (label->isPropertyPresent ("BackgroundColour"))
+				{
+					label->setProperty("BackgroundColour", "00000000");
+				}
+				CEGUIUtility::setWidgetSizeRel (label, 0.023f, 0.023f);
+
+				label->setProperty("Image", CEGUIUtility::getImageNameWithSkin ("SumWarsExtras", "TownPortalSymbol"));
 				label->setInheritsAlpha (false);
 				label->setAlwaysOnTop(true);
 				label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&Worldmap::onWaypointClicked, this));
 				
-				ncount ++;
+				tpset = true;
 			}
 			else
 			{
-				label = win_mgr.getWindow(stream.str());
+				stream.str ("");
+				stream << "WorldmapWindow_Holder_aux/WorldmapWindow/TownPortalImage";
+				label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, stream.str());
 			}
 			
 			
@@ -156,24 +187,24 @@ void Worldmap::update()
 			stream << dgettext("sumwars","Town Portal") << "\n";
 			stream << dgettext("sumwars",it->second.m_name.c_str());
 			label->setTooltipText((CEGUI::utf8*) stream.str().c_str());
-			
-			cnt++;
 		}
 		else
 		{
 			ERRORMSG("region %s has no world position", portal.first.c_str());
 		}
 	}
-	
-	// restliche Label verstecken
-	for (; cnt <ncount; cnt++)
-	{
-		stream.str("");
-		stream << "WaypointImage";
-		stream << cnt;
-			
-		label = win_mgr.getWindow(stream.str());
-		label->setVisible(false);
+	else 
+  {
+		if(tpset == true) 
+    {
+			stream.str ("");
+			stream << "WorldmapWindow_Holder_aux/WorldmapWindow/TownPortalImage";
+			label = CEGUIUtility::getWindowForLoadedLayoutEx(
+          m_window, 
+          stream.str());
+			label->setVisible(false);
+		}
+
 	}
 }
 

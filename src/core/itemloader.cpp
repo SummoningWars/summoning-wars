@@ -61,7 +61,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 	ElementAttrib attr;
 	attr.parseElement(node->ToElement());
 	
-	std::string type;
+	std::string type ("");
 	attr.getString("type", type);
 	if (type == "armor")
 		item_data->m_type = Item::ARMOR;
@@ -97,7 +97,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 	}
 	
 	
-	std::string size;
+	std::string size ("");
 	attr.getString("size", size);
 	if (size == "small")
 		item_data->m_size = Item::SMALL;
@@ -113,7 +113,13 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 		}
 	}
 	
-	
+					
+	std::string consumable ("");
+	attr.getString("consumable",consumable ,"false");
+	item_data->m_consumable = (consumable == "true");
+	attr.getFloat("consume_timer",item_data->m_consume_timer,0);
+	attr.getInt("consume_timer_nr",item_data->m_consume_timer_nr,0);
+				
 	TiXmlNode* child;
 	for ( child = node->FirstChild(); child != 0; child = child->NextSibling())
 	{
@@ -123,7 +129,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 			
 			if (!strcmp(child->Value(), "Image"))
 			{
-				std::string image;
+				std::string image ("");
 				attr.getString("image", image);
 				if (item_data->m_subtype != "")
 				{
@@ -133,7 +139,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 			}
 			else if (!strcmp(child->Value(), "Mesh"))
 			{
-				std::string file;
+				std::string file ("");
 				attr.getString("file", file);
 				if (item_data->m_subtype != "")
 				{
@@ -144,7 +150,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 			}
 			else if (!strcmp(child->Value(), "RenderInfo"))
 			{
-				std::string file;
+				std::string file ("");
 				attr.getString("name", file);
 				if (item_data->m_subtype != "")
 				{
@@ -159,7 +165,6 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 				attr.getShort("level_requirement", levelreq,0);
 				item_data ->m_level_req = levelreq;
 				
-				std::string charreq;
 				attr.getString("character_requirement",item_data->m_char_req ,"all");
 						
 				attr.getFloat("min_enchant",item_data->m_min_enchant,0);
@@ -193,7 +198,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 				attr.getFloat("modchance_attack_speed_mod",item_data->m_modchance[ItemFactory::ATTACK_SPEED_MOD],0);
 				attr.getFloat("modchance_attack_mod",item_data->m_modchance[ItemFactory::ATTACK_MOD],0);
 				attr.getFloat("modchance_power_mod",item_data->m_modchance[ItemFactory::POWER_MOD],0);
-					
+
 			}
 			else if (!strcmp(child->Value(), "DropChance"))
 			{
@@ -256,40 +261,16 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 				if (item_data->m_weapon_attr == 0)
 					item_data->m_weapon_attr = new WeaponAttr;
 				
-				std::string type;
+				std::string type ("");
 				attr.getString("type",type);
-				/*
-				short flags = item_data->m_weapon_attr->m_damage.m_special_flags;
-				if (type ==  "unblockable")
-					flags |= Damage::UNBLOCKABLE;
-				else if (type ==  "ignore_armor")
-					flags |= Damage::IGNORE_ARMOR;
-				else if (type ==   "extra_human_dmg")
-					flags |= Damage::EXTRA_HUMAN_DMG;
-				else if (type ==   "extra_demon_dmg")
-					flags |= Damage::EXTRA_DEMON_DMG;
-				else if (type ==   "extra_undead_dmg")
-					flags |= Damage::EXTRA_UNDEAD_DMG;
-				else if (type ==   "extra_dwarf_dmg")
-					flags |= Damage::EXTRA_DWARF_DMG;
-				else if (type ==   "extra_drake_dmg")
-					flags |= Damage::EXTRA_DRAKE_DMG;
-				else if (type ==   "extra_fairy_dmg")
-					flags |= Damage::EXTRA_FAIRY_DMG;
-				else if (type ==   "extra_goblin_dmg")
-					flags |= Damage::EXTRA_GOBLIN_DMG;
-				else if (type ==   "extra_animal_dmg")
-					flags |= Damage::EXTRA_ANIMAL_DMG;
-				else if (type ==   "extra_summoned_dmg")
-					flags |= Damage::EXTRA_SUMMONED_DMG;
-				*/
+
 			}
 			else if (!strcmp(child->Value(), "Immunity"))
 			{
 				if (item_data->m_equip_effect == 0)
 					item_data->m_equip_effect = new CreatureBaseAttrMod;
 				
-				std::string type;
+				std::string type ("");
 				attr.getString("type",type);
 				
 				if (type == "blind")
@@ -314,7 +295,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 				if (item_data->m_equip_effect == 0)
 					item_data->m_equip_effect = new CreatureBaseAttrMod;
 				
-				std::string type;
+				std::string type ("");
 				attr.getString("type",type);
 				item_data->m_equip_effect->m_xabilities.insert(type);
 			}
@@ -323,7 +304,6 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 				if (item_data->m_weapon_attr == 0)
 					item_data->m_weapon_attr = new WeaponAttr;
 				
-				std::string type;
 				attr.getString("weapon_type",item_data->m_weapon_attr->m_weapon_type,"notype");
 				
 				Damage& dmg = item_data->m_weapon_attr->m_damage;
@@ -355,7 +335,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 				attr.getShort("damage_burning_power", dmg.m_status_mod_power[Damage::BURNING]);
 				
 				attr.getShort("dattack_speed", item_data->m_weapon_attr->m_dattack_speed);
-				std::string twohanded;
+				std::string twohanded ("");
 				attr.getString("two_handed",twohanded);
 				item_data->m_weapon_attr->m_two_handed = (twohanded == "yes");
 				attr.getFloat("attack_range", item_data->m_weapon_attr->m_attack_range);
@@ -363,7 +343,7 @@ std::string ItemLoader::loadItem(TiXmlNode* node,bool silent_replace)
 			}
 			else if (child->Type()!=TiXmlNode::TINYXML_COMMENT)
 			{
-				DEBUG("unexpected element of <Item>: %s",child->Value());
+				SW_DEBUG("unexpected element of <Item>: %s",child->Value());
 			}
 		}
 	}

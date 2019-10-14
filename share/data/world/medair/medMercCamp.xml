@@ -1,0 +1,64 @@
+<World>
+	<!-- Medair, Soeldnerlager [Stadt]-->
+	<Region id="3" name="medMercCamp">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="the_prophecy.ogg" />
+		</Music>
+		
+		<Settings dimx="20" dimy="20" region_template="medairMercenaryCamp"  ground="grass1"/>
+		
+		<WorldPosition world_x="0.61" world_y ="0.65" waypoint="true"/>
+		
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="medBackalley" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+
+			<Exit name="exit_north" destination_region="aisMeadow" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>		
+		
+		<ReviveLocation  location="WaypointLoc" />
+		
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				fenor = createObject('guard', 'locFenor');
+				setRefName(fenor, 'Fenor Marken');
+				set(fenor,"angle",90);
+				
+				trader = createObject('peasant', 'locWeaponTrader');
+				setRefName(trader, 'Robert');
+				set(trader,"angle",25);
+				
+				trader = createObject('peasant', 'locArmorTrader');
+				setRefName(trader, 'Elgor');
+				set(trader,"angle",35);
+
+				trader = createObject('peasant', 'locPotionTrader');
+				setRefName(trader, 'Cain');
+				set(trader,"angle",180);
+				
+				guard1 = createObject('guard', 'locSoldier1');
+				setRefName(guard1, 'Guard');
+				set(guard1,"angle",-90);
+				guard2 = createObject('guard', 'locSoldier2');
+				setRefName(guard2, 'Guard');
+				set(guard2,"angle",-90);
+				guard3 = createObject('guard', 'locSoldier3');
+				setRefName(guard3, 'Guard');
+				set(guard3,"angle",90);
+			</Effect>
+		</Event>
+	</Region>
+</World>

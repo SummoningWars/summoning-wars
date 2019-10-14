@@ -1,0 +1,41 @@
+<GUILayout>
+    <Window Name="LoginDialog" Type="TaharezLook/FrameWindow">
+        <Property Name="UnifiedAreaRect" Value="{{0,268},{0,108},{0,728},{0,476}}" />
+        <Window Name="LoginDialog/StaticText" Type="TaharezLook/StaticText">
+            <Property Name="UnifiedAreaRect" Value="{{-0.0720721,1.5},{0.00882872,37},{0.927928,-319.5},{1.00883,-262}}" />
+            <Property Name="Text" Value="Login" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Property Name="HorizontalAlignment" Value="Centre" />
+        </Window>
+        <Window Name="LoginDialog/PasswordEditbox" Type="TaharezLook/Editbox">
+            <Property Name="UnifiedAreaRect" Value="{{0.268734,9.87598},{0.50618,-2},{0.268734,300.682},{0.50618,48}}" />
+            <Property Name="MaskText" Value="True" />
+        </Window>
+        <Window Name="LoginDialog/StaticText2" Type="TaharezLook/StaticText">
+            <Property Name="UnifiedAreaRect" Value="{{-0.0416667,-136},{0,110},{0.829955,-408},{1,-189}}" />
+            <Property Name="Text" Value="Username:" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Property Name="HorizontalAlignment" Value="Centre" />
+        </Window>
+        <Window Name="LoginDialog/StaticText22" Type="TaharezLook/StaticText">
+            <Property Name="UnifiedAreaRect" Value="{{-0.0641892,-126},{0,175},{0.807432,-398},{1,-124}}" />
+            <Property Name="Text" Value="Password:" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Property Name="HorizontalAlignment" Value="Centre" />
+        </Window>
+        <Window Name="LoginDialog/LoginButton" Type="TaharezLook/Button">
+            <Property Name="UnifiedAreaRect" Value="{{0,20},{0,265},{0,190},{0,320}}" />
+            <Property Name="Text" Value="Login" />
+        </Window>
+        <Window Name="LoginDialog/UsernameEditbox" Type="TaharezLook/Editbox">
+            <Property Name="UnifiedAreaRect" Value="{{0.271318,9.53488},{0.332549,-8},{0.271318,300.349},{0.332549,42}}" />
+        </Window>
+        <Window Name="LoginDialog/CancelButton" Type="TaharezLook/Button">
+            <Property Name="UnifiedAreaRect" Value="{{0,245},{0,265},{0,420},{0,320}}" />
+            <Property Name="Text" Value="Cancel" />
+        </Window>
+    </Window>
+</GUILayout>

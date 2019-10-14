@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ITEMLIST_H
-#define ITEMLIST_H
+#ifndef __SUMWARS_CORE_ITEMLIST_H__
+#define __SUMWARS_CORE_ITEMLIST_H__
 
 #include <string>
 #include <cstdlib>
@@ -410,4 +410,4 @@ class Equipement
 
 };
 
-#endif //ITEMLIST_H
+#endif // __SUMWARS_CORE_ITEMLIST_H__

@@ -1,0 +1,36 @@
+<GUILayout >
+    <Window Type="SWB/StaticImage" Name="ObjectInfoRoot" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        
+
+        <Window Type="SWB/ProgressBar" Name="MonsterHealthProgressBar" >
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="Alpha" Value="1.0" />
+            <Property Name="Visible" Value="True" />
+            <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.035,0},{0.65,0},{0.075,0}}" />
+            <Property name="WantsMultiClickEvents" value="False" />
+            <Property Name="MousePassThroughEnabled" Value="True" />
+    
+            <Property Name="GS_DarkerThemeColour" Value="77942424" />
+            <Property Name="GS_LighterThemeColour" Value="88FF0000" />
+            <Property Name="GS_MainThemeColour" Value="88FF3630" />
+            <Property Name="GS_ShineColour" Value="77FFFFFF" />
+            <Property Name="GS_MainThemeGradientLeftToRight" Value="tl:50FF0000 tr:60FF3613 bl:50FF0000 br:60FF3613" />
+        </Window>
+        
+        <Window Type="SWB/StaticText" Name="ObjectInfoLabel">
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="Alpha" Value="1.0" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="BackgroundEnabled" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.035,0},{0.65,0},{0.075,0}}" />
+            <Property Name="MousePassThroughEnabled" Value="True" />
+        
+        </Window>
+    
+    </Window>
+</GUILayout>

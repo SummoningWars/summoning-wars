@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: 2013-06-01 13:37+0200\n"
+"Last-Translator: Rubén Viguera <vyproyects@gmail.com>\n"
+"Language-Team: Spanish "
+"<http://hosted.weblate.org/projects/sumwars/rob_the_robber/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.6-dev\n"
+
+#: rob_the_robber.xml:45 rob_the_robber.xml:116
+msgid "10000 gold pieces are quite interesting for the traveling fund."
+msgstr ""
+
+#: rob_the_robber.xml:35 rob_the_robber.xml:106
+msgid "Accept the quest?"
+msgstr ""
+
+#: rob_the_robber.xml:46 rob_the_robber.xml:117
+msgid "And I'm pretty lucky myself."
+msgstr ""
+
+#: rob_the_robber.xml:32 rob_the_robber.xml:103
+msgid "And Rob is plundering and murdering on."
+msgstr ""
+
+#: rob_the_robber.xml:34 rob_the_robber.xml:105
+msgid "Are you interested?"
+msgstr ""
+
+#: rob_the_robber.xml:75
+msgid ""
+"Better hope that the stories about him rising from his grave are just "
+"fairytales."
+msgstr ""
+
+#: rob_the_robber.xml:94
+msgid "Bring me his necklace and I give you the 10000 gold pieces."
+msgstr ""
+
+#: rob_the_robber.xml:148
+msgid "But that shall not be my problem."
+msgstr ""
+
+#: rob_the_robber.xml:144
+msgid "By all devils!"
+msgstr ""
+
+#: rob_the_robber.xml:31 rob_the_robber.xml:102
+msgid ""
+"Every time someone wants to have killed him, he winds up dead a short time "
+"later himself."
+msgstr ""
+
+#: rob_the_robber.xml:26 rob_the_robber.xml:97
+msgid "Excuse me, sergeant, but I noticed this wanted poster."
+msgstr ""
+
+#: rob_the_robber.xml:281
+msgid "Have fun with that. If you escape hell, that is."
+msgstr ""
+
+#: rob_the_robber.xml:149
+msgid "Here are the 10000 gold pieces."
+msgstr ""
+
+#: rob_the_robber.xml:72 rob_the_robber.xml:143
+msgid "Here is the necklace of Rob the robber."
+msgstr ""
+
+#: rob_the_robber.xml:147
+msgid "His vengeful spirit will supposedly hunt all those who hurt him."
+msgstr ""
+
+#: rob_the_robber.xml:23
+msgid ""
+"I really should pay this guy a visit. 10000 gold pieces are not chickenfeed."
+msgstr ""
+
+#: rob_the_robber.xml:226
+msgid ""
+"I will quarter and skin everyone of you, before I throw you to the wolves!"
+msgstr ""
+
+#: rob_the_robber.xml:221
+msgid "I will quarter and skin you, before I throw you to the wolves!"
+msgstr ""
+
+#: rob_the_robber.xml:73
+msgid "I'll be damned!"
+msgstr ""
+
+#: rob_the_robber.xml:121
+msgid "If you can bring it to me I will believe you that Rob is dead."
+msgstr ""
+
+#: rob_the_robber.xml:50
+msgid ""
+"If you can take it to sergeant Wober in Dwarfenwall he will believe you that "
+"Rob is dead."
+msgstr ""
+
+#: rob_the_robber.xml:44 rob_the_robber.xml:115
+msgid "Indeed."
+msgstr "En efecto."
+
+#: rob_the_robber.xml:27 rob_the_robber.xml:98
+msgid ""
+"Isn't a bounty of 10000 gold pieces a little bit over the top for one man?"
+msgstr ""
+
+#: rob_the_robber.xml:33 rob_the_robber.xml:104
+msgid "It seems he has oodles of luck, that villain."
+msgstr ""
+
+#: rob_the_robber.xml:58 rob_the_robber.xml:129
+msgid "Just curious."
+msgstr ""
+
+#: rob_the_robber.xml:270 rob_the_robber.xml:273
+msgid ""
+"My soul will crawl out of it's grave and hunt you to the ends of the world!"
+msgstr ""
+
+#: rob_the_robber.xml:37 rob_the_robber.xml:108
+msgid "No"
+msgstr "No"
+
+#: rob_the_robber.xml:95
+msgid "Not a second earlier!"
+msgstr ""
+
+#: rob_the_robber.xml:29 rob_the_robber.xml:100
+msgid "Oh, him."
+msgstr ""
+
+#: rob_the_robber.xml:51
+msgid ""
+"Right now we suspect him to be in the Fairywoods between here and "
+"Dwarvenwall."
+msgstr ""
+
+#: rob_the_robber.xml:122
+msgid ""
+"Right now we suspect him to be in the Fairywoods between here and "
+"Joringsbridge."
+msgstr ""
+
+#: rob_the_robber.xml:133
+msgid "Rob the Robber (Reward)"
+msgstr ""
+
+#: rob_the_robber.xml:62
+msgid "Rob the Robber killed"
+msgstr ""
+
+#: rob_the_robber.xml:2
+msgid "Rob the robber"
+msgstr ""
+
+#: rob_the_robber.xml:4
+msgid ""
+"Rob the robber breathed his last and provided a downright windfall while he "
+"was on it."
+msgstr ""
+
+#: rob_the_robber.xml:6
+msgid ""
+"Rob the robber is dead and will soon be forgotten. I have his neckband and "
+"I'm on my way to Dwarfenwall to show it to this sergeant Wober. I have no "
+"idea why everyone was so afraid of this guy."
+msgstr ""
+
+#: rob_the_robber.xml:8
+msgid ""
+"Rob the robber supposedly hides in the depth of the Fairywoods. Find him, "
+"dispose of him and take his neckband. At least it spares me the unsavory "
+"task of carrying a head around."
+msgstr ""
+
+#: rob_the_robber.xml:12
+msgid "Sergeant Lutterer"
+msgstr ""
+
+#: rob_the_robber.xml:83
+msgid "Sergeant Wober"
+msgstr ""
+
+#: rob_the_robber.xml:77
+msgid "Sergeant Wober in Dwarfenwall has it."
+msgstr ""
+
+#: rob_the_robber.xml:145
+msgid "Someone really got him?"
+msgstr ""
+
+#: rob_the_robber.xml:30 rob_the_robber.xml:101
+msgid "The bounty hunters keep their fingers off him."
+msgstr ""
+
+#: rob_the_robber.xml:48 rob_the_robber.xml:119
+msgid "Then take his necklace."
+msgstr ""
+
+#: rob_the_robber.xml:13 rob_the_robber.xml:84
+msgid "Wanted poster"
+msgstr ""
+
+#: rob_the_robber.xml:24
+msgid "Watch your back."
+msgstr ""
+
+#: rob_the_robber.xml:146
+msgid "Well, I wish you luck."
+msgstr ""
+
+#: rob_the_robber.xml:76
+msgid "What about my reward?"
+msgstr ""
+
+#: rob_the_robber.xml:49 rob_the_robber.xml:120
+msgid "Word is, he treasures it quite a lot."
+msgstr ""
+
+#: rob_the_robber.xml:36 rob_the_robber.xml:107
+msgid "Yes"
+msgstr "Sí"
+
+#: rob_the_robber.xml:74
+msgid "You really got him?"
+msgstr ""
+
+#: rob_the_robber.xml:223 rob_the_robber.xml:228
+msgid "You talk too much!"
+msgstr ""
+
+#: rob_the_robber.xml:248 rob_the_robber.xml:250
+msgid "You will die! I will destroy you!!"
+msgstr ""
+
+#: rob_the_robber.xml:167
+msgid "aisDarkFairyforest"
+msgstr "Bosque Oscuro de Hadas"

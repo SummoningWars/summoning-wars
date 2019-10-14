@@ -1,0 +1,1258 @@
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="Root" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window type="TaharezLook/TabControl" name="ObjectInfoTabControl" >
+            <Property name="TabHeight" value="{0,31.1724}" />
+            <Property name="TabPanePosition" value="Top" />
+            <Property name="Area" value="{{0.000539273,0},{0.00312498,0},{0.997266,0},{0.898958,0}}" />
+            <Window type="DefaultWindow" name="RenderInfoTab" >
+                <Property name="Text" value="Render Info" />
+                <Property name="Visible" value="False" />
+                <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window type="TaharezLook/TabControl" name="RenderInfoTabControl" >
+                    <Property name="TabHeight" value="{0,31.1724}" />
+                    <Property name="TabPanePosition" value="Top" />
+                    <Property name="Area" value="{{0.00391872,0},{0.00348824,0},{0.527266,0},{1.00058,0}}" />
+                    <Window type="DefaultWindow" name="BasicMesh" >
+                        <Property name="Text" value="Mesh" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/Combobox" name="MeshSelector" >
+                            <Property name="Area" value="{{0.334514,0},{0.0363174,0},{0.662888,0},{0.905855,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="MainMeshLabel" >
+                            <Property name="Text" value="Select main mesh:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03739,0},{0.0186585,0},{0.327415,0},{0.0879001,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="SubMesh" >
+                        <Property name="Text" value="Submeshes" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/Combobox" name="Selector" >
+                            <Property name="Area" value="{{0.3,0},{0.023961,0},{0.65,0},{0.50428,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="AddSubMeshButton" >
+                            <Property name="Text" value="Add Submesh" />
+                            <Property name="Area" value="{{0.7,0},{0.06618,0},{0.950041,0},{0.128133,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="NewSubmeshLabel" >
+                            <Property name="Text" value="New submesh:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.022898,0},{0.238785,0},{0.068202,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="NewSMNameLabel" >
+                            <Property name="Text" value="submesh name:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.0270315,0},{0.0721111,0},{0.243158,0},{0.127415,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="EditSMLabel" >
+                            <Property name="Text" value="Edit submesh:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.0232801,0},{0.181441,0},{0.249406,0},{0.236745,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="EditSMSelector" >
+                            <Property name="Area" value="{{0.3,0},{0.185165,0},{0.65,0},{0.575544,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="AttachMeshLabel" >
+                            <Property name="Text" value="Attach to:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.08,0},{0.228963,0},{0.259419,0},{0.304266,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="AttachMeshSelector" >
+                            <Property name="Area" value="{{0.24,0},{0.251637,0},{0.55,0},{0.696243,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="BoneLabel" >
+                            <Property name="Text" value="at bone:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.57,0},{0.242082,0},{0.721903,0},{0.301351,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="BoneSelector" >
+                            <Property name="Area" value="{{0.7,0},{0.254553,0},{0.98,0},{0.699159,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/Editbox" name="SMNameEditbox" >
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.3,0},{0.077842,0},{0.65,0},{0.122302,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Checkbox" name="AttachSMCheckbox" >
+                            <Property name="Area" value="{{0.0329296,0},{0.24344,0},{0.0784697,0},{0.293731,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="RotateLabel" >
+                            <Property name="Text" value="Rotate(x,y,z):" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.02,0},{0.4,0},{0.219404,0},{0.46,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMRotateX" >
+                            <Property name="StepSize" value="5" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="3600" />
+                            <Property name="MinimumValue" value="-3600" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.25,0},{0.40842,0},{0.45,0},{0.46,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMRotateY" >
+                            <Property name="StepSize" value="5" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="3600" />
+                            <Property name="MinimumValue" value="-3600" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.5,0},{0.40842,0},{0.7,0},{0.46,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMRotateZ" >
+                            <Property name="StepSize" value="5" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="3600" />
+                            <Property name="MinimumValue" value="-3600" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.75,0},{0.40842,0},{0.95,0},{0.46,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="ScaleLabel" >
+                            <Property name="Text" value="Scale:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.02,0},{0.5,0},{0.22,0},{0.56,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMScale" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="100" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.25,0},{0.5,0},{0.45,0},{0.56,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="OffsetLabel" >
+                            <Property name="Text" value="Offset (x,y,z):" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.02,0},{0.6,0},{0.22,0},{0.66,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMOffsetX" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="200" />
+                            <Property name="MinimumValue" value="-200" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.25,0},{0.6,0},{0.45,0},{0.66,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMOffsetY" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="200" />
+                            <Property name="MinimumValue" value="-200" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.5,0},{0.6,0},{0.7,0},{0.66,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="SMOffsetZ" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="200" />
+                            <Property name="MinimumValue" value="-200" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.75,0},{0.6,0},{0.95,0},{0.66,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="DelSubMeshButton" >
+                            <Property name="Text" value="Delete Submesh" />
+                            <Property name="Area" value="{{0.672314,0},{0.76618,0},{0.950041,0},{0.828133,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="Animations" >
+                        <Property name="Text" value="Animations" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                    </Window>
+                    <Window type="DefaultWindow" name="XML" >
+                        <Property name="Text" value="XML" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/MultiLineEditbox" name="RIXMLEditbox" >
+                            <Property name="Text" >
+</Property>
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.0229259,0},{0.0172008,0},{0.986204,0},{0.901313,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="SubmitButton" >
+                            <Property name="Text" value="Submit XML" />
+                            <Property name="Area" value="{{0.0344625,0},{0.919477,0},{0.390245,0},{0.976916,0}}" />
+                        </Window>
+                    </Window>
+                </Window>
+                <Window type="TaharezLook/StaticImage" name="meshPreview" >
+                    <Property name="Area" value="{{0.535738,0},{0.0565595,0},{0.983904,0},{0.772162,0}}" />
+                </Window>
+            </Window>
+            <Window type="DefaultWindow" name="FixedObjectTab" >
+                <Property name="Text" value="FixedObject" />
+                <Property name="Visible" value="False" />
+                <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window type="TaharezLook/TabControl" name="FixedObjectTabControl" >
+                    <Property name="TabHeight" value="{0,31.1724}" />
+                    <Property name="TabPanePosition" value="Top" />
+                    <Property name="Area" value="{{0.00391872,0},{0.00348824,0},{0.527266,0},{1.00058,0}}" />
+                    <Window type="DefaultWindow" name="Properties" >
+                        <Property name="Text" value="Properties" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{-0.00215884,0},{0,0},{0.997841,0},{1,0}}" />
+                        <Window type="TaharezLook/StaticText" name="ShapeLabel" >
+                            <Property name="Text" value="Shape:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.01,0},{0.347415,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/RadioButton" name="CircleCheckbox" >
+                            <Property name="Area" value="{{0.03,0},{0.1,0},{0.1,0},{0.15,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="CircleLabel" >
+                            <Property name="Text" value="Circle" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.1,0},{0.1,0},{0.2,0},{0.15,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="RadiusLabel" >
+                            <Property name="Text" value="Radius:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.3,0},{0.1,0},{0.4,0},{0.15,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="RadiusSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="20" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.42,0},{0.1,0},{0.62,0},{0.15,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="DetectCircleButton" >
+                            <Property name="Text" value="Autodetect" />
+                            <Property name="Area" value="{{0.7,0},{0.1,0},{0.92,0},{0.15,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/RadioButton" name="RectangleCheckbox" >
+                            <Property name="Area" value="{{0.03,0},{0.2,0},{0.1,0},{0.25,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="RectangleLabel" >
+                            <Property name="Text" value="Rectangle" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.1,0},{0.2,0},{0.2,0},{0.25,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="WidthLabel" >
+                            <Property name="Text" value="Width:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.3,0},{0.2,0},{0.4,0},{0.25,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="WidthSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="20" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.42,0},{0.2,0},{0.62,0},{0.25,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="DepthLabel" >
+                            <Property name="Text" value="Depth:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.3,0},{0.301493,0},{0.4,0},{0.351493,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="DepthSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="20" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.42,0},{0.3,0},{0.62,0},{0.35,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="DetectRectButton" >
+                            <Property name="Text" value="Autodetect" />
+                            <Property name="Area" value="{{0.7,0},{0.3,0},{0.92,0},{0.35,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="CollisionLabel" >
+                            <Property name="Text" value="Collision type" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.1,0},{0.4,0},{0.4,0},{0.45,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="LayerSelector" >
+                            <Property name="Area" value="{{0.42,0},{0.4,0},{0.62,0},{0.8,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="CopyDataLabel" >
+                            <Property name="Text" value="Copy data from:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.6,0},{0.3,0},{0.65,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="CopyDataBox" >
+                            <Property name="Area" value="{{0.28,0},{0.6,0},{0.65,0},{0.95,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="CopyDataButton" >
+                            <Property name="Text" value="Copy" />
+                            <Property name="Area" value="{{0.7,0},{0.6,0},{0.85,0},{0.65,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="Create" >
+                        <Property name="Text" value="Create Object" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/Button" name="CreateButton" >
+                            <Property name="Text" value="Create Object" />
+                            <Property name="Area" value="{{0.0452567,0},{0.320993,0},{0.401039,0},{0.378432,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="PosLabel" >
+                            <Property name="Text" value="Position:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.05,0},{0.03,0},{0.22,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="PosXSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.28,0},{0.03,0},{0.54,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="PosYSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.61,0},{0.03,0},{0.88,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="GetPlPosButton" >
+                            <Property name="Text" value="Get Player Position" />
+                            <Property name="Area" value="{{0.495761,0},{0.123872,0},{0.858021,0},{0.184297,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="AngleLabel" >
+                            <Property name="Text" value="Angle:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.2,0},{0.2,0},{0.28,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="AngleSpinner" >
+                            <Property name="StepSize" value="5" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="3600" />
+                            <Property name="MinimumValue" value="-3600" />
+                            <Property name="Area" value="{{0.28,0},{0.2,0},{0.54,0},{0.27,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="DelAllButton" >
+                            <Property name="Text" value="Delete all objects" />
+                            <Property name="Area" value="{{0.0552785,0},{0.871688,0},{0.436968,0},{0.94256,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="XML" >
+                        <Property name="Text" value="XML" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/MultiLineEditbox" name="FOXMLEditbox" >
+                            <Property name="Text" >
+</Property>
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.0229259,0},{0.0172008,0},{0.986204,0},{0.901313,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="SubmitButton" >
+                            <Property name="Text" value="Submit XML" />
+                            <Property name="Area" value="{{0.0344625,0},{0.919477,0},{0.390245,0},{0.976916,0}}" />
+                        </Window>
+                    </Window>
+                </Window>
+            </Window>
+            <Window type="DefaultWindow" name="MonsterTab" >
+                <Property name="Text" value="Monster" />
+                <Property name="Visible" value="False" />
+                <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window type="TaharezLook/TabControl" name="MonsterTabControl" >
+                    <Property name="TabHeight" value="{0,31.1724}" />
+                    <Property name="TabPanePosition" value="Top" />
+                    <Property name="Area" value="{{0.00391872,0},{0.00348824,0},{0.527266,0},{1.00058,0}}" />
+                    <Window type="DefaultWindow" name="Properties" >
+                        <Property name="Text" value="Properties" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{-0.00215884,0},{0,0},{0.997841,0},{1,0}}" />
+                        <Window type="TaharezLook/StaticText" name="RadiusLabel" >
+                            <Property name="Text" value="Radius:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.3,0},{0.1,0},{0.4,0},{0.15,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="RadiusSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="20" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.42,0},{0.1,0},{0.62,0},{0.15,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+
+                        <Window type="TaharezLook/StaticText" name="CopyDataLabel" >
+                            <Property name="Text" value="Copy data from:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.6,0},{0.3,0},{0.65,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="CopyDataBox" >
+                            <Property name="Area" value="{{0.28,0},{0.6,0},{0.65,0},{0.95,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="CopyDataButton" >
+                            <Property name="Text" value="Copy" />
+                            <Property name="Area" value="{{0.7,0},{0.6,0},{0.85,0},{0.65,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="Create" >
+                        <Property name="Text" value="Create Object" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/Button" name="CreateButton" >
+                            <Property name="Text" value="Create Object" />
+                            <Property name="Area" value="{{0.0452567,0},{0.320993,0},{0.401039,0},{0.378432,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="PosLabel" >
+                            <Property name="Text" value="Position:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.05,0},{0.03,0},{0.22,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="PosXSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.28,0},{0.03,0},{0.54,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="PosYSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.61,0},{0.03,0},{0.88,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="GetPlPosButton" >
+                            <Property name="Text" value="Get Player Position" />
+                            <Property name="Area" value="{{0.495761,0},{0.123872,0},{0.858021,0},{0.184297,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="AngleLabel" >
+                            <Property name="Text" value="Angle:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.2,0},{0.2,0},{0.28,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="AngleSpinner" >
+                            <Property name="StepSize" value="5" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="3600" />
+                            <Property name="MinimumValue" value="-3600" />
+                            <Property name="Area" value="{{0.28,0},{0.2,0},{0.54,0},{0.27,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="DelAllButton" >
+                            <Property name="Text" value="Delete all objects" />
+                            <Property name="Area" value="{{0.0552785,0},{0.871688,0},{0.436968,0},{0.94256,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="XML" >
+                        <Property name="Text" value="XML" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/MultiLineEditbox" name="MonsterXMLEditbox" >
+                            <Property name="Text" >
+</Property>
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.0229259,0},{0.0172008,0},{0.986204,0},{0.901313,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="SubmitButton" >
+                            <Property name="Text" value="Submit XML" />
+                            <Property name="Area" value="{{0.0344625,0},{0.919477,0},{0.390245,0},{0.976916,0}}" />
+                        </Window>
+                    </Window>
+                </Window>
+            </Window>            
+            <Window type="DefaultWindow" name="ItemTab" >
+                <Property name="Text" value="Item" />
+                <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window type="TaharezLook/TabControl" name="ItemTabControl" >
+                    <Property name="TabHeight" value="{0,31.1724}" />
+                    <Property name="TabPanePosition" value="Top" />
+                    <Property name="Area" value="{{0.00391872,0},{0.00348824,0},{0.527266,0},{1.00058,0}}" />
+                    <Window type="DefaultWindow" name="General" >
+                        <Property name="Text" value="General" />
+                        <Property name="Area" value="{{-0.00215884,0},{0,0},{0.997841,0},{1,0}}" />
+                        <Window type="TaharezLook/StaticText" name="TypeLabel" >
+                            <Property name="Text" value="Type:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.09,0},{0.2,0},{0.15,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="TypeBox" >
+                            <Property name="Area" value="{{0.2,0},{0.1,0},{0.65,0},{0.5,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="SizeLabel" >
+                            <Property name="Text" value="Size:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.16,0},{0.2,0},{0.24,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="SizeBox" >
+                            <Property name="Area" value="{{0.2,0},{0.17,0},{0.65,0},{0.65,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="CopyDataLabel" >
+                            <Property name="Text" value="Copy data from:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.6,0},{0.3,0},{0.65,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Combobox" name="CopyDataBox" >
+                            <Property name="Area" value="{{0.28,0},{0.6,0},{0.65,0},{0.95,0}}" />
+                            <Property name="MaxTextLength" value="1073741823" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="CopyDataButton" >
+                            <Property name="Text" value="Copy" />
+                            <Property name="Area" value="{{0.7,0},{0.6,0},{0.85,0},{0.65,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="NameLabel" >
+                            <Property name="Text" value="Name:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.03,0},{0.2,0},{0.08,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Editbox" name="NameBox" >
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.2,0},{0.03,0},{0.65,0},{0.08,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="PriceLabel" >
+                            <Property name="Text" value="Value:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.25,0},{0.2,0},{0.3,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="PriceSpinner" >
+                            <Property name="Area" value="{{0.2,0},{0.25,0},{0.65,0},{0.3,0}}" />
+                            <Property name="StepSize" value="50" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="10000" />
+                            <Property name="MinimumValue" value="0" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="EnchantRangeLabel" >
+                            <Property name="Text" value="Enchant min:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.34,0},{0.24,0},{0.4,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="EnchantMinSpinner" >
+                            <Property name="StepSize" value="50" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="10000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.24,0},{0.34,0},{0.5,0},{0.4,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/StaticText" name="EnchantMaxLabel" >
+                            <Property name="Text" value="max:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.55,0},{0.34,0},{0.65,0},{0.4,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="EnchantMaxSpinner" >
+                            <Property name="StepSize" value="50" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="10000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.65,0},{0.34,0},{0.9,0},{0.4,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="Equip" >
+                        <Property name="Text" >Equip
+</Property>
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="HealthLabel" >
+                            <Property name="Text" value="Health:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.03,0},{0.2,0},{0.08,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="HealthSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="10000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.03,0},{0.40,0},{0.08,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="AttrLabel" >
+                            <Property name="Text" value="Attribute:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.10,0},{0.2,0},{0.16,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="StrengthLabel" >
+                            <Property name="Text" value="Strength:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.17,0},{0.2,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="StrengthSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.17,0},{0.40,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="DexterityLabel" >
+                            <Property name="Text" value="Dexterity:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.17,0},{0.7,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="DexteritySpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.7,0},{0.17,0},{0.90,0},{0.23,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="MagicPowerLabel" >
+                            <Property name="Text" value="Magic Power:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.24,0},{0.2,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="MagicPowerSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.24,0},{0.40,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="WillpowerLabel" >
+                            <Property name="Text" value="Willpower:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.24,0},{0.7,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="WillpowerSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.7,0},{0.24,0},{0.90,0},{0.30,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="ResistancesLabel" >
+                            <Property name="Text" value="Resistances:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.32,0},{0.4,0},{0.38,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PhysResLabel" >
+                            <Property name="Text" value="Physical:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.39,0},{0.2,0},{0.45,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PhysResSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="100" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.39,0},{0.40,0},{0.45,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="FireResLabel" >
+                            <Property name="Text" value="Fire:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.39,0},{0.7,0},{0.45,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="FireResSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="100" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.7,0},{0.39,0},{0.90,0},{0.45,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="IceResLabel" >
+                            <Property name="Text" value="Ice:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.46,0},{0.2,0},{0.52,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="IceResSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="100" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.46,0},{0.40,0},{0.52,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="AirResLabel" >
+                            <Property name="Text" value="Air:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.46,0},{0.7,0},{0.52,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="AirResSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="100" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.7,0},{0.46,0},{0.90,0},{0.52,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="OtherLabel" >
+                            <Property name="Text" value="Other:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.54,0},{0.2,0},{0.60,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="ArmorLabel" >
+                            <Property name="Text" value="Armor:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.61,0},{0.2,0},{0.67,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="ArmorSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.61,0},{0.40,0},{0.67,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="BlockLabel" >
+                            <Property name="Text" value="Block:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.61,0},{0.7,0},{0.67,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="BlockSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.7,0},{0.61,0},{0.90,0},{0.67,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="AttackLabel" >
+                            <Property name="Text" value="Precision:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.68,0},{0.2,0},{0.74,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="AttackSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.68,0},{0.40,0},{0.74,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PowerLabel" >
+                            <Property name="Text" value="Power:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.68,0},{0.7,0},{0.74,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PowerSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.7,0},{0.68,0},{0.90,0},{0.74,0}}" />
+                        </Window>
+                        
+                    </Window>
+                    <Window type="DefaultWindow" name="Weapon" >
+                        <Property name="Text" >Weapon
+</Property>
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        
+                        <Window type="TaharezLook/StaticText" name="TypeLabel" >
+                            <Property name="Text" value="Type:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.03,0},{0.2,0},{0.08,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Editbox" name="TypeBox" >
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.2,0},{0.03,0},{0.65,0},{0.08,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="DamageLabel" >
+                            <Property name="Text" value="Damage:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.10,0},{0.2,0},{0.16,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PhysLabel" >
+                            <Property name="Text" value="Physical:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.17,0},{0.2,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PhysMinSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.22,0},{0.17,0},{0.42,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PhysToLabel" >
+                            <Property name="Text" value="-" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.44,0},{0.17,0},{0.48,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PhysMaxSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.48,0},{0.17,0},{0.68,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PhysMultLabel" >
+                            <Property name="Text" value="x" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.75,0},{0.17,0},{0.78,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PhysMultSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.78,0},{0.17,0},{0.98,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="FireLabel" >
+                            <Property name="Text" value="Fire:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.24,0},{0.2,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="FireMinSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.22,0},{0.24,0},{0.42,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="FireToLabel" >
+                            <Property name="Text" value="-" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.44,0},{0.24,0},{0.48,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="FireMaxSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.48,0},{0.24,0},{0.68,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="FireMultLabel" >
+                            <Property name="Text" value="x" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.75,0},{0.24,0},{0.78,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="FireMultSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.78,0},{0.24,0},{0.98,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="IceLabel" >
+                            <Property name="Text" value="Ice:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.31,0},{0.2,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="IceMinSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.22,0},{0.31,0},{0.42,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="IceToLabel" >
+                            <Property name="Text" value="-" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.44,0},{0.31,0},{0.48,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="IceMaxSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.48,0},{0.31,0},{0.68,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="IceMultLabel" >
+                            <Property name="Text" value="x" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.75,0},{0.31,0},{0.78,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="IceMultSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.78,0},{0.31,0},{0.98,0},{0.37,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="AirLabel" >
+                            <Property name="Text" value="Air:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.38,0},{0.2,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="AirMinSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.22,0},{0.38,0},{0.42,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="AirToLabel" >
+                            <Property name="Text" value="-" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.44,0},{0.38,0},{0.48,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="AirMaxSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.48,0},{0.38,0},{0.68,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="AirMultLabel" >
+                            <Property name="Text" value="x" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.75,0},{0.38,0},{0.78,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="AirMultSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.78,0},{0.38,0},{0.98,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PrecisionLabel" >
+                            <Property name="Text" value="Precision:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.47,0},{0.2,0},{0.53,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PrecisionSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="1" />
+                            <Property name="Area" value="{{0.20,0},{0.47,0},{0.40,0},{0.53,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PowerLabel" >
+                            <Property name="Text" value="Power:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.53,0},{0.47,0},{0.7,0},{0.53,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PowerSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="32767" />
+                            <Property name="MinimumValue" value="1" />
+                            <Property name="Area" value="{{0.70,0},{0.47,0},{0.90,0},{0.53,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="RangeLabel" >
+                            <Property name="Text" value="Range:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.54,0},{0.2,0},{0.60,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="RangeSpinner" >
+                            <Property name="StepSize" value="0.1" />
+                            <Property name="CurrentValue" value="1" />
+                            <Property name="MaximumValue" value="50" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="TextInputMode" value="FloatingPoint" />
+                            <Property name="Area" value="{{0.20,0},{0.54,0},{0.40,0},{0.60,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="SpeedLabel" >
+                            <Property name="Text" value="Speed:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.53,0},{0.54,0},{0.7,0},{0.60,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="SpeedSpinner" >
+                            <Property name="StepSize" value="50" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="5000" />
+                            <Property name="MinimumValue" value="-2000" />
+                            <Property name="Area" value="{{0.70,0},{0.54,0},{0.90,0},{0.60,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/Checkbox" name="TwohandedCheckbox" >
+                            <Property name="Area" value="{{0.03,0},{0.62,0},{0.07,0},{0.66,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="TwohandedLabel" >
+                            <Property name="Text" value="Twohanded weapon" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.08,0},{0.61,0},{0.50,0},{0.67,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="CritPercentLabel" >
+                            <Property name="Text" value="Crit. Hits:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.68,0},{0.2,0},{0.74,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="CritPercentSpinner" >
+                            <Property name="StepSize" value="1" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="100" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.20,0},{0.68,0},{0.40,0},{0.74,0}}" />
+                        </Window>
+                        
+                        
+                    </Window>
+                    <Window type="DefaultWindow" name="Consume" >
+                        <Property name="Text" >Consume</Property>
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        
+                        <Window type="TaharezLook/StaticText" name="TypeLabel" >
+                            <Property name="Text" value="Health:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.03,0},{0.2,0},{0.08,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="HealthSpinner" >
+                            <Property name="StepSize" value="50" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="10000" />
+                            <Property name="MinimumValue" value="0" />
+                           <Property name="Area" value="{{0.2,0},{0.03,0},{0.40,0},{0.08,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="CureLabel" >
+                            <Property name="Text" value="Status heal and immunity time:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.10,0},{0.7,0},{0.16,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="BlindLabel" >
+                            <Property name="Text" value="Blind:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.17,0},{0.2,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="BlindSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.20,0},{0.17,0},{0.40,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="PoisonedLabel" >
+                            <Property name="Text" value="Poisoned:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.17,0},{0.7,0},{0.23,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="PoisonedSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.70,0},{0.17,0},{0.90,0},{0.23,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="BerserkLabel" >
+                            <Property name="Text" value="Berserk:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.24,0},{0.2,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="BerserkSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.20,0},{0.24,0},{0.40,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="ConfusedLabel" >
+                            <Property name="Text" value="Confused:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.24,0},{0.7,0},{0.30,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="ConfusedSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.70,0},{0.24,0},{0.90,0},{0.30,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="MuteLabel" >
+                            <Property name="Text" value="Mute:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.31,0},{0.2,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="MuteSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.20,0},{0.31,0},{0.40,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="ParalyzedLabel" >
+                            <Property name="Text" value="Paralyzed:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.31,0},{0.7,0},{0.37,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="ParalyzedSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.70,0},{0.31,0},{0.90,0},{0.37,0}}" />
+                        </Window>
+                        
+                        
+                        <Window type="TaharezLook/StaticText" name="FrozenLabel" >
+                            <Property name="Text" value="Frozen:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.38,0},{0.2,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="FrozenSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.20,0},{0.38,0},{0.40,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/StaticText" name="BurningLabel" >
+                            <Property name="Text" value="Burning:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.52,0},{0.38,0},{0.7,0},{0.44,0}}" />
+                        </Window>
+                        
+                        <Window type="TaharezLook/Spinner" name="BurningSpinner" >
+                            <Property name="StepSize" value="1000" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="1000000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.70,0},{0.38,0},{0.90,0},{0.44,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="Create" >
+                        <Property name="Text" value="Create Item" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/StaticText" name="EnchantLabel" >
+                            <Property name="Text" value="Enchant:" />
+                            <Property name="FrameEnabled" value="False" />
+                            <Property name="Area" value="{{0.03,0},{0.03,0},{0.2,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Spinner" name="EnchantSpinner" >
+                            <Property name="StepSize" value="50" />
+                            <Property name="CurrentValue" value="0" />
+                            <Property name="MaximumValue" value="10000" />
+                            <Property name="MinimumValue" value="0" />
+                            <Property name="Area" value="{{0.2,0},{0.03,0},{0.5,0},{0.1,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="CreateInventoryButton" >
+                            <Property name="Text" value="Create in inventory" />
+                            <Property name="Area" value="{{0.03,0},{0.2,0},{0.4,0},{0.26,0}}" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="CreateDropButton" >
+                            <Property name="Text" value="Create an drop" />
+                            <Property name="Area" value="{{0.5,0},{0.2,0},{0.9,0},{0.26,0}}" />
+                        </Window>
+                    </Window>
+                    <Window type="DefaultWindow" name="XML" >
+                        <Property name="Text" value="XML" />
+                        <Property name="Visible" value="False" />
+                        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                        <Window type="TaharezLook/MultiLineEditbox" name="ItemXMLEditbox" >
+                            <Property name="Text" >
+</Property>
+                            <Property name="MaxTextLength" value="1073741823" />
+                            <Property name="Area" value="{{0.0229259,0},{0.0172008,0},{0.986204,0},{0.901313,0}}" />
+                            <Property name="TextParsingEnabled" value="False" />
+                        </Window>
+                        <Window type="TaharezLook/Button" name="SubmitButton" >
+                            <Property name="Text" value="Submit XML" />
+                            <Property name="Area" value="{{0.0344625,0},{0.919477,0},{0.390245,0},{0.976916,0}}" />
+                        </Window>
+                    </Window>
+                </Window>
+                <Window type="TaharezLook/StaticImage" name="itemPreview" >
+                    <Property name="Area" value="{{0.535738,0},{0.0565595,0},{0.983904,0},{0.772162,0}}" />
+                </Window>
+            </Window>
+            <Window type="DefaultWindow" name="GameInfoTab" >
+                <Property name="Text" value="Info" />
+                <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+                <Window type="TaharezLook/MultiLineEditbox" name="TextBox" >
+                    <Property name="Text" ></Property>
+                    <Property name="MaxTextLength" value="1073741823" />
+                    <Property name="Area" value="{{0.0229259,0},{0.0172008,0},{0.986204,0},{0.901313,0}}" />
+                    <Property name="TextParsingEnabled" value="True" />
+                </Window>
+            </Window>
+        </Window>
+        <Window type="TaharezLook/Button" name="CloseButton" >
+            <Property name="Text" value="Close" />
+            <Property name="Area" value="{{0.84668,0},{0.897134,0},{0.996094,0},{0.997395,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

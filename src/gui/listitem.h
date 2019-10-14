@@ -13,8 +13,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LISTITEM_H
-#define LISTITEM_H
+#ifndef __SUMWARS_GUI_LISTITEM_H__
+#define __SUMWARS_GUI_LISTITEM_H__
+
+// Need tp add the cross version header here, as it may define symbols related to CEGUI_07
+
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
 
 #include "CEGUI/CEGUI.h"
 
@@ -25,9 +30,17 @@
 class ListItem : public CEGUI::ListboxTextItem
 {
 	public:
-		ListItem(const CEGUI::String& text, unsigned int id=0) : ListboxTextItem(text,id)
+		ListItem(const CEGUI::String& skin, const CEGUI::String& text, unsigned int id=0) : ListboxTextItem(text,id)
 		{
-			setSelectionBrushImage("TaharezLook", "MultiListSelectionBrush");
+#ifdef CEGUI_07
+			setSelectionBrushImage(skin, "MultiListSelectionBrush");
+#else
+			CEGUI::String summedUpName (skin);
+			summedUpName.append ("/MultiListSelectionBrush");
+			setSelectionBrushImage (summedUpName);
+
+#endif
+			
 			setAutoDeleted (true);
 		}
 };
@@ -40,13 +53,19 @@ class ListItem : public CEGUI::ListboxTextItem
 class StrListItem : public ListItem
 {
 	public:
-		StrListItem(const CEGUI::String& text, std::string data, unsigned int id=0) : ListItem(text,id)
+		StrListItem(const CEGUI::String& skin, const CEGUI::String& text, std::string data, unsigned int id=0) : ListItem(skin, text,id)
 		{
-			setSelectionBrushImage("TaharezLook", "MultiListSelectionBrush");
+#ifdef CEGUI_07
+			setSelectionBrushImage(skin, "MultiListSelectionBrush");
+#else
+			CEGUI::String summedUpName (skin);
+			summedUpName.append ("/MultiListSelectionBrush");
+			setSelectionBrushImage (summedUpName);
+#endif
 			m_data = data;
 		}
 
 		std::string m_data;
 };
 
-#endif
+#endif // __SUMWARS_GUI_LISTITEM_H__

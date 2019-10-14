@@ -1,0 +1,46 @@
+<World>
+	<Region id="30" name="dwarfenwallCommand">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="treacherous_paths.ogg" />
+		</Music>
+		
+		<Settings dimx="6" dimy="6" region_template="commandHouse"  ground="council_ground"/>
+		<WorldPosition world_x="0.73" world_y ="0.47"/>
+		
+		<ExitDirections north="false" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="dwarfenwall" destination_location="entry_command" >
+				<Shape shape="RECT" extent_x="2.0" extent_y="1.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="council" />
+		</Environments>
+		
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				if(dwarfenwall == nil)then
+					dwarfenwall = {};
+				end;
+				dwarfenwall.general = createObject("general_greif", "locGeneral");
+				setRefName(dwarfenwall.general, "General Greif");
+				
+				dwarfenwall.council = createObject("council_dwarfenwall", "locDarna");
+				setRefName(dwarfenwall.council, "Maga Convocatis Darna Eistaucher");
+				lookAtEachOther(dwarfenwall.general, dwarfenwall.council)
+				
+				dwarfenwall.enchanter = createObject("council_mage","locEnchanter")
+				setRefName(dwarfenwall.enchanter, "Enchanter Fazhir");
+				set(dwarfenwall.enchanter,"angle",130)
+				
+				addArea("GeneralGreifArea",{"circle","locGeneral",5});
+			</Effect>
+		</Event>
+	</Region>
+</World>

@@ -1,0 +1,53 @@
+
+
+<GUILayout version="4" >
+    <Window type="TaharezLook/FrameWindow" name="GuiDebugTab" >
+        <Property name="Text" value="Gui" />
+        <Property name="Alpha" value="0.1" />
+        <Property name="FrameEnabled" value="False" />
+        <Property name="TitlebarFont" value="SWB-M" />
+        <Property name="SizingEnabled" value="False" />
+        <Property name="TitlebarEnabled" value="False" />
+        <Property name="Area" value="{{0.275196,0},{0.289837,0},{0.736134,0},{0.827709,0}}" />
+        <Property name="DragMovingEnabled" value="False" />
+        <Property name="CloseButtonEnabled" value="False" />
+        <Window type="TaharezLook/StaticText" name="windowUnderMouseStaticText" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0135734,0},{0.0152437,0},{0.9946,0},{0.0965521,0}}" />
+        </Window>
+        <Window type="TaharezLook/Checkbox" name="pickWidgetCheckbox" >
+            <Property name="Text" value="Pick Widget" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0233057,0},{0.909116,0},{0.273307,0},{0.992081,0}}" />
+        </Window>
+        <Window type="TaharezLook/Button" name="pickWidgetButton" >
+            <Property name="Text" value="Pick" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.282626,0},{0.909296,0},{0.988136,0},{0.984998,0}}" />
+        </Window>
+        <Window type="TaharezLook/Combobox" name="sizeFormCombobox" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0165258,0},{0.196652,0},{0.319492,0},{0.282038,0}}" />
+            <Property name="MaxTextLength" value="1073741823" />
+        </Window>
+        <Window type="TaharezLook/StaticText" name="xSizeLabel" >
+            <Property name="Text" value="0" />
+            <!--<Property name="HorzExtent" value="9" />-->
+            <!--<Property name="VertExtent" value="23.1724" />-->
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.332627,0},{0.197399,0},{0.641949,0},{0.275522,0}}" />
+        </Window>
+        <Window type="TaharezLook/StaticText" name="ySizeLabel" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.65339,0},{0.195158,0},{0.988135,0},{0.275702,0}}" />
+        </Window>
+        <Window type="TaharezLook/StaticText" name="typeStaticText" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0139833,0},{0.108756,0},{0.990678,0},{0.186879,0}}" />
+        </Window>
+        <Window type="TaharezLook/StaticText" name="contentsTextbox" >
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0165258,0},{0.288643,0},{0.988983,0},{0.906605,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

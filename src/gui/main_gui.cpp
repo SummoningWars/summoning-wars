@@ -16,19 +16,147 @@
 
 #include <stdio.h>
 #include "application.h"
+#include "config.h"
+#include <physfs.h>
+#include "sumwarshelper.h"
 
 #if defined(WIN32)
-#include "windows.h"
+#	include "windows.h"
+#endif // if defined(WIN32)
 
+
+#if defined(SUMWARS_USE_BREAKPAD)
+
+#if defined (WIN32)
+#   include "client/windows/handler/exception_handler.h"
+#   include "client/windows/sender/crash_report_sender.h"
 #endif
+
+static bool breakpad_callback(const wchar_t *dump_path,
+                              const wchar_t *id,
+                              void *context,
+                              EXCEPTION_POINTERS *exinfo,
+                              MDRawAssertionInfo *assertion,
+                              bool succeeded )
+{
+    if (succeeded)
+    {
+        printf("dump guid is %ws\n", id);
+    }
+    else
+    {
+        printf("dump failed\n");
+    }
+    fflush(stdout);
+
+    return succeeded;
+}
+#endif // if defined(SUMWARS_USE_BREAKPAD)
+
+void reset_cwd(int argc, char** argv)
+{
+#	ifdef _WIN32
+	TCHAR szPath[MAX_PATH];
+
+	if (GetModuleFileName(NULL, szPath, MAX_PATH))
+	{
+		std::string path(szPath);
+		path.erase(path.find_last_of('\\'), std::string::npos); // strips the basename off
+		SetCurrentDirectory(path.c_str());
+	}
+	else
+	{
+		// just exiting feels rather harsh, CWD might have been set correctly
+		printf("Error: Cannot retrieve executable file path to set proper CWD (WinAPI reported: %d). Pray with me that it was already set correctly!\n", GetLastError());
+	}
+
+#	elif defined (__unix__)
+	// UNIX is for proper badasses so it's not as simple there ;-D
+	// we could rely on /proc but that's not portable
+	// instead we will figure this out using argv[0]
+
+	if (argc >= 1 && argv[0])
+	{
+		std::string passed_path(argv[0]);
+		if (passed_path.length() >= 1)
+		{
+			passed_path.erase(passed_path.find_last_of('/'), std::string::npos); // strips the basename off
+
+			if (passed_path[0] == '/')
+			{
+				chdir(passed_path.c_str());
+			}
+			else
+			{
+				char cwd[PATH_MAX];
+				if (!getcwd(cwd, PATH_MAX))
+				{
+					printf("Error: Cannot retrieve current working directory, therefore can't reset it to point to directory of sumwars executable. Hopefully all goes well!\n");
+					return;
+				}
+
+				std::string absolute_path = std::string(cwd) + "/" + passed_path;
+				printf("Deduced absolute path: %s", absolute_path.c_str());
+				chdir(absolute_path.c_str());
+			}
+		}
+		else
+		{
+			printf("Error: Can't deduce directory of sumwars executable from passed arguments, therefore can't reset CWD. Hopefully all goes well!\n");
+		}
+	}
+#	endif
+}
+
 //INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-int main (int argc, char *argv[]) {
+int main (int argc, char **argv)
+{
+	// Initialise the PHYSFS library as soon as possible before anyone messes with argv or CWD
+	if (PHYSFS_init(argv[0]) == 0)
+	{
+		printf("PHYSFS_init failed: %s\n", PHYSFS_getLastError ());
+		return 1;
+	}
+
+    // Create the sumwars helper singleton
+    SumwarsHelper *swh = new SumwarsHelper ();
+    if(!swh->init())
+    {
+        printf("PHYSFS_init failed: %s\n", PHYSFS_getLastError ());
+        return 1;
+    }
+
+#if defined SUMWARS_USE_BREAKPAD
+    std::string s;
+    s = swh->getStorageBasePath();
+    s.append(swh->userPath());
+    std::wstring path;
+    path.assign(s.begin(), s.end());
+    google_breakpad::ExceptionHandler eh(path,
+                                         NULL,
+                                         breakpad_callback,
+                                         NULL,
+                                         google_breakpad::ExceptionHandler::HANDLER_ALL);
+#endif //#if defined SUMWARS_USE_BREAKPAD
+
+#ifdef SUMWARS_PORTABLE_MODE
+	// Portable mode relies on CWD (current working directory) to be set to the place where
+	// the "sumwars" executable is.
+	//
+	// If you just run sumwars with ./sumwars that will already be the case, however when starting
+	// it with a shortcut or by calling some/weird/directory/sumwars, CWD will be something we
+	// don't expect.
+	//
+	// The code below remedies the situation in these cases by simply reseting CWD
+	reset_cwd(argc, argv);
+	//exit(0);
+#endif
 
 	try
 	{
 
 	// Applikation anlegen
-	Application* app = new Application(argv[0]);
+	Application* app = new Application();
 
 	// Debugging: Kommandozeilen Parameter auslesen und Savefile setzen
 	std::string save;
@@ -94,7 +222,7 @@ int main (int argc, char *argv[]) {
 	*/
 	catch (CEGUI::Exception& e)
 	{
-		DEBUG("Program died with exception %s", e.getMessage().c_str());
+		SW_DEBUG("Program died with exception %s", e.getMessage().c_str());
 	}
 	// Ende
 	return 0;

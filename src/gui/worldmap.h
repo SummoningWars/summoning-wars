@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef WORLDMAP_H
-#define WORLDMAP_H
+#ifndef __SUMWARS_GUI_WORLDMAP_H__
+#define __SUMWARS_GUI_WORLDMAP_H__
 
 
 #include "window.h"
@@ -27,10 +27,12 @@ class Worldmap : public Window
 {
 	public:
 		/**
-		* \fn Worldmap (Document* doc)
-		* \brief Konstruktor
-		*/
-		Worldmap (Document* doc);
+		 * \fn Worldmap (Document* doc, const std::string& ceguiSkinName)
+		 * \brief Constructor
+		 * \param doc The document object to be used for interacting with the system.
+		 * \param ceguiSkinName The name of the CEGUI skin to use when creating internal widgets.
+		 */
+		Worldmap (Document* doc, const std::string& ceguiSkinName);
 	
 		/**
 		 * \fn virtual void update()
@@ -51,9 +53,15 @@ class Worldmap : public Window
 		 * \brief Behandelt anklicken eines Wegpunktes
 		 */
 		bool onWaypointClicked(const CEGUI::EventArgs& evt);
-		
+
+
+		/**
+		 * \brief The name of the CEGUI skin to use.
+		 */
+		std::string m_ceguiSkinName;
+
 };
 
 
-#endif
+#endif // __SUMWARS_GUI_WORLDMAP_H__
 

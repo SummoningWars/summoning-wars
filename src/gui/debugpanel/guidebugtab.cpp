@@ -13,6 +13,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 #include "guidebugtab.h"
 #include "CEGUI/CEGUI.h"
 
@@ -26,11 +29,11 @@ GuiDebugTab::GuiDebugTab(const CEGUI::String& type, const CEGUI::String& name): 
 {
 	setText("Gui");
 	
-	m_tabLayout = WindowManager::getSingleton().loadWindowLayout("GuiDebugTab.layout");
+	m_tabLayout = CEGUIUtility::loadLayoutFromFile ("guidebugtab.layout");
 	m_tabLayout->setPosition(UVector2(UDim(0.0f, 0.0f), UDim(0.0f, 0.0f)));
-	m_tabLayout->setSize(UVector2(UDim(1.0f, 0.0f), UDim(1.0f, 0.0f)));
+  CEGUIUtility::setWidgetSizeRel(m_tabLayout, 1.0f, 1.0f);
 
-	this->addChildWindow(m_tabLayout);
+  CEGUIUtility::addChildWidget (this, m_tabLayout);
 }
 
 void GuiDebugTab::initialiseComponents(void )
@@ -40,22 +43,22 @@ void GuiDebugTab::initialiseComponents(void )
 
 void GuiDebugTab::update(OIS::Keyboard *keyboard, OIS::Mouse *mouse)
 {
-	CEGUI::Window *win = CEGUI::System::getSingleton().getWindowContainingMouse();
+  CEGUI::Window *win = CEGUIUtility::getWindowContainingMouse(CEGUI::System::getSingletonPtr());
 	m_tabLayout->getChild("windowUnderMouseStaticText")->setText(win->getName());
 	m_tabLayout->getChild("typeStaticText")->setText(win->getType());
 
 	std::ostringstream floatStringHelper;
-    floatStringHelper << win->getSize().d_x.d_offset;
+  floatStringHelper << win->getSize().d_width.d_offset;
 	m_tabLayout->getChild("xSizeLabel")->setText(floatStringHelper.str());
 	
-    floatStringHelper << win->getSize().d_y.d_offset;
+  floatStringHelper << win->getSize().d_height.d_offset;
 	m_tabLayout->getChild("ySizeLabel")->setText(floatStringHelper.str());
 	
 	m_tabLayout->getChild("contentsTextbox")->setText(win->getText());
 }
 
 
-void GuiDebugTab::onSized(CEGUI::WindowEventArgs& e)
+void GuiDebugTab::onSized(CEGUI::ElementEventArgs& e)
 {
 	CEGUI::Window::onSized(e);
 }

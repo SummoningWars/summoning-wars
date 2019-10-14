@@ -1,0 +1,266 @@
+# Ukrainian translations for sumwars package
+# Copyright (C) 2009
+# This file is distributed under the same license as the sumwars package.
+# Igor Paliychuk <mansonigor@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-09-10 17:54+0300\n"
+"Last-Translator: Igor Paliychuk <mansonigor@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+
+#: maylons_grave.xml:2
+msgid "Maylons Grave"
+msgstr "Могила Мейлона"
+
+#: maylons_grave.xml:5
+msgid ""
+"Some necromancer really resurrected an old council mage. Probably to cause "
+"confusion behind the lines. At least one problem that is solved."
+msgstr ""
+"Декотрий некромант дійсно воскресив старого мага Ради. Напевно щоб викликати "
+"плутанину в тилу. Принаймні одна проблема, що вирішена."
+
+#: maylons_grave.xml:7
+msgid ""
+"I came across some goblins in Maylon's Grave who babbled some nonsense and "
+"were chased by a zombie. Something is going on in this grave. Maybe I should "
+"have a look at it."
+msgstr ""
+"Я стикався з гоблінами в могилі Мейлона, які белькотіли якісь дурниці і їх "
+"переслідував зомбі. Щось відбувається в тій могилі. Треба поглянути."
+
+#: maylons_grave.xml:9
+msgid ""
+"I came across some goblins in Maylon's Grave. According to their shaman a "
+"necromancer animated some undead down in the crypt. I should take a look at "
+"it."
+msgstr ""
+"Я стикався з гоблінами в могилі Мейлона. Як сказав їх шаман, некромант "
+"підняв якусь нежить внизу в склепі. Треба поглянути."
+
+#: maylons_grave.xml:11
+msgid ""
+"I came across some goblins in Maylon's Grave who were chased by a zombie. "
+"Something is going on in this grave. Maybe I should take a look at it."
+msgstr ""
+"Я стикався з гоблінами в могилі Мейлона, яких переслідував зомбі. Щось "
+"відбувається в цій могилі. Треба буде поглянуть."
+
+#: maylons_grave.xml:16 maylons_grave.xml:264
+msgid "aisMaylonsGraveEntry"
+msgstr "Могила Мейлона"
+
+#: maylons_grave.xml:159
+msgid "Talk with the goblins?"
+msgstr "Поговорити з гоблінами?"
+
+#: maylons_grave.xml:160
+msgid "Yes"
+msgstr "Так"
+
+#: maylons_grave.xml:161
+msgid "No"
+msgstr "Ні"
+
+#: maylons_grave.xml:167
+msgid "Gab Resh"
+msgstr "Габ Реш"
+
+#: maylons_grave.xml:170
+msgid "A goblin who wants to talk?"
+msgstr "Гоблін, який хоче поговорити?"
+
+#: maylons_grave.xml:171
+msgid "Yes. No hurt, no kill."
+msgstr "Так. Не бий, не вбивай."
+
+#: maylons_grave.xml:172
+msgid "Gab'Resh and his only harmless rustlers. No bandits."
+msgstr "Габ'Реш і його невинні викрадачі. Не бандити."
+
+#: maylons_grave.xml:173
+msgid "You listen, yes?"
+msgstr "Ти слухаєш, так?"
+
+#: maylons_grave.xml:174
+msgid "What will you do?"
+msgstr "Що ти будеш робити?"
+
+#: maylons_grave.xml:175
+msgid "Listen to the goblins"
+msgstr "Слухати гобліна"
+
+#: maylons_grave.xml:176
+msgid "Chase the goblins away"
+msgstr "Прогнати гоблінів"
+
+#: maylons_grave.xml:177
+msgid "Slay the goblins"
+msgstr "Вбити гоблінів"
+
+#: maylons_grave.xml:188
+msgid "What could a goblin possibly have to say?"
+msgstr "І що ж може сказати гоблін?"
+
+#: maylons_grave.xml:189
+msgid "We often hide here."
+msgstr "Ми часто тут ховаємось."
+
+#: maylons_grave.xml:190
+msgid "No humans coming, and if do, they never return from depth of cave."
+msgstr ""
+"Сюди не приходять люди, і якщо приходять, вони ніколи не повертаються з "
+"глибини печери."
+
+#: maylons_grave.xml:191
+msgid "But last moon black human came."
+msgstr "Але минулого місяця прийшов чорний чоловік."
+
+#: maylons_grave.xml:192
+msgid ""
+"Now horror of the depth wandering to surface, too and being after poor "
+"goblins who never not wants to steal anything."
+msgstr ""
+"Тепер жах глибини блукає на поверхні і страшить бідних гоблінів, які не "
+"хочуть нічого красти."
+
+#: maylons_grave.xml:193
+msgid "That almost sounds as if a necromancer came by."
+msgstr "Це звучить так, ніби прийшов некромант."
+
+#: maylons_grave.xml:195
+msgid "I cannot leave such a problem amidst this under-guarded region."
+msgstr "Я не можу залишити таку проблему без уваги."
+
+#: maylons_grave.xml:197
+msgid "We cannot leave such a problem amidst this under-guarded region."
+msgstr "Ми не можемо залишити таку проблему без уваги."
+
+#: maylons_grave.xml:199
+msgid "Who knows what could happen?"
+msgstr "Хтозна, що може статися?"
+
+#: maylons_grave.xml:201
+msgid ""
+"Really, I should free those poor bound souls and send them off to a short "
+"brake in Harad's Hell."
+msgstr ""
+"Дійсно, я повинен звільнити ці бідні прив'язані душі і відіслати їх на "
+"короткий відпочинок в Харадове пекло."
+
+#: maylons_grave.xml:203
+msgid ""
+"Really, we should free those poor bound souls and send them off to a short "
+"brake in Harad's Hell."
+msgstr ""
+"Дійсно, ми повинні звільнити ці бідні прив'язані душі і відіслати їх на "
+"короткий відпочинок в Харадове пекло."
+
+#: maylons_grave.xml:205
+msgid "Better them than us."
+msgstr "Краще їх, ніж нас."
+
+#: maylons_grave.xml:208
+msgid "Good warning, yes? Mighty warrior-humans let us live, no?"
+msgstr "Гарне зауваження, так? Могутні людські воїни залиште нам життя, ні?"
+
+#: maylons_grave.xml:210
+msgid ""
+"Get lost. I have better things to do than killing a band of pathetic goblins."
+msgstr ""
+"Згинь. У мене є важливіші справи, ніж вбивство банди жалюгідних гоблінів."
+
+#: maylons_grave.xml:212
+msgid ""
+"Get lost. we have better things to do than killing a band of pathetic "
+"goblins."
+msgstr ""
+"Згинь. У нас є важливіші справи, ніж вбивство банди жалюгідних гоблінів."
+
+#: maylons_grave.xml:227
+msgid "Miserable brood! Die!"
+msgstr "Нещасний виводок! Помріть!"
+
+#: maylons_grave.xml:229
+msgid "Miserable brood! Slay them all!"
+msgstr "Нещасний виводок! Убий їх усіх!"
+
+#: maylons_grave.xml:250
+msgid "Get lost, before I change my mind!"
+msgstr "Згинь, поки я не передумав!"
+
+#: maylons_grave.xml:297
+msgid "aisMaylonsGraveL1"
+msgstr "Могила Мейлона, рівень 1"
+
+#: maylons_grave.xml:328
+msgid "aisMaylonsGraveL2"
+msgstr "Могила Мейлона, склеп"
+
+#: maylons_grave.xml:431
+msgid "Thank you very much for liberating my soul."
+msgstr "Велике спасибі за звільнення моєї душі."
+
+#: maylons_grave.xml:432
+msgid "May you do many other great deeds."
+msgstr "Бажаю вам зробити багато інших великих справ."
+
+#: maylons_grave.xml:433
+msgid "Akerans blessing to you."
+msgstr "Акеран благосляє вас."
+
+#: maylons_grave.xml:434
+msgid "My sarcophagus contains many remains of my mortal life."
+msgstr ""
+"Мій саркофаг містить багато того, що залишилося від мого земного життя."
+
+#: maylons_grave.xml:435
+msgid ""
+"For a long time now I have no use for it anymore. Choose yourself a weapon "
+"you like."
+msgstr ""
+"Воно мені більше не потрібне вже довгий час. Виберіть собі зброю, яка вам "
+"подобається."
+
+#: maylons_grave.xml:436
+msgid "The same holds true for your friends."
+msgstr "Те ж саме має силу і для ваших друзів."
+
+#: maylons_grave.xml:437
+msgid "But now I have to return into the bliss of Akerans eternal oasis."
+msgstr "Але тепер я повинен повернутися в вічний оазис блаженства Акерана."
+
+#: maylons_grave.xml:440
+msgid ""
+"I wander if he would have said that if he had known that he will make a "
+"detour to Harad's Hell first?"
+msgstr ""
+"Цікаво, що б він сказав якби знав, що спочатку він зробить гак через "
+"Харадове пекло?"
+
+#~ msgid "Rakthr mootrick!"
+#~ msgstr "Ракхт муутрік!"
+
+#~ msgid "Mar! Nom Togubri!"
+#~ msgstr "Мар! Ном Тогубрі!"
+
+#~ msgid "Wait, great human warriors. Do not kill!"
+#~ msgstr "Зачекайте, великі людські воїни. Не вбивайте!"
+
+#~ msgid "name..\" received an item from Maylons Grave."
+#~ msgstr "name..\" взяв предмет з Могили Мейлона."
+
+#, fuzzy
+#~ msgid "GabResh"
+#~ msgstr "Габ Реш"

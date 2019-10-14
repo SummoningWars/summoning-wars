@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>maintainer-wanted@gentoo.org</email>
+	</maintainer>
+	<use>
+		<flag name='stl'>Compile with TIXML_USE_STL support in TinyXML.</flag>
+		<flag name="tools">Compile with additional game tools like content editor.</flag>
+	</use>
+</pkgmetadata>

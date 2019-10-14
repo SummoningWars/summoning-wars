@@ -13,28 +13,43 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MAINMENU_H
-#define MAINMENU_H
+#ifndef __SUMWARS_GUI_MAINMENU_H__
+#define __SUMWARS_GUI_MAINMENU_H__
 
 #include "OgreRoot.h"
 #include "window.h"
 #include "graphicobject.h"
+
+#ifdef SUMWARS_BUILD_WITH_ONLINE_SERVICES
+#include "onlineservicesmanager.h"
+#endif
+
 class SavegameList;
 
 /**
  * \class MainMenu
  * \brief Fenster Charakter Info
  */
+#ifdef SUMWARS_BUILD_WITH_ONLINE_SERVICES
+class MainMenu
+    : public Window
+    , public Ogre::FrameListener
+    , public OnlineServicesManager::StatusListener
+#else
 class MainMenu
 	: public Window
 	, public Ogre::FrameListener
+#endif
 {
 public:
     /**
-    * \fn MainMenu (Document* doc)
-    * \brief Constructor
+     * \fn MainMenu (Document* doc)
+     * \brief Constructor
+	 * \param doc Document object.
+	 * \param ceguiSkinName The name of the cegui skin to use for any widgets created internally.
      */
-    MainMenu ( Document* doc );
+    MainMenu (Document* doc, const std::string& ceguiSkinName);
+
 
 	// ------------------------- Frame Listener functions ----------------------
 
@@ -77,6 +92,46 @@ public:
 	 */
 	void updateSaveGameList();
 
+#if SUMWARS_BUILD_WITH_ONLINE_SERVICES
+    /**
+     * \fn bool onLoginToOnlineService(const CEGUI::EventArgs& evt)
+     * \brief Handles a click login button (opens a login dialog)
+     */
+    bool onLoginToOnlineService ( const CEGUI::EventArgs& evt );
+
+    /**
+     * \fn bool onLoginDialogLoginButton(const CEGUI::EventArgs& evt)
+     * \brief Handles a click to the sumwars online service from the Login Dialog
+     */
+    bool onLoginDialogLoginButton ( const CEGUI::EventArgs& evt );
+
+    /**
+     * \fn bool onLoginDialogCancelButton ( const CEGUI::EventArgs& evt );
+     * \brief Handles a click to the sumwars online service from the Login Dialog
+     */
+    bool onLoginDialogCancelButton ( const CEGUI::EventArgs& evt );
+
+
+    /**
+     * \fn bool onLoginFinished ( const CEGUI::EventArgs& evt );
+     * \brief Handles when a Login task is finished from OnlineServicesManager::StatusListener
+     */
+    virtual void onLoginFinished(std::vector<OnlineServicesManager::CharacterLite*> &characters);
+
+    /**
+     * \fn bool onLogoutFinished ( const CEGUI::EventArgs& evt );
+     * \brief Handles when a Logout task is finished from OnlineServicesManager::StatusListener
+     */
+    virtual void onLogoutFinished();
+
+    /**
+     * \fn bool onSyncCharFinished ( const CEGUI::EventArgs& evt );
+     * \brief Handles when a Sync task is finished from OnlineServicesManager::StatusListener
+     */
+    virtual void onSyncCharFinished();
+
+#endif
+
 private:
 
     /**
@@ -86,6 +141,12 @@ private:
     void createSavegameList();
 
     /**
+     * \fn bool onMainMenuButtonHover(const CEGUI::EventArgs& evt)
+     * \brief Handle the hovering of a button in the main menu
+     */
+    bool onMainMenuButtonHover (const CEGUI::EventArgs& evt);
+
+	/**
      * \fn bool onStartSinglePlayer(const CEGUI::EventArgs& evt)
      * \brief Handles start of the SinglePlayer mode
      */
@@ -142,7 +203,7 @@ private:
 	/**
 	 * \brief Updates the preview of the savegame character
 	 */
-	void updateCharacterView();
+    void updateCharacterView();
 
     /**
      * \fn void createCharacterMenu()
@@ -188,6 +249,11 @@ private:
     SavegameList *m_saveGameList;
 	
 	/**
+	 * \brief The root CEGUI node of the start menu
+	 */
+	CEGUI::Window* m_starMenuRoot;
+
+	/**
 	 * \brief Name of the previewed savegame player 
 	 */
 	std::string m_savegame_player;
@@ -201,6 +267,18 @@ private:
 	 * \brief Random action that is executed by the savegame player
 	 */
 	Action m_savegame_player_action;
+
+	/**
+	 * \brief The name of the CEGUI skin to use.
+	 */
+	std::string m_ceguiSkinName;
+
+    /**
+     *\var bool m_userLoggedIn;
+     *\brief Sets to true if the user is logged in
+     */
+    bool m_userLoggedIn;
+
 };
 
-#endif
+#endif // __SUMWARS_GUI_MAINMENU_H__

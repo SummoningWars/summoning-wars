@@ -1,0 +1,68 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="Skilltree" >
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="Alpha" Value="1" />
+        <Property Name="Text" Value="Inventory" />
+        <Property Name="TitlebarFont" Value="DejaVuSerif-12" />
+        <Property Name="CloseButtonAlignment" Value="0" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="True" />
+        <Property Name="RollUpEnabled" Value="False" />
+
+        <!-- dummy holder to allow easier later updates -->
+        <Window Type="SWB/StaticImage" Name="skilltree_aux" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        
+            <Window Type="SWB/TabControl" Name="SkilltreeTabs" >
+                <Property Name="Alpha" Value="1.0" />
+                <Property Name="TabHeight" Value="{0,56}" />
+                <Property Name="TabButtonType" Value="SWB/TabButton" />
+                <Property Name="TabPanePosition" Value="Top" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{0.9,0}}" />
+            </Window>
+            
+            <Window Type="SWB/StaticImage" Name="SkillTreeAdditionalInfoHolder">
+                <Property Name="FrameEnabled" Value="False" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.9,0},{1.0,0},{1.0,0}}" />
+                
+                <Window Type="SWB/StaticText" Name="SkillpointsLabel" >
+                    <Property Name="Text" Value="Inventory" />
+                    <Property Name="TextColours" Value="tl:FFA2CD5A tr:FFA2CD5A bl:FFA2CD5A br:FFA2CD5A" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.05,0},{0.0,0},{0.84,0},{0.5,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                    <Property Name="HorzFormatting" Value="RightAligned" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="SkillpointsValueLabel" >
+                    <Property Name="Text" Value="Inventory" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.85,0},{0.0,0},{0.99,0},{0.5,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="NextSkillpointsLabel" >
+                    <Property Name="Text" Value="Inventory" />
+                    <Property Name="TextColours" Value="tl:FF458B00 tr:FF458B00 bl:FF458B00 br:FF458B00" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.05,0},{0.5,0},{0.84,0},{0.99,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                    <Property Name="HorzFormatting" Value="RightAligned" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="NextSkillpointsValueLabel" >
+                    <Property Name="Text" Value="Inventory" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.85,0},{0.5,0},{0.99,0},{0.99,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                
+            </Window>
+        </Window>
+    </Window>
+</GUILayout>

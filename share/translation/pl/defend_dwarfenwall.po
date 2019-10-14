@@ -1,0 +1,1058 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: siegeOfDwarfenwall.xml:2
+msgid "Defend Dwarfenwall"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:4
+msgid "Quest finished"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:6
+msgid "Quest description"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:10 siegeOfDwarfenwall.xml:253
+#: siegeOfDwarfenwall.xml:2425
+msgid "dwarfenwall"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:35 siegeOfDwarfenwall.xml:2306
+msgid "dwarfenwallCommand"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:60
+msgid ""
+"... wind-elementals did see it clearly: It's only this one lich leading them."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:61
+msgid "When he's gone the others are no problem."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:62
+msgid "Just great."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:63
+msgid "And with what army are you planning to do this break-through?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:64
+msgid "We have to stop the rush, that is assembling out there."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:65
+msgid "Don't worry."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:66
+msgid "My colleague assured me that the council is sending backup."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:67
+msgid "It should be here shortly."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:69
+msgid ""
+"First they send away the mage of Northborough and than they send in backup "
+"again?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:70
+msgid "What kind of game is this?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:71
+msgid "The mage is much needed elsewhere."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:72
+msgid "Of course."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:73
+msgid ""
+"I don't like saying this, but until an army makes it's way here, our bodies "
+"are long fighting for the other side, venerated lady."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:84
+msgid ""
+"Excuse me for interrupting like that, but small groups travel considerably "
+"faster then armies."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:87
+msgid "And who are you? ##solo"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:89
+msgid "And who are you?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:91
+msgid "The backup."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:98
+msgid "Good joke."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:99
+msgid "But we have a war here."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:101 siegeOfDwarfenwall.xml:103
+msgid "Get lost, you fool."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:105
+msgid "Get lost, you fools."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:110 siegeOfDwarfenwall.xml:112
+msgid "This mercenary is telling the truth."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:115
+msgid "What?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:120
+msgid "This is your great backup?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:123
+msgid "A handful of mercenaries?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:126
+msgid ""
+"You will realize the worth of our assistance, when they fall for you again "
+"and again."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:127
+msgid "What do you say?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:131 siegeOfDwarfenwall.xml:133
+msgid "... is this a Cursed One?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:135
+msgid "... are they Cursed Ones?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:138
+msgid "Personally I like the term Branded One somehow better."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:142
+msgid ""
+"If the price is right I let myself be torn apart as often as need be to "
+"protect the town."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:144
+msgid ""
+"If the price is right we let ourselves be torn apart as often as need be to "
+"protect the town."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:148
+msgid "You make a deal with the devil to drive out the devil?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:151
+msgid "You cannot be prim in times like these."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:152
+msgid "Do you want to live or be backup for the undead?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:154
+msgid "You cannot trust these monsters!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:155
+msgid "As long as I lead this army I will not tolerate such people."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:159
+msgid "I just prevented the undead from passing by your city!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:161
+msgid "We just prevented the undead from passing by your city!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:163
+msgid "That proves nothing!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:164
+msgid "All warriors are connected by narrow-mindedness."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:166
+msgid "I don't kill indiscriminately!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:168
+msgid "We don't kill indiscriminately!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:172
+msgid "She is under orders of the council, it is not your decision."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:174
+msgid "He is under orders of the council, it is not your decision."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:176
+msgid "They are under orders of the council, it is not your decision."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:195
+msgid "They are coming! The attack begins!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:217 siegeOfDwarfenwall.xml:2211
+#: siegeOfDwarfenwall.xml:2538
+msgid "..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:218
+msgid "Get to the walls!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:219
+msgid "How fast he changes his mind."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:221
+msgid "I'm already on my way."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:223
+msgid "Get going!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:232
+msgid "I just hope you have enough money to keep them at it."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:233
+msgid "Don't trouble yourself."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:234
+msgid "It will not fail due to this."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:236
+msgid "I pray that you're right..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:267 siegeOfDwarfenwall.xml:296
+msgid "I'm sorry, but only members of the aisen army are allowed beyond here."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:283
+msgid "I don't want to go there. I only see boring walls."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:418
+msgid "dwarfenwallRampart"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:969
+msgid "Here they come."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:971
+msgid "Get ready, soldiers!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1027
+msgid "Your time has come, pathetic humans!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1028
+msgid "Dwarfenwall will finally be yours, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1029
+msgid "With the help from the capital it will succeed at last."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1030
+msgid "Let us begin with the last rush on this wretched stronghold."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1057
+msgid ""
+"I reckon there is so many undead back there that your oh-so mighty backup "
+"will not be able to avert our death."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1058
+msgid ""
+"This... backup is not the only thing the council can and will do for "
+"Dwarfenwall."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1059
+msgid "I bound an earth-elemental weeks ago."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1060
+msgid "He is waiting for my orders right now."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1061
+msgid "Of course I couldn't know, where the undead would attack."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1062
+msgid ""
+"I'm afraid, there will be quite some cleaning up to do by the survivors."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1063
+msgid "Stop scoffing and do whatever it is you're planing."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1102
+msgid "Acursed elementalists!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1103
+msgid ""
+"It will be a great pleasure to reanimate the body of that witch only to burn "
+"her!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1104
+msgid "It will be done, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1105
+msgid "But how will we attack the city now? She blocked the path for our army."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1106
+msgid "Silence!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1110
+msgid "The catapults?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1111
+msgid "Ready, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1112
+msgid "Our necromancers?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1113
+msgid "Await your order."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1114
+msgid "I'm not fighting with Dwarfenwall for centuries for nothing."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1115
+msgid "Send the skeletons through the underdrives."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1136
+msgid "Something is going on over there."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1137
+msgid "They are coming!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1139
+msgid "It won't hurt if I call some more helpers, too."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1142
+msgid "To the front with you, butcher. ##solo"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1144
+msgid "To the front with you, butcher."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1146
+msgid "Say 'please'."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1147
+msgid "Just do it!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1170
+msgid "Watch out!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1171
+msgid "Catapults!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1388
+msgid "They are struggling on."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1389
+msgid "Don't worry, my lord, we will have overrun them soon."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1390
+msgid "There's no hurry."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1391
+msgid "We have time, that is our advantage."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1392
+msgid "Show them that we can play with fire, too."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1393
+msgid "Those mages are beginning to get on my nerves."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1394
+msgid "Prepare everything."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1395
+msgid "I understand, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1658
+msgid "Their defense still holds, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1659
+msgid "No one said it had to be easy."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1660
+msgid "Did you now there was a wild man here two-hundred years ago?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1661
+msgid ""
+"The humans called him the giant killer and didn't want to have anything to "
+"do with him."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1662
+msgid "I don't see how that has anything to do with the siege, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1663
+msgid "Watch and learn."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1829
+msgid "You called, my lord?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1830
+msgid "I want you to use the brothers."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1831
+msgid "But they are still not stable!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1832
+msgid "In the worst case they will do no damage at all."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1833
+msgid "That doesn't matter."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1834
+msgid "He should be here any moment. We are playing for time right now."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1835
+msgid "As you wish, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1893
+msgid "My lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1894
+msgid "What is it?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1895
+msgid "Neivan the Frostbringer is now here."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1896
+msgid "Finally."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1897
+msgid ""
+"The road from the Grey Skyladder into this desolate and sear plain was long, "
+"you know."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1898
+msgid "And your mountain tops are more lively?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1899
+msgid "Are we here to count the bugs on our estates?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1900
+msgid ""
+"You are right. Could you move those really unnerving people over there out "
+"of the way?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1901
+msgid "That's what I'm here for."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1902
+msgid "And don't forget that you owe me land after this."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1903
+msgid "Do you think I'm going to miss two villages after I got Dwarfenwall?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:1904
+msgid "Me and my frostmages will arrange for that."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2058
+msgid "The Frostbringer is dead, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2059
+msgid "I felt it, too."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2060
+msgid "We finally learned something about the backup the council sent here."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2061
+msgid "Now, of all times?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2062
+msgid "And what of it? I thought, there was none."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2063
+msgid "There was, my lord. But it seems they are Branded Ones."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2064
+msgid "Branded Ones!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2065
+msgid "That explaines a lot."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2066
+msgid ""
+"But even they will not be able to hold the city once the wretched humans are "
+"gone."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2067
+msgid "Overrun them. Send out your order."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2068
+msgid "As you command, my lord."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2069
+msgid "If need be, I, the Black Raven himself, will go to battle."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2070
+msgid "I count on you."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2071
+msgid "Tear their defense into pieces."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2208
+msgid "Curse on them!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2209
+msgid "Cursed council-mages!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2210
+msgid "Verdammte Branded Ones!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2212
+msgid "So what."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2213
+msgid "I will triumph in the end."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2214
+msgid "Death always wins."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2241
+msgid "It is over."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2242
+msgid "And thanks to the councils backing the city is still standing."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2245
+msgid ""
+"I have to admit, I wouldn't have thought in my wildest dreams that someone "
+"could fight like that."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2247
+msgid "It is good that he is on our side at the moment."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2249
+msgid "It is good that she is on our side at the moment."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2251
+msgid "It is good that they are on our side at the moment."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2254
+msgid "If both sides have souls to offer, you take the one paying, of course."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2256
+msgid "Thank you for reminding me, why I cannot stand your kind."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2257
+msgid "There is no big difference to normal mercenaries."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2258
+msgid ""
+"Maybe aside from the fact, that Branded Ones don't change sides in the "
+"middle."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2259 siegeOfDwarfenwall.xml:2282
+#: siegeOfDwarfenwall.xml:2289
+msgid "Enough of that. Let's talk in the command center."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2260
+msgid ""
+"It wouldn't be wise to hit the soldiers over the head who their saviours "
+"were."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2264
+msgid "I've never seen anyone who could fight like this."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2267
+msgid "Indeed."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2269 siegeOfDwarfenwall.xml:2271
+msgid "Without your 'friend' this would look different."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2273
+msgid "Without your 'friends' this would look different."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2278
+msgid ""
+"At least more effective than one could have expected from a band of "
+"mercenaries."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2279
+msgid "But we have quite some losses."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2280
+msgid "I hope they will not plan a new raid soon."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2281
+msgid "The lich took his time, but until now he also had no backup."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2286
+msgid "What kind of backing?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2287
+msgid "Two third of my men are dead!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2288
+msgid "We will never survive a second attack."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2290
+msgid "I want to get away from all the blood."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2340
+msgid "hmpf"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2341
+msgid "Well fought"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2343
+msgid "At least you are worth the trouble. ##solo"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2344
+msgid "As if I ever made one."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2346
+msgid "At least you are worth the trouble."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2347
+msgid "As if we ever made one."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2352
+msgid "The city is safe for the moment."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2353
+msgid "We cannot rest now."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2355
+msgid "As if we hadn't enough problems with shortage of soldiers."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2357
+msgid "The source of the attacks is the lich!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2358
+msgid "He has to be destroyed!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2360
+msgid "And who?!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2361
+msgid "I don't have enough men to lead a successful excursion."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2362
+msgid "That would be suicide."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2364
+msgid "It has nothing to do with you."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2366
+msgid "This man is under my direct orders."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2368
+msgid "This woman is under my direct order."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2370
+msgid "These people are under my direct order."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2373
+msgid "In her tense manner she reminds of a certain other council mage."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2375
+msgid "You are sending them into their sure death!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2377
+msgid ""
+"Not that I would cry a tear over them, but we cannot waste a single soul "
+"right now!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2378
+msgid "No false sympathy."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2379
+msgid "No matter how often I die, the lich will be destroyed in the end."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2381
+msgid "Apart from yourself you are not taking care of anyone!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2383
+msgid "It wouldn't be the first time..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2384
+msgid "Do you want to tell me how to use my people?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2385
+msgid "Nobody deserves such a treatment, not even them."
+msgstr "."
+
+#: siegeOfDwarfenwall.xml:2387
+msgid "Let that be my concern."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2389
+msgid "Let that be our concern."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2391
+msgid "You realy are beyond help."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2394
+msgid "Finally he cought on to it."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2395
+msgid "We don't have time for petty arguments! Go and slay the lich!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2396
+msgid "As you wish..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2398
+msgid ""
+"One of these arrows could have come from anywhere in the heat of battle..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2399
+msgid "Don't even think about it."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2437
+msgid "necFieldcamp"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2498
+msgid "Well well."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2499
+msgid "Here comes the root of my little problem."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2500
+msgid "It's hard to believe someone was crazy enough to storm out here."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2509
+msgid "Prepare to pass off forever!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2512 siegeOfDwarfenwall.xml:2514
+msgid ""
+"I can't believe that a single Branded One would be sufficient to cause so "
+"much chaos."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2516
+msgid ""
+"Of course, if some Branded Ones are in the vicinity everything is a bit "
+"different."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2518 siegeOfDwarfenwall.xml:2551
+msgid "Harvest!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2519
+msgid "Not so fast."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2522
+msgid ""
+"Sure, you are immortal, or at least they say so, but you do feel pain, don't "
+"you? ##solo"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2523
+msgid ""
+"Do you really want to be hacked into pieces by me over and over again? ##solo"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2525
+msgid ""
+"Sure, you are immortal, or at least they say so, but you do feel pain, don't "
+"you?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2526
+msgid "Do you really want to be hacked into pieces by me over and over again?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2528
+msgid "Bah! Your skeletons are dust and the one lackey will not save you!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2529
+msgid "Now that you mention it..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2530
+msgid "You really smashed most of them."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2531
+msgid "Still, I can handle such a loss."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2532
+msgid "The people of Dwarfenwall will surely help me raise a new army."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2534
+msgid "What is this crystal your rotting masters want, banddog?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2536
+msgid "You cannot make me angry."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2537
+msgid "And about the crystal: Why don't you ask your employers?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2539
+msgid "I thought so."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2540
+msgid "The elementalists are not exactly talkative, am I right?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2542
+msgid "Your talking is as foul as the rest of your body."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2544
+msgid "Die!"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2554
+msgid "Did you know there is quite a lot of unbound souls in the air? ##solo"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2556
+msgid "Did you know there is quite a lot of unbound souls in the air?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2565
+msgid "And now I will find a way to kill Branded Ones."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2674
+msgid "No! It cannot be! You baleful..."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2710
+msgid "It's a wrap."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2711
+msgid "What? Are you kidding?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2712
+msgid "Did you forget the defense of Dwarfenwall was only a warm-up?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2713
+msgid "If you want the process to be faster, just help out a bit."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2714
+msgid ""
+"Or visit www.sumwars.org and take a look at the forum. Criticism, hints and "
+"comments are always welcome."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2715
+msgid "Do I get money for it?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2716
+msgid "Of course not. Did you pay anything for this?"
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2717
+msgid "But the gods will remember you for all eternity."
+msgstr ""
+
+#: siegeOfDwarfenwall.xml:2718
+msgid "With this, the demo is officially over."
+msgstr ""

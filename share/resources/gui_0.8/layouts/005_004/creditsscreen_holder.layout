@@ -1,0 +1,9 @@
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="CreditsWindow_Holder" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="Area" value="{{0.113,0},{0.05,0},{0.887,0},{0.95,0}}" />
+        <Property name="BackgroundEnabled" value="False" />
+        <Property name="MousePassThroughEnabled" value="True" />
+        <Property name="Alpha" value="0" />
+    </Window>
+</GUILayout>

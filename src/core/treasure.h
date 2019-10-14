@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TREASURE_H
-#define TREASURE_H
+#ifndef __SUMWARS_CORE_TREASURE_H__
+#define __SUMWARS_CORE_TREASURE_H__
 
 #include "treasure.h"
 #include "treasurebase.h"
@@ -122,5 +122,5 @@ class Treasure : public FixedObject
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_TREASURE_H__
 

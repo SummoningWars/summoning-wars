@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GAMEOBJECT_H
-#define GAMEOBJECT_H
+#ifndef __SUMWARS_CORE_GAMEOBJECT_H__
+#define __SUMWARS_CORE_GAMEOBJECT_H__
 
 class World;
 class Region;
@@ -551,4 +551,4 @@ class GameObject
  */
 typedef std::map<int,GameObject*> GameObjectMap;
 
-#endif
+#endif // __SUMWARS_CORE_GAMEOBJECT_H__

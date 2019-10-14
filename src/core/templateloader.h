@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TEMPLATELOADER_H
-#define TEMPLATELOADER_H
+#ifndef __SUMWARS_CORE_TEMPLATELOADER_H__
+#define __SUMWARS_CORE_TEMPLATELOADER_H__
 
 
 #include <map>
@@ -75,5 +75,5 @@ class TemplateLoader
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_TEMPLATELOADER_H__
 

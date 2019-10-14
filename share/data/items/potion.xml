@@ -1,0 +1,213 @@
+<!-- POTION -->
+<Item type="potion" subtype="town_portal" name="scroll of town portal" size="small" consumable="true">
+	<Image image="voidScroll.png" />
+	<Mesh file="townPortalScroll.mesh" />
+	<Attribute
+			  character_requirement="all"
+			  price = "100"
+			  />
+	<DropChance
+			   level="-1"
+			   probability="0.0"
+			   />
+</Item>
+
+<!-- small potion -->
+<Item type="potion" subtype="heal_1" name="small potion" size="small" consumable="true" consume_timer_nr="8" consume_timer="5000" >
+	<Image image="potion_health.png" />
+	<RenderInfo name="potion" />
+	<Attribute
+		character_requirement="all"
+		price = "20"
+  />
+  
+  <UseupEffect
+		dhealth="125"
+	/>
+  
+  
+	<DropChance
+		level="-1"
+		probability="1.0"
+	/>
+</Item>
+
+<!-- medium potion -->
+<Item type="potion" subtype="heal_2" name="medium potion" size="small" consumable="true" consume_timer_nr="8" consume_timer="5000" >
+	<Image image="heal_2.png" />
+	<RenderInfo name="mediumPotion" />
+	<Attribute
+		character_requirement="all"
+		price = "80"
+  />
+  
+  <UseupEffect
+		dhealth="250"
+	/>
+  
+  
+	<DropChance
+		level="-7"
+		probability="1.5"
+	/>
+</Item>
+
+<!-- anti blind-->
+<Item type="potion" subtype="heal_bl" name="eyedrops" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_bl.png" />
+	<RenderInfo name="antiBlind" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_blind_immune_time="8000"
+	/>
+  
+  
+	<DropChance
+		level="-12"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti poison-->
+<Item type="potion" subtype="heal_ps" name="antidot" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_ps.png" />
+	<RenderInfo name="antiPoison" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_poison_immune_time="3000"
+	/>
+  
+  
+	<DropChance
+		level="-12"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti berserk -->
+<Item type="potion" subtype="heal_br" name="calming salve" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_br.png" />
+	<RenderInfo name="antiBerserk" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_berserk_immune_time="3000"
+	/>
+  
+  
+	<DropChance
+		level="-30"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti confuse -->
+<Item type="potion" subtype="heal_cf" name="potion of determination" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_cf.png" />
+	<RenderInfo name="antiConfuse" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_confuse_immune_time="3000"
+	/>
+  
+  
+	<DropChance
+		level="-30"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti mute -->
+<Item type="potion" subtype="heal_mt" name="echo potion" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_mt.png" />
+	<RenderInfo name="antiMute" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_mute_immune_time="3000"
+	/>
+  
+  
+	<DropChance
+		level="-30"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti paralyse -->
+<Item type="potion" subtype="heal_py" name="muscle salve" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_py.png" />
+	<RenderInfo name="antiParalyze" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_paralyze_immune_time="3000"
+	/>
+  
+  
+	<DropChance
+		level="-12"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti freeze -->
+<Item type="potion" subtype="heal_fr" name="potion of melting" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_fr.png" />
+	<RenderInfo name="antiFreeze" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_frozen_immune_time="1000"
+	/>
+  
+  
+	<DropChance
+		level="-15"
+		probability="0.02"
+	/>
+</Item>
+
+<!-- anti burn -->
+<Item type="potion" subtype="heal_bu" name="spike oil" size="small" consumable="true" consume_timer_nr="7" consume_timer="2000" >
+	<Image image="heal_bu.png" />
+	<RenderInfo name="antiBurn" />
+	<Attribute
+		character_requirement="all"
+		price = "100"
+  />
+  
+  <UseupEffect
+		dstatus_burning_immune_time="1000"
+	/>
+  
+  
+	<DropChance
+		level="-15"
+		probability="0.02"
+	/>
+</Item>

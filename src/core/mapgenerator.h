@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MAPGENERATOR_H
-#define MAPGENERATOR_H
+#ifndef __SUMWARS_CORE_MAPGENERATOR_H__
+#define __SUMWARS_CORE_MAPGENERATOR_H__
 
 #include "matrix2d.h"
 #include "unionfindtree.h"
@@ -233,5 +233,5 @@ extern "C"
 
 
 
-#endif
+#endif // __SUMWARS_CORE_MAPGENERATOR_H__
 

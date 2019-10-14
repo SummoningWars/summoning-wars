@@ -14,8 +14,8 @@
  */
 
 
-#ifndef FIXEDOBJECT_H
-#define FIXEDOBJECT_H
+#ifndef __SUMWARS_CORE_FIXEDOBJECT_H__
+#define __SUMWARS_CORE_FIXEDOBJECT_H__
 #include <string>
 
 #include "worldobject.h"
@@ -24,7 +24,7 @@
 
 /**
  * \class FixedObject
- * \brief Dieses Objekt stellt ein fixes Objekt dar. Es kann seine Position in der Welt nicht ver&auml;ndern.
+ * \brief This object is a fixed object. It can't move it's position in the world.
  */
 class FixedObject : public WorldObject {
 /**
@@ -34,32 +34,32 @@ public:
 
 	/**
 	 * \fn FixedObject( int id)
-	 * \param id ID des Objekts
-	 * \brief Konstruktor
+     * \param id Object id
+     * \brief Constructor
 	 */
 	FixedObject( int id);
 
 	/**
 	 * \fn FixedObject( int id, Subtype object_subtype)
-	 * \brief Konstruktor
+     * \brief Constructor
 	 */
 	FixedObject( int id, Subtype object_subtype);
 
 	/**
 	* \fn virtual bool init()
-	* \brief Initialisierung von unbewegten Gegenständen
-	* \return bool Gibt an, ob die Initialisierung erfolgreich war
+    * \brief Initializing of unmovable objects
+    * \return bool Return true if successful
 	*/
 	virtual bool init ();
 
 	/**
 	 * \fn virtual bool  update (float time)
-	 * \brief aktualisiert das Objekt nach dem eine bestimmte Zeit vergangen ist
-	 * \param time vergangene Zeit in ms
+     * \brief updates the object at an interval
+     * \param time time since last update
 	 */
 	virtual bool  update (float time);
 
 
 };
-#endif //FIXEDOBJECT_H
+#endif // __SUMWARS_CORE_FIXEDOBJECT_H__
 

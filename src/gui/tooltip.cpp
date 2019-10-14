@@ -16,6 +16,9 @@
 #include "tooltip.h"
 #include <iostream>
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 Tooltip::Tooltip ( CEGUI::Window* parent, std::string name, float fadeInTime, float fadeOutTime, float visibilityTime, float targetAlpha, TooltipType type)
 {
     m_FadeInTime = fadeInTime;
@@ -61,10 +64,10 @@ void Tooltip::create(std::string msg, CEGUI::UVector2 position, CEGUI::UVector2 
 
     tt->setPosition( position );
 
-    tt->setSize( size );
+	CEGUIUtility::setWidgetSize (tt, size);
     tt->setAlpha(0.0f);
     assert(m_Parent);
-    m_Parent->addChildWindow(tt);
+	CEGUIUtility::addChildWidget (m_Parent, tt);
 }
 
 
@@ -114,8 +117,9 @@ void Tooltip::update ( float timeSinceLastUpdate )
         if (m_FadeOutTime < m_CurrentFadeOutTime)
         {
 			m_IsDead = true;
-            m_Parent->removeChildWindow(m_Name);
-            CEGUI::WindowManager::getSingleton().destroyWindow(m_Name);
+			CEGUI::Window* wndTemp = CEGUIUtility::getWindow (m_Name);
+			CEGUIUtility::removeChildWidget (m_Parent, wndTemp);
+            CEGUI::WindowManager::getSingleton().destroyWindow (wndTemp);
         }
     }
 }

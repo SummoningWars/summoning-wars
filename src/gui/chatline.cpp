@@ -14,9 +14,11 @@
  */
 
 #include "chatline.h"
+#include "ceguiutility.h"
 
-ChatLine::ChatLine (Document* doc)
+ChatLine::ChatLine (Document* doc, const std::string& ceguiSkinName)
 	: Window(doc)
+	, m_ceguiSkinName (ceguiSkinName)
 {
 	m_history_line = 0;
 	
@@ -26,15 +28,21 @@ ChatLine::ChatLine (Document* doc)
 	
 	CEGUI::Editbox* chatline;
 	
-	chatline = static_cast<CEGUI::Editbox*>(win_mgr.createWindow("TaharezLook/Editbox", "Chatline"));
+	chatline = static_cast<CEGUI::Editbox*>(win_mgr.createWindow (CEGUIUtility::getWidgetWithSkin (m_ceguiSkinName, "Editbox"), "Chatline"));
  	chatline->setPosition(CEGUI::UVector2(cegui_reldim(0.07f), cegui_reldim( 0.83f)));
-	chatline->setSize(CEGUI::UVector2(cegui_reldim(.43f), cegui_reldim( 0.05f)));
+	CEGUIUtility::setWidgetSizeRel (chatline, 0.43f, 0.05f);
+
 	chatline->setWantsMultiClickEvents(false);
 	chatline->subscribeEvent(CEGUI::Editbox::EventTextAccepted, CEGUI::Event::Subscriber(&ChatLine::onSendMessage,  this));
 	chatline->subscribeEvent(CEGUI::Window::EventKeyDown, CEGUI::Event::Subscriber(&ChatLine::onKeyPress,  this));
 	
 	chatline->setText("");
 	chatline->setAlwaysOnTop(true);
+	if (chatline->isPropertyPresent ("BackgroundColour"))
+	{
+		chatline->setProperty("BackgroundColour", "B2000000"); 
+	}
+
 	m_window = chatline;
 	
 	updateTranslation();
@@ -69,8 +77,7 @@ void ChatLine::updateTranslation()
 
 void ChatLine::setHistoryLine()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Editbox* line = static_cast<CEGUI::Editbox*>(win_mgr.getWindow( "Chatline"));
+	CEGUI::Editbox* line = static_cast<CEGUI::Editbox*>(m_window);
 	
 	if (m_history_line == 0)
 	{

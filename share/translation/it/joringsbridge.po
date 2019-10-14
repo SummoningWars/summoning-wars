@@ -1,0 +1,468 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-22 15:23+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: joringsbridge.xml:2
+msgid "Joringsbridge"
+msgstr "Joringsbridge"
+
+#: joringsbridge.xml:3 joringsbridge.xml:392
+msgid "joringsbridge"
+msgstr "Joringsbridge"
+
+#: joringsbridge.xml:105
+msgid "I'm begging you, my prince!"
+msgstr "Ti prego, mio principe!"
+
+#: joringsbridge.xml:106
+msgid "Leave at least a handful of soldiers here."
+msgstr "Lascia qui almeno un manipolo di soldati."
+
+#: joringsbridge.xml:108
+msgid "I can barly guard the village, let alone the surrounding farms!"
+msgstr ""
+"Posso a malapena controllare il villaggio, figuriamoci le fattorie "
+"circostanti!"
+
+#: joringsbridge.xml:111
+msgid "Silence!"
+msgstr "Silenzio!"
+
+#: joringsbridge.xml:112
+msgid "..."
+msgstr "..."
+
+#: joringsbridge.xml:113
+msgid "The safety of the country has absolute priority."
+msgstr "La sicurezza del paese ha la priorita' assoluta."
+
+#: joringsbridge.xml:114
+msgid "Surely you can handle a hand full of lousy goblins."
+msgstr "Sicuramente potrai tenere a bada una banda di sudici goblin."
+
+#: joringsbridge.xml:115
+msgid "Not to mention you have a mighty summoner at your side."
+msgstr "Senza considerare che hai un potente evocatore al tuo fianco."
+
+#: joringsbridge.xml:116
+msgid "That's more than enough."
+msgstr "Questo e' piu' che sufficiente."
+
+#: joringsbridge.xml:117
+msgid "But the honourable mage has other duties!"
+msgstr "Ma l'onorabile mago ha altri doveri onorevole ha altri compiti!"
+
+#: joringsbridge.xml:118
+msgid "Quite so!"
+msgstr "Proprio cosi'!"
+
+#: joringsbridge.xml:119
+msgid ""
+"The pursuit of pathetic goblins is neither my duty nor do I see the point of "
+"such absurd amusement."
+msgstr ""
+"La caccia a patetici goblin non e' ne' il mio dovere ne' qualcosa che mi "
+"faccia divertire."
+
+#: joringsbridge.xml:121
+msgid ""
+"What would you do were the village to be attacked while I was on a fruitless "
+"hunt for goblins?"
+msgstr ""
+"Cosa faresti se il villaggio venisse attaccato mentre io sono a caccia di "
+"goblin?"
+
+#: joringsbridge.xml:122
+msgid "And you really have no time to help out a bit?"
+msgstr "E tu davvero non hai tempo per aiutarci?"
+
+#: joringsbridge.xml:123
+msgid "My humble apologies, but the council has given me very important tasks."
+msgstr ""
+"Le mie umili scuse, ma il consiglio mi ha dato importanti compiti da "
+"adempiere."
+
+#: joringsbridge.xml:124
+msgid "As much as I'd like to help, I don't have any room for such a thing."
+msgstr "Per quanto mi piacerebbe aiutare, non ho tempo per una cosa simile."
+
+#: joringsbridge.xml:125
+msgid ""
+"But may I use this unique opportunity to congratulate you on your upcoming "
+"wedding with the archmage Ireana of"
+msgstr ""
+"Posso approfittare di questa opportunita' unica per congratularmi con lei "
+"per il suo imminente matrimonio con l'Arcimaga Ireana"
+
+#: joringsbridge.xml:126
+msgid "Thanks, that is enough."
+msgstr "Grazie, basta cosi'."
+
+#: joringsbridge.xml:133
+msgid "Sergeant Lutterer"
+msgstr "Sergente Lutterer"
+
+#: joringsbridge.xml:137
+msgid "Self-satisfied parasite, that mage!"
+msgstr "Quel mago e' un parassita pieno di se'!"
+
+#: joringsbridge.xml:139
+msgid ""
+"I just hope the kingdom has big granaries, if the greenskins torch the "
+"fields."
+msgstr ""
+"Spero solo che il regno abbia abbastanza granai nel caso in cui i goblin "
+"iniziassero a bruciare i campi."
+
+#: joringsbridge.xml:140
+msgid "The presence of the mage alone will drive out every goblin!"
+msgstr "La sola presenza del mago stanera' ogni goblin."
+
+#: joringsbridge.xml:141
+msgid "Stop bugging the prince with your incompetence."
+msgstr "Smetti di annoiare il principe con la tua incompetenza!"
+
+#: joringsbridge.xml:142
+msgid "!"
+msgstr "!"
+
+#: joringsbridge.xml:143
+msgid "Don't you have something better to do?"
+msgstr "Non hai niente di meglio da fare?"
+
+#: joringsbridge.xml:145
+msgid "And they say, my kind is cold-hearted..."
+msgstr "E poi dicono che sono insensibile di natura..."
+
+#: joringsbridge.xml:147
+msgid "And they say, our kind is cold-hearted..."
+msgstr "E poi dicono che siamo insensibili di natura..."
+
+#: joringsbridge.xml:169
+msgid "Guards! Guards!"
+msgstr "Guardie! Guardie!"
+
+#: joringsbridge.xml:175
+msgid "Help! My farm is being raided by goblins!"
+msgstr "Aiutatemi! La mia fattoria e' stata invasa dai goblin!"
+
+#: joringsbridge.xml:176
+msgid "My family..."
+msgstr "La mia famiglia..."
+
+#: joringsbridge.xml:185
+msgid "Take the fool away!"
+msgstr "Mandate via il pazzo!"
+
+#: joringsbridge.xml:186
+msgid "The prince has more important matters to tend to."
+msgstr "Il principe ha cose piu' importanti di cui occuparsi."
+
+#: joringsbridge.xml:189
+msgid "Wait!"
+msgstr "Aspetta!"
+
+#: joringsbridge.xml:190
+msgid "What happened?"
+msgstr "Cosa e' successo?"
+
+#: joringsbridge.xml:192
+msgid "Forgive me, my prince, but my wife and my children are still there."
+msgstr "Perdonami, mio principe, ma mia moglie e i miei figli sono ancora li'."
+
+#: joringsbridge.xml:193
+msgid "I don't know how long the house will withstand them."
+msgstr "Non so' per quanto tempo ancora la casa li potra' proteggere."
+
+#: joringsbridge.xml:194
+msgid "I beg of you: help me!"
+msgstr "Ti imploro: aiutami!"
+
+#: joringsbridge.xml:196
+msgid "We..."
+msgstr "Noi..."
+
+#: joringsbridge.xml:197
+msgid "My prince!"
+msgstr "Mio principe!"
+
+#: joringsbridge.xml:198
+msgid "We don't have time!"
+msgstr "Non abbiamo tempo!"
+
+#: joringsbridge.xml:199
+msgid "The demons are at the northern border!"
+msgstr "I Demoni sono al confine nord!"
+
+#: joringsbridge.xml:201
+msgid "I know!"
+msgstr "Lo so'!"
+
+#: joringsbridge.xml:204
+msgid "2000 gold pieces for everyone who is willing to help this humble man!"
+msgstr "2000 monete d'oro per chiunque vorra' aiutare quest'uomo disperato!"
+
+#: joringsbridge.xml:205
+msgid "ts"
+msgstr "ts"
+
+#: joringsbridge.xml:208
+msgid "2000 gold pieces."
+msgstr "2000 monete d'oro."
+
+#: joringsbridge.xml:210
+msgid "2000 for every one."
+msgstr "2000 ciascuno."
+
+#: joringsbridge.xml:212
+msgid "That could almost be worth the trouble."
+msgstr "Potrebbe valerne la pena."
+
+#: joringsbridge.xml:240 joringsbridge.xml:251
+msgid "Don't even think about it!"
+msgstr "Non pensarci nemmeno!"
+
+#: joringsbridge.xml:241
+msgid "You are to go to Dwarfenwall immediately!"
+msgstr "Devi andare immediatamente a Dwarfenwall!"
+
+#: joringsbridge.xml:242
+msgid "Where do you come from? Didn't I exclude you?"
+msgstr "E tu da dove esci vieni? Non ti avevo escluso?"
+
+#: joringsbridge.xml:243 joringsbridge.xml:254
+msgid "Your trifles cannot stop me."
+msgstr "Le tue sciocchezze non mi fermeranno."
+
+#: joringsbridge.xml:244
+msgid "The blood always works..."
+msgstr "Il sangue funziona sempre..."
+
+#: joringsbridge.xml:245
+msgid "Ah!"
+msgstr "Ah!"
+
+#: joringsbridge.xml:246
+msgid ""
+"The mage over there has another of those crystals on his staff, hasn't he?"
+msgstr ""
+"Il mago laggiu' ha un altro di quei cristalli incastonato nel suo bastone."
+
+#: joringsbridge.xml:247
+msgid "You people are really unnerving somehow."
+msgstr "Certe volte siete davvero inquietanti."
+
+#: joringsbridge.xml:248
+msgid "Who cares what you think? Let the peasant be a peasant and get moving!"
+msgstr ""
+"A chi interessa cosa pensi? Lascia che il contadino faccia il contadino e "
+"comincia a muoverti!"
+
+#: joringsbridge.xml:249 joringsbridge.xml:258
+msgid "Well..."
+msgstr "Hmm..."
+
+#: joringsbridge.xml:252
+msgid "You have to go to Dwarfenwall immediately!"
+msgstr "Devi andare a Dwarfenwall immediatamente!"
+
+#: joringsbridge.xml:253
+msgid "Where did you pop out from? Didn't we exclude you?"
+msgstr "Da dove siete usciti fuori? Non vi avevo escluso?"
+
+#: joringsbridge.xml:255
+msgid "Rubbish! Take a look at the crystal on the mege's staff."
+msgstr ""
+"Feccia! Dai un occhiata al cristallo incastonato nella staffa del mago!"
+
+#: joringsbridge.xml:256
+msgid "Looks like our model, doesn't it?"
+msgstr "Sembra il nostro, vero?"
+
+#: joringsbridge.xml:257
+msgid "Whatever. Get moving!"
+msgstr "Comunque, vediamo di muoverci!"
+
+#: joringsbridge.xml:261
+msgid "Help the peasant?"
+msgstr "Aiutando il contadino?"
+
+#: joringsbridge.xml:262
+msgid "Yes"
+msgstr "Si"
+
+#: joringsbridge.xml:263
+msgid "No"
+msgstr "No"
+
+#: joringsbridge.xml:277
+msgid "Only a stone would watch deedless."
+msgstr "Solo una pietra starebbe li' a guardare."
+
+#: joringsbridge.xml:278
+msgid "Who knows how many sou... goblins are walking around there!"
+msgstr "Chissa' quanti goblin ci sono qui in giro!"
+
+#: joringsbridge.xml:279
+msgid "And we get money. Two birds with one stone."
+msgstr "E noi prendiamo i soldi. Due piccioni con una fava."
+
+#: joringsbridge.xml:282 joringsbridge.xml:287
+msgid "What do you think you're doing? You are to go to Dwarfenwall!"
+msgstr "Cosa pensi tu stia facendo? Devi andare a Dwarfenwall!"
+
+#: joringsbridge.xml:283
+msgid "When I get there was never part of the deal!"
+msgstr "L'ora del mio arrivo non e' mai stato parte dell'affare!"
+
+#: joringsbridge.xml:284
+msgid "If the city is lost, I'll just conquer it back!"
+msgstr "Se la citta' e' perduta, mi limitero' a riconquistarla!"
+
+#: joringsbridge.xml:286
+msgid "So it's decided."
+msgstr "Allora e' deciso."
+
+#: joringsbridge.xml:288
+msgid "When we get there was never part of the deal!"
+msgstr "L'ora del nostro arrivo non e' mai stato parte dell'affare!"
+
+#: joringsbridge.xml:289
+msgid "If the city is lost, we'll just conquer it back!"
+msgstr "Se la citta' e' perduta, ci limiteremo a riconquistarla!"
+
+#: joringsbridge.xml:290
+msgid "Yes, show him who's in charge!"
+msgstr "Si', fagli vedere chi comanda!"
+
+#: joringsbridge.xml:319
+msgid "Prince, I take the job!"
+msgstr "Principe me ne occupero' io!"
+
+#: joringsbridge.xml:321
+msgid "Prince, we take the job!"
+msgstr "Principe ce ne occuperemo noi!"
+
+#: joringsbridge.xml:324
+msgid "By Marek!"
+msgstr "Per Marek!"
+
+#: joringsbridge.xml:325
+msgid "Who is that?"
+msgstr ""
+
+#: joringsbridge.xml:334
+msgid "Aren't you the... auxiliary forces of the council? ##solo"
+msgstr "Quindi sei tu... l'aiuto inviatoci dal Consiglio.. ##solo"
+
+#: joringsbridge.xml:336
+msgid "Aren't you the... auxiliary forces of the council?"
+msgstr "Quindi siete voi... gli aiuti inviati dal Consiglio.."
+
+#: joringsbridge.xml:337
+msgid "... under the heel of a certain Soren Airpaw, at your service."
+msgstr "...Sotto la guida di un certo Soren Airpaw, al tuo servizio."
+
+#: joringsbridge.xml:338
+msgid "Windclaw, you fool!"
+msgstr "Windclaw, pazzo che non sei altro!"
+
+#: joringsbridge.xml:339
+msgid "Oops..."
+msgstr "Ops..."
+
+#: joringsbridge.xml:343
+msgid "Is that a problem for you?"
+msgstr "E' un problema per te?"
+
+#: joringsbridge.xml:345
+msgid "... probably not. Alright, even if I don't like it."
+msgstr "..probabilmente no. Comunque va bene, anche se non mi piace."
+
+#: joringsbridge.xml:347
+msgid "Are you sure?"
+msgstr "Sei sicuro?"
+
+#: joringsbridge.xml:348
+msgid "What if they kill the peasants along?"
+msgstr "Che succede se uccidono i contadini?"
+
+#: joringsbridge.xml:351 joringsbridge.xml:371
+msgid "Sergeant!"
+msgstr "Sergente!"
+
+#: joringsbridge.xml:352
+msgid ""
+"Only hand over the gold if the goblins are driven off and the peasants are "
+"alive in the end."
+msgstr ""
+"Consegna l'oro solo se i goblin vengono scacciati e se tutti i contadini "
+"rimangono vivi."
+
+#: joringsbridge.xml:353
+#, fuzzy
+msgid "Otherwise, do your work diligently."
+msgstr "Quindi ti conviene compiere il tuo lavoro diligentemente."
+
+#: joringsbridge.xml:356
+msgid "As you wish, my Prinz."
+msgstr "Come desiderate, mio principe."
+
+#: joringsbridge.xml:358
+msgid "That much distrust is really unnecessary during a war. "
+msgstr "Tutta questa diffidenza e' davvero superflua in tempo di guerra."
+
+#: joringsbridge.xml:368
+msgid "Nobody?"
+msgstr "Nessuno?"
+
+#: joringsbridge.xml:375
+msgid "My prince?"
+msgstr "Principe?"
+
+#: joringsbridge.xml:377
+msgid "I am true to my word."
+msgstr "Sono fedele alla parola data."
+
+#: joringsbridge.xml:378
+msgid "Hand over the gold, if you find someone who helps you after all."
+msgstr "Consegna l'oro, se trovi qualcuno che puo' aiutarti."
+
+#: joringsbridge.xml:380
+msgid "As you wish, my prince."
+msgstr "Come desideri mio Principe."
+
+#: joringsbridge.xml:383
+msgid "I'm sorry, good man."
+msgstr "Mi dispiace, buon uomo."
+
+#: joringsbridge.xml:384
+msgid "I will pray that your family is safe long enough."
+msgstr ""
+"Preghero' perche' la tua famiglia rimanga al sicuro per il tempo necessario."
+
+#, fuzzy
+#~ msgid "sergeant"
+#~ msgstr "Sergente!"
+
+#, fuzzy
+#~ msgid "prince"
+#~ msgstr "Mio principe!"

@@ -1,0 +1,40 @@
+<World>
+	<!-- Maylons Grab, Ebene 1[unterirdisch], ungefaehr 10 Minuten; Level 14 - 17 -->
+	<!-- [kleine Elementare], Zombies, Skelette -->
+	<Region id="15" name="aisMaylonsGraveL1">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="48" dimy="48" area_percent="0.3" complexity="0.3" granularity="4"  ground="cave_ground"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+		</Music>
+		
+		<ExitDirections north="true" south="true" west="false" east="false" />
+		<WorldPosition world_x="0.61" world_y ="0.61"/>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="cryptShrine" priority="2" number="5" probability="1"/>
+			<ObjectGroup object_group="cryptInlet" priority="2" number="4" probability="1"/>
+			<ObjectGroup object_group="konzColumn" priority="1" number="15" probability="1"/>
+			<ObjectGroup object_group="cryptRoom" priority="3" number="2" probability="1"/>
+			<ObjectGroup object_group="randomLoc4_4" priority="2" number="20" probability="1"/>
+		</ObjectGroups>
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="aisMaylonsGraveEntry" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="aisMaylonsGraveL2" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+	
+		<Environments>
+			<Environment height="1.0" name="vault" />
+		</Environments>
+	</Region>
+</World>

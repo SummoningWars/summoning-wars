@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MONSTER_H
-#define MONSTER_H
+#ifndef __SUMWARS_CORE_MONSTER_H__
+#define __SUMWARS_CORE_MONSTER_H__
 #include <string>
 #include "creature.h"
 #include "dropslot.h"
@@ -359,4 +359,4 @@ class Monster : public Creature {
 
 
 };
-#endif //MONSTER_H
+#endif // __SUMWARS_CORE_MONSTER_H__

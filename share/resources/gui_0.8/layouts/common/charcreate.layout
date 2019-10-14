@@ -1,0 +1,43 @@
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="CharCreate" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="InheritsAlpha" value="False" />
+        <Property name="Area" value="{{0,0},{0.0,0},{1,0},{1.0,0}}" />
+        <Property name="BackgroundEnabled" value="False" />
+        <Window type="SWB/StaticText" name="CharNameLabel" >
+            <Property name="Text" value="Name" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="HorzFormatting" value="HorzCentred" />
+            <Property name="Area" value="{{0.03,0},{0.04,0},{0.14,0},{0.096,0}}" />
+        </Window>
+        <Window type="SWB/Editbox" name="NameBox" >
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.16,0},{0.044,0},{0.31,0},{0.098,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+        <Window type="SWB/StaticText" name="CharClassLabel" >
+            <Property name="Text" value="Class" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="HorzFormatting" value="HorzCentred" />
+            <Property name="Area" value="{{0.111,0},{0.14,0},{0.25,0},{0.194,0}}" />
+        </Window>
+        <Window type="SWB/Listbox" name="ClassList" >
+            <Property name="Text" value="Options" />
+            <Property name="Area" value="{{0.054,0},{0.2,0},{0.3,0},{0.33,0}}" />
+        </Window>
+        <Window type="SWB/Listbox" name="LookList" >
+            <Property name="Text" value="Options" />
+            <Property name="Area" value="{{0.054,0},{0.37,0},{0.3,0},{0.50,0}}" />
+        </Window>
+        <Window type="SWB/Button" name="AbortButton" >
+            <Property name="Text" value="Cancel" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0755,0},{0.63,0},{0.265,0},{0.69,0}}" />
+        </Window>
+        <Window type="SWB/Button" name="CharCreateButton" >
+            <Property name="Text" value="Create" />
+            <Property name="InheritsAlpha" value="False" />
+            <Property name="Area" value="{{0.0755,0},{0.53,0},{0.265,0},{0.59,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

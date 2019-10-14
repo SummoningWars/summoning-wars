@@ -1,0 +1,436 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: joringsbridge.xml:2
+msgid "Joringsbridge"
+msgstr ""
+
+#: joringsbridge.xml:3 joringsbridge.xml:392
+msgid "joringsbridge"
+msgstr ""
+
+#: joringsbridge.xml:105
+msgid "I'm begging you, my prince!"
+msgstr ""
+
+#: joringsbridge.xml:106
+msgid "Leave at least a handful of soldiers here."
+msgstr ""
+
+#: joringsbridge.xml:108
+msgid "I can barly guard the village, let alone the surrounding farms!"
+msgstr ""
+
+#: joringsbridge.xml:111
+msgid "Silence!"
+msgstr ""
+
+#: joringsbridge.xml:112
+msgid "..."
+msgstr ""
+
+#: joringsbridge.xml:113
+msgid "The safety of the country has absolute priority."
+msgstr ""
+
+#: joringsbridge.xml:114
+msgid "Surely you can handle a hand full of lousy goblins."
+msgstr ""
+
+#: joringsbridge.xml:115
+msgid "Not to mention you have a mighty summoner at your side."
+msgstr ""
+
+#: joringsbridge.xml:116
+msgid "That's more than enough."
+msgstr ""
+
+#: joringsbridge.xml:117
+msgid "But the honourable mage has other duties!"
+msgstr ""
+
+#: joringsbridge.xml:118
+msgid "Quite so!"
+msgstr ""
+
+#: joringsbridge.xml:119
+msgid ""
+"The pursuit of pathetic goblins is neither my duty nor do I see the point of "
+"such absurd amusement."
+msgstr ""
+
+#: joringsbridge.xml:121
+msgid ""
+"What would you do were the village to be attacked while I was on a fruitless "
+"hunt for goblins?"
+msgstr ""
+
+#: joringsbridge.xml:122
+msgid "And you really have no time to help out a bit?"
+msgstr ""
+
+#: joringsbridge.xml:123
+msgid "My humble apologies, but the council has given me very important tasks."
+msgstr ""
+
+#: joringsbridge.xml:124
+msgid "As much as I'd like to help, I don't have any room for such a thing."
+msgstr ""
+
+#: joringsbridge.xml:125
+msgid ""
+"But may I use this unique opportunity to congratulate you on your upcoming "
+"wedding with the archmage Ireana of"
+msgstr ""
+
+#: joringsbridge.xml:126
+msgid "Thanks, that is enough."
+msgstr ""
+
+#: joringsbridge.xml:133
+msgid "Sergeant Lutterer"
+msgstr ""
+
+#: joringsbridge.xml:137
+msgid "Self-satisfied parasite, that mage!"
+msgstr ""
+
+#: joringsbridge.xml:139
+msgid ""
+"I just hope the kingdom has big granaries, if the greenskins torch the "
+"fields."
+msgstr ""
+
+#: joringsbridge.xml:140
+msgid "The presence of the mage alone will drive out every goblin!"
+msgstr ""
+
+#: joringsbridge.xml:141
+msgid "Stop bugging the prince with your incompetence."
+msgstr ""
+
+#: joringsbridge.xml:142
+msgid "!"
+msgstr ""
+
+#: joringsbridge.xml:143
+msgid "Don't you have something better to do?"
+msgstr ""
+
+#: joringsbridge.xml:145
+msgid "And they say, my kind is cold-hearted..."
+msgstr ""
+
+#: joringsbridge.xml:147
+msgid "And they say, our kind is cold-hearted..."
+msgstr ""
+
+#: joringsbridge.xml:169
+msgid "Guards! Guards!"
+msgstr ""
+
+#: joringsbridge.xml:175
+msgid "Help! My farm is being raided by goblins!"
+msgstr ""
+
+#: joringsbridge.xml:176
+msgid "My family..."
+msgstr ""
+
+#: joringsbridge.xml:185
+msgid "Take the fool away!"
+msgstr ""
+
+#: joringsbridge.xml:186
+msgid "The prince has more important matters to tend to."
+msgstr ""
+
+#: joringsbridge.xml:189
+msgid "Wait!"
+msgstr ""
+
+#: joringsbridge.xml:190
+msgid "What happened?"
+msgstr ""
+
+#: joringsbridge.xml:192
+msgid "Forgive me, my prince, but my wife and my children are still there."
+msgstr ""
+
+#: joringsbridge.xml:193
+msgid "I don't know how long the house will withstand them."
+msgstr ""
+
+#: joringsbridge.xml:194
+msgid "I beg of you: help me!"
+msgstr ""
+
+#: joringsbridge.xml:196
+msgid "We..."
+msgstr ""
+
+#: joringsbridge.xml:197
+msgid "My prince!"
+msgstr ""
+
+#: joringsbridge.xml:198
+msgid "We don't have time!"
+msgstr ""
+
+#: joringsbridge.xml:199
+msgid "The demons are at the northern border!"
+msgstr ""
+
+#: joringsbridge.xml:201
+msgid "I know!"
+msgstr ""
+
+#: joringsbridge.xml:204
+msgid "2000 gold pieces for everyone who is willing to help this humble man!"
+msgstr ""
+
+#: joringsbridge.xml:205
+msgid "ts"
+msgstr ""
+
+#: joringsbridge.xml:208
+msgid "2000 gold pieces."
+msgstr ""
+
+#: joringsbridge.xml:210
+msgid "2000 for every one."
+msgstr ""
+
+#: joringsbridge.xml:212
+msgid "That could almost be worth the trouble."
+msgstr ""
+
+#: joringsbridge.xml:240 joringsbridge.xml:251
+msgid "Don't even think about it!"
+msgstr ""
+
+#: joringsbridge.xml:241
+msgid "You are to go to Dwarfenwall immediately!"
+msgstr ""
+
+#: joringsbridge.xml:242
+msgid "Where do you come from? Didn't I exclude you?"
+msgstr ""
+
+#: joringsbridge.xml:243 joringsbridge.xml:254
+msgid "Your trifles cannot stop me."
+msgstr ""
+
+#: joringsbridge.xml:244
+msgid "The blood always works..."
+msgstr ""
+
+#: joringsbridge.xml:245
+msgid "Ah!"
+msgstr ""
+
+#: joringsbridge.xml:246
+msgid ""
+"The mage over there has another of those crystals on his staff, hasn't he?"
+msgstr ""
+
+#: joringsbridge.xml:247
+msgid "You people are really unnerving somehow."
+msgstr ""
+
+#: joringsbridge.xml:248
+msgid "Who cares what you think? Let the peasant be a peasant and get moving!"
+msgstr ""
+
+#: joringsbridge.xml:249 joringsbridge.xml:258
+msgid "Well..."
+msgstr ""
+
+#: joringsbridge.xml:252
+msgid "You have to go to Dwarfenwall immediately!"
+msgstr ""
+
+#: joringsbridge.xml:253
+msgid "Where did you pop out from? Didn't we exclude you?"
+msgstr ""
+
+#: joringsbridge.xml:255
+msgid "Rubbish! Take a look at the crystal on the mege's staff."
+msgstr ""
+
+#: joringsbridge.xml:256
+msgid "Looks like our model, doesn't it?"
+msgstr ""
+
+#: joringsbridge.xml:257
+msgid "Whatever. Get moving!"
+msgstr ""
+
+#: joringsbridge.xml:261
+msgid "Help the peasant?"
+msgstr ""
+
+#: joringsbridge.xml:262
+msgid "Yes"
+msgstr ""
+
+#: joringsbridge.xml:263
+msgid "No"
+msgstr ""
+
+#: joringsbridge.xml:277
+msgid "Only a stone would watch deedless."
+msgstr ""
+
+#: joringsbridge.xml:278
+msgid "Who knows how many sou... goblins are walking around there!"
+msgstr ""
+
+#: joringsbridge.xml:279
+msgid "And we get money. Two birds with one stone."
+msgstr ""
+
+#: joringsbridge.xml:282 joringsbridge.xml:287
+msgid "What do you think you're doing? You are to go to Dwarfenwall!"
+msgstr ""
+
+#: joringsbridge.xml:283
+msgid "When I get there was never part of the deal!"
+msgstr ""
+
+#: joringsbridge.xml:284
+msgid "If the city is lost, I'll just conquer it back!"
+msgstr ""
+
+#: joringsbridge.xml:286
+msgid "So it's decided."
+msgstr ""
+
+#: joringsbridge.xml:288
+msgid "When we get there was never part of the deal!"
+msgstr ""
+
+#: joringsbridge.xml:289
+msgid "If the city is lost, we'll just conquer it back!"
+msgstr ""
+
+#: joringsbridge.xml:290
+msgid "Yes, show him who's in charge!"
+msgstr ""
+
+#: joringsbridge.xml:319
+msgid "Prince, I take the job!"
+msgstr ""
+
+#: joringsbridge.xml:321
+msgid "Prince, we take the job!"
+msgstr ""
+
+#: joringsbridge.xml:324
+msgid "By Marek!"
+msgstr ""
+
+#: joringsbridge.xml:325
+msgid "Who is that?"
+msgstr ""
+
+#: joringsbridge.xml:334
+msgid "Aren't you the... auxiliary forces of the council? ##solo"
+msgstr ""
+
+#: joringsbridge.xml:336
+msgid "Aren't you the... auxiliary forces of the council?"
+msgstr ""
+
+#: joringsbridge.xml:337
+msgid "... under the heel of a certain Soren Airpaw, at your service."
+msgstr ""
+
+#: joringsbridge.xml:338
+msgid "Windclaw, you fool!"
+msgstr ""
+
+#: joringsbridge.xml:339
+msgid "Oops..."
+msgstr ""
+
+#: joringsbridge.xml:343
+msgid "Is that a problem for you?"
+msgstr ""
+
+#: joringsbridge.xml:345
+msgid "... probably not. Alright, even if I don't like it."
+msgstr ""
+
+#: joringsbridge.xml:347
+msgid "Are you sure?"
+msgstr ""
+
+#: joringsbridge.xml:348
+msgid "What if they kill the peasants along?"
+msgstr ""
+
+#: joringsbridge.xml:351 joringsbridge.xml:371
+msgid "Sergeant!"
+msgstr ""
+
+#: joringsbridge.xml:352
+msgid ""
+"Only hand over the gold if the goblins are driven off and the peasants are "
+"alive in the end."
+msgstr ""
+
+#: joringsbridge.xml:353
+msgid "Otherwise, do your work diligently."
+msgstr ""
+
+#: joringsbridge.xml:356
+msgid "As you wish, my Prinz."
+msgstr ""
+
+#: joringsbridge.xml:358
+msgid "That much distrust is really unnecessary during a war. "
+msgstr ""
+
+#: joringsbridge.xml:368
+msgid "Nobody?"
+msgstr ""
+
+#: joringsbridge.xml:375
+msgid "My prince?"
+msgstr ""
+
+#: joringsbridge.xml:377
+msgid "I am true to my word."
+msgstr ""
+
+#: joringsbridge.xml:378
+msgid "Hand over the gold, if you find someone who helps you after all."
+msgstr ""
+
+#: joringsbridge.xml:380
+msgid "As you wish, my prince."
+msgstr ""
+
+#: joringsbridge.xml:383
+msgid "I'm sorry, good man."
+msgstr ""
+
+#: joringsbridge.xml:384
+msgid "I will pray that your family is safe long enough."
+msgstr ""

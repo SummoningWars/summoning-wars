@@ -487,7 +487,22 @@ class Options
 		{
 			m_shadow_mode = newMode;
 		}
-
+		
+		/**
+		 * \brief Get the savegame chosen at startup
+		 */
+		std::string getDefaultSavegame() const
+		{
+			return m_default_savegame;
+		}
+		
+		/**
+		 * \brief Set the savegame chosen at startup
+		 */
+		void setDefaultSavegame(std::string savegame)
+		{
+			m_default_savegame = savegame;
+		}
 		
 		/**
 		 * \brief Pushes the named value on the lua stack
@@ -503,6 +518,44 @@ class Options
 		 * \param bool true if successful, else false
 		 */
 		bool setValue(std::string valname);
+
+
+		/**
+		 * \brief Getter for the CEGUI skin to use for the UI.
+		 * \author Augustin Preda.
+		 */
+		const std::string& getCeguiSkin () const
+		{
+			return m_cegui_skin;
+		}
+
+		/**
+		 * \brief Setter for the CEGUI skin to use for the UI.
+		 * \author Augustin Preda.
+		 */
+		void setCeguiSkin (const std::string& skinName)
+		{
+			m_cegui_skin = skinName;
+		}
+
+		/**
+		 * \brief Getter for the CEGUI skin to use for the UI.
+		 * \author Augustin Preda.
+		 */
+		const std::string& getCeguiCursorSkin () const
+		{
+			return m_cegui_cursor_skin;
+		}
+
+		/**
+		 * \brief Setter for the CEGUI skin to use for the UI.
+		 * \author Augustin Preda.
+		 */
+		void setCeguiCursorSkin (const std::string& skinName)
+		{
+			m_cegui_cursor_skin = skinName;
+		}
+
 
 	private:
 		/**
@@ -604,5 +657,20 @@ class Options
 		 * \brief The available display resolutions.
 		 */
 		std::map <std::string, std::vector <std::string> > m_available_resolutions;
+		
+		/**
+		 * \brief default savegame chosen at the start
+		 */
+		std::string m_default_savegame;
+
+		/**
+		 * \brief Specify the CEGUI skin to use.
+		 */
+		std::string m_cegui_skin;
+
+		/**
+		 * \brief Specify the CEGUI cursor skin to use.
+		 */
+		std::string m_cegui_cursor_skin;
 
 };

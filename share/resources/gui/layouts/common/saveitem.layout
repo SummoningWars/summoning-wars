@@ -1,0 +1,43 @@
+<GUILayout >
+    <Window Type="SWB/Button" Name="SaveItemRoot" >
+        <Property Name="Alpha" Value="0.5" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{0.2,0}}" />
+
+        <Window Type="SWB/StaticText" Name="SaveItemRoot_Name" >
+            <Property Name="Text" Value="CharacterName" />
+            <Property Name="HorzExtent" Value="165" />
+            <Property Name="VertExtent" Value="23.8451" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.293234,0},{0.0861111,0},{0.814916,0},{0.544444,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+
+        <Window Type="SWB/StaticText" Name="SaveItemRoot_DecriptionLabel" >
+            <Property Name="Text" Value="Level 5 Fencer" />
+            <Property Name="HorzExtent" Value="140" />
+            <Property Name="VertExtent" Value="24.0283" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="HorzFormatting" Value="HorzCentred" />
+            <Property Name="UnifiedAreaRect" Value="{{0.26,0},{0.559288,0},{0.83,0},{0.864844,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+        </Window>
+
+        <Window Type="SWB/StaticImage" Name="SaveItemRoot_Avatar" >
+            <Property Name="Image" Value="set:MainMenu image:Logo" />
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="InheritsAlpha" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.041435,0},{0.102552,0},{0.239047,0},{0.924156,0}}" />
+        </Window>
+
+        <Window Type="SWB/ImageButton" Name="SaveItemRoot_DelChar" >
+            <Property Name="HoverImage" Value="set:MainMenu image:DelCharBtnHover" />
+            <Property Name="NormalImage" Value="set:MainMenu image:DelCharBtnNormal" />
+            <Property Name="PushedImage" Value="set:MainMenu image:DelCharBtnPushed" />
+            <Property Name="UnifiedAreaRect" Value="{{0.891602,0},{0.265625,0},{0.983398,0},{0.736981,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

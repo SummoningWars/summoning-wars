@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MATRIX2D_H
-#define MATRIX2D_H
+#ifndef __SUMWARS_CORE_MATRIX2D_H__
+#define __SUMWARS_CORE_MATRIX2D_H__
 
 #include "debug.h"
 #include <stdio.h>
@@ -106,4 +106,4 @@ class Matrix2d
 };
 	
 
-#endif
+#endif // __SUMWARS_CORE_MATRIX2D_H__

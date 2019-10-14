@@ -1,0 +1,104 @@
+
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="BenchmarkTab" >
+        <Property name="Area" value="{{0.209961,0},{0.175781,0},{0.81543,0},{0.761719,0}}" />
+        <Window type="TaharezLook/Button" name="StartButton" >
+            <Property name="Text" value="Start Benchmark" />
+            <Property name="Area" value="{{0.0235144,0},{0.861905,0},{0.34983,0},{0.973016,0}}" />
+        </Window>
+        <Window type="TaharezLook/StaticText" name="CPULabel" >
+            <Property name="Text" value="CPU:" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.0210526,0},{0.0428571,1},{0.0939728,2},{0.120635,1}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+            
+        </Window>
+        <Window type="TaharezLook/StaticText" name="GPULabel2" >
+            <Property name="Text" value="GPU:" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.0210526,0},{0.136508,-1},{0.0939727,2},{0.214286,-1}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+        </Window>
+        <Window type="TaharezLook/MultiLineEditbox" name="ResultsEditbox" >
+            <Property name="Text" >
+</Property>
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.0241935,0},{0.233333,0},{0.983871,0},{0.844445,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+        </Window>
+        <Window type="TaharezLook/Button" name="Button" >
+            <Property name="Text" value="Save Results" />
+            <Property name="Disabled" value="True" />
+            <Property name="Area" value="{{0.362903,0},{0.866667,0},{0.66129,0},{0.966667,0}}" />
+        </Window>
+        <Window type="TaharezLook/Button" name="Button2" >
+            <Property name="Text" value="Send by Email" />
+            <Property name="Disabled" value="True" />
+            <Property name="Area" value="{{0.677419,0},{0.866667,0},{0.983871,0},{0.966667,0}}" />
+        </Window>
+        <Window type="TaharezLook/StaticText" name="CPULabel2" >
+            <Property name="Text" value="OS:" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.545246,2},{0.0428571,1},{0.610102,2},{0.120635,1}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+        </Window>
+        <Window type="TaharezLook/StaticText" name="GPULabel22" >
+            <Property name="Text" value="Driver:" />
+            <Property name="FrameEnabled" value="False" />
+            <Property name="Area" value="{{0.496859,2},{0.136508,-1},{0.585908,2},{0.214285,-1}}" />
+            <Property name="BackgroundEnabled" value="False" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <AutoWindow namePath="__auto_incbtn__" />
+            </AutoWindow>
+        </Window>
+        <Window type="TaharezLook/Editbox" name="CPUBox" >
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.0967742,0},{0.0444444,0},{0.483871,0},{0.122222,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+        <Window type="TaharezLook/Editbox" name="GPUBox" >
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.0967742,0},{0.133333,0},{0.483871,0},{0.211111,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+        <Window type="TaharezLook/Editbox" name="OSBox" >
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.596774,0},{0.0444447,0},{0.983871,0},{0.122222,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+        <Window type="TaharezLook/Editbox" name="DriverBox" >
+            <Property name="MaxTextLength" value="1073741823" />
+            <Property name="Area" value="{{0.596774,0},{0.133334,0},{0.983871,0},{0.211111,0}}" />
+            <Property name="TextParsingEnabled" value="False" />
+        </Window>
+    </Window>
+</GUILayout>

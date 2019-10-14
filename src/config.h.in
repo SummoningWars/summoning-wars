@@ -1,0 +1,29 @@
+#ifndef __SUMWARS_CONFIG_H__
+#define __SUMWARS_CONFIG_H__
+
+// Generated file, do not edit!  Make changes to config.h.in instead.
+
+#define SUMWARS_PREFIX "@SUMWARS_PREFIX@"
+#define SUMWARS_SHARE_DIR "@SUMWARS_SHARE_DIR@"
+#define SUMWARS_OGRE_SINGLETON @SUMWARS_OGRE_SINGLETON@
+
+// commented out because we should not rely on it being available, docs might be optional!
+//#define SUMWARS_DOC_DIR "@SUMWARS_DOC_DIR@"
+
+// If the following macro definitions turn out to be "NOTFOUND", the FindOGRE.cmake
+// has failed to locate the appropriate paths. In that case, please supply them
+// manually via cmake -D or cmake-gui
+#ifdef _DEBUG
+#   define SUMWARS_OGRE_PLUGIN_DIR "@SUMWARS_OGRE_PLUGIN_DIR_DBG@"
+#	define SUMWARS_DEBUG_POSTFIX "@CMAKE_DEBUG_POSTFIX@"
+#else
+#   define SUMWARS_OGRE_PLUGIN_DIR "@SUMWARS_OGRE_PLUGIN_DIR_REL@"
+#	define SUMWARS_DEBUG_POSTFIX ""
+#endif
+
+#cmakedefine SUMWARS_PORTABLE_MODE
+#cmakedefine SUMWARS_STANDALONE_MODE
+#cmakedefine SUMWARS_RANDOM_REGIONS
+#cmakedefine SUMWARS_USE_BREAKPAD
+
+#endif // __SUMWARS_CONFIG_H__

@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef __SUMWARS_CORE_ITEM_H__
+#define __SUMWARS_CORE_ITEM_H__
 
 
 #include <string>
@@ -398,6 +398,22 @@ struct Item {
 	 * \brief Anforderungen an die Charakterklasse
 	 */
 	std::string m_char_req;
+	
+	/**
+	 * \brief true, if the item can be consumed
+	 */
+	bool m_consumable;
+	
+	/**
+	 * \brief Specifies the timer that is required to consume this items. If 0, no timer is required.
+	 */
+	int m_consume_timer_nr;
+
+	
+	/**
+	 * \brief How long the timer will run. While the timer is running, no item using the same timer can be consumed.
+	 */
+	float m_consume_timer;
 
 	/**
 	 * \var float m_magic_power
@@ -483,6 +499,22 @@ struct ItemBasicData
 	int m_price;
 
 	/**
+	 * \brief true, if the item can be consumed
+	 */
+	bool m_consumable;
+	
+	/**
+	 * \brief Specifies the timer that is required to consume this items. If 0, no timer is required.
+	 */
+	int m_consume_timer_nr;
+
+	
+	/**
+	 * \brief How long the timer will run. While the timer is running, no item using the same timer can be consumed.
+	 */
+	float m_consume_timer;
+	
+	/**
 	 * \var float m_modchance[NUM_MAGIC_MODS]
 	 * \brief relative Chance auf die verschiedenen Modifikationen
 	 */
@@ -551,5 +583,5 @@ struct ItemBasicData
 
 
 
-#endif //ITEM_H
+#endif // __SUMWARS_CORE_ITEM_H__
 

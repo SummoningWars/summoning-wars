@@ -1,0 +1,210 @@
+# Italian translations for sumwars package.
+# Copyright (C) 2009 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sumwars package
+# 
+# Francesco Miglietta (fra9000) <miglietta.francesco@gmail.com>, 2010
+# 
+# Eugenio Fagioli <eugenio.fagioli@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-10-28 17:02+0200\n"
+"Last-Translator: Eugenio Fagioli <eugenio.fagioli@gmail.com>\n"
+"Language-Team: Italiano <>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: besieged_farm.xml:2
+msgid "The besieged farm"
+msgstr "La fattoria assediata"
+
+#: besieged_farm.xml:5
+msgid ""
+"The peasants are rescued, the goblins slain, and the service paid. What more "
+"can you ask for?"
+msgstr ""
+"I contadini sono in salvo, i goblin uccisi e la paga è servita. Cosa "
+"possiamo chiedere di piu'?"
+
+#: besieged_farm.xml:7
+msgid ""
+"The peasants are rescued and the goblins slain. It's time to collect the "
+"reward for the trouble in Joringsbridge."
+msgstr ""
+"I contadini sono in salvo e il goblin uccisi. È ora di risquotere la "
+"ricompensa per la faticaccia a Joringsbridge."
+
+#: besieged_farm.xml:9
+msgid ""
+"The goblins around Bron's farm are not among the living anymore. I should "
+"knock at the door and make sure everything is all right. No peasants, no "
+"money."
+msgstr ""
+"I goblin nei dintorni della fattoria Bron sono stati tutti uccisi. Meglio "
+"bussare e sentire se stanno tutti bene. Niente gente viva, niente soldi."
+
+#: besieged_farm.xml:11
+msgid ""
+"The farm of a peasant named Michel Bron is besieged by goblins. His family "
+"needs help - fast."
+msgstr ""
+"La fattoria di Michel Bron e' assediata dai goblin. La sua famiglia ha "
+"bisogno di aiuto ... in fretta!"
+
+#: besieged_farm.xml:15 besieged_farm.xml:134
+msgid "Sergeant Lutterer"
+msgstr "Sergente Lutterer"
+
+#: besieged_farm.xml:16
+msgid "The farm"
+msgstr "La fattoria"
+
+#: besieged_farm.xml:23
+msgid "Ah! Are you feeling like earning the money after all?"
+msgstr "Heh! Sembra che tu abbia voglia di soldi alla fin fine, no?"
+
+#: besieged_farm.xml:25
+msgid "Don't think I haven't seen you hanging around back there."
+msgstr "Non penso. Non mi pare di averti visto bazzicare da ste parti."
+
+#: besieged_farm.xml:27
+msgid ""
+"Don't think I haven't seen you and your friend hanging around back there."
+msgstr ""
+"Non penso. Non mi pare di aver' visto te e i tuoi amici bazzicare da ste "
+"parti."
+
+#: besieged_farm.xml:29
+msgid ""
+"Don't think I haven't seen you and your friends hanging around back there."
+msgstr ""
+"Non penso. Non mi pare di aver' visto te e i tuoi amici bazzicare da ste "
+"parti."
+
+#: besieged_farm.xml:31
+msgid "But I don't want to complain."
+msgstr "Ma non voglio lamentarmi."
+
+#: besieged_farm.xml:32
+msgid ""
+"You know the drill: Get to the Northern Meadow and drive away the goblins "
+"around Bron's farm."
+msgstr ""
+"Conosci la procedura: procedi verso Nord Meadow e scaccia i goblin che "
+"infestano la fattoria Bron."
+
+#: besieged_farm.xml:33
+msgid "I don't care how you do it, even if you gobble them raw."
+msgstr "Non mi interessa come farai, anche se dovessi mangiarteli vivi."
+
+#: besieged_farm.xml:34
+msgid "Just kidding."
+msgstr "Sto scherzando!."
+
+#: besieged_farm.xml:35
+msgid "When you're done, come back to me."
+msgstr "Quando hai finito torna da me."
+
+#: besieged_farm.xml:36
+msgid "I'm on my way."
+msgstr "Considerami già li."
+
+#: besieged_farm.xml:42
+msgid "aisNorthMeadow"
+msgstr "Nord Meadow"
+
+#: besieged_farm.xml:88
+msgid ""
+"That should have been enough goblins. I better look after Bron's family."
+msgstr ""
+"Devono esserci stati parecchi goblin. Devo tener d'occhio la famiglia di "
+"Bron."
+
+#: besieged_farm.xml:111
+msgid "The goblins are gone. Are you alright?"
+msgstr "I goblin sono andati via. Tu stai bene?"
+
+#: besieged_farm.xml:112
+msgid "Thank you very much."
+msgstr "Grazie davvero."
+
+#: besieged_farm.xml:113
+msgid "Sadly I cannot ask you in."
+msgstr "Purtroppo non posso farti accomodare."
+
+#: besieged_farm.xml:114
+msgid "Our barricade is quite heavy."
+msgstr "La nostra barricata e' abbastanza resistente."
+
+#: besieged_farm.xml:115
+msgid "But I will give word to my husband that we are alive and well."
+msgstr "Diro' a mio marito che siamo ancora vivi e che stiamo bene."
+
+#: besieged_farm.xml:116
+msgid "How so?"
+msgstr "Come mai?"
+
+#: besieged_farm.xml:117
+msgid ""
+"With a crytal of Avearea, of course. It's been handed down in my family for "
+"generations."
+msgstr ""
+"Con un cristallo di Avearea, naturalmente. E' stato tramandato per "
+"generazioni nella mia famiglia."
+
+#: besieged_farm.xml:118
+msgid "Of course. Silly of me."
+msgstr "Ma certo! Che sciocco che sono."
+
+#: besieged_farm.xml:120
+msgid "Really now, "
+msgstr ""
+
+#: besieged_farm.xml:122 besieged_farm.xml:124
+msgid "Let's just go collect the money."
+msgstr "Bene, andiamo a raccogliere i soldi."
+
+#: besieged_farm.xml:135
+msgid "Brons Farm"
+msgstr "Fattoria Bron"
+
+#: besieged_farm.xml:141
+msgid "It's done."
+msgstr "Fatto."
+
+#: besieged_farm.xml:142
+msgid "I've already heard of it."
+msgstr "Ne ho gia' sentito parlare."
+
+#: besieged_farm.xml:143
+msgid ""
+"Michel is in the tavern getting plastered - all in honor of your bravery, of "
+"course."
+msgstr ""
+"Michel e' alla taverna a sbronzarsi - tutto in onore del vostro coraggio, "
+"ovviamente."
+
+#: besieged_farm.xml:144
+msgid "But that shall be of no concern to you."
+msgstr "Ma questo non ti dovrebbe interessare."
+
+#: besieged_farm.xml:145
+msgid "Here's the money."
+msgstr "Eccoti il denaro."
+
+#~ msgid ""
+#~ "Really now, \"..name..\". Did you think she'd use carrier pigeons in this "
+#~ "day and age?"
+#~ msgstr ""
+#~ " \"..nome..\". Sul serio pensi che userebbe dei piccioni viaggiatori con "
+#~ "i tempi che corrono?"
+
+#, fuzzy
+#~ msgid "bronsFarmDoor"
+#~ msgstr "Fattoria Bron"

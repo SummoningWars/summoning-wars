@@ -1,0 +1,49 @@
+<World>
+	<!-- Graue Himmelsleiter, Verfluchte Hoehle; [Hoehle]; ca 30 Minuten; Level 17 - 19 -->
+	<!-- Goblins, Goblinhunde-->
+	<Region id="21" name="greyCurseCave">
+		<Settings dimx="54" dimy="54" area_percent="0.35" complexity="0.6" granularity="6"  ground="cave_ground"/>
+		
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<WorldPosition world_x="0.68" world_y ="0.43" waypoint="true"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+			<Track source="ambience_1.ogg" />
+			<Track source="ambience_2.ogg" />
+		</Music>
+		
+		<ExitDirections north="true" south="true" west="true" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="aisMistslope" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="greyCursedCavern" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_west" destination_region="greyCurseGrotto" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="soldier" object_group="caveHideOut" priority="4"/>
+		</NamedObjectGroups>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="goblins_l13_1" number="20" />
+			<SpawnGroup group_name="goblins_l13_2" number="20" />
+			<SpawnGroup group_name="goblins_l13_3" number="10" />
+		</SpawnGroups>
+	</Region>
+</World>

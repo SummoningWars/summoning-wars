@@ -1,0 +1,9 @@
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="Skilltree_Holder" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="Area" value="{{0.648,0},{0.0,0},{1.0,0},{0.86,0}}" />
+        <Property name="BackgroundEnabled" value="False" />
+        <Property name="Alpha" value="1" />
+        <Property name="MousePassThroughEnabled" value="True" />
+    </Window>
+</GUILayout>

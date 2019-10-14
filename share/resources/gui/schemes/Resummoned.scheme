@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!--
+Resummoned is a free theme for CEGUI, based on the Taharez Look theme.
+Resummoned is licensed under the terms of the MIT license.
+
+Copyright (c) 2012 Augustin Preda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!--
+version:      0.1
+Last change:  $LastChangedDate: 2012-12-25 20:55:19 +0200 (Ma, 25 dec. 2012) $
+-->
+<GUIScheme Name="Resummoned">
+  <Imageset Name="Resummoned" Filename="Resummoned.imageset" />
+  <Imageset Name="ResummonedCursors" Filename="ResummonedCursors.imageset" />
+  
+  <!-- redefine both DejaVuSans*, DejaVuSerif* to DejaVuSans-HD*, DejaVuSerif-HD* -->
+  <Font Name="DejaVuSans-HD-10" Filename="DejaVuSans-HD-10.font" />
+  <Font Name="DejaVuSerif-HD-8" Filename="DejaVuSerif-HD-8.font" />
+  <Font Name="DejaVuSerif-HD-10" Filename="DejaVuSerif-HD-10.font" />
+  <Font Name="DejaVuSerif-HD-12" Filename="DejaVuSerif-HD-12.font" />
+  <Font Name="DejaVuSerif-HD-16" Filename="DejaVuSerif-HD-16.font" />
+<!--
+  <Font Name="OpenSans-Regular-10" Filename="OpenSans-Regular-10.font" />
+  <Font Name="OpenSans-Regular-12" Filename="OpenSans-Regular-12.font" />
+  <Font Name="OpenSans-Regular-14" Filename="OpenSans-Regular-14.font" />
+  <Font Name="OpenSans-Regular-16" Filename="OpenSans-Regular-16.font" />
+  
+  <Font Name="BreeSerif-Regular-10" Filename="BreeSerif-Regular-10.font" />
+  <Font Name="BreeSerif-Regular-12" Filename="BreeSerif-Regular-12.font" />
+  <Font Name="BreeSerif-Regular-14" Filename="BreeSerif-Regular-14.font" />
+  <Font Name="BreeSerif-Regular-16" Filename="BreeSerif-Regular-16.font" />
+-->
+  <LookNFeel Filename="Resummoned.looknfeel" />
+  <WindowRendererSet Filename="CEGUIFalagardWRBase" />
+  <FalagardMapping WindowType="Resummoned/Button32"      TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/Button32" />
+  <FalagardMapping WindowType="Resummoned/Button32_4C"      TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/Button32_4C" />
+  <FalagardMapping WindowType="Resummoned/Button"      TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/Button32" />
+  <FalagardMapping WindowType="Resummoned/Checkbox"    TargetType="CEGUI/Checkbox"    Renderer="Falagard/ToggleButton" LookNFeel="Resummoned/Checkbox" />
+  <FalagardMapping WindowType="Resummoned/Checkbox32"    TargetType="CEGUI/Checkbox"    Renderer="Falagard/ToggleButton" LookNFeel="Resummoned/Checkbox" /> <!-- double mapping to checkbox -->
+  <FalagardMapping WindowType="Resummoned/ImageButton" TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/ImageButton" />
+  <FalagardMapping WindowType="Resummoned/BackgroundButton" TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/BackgroundButton" />
+  <FalagardMapping WindowType="Resummoned/RadioButton" TargetType="CEGUI/RadioButton" Renderer="Falagard/ToggleButton" LookNFeel="Resummoned/Checkbox" />
+  <FalagardMapping WindowType="Resummoned/FrameWindow"  TargetType="CEGUI/FrameWindow" Renderer="Falagard/FrameWindow"  LookNFeel="Resummoned/FrameWindow" />
+  <FalagardMapping WindowType="Resummoned/Titlebar"     TargetType="CEGUI/Titlebar"    Renderer="Falagard/Titlebar"     LookNFeel="Resummoned/Titlebar" />
+  <FalagardMapping WindowType="Resummoned/SystemButton" TargetType="CEGUI/PushButton"  Renderer="Falagard/Button" LookNFeel="Resummoned/GlyphButton" />
+  <FalagardMapping WindowType="Resummoned/SystemButton32" TargetType="CEGUI/PushButton"  Renderer="Falagard/Button" LookNFeel="Resummoned/SystemButton32" />
+  <FalagardMapping WindowType="Resummoned/Editbox"          TargetType="CEGUI/Editbox"          Renderer="Falagard/Editbox"          LookNFeel="Resummoned/Editbox" />
+  <FalagardMapping WindowType="Resummoned/MultiLineEditbox" TargetType="CEGUI/MultiLineEditbox" Renderer="Falagard/MultiLineEditbox" LookNFeel="Resummoned/MultiLineEditbox" />
+  <FalagardMapping WindowType="Resummoned/SimplePanel"      TargetType="DefaultWindow"  Renderer="Falagard/Button"       LookNFeel="Resummoned/SimplePanel" />
+  <FalagardMapping WindowType="Resummoned/SerpentPanel"      TargetType="DefaultWindow"  Renderer="Falagard/Button"       LookNFeel="Resummoned/SerpentPanel" />
+  <FalagardMapping WindowType="Resummoned/ProgressBar"          TargetType="CEGUI/ProgressBar" Renderer="Falagard/ProgressBar" LookNFeel="Resummoned/ProgressBar" />
+  <FalagardMapping WindowType="Resummoned/TimerProgressBar"          TargetType="CEGUI/ProgressBar" Renderer="Falagard/ProgressBar" LookNFeel="Resummoned/TimerProgressBar" />
+  <FalagardMapping WindowType="Resummoned/XPProgressBar"          TargetType="CEGUI/ProgressBar" Renderer="Falagard/ProgressBar" LookNFeel="Resummoned/ProgressBar" />
+  <FalagardMapping WindowType="Resummoned/VerticalScrollbar"   TargetType="CEGUI/Scrollbar" Renderer="Falagard/Scrollbar" LookNFeel="Resummoned/VerticalScrollbar" />
+  <FalagardMapping WindowType="Resummoned/HorizontalScrollbar" TargetType="CEGUI/Scrollbar" Renderer="Falagard/Scrollbar" LookNFeel="Resummoned/HorizontalScrollbar" />
+  <FalagardMapping WindowType="Resummoned/VerticalScrollbarThumb"   TargetType="CEGUI/Thumb" Renderer="Falagard/Button" LookNFeel="Resummoned/VerticalScrollbarThumb" />
+  <FalagardMapping WindowType="Resummoned/HorizontalScrollbarThumb" TargetType="CEGUI/Thumb" Renderer="Falagard/Button" LookNFeel="Resummoned/HorizontalScrollbarThumb" />
+  <FalagardMapping WindowType="Resummoned/TabButton"  TargetType="CEGUI/TabButton"  Renderer="Falagard/TabButton"  LookNFeel="Resummoned/TabButton" />
+  <FalagardMapping WindowType="Resummoned/TabControl" TargetType="CEGUI/TabControl" Renderer="Falagard/TabControl" LookNFeel="Resummoned/TabControl" />
+  <FalagardMapping WindowType="Resummoned/TabContentPane"    TargetType="DefaultWindow"    Renderer="Falagard/Default"    LookNFeel="Resummoned/TabContentPane" />
+  <FalagardMapping WindowType="Resummoned/TabButtonPane"    TargetType="DefaultWindow"    Renderer="Falagard/Default"    LookNFeel="Resummoned/TabButtonPane" />
+  <FalagardMapping WindowType="Resummoned/GlyphButton" TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/GlyphButton" />
+  <FalagardMapping WindowType="Resummoned/GlyphButtonCombo" TargetType="CEGUI/PushButton"  Renderer="Falagard/Button"       LookNFeel="Resummoned/GlyphButtonCombo" />
+  <FalagardMapping WindowType="Resummoned/ComboDropList" TargetType="CEGUI/ComboDropList" Renderer="Falagard/Listbox" LookNFeel="Resummoned/ComboDropList" />
+  <FalagardMapping WindowType="Resummoned/ComboEditbox"  TargetType="CEGUI/Editbox"   Renderer="Falagard/Editbox" LookNFeel="Resummoned/ComboEditbox" />
+  <FalagardMapping WindowType="Resummoned/Combobox"  TargetType="CEGUI/Combobox"   Renderer="Falagard/Default" LookNFeel="Resummoned/Combobox" />
+  <FalagardMapping WindowType="Resummoned/Listbox"           TargetType="CEGUI/Listbox"           Renderer="Falagard/Listbox"           LookNFeel="Resummoned/Listbox" />
+  <FalagardMapping WindowType="Resummoned/ListboxTransparent"           TargetType="CEGUI/Listbox"           Renderer="Falagard/Listbox"           LookNFeel="Resummoned/ListboxTransparent" />
+  <FalagardMapping WindowType="Resummoned/ListHeader"        TargetType="CEGUI/ListHeader"        Renderer="Falagard/ListHeader"        LookNFeel="Resummoned/ListHeader" />
+  <FalagardMapping WindowType="Resummoned/ListHeaderSegment" TargetType="CEGUI/ListHeaderSegment" Renderer="Falagard/ListHeaderSegment" LookNFeel="Resummoned/ListHeaderSegment" />
+  <FalagardMapping WindowType="Resummoned/MultiColumnList"   TargetType="CEGUI/MultiColumnList"   Renderer="Falagard/MultiColumnList"   LookNFeel="Resummoned/MultiColumnList" />
+  <FalagardMapping WindowType="Resummoned/Spinner" TargetType="CEGUI/Spinner" Renderer="Falagard/Default" LookNFeel="Resummoned/Spinner" />
+  <FalagardMapping WindowType="Resummoned/Tooltip" TargetType="CEGUI/Tooltip" Renderer="Falagard/Tooltip" LookNFeel="Resummoned/Tooltip" />
+  <FalagardMapping WindowType="Resummoned/CustomTooltip" TargetType="CEGUI/Tooltip" Renderer="Falagard/Tooltip" LookNFeel="Resummoned/CustomTooltip" />
+  <FalagardMapping WindowType="Resummoned/SumwarsTooltip" TargetType="CEGUI/Tooltip" Renderer="Falagard/Tooltip" LookNFeel="Resummoned/CustomTooltip" />
+  <FalagardMapping WindowType="Resummoned/StaticImage" TargetType="DefaultWindow" Renderer="Falagard/StaticImage" LookNFeel="Resummoned/StaticImage" />
+  <FalagardMapping WindowType="Resummoned/StaticText"  TargetType="DefaultWindow" Renderer="Falagard/StaticText"  LookNFeel="Resummoned/StaticText" />
+  <FalagardMapping WindowType="Resummoned/ScrollablePane" TargetType="CEGUI/ScrollablePane" Renderer="Falagard/ScrollablePane" LookNFeel="Resummoned/ScrollablePane" />
+  <FalagardMapping WindowType="Resummoned/ItemListbox" TargetType="CEGUI/ItemListbox" Renderer="Falagard/ItemListbox" LookNFeel="Resummoned/ItemListbox" />
+  <FalagardMapping WindowType="Resummoned/ListboxItem" TargetType="CEGUI/ItemEntry"   Renderer="Falagard/ItemEntry"   LookNFeel="Resummoned/ListboxItem" />
+  <FalagardMapping WindowType="Resummoned/GroupBox" TargetType="CEGUI/GroupBox"   Renderer="Falagard/Default"   LookNFeel="Resummoned/GroupBox" />
+</GUIScheme>

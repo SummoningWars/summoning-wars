@@ -1,0 +1,9 @@
+<GUILayout >
+    <Window Type="TaharezLook/StaticImage" Name="ControlPanel_Holder" >
+        <Property Name="FrameEnabled" Value="False" />
+        <Property Name="InheritsAlpha" Value="False" />
+        <Property Name="UnifiedAreaRect" Value="{{0.08236,0},{0.798348,0},{0.9176,0},{1,0}}" /> <!-- 0,69606 * 1,15 = 0,835272 -->
+        <Property Name="BackgroundEnabled" Value="False" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+    </Window>
+</GUILayout>

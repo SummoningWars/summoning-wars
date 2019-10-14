@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TRADEWINDOW_H
-#define TRADEWINDOW_H
+#ifndef __SUMWARS_GUI_TRADEWINDOW_H__
+#define __SUMWARS_GUI_TRADEWINDOW_H__
 
 #include "itemwindow.h"
 
@@ -29,7 +29,7 @@ class TradeWindow : public ItemWindow
 	 * \fn TradeWindow (Document* doc)
 	 * \brief Konstruktor
 		 */
-		TradeWindow (Document* doc);
+		TradeWindow (Document* doc, const std::string& ceguiSkinName);
 	
 		/**
 		 * \fn virtual void update()
@@ -104,8 +104,13 @@ class TradeWindow : public ItemWindow
 		 * \brief Seite der kleinen Items die angezeigt wird
 		 */
 		int m_small_sheet;
-		
+
+		/**
+		 * \brief The name of the CEGUI skin to use.
+		 */
+		std::string m_ceguiSkinName;
+
 };
 
-#endif
+#endif // __SUMWARS_GUI_TRADEWINDOW_H__
 

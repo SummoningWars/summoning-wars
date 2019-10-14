@@ -1,0 +1,9 @@
+<GUILayout version="4" >
+    <Window type="SWB/StaticImage" name="ControlPanel_Holder" >
+        <Property name="FrameEnabled" value="False" />
+        <Property name="InheritsAlpha" value="False" />
+        <Property name="Area" value="{{0.1862,0},{0.798348,0},{0.8138,0},{1,0}}" /> <!-- 0,523 * 1,2 = 0,6276 -->
+        <Property name="BackgroundEnabled" value="False" />
+        <Property name="MousePassThroughEnabled" value="True" />
+    </Window>
+</GUILayout>

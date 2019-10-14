@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DAMAGE_H
-#define DAMAGE_H
+#ifndef __SUMWARS_CORE_DAMAGE_H__
+#define __SUMWARS_CORE_DAMAGE_H__
 
 
 #include "worldobject.h"
@@ -260,5 +260,5 @@ struct Damage
 	void operator=(Damage& other);
 };
 	
-#endif
+#endif // __SUMWARS_CORE_DAMAGE_H__
 

@@ -1,0 +1,42 @@
+<World>
+	<!-- Maylons Grab, Ebene 2[unterirdisch], ungefaehr 10 Minuten; Level 16 - 19 -->
+	<!-- [kleine Elementare], Zombies, Skelette, Maylons Mumie -->
+	<!-- Orte: Maylons Grabkammer -->
+	<Region id="16" name="aisMaylonsGraveL2">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="56" dimy="56" area_percent="0.3" complexity="0.3" granularity="4"  ground="cave_ground"/>
+		<WorldPosition world_x="0.61" world_y ="0.61"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="aisMaylonsGraveL1" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="vault" />
+		</Environments>
+		
+		<ObjectGroups>
+			<ObjectGroup object_group="cryptShrine" priority="2" number="10" probability="1"/>
+			<ObjectGroup object_group="cryptInlet" priority="3" number="6" probability="1"/>
+			<ObjectGroup object_group="konzColumn" priority="1" number="20" probability="1"/>
+			<ObjectGroup object_group="cryptRoom" priority="4" number="4" probability="1"/>
+			<ObjectGroup object_group="randomLoc4_4" priority="2" number="30" probability="1"/>
+		</ObjectGroups>
+		
+		<NamedObjectGroups>
+			<NameObjectGroup name="graveChamber" object_group="maylonsGraveChamber" priority="5"/>
+		</NamedObjectGroups>
+	</Region>	
+</World>

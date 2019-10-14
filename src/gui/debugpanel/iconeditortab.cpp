@@ -13,6 +13,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 #include "iconeditortab.h"
 #include "CEGUI/CEGUI.h"
 using namespace CEGUI;
@@ -23,10 +26,10 @@ IconEditorTab::IconEditorTab(const CEGUI::String& type, const CEGUI::String& nam
 {
 	setText("IconEd");
 
-	CEGUI::Window *m_tabLayout = WindowManager::getSingleton().loadWindowLayout("IconEditTab.layout");
+	CEGUI::Window *m_tabLayout = CEGUIUtility::loadLayoutFromFile ("iconedittab.layout");
 	m_tabLayout->setPosition(UVector2(UDim(0.0f, 0.0f), UDim(0.0f, 0.0f)));
-	m_tabLayout->setSize(UVector2(UDim(1.0f, 0.0f), UDim(1.0f, 0.0f)));
-	this->addChildWindow(m_tabLayout);
+  CEGUIUtility::setWidgetSizeRel(m_tabLayout, 1.0f, 1.0f);
+  CEGUIUtility::addChildWidget (this, m_tabLayout);
 }
 
 
@@ -35,7 +38,7 @@ void IconEditorTab::update(OIS::Keyboard *keyboard, OIS::Mouse *mouse)
 
 }
 
-void IconEditorTab::onSized(CEGUI::WindowEventArgs& e)
+void IconEditorTab::onSized(CEGUI::ElementEventArgs& e)
 {
 	CEGUI::Window::onSized(e);
 }

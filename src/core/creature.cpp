@@ -20,11 +20,14 @@
 #include "mathhelper.h"
 
 //Constructors/Destructors
-Creature::Creature(int id) : WorldObject(id)
+Creature::Creature(int id)
+:	WorldObject(id),
+	m_trade_info(),
+	m_fight_statistic()
 {
 	if (!Creature::init())
 	{
-		DEBUG("Creature::init() hat false zurückgeliefert");
+		SW_DEBUG("Creature::init() hat false zurückgeliefert");
 	}
 }
 
@@ -243,13 +246,13 @@ float Creature::getActionTime(Action::ActionType action)
 		Action::ActionInfo* aci = Action::getActionInfo(action);
 		if (aci ==0)
 		{
-			DEBUG("Information for action %s missing ",action.c_str());
+			SW_DEBUG("Information for action %s missing ",action.c_str());
 			return 0;
 		}
 
 		return aci->m_standard_time;
 	}
-	DEBUG("creature %s cant use action %s",getSubtype().c_str(), action.c_str());
+	SW_DEBUG("creature %s cant use action %s",getSubtype().c_str(), action.c_str());
 	return 0;
 }
 
@@ -277,7 +280,7 @@ void Creature::initAction()
 		{
 			// use the base action
 			m_action.m_type = aci->m_base_action;
-			DEBUG("using Base Action due to mute");
+			SW_DEBUG("using Base Action due to mute");
 		}
 	}
 
@@ -621,7 +624,7 @@ void Creature::performAction(float &time)
 			}
 			else
 			{
-				cgoal = (Creature*) goalobj;
+				cgoal = static_cast<Creature*>(goalobj);
 				goal = cgoal->getShape()->m_center;
 
 				DEBUGX("goal object %p",cgoal);
@@ -725,7 +728,7 @@ void Creature::performActionCritPart(Vector goal, WorldObject* goalobj)
 	}
 	else
 	{
-		cgoal = (Creature*) goalobj;
+		cgoal = static_cast<Creature*>(goalobj);
 		if (cgoal != 0)
 		{
 			cgoalid= goalobj->getId();
@@ -1298,7 +1301,7 @@ void Creature::collisionDetection(float time)
 	// get colliding objects
 	getRegion()->getObjectsInShape(&(scopy),&result,layer, CREATURE | FIXED,this);
 
-	if (result.size()!=0)
+	if (!result.empty())
 	{
 		// there are colliding objects
 		DEBUGX("aktuelle Koordinaten %f %f",getShape()->m_center.m_x, getShape()->m_center.m_y);
@@ -1992,11 +1995,8 @@ void Creature::calcWalkDir(Vector goal,WorldObject* goalobj)
 
 	float recalctime = 500;
 
-	bool highquality = true;
-
 	if (getType() == "MONSTER")
 	{
-		highquality = false;
 		pathmaxdist = 16;
 		qual = 2;
 		recalctime = 1000;
@@ -2011,7 +2011,7 @@ void Creature::calcWalkDir(Vector goal,WorldObject* goalobj)
 	if (goalobj !=0 && goalobj->isCreature() )
 	{
 		DEBUGX("using pot field of object %i",goalobj->getId());
-		Creature* cr = (Creature*) goalobj;
+		Creature* cr = static_cast<Creature*>(goalobj);
 		cr->getPathDirection(pos,getRegionId(), 2*getShape()->m_radius, getLayer(),dir);
 	}
 	else
@@ -2216,7 +2216,7 @@ bool Creature::update (float time)
 
 	if (m_action.m_elapsed_time> m_action.m_time)
 	{
-		DEBUG("elapsed time %f all time %f",m_action.m_elapsed_time,	m_action.m_time);
+		SW_DEBUG("elapsed time %f all time %f",m_action.m_elapsed_time,	m_action.m_time);
 	}
 
 	DEBUGX("Update des Creatureobjekts [%i] wird gestartet", getId());
@@ -3125,12 +3125,8 @@ bool Creature::takeDamage(Damage* d)
 	// update the statistics shows in the character screen
 	WorldObject* wo = getRegion()->getObject(d->m_attacker_id);
 	FightStatistic* fstat= &(getFightStatistic());
-	FightStatistic* attfstat=0;
+	
 	Creature* attacker = dynamic_cast<Creature*>(getRegion()->getObject(d->m_attacker_id));
-	if (wo !=0  && wo->getType() == "PLAYER")
-	{
-		attfstat = &(attacker->getFightStatistic());
-	}
 
 	// update own statistic data
 	if (wo !=0 && getType()=="PLAYER")
@@ -3500,7 +3496,7 @@ bool Creature::removeBaseAttrMod(CreatureBaseAttrMod* mod)
 
 	// recalculate if abilities were altered
 	// because you can not know if the ability was available before applying the mod
-	if ( mod->m_xabilities.size() !=0)
+	if (!mod->m_xabilities.empty())
 	{
 		ret = true;
 		addToNetEventMask(NetEvent::DATA_ABILITIES);
@@ -4043,8 +4039,6 @@ void Creature::processNetEvent(NetEvent* event, CharConv* cv)
 
 	// most data is just set instantly
 	// speed and position are interpolated
-	float  atime = m_action.m_time - m_action.m_elapsed_time;
-
 	Vector newpos= getShape()->m_center;
 	Vector newspeed;
 	Vector goal = newpos;
@@ -4056,7 +4050,7 @@ void Creature::processNetEvent(NetEvent* event, CharConv* cv)
 
 	if (delay>1000)
 	{
-		DEBUG("got packet with delay %f %f",cv->getDelay(),delay);
+		SW_DEBUG("got packet with delay %f %f",cv->getDelay(),delay);
 	}
 
 

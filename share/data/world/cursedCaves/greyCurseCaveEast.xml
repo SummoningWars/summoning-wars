@@ -1,0 +1,46 @@
+<World>
+	<!-- Graue Himmelsleiter, Verfluchte Hoehle, Osten -->
+	<!-- Untote -->
+	<Region id="26" name="greyCurseCaveEast">
+		<AmbientLight red="0.0" green="0.0" blue="0.0" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.0" green="0.0" blue="0.0" />
+		
+		<Settings dimx="52" dimy="52" area_percent="0.3" complexity="0.6" granularity="6"  ground="cave_ground"/>
+		<WorldPosition world_x="0.72" world_y ="0.43"/>
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+			<Track source="ambience_1.ogg" />
+			<Track source="ambience_2.ogg" />
+		</Music>
+		
+		<ExitDirections north="false" south="false" west="true" east="true" />
+		
+		<Exits>
+			<Exit name="exit_west" destination_region="greyCurseCaveDep" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<!--
+			<Exit name="exit_east" destination_region="greyCurseLake" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			-->
+			<Exit name="exit_east" destination_region="aisEastslope" destination_location="entry_west" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="cave" />
+		</Environments>
+		
+		<SpawnGroups>
+			<SpawnGroup group_name="skeletons_15_1" number="20" />
+			<SpawnGroup group_name="skeletons_15_2" number="15" />
+			<SpawnGroup group_name="skeletons_giant" number="1" />
+			<SpawnGroup group_name="skeletons_16_1" number="5" />
+		</SpawnGroups>
+	</Region>
+</World>

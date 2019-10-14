@@ -15,21 +15,36 @@
 
 #include "messageboxes.h"
 
+// Sound operations helper.
+#include "soundhelper.h"
+
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
+
 SaveExitWindow::SaveExitWindow (Document* doc)
 	:Window(doc)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::PushButton* btn;
-	//CEGUI::Window* label; // 2011.10.23: found as unused.
 	
-	CEGUI::FrameWindow* save_exit = (CEGUI::FrameWindow*) win_mgr.loadWindowLayout("SaveExitWindow.layout");
+	CEGUI::FrameWindow* save_exit = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile ("saveexitwindow.layout");
 	m_window = save_exit;
 	
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("GameExitConfirmButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "GameExitConfirmButton"));
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&SaveExitWindow ::onExitGameConfirmed, this));
+	btn->subscribeEvent(CEGUIUtility::EventMouseEntersPushButtonArea (), CEGUI::Event::Subscriber(&SaveExitWindow::onGUIItemHover, this));
 	
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("GameExitAbortButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "GameExitAbortButton"));
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&SaveExitWindow ::onExitGameAborted, this));
+	btn->subscribeEvent(CEGUIUtility::EventMouseEntersPushButtonArea (), CEGUI::Event::Subscriber(&SaveExitWindow::onGUIItemHover, this));
+
+	// The panel should also have an auto-close button; connect it to the Cancel/Abort event.
+	btn = static_cast<CEGUI::PushButton*>( CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "__auto_closebutton__"));
+	if (btn)
+	{
+		btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&SaveExitWindow::onExitGameAborted, this));
+		btn->subscribeEvent(CEGUIUtility::EventMouseEntersPushButtonArea (), CEGUI::Event::Subscriber(&SaveExitWindow::onGUIItemHover, this));
+	}
 	
 	updateTranslation();
 }
@@ -40,17 +55,19 @@ void SaveExitWindow::update()
 
 void SaveExitWindow::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::Window* label;
 	
-	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow( "GameExitConfirmButton"));
+	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "GameExitConfirmButton"));
 	btn->setText((CEGUI::utf8*) gettext("Ok"));
 	
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow( "GameExitAbortButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "GameExitAbortButton"));
 	btn->setText((CEGUI::utf8*) gettext("Abort"));
 	
-	label = win_mgr.getWindow("SaveExitLabel");
-	label->setText((CEGUI::utf8*) gettext("Save and Exit?"));
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "SaveExitWindow");
+	if (label->isPropertyPresent ("Text"))
+	{
+		label->setProperty ("Text", (CEGUI::utf8*) gettext("Save and Exit?"));
+	}
 }
 
 
@@ -66,88 +83,88 @@ bool SaveExitWindow::onExitGameAborted(const CEGUI::EventArgs& evt)
 	return true;
 }
 
-MessageQuestionWindow::MessageQuestionWindow (Document* doc, std::string name,std::string question, std::string button1,CEGUI::Event::Subscriber subscriber1,  std::string button2, CEGUI::Event::Subscriber subscriber2)
-	:Window(doc)
+
+/**
+ * \fn bool onGUIItemHover(const CEGUI::EventArgs& evt)
+ * \brief Handle the hovering of gui items.
+ */
+bool SaveExitWindow::onGUIItemHover (const CEGUI::EventArgs& evt)
 {
-	m_button1 = button1;
-	m_button2 = button2;
+	SoundHelper::playAmbientSoundGroup ("main_menu_hover_item");
+	return true;
+}
+
+
+
+//
+// ----------------------------------------- Message Question Window (a window containing a question and two buttons) ----------------------------------------------
+//
+
+
+MessageQuestionWindow::MessageQuestionWindow (Document* doc
+							, const std::string& layoutName
+							, const std::string& question
+							, const std::string& button1Text
+							, CEGUI::Event::Subscriber subscriberButton1Callback
+							, const std::string& button2Text
+							, CEGUI::Event::Subscriber subscriberButton2Callback)
+	: Window (doc)
+	, m_button1 (button1Text)
+	, m_button2 (button2Text)
+	, m_layoutName (layoutName)
+{
 	m_question = question;
 	
-	std::string wname = name;
-	
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::PushButton* btn;
-	CEGUI::Window* label;
 	
-	CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) win_mgr.createWindow("TaharezLook/StaticImage", wname);
+	CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile (layoutName.c_str ());
 	m_window = message;
-	
-	
-	message->setPosition(CEGUI::UVector2(cegui_reldim(0.3f), cegui_reldim( 0.25f))); //0.0/0.8
-	message->setSize(CEGUI::UVector2(cegui_reldim(0.4f), cegui_reldim( 0.3f))); //1.0/0.2
-	message->setProperty("Image","set:Misc image:QuestionDialog");
-	message->setProperty("FrameEnabled","false");
-	message->setProperty("BackgroundEnabled","false");
-	message->setVisible(false);
-	
-	wname = name;
-	wname += "Button1";
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.createWindow("TaharezLook/Button", wname));
-	message->addChildWindow(btn);
-	btn->setProperty("NormalImage", "set:MainMenu image:SPBtnNormal"); 	 
-	btn->setProperty("DisabledImage", "set:MainMenu image:SPBtnNormal"); 	 
-	btn->setProperty("HoverImage", "set:MainMenu image:SPBtnHover"); 	 
-	btn->setProperty("PushedImage", "set:MainMenu image:SPBtnPushed");
-	btn->setPosition(CEGUI::UVector2(cegui_reldim(0.20f), cegui_reldim( 0.6f)));
-	btn->setSize(CEGUI::UVector2(cegui_reldim(0.2f), cegui_reldim( 0.15f)));
-	btn->subscribeEvent(CEGUI::PushButton::EventClicked, subscriber1);
-	
-	wname = name;
-	wname += "Button2";
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.createWindow("TaharezLook/Button", wname));
-	message->addChildWindow(btn);
-	btn->setProperty("NormalImage", "set:MainMenu image:SPBtnNormal"); 	 
-	btn->setProperty("DisabledImage", "set:MainMenu image:SPBtnNormal"); 	 
-	btn->setProperty("HoverImage", "set:MainMenu image:SPBtnHover"); 	 
-	btn->setProperty("PushedImage", "set:MainMenu image:SPBtnPushed");
-	btn->setPosition(CEGUI::UVector2(cegui_reldim(0.60f), cegui_reldim( 0.6f)));
-	btn->setSize(CEGUI::UVector2(cegui_reldim(0.2f), cegui_reldim( 0.15f)));
-	btn->subscribeEvent(CEGUI::PushButton::EventClicked, subscriber2);
-	
-	wname = name;
-	wname += "Label";
-	label = win_mgr.createWindow("TaharezLook/StaticText", wname);
-	message->addChildWindow(label);
-	label->setProperty("FrameEnabled", "false");
-	label->setProperty("BackgroundEnabled", "false");
-	label->setProperty("HorzFormatting", "HorzCentred");
-	label->setPosition(CEGUI::UVector2(cegui_reldim(0.120732f), cegui_reldim(0.327987f)));
-	label->setSize(CEGUI::UVector2(cegui_reldim(0.768301f), cegui_reldim( 0.111321f)));	
-	
-	m_name = name;
-	updateTranslation();
-	
+
+	CEGUI::String widgetName (CEGUIUtility::getNameForWidget("QuestionAnswerButton1"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, widgetName));
+	if (btn)
+	{
+		btn->subscribeEvent(CEGUI::PushButton::EventClicked, subscriberButton1Callback);
+	}
+
+	widgetName = CEGUIUtility::getNameForWidget("QuestionAnswerButton2");
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, widgetName));
+	if (btn)
+	{
+		btn->subscribeEvent(CEGUI::PushButton::EventClicked, subscriberButton2Callback);
+	}
+
+	updateTranslation ();
 }
+
+
+MessageQuestionWindow::~MessageQuestionWindow ()
+{
+}
+
 
 void MessageQuestionWindow::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Window* label;
-	
-	std::string wname = m_name;
-	wname += "Button1";
-	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow( wname));
-	btn->setText((CEGUI::utf8*) gettext(m_button1.c_str()));
-	
-	wname = m_name;
-	wname += "Button2";
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow( wname));
-	btn->setText((CEGUI::utf8*) gettext(m_button2.c_str()));
-	
-	wname = m_name;
-	wname += "Label";
-	label = win_mgr.getWindow(wname);
-	label->setText((CEGUI::utf8*) gettext(m_question.c_str()));
+	CEGUI::Window* widget;
+
+	CEGUI::String widgetName (CEGUIUtility::getNameForWidget("QuestionAnswerButton1"));
+	widget = CEGUIUtility::getWindowForLoadedLayout(m_window, widgetName);
+	if (widget)
+	{
+		widget->setText ((CEGUI::utf8*) m_button1.c_str ());
+	}
+	widgetName = CEGUIUtility::getNameForWidget("QuestionAnswerButton2");
+	widget = CEGUIUtility::getWindowForLoadedLayout(m_window, widgetName);
+	if (widget)
+	{
+		widget->setText ((CEGUI::utf8*) m_button2.c_str ());
+	}
+	widgetName = CEGUIUtility::getNameForWidget("QuestionInfoLabel");
+	widget = CEGUIUtility::getWindowForLoadedLayout(m_window, widgetName);
+	if (widget)
+	{
+		widget->setText ((CEGUI::utf8*) m_question.c_str ());
+	}
 }
 
 void MessageQuestionWindow::setQuestion(std::string question)
@@ -157,18 +174,21 @@ void MessageQuestionWindow::setQuestion(std::string question)
 }
 
 
+//
+// ----------------------------------------- Warning Window (a window containing a notification and a button) ----------------------------------------------
+//
+
+
 WarningDialogWindow::WarningDialogWindow (Document* doc)
 :Window(doc)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::PushButton* btn;
-	//CEGUI::Window* label; // 2011.10.23: found as unused.
 	
-	CEGUI::FrameWindow* warning_dialog = (CEGUI::FrameWindow*) win_mgr.loadWindowLayout("WarningDialogWindow.layout");
+	CEGUI::FrameWindow* warning_dialog = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile("warningdialogwindow.layout");
 	m_window = warning_dialog;
 	m_warning = "";
 	
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("WarningDialogConfirmButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "WarningDialogConfirmButton"));
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&WarningDialogWindow ::onConfirmed, this));
 	
 	updateTranslation();
@@ -180,21 +200,19 @@ void WarningDialogWindow::update()
 
 void WarningDialogWindow::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::Window* label;
 	
-	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow( "WarningDialogConfirmButton"));
+	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "WarningDialogConfirmButton"));
 	btn->setText((CEGUI::utf8*) gettext("Ok"));
 	
-	label = win_mgr.getWindow("WarningDialogLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "WarningDialogLabel");
 	label->setText((CEGUI::utf8*) gettext(m_warning.c_str()));
 }
 
 
 bool WarningDialogWindow::onConfirmed(const CEGUI::EventArgs& evt)
 {
-	m_window->hide();
-	m_window->setModalState(false);
+	m_document->hideWarning ();
 	return true;
 }
 
@@ -205,18 +223,22 @@ void WarningDialogWindow::setWarning(std::string warning)
 }
 
 
+
+//
+// ----------------------------------------- Error Dialog Window (a window containing a notification and a button) ----------------------------------------------
+//
+
+
 ErrorDialogWindow::ErrorDialogWindow (Document* doc)
 :Window(doc)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::PushButton* btn;
-	//CEGUI::Window* label; // 2011.10.23: found as unused.
-	
-	CEGUI::FrameWindow* error_dialog = (CEGUI::FrameWindow*) win_mgr.loadWindowLayout("ErrorDialogWindow.layout");
+
+	CEGUI::FrameWindow* error_dialog = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile ("errordialogwindow.layout");
 	m_window = error_dialog;
 	m_error = "Network connection timed out";
 	
-	btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("ErrorDialogConfirmButton"));
+	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "ErrorDialogConfirmButton"));
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&ErrorDialogWindow ::onConfirmed, this));
 	
 	updateTranslation();
@@ -228,13 +250,12 @@ void ErrorDialogWindow::update()
 
 void ErrorDialogWindow::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::Window* label;
 	
-	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(win_mgr.getWindow( "ErrorDialogConfirmButton"));
+	CEGUI::PushButton* btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "ErrorDialogConfirmButton"));
 	btn->setText((CEGUI::utf8*) gettext("Ok"));
 	
-	label = win_mgr.getWindow("ErrorDialogLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "ErrorDialogLabel");
 	label->setText((CEGUI::utf8*) gettext(m_error.c_str()));
 }
 

@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GEOMETRY_H
-#define GEOMETRY_H
+#ifndef __SUMWARS_CORE_GEOMETRY_H__
+#define __SUMWARS_CORE_GEOMETRY_H__
 
 #ifndef PI
 #define PI 3.14159
@@ -459,5 +459,5 @@ struct Shape
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_GEOMETRY_H__
 

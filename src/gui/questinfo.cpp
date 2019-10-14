@@ -15,53 +15,77 @@
 
 #include "questinfo.h"
 
-QuestInfo::QuestInfo (Document* doc)
-	:Window(doc)
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
+QuestInfo::QuestInfo (Document* doc, const std::string& ceguiSkinName)
+	: Window (doc)
+	, m_ceguiSkinName (ceguiSkinName)
 {
 	m_questname = "";
 	
 	DEBUGX("setup main menu");
 	// GUI Elemente erzeugen
 
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	
-
 	// Rahmen fuer das Menue Savegame auswaehlen
-	CEGUI::FrameWindow* quest_info = (CEGUI::FrameWindow*) win_mgr.loadWindowLayout("QuestInfo.layout");
-	m_window = quest_info;
+	CEGUI::FrameWindow* quest_info = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile ("questinfo.layout");
+	if (!quest_info)
+	{
+		SW_DEBUG ("WARNING: Failed to load [%s]", "questinfo.layout");
+	}
+	CEGUI::Window* quest_info_holder = CEGUIUtility::loadLayoutFromFile ("questinfo_holder.layout");
+	if (!quest_info_holder)
+	{
+		SW_DEBUG ("WARNING: Failed to load [%s]", "questinfo_holder.layout");
+	}
+
+	CEGUI::Window* wndHolder = CEGUIUtility::getWindowForLoadedLayoutEx (quest_info_holder, "QuestInfo_Holder");
+	CEGUI::Window* wndQuest = CEGUIUtility::getWindowForLoadedLayoutEx (quest_info, "QuestInfo");
+	if (wndHolder && wndQuest)
+	{
+		CEGUIUtility::addChildWidget (wndHolder, wndQuest);
+	}
+	else
+	{
+		if (!wndHolder) SW_DEBUG ("ERROR: Unable to get the window holder for quests.");
+		if (!wndQuest) SW_DEBUG ("ERROR: Unable to get the window for quests.");
+	}
+
+	m_window = quest_info_holder;
 	
 	quest_info->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&Window::consumeEvent, (Window*) this));
 	
 	// Bestandteile der Kontrollleiste hinzufuegen
-	CEGUI::Window* label;
-
 	
-	CEGUI::Listbox* questlist = (CEGUI::Listbox*) win_mgr.getWindow("QuestList");
+	CEGUI::Listbox* questlist = (CEGUI::Listbox*) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestList");
 	questlist->subscribeEvent(CEGUI::Listbox::EventSelectionChanged, CEGUI::Event::Subscriber(&QuestInfo::onQuestSelected, this));
+
+	CEGUIUtility::ToggleButton * box;
 	
-	CEGUI::Checkbox * box;
-	
-	box = (CEGUI::Checkbox *) win_mgr.getWindow("QuestOpenBox");
-	box->subscribeEvent(CEGUI::Checkbox::EventCheckStateChanged, CEGUI::Event::Subscriber(&QuestInfo::onFilterSelected, this));
+	box = (CEGUIUtility::ToggleButton *) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestOpenBox");
+	box->subscribeEvent(CEGUIUtility::EventToggleButtonStateChanged (), CEGUI::Event::Subscriber(&QuestInfo::onFilterSelected, this));
 	box->setSelected(true);
 	
-	box = (CEGUI::Checkbox *) win_mgr.getWindow("QuestDoneBox");
-	box->subscribeEvent(CEGUI::Checkbox::EventCheckStateChanged, CEGUI::Event::Subscriber(&QuestInfo::onFilterSelected, this));
+	box = (CEGUIUtility::ToggleButton *) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestDoneBox");
+	box->subscribeEvent(CEGUIUtility::EventToggleButtonStateChanged (), CEGUI::Event::Subscriber(&QuestInfo::onFilterSelected, this));
 	box->setSelected(false);
 	
-	box = (CEGUI::Checkbox *) win_mgr.getWindow("QuestFailedBox");
-	box->subscribeEvent(CEGUI::Checkbox::EventCheckStateChanged, CEGUI::Event::Subscriber(&QuestInfo::onFilterSelected, this));
+	box = (CEGUIUtility::ToggleButton *) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestFailedBox");
+	box->subscribeEvent(CEGUIUtility::EventToggleButtonStateChanged (), CEGUI::Event::Subscriber(&QuestInfo::onFilterSelected, this));
 	box->setSelected(false);
 	
 	CEGUI::MultiLineEditbox* quest_descr;
-	quest_descr = static_cast<CEGUI::MultiLineEditbox*>(win_mgr.getWindow("QuestDescription"));
+	quest_descr = static_cast<CEGUI::MultiLineEditbox*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestDescription"));
 	quest_descr->setWantsMultiClickEvents(false);
 	quest_descr->setReadOnly(true);
 	quest_descr->setText("");
 	
-
-	label = win_mgr.getWindow("QuestInfoCloseButton");
-	label->subscribeEvent(CEGUI::Window::EventMouseClick, CEGUI::Event::Subscriber(&QuestInfo::onCloseButtonClicked, this));
+	CEGUI::Window* autoCloseButton;
+	autoCloseButton = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/__auto_closebutton__");
+	if (autoCloseButton)
+	{
+		autoCloseButton->subscribeEvent (CEGUI::Window::EventMouseClick, CEGUI::Event::Subscriber (&QuestInfo::onCloseButtonClicked, this));
+	}
 
 	updateTranslation();
 }
@@ -72,22 +96,20 @@ void QuestInfo::update()
 	if (World::getWorld() ==0)
 		return;
 	
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	
 	// Auswahl ermitteln
 	bool open,done,failed;
-	CEGUI::Checkbox * box;
+	CEGUIUtility::ToggleButton * box;
 	
-	box = (CEGUI::Checkbox *) win_mgr.getWindow("QuestOpenBox");
+	box = (CEGUIUtility::ToggleButton *) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestOpenBox");
 	open = box->isSelected();
 	
-	box = (CEGUI::Checkbox *) win_mgr.getWindow("QuestDoneBox");
+	box = (CEGUIUtility::ToggleButton *) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestDoneBox");
 	done = box->isSelected();
 	
-	box = (CEGUI::Checkbox *) win_mgr.getWindow("QuestFailedBox");
+	box = (CEGUIUtility::ToggleButton *) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestFailedBox");
 	failed = box->isSelected();
 	
-	CEGUI::Listbox* questlist = (CEGUI::Listbox*) win_mgr.getWindow("QuestList");
+	CEGUI::Listbox* questlist = (CEGUI::Listbox*) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestList");
 	questlist->resetList();
 	
 	// Liste mit den Quests aktualisieren
@@ -100,10 +122,12 @@ void QuestInfo::update()
 	{
 		Quest* quest = it->second;
 		state = it->second->getState();
-		if (state == Quest::STARTED && open || state == Quest::FINISHED && done || state == Quest::FAILED && failed)
+		if ((state == Quest::STARTED && open) || 
+		    (state == Quest::FINISHED && done) || 
+		    (state == Quest::FAILED && failed))
 		{
 			std::string name = quest->getName().getTranslation().c_str();
-			newitem = new StrListItem((CEGUI::utf8*) name.c_str(),it->first);
+			newitem = new StrListItem((CEGUI::utf8*) m_ceguiSkinName.c_str (), (CEGUI::utf8*) name.c_str(),it->first);
 			questlist->addItem(newitem);
 			DEBUGX("add quest %s %s",quest->getName().getTranslation().c_str(),it->first.c_str());
 			
@@ -129,19 +153,21 @@ void QuestInfo::update()
 
 void QuestInfo::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::Window* label;
 
-	label = win_mgr.getWindow("Quests");
-	label->setText((CEGUI::utf8*) gettext("Quests"));
-
-	label = win_mgr.getWindow("QuestOpenLabel");
+	label =  CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo");
+	if (label->isPropertyPresent ("Text"))
+	{
+		label->setProperty ("Text", (CEGUI::utf8*) gettext("Quests"));
+	}
+	
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestOpenLabel");
 	label->setText((CEGUI::utf8*) gettext("open"));
 	
-	label = win_mgr.getWindow("QuestDoneLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestDoneLabel");
 	label->setText((CEGUI::utf8*) gettext("finished"));
 	
-	label = win_mgr.getWindow("QuestFailedLabel");
+	label = CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestFailedLabel");
 	label->setText((CEGUI::utf8*) gettext("failed"));
 	
 	
@@ -168,12 +194,11 @@ bool QuestInfo::onCloseButtonClicked(const CEGUI::EventArgs& evt)
 
 void QuestInfo::updateDescription()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	CEGUI::Listbox* classlist = (CEGUI::Listbox*) win_mgr.getWindow("QuestList");
+	CEGUI::Listbox* classlist = (CEGUI::Listbox*) CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestList");
 	CEGUI::ListboxItem * itm = classlist->getFirstSelectedItem();
 	
 	CEGUI::MultiLineEditbox* quest_descr;
-	quest_descr = static_cast<CEGUI::MultiLineEditbox*>(win_mgr.getWindow("QuestDescription"));
+	quest_descr = static_cast<CEGUI::MultiLineEditbox*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "QuestInfo/questinfo_aux/QuestDescription"));
 	
 	if (itm !=0 && World::getWorld()!=0)
 	{

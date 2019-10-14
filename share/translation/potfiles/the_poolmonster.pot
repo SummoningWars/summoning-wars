@@ -1,0 +1,105 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#: scene7.xml:53
+msgid  "*Roar!*"
+msgstr ""
+
+#: scene7.xml:29
+msgid  "..."
+msgstr ""
+
+#: scene7.xml:23
+msgid  "... Der Anblick hat mich nur an mein Leben"
+msgstr ""
+
+#: scene7.xml:25
+msgid  "... only dimly"
+msgstr ""
+
+#: scene7.xml:28
+msgid  "... only externally."
+msgstr ""
+
+#: scene7.xml:22
+msgid  "Are you getting sentimental now?"
+msgstr ""
+
+#: scene7.xml:33
+msgid  "Do you really think that it"
+msgstr ""
+
+#: scene7.xml:24
+msgid  "Du kannst dich an dein Leben vor der"
+msgstr ""
+
+#: scene7.xml:34
+msgid  "Even the great"
+msgstr ""
+
+#: scene7.xml:35
+msgid  "I hope you have"
+msgstr ""
+
+#: scene7.xml:27
+msgid  "I know enough people,"
+msgstr ""
+
+#: scene7.xml:41
+msgid  "Just a moment please."
+msgstr ""
+
+#: scene7.xml:43
+msgid  "Looks like a..."
+msgstr ""
+
+#: scene7.xml:11
+msgid  "Quest description"
+msgstr ""
+
+#: scene7.xml:9
+msgid  "Quest finished"
+msgstr ""
+
+#: scene7.xml:26
+msgid  "Sometimes I wish,"
+msgstr ""
+
+#: scene7.xml:15
+msgid  "Soren Windclaw"
+msgstr ""
+
+#: scene7.xml:2
+msgid  "The Poolmonster"
+msgstr ""
+
+#: scene7.xml:40
+msgid  "We have to go now."
+msgstr ""
+
+#: scene7.xml:42
+msgid  "Whats that on the water over there?"
+msgstr ""
+
+#: scene7.xml:36
+msgid  "Why has it really"
+msgstr ""
+
+#: scene7.xml:21
+msgid  "Wow, thats beautiful."
+msgstr ""
+
+#: scene7.xml:59
+msgid  "greyCurseLake"
+msgstr ""
+

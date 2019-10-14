@@ -1,0 +1,43 @@
+<Sound name="sell_buy">
+	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/>
+</Sound>
+
+<Sound name="collect_item">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+<Sound name="block">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+<Sound name="evade">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+
+<Sound name="teleport">
+  <Soundfile source="inventory_sound_effects/teleport.wav"/>
+</Sound>
+
+<Sound name="use_potion">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+
+<Sound name="levelup">
+  <Soundfile source="skill_sound_effects/hero_level_up.wav"/>
+</Sound>
+
+<Sound name="increase_attribute">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+<Sound name="select_skill">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+<Sound name="swap_equip">
+<!--	<Soundfile source="inventory_sound_effects/sell_buy_item.wav"/> -->
+</Sound>
+
+

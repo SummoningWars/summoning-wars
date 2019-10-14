@@ -1,0 +1,29 @@
+<World>
+	<!-- Aisen, Zwergentrutz Stadtmauer; ungefaehr 20 min, Template; Level 16 - 19 -->
+	<!-- Zombies, Skelette -->
+	<!-- Locations fuer die Verteidigenden Wachen? -->
+	<Region id="13" name="dwarfenwallRampart">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="the_prophecy.ogg" />
+		</Music>
+		
+		<Settings dimx="32" dimy="36" region_template = "dwarfenwallRampart"  ground="grass1"/>
+		<WorldPosition world_x="0.74" world_y ="0.46"/>
+		
+		<ExitDirections north="false" south="true" west="false" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="dwarfenwall" destination_location="entry_rampart" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+	</Region>
+</World>

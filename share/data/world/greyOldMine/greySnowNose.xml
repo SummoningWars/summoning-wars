@@ -1,0 +1,35 @@
+<World>
+	<!-- Graue Himmelsleiter,  Schneenase-->
+	<Region id="3000" name="greySnowNose">
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="Dark_Exploration.ogg" />
+			<Track source="dark_descent.ogg" />
+		</Music>
+		
+		<Settings dimx="12" dimy="12" area_percent="0.4" complexity="0.3" granularity="8"  ground="grass1"/>
+		<WorldPosition world_x="0.66" world_y ="0.49"/>
+		
+		<ExitDirections north="false" south="false" west="true" east="false" />
+		
+		<Exits>
+			<Exit name="exit_west" destination_region="aisHillRoad" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="hills" />
+		</Environments>
+		
+		<ObjectGroups>
+		</ObjectGroups>
+		
+		<SpawnGroups>
+		<!--<SpawnGroup group_name="bandits_l12_1" number="10"/>-->
+		</SpawnGroups>
+	</Region>
+</World>

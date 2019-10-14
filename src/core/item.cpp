@@ -16,6 +16,9 @@
 // #include "item.h"
 #include "itemfactory.h"
 
+// Generic colour settings.
+#include "tooltipsettings.h"
+
 void WeaponAttr::operator=(WeaponAttr& other)
 {
 	m_weapon_type = other.m_weapon_type;
@@ -132,20 +135,29 @@ bool WeaponAttr::setValue(std::string valname)
 }
 
 ItemBasicData::ItemBasicData()
+:	m_useup_effect(0),
+	m_equip_effect(0),
+	m_weapon_attr(0),
+	m_level_req(0),
+	m_char_req("all"),
+	m_subtype(),
+	m_type(Item::NOITEM),
+	m_size(Item::SIZE_NONE),
+	m_price(0),
+	m_min_enchant(0),
+	m_max_enchant(0),
+	m_enchant_multiplier(0),
+	m_name(),
+	m_drop_level(0),
+	m_drop_probability(0.0),
+	m_consumable(false),
+	m_consume_timer_nr(0),
+	m_consume_timer(0)
 {
-	m_useup_effect=0;
-	m_equip_effect=0;
-	m_weapon_attr=0;
-	m_level_req = 0;
-	m_char_req = "all";
-
 	for (int i=0;i<NUM_MAGIC_MODS;i++)
 	{
 		m_modchance[i] =0;
 	}
-	m_min_enchant =0;
-	m_max_enchant =0;
-
 }
 
 ItemBasicData::~ItemBasicData()
@@ -213,6 +225,9 @@ void ItemBasicData::operator=(const ItemBasicData& other)
 	m_drop_level = other.m_drop_level;
 	m_drop_probability = other.m_drop_probability;
 
+	m_consumable = other.m_consumable;
+	m_consume_timer_nr = other.m_consume_timer_nr;
+	m_consume_timer = other.m_consume_timer;
 }
 
 void ItemBasicData::writeToXML(TiXmlNode* node)
@@ -301,6 +316,10 @@ void ItemBasicData::writeToXML(TiXmlNode* node)
 	XMLUtil::setDoubleAttribute(attr, "modchance_power_mod",m_modchance[ItemFactory::POWER_MOD],0);
 	insert_point = attr;
 	
+	XMLUtil::setBoolAttribute(attr, "consumable",m_consumable,false);
+	XMLUtil::setAttribute(attr, "consume_timer_nr",m_consume_timer_nr,0);
+	XMLUtil::setDoubleAttribute(attr, "consume_timer",m_consume_timer,0);
+	
 	// detect UseupEffect element
 	TiXmlElement* useup =  node->FirstChildElement("UseupEffect");
 	if (m_useup_effect != 0)
@@ -387,30 +406,30 @@ void ItemBasicData::writeToXML(TiXmlNode* node)
 }
 
 Item::Item(int id)
+:	m_subtype(),
+	m_id(0),
+	m_type(NOITEM),
+	m_size(SMALL),
+	m_price(0),
+	m_consumable(false),
+	m_consume_timer_nr(0),
+	m_consume_timer(0),
+	m_useup_effect(0),
+	m_equip_effect(0),
+	m_weapon_attr(0),
+	m_level_req(0),
+	m_char_req("all"),
+	m_magic_power(0),
+	m_rarity(NORMAL)
 {
-	if (id ==0)
-	{
-		if (World::getWorld() !=0)
-		{
-			m_id = World::getWorld()->getValidId();
-		}
-		else
-		{
-			m_id =0;
-		}
-	}
-	else
+	if (id!=0)
 	{
 		m_id = id;
 	}
-	m_useup_effect=0;
-	m_equip_effect=0;
-	m_weapon_attr=0;
-	m_level_req = 0;
-	m_magic_power =0;
-	m_rarity = NORMAL;
-	m_char_req = "all";
-	m_size = SMALL;
+	else if (World::getWorld() !=0)
+	{
+		m_id = World::getWorld()->getValidId();
+	}
 	
 	m_magic_mods.reset();
 }
@@ -479,6 +498,10 @@ Item::Item(ItemBasicData& data, int id)
 
 	m_level_req = data.m_level_req;
 	m_char_req = data.m_char_req;
+	
+	m_consumable = data.m_consumable;
+	m_consume_timer_nr = data.m_consume_timer_nr;
+	m_consume_timer = data.m_consume_timer;
 	
 	m_magic_mods.reset();
 }
@@ -818,6 +841,13 @@ void Item::toStringComplete(CharConv* cv)
 	{
 		cv->toBuffer( m_magic_mods.to_string());
 	}
+	
+	if (cv->getVersion() >= 21)
+	{
+		cv->toBuffer(m_consumable);
+		cv->toBuffer(m_consume_timer_nr);
+		cv->toBuffer(m_consume_timer);
+	}
 }
 
 void Item::fromStringComplete(CharConv* cv)
@@ -922,41 +952,56 @@ void Item::fromStringComplete(CharConv* cv)
 
 	if (cv->getVersion() >= 16)
 	{
-		std::string magicmods;
+		std::string magicmods ("");
 		cv->fromBuffer(magicmods);
 		m_magic_mods = std::bitset<32>(magicmods);
 	}
 
+	if (cv->getVersion() >= 21)
+	{
+		cv->fromBuffer(m_consumable);
+		cv->fromBuffer(m_consume_timer_nr);
+		cv->fromBuffer(m_consume_timer);
+	}
+	else
+	{
+		// hack to fill missing data fields
+		m_consumable = ((m_useup_effect != 0) || m_subtype =="town_portal");
+		m_consume_timer_nr = 0;
+		m_consume_timer = 0;
+	}
 }
 
 std::string Item::getDescription(float price_factor, ItemRequirementsMet irm)
 {
-    std::string defaultColor = "[colour='FF2F2F2F']";
-    std::string rarityColor;
+	
+	std::string defaultColor = TooltipSettings::getDefaultCeguiColour ();
+    std::string rarityColor ("");
     switch (m_rarity)
     {
         case MAGICAL:
-            rarityColor = "[colour='FF00C000']";
+			rarityColor = TooltipSettings::getMagicalCeguiColour ();
             break;
         case RARE:
-            rarityColor = "[colour='FF2573D9']";
+			rarityColor = TooltipSettings::getRareCeguiColour ();
             break;
         case UNIQUE:
-            rarityColor = "[colour='FFFF0000']";
+			rarityColor = TooltipSettings::getUniqueCeguiColour ();
             break;
         case QUEST:
-            rarityColor = "[colour='FFC05600']";
+			rarityColor = TooltipSettings::getQuestCeguiColour ();
             break;
         default:
             rarityColor = defaultColor;
     }
 
-	// String fuer die Beschreibung
+	// String for the description die Beschreibung
 	std::ostringstream out_stream;
 	out_stream.str("");
     out_stream<<rarityColor<<getName()<<"\n" << defaultColor;
 	int i;
-	// Levelbeschraenkung
+
+	// Display the level limitations
 	out_stream <<gettext("Value")<<": "<<m_price;
 	if (price_factor != 0 && price_factor != 1)
 	{
@@ -967,18 +1012,18 @@ std::string Item::getDescription(float price_factor, ItemRequirementsMet irm)
         if (irm.m_level)
             out_stream<<"\n" << gettext("Required level")<<": "<<(int) m_level_req;
         else
-            out_stream<<"\n" << "[colour='FFFF0000']" << gettext("Required level")<<": "<<(int) m_level_req << "[colour='FF2F2F2F']";
+            out_stream<<"\n" << TooltipSettings::getLevelRequirementCeguiColour () << gettext("Required level")<<": "<<(int) m_level_req << TooltipSettings::getDefaultCeguiColour ();
 	}
 	
 	if (m_char_req != "15" && m_char_req != "all")
 	{
         if (!irm.m_class)
-            out_stream<< "[colour='FFFF0000']";
+            out_stream << TooltipSettings::getLevelRequirementCeguiColour ();
         
 		size_t pos=0,pos2;
-		out_stream<<"\n" << gettext("Required class")<<": ";
+		out_stream << "\n" << gettext ("Required class") << ": ";
 		
-		std::string type;
+		std::string type ("");
 		bool end = false;
 		
 		// alle Klassen ermitteln, die das Item verwenden koennen
@@ -1069,13 +1114,14 @@ std::string Item::getDescription(float price_factor, ItemRequirementsMet irm)
 
 		// Schaden
 		std::string dmgstring = m_weapon_attr->m_damage.getDamageString(Damage::ITEM);
+		
 		if (dmgstring != "")
 		{
 			if (m_type == WEAPON)
 			{
-				out_stream << "\n" << gettext("Damage")<<":";
+				out_stream << "\n" << gettext("Damage") << ":";
 			}
-			out_stream<<"\n"<<dmgstring;
+			out_stream << "\n" << dmgstring;
 		}
 
 	}
@@ -1152,21 +1198,21 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
 	int elemmap[4] = {0,3,2,1};
 	
     std::list<std::string> itemDescList;
-    std::string defaultColor = "[colour='FF2F2F2F']";
-    std::string rarityColor;
+    std::string defaultColor = TooltipSettings::getDefaultCeguiColour ();
+    std::string rarityColor ("");
     switch (m_rarity)
     {
         case MAGICAL:
-            rarityColor = "[colour='FF00A000']";
+			rarityColor = TooltipSettings::getMagicalCeguiColour ();
             break;
         case RARE:
-            rarityColor = "[colour='FF2573D9']";
+            rarityColor = TooltipSettings::getRareCeguiColour ();
             break;
         case UNIQUE:
-            rarityColor = "[colour='FFFF0000']";
+			rarityColor =  TooltipSettings::getUniqueHexColourCode ();
             break;
         case QUEST:
-            rarityColor = "[colour='FFC05600']";
+			rarityColor =  TooltipSettings::getQuestCeguiColour ();
             break;
         default:
             rarityColor = defaultColor;
@@ -1175,19 +1221,19 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
     // String fuer die Beschreibung
     std::ostringstream out_stream;
     out_stream.str("");
-    out_stream<<rarityColor<<getName() << defaultColor << "\n";
+    out_stream<<rarityColor<<getName() << defaultColor;
     itemDescList.push_back(out_stream.str());
     out_stream.str("");
     
     int i;
     // Levelbeschraenkung
-    out_stream <<gettext("Value")<<": "<<m_price << "\n";
+    out_stream <<gettext("Value")<<": "<<m_price;
     itemDescList.push_back(out_stream.str());
     out_stream.str("");
     
     if (price_factor != 0 && price_factor != 1)
     {
-        out_stream << gettext("Selling Value")<<": "<<MathHelper::Max(1,int(m_price*price_factor)) << "\n";
+        out_stream << gettext("Selling Value")<<": "<<MathHelper::Max(1,int(m_price*price_factor));
         itemDescList.push_back(out_stream.str());
         out_stream.str("");
     }
@@ -1195,13 +1241,13 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
     {
         if (irm.m_level)
         {
-            out_stream<<gettext("Required level")<<": "<<(int) m_level_req << "\n";
+            out_stream<<gettext("Required level")<<": "<<(int) m_level_req;
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
         else
         {
-            out_stream<< "[colour='FFFF0000']" << gettext("Required level")<<": "<<(int) m_level_req << "[colour='FF2F2F2F']" << "\n";
+			out_stream << TooltipSettings::getLevelRequirementCeguiColour () << gettext("Required level")<<": "<<(int) m_level_req << TooltipSettings::getDefaultCeguiColour (); // Augustin Preda, 2013.02.08: replaced previous colour (FF2F2F2F)
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1211,14 +1257,14 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
     {
         if (!irm.m_class)
         {
-            out_stream<< "[colour='FFFF0000']" << "\n";
+            out_stream << TooltipSettings::getLevelRequirementCeguiColour ();
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
         size_t pos=0,pos2;
         out_stream<< gettext("Required class")<<": ";
         
-        std::string type;
+        std::string type ("");
         bool end = false;
         
         // alle Klassen ermitteln, die das Item verwenden koennen
@@ -1265,7 +1311,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             
             first = false;
         }
-        out_stream<< defaultColor << "\n";
+        out_stream<< defaultColor;
         itemDescList.push_back(out_stream.str());
         out_stream.str("");
     }
@@ -1276,7 +1322,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
         // HP Heilung
         if (m_useup_effect->m_dhealth>0)
         {
-            out_stream << gettext("Heals ")<<(int) m_useup_effect->m_dhealth<<gettext(" hitpoints") << "\n";
+            out_stream << gettext("Heals ")<<(int) m_useup_effect->m_dhealth<<gettext(" hitpoints");
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1286,7 +1332,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
         {
             if (    m_useup_effect->m_dstatus_mod_immune_time[i]>0)
             {
-                out_stream << gettext("Heals ")<<Damage::getStatusModName((Damage::StatusMods) i) << "\n";
+                out_stream << gettext("Heals ")<<Damage::getStatusModName((Damage::StatusMods) i);
                 itemDescList.push_back(out_stream.str());
                 out_stream.str("");
                 
@@ -1306,14 +1352,14 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
     {
         if (m_weapon_attr->m_two_handed)
         {
-            out_stream << gettext("Two-handed weapon") << "\n";
+            out_stream << gettext("Two-handed weapon");
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
         // Reichweite / Angriffsgeschwindigkeit
         if (m_type == WEAPON)
         {
-            out_stream << gettext("Range")<<": "<<m_weapon_attr->m_attack_range << "\n";
+            out_stream << gettext("Range")<<": "<<m_weapon_attr->m_attack_range;
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1326,7 +1372,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
         {
             if (m_type == WEAPON)
             {
-                out_stream << gettext("Damage")<<":" << "\n";
+                out_stream << gettext("Damage")<<":";
                 itemDescList.push_back(out_stream.str());
                 out_stream.str("");
             }
@@ -1335,13 +1381,13 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             std::string::size_type pos = dmgstring.find("\n");
             while(pos != std::string::npos)
             {
-                out_stream << dmgstring.substr(0, pos+1);
+                out_stream << dmgstring.substr(0, pos); // Augustin Preda, 2014.01.20: removed last char (newline)
                 itemDescList.push_back(out_stream.str());
                 out_stream.str("");
                 dmgstring.erase(0,pos+1);
                 pos = dmgstring.find("\n");
             }
-            out_stream << dmgstring << "\n";
+            out_stream << dmgstring;// << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1357,7 +1403,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<< gettext("Armor")<<": "<<m_equip_effect->m_darmor ;
 			if (m_magic_mods.test(ItemFactory::ARMOR_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1369,7 +1415,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<< gettext("Block")<<": "<<m_equip_effect->m_dblock;
 			if (m_magic_mods.test(ItemFactory::BLOCK_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1381,7 +1427,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<< "+" <<(int) m_equip_effect->m_dmax_health<< " "<<gettext("max hitpoints");
 			if (m_magic_mods.test(ItemFactory::HEALTH_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1393,7 +1439,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<< "+"<<m_equip_effect->m_dstrength<< " "<<gettext("Strength");
 			if (m_magic_mods.test(ItemFactory::STRENGTH_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1405,7 +1451,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<<"+"<<m_equip_effect->m_ddexterity<< " "<<gettext("Dexterity");
 			if (m_magic_mods.test(ItemFactory::DEXTERITY_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1417,7 +1463,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<< "+"<<m_equip_effect->m_dmagic_power<< " "<<gettext("Magic Power");
 			if (m_magic_mods.test(ItemFactory::MAGIC_POWER_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1429,7 +1475,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
             out_stream<< "+"<<m_equip_effect->m_dwillpower<< " "<<gettext("Willpower");
 			if (m_magic_mods.test(ItemFactory::WILLPOWER_MOD)) 
 				out_stream << defaultColor;
-			out_stream << "\n";
+			//out_stream << "\n";
             itemDescList.push_back(out_stream.str());
             out_stream.str("");
         }
@@ -1445,7 +1491,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
 				
 				if (m_magic_mods.test(ItemFactory::RESIST_PHYS_MOD+elemmap[i])) 
 					out_stream << defaultColor;
-				out_stream << "\n";
+				//out_stream << "\n";
                 itemDescList.push_back(out_stream.str());
                 out_stream.str("");
             }
@@ -1460,7 +1506,7 @@ std::list<std::string> Item::getDescriptionAsStringList(float price_factor, Item
                 out_stream<< "+"<<m_equip_effect->m_dresistances_cap[i]<<gettext(" max. ")<<Damage::getDamageResistanceName((Damage::DamageType) i);
 				
 				out_stream << defaultColor;
-				out_stream << "\n";
+				//out_stream << "\n";
 				
                 itemDescList.push_back(out_stream.str());
                 out_stream.str("");

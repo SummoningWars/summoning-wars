@@ -1,0 +1,351 @@
+<GUILayout >
+    <Window Type="SWB/FrameWindow" Name="CharInfo" >
+        <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+        <Property Name="Text" Value="Inventory" />
+        <Property Name="TitlebarFont" Value="DejaVuSerif-12" />
+        <Property Name="CloseButtonAlignment" Value="1" />
+        <Property Name="MousePassThroughEnabled" Value="True" />
+        <Property Name="SizingEnabled" Value="False" />
+        <Property Name="DragMovingEnabled" Value="False" />
+        <Property Name="CloseButtonEnabled" Value="True" />
+        <Property Name="RollUpEnabled" Value="False" />
+
+        <Window Type="SWB/StaticImage" Name="charinfo_aux" >
+            <Property Name="FrameEnabled" Value="False" />
+            <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.0,0},{1.0,0},{1.0,0}}" />
+            <Property Name="BackgroundEnabled" Value="False" />
+
+            <!-- The top side where the player picture, and main information are displayed -->
+            <Window Type="SWB/GroupBox" Name="Playerinfo" >
+                <Property Name="Text" Value="Player info" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.01,0},{1.0,0},{0.32,0}}" />
+                
+                <Window Type="SWB/StaticImage" Name="Portrait" >
+                    <Property Name="Image" Value="set:Portrait image:Portrait" />
+                    <Property Name="FrameEnabled" Value="True" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.01,0},{0.04,0},{0.335,0},{0.95,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+
+                <Window Type="SWB/StaticText" Name="ClassLabel" >
+                    <Property Name="Text" Value="Class" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.068,0},{0.630,0},{0.266,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ClassValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.650,0},{0.068,0},{0.990,0},{0.266,0}}" />
+                     <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="LevelLabel" >
+                    <Property Name="Text" Value="Level" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.268,0},{0.630,0},{0.466,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="LevelValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.650,0},{0.268,0},{0.990,0},{0.466,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ExperienceLabel" >
+                    <Property Name="Text" Value="Experience" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.468,0},{0.630,0},{0.666,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ExperienceValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.650,0},{0.468,0},{0.990,0},{0.666,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="HitpointsLabel" >
+                    <Property Name="Text" Value="Hitpoints" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.340,0},{0.688,0},{0.630,0},{0.868,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="HitpointsValueLabel" >
+                     <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.650,0},{0.688,0},{0.990,0},{0.868,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+            
+            <!-- The area where the attributes (strength, dexterity, etc) are displayed -->
+            <Window Type="SWB/GroupBox" Name="Attributes" >
+                <Property Name="Text" Value="Attributes" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.340,0},{1.0,0},{0.560,0}}" />
+                
+                <!-- Strength -->
+                <Window Type="SWB/StaticText" Name="StrengthLabel" >
+                    <Property Name="Text" Value="Strength" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.053,0},{0.337,0},{0.294,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="StrengthValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.338,0},{0.053,0},{0.438,0},{0.294,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/ImageButton" Name="StrengthAddButton" >
+                    <Property Name="UnifiedPosition" Value="{{0.438,0},{0.060,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.061,0},{0.228,0}}" />
+                    <Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+                    <Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+                    <Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+                </Window>
+                
+                <!-- Dexterity -->
+                <Window Type="SWB/StaticText" Name="DexterityLabel" >
+                    <Property Name="Text" Value="Dexterity" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.353,0},{0.337,0},{0.594,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="DexterityValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.338,0},{0.353,0},{0.438,0},{0.594,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/ImageButton" Name="DexterityAddButton" >
+                    <Property Name="UnifiedPosition" Value="{{0.438,0},{0.360,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.061,0},{0.228,0}}" />
+                    <Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+                    <Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+                    <Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+                </Window>
+                
+                <!-- Willpower -->
+                <Window Type="SWB/StaticText" Name="WillpowerLabel" >
+                    <Property Name="Text" Value="Willpower" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.50,0},{0.053,0},{0.837,0},{0.294,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="WillpowerValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.838,0},{0.053,0},{0.938,0},{0.294,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/ImageButton" Name="WillpowerAddButton" >
+                    <Property Name="UnifiedPosition" Value="{{0.938,0},{0.060,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.061,0},{0.228,0}}" />
+                    <Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+                    <Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+                    <Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+                </Window>
+                
+                <!-- Magic power -->
+                <Window Type="SWB/StaticText" Name="MagicpowerLabel" >
+                    <Property Name="Text" Value="Magic power" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.50,0},{0.353,0},{0.837,0},{0.594,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="MagicpowerValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.838,0},{0.353,0},{0.938,0},{0.594,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/ImageButton" Name="MagicpowerAddButton" >
+                    <Property Name="UnifiedPosition" Value="{{0.938,0},{0.360,0}}" />
+                    <Property Name="UnifiedSize" Value="{{0.061,0},{0.228,0}}" />
+                    <Property Name="NormalImage" Value="set:CharScreen image:PlusBtnReleased" />
+                    <Property Name="HoverImage" Value="set:CharScreen image:PlusBtnReleased"  />
+                    <Property Name="PushedImage" Value="set:CharScreen image:PlusBtnPressed" />
+                </Window>
+                
+                <Window Type="SWB/StaticText" Name="AttrPointsValueLabel" >
+                    <Property Name="TextColours" Value="tl:FF0AC92B tr:FF0AC92B bl:FF0AC92Bbr:FF0AC92B" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.10,0},{0.750,0},{0.95,0},{0.995,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+            </Window>
+   
+            
+            <Window Type="SWB/GroupBox" Name="Offense" >
+                <Property Name="Text" Value="Offense" />
+                <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.570,0},{0.540,0},{1.0,0}}" />
+                    
+                <Window Type="SWB/StaticText" Name="AttackLabel" >
+                    <Property Name="Text" Value="Attack" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.02,0},{0.60,0},{0.16,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="AttackValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.02,0},{0.99,0},{0.16,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="AttackSpeedLabel" >
+                    <Property Name="Text" Value="Attacks/s" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.16,0},{0.60,0},{0.30,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="AttackSpeedValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.16,0},{0.99,0},{0.30,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="RangeLabel" >
+                    <Property Name="Text" Value="Range" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.30,0},{0.60,0},{0.44,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="RangeValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.30,0},{0.99,0},{0.44,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="PowerLabel" >
+                    <Property Name="Text" Value="Power" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.44,0},{0.60,0},{0.58,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="PowerValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.44,0},{0.99,0},{0.58,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="BaseDmgLabel" >
+                    <Property Name="Text" Value="" />
+                    <Property Name="TextColours" Value="tl:FF4F94CD tr:FF4F94CD bl:FF4F94CD br:FF4F94CD" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.58,0},{0.60,0},{0.72,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="BaseDmgValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.58,0},{0.99,0},{0.72,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="Skill1DmgLabel" >
+                    <Property Name="Text" Value="" />
+                    <Property Name="TextColours" Value="tl:FF0AC92B tr:FF0AC92B bl:FF0AC92B br:FF0AC92B" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.72,0},{0.60,0},{0.86,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="Skill1DmgValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.72,0},{0.99,0},{0.86,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="Skill2DmgLabel" >
+                    <Property Name="Text" Value="" />
+                    <Property Name="TextColours" Value="tl:FF0AC92B tr:FF0AC92B bl:FF0AC92B br:FF0AC92B" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.86,0},{0.60,0},{1.0,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="Skill2DmgValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.60,0},{0.86,0},{0.99,0},{1.0,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>                
+            </Window>
+            
+            <!-- The defensive stats -->
+            <Window Type="SWB/GroupBox" Name="Defense" >
+                <Property Name="Text" Value="Defense" />
+                <Property Name="UnifiedAreaRect" Value="{{0.550,0},{0.570,0},{1.0,0},{1.0,0}}" />
+
+                <Window Type="SWB/StaticText" Name="ArmorLabel" >
+                    <Property Name="Text" Value="Armor" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.02,0},{0.6,0},{0.16,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ArmorValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.02,0},{0.99,0},{0.16,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="BlockLabel" >
+                    <Property Name="Text" Value="Block" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.16,0},{0.6,0},{0.30,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="BlockValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.16,0},{0.99,0},{0.30,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistPhysLabel" >
+                    <Property Name="Text" Value="Physical" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.44,0},{0.6,0},{0.58,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistPhysValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.44,0},{0.99,0},{0.58,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistFireLabel" >
+                    <Property Name="Text" Value="Fire" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.58,0},{0.6,0},{0.72,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistFireValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.58,0},{0.99,0},{0.72,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistAirLabel" >
+                    <Property Name="Text" Value="Air" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.72,0},{0.6,0},{0.86,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistAirValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.72,0},{0.99,0},{0.86,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistIceLabel" >
+                    <Property Name="Text" Value="Ice" />
+                    <Property Name="TextColours" Value="tl:FFE3CF57 tr:FFE3CF57 bl:FFE3CF57 br:FFE3CF57" />
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.0,0},{0.86,0},{0.6,0},{1.0,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>
+                <Window Type="SWB/StaticText" Name="ResistIceValueLabel" >
+                    <Property Name="FrameEnabled" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.6,0},{0.86,0},{0.99,0},{1.0,0}}" />
+                    <Property Name="BackgroundEnabled" Value="False" />
+                </Window>                
+            </Window>
+            
+
+
+        </Window>
+    </Window>
+</GUILayout>

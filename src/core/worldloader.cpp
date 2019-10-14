@@ -19,6 +19,7 @@
 
 #include <iostream>
 
+
 std::string WorldLoader::m_filename;
 
 void WorldLoader::loadEvent( TiXmlNode* node, Event *ev, TriggerType &type)
@@ -66,6 +67,7 @@ void WorldLoader::loadEvent( TiXmlNode* node, Event *ev, TriggerType &type)
 
 bool WorldLoader::loadRegionData(const char* pFilename)
 {
+	SW_DEBUG ("Loading region data from file: [%s]", pFilename);
 	TiXmlDocument doc(pFilename);
 	bool loadOkay = doc.LoadFile();
 
@@ -130,7 +132,6 @@ bool WorldLoader::loadRegions(TiXmlNode* node)
 
 bool WorldLoader::loadRegion(TiXmlNode* node, RegionData* rdata)
 {
-	
 	TiXmlNode* child;
 	TiXmlNode* child2;
 	for ( child = node->FirstChild(); child != 0; child = child->NextSibling())
@@ -168,6 +169,7 @@ bool WorldLoader::loadRegion(TiXmlNode* node, RegionData* rdata)
 						if (music != "")
 						{
 							rdata->m_music_tracks.push_back(music);
+							SW_DEBUG ("Loading region [%s]. Adding music track to region data: %s", rdata->m_name.c_str (), music.c_str ());
 						}
 					}
 					else if (child2->Type()!=TiXmlNode::TINYXML_COMMENT)

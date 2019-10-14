@@ -1,0 +1,5 @@
+<Imageset version="2" autoScaled="false" imagefile="CharacterScreen.png" name="CharScreen" nativeHorzRes="800" nativeVertRes="600">
+    <Image height="826" name="Background" width="538" xPos="0" yPos="0" />
+    <Image height="64" name="PlusBtnReleased" width="88" xPos="559" yPos="0" />
+    <Image height="64" name="PlusBtnPressed" width="87" xPos="649" yPos="0" />
+</Imageset>

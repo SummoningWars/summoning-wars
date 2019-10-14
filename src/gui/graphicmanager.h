@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GRAPHIC_MANAGER_H
-#define GRAPHIC_MANAGER_H
+#ifndef __SUMWARS_GUI_GRAPHICMANAGER_H__
+#define __SUMWARS_GUI_GRAPHICMANAGER_H__
 
 
 #include "OgreSceneManager.h"
@@ -190,7 +190,7 @@ class GraphicManager
 		 * \brief specialized functions for determining the dropsound of an item
 		 * \param objecttype Ingame object type, must be an item type
 		 */
-		static SoundName getDropSound(std::string objecttype);
+		static std::string getDropSound(std::string objecttype);
 		
 		/**
 		 * \brief clears the internal particle pool
@@ -327,5 +327,5 @@ class GraphicManager
 		static double g_global_scale;
 };
 
-#endif
+#endif // __SUMWARS_GUI_GRAPHICMANAGER_H__
 

@@ -16,15 +16,19 @@
 INCLUDE(FindPackageHandleStandardArgs)
 INCLUDE(HandleLibraryTypes)
 
+SET (VORBIS_SEARCH_PATH ${PROJECT_SOURCE_DIR}/dependencies/libvorbis ${PROJECT_SOURCE_DIR}/dependencies/vorbis 
+        ${PROJECT_SOURCE_DIR}/../dependencies/libvorbis ${PROJECT_SOURCE_DIR}/../dependencies/vorbis
+        $ENV{VORBISDIR})
+
 FIND_PATH(VORBIS_INCLUDE_DIR vorbis/codec.h
-  PATHS $ENV{VORBISDIR}
+  PATHS ${VORBIS_SEARCH_PATH}
   PATH_SUFFIXES include
 )
 
 IF(WIN32)
   #Make a special selection for the scenario of using visual studio 2010, since this will
   #be the most frequent at this stage.
-  SET (TMP_SUFF Win32/Release)
+  SET (TMP_SUFF Release Win32/Release)
   IF (MSVC10)
     SET (TMP_SUFF ${TMP_SUFF} VS2010/Win32/Release Win32/VS2010/Win32/Release )
   ENDIF (MSVC10)
@@ -32,7 +36,7 @@ IF(WIN32)
   # TODO: add option to allow selecting static or release as pre 
   FIND_LIBRARY(VORBIS_LIBRARY_OPTIMIZED
     NAMES libvorbis_static libvorbis-static-mt libvorbis
-    PATHS $ENV{VORBISDIR}
+    PATHS ${VORBIS_SEARCH_PATH}
     PATH_SUFFIXES Release ${TMP_SUFF}
   )
 ELSE()
@@ -46,13 +50,13 @@ Message (STATUS "Got release vorbis: ${VORBIS_LIBRARY_OPTIMIZED}")
 IF(WIN32)
 #Make a special selection for the scenario of using visual studio 2010, since this will
 #be the most frequent at this stage.
-SET (TMP_SUFF Win32/Debug)
+SET (TMP_SUFF Debug Win32/Debug)
 IF (MSVC10)
 SET (TMP_SUFF ${TMP_SUFF} VS2010/Win32/Debug Win32/VS2010/Win32/Debug )
 ENDIF (MSVC10)
 FIND_LIBRARY(VORBIS_LIBRARY_DEBUG
   NAMES libvorbis_static libvorbis vorbis_d vorbisD vorbis_D libvorbis-static-mt-debug
-  PATHS $ENV{VORBISDIR}
+  PATHS ${VORBIS_SEARCH_PATH}
   PATH_SUFFIXES Debug ${TMP_SUFF}
 )
 ELSE()
@@ -65,13 +69,13 @@ ENDIF(WIN32)
 IF(WIN32)
 #Make a special selection for the scenario of using visual studio 2010, since this will
 #be the most frequent at this stage.
-SET (TMP_SUFF Win32/Release)
+SET (TMP_SUFF Release Win32/Release)
 IF (MSVC10)
 SET (TMP_SUFF ${TMP_SUFF} VS2010/Win32/Release Win32/VS2010/Win32/Release )
 ENDIF (MSVC10)
 FIND_LIBRARY(VORBISFILE_LIBRARY_OPTIMIZED
-  NAMES libvorbisfile
-  PATHS $ENV{VORBISDIR}
+  NAMES libvorbisfile_static libvorbisfile
+  PATHS ${VORBIS_SEARCH_PATH}
   PATH_SUFFIXES Release ${TMP_SUFF}
 )
 ELSE()
@@ -84,13 +88,13 @@ ENDIF(WIN32)
 IF(WIN32)
 #Make a special selection for the scenario of using visual studio 2010, since this will
 #be the most frequent at this stage.
-SET (TMP_SUFF Win32/Debug)
+SET (TMP_SUFF Debug Win32/Debug)
 IF (MSVC10)
 SET (TMP_SUFF ${TMP_SUFF} VS2010/Win32/Debug Win32/VS2010/Win32/Debug )
 ENDIF (MSVC10)
 FIND_LIBRARY(VORBISFILE_LIBRARY_DEBUG
-  NAMES libvorbisfile vorbisfile_d vorbisfileD vorbisfile_D
-  PATHS $ENV{VORBISDIR}
+  NAMES libvorbisfile_static libvorbisfile vorbisfile_d vorbisfileD vorbisfile_D
+  PATHS ${VORBIS_SEARCH_PATH}
   PATH_SUFFIXES Debug ${TMP_SUFF}
 )
 ELSE()
@@ -101,38 +105,28 @@ FIND_LIBRARY(VORBISFILE_LIBRARY_DEBUG
 ENDIF(WIN32)
 
 # Handle the REQUIRED argument and set VORBIS_FOUND
-IF(NOT WIN32)
+# IF(NOT WIN32)
 FIND_PACKAGE_HANDLE_STANDARD_ARGS(Vorbis DEFAULT_MSG
   VORBIS_LIBRARY_OPTIMIZED
   VORBISFILE_LIBRARY_OPTIMIZED
   VORBIS_INCLUDE_DIR
 )
-ELSE()
-FIND_PACKAGE_HANDLE_STANDARD_ARGS(Vorbis DEFAULT_MSG
-  VORBIS_LIBRARY_OPTIMIZED
-  VORBIS_INCLUDE_DIR
-)
-ENDIF(NOT WIN32)
+# ELSE()
+# FIND_PACKAGE_HANDLE_STANDARD_ARGS(Vorbis DEFAULT_MSG
+#   VORBIS_LIBRARY_OPTIMIZED
+#   VORBIS_INCLUDE_DIR
+# )
+# ENDIF(NOT WIN32)
 
 # Collect optimized and debug libraries
 HANDLE_LIBRARY_TYPES(VORBIS)
-IF(NOT WIN32)
-  HANDLE_LIBRARY_TYPES(VORBISFILE) 
-  SET(VORBIS_LIBRARIES ${VORBIS_LIBRARY} ${VORBISFILE_LIBRARY}) #WIN32 includes VORBISFILE as a static lib
-ELSE()
-  SET(VORBIS_LIBRARIES ${VORBIS_LIBRARY} )
-ENDIF(NOT WIN32)
+HANDLE_LIBRARY_TYPES(VORBISFILE) 
+SET(VORBIS_LIBRARIES ${VORBIS_LIBRARY} ${VORBISFILE_LIBRARY}) #WIN32 includes VORBISFILE as a static lib
 
 MARK_AS_ADVANCED(
   VORBIS_INCLUDE_DIR
   VORBIS_LIBRARY_OPTIMIZED
   VORBIS_LIBRARY_DEBUG
-  IF(NOT WIN32)
-    VORBISFILE_LIBRARY_OPTIMIZED
-    VORBISFILE_LIBRARY_DEBUG
-#   ELSE()
-#     # Temporary: add libs here as well
-#     VORBISFILE_LIBRARY_OPTIMIZED
-#     VORBISFILE_LIBRARY_DEBUG
-  ENDIF(NOT WIN32)
+  VORBISFILE_LIBRARY_OPTIMIZED
+  VORBISFILE_LIBRARY_DEBUG
 )

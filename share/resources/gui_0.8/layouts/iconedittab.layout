@@ -1,0 +1,14 @@
+
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="IconEditTab" >
+        <Property name="Area" value="{{0.19043,0},{0.266927,0},{0.727539,0},{0.800781,0}}" />
+        <Window type="TaharezLook/StaticImage" name="IconEditTab/3DView" >
+            <Property name="Area" value="{{0.0545455,0},{0.0487805,0},{0.336364,0},{0.609756,0}}" />
+        </Window>
+        <Window type="TaharezLook/Checkbox" name="IconEditTab/UseGlow" >
+            <Property name="Text" value="Use Glow" />
+            <Property name="Area" value="{{0.354545,0},{0.0487805,0},{0.781818,0},{0.134146,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

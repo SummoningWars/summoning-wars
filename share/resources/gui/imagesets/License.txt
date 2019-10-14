@@ -1,0 +1,64 @@
+*** GUI Imageset license file ***
+This file contains all license information for artwork located in the gui/imageset directory
+
+
+If not declared otherwise, all artwork is released under the authors default license.
+
+
+Artwork provided by: CrazyEddie's GUI (CEGUI) library
+License: MIT
+Visit http://www.cegui.org.uk for more information
+Files:
+	TaharezLook.tga  (Original)
+
+Artwork provided by: Michael Kempf (kemic)
+Default License: CC-BY-SA
+Files:
+	TaharezLook.tga 
+	
+Artwork provided by: Andreas Schönefeld
+Default License: CC-BY-SA
+Files:
+	startscreen.png
+
+Artwork provided by: Andreas Schönefeld, Michael Kempf (kemic), Francesco (hal9000)
+Default License: CC-BY-SA
+Files:
+	skills.png
+	
+Artwork provided by: Psycho
+Default License: CC-BY-SA
+Files:
+	worldMap.png
+
+Artwork provided by: Jorge Avila
+Default License: LGLP 3.0 (also available under CC-BY)
+Files:
+	CharacterScreen.png
+  ControlPanel.png
+  Inventory.png
+  main_menu.png
+  misc.png
+  OptionsWindow.png
+  portrait.png
+  SkillTree.png
+  SumWarsLogo.png
+  TradeWindow.png
+
+Artwork provided by: Augustin Preda (dezGusty)
+Default License: LGPL 3.0 (also available under CC-BY)
+Files:
+  ControlPanel.png
+  Resummoned.png
+  ResummonedCursors.png
+  SumWarsExtras.png
+  SumWarsLogo.png
+	SWB.png
+  SWBCursors.png 
+
+Artwork provided by: J. W. Bjerk
+Default License: GPL 3.0
+For additional details, please visit http://opengameart.org/content/painterly-spell-icons-part-1
+Files:
+	skills.png
+

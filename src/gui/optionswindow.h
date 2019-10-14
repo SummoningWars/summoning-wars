@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef OPTIONSWINDOW_H
-#define OPTIONSWINDOW_H
+#ifndef __SUMWARS_GUI_OPTIONSWINDOW_H__
+#define __SUMWARS_GUI_OPTIONSWINDOW_H__
 
 #include "window.h"
 #include <OISKeyboard.h>
@@ -31,7 +31,7 @@ class OptionsWindow : public Window
 	 * \param keyboard OIS keyboard
 	 * \brief Konstruktor
 	 */
-		OptionsWindow (Document* doc, OIS::Keyboard *keyboard);
+		OptionsWindow (Document* doc, OIS::Keyboard *keyboard, const std::string& ceguiSkinName);
 	
 		/**
 		 * \fn virtual void update()
@@ -75,6 +75,23 @@ class OptionsWindow : public Window
 		ShortkeyDestination m_key_destination;
 		
 		/**
+		 * Connect specific sound events for the widget.
+		 */
+		void connectWidgetSoundEvents (const std::string& widgetName, const std::string& widgetType);
+
+		/**
+		 * \fn bool onButtonItemClicked (const CEGUI::EventArgs& evt)
+		 * \brief Handle the click of gui items.
+		 */
+		bool onGUIItemClicked (const CEGUI::EventArgs& evt);
+
+		/**
+		 * \fn bool onButtonItemHover(const CEGUI::EventArgs& evt)
+		 * \brief Handle the hovering of gui items.
+		 */
+		bool onButtonItemHover (const CEGUI::EventArgs& evt);
+		
+		/**
 		 * \fn bool onShortkeyLabelClicked(const CEGUI::EventArgs& evt)
 		 * \brief Behandelt Klick auf ein Shortkey Label
 		 */
@@ -85,6 +102,12 @@ class OptionsWindow : public Window
 		 * \brief Behandelt Klick auf Button Ok
 		 */
 		bool onButtonOkClicked(const CEGUI::EventArgs& evt);
+
+		/**
+		 * \fn bool onButtonCancelClicked(const CEGUI::EventArgs& evt)
+		 * \brief Handle the click on the "cancel" button. Also for any atomatically createrd.
+		 */
+		bool onButtonCancelClicked(const CEGUI::EventArgs& evt);
 		
 		/**
 		 * \fn bool onAreaMouseButtonPressed(const CEGUI::EventArgs& evt);
@@ -153,7 +176,6 @@ class OptionsWindow : public Window
 		 */
 		bool onGrabMouseChanged(const CEGUI::EventArgs& evt);
 		
-		
 		/**
 		 * \brief returns index of highlight color
 		 */
@@ -164,8 +186,12 @@ class OptionsWindow : public Window
 		 * \brief Repraesentation der Tastatur
 		 */
 		OIS::Keyboard *m_keyboard;
-	
+
+		/**
+		 * \brief The name of the CEGUI skin to use.
+		 */
+		std::string m_ceguiSkinName;
 };
 
-#endif
+#endif // __SUMWARS_GUI_OPTIONSWINDOW_H__
 

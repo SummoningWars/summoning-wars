@@ -13,11 +13,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Utility for CEGUI cross-version compatibility
+#include "ceguiutility.h"
+
 #include "contenteditor.h"
 #include "OgreRoot.h"
 #include "debug.h"
+#include "config.h"
 
+#ifdef CEGUI_07
 #include "CEGUI/RendererModules/Ogre/CEGUIOgreRenderer.h"
+#else
+#include "CEGUI/RendererModules/Ogre/Renderer.h"
+#endif
+
 #include <OgreHardwarePixelBuffer.h>
 #include <OgreMeshManager.h>
 #include <OISMouse.h>
@@ -31,37 +40,57 @@
 #include "fixedobjecteditor.h"
 #include "itemeditor.h"
 #include "monstereditor.h"
+#include "gameinfotab.h"
 
 using namespace CEGUI;
 
-template<> ContentEditor* Ogre::Singleton<ContentEditor>::ms_Singleton = 0;
+template<> ContentEditor* Ogre::Singleton<ContentEditor>::SUMWARS_OGRE_SINGLETON = 0;
 
 void ContentEditor::init(bool visible)
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
-	
-	CEGUI::System* guiSystem = System::getSingletonPtr();
+	//CEGUI::System* guiSystem = System::getSingletonPtr();
 	CEGUI::WindowManager* winManager = WindowManager::getSingletonPtr();
-	CEGUI::Window* gameScreen = winManager->getWindow("GameScreen");
+  CEGUI::Window* gameScreen = CEGUIUtility::getWindow("GameScreen");
 	m_lastVisibilitySwitch = 0;
 	
 	m_rootWindow = winManager->createWindow("TaharezLook/FrameWindow", "ContentEditor");
 	m_rootWindow->setPosition(UVector2(UDim(0.025f, 0.0f), UDim(0.025f, 0.0f)));
-	m_rootWindow->setSize(UVector2(UDim(0.9f, 0.0f), UDim(0.85f, 0.0f)));
+  CEGUIUtility::setWidgetSizeRel(m_rootWindow, 0.9f, 0.85f);
 	m_rootWindow->setText((CEGUI::utf8*)"Content Editor");
-	gameScreen->addChildWindow(m_rootWindow);
+  CEGUIUtility::addChildWidget (gameScreen, m_rootWindow);
 	
 	CEGUI::Window* rootWindow;
-	rootWindow = CEGUI::WindowManager::getSingleton().loadWindowLayout("ContentEditor.layout");
+	rootWindow = CEGUIUtility::loadLayoutFromFile ("contenteditor.layout");
 	rootWindow->setPosition(UVector2(UDim(0.0f, 0.0f), UDim(0.0f, 0.0f)));
-	rootWindow->setSize(UVector2(UDim(1.0f, 0.0f), UDim(1.0f, 0.0f)));
-	m_rootWindow->addChildWindow(rootWindow);
+  CEGUIUtility::setWidgetSizeRel(rootWindow, 1.0f, 1.0f);
+  CEGUIUtility::addChildWidget (m_rootWindow, rootWindow);
 	
+  CEGUIUtility::dumpFullWindowToLog(rootWindow);
+
 	// initialisation of the selected tabs for more intuitive use
-	static_cast<CEGUI::TabControl*>(win_mgr.getWindow("ObjectInfoTabControl"))->setSelectedTab("RenderInfoTab");
-	static_cast<CEGUI::TabControl*>(win_mgr.getWindow("RenderInfoTabControl"))->setSelectedTab("RITab/BasicMesh");
-	static_cast<CEGUI::TabControl*>(win_mgr.getWindow("FixedObjectTabControl"))->setSelectedTab("FOTab/Properties");
-	static_cast<CEGUI::TabControl*>(win_mgr.getWindow("MonsterTabControl"))->setSelectedTab("MonsterTab/Properties");
+  CEGUI::TabControl* widget = static_cast<CEGUI::TabControl*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/ObjectInfoTabControl"));
+  if (widget)
+  {
+    widget->setSelectedTab("RenderInfoTab");
+  }
+
+  widget = static_cast<CEGUI::TabControl*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl"));
+  if (widget)
+  {
+    widget->setSelectedTab("BasicMesh");
+  }
+
+  widget = static_cast<CEGUI::TabControl*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl"));
+  if (widget)
+  {
+    widget->setSelectedTab("Properties");
+  }
+
+  widget = static_cast<CEGUI::TabControl*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/ObjectInfoTabControl/__auto_TabPane__/MonsterTab/MonsterTabControl"));
+  if (widget)
+  {
+    widget->setSelectedTab("Properties");
+  }
 
 	// create SceneManager for renderering images for the content editor
 	Ogre::SceneManager* editor_scene_mng = Ogre::Root::getSingleton().createSceneManager(Ogre::ST_GENERIC,"EditorSceneManager");
@@ -80,7 +109,7 @@ void ContentEditor::init(bool visible)
 	editorCamPitchNode->setFixedYawAxis(true);
 	
 	
-	// texture that is creates from the camera image
+    // texture that is created from the camera image
 	Ogre::TexturePtr editor_texture = Ogre::TextureManager::getSingleton().createManual( "editor_tex",
 			Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, Ogre::TEX_TYPE_2D,
    512, 512, 0, Ogre::PF_R8G8B8A8, Ogre::TU_RENDERTARGET );
@@ -94,34 +123,68 @@ void ContentEditor::init(bool visible)
 	editor_view->setBackgroundColour(Ogre::ColourValue(0,0,0,1.0) );
 	editor_rt->update();
 
+	// get the OgreRenderer from CEGUI and create a CEGUI texture from the Ogre texture
+	CEGUI::OgreRenderer* renderer_ptr = static_cast<CEGUI::OgreRenderer*>(CEGUI::System::getSingleton().getRenderer());
+  CEGUI::String imageName("editor_img");
+
+#ifdef CEGUI_07
 	// create a CEGUI Image from the Texture
-    CEGUI::Texture& editor_ceguiTex = static_cast<CEGUI::OgreRenderer*>(CEGUI::System::getSingleton().getRenderer())->createTexture(editor_texture);
+  CEGUI::Texture& editor_ceguiTex = renderer_ptr->createTexture(editor_texture);
     
 	CEGUI::Imageset& editor_textureImageSet = CEGUI::ImagesetManager::getSingleton().create("editor_imageset", editor_ceguiTex);
 
-	editor_textureImageSet.defineImage( "editor_img",
+	editor_textureImageSet.defineImage(
+      imageName,
 			CEGUI::Point( 0.0f, 0.0f ),
 			CEGUI::Size( editor_ceguiTex.getSize().d_width, editor_ceguiTex.getSize().d_height ),
 			CEGUI::Point( 0.0f, 0.0f ) );
-	
+#else
+  CEGUI::Texture &editor_cegui_texture = renderer_ptr->createTexture (editor_texture->getName (), editor_texture);
+	{
+		CEGUI::TextureTarget*   d_textureTarget;
+		CEGUI::BasicImage*      d_textureTargetImage;
+		d_textureTarget = renderer_ptr->createTextureTarget();
+		d_textureTargetImage = static_cast<CEGUI::BasicImage*>(&CEGUI::ImageManager::getSingleton().create("BasicImage", imageName));
+		d_textureTargetImage->setTexture(&editor_cegui_texture);
+		d_textureTargetImage->setArea(
+        CEGUI::Rectf(
+            0, 
+            0, 
+            editor_cegui_texture.getSize ().d_width,
+            editor_cegui_texture.getSize ().d_height));
+	}
+#endif
+
 	// place the image in a the CEGUI label
-	CEGUI::Window* label = win_mgr.getWindow("RITab/BM/meshPreview");
-	label->setProperty("Image", "set:editor_imageset image:editor_img");
+	CEGUI::Window* label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/meshPreview");
+
+  CEGUI::String content_editor_image_name("editor_img");
+	label->setProperty("Image", content_editor_image_name); // prev: "set:editor_imageset image:editor_img"
 	label->subscribeEvent(CEGUI::Window::EventMouseButtonDown, CEGUI::Event::Subscriber(&ContentEditor::onPreviewWindowMouseDown, this));
-	label->subscribeEvent(CEGUI::Window::EventMouseLeaves, CEGUI::Event::Subscriber(&ContentEditor::onPreviewWindowMouseUp, this));
+  label->subscribeEvent(CEGUIUtility::EventMouseLeavesWindowArea(), CEGUI::Event::Subscriber(&ContentEditor::onPreviewWindowMouseUp, this));
 	label->subscribeEvent(CEGUI::Window::EventMouseButtonUp, CEGUI::Event::Subscriber(&ContentEditor::onPreviewWindowMouseUp, this));
 	label->subscribeEvent(CEGUI::Window::EventMouseWheel, CEGUI::Event::Subscriber(&ContentEditor::onPreviewWindowScrollWheel, this));
 	
-	CEGUI::PushButton* closebutton = static_cast<CEGUI::PushButton*>(win_mgr.getWindow("CloseButton"));
+  CEGUI::PushButton* closebutton = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/CloseButton"));
 	closebutton->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&ContentEditor::onClose, this));
 	
 	closebutton = static_cast<CEGUI::FrameWindow*>(m_rootWindow)->getCloseButton();
 	closebutton->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&ContentEditor::onClose, this));
 	
+  SW_DEBUG("Content Editor: creating fixed object editor");
 	m_components["FOEditor"] = new FixedObjectEditor();
+
+  SW_DEBUG("Content Editor: creating render info editor");
 	m_components["RIEditor"] = new RenderInfoEditor();
+
+  SW_DEBUG("Content Editor: creating item editor");
 	m_components["ItemEditor"] = new ItemEditor();
+
+  SW_DEBUG("Content Editor: creating monster editor");
 	m_components["MonsterEditor"] = new MonsterEditor();
+
+  SW_DEBUG("Content Editor: creating game info tab");
+  m_components["GameInfoTab"] = new GameInfoTab();
 	
 	std::map<std::string, ContentEditorTab*>::iterator it;
 	for (it = m_components.begin(); it != m_components.end(); ++it)
@@ -130,7 +193,9 @@ void ContentEditor::init(bool visible)
 	}
 	
 	if(!visible)
+  {
 		m_rootWindow->setVisible(visible);
+  }
 
 	updateTranslation();
 }
@@ -168,7 +233,9 @@ void ContentEditor::update(OIS::Keyboard *keyboard, OIS::Mouse *mouse)
 	}
 	
 	if(keyboard->isKeyDown(OIS::KC_LCONTROL) && keyboard->isKeyDown(OIS::KC_K))
+  {
 		toggleVisibility();
+  }
 	
 	std::map<std::string, ContentEditorTab*>::iterator it;
 	for (it = m_components.begin(); it != m_components.end(); ++it)
@@ -193,321 +260,423 @@ bool ContentEditor::handleCloseWindow(const CEGUI::EventArgs& e)
 
 void ContentEditor::updateTranslation()
 {
-	CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
 	CEGUI::Window* label;
 
 	textdomain("tools");
 
-	label = win_mgr.getWindow("RenderInfoTab");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab");
 	label->setText((CEGUI::utf8*) gettext("Render Info"));
 	
-	label = win_mgr.getWindow("RITab/BasicMesh");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl");
 	label->setText((CEGUI::utf8*) gettext("Mesh"));
 	
-	label = win_mgr.getWindow("RITab/BM/MainMeshLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/BasicMesh/MainMeshLabel");
 	label->setText((CEGUI::utf8*) gettext("Select main mesh:"));
 	
-	label = win_mgr.getWindow("RITab/SubMesh");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh");
 	label->setText((CEGUI::utf8*) gettext("Submeshes"));
 	
-	label = win_mgr.getWindow("RITab/SubMesh/AddSubMeshButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/AddSubMeshButton"); 
 	label->setText((CEGUI::utf8*) gettext("Add Submesh"));
 	
-	label = win_mgr.getWindow("RITab/SM/NewSubmeshLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/NewSubmeshLabel"); 
 	label->setText((CEGUI::utf8*) gettext("New submesh:"));
 	
-	label = win_mgr.getWindow("RITab/SM/NewSMNameLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/NewSMNameLabel"); 
 	label->setText((CEGUI::utf8*) gettext("submesh name:"));
 	
-	label = win_mgr.getWindow("RITab/SM/EditSMLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/EditSMLabel"); 
 	label->setText((CEGUI::utf8*) gettext("Edit submesh:"));
 	
-	label = win_mgr.getWindow("RITab/SM/AttachMeshLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/AttachMeshLabel");
 	label->setText((CEGUI::utf8*) gettext("Attach to:"));
 	
-	label = win_mgr.getWindow("RITab/SM/BoneLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/BoneLabel"); 
 	label->setText((CEGUI::utf8*) gettext("at bone:"));
 	
-	label = win_mgr.getWindow("RITab/SM/RotateLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/RotateLabel");
 	label->setText((CEGUI::utf8*) gettext("Rotate(x,y,z):"));
 	
-	label = win_mgr.getWindow("RITab/SM/ScaleLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/ScaleLabel");
 	label->setText((CEGUI::utf8*) gettext("Scale:"));
 	
-	label = win_mgr.getWindow("RITab/SM/OffsetLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/OffsetLabel");
 	label->setText((CEGUI::utf8*) gettext("Offset (x,y,z):"));
 	
-	label = win_mgr.getWindow("RITab/SubMesh/DelSubMeshButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/SubMesh/DelSubMeshButton"); 
 	label->setText((CEGUI::utf8*) gettext("Delete Submesh"));
 	
-	label = win_mgr.getWindow("RITab/Animations");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/Animations"); 
 	label->setText((CEGUI::utf8*) gettext("Animations"));
 	
-	label = win_mgr.getWindow("RITab/XML");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/XML"); 
 	label->setText((CEGUI::utf8*) gettext("XML"));
 	
-	label = win_mgr.getWindow("RITab/XML/SubmitButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/RenderInfoTab/RenderInfoTabControl/__auto_TabPane__/XML/SubmitButton"); 
 	label->setText((CEGUI::utf8*) gettext("Submit XML"));
 	
-	label = win_mgr.getWindow("FixedObjectTab");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab"); 
 	label->setText((CEGUI::utf8*) gettext("FixedObject"));
 	
-	label = win_mgr.getWindow("FOTab/Properties");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties"); 
 	label->setText((CEGUI::utf8*) gettext("Properties"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/ShapeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/ShapeLabel"); 
 	label->setText((CEGUI::utf8*) gettext("Shape:"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/CircleLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/CircleLabel"); 
 	label->setText((CEGUI::utf8*) gettext("Circle"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/RadiusLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/RadiusLabel"); 
 	label->setText((CEGUI::utf8*) gettext("Radius:"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/DetectCircleButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/DetectCircleButton"); 
 	label->setText((CEGUI::utf8*) gettext("Autodetect"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/RectangleLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/RectangleLabel");
 	label->setText((CEGUI::utf8*) gettext("Rectangle"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/WidthLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/WidthLabel");
 	label->setText((CEGUI::utf8*) gettext("Width:"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/DepthLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/DepthLabel");
 	label->setText((CEGUI::utf8*) gettext("Depth:"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/DetectRectButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/DetectRectButton");
 	label->setText((CEGUI::utf8*) gettext("Autodetect"));
 	
-	label = win_mgr.getWindow("FOTab/Prop/CollisionLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/CollisionLabel");
 	label->setText((CEGUI::utf8*) gettext("Collision type"));
 	
-	label = win_mgr.getWindow("FOTab/Properties/CopyDataLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/CopyDataLabel");
 	label->setText((CEGUI::utf8*) gettext("Copy data from:"));
 	
-	label = win_mgr.getWindow("FOTab/Properties/CopyDataButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Properties/CopyDataButton");
 	label->setText((CEGUI::utf8*) gettext("Copy"));
 	
-	label = win_mgr.getWindow("FOTab/Create");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Create");
 	label->setText((CEGUI::utf8*) gettext("Create Object"));
 	
-	label = win_mgr.getWindow("FOTab/XML/CreateButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Create/CreateButton");
 	label->setText((CEGUI::utf8*) gettext("Create Object"));
 	
-	label = win_mgr.getWindow("FOTab/Create/PosLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Create/PosLabel");
 	label->setText((CEGUI::utf8*) gettext("Position:"));
 	
-	label = win_mgr.getWindow("FOTab/Create/GetPlPosButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Create/GetPlPosButton");
 	label->setText((CEGUI::utf8*) gettext("Get Player Position"));
 	
-	label = win_mgr.getWindow("FOTab/Create/AngleLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Create/AngleLabel");
 	label->setText((CEGUI::utf8*) gettext("Angle:"));
 	
-	label = win_mgr.getWindow("FOTab/Create/DelAllButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/Create/DelAllButton");
 	label->setText((CEGUI::utf8*) gettext("Delete all objects"));
 	
-	label = win_mgr.getWindow("FOTab/XML");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/XML");
 	label->setText((CEGUI::utf8*) gettext("XML"));
 	
-	label = win_mgr.getWindow("FOTab/XML/SubmitButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow,
+      "Root/ObjectInfoTabControl/__auto_TabPane__/FixedObjectTab/FixedObjectTabControl/__auto_TabPane__/XML/SubmitButton");
 	label->setText((CEGUI::utf8*) gettext("Submit XML"));
 	
-	label = win_mgr.getWindow("ItemTab");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab");
 	label->setText((CEGUI::utf8*) gettext("Item"));
 	
-	label = win_mgr.getWindow("ItemTab/General");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General");
 	label->setText((CEGUI::utf8*) gettext("General"));
 	
-	label = win_mgr.getWindow("ItemTab/Properties/TypeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/TypeLabel");
 	label->setText((CEGUI::utf8*) gettext("Type:"));
 	
-	label = win_mgr.getWindow("ItemTab/Properties/SizeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/SizeLabel");
 	label->setText((CEGUI::utf8*) gettext("Size:"));
 	
-	label = win_mgr.getWindow("ItemTab/Properties/CopyDataLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/CopyDataLabel");
 	label->setText((CEGUI::utf8*) gettext("Copy data from:"));
 	
-	label = win_mgr.getWindow("ItemTab/Properties/CopyDataButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/CopyDataButton");
 	label->setText((CEGUI::utf8*) gettext("Copy"));
 	
-	label = win_mgr.getWindow("ItemTab/General/NameLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/NameLabel");
 	label->setText((CEGUI::utf8*) gettext("Name:"));
 	
-	label = win_mgr.getWindow("ItemTab/General/PriceLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/PriceLabel");
 	label->setText((CEGUI::utf8*) gettext("Value:"));
 	
-	label = win_mgr.getWindow("ItemTab/General/EnchantRangeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/EnchantRangeLabel");
 	label->setText((CEGUI::utf8*) gettext("Enchant min:"));
 	
-	label = win_mgr.getWindow("ItemTab/General/EnchantMaxLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/General/EnchantMaxLabel");
 	label->setText((CEGUI::utf8*) gettext("max:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip");
 	label->setText((CEGUI::utf8*) gettext("Equip"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/HealthLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/HealthLabel");
 	label->setText((CEGUI::utf8*) gettext("Health:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/AttrLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/AttrLabel");
 	label->setText((CEGUI::utf8*) gettext("Attribute:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/StrengthLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/StrengthLabel");
 	label->setText((CEGUI::utf8*) gettext("Strength:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/DexterityLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/DexterityLabel");
 	label->setText((CEGUI::utf8*) gettext("Dexterity:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/MagicPowerLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/MagicPowerLabel");
 	label->setText((CEGUI::utf8*) gettext("Magic Power:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/WillpowerLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/WillpowerLabel");
 	label->setText((CEGUI::utf8*) gettext("Willpower:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/ResistancesLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/ResistancesLabel");
 	label->setText((CEGUI::utf8*) gettext("Resistances:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/PhysResLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/PhysResLabel");
 	label->setText((CEGUI::utf8*) gettext("Physical:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/FireResLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/FireResLabel");
 	label->setText((CEGUI::utf8*) gettext("Fire:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/IceResLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/IceResLabel");
 	label->setText((CEGUI::utf8*) gettext("Ice:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/AirResLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/AirResLabel");
 	label->setText((CEGUI::utf8*) gettext("Air:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/OtherLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/OtherLabel");
 	label->setText((CEGUI::utf8*) gettext("Other:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/ArmorLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/ArmorLabel");
 	label->setText((CEGUI::utf8*) gettext("Armor:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/BlockLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/BlockLabel");
 	label->setText((CEGUI::utf8*) gettext("Block:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/AttackLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/AttackLabel");
 	label->setText((CEGUI::utf8*) gettext("Precision:"));
 	
-	label = win_mgr.getWindow("ItemTab/Equip/PowerLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Equip/PowerLabel");
 	label->setText((CEGUI::utf8*) gettext("Power:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon");
 	label->setText((CEGUI::utf8*) gettext("Weapon"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/TypeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/TypeLabel");
 	label->setText((CEGUI::utf8*) gettext("Type:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/DamageLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/DamageLabel");
 	label->setText((CEGUI::utf8*) gettext("Damage:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/PhysLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/PhysLabel");
 	label->setText((CEGUI::utf8*) gettext("Physical:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/PhysToLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/PhysToLabel");
 	label->setText((CEGUI::utf8*) gettext("-"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/PhysMultLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/PhysMultLabel");
 	label->setText((CEGUI::utf8*) gettext("x"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/FireLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/FireLabel");
 	label->setText((CEGUI::utf8*) gettext("Fire:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/FireToLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/FireToLabel");
 	label->setText((CEGUI::utf8*) gettext("-"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/FireMultLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/FireMultLabel");
 	label->setText((CEGUI::utf8*) gettext("x"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/IceLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/IceLabel");
 	label->setText((CEGUI::utf8*) gettext("Ice:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/IceToLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/IceToLabel");
 	label->setText((CEGUI::utf8*) gettext("-"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/IceMultLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/IceMultLabel");
 	label->setText((CEGUI::utf8*) gettext("x"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/AirLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/AirLabel");
 	label->setText((CEGUI::utf8*) gettext("Air:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/AirToLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/AirToLabel");
 	label->setText((CEGUI::utf8*) gettext("-"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/AirMultLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/AirMultLabel");
 	label->setText((CEGUI::utf8*) gettext("x"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/PrecisionLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/PrecisionLabel");
 	label->setText((CEGUI::utf8*) gettext("Precision:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/PowerLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/PowerLabel");
 	label->setText((CEGUI::utf8*) gettext("Power:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/RangeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/RangeLabel");
 	label->setText((CEGUI::utf8*) gettext("Range:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/SpeedLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/SpeedLabel");
 	label->setText((CEGUI::utf8*) gettext("Speed:"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/TwohandedLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/TwohandedLabel");
 	label->setText((CEGUI::utf8*) gettext("Twohanded weapon"));
 	
-	label = win_mgr.getWindow("ItemTab/Weapon/CritPercentLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Weapon/CritPercentLabel");
 	label->setText((CEGUI::utf8*) gettext("Crit. Hits:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume");
 	label->setText((CEGUI::utf8*) gettext("Consume"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/TypeLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/TypeLabel");
 	label->setText((CEGUI::utf8*) gettext("Health:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/CureLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/CureLabel");
 	label->setText((CEGUI::utf8*) gettext("Status heal and immunity time:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/BlindLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/BlindLabel");
 	label->setText((CEGUI::utf8*) gettext("Blind:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/PoisonedLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/PoisonedLabel");
 	label->setText((CEGUI::utf8*) gettext("Poisoned:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/BerserkLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/BerserkLabel");
 	label->setText((CEGUI::utf8*) gettext("Berserk:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/ConfusedLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/ConfusedLabel");
 	label->setText((CEGUI::utf8*) gettext("Confused:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/MuteLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/MuteLabel");
 	label->setText((CEGUI::utf8*) gettext("Mute:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/ParalyzedLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/ParalyzedLabel");
 	label->setText((CEGUI::utf8*) gettext("Paralyzed:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/FrozenLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/FrozenLabel");
 	label->setText((CEGUI::utf8*) gettext("Frozen:"));
 	
-	label = win_mgr.getWindow("ItemTab/Consume/BurningLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Consume/BurningLabel");
 	label->setText((CEGUI::utf8*) gettext("Burning:"));
 	
-	label = win_mgr.getWindow("ItemTab/Create");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Create");
 	label->setText((CEGUI::utf8*) gettext("Create Item"));
 	
-	label = win_mgr.getWindow("ItemTab/Create/EnchantLabel");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Create/EnchantLabel");
 	label->setText((CEGUI::utf8*) gettext("Enchant:"));
 	
-	label = win_mgr.getWindow("ItemTab/Create/CreateInventoryButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Create/CreateInventoryButton");
 	label->setText((CEGUI::utf8*) gettext("Create in inventory"));
 	
-	label = win_mgr.getWindow("ItemTab/Create/CreateDropButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/Create/CreateDropButton");
 	label->setText((CEGUI::utf8*) gettext("Create an drop"));
 	
-	label = win_mgr.getWindow("ItemTab/XML");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/XML");
 	label->setText((CEGUI::utf8*) gettext("XML"));
 	
-	label = win_mgr.getWindow("ItemTab/XML/SubmitButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, 
+      "Root/ObjectInfoTabControl/__auto_TabPane__/ItemTab/ItemTabControl/__auto_TabPane__/XML/SubmitButton");
 	label->setText((CEGUI::utf8*) gettext("Submit XML"));
 	
-	label = win_mgr.getWindow("CloseButton");
+	label = CEGUIUtility::getWindowForLoadedLayout(m_rootWindow, "Root/CloseButton");
 	label->setText((CEGUI::utf8*) gettext("Close"));
 	
 	textdomain("menu");
@@ -515,8 +684,12 @@ void ContentEditor::updateTranslation()
 
 bool ContentEditor::onPreviewWindowMouseDown(const CEGUI::EventArgs& evt)
 {
-	Ogre::TexturePtr tex = Ogre::TextureManager::getSingleton().getByName("editor_tex");
-	tex.getPointer()->getBuffer()->getRenderTarget()->setAutoUpdated(true);
+#if (OGRE_VERSION < ((1 << 16) | (9 << 8) | 0))
+    Ogre::TexturePtr tex = Ogre::TextureManager::getSingletonPtr()->getByName("editor_tex");
+#else
+    Ogre::TexturePtr tex = Ogre::TextureManager::getSingletonPtr()->getByName("editor_tex").staticCast<Ogre::Texture>();
+#endif
+    tex.getPointer()->getBuffer()->getRenderTarget()->setAutoUpdated(true);
 	
 	const CEGUI::MouseEventArgs* args = static_cast<const CEGUI::MouseEventArgs*>(&evt);
 	if(args->button == CEGUI::LeftButton)
@@ -529,7 +702,11 @@ bool ContentEditor::onPreviewWindowMouseDown(const CEGUI::EventArgs& evt)
 
 bool ContentEditor::onPreviewWindowMouseUp(const CEGUI::EventArgs& evt)
 {
-	Ogre::TexturePtr tex = Ogre::TextureManager::getSingleton().getByName("editor_tex");
+#if (OGRE_VERSION < ((1 << 16) | (9 << 8) | 0))
+    Ogre::TexturePtr tex = Ogre::TextureManager::getSingletonPtr()->getByName("editor_tex", "General");
+#else
+    Ogre::TexturePtr tex = Ogre::TextureManager::getSingletonPtr()->getByName("editor_tex", "General").staticCast<Ogre::Texture>();
+#endif
 	tex.getPointer()->getBuffer()->getRenderTarget()->setAutoUpdated(false);
 	
 	const CEGUI::MouseEventArgs* args = static_cast<const CEGUI::MouseEventArgs*>(&evt);
@@ -550,7 +727,13 @@ bool ContentEditor::onPreviewWindowScrollWheel(const CEGUI::EventArgs& evt)
 
 	Ogre::Vector3 vec = Ogre::Vector3(0.0f, 0.0f, args->wheelChange * 0.02f);
 	cam->moveRelative(vec);
-	Ogre::TexturePtr tex = Ogre::TextureManager::getSingleton().getByName("editor_tex");
+
+
+#if (OGRE_VERSION < ((1 << 16) | (9 << 8) | 0))
+    Ogre::TexturePtr tex = Ogre::TextureManager::getSingletonPtr()->getByName("editor_tex", "General");
+#else
+    Ogre::TexturePtr tex = Ogre::TextureManager::getSingletonPtr()->getByName("editor_tex", "General").staticCast<Ogre::Texture>();
+#endif
 	tex.getPointer()->getBuffer()->getRenderTarget()->update();
 
 	return true;
@@ -559,13 +742,13 @@ bool ContentEditor::onPreviewWindowScrollWheel(const CEGUI::EventArgs& evt)
 
 ContentEditor* ContentEditor::getSingletonPtr(void)
 {
-	return ms_Singleton;
+	return SUMWARS_OGRE_SINGLETON;
 }
 
 ContentEditor& ContentEditor::getSingleton(void)
 {
-	assert( ms_Singleton );
-	return ( *ms_Singleton );
+	assert( SUMWARS_OGRE_SINGLETON );
+	return ( *SUMWARS_OGRE_SINGLETON );
 }
 
 ContentEditorTab* ContentEditor::getComponent(std::string name)

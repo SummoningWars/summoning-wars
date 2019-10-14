@@ -13,8 +13,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef __SUMWARS_CORE_TIMER_H__
+#define __SUMWARS_CORE_TIMER_H__
 
 //#include <sys/time.h>
 #include "OgreTimer.h"
@@ -55,5 +55,5 @@ class Timer
 };
 
 
-#endif
+#endif // __SUMWARS_CORE_TIMER_H__
 

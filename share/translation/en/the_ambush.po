@@ -1,0 +1,128 @@
+# English translations for PACKAGE package
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package
+#  <kalimgard@users.sourceforge.net>, 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2012-03-02 16:19+0100\n"
+"Last-Translator:  <kalimgard@users.sourceforge.net>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: theAmbush.xml:2
+msgid "The Ambush"
+msgstr "The Ambush"
+
+#: theAmbush.xml:5
+msgid ""
+"Ireana survived and, as a token of her gratitude, provided our next job. I "
+"always knew the councilmen only wanted an exterminator."
+msgstr ""
+"Ireana survived and, as a token of her gratitude, provided our next job. I "
+"always knew the councilmen only wanted an exterminator."
+
+#: theAmbush.xml:7
+msgid ""
+"A female council-mage by the name of Ireana of Northborough seems to be in "
+"trouble west of Dwarfenwall. Nothing a Branded One couldn't solve. If she "
+"survives long enough..."
+msgstr ""
+"A female council-mage by the name of Ireana of Northborough seems to be in "
+"trouble west of Dwarfenwall. Nothing a Branded One couldn't solve. If she "
+"survives long enough..."
+
+#: theAmbush.xml:11
+msgid "aisWolfstones"
+msgstr "aisWolfstones"
+
+#: theAmbush.xml:29
+msgid "Dwarfenwall is in that direction. I shouldn't go this way yet."
+msgstr "Dwarfenwall is in that direction. I shouldn't go this way yet."
+
+#: theAmbush.xml:104
+msgid "Wait!"
+msgstr "Wait!"
+
+#: theAmbush.xml:105
+msgid "I am making haste, alright?"
+msgstr "I am making haste, alright?"
+
+#: theAmbush.xml:106 theAmbush.xml:109
+msgid "You have to go into the western woods right now."
+msgstr "You have to go into the western woods right now."
+
+#: theAmbush.xml:108
+msgid "We are making haste, alright?"
+msgstr "We are making haste, alright?"
+
+#: theAmbush.xml:111
+msgid "The prince's fiancé is in danger."
+msgstr "The prince's fiancé is in danger."
+
+#: theAmbush.xml:112
+msgid "Who?"
+msgstr "Who?"
+
+#: theAmbush.xml:113
+msgid "The archmage Ireana of Northborough"
+msgstr "The archmage Ireana of Northborough"
+
+#: theAmbush.xml:114
+msgid "Will that be payed extra?"
+msgstr "Will that be payed extra?"
+
+#: theAmbush.xml:116
+msgid "What?"
+msgstr "What?"
+
+#: theAmbush.xml:117
+msgid ""
+"I thought she was one of your fancy elementalist amazones. Can't she look "
+"after herself?"
+msgstr ""
+"I thought she was one of your fancy elementalist amazones. Can't she look "
+"after herself?"
+
+#: theAmbush.xml:120 theAmbush.xml:123
+msgid "Don't start to argue and help her! She needs your help!"
+msgstr "Don't start to argue and help her! She needs your help!"
+
+#: theAmbush.xml:126
+msgid "What do you think? Shall we bail someone out?"
+msgstr "What do you think? Shall we bail someone out?"
+
+#: theAmbush.xml:128 theAmbush.xml:140
+msgid "I'm not sure..."
+msgstr "I'm not sure..."
+
+#: theAmbush.xml:130 theAmbush.xml:143
+msgid "Well, it couldn't really hurt..."
+msgstr "Well, it couldn't really hurt..."
+
+#: theAmbush.xml:133 theAmbush.xml:145
+msgid "Will that be payed extra??"
+msgstr "Will that be payed extra??"
+
+#: theAmbush.xml:135 theAmbush.xml:146
+msgid "Argh! Do I have to-"
+msgstr "Argh! Do I have to-"
+
+#: theAmbush.xml:136 theAmbush.xml:147
+msgid "Alright already, safe your breath!"
+msgstr "Alright already, safe your breath!"
+
+#: theAmbush.xml:138
+msgid "What do you think, friends, do we want to bail someone out?"
+msgstr "What do you think, friends, do we want to bail someone out?"
+
+#: theAmbush.xml:149
+msgid "The firefighters are on the way."
+msgstr "The firefighters are on the way."

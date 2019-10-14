@@ -1,0 +1,101 @@
+# Russian translations for sumwars package
+# Copyright (C) 2010 THE sumwars'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: sumwars 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-09 15:15+0100\n"
+"PO-Revision-Date: 2011-08-18 04:07+0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: goblins.xml:2
+msgid "The goblinslayer"
+msgstr "Убийца гоблинов"
+
+#: goblins.xml:9
+msgid "Quest finished"
+msgstr "Задание завершено"
+
+#: goblins.xml:12
+msgid "you killed enough goblins"
+msgstr "ты убил достаточно гоблинов"
+
+#: goblins.xml:18
+msgid "peasant"
+msgstr "крестьянин"
+
+#: goblins.xml:19
+msgid "Goblins"
+msgstr "Гоблины"
+
+#: goblins.xml:26
+msgid "I have killed them all."
+msgstr "Я убил их всех."
+
+#: goblins.xml:27
+msgid "Wow... you're a real hero, aren't ya?"
+msgstr "Ух ты... да ты настоящий герой, не так ли?"
+
+#: goblins.xml:30
+msgid "Leave me alone and kill some more goblins."
+msgstr "Оставь меня одного и убей ещё больше гоблинов."
+
+#: goblins.xml:33
+msgid "There are some stupid goblins pissing me off."
+msgstr "Есть несколько гоблинов, которые меня раздражают."
+
+#: goblins.xml:34
+msgid "If you kill 10 of 'em, I'll give you a precious reward."
+msgstr "Если ты убьешь 10 гоблинов, я тебя щедро награжу."
+
+#: goblins.xml:35
+msgid "Interested?"
+msgstr "Заинтересован?"
+
+#: goblins.xml:36
+msgid "Accept the quest?"
+msgstr "Принять задание?"
+
+#: goblins.xml:37
+msgid "Yes"
+msgstr "Да"
+
+#: goblins.xml:38
+msgid "No"
+msgstr "Нет"
+
+#: goblins.xml:43
+msgid "Goblins (reward)"
+msgstr "Гоблины (награда)"
+
+#: goblins.xml:49
+msgid "You want a second reward?"
+msgstr "Хочешь вторую награду?"
+
+#: goblins.xml:50
+msgid "Of course!"
+msgstr "Конечно!"
+
+#: goblins.xml:51
+msgid "Then I'll give you this goblin club. Be happy."
+msgstr "Тогда я дам тебе эту гоблинскую дубинку. Будь счастлив."
+
+#: goblins.xml:60
+msgid "Nearly done."
+msgstr "Почти."
+
+#: goblins.xml:61
+msgid "Have fun then."
+msgstr "Тогда удачно позабавиться."
+
+#: goblins.xml:90
+msgid "region1"
+msgstr "регион 1"

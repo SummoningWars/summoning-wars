@@ -139,57 +139,45 @@ int ItemFactory::createMagicMods(Item* item, float* modchance, float magic_power
 	memset(mod_power,0,NUM_MAGIC_MODS*sizeof(float));
 
 	float sum =0;
-	int i;
-	for (i=0;i<NUM_MAGIC_MODS;i++)
+	for (int i=0;i<NUM_MAGIC_MODS;i++)
 	{
 		sum += modprob[i];
 	}
 	
-	// Staerke der aktuellen Verzauberung
-	float mp, mpbase;
-	float sqrtmp;
-	float logmp;
-
-	float dmgdiff,dmgavg;
-
-		// durch Verzauberungen benoetigtes Level
-	int levelreq =0;
-
-		// aktuelle Verzauberung
-	int mod;
-
-		// Anzahl verschiedene Verzauberungen
+	// Anzahl verschiedene Verzauberungen
 	int num_mods=0;
+	
+	int levelreq = 0;
 	while (magic_power>=min_enchant && num_mods<max_enchant_number)
 	{
-		
 		if (sum < 0.001)
 			break;
 		
-		// Staerke auswuerfeln
-		mp = Random::randrangef(min_enchant,max_enchant);
+		// Staerke der aktuellen Verzauberung auswuerfeln
+		float mp = Random::randrangef(min_enchant,max_enchant);
 		mp = MathHelper::Min(mp, magic_power);
 		item->m_magic_power += mp;
-		mpbase = mp;
+		float mpbase = mp;
 		
 		magic_power -= mp;
 		
 		mp *= enchant_multiplier;
-		sqrtmp = sqrt(mp);
-		logmp = log(mp);
+		float sqrtmp = sqrt(mp);
 		
-		
+		// aktuelle Verzauberung
 		// Modifikation auswuerfeln
-		mod = Random::randDiscrete(modprob,NUM_MAGIC_MODS,sum);
+		int mod = Random::randDiscrete(modprob,NUM_MAGIC_MODS,sum);
 		DEBUGX("ausgewuerfelt: Starke der Verzauberung: %f",mp);
 		DEBUGX("Art der Verzauberung: %i",mod);
 
 		num_mods++;
-
+		
+		// durch Verzauberungen benoetigtes Level
 		levelreq = MathHelper::Max(levelreq,(int) (mpbase*0.09-5));
 		levelreq = MathHelper::Min(80,levelreq);
 
-		dmgavg = mp*0.06;
+		float dmgdiff;
+		float dmgavg = mp*0.06;
 		
 		// bei Ringen und Amuletten koennen die Strukturen noch fehlen
 		if (mod <=RESIST_ALL_MOD && item->m_equip_effect==0)
@@ -202,7 +190,7 @@ int ItemFactory::createMagicMods(Item* item, float* modchance, float magic_power
 			item->m_weapon_attr->m_weapon_type = "notype";
 		}
 
-			// Wirkung der Modifikation
+		// Wirkung der Modifikation
 		switch (mod)
 		{
 			case HEALTH_MOD:
@@ -379,7 +367,7 @@ void ItemFactory::init()
 
 void ItemFactory::cleanup()
 {
-	DEBUG("cleanup");
+	SW_DEBUG("cleanup");
 
 	std::map<Item::Subtype,ItemBasicData*>::iterator it;
 	for (it = m_item_data.begin(); it != m_item_data.end(); ++it)

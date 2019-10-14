@@ -1,0 +1,70 @@
+<World>	
+	<!-- Aisen, Joringsbrueck [laendliches Dorf] -->
+	<!-- erstes Treffen mit dem Prinzen -->
+	<!-- Der belagerte Bauernhof -->
+	<!-- Rob, der Raeuber, Anfang -->
+	<!-- Prinz, Ratgeber, Magier, Bauer, Sergeant -->
+	<!-- Kraeutersammler -->
+	<Region id="7" name="joringsbridge">
+	
+		<AmbientLight red="0.4" green="0.4" blue="0.4" />
+		<HeroLight red="1.0" green="1.0" blue="1.0" /> 
+		<DirectionalLight red="0.3" green="0.3" blue="0.3" />
+		
+		<Music>
+			<Track source="the_prophecy.ogg" />
+		</Music>
+		
+		<Settings dimx="23" dimy="23" region_template="joringsbridge"  ground="grass1"/>
+		
+		<WorldPosition world_x="0.61" world_y ="0.55" waypoint="true" />
+		
+		<ReviveLocation  location="WaypointLoc" />
+		
+		<ExitDirections north="true" south="true" west="true" east="false" />
+		
+		<Exits>
+			<Exit name="exit_south" destination_region="aisWideHeath" destination_location="entry_north" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_north" destination_region="aisJoringsforest" destination_location="entry_south" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+			<Exit name="exit_west" destination_region="aisNorthMeadow" destination_location="entry_east" >
+				<Shape shape="RECT" extent_x="4.0" extent_y="4.0" />
+			</Exit>
+		</Exits>
+		
+		<Environments>
+			<Environment height="1.0" name="meadow" />
+		</Environments>
+		
+		<Event trigger ="create_region" once = "true">
+			<Effect>
+				joringsbridge ={};
+				joringsbridge.sergeant = createObject("guard", "locSergeantHome",170);
+				setRefName(joringsbridge.sergeant, "Sergeant Lutterer");
+				if(prince.left_joringsbridge ~= true)then
+					moveObject(joringsbridge.sergeant,"locSergeant");
+					--set(joringsbridge.sergeant,"angle",90);
+				end;
+				
+				joringsbridge.council = createObject("council_mage", "locSummoner");
+				setRefName(joringsbridge.council, "Magus Convocatis Relau Fireweaver");
+				set(joringsbridge.council,"angle",90);
+				
+				joringsbridge.weapons = createObject('peasant_f', 'locWeaponTrader');
+				setRefName(joringsbridge.weapons, 'Sybill');
+				set(joringsbridge.weapons,"angle",180);
+				
+				joringsbridge.armor = createObject('peasant', 'locArmorTrader');
+				setRefName(joringsbridge.armor, 'Halgor');
+				set(joringsbridge.armor,"angle",230);
+				
+				joringsbridge.blackmarket = createObject('guard', 'locBlackmarket');
+				setRefName(joringsbridge.blackmarket, 'Marco');
+				set(joringsbridge.blackmarket,"angle",-90);
+			</Effect>
+		</Event>
+	</Region>
+</World>
