@@ -244,12 +244,12 @@ bool CharCreate::onButtonCharCreate(const CEGUI::EventArgs& evt)
 	{
 		namebox ->activate();
 		
-		widgetName = CEGUIUtility::getNameForWidget("WarningDialogWindow");
-		CEGUI::FrameWindow* message = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindowForLoadedLayoutEx(m_window, widgetName));
+		// The warning dialog lives in the main window, not under m_window, so look it up globally.
+		CEGUI::FrameWindow* message = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindow("WarningDialogWindow"));
 		message->setInheritsAlpha(false);
 		message->setVisible(true);
 		message->setModalState(true);
-		CEGUIUtility::getWindow( "WarningDialogLabel")->setText((CEGUI::utf8*) gettext("You must enter a hero name!"));
+		CEGUIUtility::getWindow("WarningDialogWindow/WarningDialogLabel")->setText((CEGUI::utf8*) gettext("You must enter a hero name!"));
 		
 		return true;
 	}
@@ -261,12 +261,12 @@ bool CharCreate::onButtonCharCreate(const CEGUI::EventArgs& evt)
 	{
 		namebox ->activate();
 
-		widgetName = CEGUIUtility::getNameForWidget("WarningDialogWindow");
-		CEGUI::FrameWindow* message = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindowForLoadedLayoutEx(m_window, widgetName));
+		// The warning dialog lives in the main window, not under m_window, so look it up globally.
+		CEGUI::FrameWindow* message = static_cast<CEGUI::FrameWindow*> (CEGUIUtility::getWindow("WarningDialogWindow"));
 		message->setInheritsAlpha(false);
 		message->setVisible(true);
 		message->setModalState(true);
-		CEGUIUtility::getWindow( "WarningDialogLabel")->setText((CEGUI::utf8*) gettext("A character with that name already exists!"));
+		CEGUIUtility::getWindow("WarningDialogWindow/WarningDialogLabel")->setText((CEGUI::utf8*) gettext("A character with that name already exists!"));
 		
 		return true;
 	}
