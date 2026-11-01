@@ -1115,7 +1115,6 @@ void Document::onButtonErrorDialogConfirm()
 {
 	getGUIState()->m_shown_windows &= ~MESSAGE;
 	m_modified |= WINDOWS_MODIFIED;
-    setState(SHUTDOWN_REQUEST);
 }
 
 void Document::onSkipDialogueTextClicked(bool skipAll)
@@ -1615,9 +1614,18 @@ void Document::update(float time)
 			if (status == NET_REJECTED || status == NET_SLOTS_FULL || status == NET_TIMEOUT)
 			{
 				// Verbindung abgelehnt
-				//m_state = SHUTDOWN;
+				std::string message = gettext ("Network connection timed out");
+				if (status == NET_REJECTED)
+				{
+					message = gettext ("The server rejected the connection.");
+				}
+				else if (status == NET_SLOTS_FULL)
+				{
+					message = gettext ("The server is full.");
+				}
+
+				showWarning (message);
                 getGUIState()->m_shown_windows = MESSAGE;
-                m_modified |= WINDOWS_MODIFIED;
 			}
 
 
@@ -1634,13 +1642,14 @@ void Document::update(float time)
 
 			if (!m_server)
 			{
-				if (World::getWorld()->getNetwork()->getSlotStatus() == NET_TIMEOUT
-					|| World::getWorld()->getNetwork()->getSlotStatus() == NET_SLOTS_FULL)
+				status = World::getWorld()->getNetwork()->getSlotStatus();
+				if (status == NET_TIMEOUT || status == NET_SLOTS_FULL)
 				{
-					// TODO: Display a different message for rejected Savegames
 					setState(INACTIVE);
+					showWarning (status == NET_SLOTS_FULL
+						? gettext ("The server is full.")
+						: gettext ("Network connection timed out"));
                     getGUIState()->m_shown_windows = MESSAGE;
-                    m_modified |= WINDOWS_MODIFIED;
 				}
 			}
 
@@ -1988,18 +1997,14 @@ Player*  Document::getLocalPlayer()
 
 void Document::showWarning (const std::string& textMessage)
 {
-	// Show a notification.
-	if (! CEGUIUtility::isWindowPresent ("WarningDialogWindow"))
+	// Display the message in the error dialog; it is shown whenever MESSAGE is set.
+	if (! CEGUIUtility::isWindowPresent ("ErrorDialogWindow/ErrorDialogLabel"))
 	{
-		SW_DEBUG ("Could not display the warning widget: [WarningDialogWindow]");
+		SW_DEBUG ("Could not display the warning widget: [ErrorDialogWindow]");
 		return;
 	}
 
-	CEGUI::FrameWindow* message = (CEGUI::FrameWindow*) CEGUIUtility::getWindow("WarningDialogWindow");
-	message->setInheritsAlpha(false);
-	message->setVisible(true);
-	message->setModalState(true);
-	CEGUIUtility::getWindow ("WarningDialogWindow/WarningDialogLabel")->setText((CEGUI::utf8*) textMessage.c_str ());
+	CEGUIUtility::getWindow ("ErrorDialogWindow/ErrorDialogLabel")->setText((CEGUI::utf8*) textMessage.c_str ());
 
 	getGUIState()->m_shown_windows |= MESSAGE;
 	m_modified |= WINDOWS_MODIFIED;

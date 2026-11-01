@@ -236,7 +236,7 @@ ErrorDialogWindow::ErrorDialogWindow (Document* doc)
 
 	CEGUI::FrameWindow* error_dialog = (CEGUI::FrameWindow*) CEGUIUtility::loadLayoutFromFile ("errordialogwindow.layout");
 	m_window = error_dialog;
-	m_error = "Network connection timed out";
+	m_error = "";
 	
 	btn = static_cast<CEGUI::PushButton*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "ErrorDialogConfirmButton"));
 	btn->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::Event::Subscriber(&ErrorDialogWindow ::onConfirmed, this));
