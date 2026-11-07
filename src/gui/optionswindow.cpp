@@ -13,6 +13,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Ogre headers are included before the project headers: the latter define PI as
+// a macro, which breaks the use of Ogre::Math::PI.
+#include <OgreRoot.h>
+#include <OgreRenderWindow.h>
+#include <OgreSceneManager.h>
+
+#include "application.h"
 #include "optionswindow.h"
 //#include "sound.h"
 #include "listitem.h"
@@ -267,36 +274,31 @@ OptionsWindow::OptionsWindow (Document* doc, OIS::Keyboard *keyboard, const std:
 
 	cbo->subscribeEvent(CEGUI::Combobox::EventListSelectionAccepted, CEGUI::Event::Subscriber(&OptionsWindow::onLanguageSelected, this));
 
-	// TODO: add comments.
 	cbo = static_cast<CEGUI::Combobox*>(CEGUIUtility::getWindowForLoadedLayoutEx(m_window, "OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/DisplayModeBox"));
-	cbo->addItem(new StrListItem((CEGUI::utf8*) m_ceguiSkinName.c_str (), (CEGUI::utf8*) gettext("Fullscreen (Exclusive Mode)"),"",0));
-	cbo->addItem(new StrListItem((CEGUI::utf8*) m_ceguiSkinName.c_str (), (CEGUI::utf8*) gettext("Window (With Borders)"),"",0));
-
-	if (Options::getInstance ()->isWindowedFullscreenModeSupported ())
-	{
-		SW_DEBUG ("Windowed fullscreen mode supported! Adding combobox item.");
-		std::string modeName = gettext("Window (Fullscreen)");
-		std::string recommended = gettext (" - recommended");
-		std::string sum = modeName + recommended;
-
-		cbo->addItem(new StrListItem((CEGUI::utf8*) m_ceguiSkinName.c_str (), (CEGUI::utf8*) sum.c_str(),"",0));
-	}
-	else
-	{
-		SW_DEBUG ("Windowed fullscreen mode NOT supported!");
-	}
+	cbo->addItem(new StrListItem((CEGUI::utf8*) m_ceguiSkinName.c_str (), (CEGUI::utf8*) gettext("Fullscreen"),"",0));
+	cbo->addItem(new StrListItem((CEGUI::utf8*) m_ceguiSkinName.c_str (), (CEGUI::utf8*) gettext("Window"),"",0));
 
 	cbo->setReadOnly(true);
+
+	// The dropdown only distinguishes fullscreen from windowed. Whether fullscreen uses an
+	// exclusive mode switch or a borderless window is controlled by the checkbox below.
 	DisplayModes myDisplayMode = Options::getInstance ()->getUsedDisplayMode ();
-	if (myDisplayMode == WINDOWED_FULLSCREEN && !Options::getInstance ()->isWindowedFullscreenModeSupported ())
-	{
-		myDisplayMode = WINDOWED_WITH_BORDER;
-	}
-	cbo->setItemSelectState((size_t) myDisplayMode, true);
+	const size_t displayModeSelection = (myDisplayMode == WINDOWED_WITH_BORDER) ? 1 : 0;
+	cbo->setItemSelectState(displayModeSelection, true);
 	cbo->handleUpdatedListItemData();
 	cbo->subscribeEvent(CEGUI::Combobox::EventListSelectionAccepted, CEGUI::Event::Subscriber(&OptionsWindow::onDisplayModeSelected, this));
 
 	connectWidgetSoundEvents ("OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/DisplayModeBox", "combobox");
+
+	CEGUIUtility::ToggleButton *exclusiveFullscreenBox = static_cast<CEGUIUtility::ToggleButton*> (CEGUIUtility::getWindowForLoadedLayoutEx (
+		m_window, "OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/ExclusiveFullscreenBox"));
+	if (exclusiveFullscreenBox != 0)
+	{
+		exclusiveFullscreenBox->setSelected (Options::getInstance ()->getUseExclusiveFullscreen ());
+		exclusiveFullscreenBox->setEnabled (displayModeSelection == 0);
+		exclusiveFullscreenBox->subscribeEvent (CEGUIUtility::ToggleButton::EventMouseClick, CEGUI::Event::Subscriber (&OptionsWindow::onGUIItemClicked, this));
+		exclusiveFullscreenBox->subscribeEvent (CEGUIUtility::EventMouseEntersToggleButtonArea (), CEGUI::Event::Subscriber (&OptionsWindow::onButtonItemHover, this));
+	}
 
 
 	//
@@ -353,20 +355,6 @@ OptionsWindow::OptionsWindow (Document* doc, OIS::Keyboard *keyboard, const std:
 	}
 	// Set the list to read-only, so that the user can't type in entries.
 	cbo->setReadOnly (true);
-
-	// For windowed (fullscreen) mode, make sure the resolution can't be modified. Why? Because it's the desktop size.
-	// What happens when you change your desktop size? That's another story...
-	if (myDisplayMode == WINDOWED_FULLSCREEN)
-	{
-		cbo->setEnabled (false);
-
-		// Clear the selection flag?
-		//if (cbo->getSelectedItem () != 0)
-		//{
-		//	cbo->getSelectedItem ()->setSelected (false);
-		//}
-		//cbo->setText ("");
-	}
 
 	cbo->handleUpdatedListItemData();
 	connectWidgetSoundEvents ("OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/ResolutionBox", "combobox");
@@ -790,16 +778,32 @@ bool OptionsWindow::onButtonOkClicked (const CEGUI::EventArgs& evt)
 
 		DisplayModes userMode = Options::getInstance ()->getUsedDisplayMode ();
 
+		CEGUIUtility::ToggleButton* exclusiveFullscreenBox = static_cast<CEGUIUtility::ToggleButton*> (
+			CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/ExclusiveFullscreenBox"));
+		bool useExclusiveFullscreen = Options::getInstance ()->getUseExclusiveFullscreen ();
+		if (exclusiveFullscreenBox != 0)
+		{
+			useExclusiveFullscreen = exclusiveFullscreenBox->isSelected ();
+		}
+
 		if (item != 0)
 		{
 			size_t selectionIndex = (int)cbo->getItemIndex (item);
 
 			SW_DEBUG ("selected display mode %s",item->getText().c_str());
-		
-			userMode = (DisplayModes)selectionIndex;
+
+			if (selectionIndex == 1)
+			{
+				userMode = WINDOWED_WITH_BORDER;
+			}
+			else
+			{
+				userMode = useExclusiveFullscreen ? FULLSCREEN_EX : WINDOWED_FULLSCREEN;
+			}
 			SW_DEBUG ("Index of combobox selection is: %d. New display mode set to %d", selectionIndex, userMode);
 			someVideoSettingsWereChanged |= (userMode != Options::getInstance ()->getUsedDisplayMode ());
 		}
+		someVideoSettingsWereChanged |= (useExclusiveFullscreen != Options::getInstance ()->getUseExclusiveFullscreen ());
 
 		// Check the resolution for changes -----------------------
 		std::string userResolution;
@@ -817,16 +821,6 @@ bool OptionsWindow::onButtonOkClicked (const CEGUI::EventArgs& evt)
 			userResolution = Options::getInstance ()->getUsedResolution ();
 		}
 		SW_DEBUG ("selected userResolution %s", userResolution.c_str());
-
-		if (userMode == WINDOWED_FULLSCREEN)
-		{
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-			int desktopWidth = (int)GetSystemMetrics (SM_CXSCREEN);
-			int desktopHeight = (int)GetSystemMetrics (SM_CYSCREEN);
-			userResolution = SumwarsHelper::getUpdatedResolutionString (userResolution, desktopWidth, desktopHeight);
-#endif
-			SW_DEBUG ("Updated selected userResolution to [%s]", userResolution.c_str());
-		}
 
 		someVideoSettingsWereChanged |= (userResolution != Options::getInstance ()->getUsedResolution ());
 
@@ -875,14 +869,22 @@ bool OptionsWindow::onButtonOkClicked (const CEGUI::EventArgs& evt)
 	
 		someVideoSettingsWereChanged |= (newShadowSettings != Options::getInstance ()->getShadowMode ());
 
+		// A changed display mode, resolution or fullscreen mode can be applied without restarting.
+		const bool displayModeChanged = (userMode != Options::getInstance ()->getUsedDisplayMode ())
+			|| (userResolution != Options::getInstance ()->getUsedResolution ())
+			|| (useExclusiveFullscreen != Options::getInstance ()->getUseExclusiveFullscreen ());
+		// A changed shadow mode can be applied without restarting.
+		const bool shadowModeChanged = (newShadowSettings != Options::getInstance ()->getShadowMode ());
+		// A changed video driver still requires a restart.
+		const bool restartRequired = (selectedDriverName != Options::getInstance ()->getUsedVideoDriver ());
+
 		// Perform the actual settings save operation. ----------------------------
 
 		if (someVideoSettingsWereChanged)
 		{
-			// Store it into the options; for the time being it is only saved there, not read from there!
-			// The read is performed from the actual settings!
-			// TODO: initialize the graphics subsystem with the settings in the options.xml file instead of the default ogre file.
+			// Store it into the options; the display mode and exclusive flag are read back at startup.
 			Options::getInstance ()->setUsedDisplayMode (userMode);
+			Options::getInstance ()->setUseExclusiveFullscreen (useExclusiveFullscreen);
 			Options::getInstance ()->setUsedResolution (userResolution);
 			Options::getInstance ()->setUsedVideoDriver (selectedDriverName);
 			Options::getInstance ()->setShadowMode (newShadowSettings);
@@ -992,8 +994,46 @@ bool OptionsWindow::onButtonOkClicked (const CEGUI::EventArgs& evt)
 			of.close();
 			// ----------------------------------------------------------------
 
-			// Show a notification, but not for a running game. We should basically have only 2 cases here:
-			if (m_document->getState () != Document::RUNNING)
+			// Apply the display mode and resolution immediately.
+			if (displayModeChanged)
+			{
+				Application* application = Application::getSingletonPtr ();
+				if (application != 0)
+				{
+					application->applyVideoSettings (userMode, userResolution);
+				}
+			}
+
+			// Apply the shadow mode immediately as well.
+			if (shadowModeChanged)
+			{
+				Ogre::SceneManager* scene_manager = Ogre::Root::getSingleton ().getSceneManager ("DefaultSceneManager");
+
+				if (scene_manager != 0)
+				{
+					switch (newShadowSettings)
+					{
+					case Options::SM_SA_SIMPLE:
+						scene_manager->setShadowTechnique (Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
+						break;
+					case Options::SM_TA_SIMPLE:
+						scene_manager->setShadowTechnique (Ogre::SHADOWTYPE_TEXTURE_ADDITIVE);
+						break;
+					case Options::SM_TM_SIMPLE:
+						scene_manager->setShadowTechnique (Ogre::SHADOWTYPE_TEXTURE_MODULATIVE);
+						break;
+					case Options::SM_SM_SIMPLE:
+						scene_manager->setShadowTechnique (Ogre::SHADOWTYPE_STENCIL_MODULATIVE);
+						break;
+					default:
+						scene_manager->setShadowTechnique (Ogre::SHADOWTYPE_NONE);
+						break;
+					}
+				}
+			}
+
+			// Some changes can only be applied after a restart.
+			if (restartRequired && m_document->getState () != Document::RUNNING)
 			{
 				m_document->showWarning (gettext ("Please restart the game\n for the changes to take effect!"));
 			}
@@ -1187,59 +1227,12 @@ bool OptionsWindow::onDisplayModeSelected (const CEGUI::EventArgs& evt)
 
 	size_t selectionIndex = (int)cbo->getItemIndex (item);
 
-	//DEBUG ("selected display mode %s",item->getText().c_str());
-	//DEBUG ("idx of selection is: %d", selectionIndex);
-	//Options::getInstance ()->setUsedDisplayMode ((DisplayModes)selectionIndex);
-
-	DisplayModes myDisplayMode = (DisplayModes)selectionIndex;
-
-	// For windowed (fullscreen) mode, make sure the resolution can't be edited.
-
-	std::string widgetName = CEGUIUtility::getNameForWidget ("OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/ResolutionBox");
-	cbo = static_cast<CEGUI::Combobox*>(CEGUIUtility::getWindowForLoadedLayoutEx (m_window, widgetName));
-	if (myDisplayMode == WINDOWED_FULLSCREEN)
+	// The exclusive mode checkbox only applies to fullscreen.
+	CEGUIUtility::ToggleButton* exclusiveFullscreenBox = static_cast<CEGUIUtility::ToggleButton*> (
+		CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "OptionsWindow/OptionsWindowTab/__auto_TabPane__/OptionsGraphic/ExclusiveFullscreenBox"));
+	if (exclusiveFullscreenBox != 0)
 	{
-		cbo->setEnabled (false);
-		
-		// Set the selection to the desktop size resolution.
-
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-		int desktopWidth = (int)GetSystemMetrics (SM_CXSCREEN);
-		int desktopHeight = (int)GetSystemMetrics (SM_CYSCREEN);
-
-		string userResolution = cbo->getText().c_str();
-		if (userResolution.empty())
-		{
-			userResolution = Options::getInstance ()->getUsedResolution ();
-		}
-
-		userResolution = SumwarsHelper::getUpdatedResolutionString (userResolution, desktopWidth, desktopHeight);
-		cbo->setText (userResolution);
-#endif
-
-		cbo->handleUpdatedListItemData ();
-	}
-	else
-	{
-		cbo->setEnabled (true);
-
-		std::string usedResolution = Options::getInstance ()->getUsedResolution ();
-		
-		SW_DEBUG ("Will try to show that the used resolution is [%s]", usedResolution.c_str ());
-
-		for (size_t i = 0; i < cbo->getItemCount (); ++ i)
-		{
-			CEGUI::ListboxItem* item = cbo->getListboxItemFromIndex (i);
-			CEGUI::String itemText = item->getText ();
-			if (usedResolution == itemText)
-			{
-				cbo->setItemSelectState(i, true);
-				
-				SW_DEBUG ("Located item [%s] at [%d]", itemText.c_str (), i);
-			}
-			SW_DEBUG ("Compared with [%s]", itemText.c_str ());
-		}
-		cbo->handleUpdatedListItemData();
+		exclusiveFullscreenBox->setEnabled (selectionIndex == 0);
 	}
 
 	return true;

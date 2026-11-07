@@ -291,16 +291,21 @@
                     <Property Name="UnifiedSize" Value="{{0.5,0},{0.3,0}}" />
                     <Property Name="MaxEditTextLength" Value="256" />
                 </Window>
+                <Window Type="SWB/Checkbox" Name="ExclusiveFullscreenBox" >
+                    <Property Name="Text" Value="Use exclusive mode for fullscreen" />
+                    <Property Name="InheritsAlpha" Value="False" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.36,0},{0.98,0},{0.42,0}}" />
+                </Window>
                 <Window Type="SWB/StaticText" Name="Resolution" >
                     <Property Name="Text" Value="Resolution" />
                     <Property Name="FrameEnabled" Value="False" />
                     <Property Name="InheritsAlpha" Value="False" />
-                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.37,0},{0.34,0},{0.47,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.47,0},{0.34,0},{0.57,0}}" />
                     <Property Name="BackgroundEnabled" Value="False" />
                 </Window>
                 <Window Type="SWB/Combobox" Name="ResolutionBox" >
                     <Property Name="InheritsAlpha" Value="False" />
-                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.37,0},{0.98,0},{0.47,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.47,0},{0.98,0},{0.57,0}}" />
                     <Property Name="UnifiedSize" Value="{{0.5,0},{0.5,0}}" />
                     <Property Name="MaxEditTextLength" Value="256" />
                 </Window>
@@ -308,12 +313,12 @@
                     <Property Name="Text" Value="Enemy Highlight Color" />
                     <Property Name="FrameEnabled" Value="False" />
                     <Property Name="InheritsAlpha" Value="False" />
-                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.50,0},{0.34,0},{0.60,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.60,0},{0.34,0},{0.70,0}}" />
                     <Property Name="BackgroundEnabled" Value="False" />
                 </Window>
                 <Window Type="SWB/Combobox" Name="EHColorBox" >
                     <Property Name="InheritsAlpha" Value="False" />
-                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.50,0},{0.98,0},{0.60,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.60,0},{0.98,0},{0.70,0}}" />
                     <Property Name="UnifiedSize" Value="{{0.5,0},{0.39,0}}" />
                     <Property Name="MaxEditTextLength" Value="256" />
                 </Window>
@@ -322,12 +327,12 @@
                     <Property Name="Text" Value="Shadows" />
                     <Property Name="FrameEnabled" Value="False" />
                     <Property Name="InheritsAlpha" Value="False" />
-                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.62,0},{0.34,0},{0.72,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.02,0},{0.72,0},{0.34,0},{0.82,0}}" />
                     <Property Name="BackgroundEnabled" Value="False" />
                 </Window>
                 <Window Type="SWB/Combobox" Name="ShadowsDropDownList" >
                     <Property Name="InheritsAlpha" Value="False" />
-                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.62,0},{0.98,0},{0.72,0}}" />
+                    <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.72,0},{0.98,0},{0.82,0}}" />
                     <Property Name="UnifiedSize" Value="{{0.5,0},{0.35,0}}" />
                     <Property Name="MaxEditTextLength" Value="256" />
                 </Window>

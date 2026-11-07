@@ -56,12 +56,12 @@ class Scene
 	};
 
 	/**
-	 * \fn Scene(Document* doc,Ogre::RenderWindow* window)
+	 * \fn Scene(Document* doc,Ogre::RenderTarget* render_target)
 	 * \brief Konstruktor
 	 * \param doc Dokument dessen Daten dargestellt werden sollen
-	 * \param window Fenster in das gerendert wird
+	 * \param render_target Ziel in das gerendert wird
 	 */
-	Scene(Document* doc,Ogre::RenderWindow* window);
+	Scene(Document* doc,Ogre::RenderTarget* render_target);
 
 	/**
 	 * \fn ~Scene()
@@ -93,6 +93,13 @@ class Scene
 	{
 		return m_viewport;
 	}
+
+	/**
+	 * \fn void setRenderTarget(Ogre::RenderTarget* render_target)
+	 * \brief Moves the scene viewport to a new render target.
+	 * \param render_target The new render target.
+	 */
+	void setRenderTarget(Ogre::RenderTarget* render_target);
 	
 	
 	/**
@@ -219,10 +226,10 @@ class Scene
 	short m_region_id;
 
 	/**
-	 * \var Ogre::RenderWindow* m_window
-	 * \brief Fenster in dem die Szene gerendert wird
+	 * \var Ogre::RenderTarget* m_render_target
+	 * \brief Ziel in das die Szene gerendert wird
 	 */
-	Ogre::RenderWindow* m_window;
+	Ogre::RenderTarget* m_render_target;
 
 	/**
 	 * \var Ogre::Camera* m_camera

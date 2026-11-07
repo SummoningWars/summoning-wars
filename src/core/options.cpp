@@ -25,6 +25,8 @@
 
 #include "OISKeyboard.h"
 
+#include <cstdlib>
+
 #include <tinyxml.h>
 #include "elementattrib.h"
 
@@ -103,6 +105,16 @@ void Options::init()
 	m_shadow_mode = SM_NONE;
 	
 	m_default_savegame = "";
+
+	// Default to exclusive fullscreen on Windows and borderless fullscreen elsewhere.
+#ifdef _WIN32
+	m_used_display_mode = FULLSCREEN_EX;
+	m_use_exclusive_fullscreen = true;
+#else
+	m_used_display_mode = WINDOWED_FULLSCREEN;
+	m_use_exclusive_fullscreen = false;
+#endif
+	m_display_mode_present = false;
 
 	// Also set this in the initialization. In case the options file is edited and no section with 
   // these settings is found, the defaults are loaded here.
@@ -247,6 +259,30 @@ bool Options::readFromFile(const std::string& filename)
 						}
 						// otherwise it's an invalid value.
 
+						TiXmlElement* graphicElement = child->ToElement ();
+						const char* displayModeValue = graphicElement->Attribute ("display_mode");
+						if (displayModeValue != 0)
+						{
+							int displayMode = atoi (displayModeValue);
+							if (displayMode >= FULLSCREEN_EX && displayMode <= WINDOWED_FULLSCREEN)
+							{
+								m_used_display_mode = static_cast<DisplayModes> (displayMode);
+								m_display_mode_present = true;
+
+								// Old files used FULLSCREEN_EX for borderless fullscreen on Linux.
+								if (m_used_display_mode == WINDOWED_FULLSCREEN)
+								{
+									m_use_exclusive_fullscreen = false;
+								}
+							}
+						}
+
+						const char* exclusiveValue = graphicElement->Attribute ("exclusive_fullscreen");
+						if (exclusiveValue != 0)
+						{
+							m_use_exclusive_fullscreen = (atoi (exclusiveValue) != 0);
+						}
+
 						// Other graphic options read from different files (E.g. ogre.cfg)
 
 					}
@@ -372,6 +408,7 @@ bool Options::writeToFile(const std::string& filename)
 	  element->SetAttribute("ehl_color", getEnemyHighlightColor().c_str());
 	  element->SetAttribute("grabMouseWhenWindowed", getGrabMouseInWindowedMode());
 	  element->SetAttribute("display_mode", getUsedDisplayMode());
+	  element->SetAttribute("exclusive_fullscreen", getUseExclusiveFullscreen() ? 1 : 0);
 	  element->SetAttribute ("shadowMode", getShadowMode ());
   }
 
