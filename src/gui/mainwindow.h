@@ -59,13 +59,14 @@ class MainWindow :
 
 
 	/**
-	 * \fn MainWindow(Ogre::Root* ogreroot, CEGUI::System* ceguisystem,Ogre::RenderWindow* window,Document* doc)
+	 * \fn MainWindow(Ogre::Root* ogreroot, CEGUI::System* ceguisystem,Ogre::RenderWindow* window,Ogre::RenderTarget* render_target,Document* doc)
 	 * \param ogreroot Zeiger auf das Basisobjekt von Ogre
 	 * \param ceguisystem Zeiger auf das Basisobjekt von CEGUI
 	 * \param window Fenster in die Applikation gestartet wird
+	 * \param render_target Ziel in das die Szene gerendert wird (kann vom Fenster abweichen)
 	 * \param doc Zeiger auf das Dokument
 	 */
-	MainWindow(Ogre::Root* ogreroot, CEGUI::System* ceguisystem,Ogre::RenderWindow* window,Document* doc);
+	MainWindow(Ogre::Root* ogreroot, CEGUI::System* ceguisystem,Ogre::RenderWindow* window,Ogre::RenderTarget* render_target,Document* doc);
 
 	/**
 	 * \fn ~MainWindow()
@@ -86,6 +87,19 @@ class MainWindow :
 	 * \param time vergangene Zeit in ms
 	 */
 	void update(float time);
+
+	/**
+	 * \fn void windowResized(int width, int height)
+	 * \brief Aktualisiert die Eingabezuordnung nach einer Fenstergroessenaenderung
+	 */
+	void windowResized(int width, int height);
+
+	/**
+	 * \fn void setRenderTarget(Ogre::RenderTarget* render_target)
+	 * \brief Moves the scene to a new render target (e.g. after a resolution change).
+	 * \param render_target The new render target.
+	 */
+	void setRenderTarget(Ogre::RenderTarget* render_target);
 
 	/**
 	 * \fn bool setupGameScreen()
@@ -373,6 +387,11 @@ class MainWindow :
 	private:
 
 	/**
+	 * \brief Rechnet Fensterkoordinaten in Koordinaten des Renderziels um.
+	 */
+	void windowToRenderTarget(float x, float y, float& renderX, float& renderY) const;
+
+	/**
 	 * \var Ogre::Root *m_ogre_root
 	 * \brief Basisobjekt der Ogre Engine
 	 */
@@ -389,6 +408,12 @@ class MainWindow :
 	 * \brief Fenster der Applikation
 	 */
 	Ogre::RenderWindow *m_window;
+
+	/**
+	 * \var Ogre::RenderTarget* m_render_target
+	 * \brief Ziel in das die Szene gerendert wird
+	 */
+	Ogre::RenderTarget* m_render_target;
 
 	/**
 	 * \var Ogre::SceneManager* m_scene_manager

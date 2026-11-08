@@ -134,6 +134,8 @@ public:
 
 private:
 
+    friend class MainWindow;
+
     /**
      * \fn bool createSavegameList()
      * \brief Creates the savegame list in main menu
@@ -199,6 +201,12 @@ private:
      * \brief Creates the background scene
      */
     void createScene();
+
+    /**
+     * \fn void setViewport(Ogre::Viewport* viewport)
+     * \brief Sets the viewport used to display the menu background.
+     */
+    void setViewport(Ogre::Viewport* viewport);
 	
 	/**
 	 * \brief Updates the preview of the savegame character
@@ -241,6 +249,12 @@ private:
      *\brief Saves the game camera while the main menu is displayed
      */
     Ogre::Camera *m_gameCamera;
+
+	/**
+     *\var Ogre::Viewport *m_viewport;
+     *\brief The viewport used to display the menu background
+     */
+    Ogre::Viewport *m_viewport;
 
     /**
      * \var SaveGameList m_saveGameList;

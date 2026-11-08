@@ -20,6 +20,13 @@
 #include "OgreWindowEventUtilities.h"
 #include "OgreLogManager.h"
 #include "OgreMeshManager.h"
+#include "OgreFrameListener.h"
+#include "OgreTextureManager.h"
+#include "OgreRenderTarget.h"
+#include "OgreViewport.h"
+#include "OgreCamera.h"
+#include "OgreSceneManager.h"
+#include "OgreManualObject.h"
 
 // Utility for CEGUI cross-version compatibility
 #include "ceguiutility.h"
@@ -60,7 +67,7 @@
  */
 
 class Application
-    : public Ogre::WindowEventListener, public Ogre::RenderSystem::Listener
+    : public Ogre::WindowEventListener, public Ogre::RenderSystem::Listener, public Ogre::FrameListener
 
 {
 
@@ -92,6 +99,29 @@ class Application
 			return m_document;
 		}
 
+		/**
+		 * \brief Returns the application instance (or 0 if it does not exist).
+		 */
+		static Application* getSingletonPtr()
+		{
+			return ms_singleton;
+		}
+
+		/**
+		 * \brief Applies a new display mode and resolution to the running game.
+		 *
+		 * On X11 the fullscreen modes use a borderless window instead of an exclusive mode switch.
+		 * The game itself is rendered at the requested resolution and scaled to the window.
+		 * \param mode The display mode to apply.
+		 * \param resolution The game resolution as a string (e.g. "1280 x  720").
+		 */
+		void applyVideoSettings(DisplayModes mode, const std::string& resolution);
+
+		/**
+		 * \brief Toggles between windowed and fullscreen mode at the current resolution.
+		 */
+		void toggleFullscreen();
+
 	private:
 		// ------------------------- Window Listener functions ----------------------
 
@@ -116,6 +146,11 @@ class Application
          * \brief React to certain Render system events
          */
         virtual void eventOccurred(const Ogre::String &eventName, const Ogre::NameValuePairList *parameters);
+
+		/**
+		 * \brief Renders the game (scene and GUI) into its render target before the window is drawn.
+		 */
+		virtual bool frameStarted (const Ogre::FrameEvent& evt);
 
 		// ------------------------- Other functions ----------------------
 
@@ -171,6 +206,28 @@ class Application
 		 * \brief Erzeugt das Document
 		 */
 		bool createDocument();
+
+		/**
+		 * \fn bool setupGameRenderTarget()
+		 * \brief Creates the render target the game (scene and GUI) is rendered into
+		 * and the objects needed to display it scaled to the window.
+		 */
+		bool setupGameRenderTarget();
+
+		/**
+		 * \fn void updateGameBlitQuad()
+		 * \brief Fits the quad that displays the game render target into the window.
+		 */
+		void updateGameBlitQuad();
+
+		/**
+		 * \fn bool resizeGameRenderTarget(unsigned int width, unsigned int height)
+		 * \brief Recreates the game render target at the given size and reconnects it.
+		 * \param width The new width in pixels.
+		 * \param height The new height in pixels.
+		 * \return true on success.
+		 */
+		bool resizeGameRenderTarget(unsigned int width, unsigned int height);
 
 		/**
 		 * \brief loads the ressources specified by \a datagroups
@@ -251,6 +308,36 @@ class Application
 		 */
  		Ogre::SceneManager *m_scene_manager;
         
+
+		/**
+		 * \var Ogre::RenderTarget* m_game_render_target
+		 * \brief Target into which the game (scene and GUI) is rendered.
+		 */
+		Ogre::RenderTarget* m_game_render_target;
+
+		/**
+		 * \var Ogre::ManualObject* m_blit_quad
+		 * \brief Quad that displays the rendered game texture in the window.
+		 */
+		Ogre::ManualObject* m_blit_quad;
+
+		/**
+		 * \var Ogre::String m_game_texture_name
+		 * \brief Name of the texture the game is currently rendered into.
+		 */
+		Ogre::String m_game_texture_name;
+
+		/**
+		 * \var bool m_borderless_fullscreen
+		 * \brief true if the X11 window is currently a borderless fullscreen window.
+		 */
+		bool m_borderless_fullscreen;
+
+		/**
+		 * \var Application* ms_singleton
+		 * \brief The application instance.
+		 */
+		static Application* ms_singleton;
 
  		/**
 		 * \var bool m_shutdown

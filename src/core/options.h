@@ -364,25 +364,6 @@ class Options
 		
 
 		/**
-		 * \brief Returns the windowed fullscreen mode support.
-		 */
-		bool isWindowedFullscreenModeSupported ()
-		{
-			return m_windowed_fullscreen_mode_supported;
-		}
-
-
-		/**
-		 * \brief Sets the windowed fullscreen mode support.
-		 * \param supported Specify whether the setting is supported or not.
-		 */
-		void setWindowedFullscreenModeSupported (bool supported)
-		{
-			m_windowed_fullscreen_mode_supported = supported;
-		}
-
-
-		/**
 		 * \brief Returns the used display mode.
 		 */
 		DisplayModes getUsedDisplayMode ()
@@ -396,6 +377,30 @@ class Options
 		void setUsedDisplayMode (DisplayModes newMode)
 		{
 			m_used_display_mode = newMode;
+		}
+
+		/**
+		 * \brief Returns whether exclusive mode should be used for fullscreen.
+		 */
+		bool getUseExclusiveFullscreen ()
+		{
+			return m_use_exclusive_fullscreen;
+		}
+
+		/**
+		 * \brief Sets whether exclusive mode should be used for fullscreen.
+		 */
+		void setUseExclusiveFullscreen (bool useExclusive)
+		{
+			m_use_exclusive_fullscreen = useExclusive;
+		}
+
+		/**
+		 * \brief Returns whether the display mode was read from the options file.
+		 */
+		bool getDisplayModePresent ()
+		{
+			return m_display_mode_present;
 		}
 
 
@@ -619,11 +624,6 @@ class Options
 		bool m_grab_mouse;
 
 		/**
-		 * \brief Is the windowed fullscreen mode supported?
-		 */
-		bool m_windowed_fullscreen_mode_supported;
-
-		/**
 		 * \brief User preferrence to show or hide the console window.
 		 */
 		bool m_show_console_window;
@@ -637,6 +637,16 @@ class Options
 		 * \brief The currently selected display mode.
 		 */
 		DisplayModes m_used_display_mode;
+
+		/**
+		 * \brief Whether exclusive mode should be used for fullscreen.
+		 */
+		bool m_use_exclusive_fullscreen;
+
+		/**
+		 * \brief Whether the display mode was present in the options file.
+		 */
+		bool m_display_mode_present;
 
 		/**
 		 * \brief The currently loaded video driver.

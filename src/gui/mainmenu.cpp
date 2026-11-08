@@ -44,6 +44,7 @@ MainMenu::MainMenu (Document* doc, const std::string& ceguiSkinName)
         : Window (doc)
 		, m_ceguiSkinName (ceguiSkinName)
 		, m_starMenuRoot (0)
+		, m_viewport (0)
 {
 	SW_DEBUG ("MainMenu created");
 
@@ -364,6 +365,11 @@ bool MainMenu::onShowCredits(const CEGUI::EventArgs& evt)
     return true;
 }
 
+void MainMenu::setViewport(Ogre::Viewport* viewport)
+{
+	m_viewport = viewport;
+}
+
 bool MainMenu::onShown( const CEGUI::EventArgs& evt )
 {
 	SW_DEBUG ("Main menu shown");
@@ -371,14 +377,14 @@ bool MainMenu::onShown( const CEGUI::EventArgs& evt )
     if (!m_sceneCreated)
 	{
         createScene();
-		m_gameCamera = root->getAutoCreatedWindow()->getViewport(0)->getCamera();
+		m_gameCamera = m_viewport->getCamera();
 		
 		// we need a scene to display the character, so set the savegame now
 		m_saveGameList->selectDefaultSavegame();
 	}
 	m_saveGameList->update();
 
-	root->getAutoCreatedWindow()->getViewport(0)->setCamera(m_mainMenuCamera);
+	m_viewport->setCamera(m_mainMenuCamera);
     root->addFrameListener(this);
 	
 	CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "MainMenuRoot")->setAlpha(0);
@@ -401,7 +407,7 @@ bool MainMenu::onHidden( const CEGUI::EventArgs& evt )
 	Ogre::Root *root = Ogre::Root::getSingletonPtr();
     if (m_sceneCreated)
 	{
-		root->getAutoCreatedWindow()->getViewport(0)->setCamera(m_gameCamera);
+		m_viewport->setCamera(m_gameCamera);
 	}
 	CEGUIUtility::getWindowForLoadedLayoutEx (m_window, "MainMenuRoot")->setAlpha(1);
 

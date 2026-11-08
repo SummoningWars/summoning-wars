@@ -13,6 +13,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "application.h"
 #include "mainwindow.h"
 
 #include <string>
@@ -67,11 +68,13 @@
 using gussound::SoundManager;
 
 
-MainWindow::MainWindow(Ogre::Root* ogreroot, CEGUI::System* ceguisystem,Ogre::RenderWindow* window,Document* doc)
+MainWindow::MainWindow(Ogre::Root* ogreroot, CEGUI::System* ceguisystem,Ogre::RenderWindow* window,Ogre::RenderTarget* render_target,Document* doc)
 {
 	m_ogre_root = ogreroot;
 	m_cegui_system = ceguisystem;
 	m_window = window;
+	m_render_target = render_target;
+	m_scene = 0;
 	m_document = doc;
 	m_scene_manager = m_ogre_root->getSceneManager("DefaultSceneManager");
 
@@ -117,6 +120,9 @@ bool MainWindow::init()
 	SW_DEBUG ("Initializing main game screen.");
 	result &= setupGameScreen();
 	CEGUIUtility::addChildWidget (m_root_window, m_game_screen);
+
+	// Let the main menu use the same viewport as the game scene (it may differ from the window's).
+	setRenderTarget (m_render_target);
 
 	// Dump the contents to the log for later.
 	//CEGUIUtility::dumpFullWindowToLog (m_root_window);
@@ -834,7 +840,7 @@ bool MainWindow::setupGameScreen()
 	try
 	{
 		// Szene erzeugen
-		m_scene = new Scene(m_document,m_window);
+		m_scene = new Scene(m_document,m_render_target);
 
 		// GUI Elemente erzeugen
 		CEGUI::WindowManager& win_mgr = CEGUI::WindowManager::getSingleton();
@@ -1284,6 +1290,58 @@ void  MainWindow::setWindowExtents(int width, int height){
 	ms.height = height;
 }
 
+void MainWindow::windowResized (int width, int height)
+{
+	setWindowExtents (width, height);
+}
+
+void MainWindow::setRenderTarget (Ogre::RenderTarget* render_target)
+{
+	if (render_target == 0)
+	{
+		return;
+	}
+
+	m_render_target = render_target;
+
+	if (m_scene != 0)
+	{
+		m_scene->setRenderTarget (render_target);
+
+		// The main menu shares the scene's viewport, which is recreated with the new target.
+		std::map<std::string, Window*>::iterator mainMenuIt = m_sub_windows.find ("MainMenu");
+		if (mainMenuIt != m_sub_windows.end ())
+		{
+			static_cast<MainMenu*>(mainMenuIt->second)->setViewport (m_scene->getViewport ());
+		}
+	}
+}
+
+void MainWindow::windowToRenderTarget (float x, float y, float& renderX, float& renderY) const
+{
+	const float windowWidth = (float) m_window->getWidth ();
+	const float windowHeight = (float) m_window->getHeight ();
+	const float targetWidth = (float) m_render_target->getWidth ();
+	const float targetHeight = (float) m_render_target->getHeight ();
+
+	if (windowWidth <= 0.0f || windowHeight <= 0.0f || targetWidth <= 0.0f || targetHeight <= 0.0f)
+	{
+		renderX = x;
+		renderY = y;
+		return;
+	}
+
+	// The render target is displayed in the window scaled to fit and centered.
+	const float scaleX = windowWidth / targetWidth;
+	const float scaleY = windowHeight / targetHeight;
+	const float scale = (scaleX < scaleY) ? scaleX : scaleY;
+	const float offsetX = (windowWidth - targetWidth * scale) * 0.5f;
+	const float offsetY = (windowHeight - targetHeight * scale) * 0.5f;
+
+	renderX = (x - offsetX) / scale;
+	renderY = (y - offsetY) / scale;
+}
+
 
 void  MainWindow::updateMainMenu()
 {
@@ -1408,8 +1466,8 @@ void MainWindow::updateObjectInfo()
 	
 	
 	// Position der Maus
-	float x = m_mouse->getMouseState().X.abs;
-	float y = m_mouse->getMouseState().Y.abs;
+	float x, y;
+	windowToRenderTarget ((float) m_mouse->getMouseState().X.abs, (float) m_mouse->getMouseState().Y.abs, x, y);
 
 
 	// Position des Mausklicks relativ zum Viewport
@@ -2579,8 +2637,10 @@ Vector MainWindow::getIngamePos(float screenx, float screeny, bool relative)
 	}
 	else
 	{
-		relx = screenx*1.0/(viewport->getActualWidth());
-		rely = screeny*1.0/(viewport->getActualHeight());
+		float renderX, renderY;
+		windowToRenderTarget (screenx, screeny, renderX, renderY);
+		relx = renderX*1.0/(viewport->getActualWidth());
+		rely = renderY*1.0/(viewport->getActualHeight());
 	}
 	DEBUGX("relative Koordinaten %f %f",relx,rely);
 
@@ -2621,6 +2681,8 @@ Vector MainWindow::getIngamePos(float screenx, float screeny, bool relative)
 bool MainWindow::mouseMoved(const OIS::MouseEvent &evt)
 {
     //DEBUG("injection position %i %i",evt.state.X.abs,evt.state.Y.abs);
+    float mouseX, mouseY;
+    windowToRenderTarget ((float) evt.state.X.abs, (float) evt.state.Y.abs, mouseX, mouseY);
     if(CEGUIUtility::injectMouseWheelChange (m_cegui_system, evt.state.Z.rel))
         m_document->onMouseMove(evt.state.X.rel, evt.state.Y.rel, 0);
     else
@@ -2639,14 +2701,14 @@ bool MainWindow::mouseMoved(const OIS::MouseEvent &evt)
 			off = 12;
 	
 	
-		label->setPosition(CEGUI::UVector2(CEGUI::UDim(0,MathHelper::Max(0,evt.state.X.abs-off)),CEGUI::UDim(0,MathHelper::Max(0,evt.state.Y.abs- off))));
+		label->setPosition(CEGUI::UVector2(CEGUI::UDim(0,MathHelper::Max(0.0, mouseX-off)),CEGUI::UDim(0,MathHelper::Max(0.0, mouseY- off))));
 	}
 	catch (std::exception& e)
 	{
 		SW_DEBUG ("Caught exception: [%s]", e.what ());
 	}
 	
-	return CEGUIUtility::injectMousePosition (m_cegui_system, evt.state.X.abs, evt.state.Y.abs);
+	return CEGUIUtility::injectMousePosition (m_cegui_system, mouseX, mouseY);
 }
 
 
@@ -2789,6 +2851,18 @@ bool MainWindow::keyPressed(const OIS::KeyEvent &evt) {
 			static_cast<OptionsWindow*>(m_sub_windows["Options"])->setKeyCode(evt.key);
 			return true;
 		}
+	}
+
+	// Toggle fullscreen with Alt+Enter.
+	if ((evt.key == OIS::KC_RETURN || evt.key == OIS::KC_NUMPADENTER) &&
+			m_keyboard->isModifierDown (OIS::Keyboard::Alt))
+	{
+		Application* application = Application::getSingletonPtr ();
+		if (application != 0)
+		{
+			application->toggleFullscreen ();
+		}
+		return true;
 	}
 	
 	if (evt.key == OIS::KC_UNASSIGNED)

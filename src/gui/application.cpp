@@ -45,6 +45,10 @@
 #include <OgreParticleSystemManager.h>
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#include <windows.h>
 #include "../winicon/resource.h"
 #endif
 
@@ -99,14 +103,61 @@ public:
 };
 
 
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+namespace
+{
+	/**
+	 * \brief Removes or restores the window border and resizes the window.
+	 */
+	void applyBorderlessWindow (Ogre::RenderWindow* window, bool borderless, int width, int height)
+	{
+		HWND hwnd = 0;
+		window->getCustomAttribute ("WINDOW", &hwnd);
+		if (hwnd == 0)
+		{
+			return;
+		}
+
+		const int desktopWidth = (int) GetSystemMetrics (SM_CXSCREEN);
+		const int desktopHeight = (int) GetSystemMetrics (SM_CYSCREEN);
+
+		if (borderless)
+		{
+			SetWindowLong (hwnd, GWL_STYLE, WS_VISIBLE | WS_POPUP);
+			SetWindowPos (hwnd, HWND_TOP, 0, 0, desktopWidth, desktopHeight, SWP_FRAMECHANGED | SWP_SHOWWINDOW);
+			ShowCursor (false);
+			window->resize (desktopWidth, desktopHeight);
+		}
+		else
+		{
+			const int x = (desktopWidth - width) / 2;
+			const int y = (desktopHeight - height) / 2;
+			SetWindowLong (hwnd, GWL_STYLE, WS_VISIBLE | WS_OVERLAPPEDWINDOW);
+			SetWindowPos (hwnd, HWND_TOP, x, y, width, height, SWP_FRAMECHANGED | SWP_SHOWWINDOW);
+			ShowCursor (true);
+			window->resize (width, height);
+		}
+	}
+}
+#endif
+
+
+Application* Application::ms_singleton = 0;
+
+
 /**
 	Application constructor. Will call the init function.
 */
 Application::Application()
 {
 	// Initialize application variables
+	ms_singleton = this;
 	m_main_window = 0;
 	m_document = 0;
+	m_game_render_target = 0;
+	m_blit_quad = 0;
+	m_game_texture_name = "SumwarsGameTexture";
+	m_borderless_fullscreen = false;
 	bool ret = false;
 	m_running = false;
 	m_shutdown = false;
@@ -289,6 +340,14 @@ Application::~Application()
 	// Release (deallocate) dynamically allocated objects in reverse order. (reverse to their creation)
 
 	printf("deleting application\n");
+	if (ms_singleton == this)
+	{
+		ms_singleton = 0;
+	}
+	if (m_ogre_root != 0)
+	{
+		m_ogre_root->removeFrameListener (this);
+	}
 	if (m_main_window)
 	{
 		delete m_main_window;
@@ -558,32 +617,12 @@ std::string Application::retrieveRenderSystemWindowSize (int& videoModeWidth, in
 		{
 			SW_DEBUG ("Currently selected video mode: %s",  opt_it->second.currentValue.c_str ());
 			returnValue = opt_it->second.currentValue;
-			std::string sLeft, sRight;
-			size_t nPos = returnValue.find (" ");
-			if (nPos == std::string::npos)
+			SumwarsHelper::getSizesFromResolutionString (returnValue, videoModeWidth, videoModeHeight);
+			if (videoModeWidth <= 0 || videoModeHeight <= 0)
 			{
-				// some error...
-				ERRORMSG ("Unable to find space in [%s]", returnValue.c_str ());
+				ERRORMSG ("Unable to parse video mode [%s]", returnValue.c_str ());
 				return "";
 			}
-
-			sLeft = returnValue.substr (0, nPos);
-			sRight= returnValue.substr (nPos + 3);// + 3 for " x "
-			nPos = sRight.find (" ");
-			std::string sAux;
-
-			if (nPos == std::string::npos)
-			{
-				// we don't have a colour depth.
-				sAux = sRight;
-			}
-			else
-			{
-				sAux = sRight.substr(0, nPos);
-			}
-
-			videoModeWidth = atoi (sLeft.c_str ());
-			videoModeHeight = atoi (sAux.c_str ());
 		}
 	}
 	else
@@ -610,16 +649,106 @@ bool Application::initOgre()
 	// 2. Create the window ourselves, longer code, but have more control
 
 	// Initialize Ogre with the automatic creation of a window.
+	//
+	// Fullscreen has two variants:
+	// - exclusive: Ogre switches the display mode (may misbehave on some X11 desktops).
+	// - borderless: create a desktop-sized window and ask the window manager to make it fullscreen.
+	// The render system options are only overridden for the creation of the window and restored
+	// afterwards, so ogre.cfg is left untouched.
+	Ogre::RenderSystem* renderSys = m_ogre_root->getRenderSystem ();
+	Ogre::String origFullScreen;
+	Ogre::String origVideoMode;
+	bool haveVideoConfig = false;
+	bool ogreFullScreen = false;
+	int desktopWidth = 0;
+	int desktopHeight = 0;
+	const bool haveDesktopSize = SumwarsHelper::getDesktopSize (desktopWidth, desktopHeight);
+
+	m_borderless_fullscreen = false;
+
+	bool wantFullscreen = false;
+	if (Options::getInstance ()->getDisplayModePresent ())
+	{
+		wantFullscreen = (Options::getInstance ()->getUsedDisplayMode () != WINDOWED_WITH_BORDER);
+	}
+	bool wantExclusive = Options::getInstance ()->getUseExclusiveFullscreen ();
+
+	if (renderSys != 0)
+	{
+		Ogre::ConfigOptionMap cfgOptions = renderSys->getConfigOptions ();
+		Ogre::ConfigOptionMap::iterator fsIt = cfgOptions.find ("Full Screen");
+		Ogre::ConfigOptionMap::iterator vmIt = cfgOptions.find ("Video Mode");
+		if (fsIt != cfgOptions.end () && vmIt != cfgOptions.end ())
+		{
+			haveVideoConfig = true;
+			origFullScreen = fsIt->second.currentValue;
+			origVideoMode = vmIt->second.currentValue;
+			ogreFullScreen = (origFullScreen == "Yes");
+
+			if (!Options::getInstance ()->getDisplayModePresent ())
+			{
+				wantFullscreen = ogreFullScreen;
+			}
+
+			if (wantFullscreen && !wantExclusive)
+			{
+				// Borderless fullscreen: create a desktop-sized window without a mode switch.
+				if (haveDesktopSize)
+				{
+					m_borderless_fullscreen = true;
+
+					char sizeBuf[64];
+					snprintf (sizeBuf, sizeof (sizeBuf), "%d x %d", desktopWidth, desktopHeight);
+					SW_DEBUG ("Borderless fullscreen window of %s", sizeBuf);
+					renderSys->setConfigOption ("Full Screen", "No");
+					renderSys->setConfigOption ("Video Mode", sizeBuf);
+				}
+				else
+				{
+					// No desktop size available; fall back to exclusive fullscreen.
+					wantExclusive = true;
+				}
+			}
+
+			if (wantFullscreen && wantExclusive)
+			{
+				renderSys->setConfigOption ("Full Screen", "Yes");
+			}
+			else if (!wantFullscreen)
+			{
+				renderSys->setConfigOption ("Full Screen", "No");
+			}
+		}
+	}
+
 	m_window = m_ogre_root->initialise (true, "Summoning Wars"); // TODO: define constant for name of obtain from config file.
 
-	if (m_window->isFullScreen ())
+	if (haveVideoConfig)
 	{
-		Options::getInstance()->setUsedDisplayMode (FULLSCREEN_EX);
+		renderSys->setConfigOption ("Full Screen", origFullScreen);
+		renderSys->setConfigOption ("Video Mode", origVideoMode);
 	}
-	else
+
+	if (m_borderless_fullscreen)
 	{
-		Options::getInstance()->setUsedDisplayMode (WINDOWED_WITH_BORDER);
+#if OGRE_PLATFORM == OGRE_PLATFORM_LINUX
+		void* xDisplay = 0;
+		unsigned long xWindow = 0;
+		m_window->getCustomAttribute ("XDISPLAY", &xDisplay);
+		m_window->getCustomAttribute ("WINDOW", &xWindow);
+		SumwarsHelper::setWindowFullscreen (xDisplay, xWindow, true);
+#elif OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+		applyBorderlessWindow (m_window, true, desktopWidth, desktopHeight);
+#endif
 	}
+
+	DisplayModes effectiveMode = WINDOWED_WITH_BORDER;
+	if (wantFullscreen)
+	{
+		effectiveMode = wantExclusive ? FULLSCREEN_EX : WINDOWED_FULLSCREEN;
+		Options::getInstance ()->setUseExclusiveFullscreen (wantExclusive);
+	}
+	Options::getInstance ()->setUsedDisplayMode (effectiveMode);
 
 	const Ogre::RenderSystemList rsList = m_ogre_root->getAvailableRenderers ();
 	for (Ogre::RenderSystemList::const_iterator it = rsList.begin (); it != rsList.end (); ++ it)
@@ -634,17 +763,28 @@ bool Application::initOgre()
 			{
 				Ogre::StringVector possibleValues = optit->second.possibleValues;
 				Options::getInstance ()->getEditableResolutionsMapping()[rsName].clear ();
-				
+
 				for (Ogre::StringVector::const_iterator subit = possibleValues.begin ();
 					subit != possibleValues.end (); ++ subit)
 				{
+					int resolutionWidth = 0;
+					int resolutionHeight = 0;
+					SumwarsHelper::getSizesFromResolutionString (*subit, resolutionWidth, resolutionHeight);
+
+					// Resolutions below 480 pixels in height are filtered out: the text is too hard
+					// to read with them for them to be useful.
+					if (resolutionHeight > 0 && resolutionHeight < 480)
+					{
+						continue;
+					}
+
 					Options::getInstance ()->getEditableResolutionsMapping()[rsName].push_back (*subit);
 				}
 			}
 		}
 	}
 
-    m_ogre_root->getRenderSystem()->addListener(this);
+	m_ogre_root->getRenderSystem()->addListener(this);
 	Options::getInstance ()->setUsedVideoDriver (m_ogre_root->getRenderSystem()->getName ());
 
 	setApplicationIcon ();
@@ -653,49 +793,9 @@ bool Application::initOgre()
 	int videoModeHeight = 0;
 	std::string usedResolution ("");
 	usedResolution = retrieveRenderSystemWindowSize (videoModeWidth, videoModeHeight);
-
 	Options::getInstance ()->setUsedResolution (usedResolution);
 	SW_DEBUG ("Stored used resolution into global options [%s]", usedResolution.c_str ());
 	SW_DEBUG ("Size should be %d x %d", videoModeWidth, videoModeHeight);
-
-	//
-	// Platform specific code: 
-	// On Windows, if the user specifies Windowed mode and a Width and Height equal to the screen size, 
-	// remove the window borders.
-	//
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-	Options::getInstance()->setWindowedFullscreenModeSupported (true);
-
-	if (! m_window->isFullScreen ())
-	{
-		// -------------------------------- beginning of platform dependent code --------------------------
-		int desktopWidth = (int)GetSystemMetrics (SM_CXSCREEN);
-		int desktopHeight = (int)GetSystemMetrics (SM_CYSCREEN);
-
-		if (desktopWidth == videoModeWidth && desktopHeight == videoModeHeight)
-		{
-			SW_DEBUG ("Windowed (Fullscreen) mode selected; desktop at %d x %d.", desktopWidth, desktopHeight);
-			SW_DEBUG ("Correcting settings.");
-
-			// Retrieve the window handle
-			HWND hwnd; // handle of window
-			m_window->getCustomAttribute ("WINDOW", &hwnd);
-
-			// Also hide the cursor. This may make the debugging sometimes more difficult.
-			ShowCursor(false); // TODO: if you hide the cursor, make sure you react to the focus lost events, to show the cursor for other apps.
-
-			SetWindowLong (hwnd, GWL_STYLE, WS_VISIBLE);
-			//SetWindowLong (hwnd, GWL_EXSTYLE, WS_EX_APPWINDOW);
-			SetWindowPos (hwnd, HWND_TOP, 0, 0, desktopWidth, desktopHeight, SWP_SHOWWINDOW);
-
-			SendMessage (hwnd, WM_STYLECHANGING, 0, WS_OVERLAPPED);
-			UpdateWindow (hwnd);
-
-			Options::getInstance()->setUsedDisplayMode (WINDOWED_FULLSCREEN);
-		}
-		// ----------------------------------- end of platform dependent code -----------------------------
-	}
-#endif //OGRE_PLATFORM_WIN32
 
 	std::string aspectRatioString = SumwarsHelper::getSingletonPtr ()->getNearestAspectRatioStringForWindowSize (videoModeWidth, videoModeHeight);
 	SumwarsHelper::getSingletonPtr ()->setPrefferedAspectRatioString (aspectRatioString);
@@ -885,7 +985,12 @@ bool Application::initCEGUI()
 	
 	// Bootstrap the CEGUI System
 	SW_DEBUG ("Bootstrapping the CEGUI system");
+#ifdef CEGUI_07
 	CEGUI::OgreRenderer::bootstrapSystem();
+#else
+	// Pass the window explicitly; CEGUI can only look it up itself if Ogre auto-created it.
+	CEGUI::OgreRenderer::bootstrapSystem(*m_window);
+#endif
 
 	SW_DEBUG ("Getting the XML parser");
 
@@ -1052,10 +1157,392 @@ bool Application::createDocument()
 
 
 
+bool Application::frameStarted (const Ogre::FrameEvent& evt)
+{
+	// Render the scene and the GUI into the game texture. The window then displays
+	// this texture scaled to its own size, so that the whole game view is scaled.
+	m_game_render_target->update ();
+	CEGUI::System::getSingleton ().renderAllGUIContexts ();
+
+	return true;
+}
+
+
+
+bool Application::setupGameRenderTarget ()
+{
+	// Render at the configured resolution and scale the result to the window. In borderless
+	// fullscreen the window has the size of the desktop, which may differ from the resolution.
+	unsigned int gameWidth = m_window->getWidth ();
+	unsigned int gameHeight = m_window->getHeight ();
+	int configuredWidth = 0;
+	int configuredHeight = 0;
+	SumwarsHelper::getSizesFromResolutionString (Options::getInstance ()->getUsedResolution (),
+			configuredWidth, configuredHeight);
+	if (configuredWidth > 0 && configuredHeight > 0)
+	{
+		gameWidth = (unsigned int) configuredWidth;
+		gameHeight = (unsigned int) configuredHeight;
+	}
+
+	// Create the texture the whole game view (scene and GUI) is rendered into.
+	Ogre::TexturePtr game_texture = Ogre::TextureManager::getSingleton ().createManual (
+			m_game_texture_name,
+			Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
+			Ogre::TEX_TYPE_2D,
+			gameWidth,
+			gameHeight,
+			0,
+			Ogre::PF_R8G8B8A8,
+			Ogre::TU_RENDERTARGET);
+
+	m_game_render_target = game_texture->getBuffer ()->getRenderTarget ();
+
+	// The texture is updated manually before the window is rendered.
+	m_game_render_target->setAutoUpdated (false);
+
+	// Make CEGUI render into the game texture as well and control the rendering manually.
+	CEGUI::OgreRenderer* renderer = static_cast<CEGUI::OgreRenderer*> (m_cegui_system->getRenderer ());
+	renderer->setDefaultRootRenderTarget (*m_game_render_target);
+	renderer->setRenderingEnabled (false);
+	m_cegui_system->notifyDisplaySizeChanged (CEGUI::Sizef (
+			(float) m_game_render_target->getWidth (),
+			(float) m_game_render_target->getHeight ()));
+
+	// Create the material used to display the game texture.
+	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton ().create (
+			"SumwarsBlitMaterial", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
+	Ogre::Pass* pass = material->getTechnique (0)->getPass (0);
+	pass->setLightingEnabled (false);
+	pass->setDepthCheckEnabled (false);
+	pass->setDepthWriteEnabled (false);
+	pass->setCullingMode (Ogre::CULL_NONE);
+	pass->setSceneBlending (Ogre::SBT_REPLACE);
+	Ogre::TextureUnitState* texture_unit = pass->createTextureUnitState (m_game_texture_name);
+	texture_unit->setTextureFiltering (Ogre::TFO_BILINEAR);
+	texture_unit->setTextureAddressingMode (Ogre::TextureUnitState::TAM_CLAMP);
+
+	// Create a scene manager that only holds the quad displaying the game texture.
+	Ogre::SceneManager* blit_scene_manager = m_ogre_root->createSceneManager (Ogre::ST_GENERIC, "GameBlitSceneManager");
+	Ogre::Camera* blit_camera = blit_scene_manager->createCamera ("GameBlitCamera");
+	blit_camera->setProjectionType (Ogre::PT_ORTHOGRAPHIC);
+	blit_camera->setNearClipDistance (1.0f);
+	blit_camera->setFarClipDistance (10.0f);
+	blit_camera->setPosition (Ogre::Vector3 (0.5f, 0.5f, 5.0f));
+	blit_camera->lookAt (Ogre::Vector3 (0.5f, 0.5f, 0.0f));
+	blit_camera->setOrthoWindow (1.0f, 1.0f);
+
+	m_blit_quad = blit_scene_manager->createManualObject ("GameBlitQuad");
+	blit_scene_manager->getRootSceneNode ()->createChildSceneNode ()->attachObject (m_blit_quad);
+
+	Ogre::Viewport* blit_viewport = m_window->addViewport (blit_camera);
+	blit_viewport->setBackgroundColour (Ogre::ColourValue (0, 0, 0));
+	blit_viewport->setOverlaysEnabled (false);
+
+	updateGameBlitQuad ();
+
+	// The game has to be rendered before the window displays the result.
+	m_ogre_root->addFrameListener (this);
+
+	return true;
+}
+
+
+
+void Application::updateGameBlitQuad ()
+{
+	if (m_blit_quad == 0 || m_game_render_target == 0)
+	{
+		return;
+	}
+
+	const float windowWidth = (float) m_window->getWidth ();
+	const float windowHeight = (float) m_window->getHeight ();
+	const float targetWidth = (float) m_game_render_target->getWidth ();
+	const float targetHeight = (float) m_game_render_target->getHeight ();
+
+	if (windowWidth <= 0.0f || windowHeight <= 0.0f || targetWidth <= 0.0f || targetHeight <= 0.0f)
+	{
+		return;
+	}
+
+	// Scale the game view so that it fits into the window while keeping its proportions.
+	const float scaleX = windowWidth / targetWidth;
+	const float scaleY = windowHeight / targetHeight;
+	const float scale = (scaleX < scaleY) ? scaleX : scaleY;
+
+	const float width = targetWidth * scale / windowWidth;
+	const float height = targetHeight * scale / windowHeight;
+	const float left = (1.0f - width) * 0.5f;
+	const float top = (1.0f - height) * 0.5f;
+
+	// Render targets are stored upside down, so the vertical texture coordinate is flipped.
+	m_blit_quad->clear ();
+	m_blit_quad->begin ("SumwarsBlitMaterial", Ogre::RenderOperation::OT_TRIANGLE_LIST);
+	m_blit_quad->position (left, top, 0.0f);
+	m_blit_quad->textureCoord (0.0f, 1.0f);
+	m_blit_quad->position (left + width, top, 0.0f);
+	m_blit_quad->textureCoord (1.0f, 1.0f);
+	m_blit_quad->position (left + width, top + height, 0.0f);
+	m_blit_quad->textureCoord (1.0f, 0.0f);
+	m_blit_quad->position (left, top + height, 0.0f);
+	m_blit_quad->textureCoord (0.0f, 0.0f);
+	m_blit_quad->triangle (0, 1, 2);
+	m_blit_quad->triangle (0, 2, 3);
+	m_blit_quad->end ();
+}
+
+
+
+bool Application::resizeGameRenderTarget (unsigned int width, unsigned int height)
+{
+	if (m_game_render_target == 0 || width == 0 || height == 0)
+	{
+		return false;
+	}
+
+	if (m_game_render_target->getWidth () == width && m_game_render_target->getHeight () == height)
+	{
+		return true;
+	}
+
+	// Create a new texture first, so that there is always a valid render target while the
+	// scene viewport and CEGUI are moved over to it.
+	static unsigned int textureCounter = 0;
+	char nameBuffer[64];
+	snprintf (nameBuffer, sizeof (nameBuffer), "SumwarsGameTexture%u", ++textureCounter);
+
+	Ogre::TexturePtr newTexture = Ogre::TextureManager::getSingleton ().createManual (
+			nameBuffer,
+			Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
+			Ogre::TEX_TYPE_2D,
+			width,
+			height,
+			0,
+			Ogre::PF_R8G8B8A8,
+			Ogre::TU_RENDERTARGET);
+
+	Ogre::RenderTarget* newTarget = newTexture->getBuffer ()->getRenderTarget ();
+	newTarget->setAutoUpdated (false);
+
+	// Move the scene viewport and the main menu over to the new target.
+	if (m_main_window != 0)
+	{
+		m_main_window->setRenderTarget (newTarget);
+	}
+
+	// Let CEGUI render into the new target as well.
+	CEGUI::OgreRenderer* renderer = static_cast<CEGUI::OgreRenderer*> (m_cegui_system->getRenderer ());
+	renderer->setDefaultRootRenderTarget (*newTarget);
+	renderer->setRenderingEnabled (false);
+	m_cegui_system->notifyDisplaySizeChanged (CEGUI::Sizef ((float) width, (float) height));
+
+	// Point the blit material at the new texture before the old one is removed.
+	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton ().getByName ("SumwarsBlitMaterial");
+	if (!material.isNull ())
+	{
+		Ogre::TextureUnitState* texture_unit = material->getTechnique (0)->getPass (0)->getTextureUnitState (0);
+		if (texture_unit != 0)
+		{
+			texture_unit->setTextureName (nameBuffer);
+		}
+	}
+
+	Ogre::TextureManager::getSingleton ().remove (m_game_texture_name);
+
+	m_game_texture_name = nameBuffer;
+	m_game_render_target = newTarget;
+	updateGameBlitQuad ();
+
+	return true;
+}
+
+
+
+void Application::applyVideoSettings (DisplayModes mode, const std::string& resolution)
+{
+	int width = 0;
+	int height = 0;
+	SumwarsHelper::getSizesFromResolutionString (resolution, width, height);
+	if (width <= 0 || height <= 0)
+	{
+		return;
+	}
+
+#if OGRE_PLATFORM == OGRE_PLATFORM_LINUX
+	int desktopWidth = 0;
+	int desktopHeight = 0;
+	const bool haveDesktopSize = SumwarsHelper::getDesktopSize (desktopWidth, desktopHeight);
+
+	if (mode == FULLSCREEN_EX)
+	{
+		// Exclusive fullscreen: let Ogre switch the display mode.
+		if (m_borderless_fullscreen)
+		{
+			void* xDisplay = 0;
+			unsigned long xWindow = 0;
+			m_window->getCustomAttribute ("XDISPLAY", &xDisplay);
+			m_window->getCustomAttribute ("WINDOW", &xWindow);
+			SumwarsHelper::setWindowFullscreen (xDisplay, xWindow, false);
+			m_borderless_fullscreen = false;
+		}
+		m_window->setFullscreen (true, width, height);
+	}
+	else if (mode == WINDOWED_FULLSCREEN)
+	{
+		// Borderless fullscreen: a desktop-sized window without a mode switch.
+		if (!haveDesktopSize)
+		{
+			mode = WINDOWED_WITH_BORDER;
+		}
+		else
+		{
+			if (m_window->isFullScreen ())
+			{
+				m_window->setFullscreen (false, desktopWidth, desktopHeight);
+			}
+
+			if (!m_borderless_fullscreen)
+			{
+				m_window->resize (desktopWidth, desktopHeight);
+
+				void* xDisplay = 0;
+				unsigned long xWindow = 0;
+				m_window->getCustomAttribute ("XDISPLAY", &xDisplay);
+				m_window->getCustomAttribute ("WINDOW", &xWindow);
+				SumwarsHelper::setWindowFullscreen (xDisplay, xWindow, true);
+				m_borderless_fullscreen = true;
+			}
+		}
+	}
+
+	if (mode == WINDOWED_WITH_BORDER)
+	{
+		if (m_borderless_fullscreen)
+		{
+			void* xDisplay = 0;
+			unsigned long xWindow = 0;
+			m_window->getCustomAttribute ("XDISPLAY", &xDisplay);
+			m_window->getCustomAttribute ("WINDOW", &xWindow);
+			SumwarsHelper::setWindowFullscreen (xDisplay, xWindow, false);
+			m_borderless_fullscreen = false;
+		}
+
+		if (m_window->isFullScreen ())
+		{
+			m_window->setFullscreen (false, width, height);
+		}
+		else
+		{
+			m_window->resize (width, height);
+		}
+	}
+#elif OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+	if (mode == FULLSCREEN_EX)
+	{
+		// Exclusive fullscreen: let Ogre switch the display mode.
+		if (m_borderless_fullscreen)
+		{
+			applyBorderlessWindow (m_window, false, width, height);
+			m_borderless_fullscreen = false;
+		}
+		m_window->setFullscreen (true, width, height);
+	}
+	else if (mode == WINDOWED_FULLSCREEN)
+	{
+		const int desktopWidth = (int) GetSystemMetrics (SM_CXSCREEN);
+		const int desktopHeight = (int) GetSystemMetrics (SM_CYSCREEN);
+
+		if (m_window->isFullScreen ())
+		{
+			m_window->setFullscreen (false, desktopWidth, desktopHeight);
+		}
+
+		applyBorderlessWindow (m_window, true, desktopWidth, desktopHeight);
+		m_borderless_fullscreen = true;
+	}
+	else
+	{
+		if (m_borderless_fullscreen)
+		{
+			applyBorderlessWindow (m_window, false, width, height);
+			m_borderless_fullscreen = false;
+		}
+
+		if (m_window->isFullScreen ())
+		{
+			m_window->setFullscreen (false, width, height);
+		}
+		else
+		{
+			m_window->resize (width, height);
+		}
+	}
+#else
+	// Fallback for platforms without a dedicated borderless implementation.
+	if (mode == FULLSCREEN_EX)
+	{
+		m_window->setFullscreen (true, width, height);
+	}
+	else if (mode == WINDOWED_FULLSCREEN)
+	{
+		int desktopWidth = 0;
+		int desktopHeight = 0;
+		if (SumwarsHelper::getDesktopSize (desktopWidth, desktopHeight))
+		{
+			m_window->setFullscreen (false, desktopWidth, desktopHeight);
+		}
+		else
+		{
+			m_window->setFullscreen (false, width, height);
+		}
+	}
+	else
+	{
+		m_window->setFullscreen (false, width, height);
+	}
+	m_borderless_fullscreen = false;
+#endif
+
+	// The game is rendered at the requested resolution and scaled to the window.
+	resizeGameRenderTarget ((unsigned int) width, (unsigned int) height);
+
+	if (m_main_window != 0)
+	{
+		m_main_window->windowResized ((int) m_window->getWidth (), (int) m_window->getHeight ());
+	}
+	updateGameBlitQuad ();
+}
+
+
+
+void Application::toggleFullscreen ()
+{
+	const DisplayModes currentMode = Options::getInstance ()->getUsedDisplayMode ();
+	const bool fullscreen = (currentMode != WINDOWED_WITH_BORDER);
+
+	DisplayModes newMode = WINDOWED_WITH_BORDER;
+	if (!fullscreen)
+	{
+		newMode = Options::getInstance ()->getUseExclusiveFullscreen () ? FULLSCREEN_EX : WINDOWED_FULLSCREEN;
+	}
+
+	applyVideoSettings (newMode, Options::getInstance ()->getUsedResolution ());
+	Options::getInstance ()->setUsedDisplayMode (newMode);
+}
+
+
+
 bool Application::createView()
 {
 	SW_DEBUG("create view\n");
-	m_main_window = new MainWindow(m_ogre_root, m_cegui_system,m_window,m_document);
+
+	if (! setupGameRenderTarget ())
+	{
+		return false;
+	}
+
+	m_main_window = new MainWindow(m_ogre_root, m_cegui_system,m_window,m_game_render_target,m_document);
 
 #ifdef SUMWARS_BUILD_TOOLS
 	new DebugPanel();
@@ -1481,7 +1968,13 @@ void Application::windowResized (Ogre::RenderWindow* rw)
 	// Only act for own renderwindow. Can it happen that we receive something else here? I don't know... doesn't hurt to check.
 	if (rw && rw == m_window)
 	{
-		// Currently this is a placeholder function.
+		if (m_main_window != 0)
+		{
+			m_main_window->windowResized (rw->getWidth (), rw->getHeight ());
+		}
+
+		// Fit the rendered game view into the resized window.
+		updateGameBlitQuad ();
 	}
 
 }

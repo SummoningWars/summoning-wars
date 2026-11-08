@@ -43,10 +43,10 @@ using gussound::SoundManager;
 
 #include "gopenal.h"
 
-Scene::Scene(Document* doc,Ogre::RenderWindow* window)
+Scene::Scene(Document* doc,Ogre::RenderTarget* render_target)
 {
 	m_document = doc;
-	m_window = window;
+	m_render_target = render_target;
 	m_scene_manager = Ogre::Root::getSingleton().getSceneManager("DefaultSceneManager");
 	GraphicManager::setSceneManager(m_scene_manager);
 	
@@ -58,7 +58,7 @@ Scene::Scene(Document* doc,Ogre::RenderWindow* window)
 
 
 	// Viewport anlegen, Hintergrundfarbe schwarz
-	m_viewport = m_window->addViewport(m_camera);
+	m_viewport = m_render_target->addViewport(m_camera);
 	m_viewport->setBackgroundColour(Ogre::ColourValue(0,0,0));
 	m_camera->setAspectRatio(Ogre::Real(m_viewport->getActualWidth()) / Ogre::Real(m_viewport->getActualHeight()));
 
@@ -197,6 +197,49 @@ Scene::Scene(Document* doc,Ogre::RenderWindow* window)
 Scene::~Scene()
 {
 	clearObjects();
+}
+
+void Scene::setRenderTarget(Ogre::RenderTarget* render_target)
+{
+	if (render_target == 0 || render_target == m_render_target)
+	{
+		return;
+	}
+
+	// Preserve the viewport settings while moving it to the new render target. The current camera
+	// may be the main menu camera rather than the scene camera.
+	Ogre::Camera* viewportCamera = m_viewport->getCamera ();
+	const int zOrder = m_viewport->getZOrder ();
+	const Ogre::Real left = m_viewport->getLeft ();
+	const Ogre::Real top = m_viewport->getTop ();
+	const Ogre::Real width = m_viewport->getWidth ();
+	const Ogre::Real height = m_viewport->getHeight ();
+	const Ogre::ColourValue background = m_viewport->getBackgroundColour ();
+	const bool clearEveryFrame = m_viewport->getClearEveryFrame ();
+	const unsigned int clearBuffers = m_viewport->getClearBuffers ();
+	const bool overlays = m_viewport->getOverlaysEnabled ();
+	const bool skies = m_viewport->getSkiesEnabled ();
+	const bool shadows = m_viewport->getShadowsEnabled ();
+
+	if (m_render_target != 0)
+	{
+		m_render_target->removeViewport (zOrder);
+	}
+
+	m_render_target = render_target;
+	m_viewport = m_render_target->addViewport (viewportCamera, zOrder, left, top, width, height);
+	m_viewport->setBackgroundColour (background);
+	m_viewport->setClearEveryFrame (clearEveryFrame, clearBuffers);
+	m_viewport->setOverlaysEnabled (overlays);
+	m_viewport->setSkiesEnabled (skies);
+	m_viewport->setShadowsEnabled (shadows);
+
+	const Ogre::Real aspectRatio = Ogre::Real (m_viewport->getActualWidth ()) / Ogre::Real (m_viewport->getActualHeight ());
+	m_camera->setAspectRatio (aspectRatio);
+	if (viewportCamera != 0 && viewportCamera != m_camera)
+	{
+		viewportCamera->setAspectRatio (aspectRatio);
+	}
 }
 
 

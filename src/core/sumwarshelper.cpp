@@ -18,6 +18,7 @@
 
 // Allow using debug
 #include "debug.h"
+#include <cstring>
 
 #include <Ogre.h>
 
@@ -366,6 +367,52 @@ std::string SumwarsHelper::getUpdatedResolutionString (const std::string& initia
 	return returnValue;
 }
 
+void SumwarsHelper::setWindowFullscreen (void* xDisplay, unsigned long xWindow, bool fullscreen)
+{
+#if defined (__unix__) && !defined (__APPLE__)
+	Display* dpy = static_cast<Display*> (xDisplay);
+	if (dpy == 0 || xWindow == 0)
+	{
+		return;
+	}
+
+	XEvent ev;
+	memset (&ev, 0, sizeof (ev));
+	ev.xclient.type = ClientMessage;
+	ev.xclient.window = xWindow;
+	ev.xclient.message_type = XInternAtom (dpy, "_NET_WM_STATE", False);
+	ev.xclient.format = 32;
+	ev.xclient.data.l[0] = fullscreen ? 1 : 0; // _NET_WM_STATE_ADD or _NET_WM_STATE_REMOVE
+	ev.xclient.data.l[1] = XInternAtom (dpy, "_NET_WM_STATE_FULLSCREEN", False);
+	ev.xclient.data.l[2] = 0;
+	ev.xclient.data.l[3] = 1; // source indication: application
+	XSendEvent (dpy, DefaultRootWindow (dpy), False, SubstructureRedirectMask | SubstructureNotifyMask, &ev);
+	XFlush (dpy);
+#endif
+}
+
+bool SumwarsHelper::getDesktopSize (int& width, int& height)
+{
+#if defined (_WIN32)
+	width = GetSystemMetrics (SM_CXSCREEN);
+	height = GetSystemMetrics (SM_CYSCREEN);
+	return width > 0 && height > 0;
+#elif defined (__unix__) && !defined (__APPLE__)
+	Display* dpy = XOpenDisplay (NULL);
+	if (dpy == 0)
+	{
+		return false;
+	}
+
+	width = DisplayWidth (dpy, DefaultScreen (dpy));
+	height = DisplayHeight (dpy, DefaultScreen (dpy));
+	XCloseDisplay (dpy);
+	return width > 0 && height > 0;
+#else
+	return false;
+#endif
+}
+
 std::string SumwarsHelper::getNativeResolutionString()
 {
 	int xRes = 800;
@@ -417,36 +464,31 @@ std::string SumwarsHelper::getNativeColourDepthString()
 
 void SumwarsHelper::getSizesFromResolutionString (const std::string& initialString, int& videoModeWidth, int& videoModeHeight)
 {
-	std::string tempString;
-	tempString = initialString;
+	// The resolution strings use varying amounts of whitespace, e.g. "1024 x 768",
+	// "1280 x  800" or "1024 x 768 @ 32-bit colour", so parse the numbers directly.
+	videoModeWidth = 0;
+	videoModeHeight = 0;
 
-	std::string sLeft, sRight;
-	int nPos = tempString.find (" ");
-	if (nPos == std::string::npos)
+	const size_t widthPos = initialString.find_first_of ("0123456789");
+	if (widthPos == std::string::npos)
 	{
-		// some error...
 		return;
 	}
 
-	sLeft = tempString.substr (0, nPos);
-	sRight= tempString.substr (nPos + 3); // + 3 chars for " x "
-	nPos = sRight.find (" ");
-	std::string sAux;
-
-	if (nPos == std::string::npos)
+	const size_t separatorPos = initialString.find_first_of ("xX", widthPos);
+	if (separatorPos == std::string::npos)
 	{
-		// we don't have a colour depth.
-		sAux = sRight;
-		sRight = "";
-	}
-	else
-	{
-		sAux = sRight.substr(0, nPos);
-		sRight = sRight.substr(nPos);
+		return;
 	}
 
-	videoModeWidth = atoi (sLeft.c_str ());
-	videoModeHeight = atoi (sAux.c_str ());
+	const size_t heightPos = initialString.find_first_of ("0123456789", separatorPos + 1);
+	if (heightPos == std::string::npos)
+	{
+		return;
+	}
+
+	videoModeWidth = atoi (initialString.c_str () + widthPos);
+	videoModeHeight = atoi (initialString.c_str () + heightPos);
 }
 
 

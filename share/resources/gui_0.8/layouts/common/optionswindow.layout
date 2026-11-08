@@ -291,16 +291,21 @@
                     <Property name="Size" value="{{0.5,0},{0.3,0}}" />
                     <Property name="MaxTextLength" value="256" />
                 </Window>
+                <Window type="SWB/Checkbox" name="ExclusiveFullscreenBox" >
+                    <Property name="Text" value="Use exclusive mode for fullscreen" />
+                    <Property name="InheritsAlpha" value="False" />
+                    <Property name="Area" value="{{0.35,0},{0.36,0},{0.98,0},{0.42,0}}" />
+                </Window>
                 <Window type="SWB/StaticText" name="Resolution" >
                     <Property name="Text" value="Resolution" />
                     <Property name="FrameEnabled" value="False" />
                     <Property name="InheritsAlpha" value="False" />
-                    <Property name="Area" value="{{0.02,0},{0.37,0},{0.34,0},{0.47,0}}" />
+                    <Property name="Area" value="{{0.02,0},{0.47,0},{0.34,0},{0.57,0}}" />
                     <Property name="BackgroundEnabled" value="False" />
                 </Window>
                 <Window type="SWB/Combobox" name="ResolutionBox" >
                     <Property name="InheritsAlpha" value="False" />
-                    <Property name="Area" value="{{0.35,0},{0.37,0},{0.98,0},{0.47,0}}" />
+                    <Property name="Area" value="{{0.35,0},{0.47,0},{0.98,0},{0.57,0}}" />
                     <Property name="Size" value="{{0.5,0},{0.5,0}}" />
                     <Property name="MaxTextLength" value="256" />
                 </Window>
@@ -308,12 +313,12 @@
                     <Property name="Text" value="Enemy Highlight Color" />
                     <Property name="FrameEnabled" value="False" />
                     <Property name="InheritsAlpha" value="False" />
-                    <Property name="Area" value="{{0.02,0},{0.50,0},{0.34,0},{0.60,0}}" />
+                    <Property name="Area" value="{{0.02,0},{0.60,0},{0.34,0},{0.70,0}}" />
                     <Property name="BackgroundEnabled" value="False" />
                 </Window>
                 <Window type="SWB/Combobox" name="EHColorBox" >
                     <Property name="InheritsAlpha" value="False" />
-                    <Property name="Area" value="{{0.35,0},{0.50,0},{0.98,0},{0.60,0}}" />
+                    <Property name="Area" value="{{0.35,0},{0.60,0},{0.98,0},{0.70,0}}" />
                     <Property name="Size" value="{{0.5,0},{0.39,0}}" />
                     <Property name="MaxTextLength" value="256" />
                 </Window>
@@ -322,12 +327,12 @@
                     <Property name="Text" value="Shadows" />
                     <Property name="FrameEnabled" value="False" />
                     <Property name="InheritsAlpha" value="False" />
-                    <Property name="Area" value="{{0.02,0},{0.62,0},{0.34,0},{0.72,0}}" />
+                    <Property name="Area" value="{{0.02,0},{0.72,0},{0.34,0},{0.82,0}}" />
                     <Property name="BackgroundEnabled" value="False" />
                 </Window>
                 <Window type="SWB/Combobox" name="ShadowsDropDownList" >
                     <Property name="InheritsAlpha" value="False" />
-                    <Property name="Area" value="{{0.35,0},{0.62,0},{0.98,0},{0.72,0}}" />
+                    <Property name="Area" value="{{0.35,0},{0.72,0},{0.98,0},{0.82,0}}" />
                     <Property name="Size" value="{{0.5,0},{0.35,0}}" />
                     <Property name="MaxTextLength" value="256" />
                 </Window>

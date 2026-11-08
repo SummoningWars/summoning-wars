@@ -141,6 +141,24 @@ public:
 	static std::string getNativeResolutionString ();
 
 	/**
+	 * \brief Asks the window manager to make the given X11 window fullscreen or windowed again
+	 * (no-op on other platforms).
+	 *
+	 * Ogre's GLX window does not request this itself when it is created, so e.g. mutter leaves it as a
+	 * regular decorated window that is clipped to the work area.
+	 * \param xDisplay The X11 Display* (as void* to keep Xlib out of this header).
+	 * \param xWindow The X11 Window id.
+	 * \param fullscreen true to enter fullscreen, false to leave it.
+	 */
+	static void setWindowFullscreen (void* xDisplay, unsigned long xWindow, bool fullscreen);
+
+	/**
+	 * \brief Gets the size of the X11 desktop (the logical size, which differs from the current
+	 * RandR video mode when the desktop is scaled). Returns false if it cannot be determined.
+	 */
+	static bool getDesktopSize (int& width, int& height);
+
+	/**
 	 * \brief Gets the colour depth on the desktop.
 	 * Purpose: Setting colour depth on initial startup for the D3D Ogre driver
 	 *
