@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.sumwars.SummoningWars</id>
+  <name>Summoning Wars</name>
+  <summary>Open source 3D action role-playing game with single- and multiplayer</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <developer id="org.sumwars">
+    <name>The Summoning Wars Team</name>
+  </developer>
+
+  <description>
+    <p>
+      Summoning Wars is an open source action role-playing game set in a dark
+      fantasy world. It can be played alone or with up to eight players in
+      multiplayer, and features four playable classes, dozens of monsters and
+      hundreds of items.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Single-player campaign and networked multiplayer for up to 8 players</li>
+      <li>Four classes (archer, mage, priest and warrior), each with 24 skills</li>
+      <li>Dozens of monsters and hundreds of items to find, buy and sell</li>
+      <li>3D graphics with a freely rotatable camera</li>
+      <li>A dark story told through cutscenes, scripted events and side quests</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">org.sumwars.SummoningWars.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Wizard casting a fireball</caption>
+      <image>https://a.fsdn.com/con/app/proj/sumwars/screenshots/0_5_8_wizard3.png/max/max/1</image>
+    </screenshot>
+    <screenshot>
+      <caption>Mighty creatures</caption>
+      <image>https://a.fsdn.com/con/app/proj/sumwars/screenshots/mighty_creatures.png/max/max/1</image>
+    </screenshot>
+    <screenshot>
+      <caption>Trading items with vendors</caption>
+      <image>https://a.fsdn.com/con/app/proj/sumwars/screenshots/item_trade.png/max/max/1</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://github.com/SummoningWars/summoning-wars</url>
+  <url type="bugtracker">https://github.com/SummoningWars/summoning-wars/issues</url>
+  <url type="vcs-browser">https://github.com/SummoningWars/summoning-wars</url>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">mild</content_attribute>
+    <content_attribute id="social-chat">moderate</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="0.5.8" date="2019-10-14"/>
+  </releases>
+
+  <provides>
+    <binary>sumwars</binary>
+  </provides>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <translation type="gettext">sumwars</translation>
+</component>
